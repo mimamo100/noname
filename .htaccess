@@ -1,0 +1,3 @@
+<Files ~ "^(config|config\.example)\.php$|\.sql$">
+  Require all denied
+</Files>

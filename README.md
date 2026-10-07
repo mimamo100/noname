@@ -8,33 +8,46 @@ common English words. Players type words that fit the current prompt (such as
 (*cat* burns *cats*), so nobody in that world can use it again. As the
 language shrinks, scores rise, so clever late players can still catch up.
 
-The full design is in [docs/DESIGN.md](docs/DESIGN.md).
+- Game design: [docs/DESIGN.md](docs/DESIGN.md)
+- Putting it on a cPanel host: [docs/DEPLOY.md](docs/DEPLOY.md)
 
-## Running it
+## Requirements
 
-Requires Node.js 22.13 or later. There are no dependencies to install.
+PHP 8.1+ with `pdo_mysql`, and MySQL 5.7+ or MariaDB 10.3+. There are no
+Composer packages or build steps.
+
+## Running it locally
+
+1. Create an empty MySQL database and copy `config.example.php` to
+   `config.php` with its details. Tables are created automatically.
+2. Start PHP's built-in server:
+
+   ```sh
+   php -S localhost:8000 -t public public/router.php
+   ```
+
+3. Open http://localhost:8000.
+
+## Tests
+
+The tests need an empty database they're allowed to wipe:
 
 ```sh
-npm start        # http://localhost:3000
-npm test
+TEST_DB_NAME=burned_words_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 ```
-
-- `/` is the public world. Use **New private world** to create one and share
-  its link.
-- Game data is stored in SQLite at `var/burned-words.db`. Set `DATA_DIR` to
-  change the folder and `PORT` to change the port.
 
 ## Project layout
 
 | Path | What it is |
 |---|---|
-| `src/dictionary.js` | Word list, rarity ranks and word families |
-| `src/prompts.js` | Prompt patterns and the prompt picker |
-| `src/scoring.js` | Points and multipliers |
-| `src/game.js` | Worlds, players, burning and rotation (SQLite) |
-| `src/server.js` | HTTP API and static file server |
-| `public/` | The browser client |
-| `scripts/build-dictionary.mjs` | Regenerates `data/words.txt` |
+| `public/` | Everything served to the web: the page, browser code, `api.php` and `.htaccess` |
+| `src/Game.php` | Worlds, players, burning and prompt rotation |
+| `src/Dictionary.php`, `src/WordFamilies.php` | Word list, rarity and word families |
+| `src/Prompts.php` | Prompt patterns and the prompt picker |
+| `src/Scoring.php` | Points and multipliers |
+| `schema.sql` | Database tables |
+| `data/words.txt` | The word list, most common first |
+| `data/dictionary.php` | Generated from `words.txt` by `php scripts/build-dictionary.php` |
 
 ## Word list credits
 

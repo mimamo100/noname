@@ -1,0 +1,18 @@
+# Burned Words routing for Apache (cPanel). Point the subdomain's document root at this folder.
+DirectoryIndex index.html
+Options -Indexes
+
+RewriteEngine On
+RewriteRule ^api/ api.php [L,QSA]
+RewriteRule ^w/ index.html [L]
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|js|css)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# router.php is only for PHP's built-in server during local testing.
+<Files "router.php">
+  Require all denied
+</Files>
