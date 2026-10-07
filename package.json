@@ -1,0 +1,13 @@
+{
+  "name": "burned-words",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A word game where every word played is burned for everyone, forever.",
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test",
+    "build:dictionary": "node scripts/build-dictionary.mjs"
+  }
+}

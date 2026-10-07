@@ -1,0 +1,88 @@
+:root {
+  --bg: #17130f;
+  --surface: #221c16;
+  --border: #3a3027;
+  --text: #f3ebe1;
+  --muted: #a89a8a;
+  --ember: #ff7a29;
+  --ember-dim: #8a3d12;
+  --good: #8fd18b;
+  --bad: #ff8a80;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main { max-width: 960px; margin: 0 auto; padding: 0 16px 48px; }
+
+.top {
+  display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap;
+  max-width: 960px; margin: 0 auto; padding: 16px;
+}
+.brand { color: var(--ember); font-weight: 800; text-decoration: none; letter-spacing: 0.02em; }
+.world-name { color: var(--muted); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+button, input { font: inherit; }
+button {
+  background: var(--ember); color: #1b0f05; border: 0; border-radius: 8px;
+  padding: 10px 16px; font-weight: 700; cursor: pointer;
+}
+button:hover { filter: brightness(1.1); }
+button.link { background: none; color: var(--muted); padding: 0; font-weight: 400; text-decoration: underline; }
+input {
+  background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 12px; min-width: 0;
+}
+input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
+
+.prompt-card {
+  background: radial-gradient(circle at 50% 120%, var(--ember-dim), var(--surface) 70%);
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 24px; text-align: center; margin-top: 8px;
+}
+.eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--muted); }
+.prompt-card h1 { margin: 4px 0 8px; font-size: clamp(28px, 7vw, 48px); line-height: 1.1; }
+.counter { font-size: 18px; }
+.counter #remaining { font-size: 32px; font-weight: 800; color: var(--ember); font-variant-numeric: tabular-nums; }
+.meter { height: 6px; background: var(--bg); border-radius: 3px; margin: 12px auto; max-width: 360px; overflow: hidden; }
+.meter div { height: 100%; width: 0; background: var(--ember); transition: width 0.4s; }
+.stats { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+.stats b { color: var(--text); }
+
+.play, .join, .lookup { display: flex; gap: 8px; margin-top: 16px; }
+.play input, .join input, .lookup input { flex: 1; }
+.play input { font-size: 20px; }
+.join { flex-wrap: wrap; align-items: center; }
+.join p { flex-basis: 100%; margin: 0; color: var(--muted); }
+
+.feedback { min-height: 1.5em; margin: 8px 0 0; }
+.feedback.good { color: var(--good); }
+.feedback.bad { color: var(--bad); }
+.muted { color: var(--muted); }
+
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+@media (max-width: 700px) { .columns { grid-template-columns: 1fr; } }
+h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 8px; }
+section + section h2 ~ h2, .leaderboard + h2 { margin-top: 24px; }
+
+.recent { list-style: none; margin: 0; padding: 0; }
+.recent li { display: flex; gap: 6px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.burnt-word { font-weight: 700; text-decoration: line-through; text-decoration-color: var(--ember); text-decoration-thickness: 2px; }
+.points { margin-left: auto; color: var(--ember); font-variant-numeric: tabular-nums; }
+
+.leaderboard { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.leaderboard th, .leaderboard td { text-align: right; padding: 6px 4px; border-bottom: 1px solid var(--border); }
+.leaderboard th:first-child, .leaderboard td:first-child { text-align: left; }
+.leaderboard th { font-weight: 400; color: var(--muted); font-size: 13px; }
+.leaderboard tr.me td { color: var(--ember); font-weight: 700; }
+
+.rules { margin-top: 32px; color: var(--muted); }
+.rules summary { cursor: pointer; color: var(--text); }

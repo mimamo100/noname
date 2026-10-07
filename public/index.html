@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Burned Words</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/">Burned Words</a>
+    <span class="world-name" id="world-name"></span>
+    <button class="link" id="copy-link" hidden>Copy invite link</button>
+    <button class="link" id="new-world">New private world</button>
+  </header>
+
+  <main>
+    <section class="prompt-card" aria-live="polite">
+      <p class="eyebrow">Current prompt</p>
+      <h1 id="prompt-label">Loading…</h1>
+      <div class="counter"><span id="remaining">–</span> <span class="muted">words left that fit</span></div>
+      <div class="meter"><div id="meter-fill"></div></div>
+      <div class="stats">
+        <span title="Rises as the whole dictionary is burned">World ×<b id="world-mult">1.0</b></span>
+        <span title="Rises as this prompt runs dry">Prompt ×<b id="prompt-mult">1.0</b></span>
+        <span>Ends in <b id="ends-in">–</b></span>
+      </div>
+    </section>
+
+    <form id="play-form" class="play" autocomplete="off" hidden>
+      <input id="word" name="word" placeholder="Type a word…" maxlength="30" autocapitalize="off" spellcheck="false" required>
+      <button type="submit">Burn it</button>
+    </form>
+    <p id="feedback" class="feedback" role="status"></p>
+
+    <form id="join-form" class="join" hidden>
+      <p>Choose a nickname to play in this world.</p>
+      <input id="nickname" name="nickname" placeholder="Nickname" maxlength="20" required>
+      <button type="submit">Join</button>
+    </form>
+
+    <div class="columns">
+      <section>
+        <h2>Just burned</h2>
+        <ol id="recent" class="recent"></ol>
+      </section>
+      <section>
+        <h2>Leaderboard</h2>
+        <table class="leaderboard">
+          <thead><tr><th>Player</th><th>Words</th><th>This prompt</th><th>Total</th></tr></thead>
+          <tbody id="leaderboard"></tbody>
+        </table>
+        <h2>Who burned it?</h2>
+        <form id="lookup-form" class="lookup" autocomplete="off">
+          <input id="lookup" placeholder="Look up any word" maxlength="30" autocapitalize="off" spellcheck="false" required>
+          <button type="submit">Look up</button>
+        </form>
+        <p id="lookup-result" class="muted"></p>
+      </section>
+    </div>
+
+    <details class="rules">
+      <summary>How to play</summary>
+      <ul>
+        <li>Type words that fit the current prompt.</li>
+        <li>Every word you play is <b>burned for everyone in this world, forever</b>, along with its family (<i>cat</i> burns <i>cats</i>).</li>
+        <li>Longer and rarer words score more. Scores rise as the dictionary shrinks and as the prompt runs dry.</li>
+        <li>You can save a word for later when it's worth more, but someone else might burn it first.</li>
+        <li>The prompt changes when nothing fits any more, or when its time runs out.</li>
+      </ul>
+      <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words burned in this world.</p>
+    </details>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
