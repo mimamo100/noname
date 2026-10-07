@@ -143,3 +143,19 @@ Not yet:
 - Should a world end (when X% of the dictionary is said, or by date), and what
   does the ending look like?
 - Is 24 hours the right prompt length for small friend groups?
+
+## Ideas for later
+
+- **Word packs for private worlds:** themed dictionaries such as Music,
+  Food & cooking, Sport, Nature, Film & TV and Science, chosen when creating a
+  world. Draft lists can come from WordNet topic tags (about 300 music words,
+  950 food words, 450 sport words), but they need main-meaning filtering and a
+  manual review. Small packs need smaller prompt ranges (about 5–30 answers),
+  and could end with a prize for whoever says the last word.
+- **Custom packs:** the world creator pastes their own list, such as office
+  jargon, a class spelling list or song titles.
+- **Names packs** (artists, bands, labels): a separate source, multi-word
+  matching, and regular updates. Harder, and best left until later.
+- **A look that fits the name:** the current dark style with orange "ember"
+  accents came from the old name. Possible directions: quiet and literary
+  (paper and ink), or dark with cooler colours.
