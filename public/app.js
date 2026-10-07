@@ -86,12 +86,14 @@ function feedback(text, kind) {
   $('feedback').className = `feedback ${kind}`;
 }
 
+const penaltyText = (r) => (r.penalty ? ` −${r.penalty} ${r.penalty === 1 ? 'point' : 'points'}.` : '');
+
 const REASONS = {
   'not-a-word': (w) => `“${w}” isn't in the dictionary.`,
-  'doesnt-fit': (w) => `“${w}” doesn't fit the prompt.`,
+  'doesnt-fit': (w, r) => `“${w}” doesn't fit the prompt.${penaltyText(r)}`,
   'already-burned': (w, r) => r.burned
-    ? `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''}.`
-    : `“${w}” has already been said.`,
+    ? `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''}.${penaltyText(r)}`
+    : `“${w}” has already been said.${penaltyText(r)}`,
 };
 
 $('play-form').addEventListener('submit', async (e) => {

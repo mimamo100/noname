@@ -44,16 +44,22 @@ function throwsStatus(int $status, callable $fn): void
     throw new RuntimeException("Expected GameError $status");
 }
 
-function testDb(): PDO
+function testDbConnection(): PDO
 {
     $name = getenv('TEST_DB_NAME') ?: throw new RuntimeException('Set TEST_DB_NAME (and TEST_DB_USER, TEST_DB_PASS) to an empty test database');
-    $db = new PDO(
+    return new PDO(
         'mysql:host=' . (getenv('TEST_DB_HOST') ?: 'localhost') . ";dbname=$name;charset=utf8mb4",
         getenv('TEST_DB_USER') ?: 'root',
         getenv('TEST_DB_PASS') ?: '',
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],
     );
-    $db->exec('DROP TABLE IF EXISTS burns, prompts, players, worlds');
+}
+
+/** A connection to the test database with freshly created, empty tables. */
+function testDb(): PDO
+{
+    $db = testDbConnection();
+    $db->exec('DROP TABLE IF EXISTS misses, burns, prompts, players, worlds');
     Game::installSchema($db);
     return $db;
 }

@@ -24,8 +24,12 @@ CREATE TABLE IF NOT EXISTS players (
 CREATE TABLE IF NOT EXISTS prompts (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   world_id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
-  type VARCHAR(10) CHARACTER SET ascii NOT NULL,
-  letters VARCHAR(5) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  -- The prompt as JSON: {"cat": "bird" or null, "rules": [["starts", "b"], ...]}. See src/Prompts.php.
+  spec TEXT NULL,
+  label VARCHAR(200) NULL,
+  -- Only used by prompts created before the spec column existed.
+  type VARCHAR(10) CHARACTER SET ascii NULL,
+  letters VARCHAR(5) CHARACTER SET ascii COLLATE ascii_bin NULL,
   available_at_start INT NOT NULL,
   started_at BIGINT NOT NULL,
   ends_at BIGINT NOT NULL,
@@ -45,6 +49,22 @@ CREATE TABLE IF NOT EXISTS burns (
   burned_at BIGINT NOT NULL,
   UNIQUE KEY uniq_word (world_id, word),
   KEY idx_played (world_id, played_word),
+  FOREIGN KEY (world_id) REFERENCES worlds(id),
+  FOREIGN KEY (player_id) REFERENCES players(id),
+  FOREIGN KEY (prompt_id) REFERENCES prompts(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Wrong guesses. Most cost a small penalty, and all count towards the rate limit.
+CREATE TABLE IF NOT EXISTS misses (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  world_id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  player_id INT UNSIGNED NOT NULL,
+  prompt_id INT UNSIGNED NOT NULL,
+  word VARCHAR(40) NOT NULL,
+  reason VARCHAR(20) CHARACTER SET ascii NOT NULL,
+  points INT NOT NULL,
+  missed_at BIGINT NOT NULL,
+  KEY idx_player (player_id, missed_at),
   FOREIGN KEY (world_id) REFERENCES worlds(id),
   FOREIGN KEY (player_id) REFERENCES players(id),
   FOREIGN KEY (prompt_id) REFERENCES prompts(id)

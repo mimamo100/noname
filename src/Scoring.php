@@ -17,7 +17,8 @@ final class Scoring
     public static function promptBonus(int $remainingNow, int $availableAtStart): float
     {
         if ($availableAtStart <= 0 || $remainingNow <= 0) return self::PROMPT_BONUS_CAP;
-        return min(self::PROMPT_BONUS_CAP, $availableAtStart / $remainingNow);
+        // Never below x1, even if the count rules changed while a prompt was running.
+        return max(1.0, min(self::PROMPT_BONUS_CAP, $availableAtStart / $remainingNow));
     }
 
     /** $rarity: 0 for the most common word, approaching 1 for the rarest. */

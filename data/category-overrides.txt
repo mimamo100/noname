@@ -1,0 +1,23 @@
+# Corrections to the automatically built categories (data/categories.json).
+# Format:  category: +word +word -word
+#   +word  also counts for the category
+#   -word  doesn't count, even though WordNet says it does
+# Words not in the dictionary, or on the blocklist, are ignored.
+# Rebuild after editing: php scripts/build-dictionary.php
+
+colour: +white +orange +gold +silver +grey +violet +scarlet +turquoise +maroon +beige +navy +cream +lilac +indigo +magenta +teal +khaki +tan +ivory +olive +lavender +burgundy +bronze +copper +peach +ruby +emerald +cyan +mauve +ochre +charcoal +rust -bleach -blackness -whiteness -pastel
+animal: -young -female -male -mount -mounts -stray -strays
+mammal: -mount -mounts
+fish: -britt -lotte -mademoiselle
+food: -feed -feeds -produce -produces -slop -chuck -chucks
+vegetable: -murphy
+body: -small -behind -anterior
+job: -ordinary -professional -johnny -academic
+feeling: -fit -fits -affect -affects -surrender -surrenders -torture -tortures -quiver
+weather: -quiet -elements
+landform: -draw -draws -incline -ben -main
+disease: -collapse -collapses -pest -creeps
+sport: -plunge -plunges -ducking -tumbling
+building: -john
+plant: -cole -alexander
+tool: -bender -sanders

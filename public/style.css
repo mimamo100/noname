@@ -28,7 +28,7 @@ main { max-width: 960px; margin: 0 auto; padding: 0 16px 48px; }
   max-width: 960px; margin: 0 auto; padding: 16px;
 }
 .brand { color: var(--ember); font-weight: 800; text-decoration: none; letter-spacing: 0.02em; }
-.world-name { color: var(--muted); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.world-name { color: var(--muted); flex: 1 1 8rem; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 button, input { font: inherit; }
 button {

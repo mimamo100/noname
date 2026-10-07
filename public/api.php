@@ -68,7 +68,8 @@ try {
     try {
         route($game);
     } catch (PDOException $e) {
-        if ($e->getCode() !== '42S02') throw $e; // Not "table doesn't exist".
+        // A missing table or column means a new install or an older database: set up or upgrade, then retry.
+        if (!in_array($e->getCode(), ['42S02', '42S22'], true)) throw $e;
         if ($db->inTransaction()) $db->rollBack();
         Game::installSchema($db);
         route($game);

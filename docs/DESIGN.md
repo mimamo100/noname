@@ -84,10 +84,46 @@ real pairs missed. That's acceptable for the prototype.
 
 ## Prompts
 
-- Prompt types: *starts with*, *ends with*, *contains* (two or three letters).
-- Each new prompt is picked at random, but only from patterns with a sensible
-  number of unsaid words (by default 15–200), so prompts are neither trivial
-  nor impossible.
+Prompts have to make players think, not just type a pattern into a
+word-finder site. There are three kinds:
+
+| Kind | Share | Examples |
+|---|---|---|
+| Meaning and letters | about half | *An animal starting with B*, *A feeling containing U*, *A family member of 8+ letters* |
+| Meaning only | about a fifth | *A bird*, *A musical instrument*, *Weather* |
+| Letters only | the rest | *Letters in alphabetical order, 6+ letters*, *Starts and ends with N*, *Two Ys, no L* |
+
+- **Meanings** come from 31 categories (animals, foods, jobs, feelings,
+  colours and so on), built from WordNet by `scripts/build-categories.py`.
+  A word counts when its main meaning fits: *fly* is an insect, but *does*
+  isn't an animal just because a doe is a deer.
+- **Corrections** go in `data/category-overrides.txt`, for example removing
+  *young* from animals or adding *white* to colours. WordNet occasionally
+  accepts odd answers (*queen* is an insect, as in queen bee). Accepting a
+  surprising answer is better than rejecting a sensible one.
+- **Size.** A new prompt is only chosen if it has 10–80 distinct answers still
+  unsaid, counting a word family once. Late in a world, when nothing fits
+  that range, the game takes the richest prompt it can find.
+- **The counter** shows distinct answers left, so saying *apple* (which also
+  uses up *apples*) takes it down by one.
+
+## Penalties and limits
+
+- A guess that **doesn't fit** the prompt, or has **already been said**,
+  costs 2 points. Pasting a list from a word-finder site mostly hits words
+  that are already said, so it loses points.
+- **Typos are free**: a word that isn't in the dictionary costs nothing.
+- Players can make at most **20 guesses a minute**, which stops scripts.
+- Penalties count in both the total and "this prompt" columns of the
+  leaderboard.
+
+## Offensive words
+
+`data/blocklist.txt` lists slurs, strong profanity and explicit sexual terms.
+Blocked words, and their families, are removed from the dictionary, so they
+can never be played, appear in a prompt or show in the feed. Nicknames
+containing a blocked word are refused. Words that are innocent in their main
+meaning (*spade*, *queen*, *pansy*, *hoe*) are deliberately allowed.
 
 ## Prototype scope
 
@@ -95,12 +131,11 @@ In the first version:
 - Public world plus private worlds by link
 - Nickname join, word submission, word families, scoring, leaderboard
 - Live counter, recently said words, "who said it?" lookup
+- Meaning, letter and combined prompts, guess penalties, rate limit, offensive-word filter
 - Prompt rotation on exhaustion or timeout
 
 Not yet:
 - Accounts, seasons, sharing cards, mobile polish
-- An offensive-word filter (needed before the public world opens to strangers)
-- Rate limiting and anti-cheat (for example, pasting word lists from a solver)
 
 ## Open questions
 

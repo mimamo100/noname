@@ -47,7 +47,28 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 | `src/Scoring.php` | Points and multipliers |
 | `schema.sql` | Database tables |
 | `data/words.txt` | The word list, most common first |
-| `data/dictionary.php` | Generated from `words.txt` by `php scripts/build-dictionary.php` |
+| `data/blocklist.txt` | Offensive words that can never be played (editable) |
+| `data/categories.json` | Meaning categories, generated from WordNet by `scripts/build-categories.py` |
+| `data/category-overrides.txt` | Hand corrections to the categories (editable) |
+| `data/dictionary.php` | The file the game reads, generated from all of the above |
+
+## Changing the word data
+
+After editing `data/blocklist.txt` or `data/category-overrides.txt`, rebuild:
+
+```sh
+php scripts/build-dictionary.php
+```
+
+To rebuild the categories themselves from WordNet (rarely needed), you also
+need Python with NLTK, on your own computer rather than the server:
+
+```sh
+pip install nltk
+python -c "import nltk; nltk.download('wordnet')"
+python scripts/build-categories.py
+php scripts/build-dictionary.php
+```
 
 ## Word list credits
 
@@ -57,3 +78,8 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
   built from OpenSubtitles (CC BY-SA 4.0)
 
 The word list is therefore shared under CC BY-SA 4.0.
+
+The meaning categories are built with [WordNet](https://wordnet.princeton.edu/)
+(Princeton University, WordNet 3.0 licence), and the blocklist was reviewed
+starting from the [LDNOOBW](https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words)
+list (CC BY 4.0).

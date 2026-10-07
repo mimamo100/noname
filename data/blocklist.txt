@@ -1,0 +1,127 @@
+# Words that can never be played, shown or used in a prompt.
+# One word per line; blocking a word also blocks its family (fuck -> fucking).
+# Rebuild after editing: php scripts/build-dictionary.php
+#
+# Sources: hand-reviewed from the LDNOOBW list (CC BY 4.0,
+# github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words)
+# and words WordNet marks as ethnic slurs, disparagement or obscenities.
+# Words that are innocent in their main meaning are deliberately allowed
+# (spade, queen, pansy, paddy, hoe, cracker, sex, screw, tool).
+
+# Ethnic and racial slurs
+nigger
+coon
+spic
+kike
+chink
+gook
+wop
+dago
+wog
+darkie
+wetback
+kraut
+boche
+honky
+whitey
+coolie
+redskins
+squaw
+gyp
+jap
+
+# Homophobic, transphobic and ableist slurs
+faggot
+fag
+fagot
+dyke
+poof
+nance
+homo
+retard
+retarded
+spastic
+spaz
+mongoloid
+midget
+
+# Profanity
+fuck
+fucker
+motherfucker
+shit
+bullshit
+horseshit
+chickenshit
+shithead
+ass
+asshole
+arse
+bitch
+bastard
+cunt
+twat
+cock
+cocksucker
+dick
+prick
+pecker
+pussy
+piss
+pissed
+turd
+putz
+tosser
+bollocks
+bugger
+sodding
+fanny
+whore
+slut
+hooker
+bimbos
+
+# Explicit sexual terms
+porn
+porno
+pornography
+smut
+erotic
+horny
+nympho
+orgasm
+orgy
+threesome
+semen
+spunk
+ejaculation
+masturbate
+masturbation
+masturbating
+dildo
+vibrator
+blowjob
+fellatio
+sodomy
+bestiality
+incest
+pedophile
+rape
+rapist
+dominatrix
+busty
+boob
+tit
+titties
+titty
+nipple
+penis
+vagina
+vulva
+clitoris
+genitals
+pubes
+anus
+anal
+poon
+humping

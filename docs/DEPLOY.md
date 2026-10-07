@@ -74,7 +74,9 @@ invite link** to share it.
 ## Updating
 
 Upload and extract the new zip over the old folder. Your `config.php` and
-database aren't in the zip, so they're kept.
+database aren't in the zip, so they're kept. If a new version needs database
+changes, the game makes them itself on the first visit, keeping all worlds
+and scores.
 
 ## Backups
 

@@ -48,14 +48,16 @@ test('HTTP API: create, join, play, look up', function () {
 
         $state = $call('GET', "/api/worlds/$id", null, $token);
         same('Kim', $state['body']['me']);
-        $prompt = $state['body']['prompt'];
-        $word = Prompts::fitting(Dictionary::load(), $prompt['type'], $prompt['letters'])[0];
+        $spec = json_decode(testDbConnection()->query("SELECT spec FROM prompts WHERE world_id = '$id'")->fetchColumn(), true);
+        $word = Prompts::fitting($spec, Dictionary::load())[0];
 
         $played = $call('POST', "/api/worlds/$id/words", ['word' => $word], $token);
         same(true, $played['body']['ok'], 'Play.');
         same('Kim', $call('GET', "/api/worlds/$id/words/$word")['body']['burned']['by']);
 
         same(401, $call('POST', "/api/worlds/$id/words", ['word' => $word])['status']);
+        same(Game::PENALTY, $call('POST', "/api/worlds/$id/words", ['word' => $word], $token)['body']['penalty'], 'Already said.');
+        same(400, $call('POST', "/api/worlds/$id/join", ['nickname' => 'fuck'])['status'], 'Offensive nickname.');
         same(404, $call('GET', '/api/worlds/nope')['status']);
         same(400, $call('POST', "/api/worlds/$id/join", null)['status']);
         same('The Public World', $call('GET', '/api/worlds/public')['body']['world']['name']);
