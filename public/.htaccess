@@ -1,4 +1,4 @@
-# Burned Words routing for Apache (cPanel). Point the subdomain's document root at this folder.
+# Unsaid routing for Apache (cPanel). Point the subdomain's document root at this folder.
 DirectoryIndex index.html
 Options -Indexes
 

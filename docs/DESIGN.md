@@ -1,6 +1,6 @@
-# Burned Words — Design
+# Unsaid — Design
 
-> Every word anyone plays is gone. For everyone. Forever.
+> Every word you play, no one can say again.
 
 A word game where each world starts with the same dictionary, and every word a
 player uses is permanently removed from it. Easy words go first; as the
@@ -22,7 +22,7 @@ language shrinks, players hunt for rarer words, and those words are worth more.
 - **Public world.** One shared world that anyone can join straight away.
   Later it becomes seasonal (a new world each month).
 - **Private worlds.** Anyone can create one and share the link. Each world
-  burns its own copy of the dictionary.
+  uses up its own copy of the dictionary.
 - **Identity.** A nickname per world. No accounts in the prototype.
 
 ## How you play
@@ -32,17 +32,22 @@ language shrinks, players hunt for rarer words, and those words are worth more.
 2. You type words. A word is accepted if it:
    - is in the dictionary,
    - fits the current prompt, and
-   - hasn't been burned yet.
-3. An accepted word scores points and is **burned for everyone in that world,
-   permanently**, including for all future prompts. It is burned together with
-   its **word family**, so playing *cat* also burns *cats*.
-4. The burned word shows who burned it ("*moon* — burned by Sam").
-5. Each prompt shows a **live counter**: "41 words left that fit".
+   - hasn't been said yet.
+3. An accepted word scores points, and **nobody in that world can say it
+   again**, including in all future prompts. Its **word family** goes with it,
+   so saying *cat* also uses up *cats*.
+4. The game records who said each word ("*moon* — said by Sam").
+5. Each prompt shows a **live counter**: "41 words left unsaid".
 6. The prompt changes when its counter reaches zero, or after its time runs
    out (24 hours by default).
 
-Because burns carry over, later prompts begin with many of their fitting words
+Because said words stay said, later prompts begin with many of their fitting words
 already gone, so the game gets harder as the world ages.
+
+## Naming in the code
+
+The code and database call a said word "burned" (for example the `burns`
+table). Players never see that word.
 
 ## Scoring
 
@@ -54,7 +59,7 @@ points = base × rarity × world multiplier × prompt bonus
 |---|---|---|
 | Base | word length − 2 | 1 for a 3-letter word, 8 for a 10-letter word |
 | Rarity | 1 + 2 × (frequency rank ÷ dictionary size) | ×1 for the most common words, ×3 for the rarest |
-| World multiplier | 1 ÷ (1 − share of the dictionary burned) | ×1 at the start, ×2 at half burned, ×5 at 80% burned (capped at ×10) |
+| World multiplier | 1 ÷ (1 − share of the dictionary said) | ×1 at the start, ×2 at half said, ×5 at 80% said (capped at ×10) |
 | Prompt bonus | words that fit when the prompt began ÷ words that fit now | ×1 when the prompt starts, rising as it runs dry (capped at ×5) |
 
 Points are rounded to whole numbers, with a minimum of 1.
@@ -64,7 +69,7 @@ week doesn't get easier to score in.
 
 **Holding words back.** Because multipliers rise, a player can save a word
 they know and play it later for more points, at the risk that someone else
-burns it first. This is intended.
+says it first. This is intended.
 
 **Balance to watch in testing.** One late, rare word shouldn't outscore a whole
 day of early play. The caps above are the first lever to adjust.
@@ -81,15 +86,15 @@ real pairs missed. That's acceptable for the prototype.
 
 - Prompt types: *starts with*, *ends with*, *contains* (two or three letters).
 - Each new prompt is picked at random, but only from patterns with a sensible
-  number of unburned words (by default 15–200), so prompts are neither trivial
+  number of unsaid words (by default 15–200), so prompts are neither trivial
   nor impossible.
 
 ## Prototype scope
 
 In the first version:
 - Public world plus private worlds by link
-- Nickname join, word submission, burning, word families, scoring, leaderboard
-- Live counter, recent burns, "who burned this word?" lookup
+- Nickname join, word submission, word families, scoring, leaderboard
+- Live counter, recently said words, "who said it?" lookup
 - Prompt rotation on exhaustion or timeout
 
 Not yet:
@@ -99,7 +104,7 @@ Not yet:
 
 ## Open questions
 
-- Should players see their own history of burned words, as a trophy case?
-- Should a world end (when the dictionary is X% burned, or by date), and what
+- Should players see their own history of said words, as a trophy case?
+- Should a world end (when X% of the dictionary is said, or by date), and what
   does the ending look like?
 - Is 24 hours the right prompt length for small friend groups?

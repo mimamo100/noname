@@ -18,7 +18,7 @@ test('HTTP API: create, join, play, look up', function () {
         [1 => ['file', '/dev/null', 'w'], 2 => ['file', '/dev/null', 'w']],
         $pipes,
         null,
-        ['BURNED_WORDS_CONFIG' => $config] + getenv(),
+        ['UNSAID_CONFIG' => $config] + getenv(),
     );
     try {
         $base = "http://127.0.0.1:$port";
@@ -59,7 +59,7 @@ test('HTTP API: create, join, play, look up', function () {
         same(404, $call('GET', '/api/worlds/nope')['status']);
         same(400, $call('POST', "/api/worlds/$id/join", null)['status']);
         same('The Public World', $call('GET', '/api/worlds/public')['body']['world']['name']);
-        check(str_contains($call('GET', "/w/$id")['raw'], 'Burned Words'), 'World page should serve index.html');
+        check(str_contains($call('GET', "/w/$id")['raw'], 'Unsaid'), 'World page should serve index.html');
     } finally {
         proc_terminate($server);
         unlink($config);

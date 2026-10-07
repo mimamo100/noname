@@ -1,12 +1,12 @@
-# Burned Words
+# Unsaid
 
-> Every word anyone plays is gone. For everyone. Forever.
+> Every word you play, no one can say again.
 
 A word game where each world starts with the same dictionary of about 32,000
 common English words. Players type words that fit the current prompt (such as
-*contains "OO"*). Every word played is burned, together with its family
-(*cat* burns *cats*), so nobody in that world can use it again. As the
-language shrinks, scores rise, so clever late players can still catch up.
+*contains "OO"*). Once a word is said, nobody in that world can say it
+again, and its family goes with it (*cat* takes *cats*). As fewer words are
+left unsaid, scores rise, so clever late players can still catch up.
 
 - Game design: [docs/DESIGN.md](docs/DESIGN.md)
 - Putting it on a cPanel host: [docs/DEPLOY.md](docs/DEPLOY.md)
@@ -33,7 +33,7 @@ Composer packages or build steps.
 The tests need an empty database they're allowed to wipe:
 
 ```sh
-TEST_DB_NAME=burned_words_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
+TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 ```
 
 ## Project layout
@@ -41,7 +41,7 @@ TEST_DB_NAME=burned_words_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run
 | Path | What it is |
 |---|---|
 | `public/` | Everything served to the web: the page, browser code, `api.php` and `.htaccess` |
-| `src/Game.php` | Worlds, players, burning and prompt rotation |
+| `src/Game.php` | Worlds, players, playing words and prompt rotation |
 | `src/Dictionary.php`, `src/WordFamilies.php` | Word list, rarity and word families |
 | `src/Prompts.php` | Prompt patterns and the prompt picker |
 | `src/Scoring.php` | Points and multipliers |

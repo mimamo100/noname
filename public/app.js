@@ -1,6 +1,6 @@
 const POLL_MS = 3000;
 const worldId = location.pathname.startsWith('/w/') ? decodeURIComponent(location.pathname.slice(3)) : 'public';
-const tokenKey = `burned-words:token:${worldId}`;
+const tokenKey = `unsaid:token:${worldId}`;
 const $ = (id) => document.getElementById(id);
 
 function getToken() {
@@ -37,7 +37,7 @@ function el(tag, attrs = {}, ...children) {
 }
 
 function render(state) {
-  document.title = `${state.world.name} · Burned Words`;
+  document.title = `${state.world.name} · Unsaid`;
   $('world-name').textContent = state.world.name;
   $('dict-size').textContent = state.dictionary.size.toLocaleString();
   $('dict-burned').textContent = state.dictionary.burned.toLocaleString();
@@ -60,10 +60,10 @@ function render(state) {
   $('join-form').hidden = joined;
 
   $('recent').replaceChildren(...(state.recent.length ? state.recent.map((r) => el('li', {},
-    el('span', { className: 'burnt-word', textContent: r.word }),
+    el('span', { className: 'said-word', textContent: r.word }),
     el('span', { className: 'muted', textContent: ` by ${r.by}${r.familyCount ? ` (+${r.familyCount} family)` : ''}` }),
     el('span', { className: 'points', textContent: `+${r.points}` }),
-  )) : [el('li', { className: 'muted', textContent: 'Nothing burned yet. Be the first.' })]));
+  )) : [el('li', { className: 'muted', textContent: 'Nothing said yet. Be the first.' })]));
 
   $('leaderboard').replaceChildren(...state.leaderboard.map((p) => el('tr', { className: p.nickname === state.me ? 'me' : '' },
     el('td', { textContent: p.nickname }),
@@ -90,8 +90,8 @@ const REASONS = {
   'not-a-word': (w) => `“${w}” isn't in the dictionary.`,
   'doesnt-fit': (w) => `“${w}” doesn't fit the prompt.`,
   'already-burned': (w, r) => r.burned
-    ? `“${w}” is already burned — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''}.`
-    : `“${w}” is already burned.`,
+    ? `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''}.`
+    : `“${w}” has already been said.`,
 };
 
 $('play-form').addEventListener('submit', async (e) => {
@@ -102,8 +102,8 @@ $('play-form').addEventListener('submit', async (e) => {
   try {
     const result = await api(`/${encodeURIComponent(worldId)}/words`, { method: 'POST', body: { word } });
     if (result.ok) {
-      const family = result.alsoBurned.length ? ` Also burned: ${result.alsoBurned.join(', ')}.` : '';
-      feedback(`🔥 “${result.word}” burned for ${result.points} points.${family}`, 'good');
+      const family = result.alsoBurned.length ? ` Gone with it: ${result.alsoBurned.join(', ')}.` : '';
+      feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}. Nobody can say it again.${family}`, 'good');
       input.value = '';
     } else {
       feedback(REASONS[result.reason](result.word, result), 'bad');
@@ -120,7 +120,7 @@ $('join-form').addEventListener('submit', async (e) => {
   try {
     const { token } = await api(`/${encodeURIComponent(worldId)}/join`, { method: 'POST', body: { nickname: $('nickname').value } });
     setToken(token);
-    feedback('Welcome! Start burning words.', 'good');
+    feedback('Welcome! Start saying words.', 'good');
     await refresh();
     $('word').focus();
   } catch (err) {
@@ -135,8 +135,8 @@ $('lookup-form').addEventListener('submit', async (e) => {
   try {
     const r = await api(`/${encodeURIComponent(worldId)}/words/${encodeURIComponent(word)}`);
     $('lookup-result').textContent = !r.inDictionary ? `“${r.word}” isn't in the dictionary.`
-      : r.burned ? `“${r.word}” was burned by ${r.burned.by} on ${new Date(r.burned.at).toLocaleString()}${r.burned.playedWord !== r.word ? ` (with “${r.burned.playedWord}”)` : ''}.`
-      : `“${r.word}” is still alive.`;
+      : r.burned ? `“${r.word}” was said by ${r.burned.by} on ${new Date(r.burned.at).toLocaleString()}${r.burned.playedWord !== r.word ? ` (with “${r.burned.playedWord}”)` : ''}.`
+      : `“${r.word}” is still unsaid.`;
   } catch (err) {
     $('lookup-result').textContent = err.message;
   }

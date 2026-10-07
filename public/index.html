@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Burned Words</title>
+  <title>Unsaid</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header class="top">
-    <a class="brand" href="/">Burned Words</a>
+    <a class="brand" href="/">Unsaid</a>
     <span class="world-name" id="world-name"></span>
     <button class="link" id="copy-link" hidden>Copy invite link</button>
     <button class="link" id="new-world">New private world</button>
@@ -19,10 +19,10 @@
     <section class="prompt-card" aria-live="polite">
       <p class="eyebrow">Current prompt</p>
       <h1 id="prompt-label">Loading…</h1>
-      <div class="counter"><span id="remaining">–</span> <span class="muted">words left that fit</span></div>
+      <div class="counter"><span id="remaining">–</span> <span class="muted">words left unsaid</span></div>
       <div class="meter"><div id="meter-fill"></div></div>
       <div class="stats">
-        <span title="Rises as the whole dictionary is burned">World ×<b id="world-mult">1.0</b></span>
+        <span title="Rises as more of the dictionary is said">World ×<b id="world-mult">1.0</b></span>
         <span title="Rises as this prompt runs dry">Prompt ×<b id="prompt-mult">1.0</b></span>
         <span>Ends in <b id="ends-in">–</b></span>
       </div>
@@ -30,7 +30,7 @@
 
     <form id="play-form" class="play" autocomplete="off" hidden>
       <input id="word" name="word" placeholder="Type a word…" maxlength="30" autocapitalize="off" spellcheck="false" required>
-      <button type="submit">Burn it</button>
+      <button type="submit">Say it</button>
     </form>
     <p id="feedback" class="feedback" role="status"></p>
 
@@ -42,7 +42,7 @@
 
     <div class="columns">
       <section>
-        <h2>Just burned</h2>
+        <h2>Just said</h2>
         <ol id="recent" class="recent"></ol>
       </section>
       <section>
@@ -51,7 +51,7 @@
           <thead><tr><th>Player</th><th>Words</th><th>This prompt</th><th>Total</th></tr></thead>
           <tbody id="leaderboard"></tbody>
         </table>
-        <h2>Who burned it?</h2>
+        <h2>Who said it?</h2>
         <form id="lookup-form" class="lookup" autocomplete="off">
           <input id="lookup" placeholder="Look up any word" maxlength="30" autocapitalize="off" spellcheck="false" required>
           <button type="submit">Look up</button>
@@ -64,12 +64,12 @@
       <summary>How to play</summary>
       <ul>
         <li>Type words that fit the current prompt.</li>
-        <li>Every word you play is <b>burned for everyone in this world, forever</b>, along with its family (<i>cat</i> burns <i>cats</i>).</li>
-        <li>Longer and rarer words score more. Scores rise as the dictionary shrinks and as the prompt runs dry.</li>
-        <li>You can save a word for later when it's worth more, but someone else might burn it first.</li>
+        <li>Once a word is said, <b>nobody in this world can say it again, ever</b>. Its family goes with it: say <i>cat</i> and <i>cats</i> is gone too.</li>
+        <li>Longer and rarer words score more. Scores rise as fewer words are left unsaid, both in the whole dictionary and in the current prompt.</li>
+        <li>You can save a word for later when it's worth more, but someone else might say it first.</li>
         <li>The prompt changes when nothing fits any more, or when its time runs out.</li>
       </ul>
-      <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words burned in this world.</p>
+      <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words said in this world.</p>
     </details>
   </main>
 

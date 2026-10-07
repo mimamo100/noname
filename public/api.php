@@ -1,11 +1,11 @@
 <?php
-// JSON API for Burned Words. Apache sends every /api/... request here (see .htaccess).
+// JSON API for Unsaid. Apache sends every /api/... request here (see .htaccess).
 //
 //   POST /api/worlds                      {name}      create a private world
 //   GET  /api/worlds/{id}                             world state (send X-Player-Token to see "me")
 //   POST /api/worlds/{id}/join            {nickname}  returns a player token
 //   POST /api/worlds/{id}/words           {word}      play a word (needs X-Player-Token)
-//   GET  /api/worlds/{id}/words/{word}                who burned this word?
+//   GET  /api/worlds/{id}/words/{word}                who said this word?
 
 declare(strict_types=1);
 
@@ -56,7 +56,7 @@ function route(Game $game): never
 }
 
 try {
-    $configPath = getenv('BURNED_WORDS_CONFIG') ?: "$root/config.php";
+    $configPath = getenv('UNSAID_CONFIG') ?: "$root/config.php";
     if (!is_file($configPath)) respond(500, ['error' => 'Missing config.php — copy config.example.php and fill in your database details']);
     $config = require $configPath;
     $db = new PDO(
@@ -76,6 +76,6 @@ try {
 } catch (GameError $e) {
     respond($e->status, ['error' => $e->getMessage()]);
 } catch (Throwable $e) {
-    error_log('Burned Words: ' . $e);
+    error_log('Unsaid: ' . $e);
     respond(500, ['error' => 'Something went wrong']);
 }

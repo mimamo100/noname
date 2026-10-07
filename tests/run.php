@@ -1,7 +1,7 @@
 <?php
 // Test runner with no dependencies. Needs an empty MySQL/MariaDB database it can wipe:
 //
-//   TEST_DB_NAME=burned_words_test TEST_DB_USER=bw TEST_DB_PASS=secret php tests/run.php
+//   TEST_DB_NAME=unsaid_test TEST_DB_USER=bw TEST_DB_PASS=secret php tests/run.php
 //
 // Optional: TEST_DB_HOST (default localhost).
 

@@ -75,7 +75,7 @@ section + section h2 ~ h2, .leaderboard + h2 { margin-top: 24px; }
 
 .recent { list-style: none; margin: 0; padding: 0; }
 .recent li { display: flex; gap: 6px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--border); }
-.burnt-word { font-weight: 700; text-decoration: line-through; text-decoration-color: var(--ember); text-decoration-thickness: 2px; }
+.said-word { font-weight: 700; text-decoration: line-through; text-decoration-color: var(--ember); text-decoration-thickness: 2px; }
 .points { margin-left: auto; color: var(--ember); font-variant-numeric: tabular-nums; }
 
 .leaderboard { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }

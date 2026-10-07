@@ -1,4 +1,4 @@
--- Burned Words database schema (MySQL 5.7+ / MariaDB 10.3+).
+-- Unsaid database schema (MySQL 5.7+ / MariaDB 10.3+).
 -- The API creates these tables automatically on first use, so importing
 -- this file in phpMyAdmin is optional.
 
