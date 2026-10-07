@@ -31,9 +31,16 @@ final class WordFamilies
         return array_filter($members, fn (array $m) => count($m) > 1);
     }
 
+    /** Words ending in S that aren't plurals of the word without it ("news" isn't more than one "new"). */
+    private const NOT_PLURALS = [
+        'news', 'goods', 'odds', 'means', 'species', 'series', 'physics', 'politics', 'ethics',
+        'economics', 'mathematics', 'athletics', 'acoustics', 'always', 'perhaps', 'besides', 'towards',
+    ];
+
     /** Candidate roots for a word, most likely first. */
     public static function rootCandidates(string $word): array
     {
+        if (in_array($word, self::NOT_PLURALS, true)) return [];
         $candidates = [];
         if (str_ends_with($word, 'ies')) $candidates[] = substr($word, 0, -3) . 'y';
         if (str_ends_with($word, 's') && !str_ends_with($word, 'ss')) $candidates[] = substr($word, 0, -1); // rates -> rate

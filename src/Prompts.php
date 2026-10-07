@@ -10,6 +10,9 @@ declare(strict_types=1);
  *   starts/ends/contains/lacks <letters>   bookends <letter>   double <letter>
  *   count <letter> <n>   minLen <n>   maxLen <n>   len <n>
  *   alpha (letters in alphabetical order)   oneVowel   onlyVowel <vowel>
+ *
+ * Plurals count as their singular for length rules, so adding an S can't stretch
+ * "brother" into an 8-letter answer. Other rules check the word as typed.
  */
 final class Prompts
 {
@@ -21,7 +24,8 @@ final class Prompts
     /** @return callable(string): bool */
     public static function compile(array $spec, Dictionary $dictionary): callable
     {
-        $tests = array_map(fn (array $rule) => self::ruleTest($rule), $spec['rules'] ?? []);
+        $length = fn (string $w) => strlen($dictionary->singular($w));
+        $tests = array_map(fn (array $rule) => self::ruleTest($rule, $length), $spec['rules'] ?? []);
         $cat = $spec['cat'] ?? null;
         return function (string $word) use ($tests, $cat, $dictionary): bool {
             if ($cat !== null && !$dictionary->inCategory($cat, $word)) return false;
@@ -35,7 +39,7 @@ final class Prompts
         return self::compile($spec, $dictionary)($word);
     }
 
-    private static function ruleTest(array $rule): callable
+    private static function ruleTest(array $rule, callable $length): callable
     {
         [$type, $a, $b] = $rule + [null, null, null];
         return match ($type) {
@@ -46,9 +50,9 @@ final class Prompts
             'bookends' => fn ($w) => strlen($w) > 2 && $w[0] === $a && $w[-1] === $a,
             'double' => fn ($w) => str_contains($w, $a . $a),
             'count' => fn ($w) => substr_count($w, $a) === $b,
-            'minLen' => fn ($w) => strlen($w) >= $a,
-            'maxLen' => fn ($w) => strlen($w) <= $a,
-            'len' => fn ($w) => strlen($w) === $a,
+            'minLen' => fn ($w) => $length($w) >= $a,
+            'maxLen' => fn ($w) => $length($w) <= $a,
+            'len' => fn ($w) => $length($w) === $a,
             'alpha' => function ($w) { $l = str_split($w); $s = $l; sort($s); return $l === $s; },
             'oneVowel' => fn ($w) => strlen($w) - strlen(str_replace(str_split(self::VOWELS), '', $w)) === 1,
             'onlyVowel' => fn ($w) => str_contains($w, $a) && strpbrk($w, str_replace($a, '', self::VOWELS)) === false,
@@ -199,12 +203,14 @@ final class Prompts
         return $order;
     }
 
+    // S is left out of rules that a plural would satisfy for free ("contains S", "two Ss").
+    private const LETTERS_NO_S = 'abcdeghilmnoprtuy';
+
     private static function randomCategoryRule(): array
     {
-        $letter = self::pickOne(str_split('abcdefghiklmnoprstuwy'));
         return match (random_int(1, 6)) {
-            1, 2 => ['starts', $letter],
-            3 => ['contains', $letter],
+            1, 2 => ['starts', self::pickOne(str_split('abcdefghiklmnoprstuwy'))],
+            3 => ['contains', self::pickOne(str_split('abcdefghiklmnoprtuwy'))],
             4 => ['ends', self::pickOne(['y', 'er', 'le', 'et', 'ow', 'ch', 'k', 'n', 'l'])],
             5 => ['lacks', self::pickOne(['e', 'a', 'o', 'r', 's', 't'])],
             6 => random_int(0, 1) ? ['minLen', random_int(7, 9)] : ['len', random_int(4, 6)],
@@ -213,7 +219,7 @@ final class Prompts
 
     private static function randomLetterRules(): array
     {
-        [$x, $y] = self::pickTwo(str_split('abcdeghilmnoprstuy'));
+        [$x, $y] = self::pickTwo(str_split(self::LETTERS_NO_S));
         return match (random_int(1, 8)) {
             1 => [['alpha'], ['minLen', random_int(5, 6)]],
             2 => [['oneVowel'], ['minLen', random_int(6, 7)]],
@@ -221,7 +227,7 @@ final class Prompts
             4 => [['bookends', $x]],
             5 => [['count', $x, 2], ['lacks', $y]],
             6 => [['contains', $x], ['contains', $y], ['maxLen', random_int(5, 6)]],
-            7 => [['double', self::pickOne(str_split('bdefglmnoprst'))], ['minLen', random_int(6, 8)]],
+            7 => [['double', self::pickOne(str_split('bdefglmnoprt'))], ['minLen', random_int(6, 8)]],
             8 => [['starts', $x], ['minLen', random_int(8, 9)], ['lacks', self::pickOne(array_diff(['e', 'a', 'i', 'o'], [$x]))]],
         };
     }

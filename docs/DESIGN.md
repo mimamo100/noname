@@ -104,6 +104,12 @@ word-finder site. There are three kinds:
 - **Size.** A new prompt is only chosen if it has 10–80 distinct answers still
   unsaid, counting a word family once. Late in a world, when nothing fits
   that range, the game takes the richest prompt it can find.
+- **Plurals count as their singular** for length rules and points, so
+  adding an S can't stretch *brother* into an 8-letter answer or earn extra
+  points. Spelling rules (*starts with*, *contains*) check the word as typed,
+  and the game never sets letter rules an S would satisfy for free ("contains
+  S", "two Ss"). Only plurals: *-ing* and *-ed* words such as *building* and
+  *evening* are often words in their own right.
 - **The counter** shows distinct answers left, so saying *apple* (which also
   uses up *apples*) takes it down by one.
 

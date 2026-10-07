@@ -32418,11 +32418,6 @@ return array (
       1 => 'seeing',
       2 => 'sees',
     ),
-    'good' => 
-    array (
-      0 => 'good',
-      1 => 'goods',
-    ),
     'why' => 
     array (
       0 => 'why',
@@ -32571,9 +32566,8 @@ return array (
     'mean' => 
     array (
       0 => 'mean',
-      1 => 'means',
-      2 => 'meaning',
-      3 => 'meanings',
+      1 => 'meaning',
+      2 => 'meanings',
     ),
     'give' => 
     array (
@@ -32755,16 +32749,6 @@ return array (
     array (
       0 => 'better',
       1 => 'betters',
-    ),
-    'new' => 
-    array (
-      0 => 'new',
-      1 => 'news',
-    ),
-    'alway' => 
-    array (
-      0 => 'always',
-      1 => 'alway',
     ),
     'keep' => 
     array (
@@ -35632,11 +35616,6 @@ return array (
       0 => 'boyfriend',
       1 => 'boyfriends',
     ),
-    'beside' => 
-    array (
-      0 => 'besides',
-      1 => 'beside',
-    ),
     'queen' => 
     array (
       0 => 'queen',
@@ -37231,11 +37210,6 @@ return array (
     array (
       0 => 'meat',
       1 => 'meats',
-    ),
-    'toward' => 
-    array (
-      0 => 'towards',
-      1 => 'toward',
     ),
     'student' => 
     array (
@@ -38961,11 +38935,6 @@ return array (
       0 => 'role',
       1 => 'roles',
     ),
-    'odd' => 
-    array (
-      0 => 'odd',
-      1 => 'odds',
-    ),
     'confuse' => 
     array (
       0 => 'confused',
@@ -40287,11 +40256,6 @@ return array (
       0 => 'sobbing',
       1 => 'sobs',
       2 => 'sob',
-    ),
-    'politic' => 
-    array (
-      0 => 'politics',
-      1 => 'politic',
     ),
     'climb' => 
     array (
@@ -47315,11 +47279,6 @@ return array (
       0 => 'column',
       1 => 'columns',
     ),
-    'economic' => 
-    array (
-      0 => 'economic',
-      1 => 'economics',
-    ),
     'brat' => 
     array (
       0 => 'brat',
@@ -52680,11 +52639,6 @@ return array (
       0 => 'squadron',
       1 => 'squadrons',
     ),
-    'ethic' => 
-    array (
-      0 => 'ethics',
-      1 => 'ethic',
-    ),
     'plumber' => 
     array (
       0 => 'plumber',
@@ -54799,11 +54753,6 @@ return array (
     array (
       0 => 'scorpion',
       1 => 'scorpions',
-    ),
-    'athletic' => 
-    array (
-      0 => 'athletic',
-      1 => 'athletics',
     ),
     'jumper' => 
     array (
@@ -61981,11 +61930,6 @@ return array (
     array (
       0 => 'fanatic',
       1 => 'fanatics',
-    ),
-    'acoustic' => 
-    array (
-      0 => 'acoustic',
-      1 => 'acoustics',
     ),
     'elk' => 
     array (

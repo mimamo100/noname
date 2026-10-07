@@ -76,6 +76,23 @@ final class Dictionary
         return $this->familyOf[$word] ?? $word;
     }
 
+    /**
+     * The singular of a plural in the dictionary ("brothers" -> "brother", "boxes" -> "box",
+     * "cities" -> "city"), or the word itself. Only plurals: "-ing" and "-ed" words are often
+     * words in their own right ("building", "evening").
+     */
+    public function singular(string $word): string
+    {
+        if (!str_ends_with($word, 's') || str_ends_with($word, 'ss')) return $word;
+        $candidates = [substr($word, 0, -1)];
+        if (str_ends_with($word, 'es')) $candidates[] = substr($word, 0, -2);
+        if (str_ends_with($word, 'ies')) $candidates[] = substr($word, 0, -3) . 'y';
+        foreach ($candidates as $candidate) {
+            if ($this->has($candidate) && $this->familyRoot($candidate) === $this->familyRoot($word)) return $candidate;
+        }
+        return $word;
+    }
+
     /** 0 for the most common word, approaching 1 for the rarest. */
     public function rarity(string $word): float
     {

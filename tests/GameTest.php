@@ -7,7 +7,8 @@ const WORDS = [
     'rat', 'rate', 'rates', 'sing', 'singe', 'singing', 'she', 'shed',
     'city', 'cities', 'boot', 'food', 'catch', 'start', 'stare', 'stone', 'stoop',
     'story', 'mood', 'noon', 'zoo', 'zoom', 'robin', 'robins', 'owl', 'stork', 'crow',
-    'almost', 'first', 'floor', 'level', 'yummy', 'gross',
+    'almost', 'first', 'floor', 'level', 'yummy', 'gross', 'brother', 'brothers', 'daughter',
+    'daughters', 'box', 'boxes', 'news', 'new',
 ];
 
 const CATEGORIES = [
@@ -116,6 +117,39 @@ test('prompts are described in plain English', function () {
     same('Letters in alphabetical order, 5+ letters', Prompts::describe(spec(null, ['alpha'], ['minLen', 5]), $d));
     same('Two Ys, no L', Prompts::describe(spec(null, ['count', 'y', 2], ['lacks', 'l']), $d));
     same('Contains G and Y, 5 letters or fewer', Prompts::describe(spec(null, ['contains', 'g'], ['contains', 'y'], ['maxLen', 5]), $d));
+});
+
+test('plurals count as their singular for length rules and points', function () {
+    $d = testDictionary();
+    same('brother', $d->singular('brothers'));
+    same('box', $d->singular('boxes'));
+    same('city', $d->singular('cities'));
+    same('news', $d->singular('news'), 'news is not a plural of new');
+    same('running', $d->singular('running'), 'Only plurals, not -ing forms');
+    $eightPlus = spec(null, ['minLen', 8]);
+    check(!Prompts::matches($eightPlus, $d, 'brothers'), 'brothers is judged as brother: 7 letters');
+    check(Prompts::matches($eightPlus, $d, 'daughter'));
+    check(Prompts::matches($eightPlus, $d, 'daughters'));
+    check(Prompts::matches(spec(null, ['len', 3]), $d, 'boxes'), 'boxes is judged as box');
+    check(Prompts::matches(spec(null, ['contains', 'es']), $d, 'boxes'), 'Spelling rules check the word as typed');
+
+    $game = makeGame();
+    $world = $game->createWorld('Plurals');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'ox']));
+    $p = $game->join($world['id'], 'Pam');
+    same(Scoring::scoreWord('box', $d->rarity('box'), 1, 1), $game->play($world['id'], $p['token'], 'boxes')['points'], 'boxes scores as box');
+});
+
+test('letter rules never ask for an S that a plural would supply', function () {
+    $d = Dictionary::load();
+    for ($i = 0; $i < 300; $i++) {
+        $spec = Prompts::pick($d, [], [], 1, 100000, 1)['spec'];
+        foreach ($spec['rules'] as $rule) {
+            if (in_array($rule[0], ['contains', 'count', 'bookends', 'double'], true)) {
+                check(!str_contains($rule[1], 's'), 'Rule with S: ' . Prompts::describe($spec, $d));
+            }
+        }
+    }
 });
 
 test('counts are of distinct answers, so a family counts once', function () {

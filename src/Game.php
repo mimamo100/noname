@@ -253,7 +253,9 @@ final class Game
             }
 
             $mult = $this->multipliers($worldId, $prompt);
-            $points = Scoring::scoreWord($word, $this->dictionary->rarity($word), $mult['world'], $mult['prompt']);
+            // A plural scores as its singular, so adding an S earns nothing extra.
+            $singular = $this->dictionary->singular($word);
+            $points = Scoring::scoreWord($singular, $this->dictionary->rarity($singular), $mult['world'], $mult['prompt']);
             $family = array_values(array_filter($this->dictionary->family($word), fn ($w) => !isset($burned[$w])));
             $insert = $this->db->prepare('
                 INSERT INTO burns (world_id, word, played_word, player_id, prompt_id, points, burned_at)
