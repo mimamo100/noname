@@ -10,6 +10,7 @@ left unsaid, scores rise, so clever late players can still catch up.
 
 - Game design: [docs/DESIGN.md](docs/DESIGN.md)
 - Putting it on a cPanel host: [docs/DEPLOY.md](docs/DEPLOY.md)
+- Growing to many players: [docs/SCALING.md](docs/SCALING.md)
 
 ## Requirements
 
