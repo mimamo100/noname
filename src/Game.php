@@ -13,6 +13,7 @@ final class Game
 {
     public const DEFAULT_PROMPT_DURATION_MS = 24 * 60 * 60 * 1000;
     public const PUBLIC_WORLD_ID = 'public';
+    public const SPELLINGS = ['both', 'uk', 'us'];
     private const NICKNAME_PATTERN = '/^[\p{L}\p{N}_ -]{1,20}$/u';
     /** Points lost for a guess that doesn't fit the prompt or has already been said. */
     public const PENALTY = 2;
@@ -21,6 +22,8 @@ final class Game
 
     /** @var array<string, array<string, true>> worldId => burned words, cached for this request */
     private array $burnedCache = [];
+    /** @var array<string, array<string, true>> worldId => spellings that world doesn't accept */
+    private array $wrongSpellingsCache = [];
     /** @var callable(): int */
     private $clock;
 
@@ -43,6 +46,10 @@ final class Game
         foreach (array_filter(array_map('trim', explode(';', $sql))) as $statement) {
             $db->exec($statement);
         }
+        // Databases from before UK/US spelling choices.
+        if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'spelling'")->fetch()) {
+            $db->exec("ALTER TABLE worlds ADD COLUMN spelling VARCHAR(4) CHARACTER SET ascii NOT NULL DEFAULT 'both' AFTER prompt_duration_ms");
+        }
         // Databases from before the new prompt types: add the spec columns.
         if (!$db->query("SHOW COLUMNS FROM prompts LIKE 'spec'")->fetch()) {
             $db->exec("ALTER TABLE prompts
@@ -60,12 +67,13 @@ final class Game
 
     // --- Worlds and players ---
 
-    public function createWorld(string $name, ?string $id = null, int $promptDurationMs = self::DEFAULT_PROMPT_DURATION_MS): array
+    public function createWorld(string $name, ?string $id = null, int $promptDurationMs = self::DEFAULT_PROMPT_DURATION_MS, string $spelling = 'both'): array
     {
         $id ??= bin2hex(random_bytes(4));
         $name = mb_substr(trim($name), 0, 40) ?: 'Unnamed world';
-        $this->db->prepare('INSERT INTO worlds (id, name, prompt_duration_ms, created_at) VALUES (?, ?, ?, ?)')
-            ->execute([$id, $name, $promptDurationMs, $this->now()]);
+        if (!in_array($spelling, self::SPELLINGS, true)) throw new GameError(400, 'Spelling must be uk, us or both');
+        $this->db->prepare('INSERT INTO worlds (id, name, prompt_duration_ms, spelling, created_at) VALUES (?, ?, ?, ?, ?)')
+            ->execute([$id, $name, $promptDurationMs, $spelling, $this->now()]);
         $this->currentPrompt($id);
         return $this->world($id);
     }
@@ -142,6 +150,18 @@ final class Game
         return $this->burnedCache[$worldId];
     }
 
+    /** @return array<string, true> spellings this world doesn't accept */
+    private function wrongSpellings(string $worldId): array
+    {
+        return $this->wrongSpellingsCache[$worldId] ??= $this->dictionary->wrongSpellings($this->world($worldId)['spelling'] ?? 'both');
+    }
+
+    /** Words that can't be answers in this world: already said, or spelled the other side's way. */
+    private function unavailable(string $worldId): array
+    {
+        return $this->burned($worldId) + $this->wrongSpellings($worldId);
+    }
+
     public function lookup(string $worldId, string $rawWord): array
     {
         $this->world($worldId);
@@ -185,7 +205,7 @@ final class Game
         $prompt = $stmt->fetch();
         if (!$prompt) return null;
         $prompt['spec'] = self::specOf($prompt);
-        $prompt['remaining'] = Prompts::countUnsaid($prompt['spec'], $this->dictionary, $this->burned($worldId));
+        $prompt['remaining'] = Prompts::countUnsaid($prompt['spec'], $this->dictionary, $this->unavailable($worldId));
         return $prompt['remaining'] > 0 && $this->now() < (int) $prompt['ends_at'] ? $prompt : null;
     }
 
@@ -207,7 +227,7 @@ final class Game
             $stmt->execute([$worldId]);
             $used = [];
             foreach ($stmt->fetchAll() as $row) $used[Prompts::key(self::specOf($row))] = true;
-            $next = Prompts::pick($this->dictionary, $this->burned($worldId), $used, $this->promptMin, $this->promptMax);
+            $next = Prompts::pick($this->dictionary, $this->unavailable($worldId), $used, $this->promptMin, $this->promptMax);
             if (!$next) return null;
             $start = $this->now();
             $this->db->prepare('
@@ -245,6 +265,14 @@ final class Game
             // Typos aren't penalised, but a word that doesn't fit or was already said costs points,
             // so pasting a list of answers from a word-finder site loses more than it gains.
             if (!$this->dictionary->has($word)) return $this->miss($player, $prompt, $word, 'not-a-word', 0);
+            // The other side's spelling ("color" in a UK world): free, with the right spelling.
+            $wrong = $this->wrongSpellings($worldId);
+            if (isset($wrong[$word])) {
+                return $this->miss($player, $prompt, $word, 'wrong-spelling', 0) + [
+                    'spelling' => $this->world($worldId)['spelling'],
+                    'suggestions' => array_values(array_filter($this->dictionary->otherSpellings($word), fn ($w) => !isset($wrong[$w]))),
+                ];
+            }
             if (!Prompts::matches($prompt['spec'], $this->dictionary, $word)) {
                 // Right letters but not on our list for the meaning: our lists have gaps, so no
                 // penalty, and the player can report the word.
@@ -438,7 +466,7 @@ final class Game
         }
 
         return [
-            'world' => ['id' => $world['id'], 'name' => $world['name']],
+            'world' => ['id' => $world['id'], 'name' => $world['name'], 'spelling' => $world['spelling'] ?? 'both'],
             'me' => $me,
             // Only the player's own misses: other players never see them.
             'myMisses' => $myMisses,

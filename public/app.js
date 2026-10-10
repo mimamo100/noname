@@ -44,7 +44,8 @@ function el(tag, attrs = {}, ...children) {
 
 function render(state) {
   document.title = `${state.world.name} · Unsaid`;
-  $('world-name').textContent = state.world.name;
+  const spellingNote = { uk: ' · UK spelling', us: ' · US spelling' }[state.world.spelling] ?? '';
+  $('world-name').textContent = state.world.name + spellingNote;
   $('dict-size').textContent = state.dictionary.size.toLocaleString();
   $('dict-burned').textContent = state.dictionary.burned.toLocaleString();
   $('world-mult').textContent = state.multipliers.world.toFixed(1);
@@ -118,6 +119,7 @@ const MISS_REASONS = {
   'doesnt-fit': "Didn't fit",
   'already-burned': 'Already said',
   'not-in-category': 'Not on our list',
+  'wrong-spelling': 'Other spelling',
 };
 
 // Words reported from the misses list on this device, so the button doesn't come back after a refresh.
@@ -186,6 +188,7 @@ const REASONS = {
   'not-a-word': (w) => `“${w}” isn't in the dictionary.`,
   'doesnt-fit': (w, r) => `“${w}” doesn't fit the prompt.${penaltyText(r)}`,
   'not-in-category': (w, r) => `“${w}” isn't on our list for “${r.category}”. No penalty.`,
+  'wrong-spelling': (w, r) => `This world uses ${r.spelling === 'uk' ? 'UK' : 'US'} spelling${r.suggestions?.length ? `: try “${r.suggestions[0]}”` : ''}. No penalty.`,
   'already-burned': (w, r) => r.burned
     ? `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''}.${penaltyText(r)}`
     : `“${w}” has already been said.${penaltyText(r)}`,
@@ -269,11 +272,18 @@ $('copy-link').addEventListener('click', async () => {
   }
 });
 
-$('new-world').addEventListener('click', async () => {
-  const name = prompt('Name your world (you can share the link with friends):');
-  if (name === null) return;
-  const world = await api('', { method: 'POST', body: { name } });
-  location.href = `/w/${encodeURIComponent(world.id)}`;
+$('new-world').addEventListener('click', () => $('new-world-dialog').showModal());
+$('new-world-cancel').addEventListener('click', () => $('new-world-dialog').close());
+$('new-world-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const spelling = new FormData(e.target).get('spelling');
+  try {
+    const world = await api('', { method: 'POST', body: { name: $('new-world-name').value, spelling } });
+    location.href = `/w/${encodeURIComponent(world.id)}`;
+  } catch (err) {
+    $('new-world-dialog').close();
+    feedback(err.message, 'bad');
+  }
 });
 
 setInterval(refresh, POLL_MS);

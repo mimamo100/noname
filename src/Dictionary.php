@@ -17,6 +17,8 @@ final class Dictionary
     private array $categorySets = [];
     /** @var array<string, true> */
     private array $blocked;
+    /** @var array{usOnly: string[], ukOnly: string[], partners: array<string, string[]>} */
+    private array $spelling;
 
     /**
      * @param string[] $words
@@ -24,8 +26,9 @@ final class Dictionary
      * @param array<string, array{label: string, words: string[]}> $categories
      * @param string[] $blocked
      */
-    public function __construct(array $words, array $families, array $categories = [], array $blocked = [])
+    public function __construct(array $words, array $families, array $categories = [], array $blocked = [], array $spelling = [])
     {
+        $this->spelling = $spelling + ['usOnly' => [], 'ukOnly' => [], 'partners' => []];
         $this->words = $words;
         $this->rank = array_flip($words);
         $this->families = $families;
@@ -39,13 +42,51 @@ final class Dictionary
     public static function load(?string $path = null): self
     {
         $data = require $path ?? dirname(__DIR__) . '/data/dictionary.php';
-        return new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? []);
+        return new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? []);
     }
 
     /** Builds a dictionary directly from a word list (used by tests). */
-    public static function fromWords(array $words, array $categories = [], array $blocked = []): self
+    public static function fromWords(array $words, array $categories = [], array $blocked = [], array $spelling = []): self
     {
-        return new self($words, WordFamilies::build($words), $categories, $blocked);
+        $families = WordFamilies::build($words);
+        // Linked spellings join one family, as the build script does.
+        foreach ($spelling['partners'] ?? [] as $word => $partners) {
+            foreach ($partners as $partner) {
+                $a = self::findFamily($families, $word);
+                $b = self::findFamily($families, $partner);
+                if ($a === $b) continue;
+                $families[$a] = array_values(array_unique(array_merge($families[$a] ?? [$a], $families[$b] ?? [$b])));
+                unset($families[$b]);
+            }
+        }
+        return new self($words, $families, $categories, $blocked, $spelling);
+    }
+
+    private static function findFamily(array $families, string $word): string
+    {
+        foreach ($families as $root => $members) if (in_array($word, $members, true)) return (string) $root;
+        return $word;
+    }
+
+    /**
+     * Words that can't be played in a world with this spelling: in a UK world, US-only
+     * spellings like "color"; in a US world, UK-only ones like "colour".
+     *
+     * @return array<string, true>
+     */
+    public function wrongSpellings(string $spelling): array
+    {
+        return match ($spelling) {
+            'uk' => array_fill_keys($this->spelling['usOnly'], true),
+            'us' => array_fill_keys($this->spelling['ukOnly'], true),
+            default => [],
+        };
+    }
+
+    /** @return string[] other spellings of the word ("colour" for "color") */
+    public function otherSpellings(string $word): array
+    {
+        return $this->spelling['partners'][$word] ?? [];
     }
 
     public function size(): int

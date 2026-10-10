@@ -1,0 +1,9 @@
+# Extra UK/US spelling links that data/spellings.json leaves out, usually because one
+# spelling also has another everyday meaning. Linked spellings count as one answer.
+# Format: one group per line, UK spelling first:  grey gray
+# The first is then UK-only and the rest US-only, for worlds that pick one spelling.
+# Rebuild after editing: php scripts/build-dictionary.php
+
+grey gray
+greys grays
+greyish grayish

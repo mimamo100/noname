@@ -76,11 +76,32 @@
         <li>Longer and rarer words score more. Scores rise as fewer words are left unsaid, both in the whole dictionary and in the current prompt.</li>
         <li>You can save a word for later when it's worth more, but someone else might say it first.</li>
         <li>Careful: a word that doesn't fit, or has already been said, costs 2 points. Typos are free, and so is a real answer missing from our lists: report it so we can add it.</li>
+        <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
         <li>The prompt changes when nothing fits any more, or when its time runs out.</li>
       </ul>
       <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words said in this world.</p>
     </details>
   </main>
+
+  <dialog id="new-world-dialog">
+    <form id="new-world-form" method="dialog">
+      <h2>New private world</h2>
+      <label class="field">Name
+        <input id="new-world-name" maxlength="40" placeholder="e.g. Friday quiz" required>
+      </label>
+      <fieldset class="field">
+        <legend>Spelling</legend>
+        <label><input type="radio" name="spelling" value="both" checked><span>UK and US (<i>colour</i> or <i>color</i>)</span></label>
+        <label><input type="radio" name="spelling" value="uk"><span>UK only (<i>colour</i>)</span></label>
+        <label><input type="radio" name="spelling" value="us"><span>US only (<i>color</i>)</span></label>
+      </fieldset>
+      <p class="muted small">You'll get a link to share with friends.</p>
+      <div class="dialog-buttons">
+        <button type="button" class="link" id="new-world-cancel">Cancel</button>
+        <button type="submit">Create world</button>
+      </div>
+    </form>
+  </dialog>
 
   <script type="module" src="/app.js"></script>
 </body>

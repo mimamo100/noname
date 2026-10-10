@@ -141,6 +141,21 @@ word-finder site. There are three kinds:
   because "close" guesses would give them clues, and public mistakes would
   make people afraid to try things.
 
+## UK and US spelling
+
+- **One answer, either spelling.** *Colour* and *color* (with *colours*,
+  *colored* and so on) are one answer: saying one uses up the other. The pairs
+  come from VarCon (`scripts/build-spellings.php` makes `data/spellings.json`),
+  and whichever spelling the word list lacks is added (about 400 words).
+- **Not every pair is linked.** Spellings that are also everyday words on both
+  sides stay separate, so *tired* doesn't use up *tyre* and *check* doesn't use
+  up *cheque*. Extra links, like *grey*/*gray*, go in `data/spelling-links.txt`.
+- **A choice per private world:** UK and US (the default, and the public
+  world), UK only, or US only. In a UK-only world, *color* gets a free
+  "This world uses UK spelling: try 'colour'". Counters leave out spellings
+  the world doesn't accept.
+- **Missing spellings** can be reported like any missing word.
+
 ## Offensive words
 
 `data/blocklist.txt` lists slurs, strong profanity and explicit sexual terms.

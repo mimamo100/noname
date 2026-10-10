@@ -6,6 +6,8 @@ CREATE TABLE IF NOT EXISTS worlds (
   id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL PRIMARY KEY,
   name VARCHAR(80) NOT NULL,
   prompt_duration_ms BIGINT NOT NULL,
+  -- Which spellings count: 'uk', 'us' or 'both'.
+  spelling VARCHAR(4) CHARACTER SET ascii NOT NULL DEFAULT 'both',
   created_at BIGINT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

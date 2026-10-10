@@ -104,3 +104,14 @@ section + section h2 ~ h2, .leaderboard + h2 { margin-top: 24px; }
 
 .rules { margin-top: 32px; color: var(--muted); }
 .rules summary { cursor: pointer; color: var(--text); }
+
+dialog {
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px; width: min(420px, calc(100vw - 32px));
+}
+dialog::backdrop { background: rgb(0 0 0 / 0.6); }
+dialog h2 { margin-top: 0; }
+.field { display: flex; flex-direction: column; gap: 6px; margin: 0 0 16px; border: 0; padding: 0; }
+.field legend { padding: 0; margin-bottom: 6px; }
+.field label { display: flex; gap: 8px; align-items: center; }
+.dialog-buttons { display: flex; justify-content: flex-end; gap: 16px; align-items: center; }

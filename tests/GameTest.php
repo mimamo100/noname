@@ -8,7 +8,13 @@ const WORDS = [
     'city', 'cities', 'boot', 'food', 'catch', 'start', 'stare', 'stone', 'stoop',
     'story', 'mood', 'noon', 'zoo', 'zoom', 'robin', 'robins', 'owl', 'stork', 'crow',
     'almost', 'first', 'floor', 'level', 'yummy', 'gross', 'brother', 'brothers', 'daughter',
-    'daughters', 'box', 'boxes', 'news', 'new', 'squash', 'chess', 'sofa',
+    'daughters', 'box', 'boxes', 'news', 'new', 'squash', 'chess', 'sofa', 'colour', 'colours', 'color', 'colors',
+];
+
+const SPELLING = [
+    'usOnly' => ['color', 'colors'],
+    'ukOnly' => ['colour', 'colours'],
+    'partners' => ['colour' => ['color'], 'color' => ['colour'], 'colours' => ['colors'], 'colors' => ['colours']],
 ];
 
 const CATEGORIES = [
@@ -21,7 +27,7 @@ const BLOCKED = ['gross'];
 
 function testDictionary(): Dictionary
 {
-    return Dictionary::fromWords(WORDS, CATEGORIES, BLOCKED);
+    return Dictionary::fromWords(WORDS, CATEGORIES, BLOCKED, SPELLING);
 }
 
 function makeGame(?callable $clock = null): Game
@@ -323,6 +329,53 @@ test('the admin can accept, dismiss and undo reported words', function () {
     same(2, $admin->stats()['players']);
 });
 
+test('UK and US spellings are one answer', function () {
+    $d = testDictionary();
+    same(['color', 'colors', 'colour', 'colours'], sorted($d->family('colour')));
+    $game = makeGame();
+    $world = $game->createWorld('Both');
+    setPrompt($game, $world['id'], spec(null, ['starts', 'co'])); // colour and cool, so it doesn't run dry.
+    $a = $game->join($world['id'], 'Ann');
+    check($game->play($world['id'], $a['token'], 'colour')['ok']);
+    $again = $game->play($world['id'], $a['token'], 'color');
+    same('already-burned', $again['reason'], 'color was used up by colour');
+    same('colour', $again['burned']['playedWord']);
+});
+
+test('a UK or US world turns the other spelling away, free, with a suggestion', function () {
+    $game = makeGame();
+    $uk = $game->createWorld('UK', null, Game::DEFAULT_PROMPT_DURATION_MS, 'uk');
+    same('uk', $game->state($uk['id'], null)['world']['spelling']);
+    setPrompt($game, $uk['id'], spec(null, ['starts', 'co']));
+    $p = $game->join($uk['id'], 'Pip');
+    $wrong = $game->play($uk['id'], $p['token'], 'color');
+    same('wrong-spelling', $wrong['reason']);
+    same(0, $wrong['penalty']);
+    same('uk', $wrong['spelling']);
+    same(['colour'], $wrong['suggestions']);
+    check($game->play($uk['id'], $p['token'], 'colour')['ok']);
+
+    // Counts leave out spellings the world doesn't accept: in a US world nothing starting
+    // "colo" contains a U, so "colour" isn't counted as an answer left.
+    $us = $game->createWorld('US', null, Game::DEFAULT_PROMPT_DURATION_MS, 'us');
+    setPrompt($game, $us['id'], spec(null, ['contains', 'ou'], ['starts', 'col']));
+    same(0, Prompts::countUnsaid(spec(null, ['contains', 'ou'], ['starts', 'col']), testDictionary(), testDictionary()->wrongSpellings('us')));
+    same(1, Prompts::countUnsaid(spec(null, ['contains', 'ou'], ['starts', 'col']), testDictionary(), testDictionary()->wrongSpellings('both')));
+
+    throwsStatus(400, fn () => $game->createWorld('French', null, Game::DEFAULT_PROMPT_DURATION_MS, 'fr'));
+});
+
+test('the real dictionary links UK and US spellings', function () {
+    $d = Dictionary::load();
+    check(in_array('color', $d->family('colours'), true), 'colours and color are one answer');
+    check(in_array('gray', $d->family('grey'), true), 'Hand-linked grey and gray');
+    check(!in_array('tyre', $d->family('tired'), true), 'tired is not tyre');
+    check($d->has('jewellery') && $d->has('jewelry'), 'Missing spellings are added');
+    check($d->inCategory('clothing', 'jewellery'), 'Added spellings join their partner’s categories');
+    check(isset($d->wrongSpellings('uk')['color']) && isset($d->wrongSpellings('us')['colour']));
+    same([], $d->wrongSpellings('both'));
+});
+
 test('wrong guesses cost points, typos are free', function () {
     $game = makeGame();
     $world = $game->createWorld('Penalties');
@@ -442,8 +495,10 @@ test('older databases are upgraded and their prompts keep working', function () 
     $db->exec("INSERT INTO worlds (id, name, prompt_duration_ms, created_at) VALUES ('old', 'Old', 86400000, 0)");
     $db->exec("INSERT INTO prompts (world_id, type, letters, available_at_start, started_at, ends_at) VALUES ('old', 'contains', 'oo', 9, 0, 999999999)");
 
+    $db->exec('ALTER TABLE worlds DROP COLUMN spelling');
     Game::installSchema($db);
     Game::installSchema($db); // Running it twice is harmless.
+    check((bool) $db->query("SHOW COLUMNS FROM worlds LIKE 'spelling'")->fetch(), 'Spelling column added');
     $game = new Game($db, testDictionary(), fn () => 1_000);
     same('Contains OO', $game->state('old', null)['prompt']['label']);
     $p = $game->join('old', 'Olive');

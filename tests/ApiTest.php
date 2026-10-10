@@ -38,6 +38,8 @@ test('HTTP API: create, join, play, look up', function () {
             return ['status' => (int) $m[1], 'body' => json_decode($response, true), 'raw' => $response];
         };
 
+        same('uk', $call('POST', '/api/worlds', ['name' => 'Brits', 'spelling' => 'uk'])['body']['spelling']);
+        same(400, $call('POST', '/api/worlds', ['name' => 'Nope', 'spelling' => 'fr'])['status']);
         $created = $call('POST', '/api/worlds', ['name' => 'Friends']);
         same(201, $created['status'], 'Create world.');
         $id = $created['body']['id'];

@@ -1,7 +1,7 @@
 <?php
 // JSON API for Unsaid. Apache sends every /api/... request here (see .htaccess).
 //
-//   POST /api/worlds                      {name}      create a private world
+//   POST /api/worlds                      {name, spelling}  create a private world (spelling: uk, us or both)
 //   GET  /api/worlds/{id}                             world state (send X-Player-Token to see "me")
 //   POST /api/worlds/{id}/join            {nickname}  returns a player token
 //   POST /api/worlds/{id}/words           {word}      play a word (needs X-Player-Token)
@@ -49,7 +49,10 @@ function route(Game $game): never
 
     if ($worldId === Game::PUBLIC_WORLD_ID) $game->ensureWorld(Game::PUBLIC_WORLD_ID, 'The Public World');
 
-    if ($method === 'POST' && $worldId === null) respond(201, $game->createWorld((string) (body()['name'] ?? '')));
+    if ($method === 'POST' && $worldId === null) {
+        $body = body();
+        respond(201, $game->createWorld((string) ($body['name'] ?? ''), null, Game::DEFAULT_PROMPT_DURATION_MS, (string) ($body['spelling'] ?? 'both')));
+    }
     if ($worldId === null) throw new GameError(404, 'Not found');
     if ($method === 'GET' && $action === null) respond(200, $game->state($worldId, $token));
     if ($method === 'POST' && $action === 'join') respond(201, $game->join($worldId, (string) (body()['nickname'] ?? '')));

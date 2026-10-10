@@ -49,6 +49,8 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 | `data/words.txt` | The word list, most common first |
 | `data/extra-words.txt` | Words added by hand that the main list misses (editable) |
 | `data/blocklist.txt` | Offensive words that can never be played (editable) |
+| `data/spellings.json` | UK/US spelling pairs, generated from VarCon by `scripts/build-spellings.php` |
+| `data/spelling-links.txt` | Extra UK/US spelling pairs (editable) |
 | `data/categories.json` | Meaning categories, generated from WordNet by `scripts/build-categories.py` |
 | `data/category-overrides.txt` | Hand corrections to the categories (editable) |
 | `data/dictionary.php` | The file the game reads, generated from all of the above |
@@ -80,6 +82,12 @@ php scripts/build-dictionary.php
   built from OpenSubtitles (CC BY-SA 4.0)
 
 The word list is therefore shared under CC BY-SA 4.0.
+
+UK/US spellings come from [VarCon](http://wordlist.aspell.net/varcon-readme.html):
+Copyright 2000-2019 by Kevin Atkinson and 2016 by Benjamin Titze, with permission
+to use, copy, modify, distribute and sell it for any purpose without fee, provided
+the copyright notice and permission notice appear in supporting documentation.
+VarCon is based on Ispell word lists, Copyright 1993 Geoff Kuenning.
 
 The meaning categories are built with [WordNet](https://wordnet.princeton.edu/)
 (Princeton University, WordNet 3.0 licence), and the blocklist was reviewed
