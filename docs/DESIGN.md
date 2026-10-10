@@ -204,6 +204,12 @@ Not yet:
 
 ## Ideas for later
 
+- **Account names:** suggest alternatives when a name is taken ("Ann 7");
+  let players change their name; let the admin rename an account or merge an
+  old unclaimed player into one (for someone who switched browsers before
+  signing in); and pre-fill a new account's name with the old nickname this
+  browser played under.
+
 - **Private worlds as a paid subscription.** Today anyone can create private
   worlds for free, without an account. A subscription would need: accounts
   (email sign-in), payments (for example Stripe or PayPal), world ownership
