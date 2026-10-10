@@ -57,7 +57,7 @@ function route(Game $game): never
 
 try {
     $configPath = getenv('UNSAID_CONFIG') ?: "$root/config.php";
-    if (!is_file($configPath)) respond(500, ['error' => 'Missing config.php — copy config.example.php and fill in your database details']);
+    if (!is_file($configPath)) respond(500, ['error' => 'Missing config.php — copy config.example.php and fill in your database details. Visit /check.php for help.']);
     $config = require $configPath;
     $db = new PDO(
         "mysql:host={$config['db_host']};dbname={$config['db_name']};charset=utf8mb4",
@@ -78,5 +78,5 @@ try {
     respond($e->status, ['error' => $e->getMessage()]);
 } catch (Throwable $e) {
     error_log('Unsaid: ' . $e);
-    respond(500, ['error' => 'Something went wrong']);
+    respond(500, ['error' => 'Something went wrong on the server. Visit /check.php, or see the error_log file.']);
 }

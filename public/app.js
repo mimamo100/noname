@@ -16,7 +16,13 @@ async function api(path, { method = 'GET', body } = {}) {
   const headers = { 'Content-Type': 'application/json' };
   if (memoryToken) headers['X-Player-Token'] = memoryToken;
   const res = await fetch(`/api/worlds${path}`, { method, headers, body: body && JSON.stringify(body) });
-  const data = await res.json();
+  let data;
+  try {
+    data = await res.json();
+  } catch {
+    // Not JSON: the request never reached the game's PHP code (missing .htaccess, old PHP, wrong document root).
+    throw Object.assign(new Error(`The game's server isn't responding properly (HTTP ${res.status}). Visit /check.php to find out why.`), { status: res.status });
+  }
   if (!res.ok) throw Object.assign(new Error(data.error ?? 'Request failed'), { status: res.status });
   return data;
 }
@@ -73,11 +79,16 @@ function render(state) {
   )));
 }
 
+let lastStateLoaded = false;
+
 async function refresh() {
   try {
     render(await api(`/${encodeURIComponent(worldId)}`));
+    lastStateLoaded = true;
   } catch (err) {
-    if (err.status === 404) $('prompt-label').textContent = 'World not found';
+    if (lastStateLoaded) return; // A brief hiccup while playing: keep showing the game and retry on the next poll.
+    $('prompt-label').textContent = err.status === 404 && err.message === 'World not found' ? 'World not found' : 'Something went wrong';
+    feedback(err.message, 'bad');
   }
 }
 

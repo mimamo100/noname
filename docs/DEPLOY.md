@@ -3,8 +3,8 @@
 This puts Unsaid on a subdomain such as `unsaid.yourdomain.com`. It
 doesn't touch anything else on the account, such as your existing sites.
 
-**Requirements:** PHP 8.1 or later with the `pdo_mysql` extension, and MySQL
-5.7+ or MariaDB 10.3+. Most cPanel hosts have both.
+**Requirements:** PHP 8.1 or later with the `pdo_mysql` and `mbstring`
+extensions, and MySQL 5.7+ or MariaDB 10.3+. Most cPanel hosts have these.
 
 ## 1. Upload the files
 
@@ -63,11 +63,16 @@ invite link** to share it.
 
 ## Troubleshooting
 
+**Start by visiting `https://unsaid.yourdomain.com/check.php`.** It tests the
+PHP version, extensions, files, `config.php` and the database connection, and
+says how to fix anything that fails. Delete `public/check.php` once the game
+works, because it shows details about your server.
+
 | What you see | Likely cause |
 |---|---|
 | "Missing config.php" | Step 4: the file must be in `unsaid/`, not in `public/`. |
 | "Something went wrong" | Usually wrong database details. Check `unsaid/public/error_log` or cPanel's **Errors** page for the exact message. |
-| The page loads but says "Loading…" forever, or `/api/...` gives a 404 | The `.htaccess` file wasn't extracted or `mod_rewrite` is off. Turn on **Show Hidden Files** in File Manager's settings and check `public/.htaccess` exists. |
+| "The game's server isn't responding properly" | The game's PHP code isn't being reached. Usually PHP is older than 8.1 (step 5), or `public/.htaccess` is missing: turn on **Show Hidden Files** in File Manager's settings and check it exists. If `check.php` passes, visit `/api/worlds/public` and send what it shows. |
 | A page full of PHP errors about syntax | PHP is older than 8.1. Redo step 5. |
 | The browser warns that the site isn't secure | AutoSSL hasn't finished. Wait, or rerun step 6. |
 

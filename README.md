@@ -13,7 +13,7 @@ left unsaid, scores rise, so clever late players can still catch up.
 
 ## Requirements
 
-PHP 8.1+ with `pdo_mysql`, and MySQL 5.7+ or MariaDB 10.3+. There are no
+PHP 8.1+ with `pdo_mysql` and `mbstring`, and MySQL 5.7+ or MariaDB 10.3+. There are no
 Composer packages or build steps.
 
 ## Running it locally
