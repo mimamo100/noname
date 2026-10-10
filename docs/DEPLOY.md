@@ -46,6 +46,9 @@ it runs.
 ## 5. Check the PHP version
 
 1. Go to **MultiPHP Manager**, tick the subdomain, and choose PHP 8.1 or later.
+   Some servers ignore this setting, so `public/.htaccess` also selects cPanel's
+   PHP 8.1 (`ea-php81`). To use a newer PHP, change `ea-php81` there to, for
+   example, `ea-php83`.
 2. If your host has **Select PHP Version** (CloudLinux), check under
    **Extensions** that `pdo_mysql` is ticked.
 
