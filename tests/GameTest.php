@@ -268,10 +268,59 @@ test("a real word missing from a meaning list costs nothing and can be reported"
     same(true, $game->report($world['id'], $p['token'], 'Sofa')['ok'], 'Reporting twice is harmless');
     $rows = gameDb($game)->query('SELECT category, word FROM reports')->fetchAll(PDO::FETCH_ASSOC);
     same([['category' => 'sport', 'word' => 'sofa']], $rows);
-    throwsStatus(400, fn () => $game->report($world['id'], $p['token'], 'xyzzy'));
+    throwsStatus(400, fn () => $game->report($world['id'], $p['token'], 'x1'), 'Only proper words can be reported');
 
     setPrompt($game, $world['id'], spec(null, ['starts', 's']));
-    throwsStatus(400, fn () => $game->report($world['id'], $p['token'], 'sofa'), 'Only meaning prompts take reports');
+    throwsStatus(400, fn () => $game->report($world['id'], $p['token'], 'sofa'), 'A word already in the dictionary has nothing to report on a letters prompt');
+    same(true, $game->report($world['id'], $p['token'], 'netball')['ok'], 'Words missing from the dictionary can be reported on any prompt');
+});
+
+test('the admin can accept, dismiss and undo reported words', function () {
+    $clock = 5_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $db = gameDb($game);
+    $world = $game->createWorld('Admin');
+    setPrompt($game, $world['id'], spec('sport'));
+    $p = $game->join($world['id'], 'Ann');
+    $q = $game->join($world['id'], 'Bea');
+    same('not-in-category', $game->play($world['id'], $p['token'], 'sofa')['reason']);
+    $game->report($world['id'], $p['token'], 'sofa');
+    $game->report($world['id'], $q['token'], 'sofa');
+    $game->report($world['id'], $p['token'], 'netball');
+
+    $admin = new Admin($db, testDictionary(), fn () => $clock);
+    $reports = $admin->openReports();
+    same(['sofa', 'netball'], array_column($reports, 'word'), 'Most-reported first');
+    same(2, $reports[0]['reports']);
+    same(2, $reports[0]['players']);
+    same('A sport or game', $reports[0]['categoryLabel']);
+    same(['A sport or game'], $reports[0]['prompts']);
+    same(false, $reports[1]['inDictionary']);
+
+    // Accepting makes the word count straight away, for a fresh request.
+    $admin->decide('sport', 'sofa', 'accepted');
+    $admin->decide('sport', 'netball', 'dismissed');
+    same([], $admin->openReports());
+    $fresh = new Game($db, testDictionary(), fn () => $clock, promptMin: 1, promptMax: 1000);
+    $fresh->applyWordDecisions();
+    check($fresh->play($world['id'], $q['token'], 'sofa')['ok'], 'An accepted word counts');
+
+    // An accepted word that wasn't in the dictionary is added to it.
+    $admin->decide(Admin::DICTIONARY_ONLY, 'Zorbing', 'accepted');
+    $dictionary = testDictionary();
+    (new Game($db, $dictionary, fn () => $clock))->applyWordDecisions();
+    check($dictionary->has('zorbing'));
+
+    // Undo brings a dismissed report back.
+    $admin->undo('sport', 'netball');
+    same(['netball'], array_column($admin->openReports(), 'word'));
+    same(['zorbing', 'sofa'], array_column(array_filter($admin->decisions(), fn ($d) => $d['decision'] === 'accepted'), 'word'));
+
+    throwsStatus(400, fn () => $admin->decide('sport', 'gross', 'accepted'), 'Blocked words stay blocked');
+    throwsStatus(400, fn () => $admin->decide('nope', 'sofa', 'accepted'));
+    throwsStatus(400, fn () => $admin->decide('sport', 'two words', 'accepted'));
+    same(1, $admin->stats()['openReports']);
+    same(2, $admin->stats()['players']);
 });
 
 test('wrong guesses cost points, typos are free', function () {

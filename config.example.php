@@ -6,4 +6,6 @@ return [
     'db_name' => 'cpaneluser_unsaid',
     'db_user' => 'cpaneluser_game',
     'db_pass' => 'change-me',
+    // Password for the admin page at /admin. Leave empty to turn the admin page off.
+    'admin_password' => '',
 ];

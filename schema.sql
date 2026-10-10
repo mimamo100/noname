@@ -86,3 +86,14 @@ CREATE TABLE IF NOT EXISTS reports (
   FOREIGN KEY (player_id) REFERENCES players(id),
   FOREIGN KEY (prompt_id) REFERENCES prompts(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- The admin's decisions about reported words. Accepted words count straight away:
+-- the game adds them to the dictionary on every request. An empty category means
+-- "add to the dictionary", without a meaning.
+CREATE TABLE IF NOT EXISTS word_decisions (
+  category VARCHAR(20) CHARACTER SET ascii NOT NULL,
+  word VARCHAR(40) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  decision VARCHAR(10) CHARACTER SET ascii NOT NULL,
+  decided_at BIGINT NOT NULL,
+  PRIMARY KEY (category, word)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -141,8 +141,8 @@ function renderMisses(misses, currentPromptId) {
       el('span', { className: m.penalty ? 'points penalty' : 'points free', textContent: m.penalty ? `−${m.penalty}` : 'free' }),
     ));
     // Reports are for the current prompt, so only offer them while it's still running.
-    if (m.reason === 'not-in-category' && m.promptId === currentPromptId) {
-      rows.at(-1).append(reported.has(m.word) ? el('span', { className: 'muted small-note', textContent: 'reported' }) : reportButton(m.word));
+    if (isReportable(m) && m.promptId === currentPromptId) {
+      rows.at(-1).append(reported.has(m.word) ? el('span', { className: 'muted small-note', textContent: 'reported' }) : reportButton(m.word, m.reason));
     }
   }
   $('misses-list').replaceChildren(...rows);
@@ -204,7 +204,7 @@ $('play-form').addEventListener('submit', async (e) => {
       input.value = '';
     } else {
       feedback(REASONS[result.reason](result.word, result), 'bad');
-      if (result.reason === 'not-in-category') $('feedback').append(' ', reportButton(result.word));
+      if (isReportable(result)) $('feedback').append(' ', reportButton(result.word, result.reason));
       input.select();
     }
     refresh();
@@ -213,9 +213,13 @@ $('play-form').addEventListener('submit', async (e) => {
   }
 });
 
-// Lets players tell us when a real answer is missing from a meaning list.
-function reportButton(word) {
-  const button = el('button', { type: 'button', className: 'link', textContent: 'Report it — it should count' });
+// Players can tell us about real answers missing from a meaning list, or real words missing
+// from the dictionary. The admin page (/admin) reviews the reports.
+const isReportable = (r) => r.reason === 'not-in-category' || (r.reason === 'not-a-word' && /^[a-z]{3,30}$/.test(r.word));
+
+function reportButton(word, reason) {
+  const text = reason === 'not-a-word' ? "Report it — it's a real word" : 'Report it — it should count';
+  const button = el('button', { type: 'button', className: 'link', textContent: text });
   button.addEventListener('click', async () => {
     try {
       await api(`/${encodeURIComponent(worldId)}/reports`, { method: 'POST', body: { word } });

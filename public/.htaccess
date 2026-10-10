@@ -12,6 +12,7 @@ Options -Indexes
 RewriteEngine On
 RewriteRule ^api/ api.php [L,QSA]
 RewriteRule ^w/ index.html [L]
+RewriteRule ^admin$ admin.php [L]
 
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|js|css)$">

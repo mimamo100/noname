@@ -8,6 +8,10 @@ if (str_starts_with($path, '/api/')) {
     require __DIR__ . '/api.php';
     return true;
 }
+if ($path === '/admin') {
+    require __DIR__ . '/admin.php';
+    return true;
+}
 if ($path === '/' || str_starts_with($path, '/w/')) {
     readfile(__DIR__ . '/index.html');
     return true;

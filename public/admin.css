@@ -1,0 +1,28 @@
+/* Admin page only; builds on style.css. */
+.admin h1 { font-size: 24px; margin: 8px 0 16px; }
+.admin h2 { margin-top: 32px; }
+.admin-head { display: flex; align-items: baseline; justify-content: space-between; }
+.admin-login, .admin-add { display: flex; gap: 8px; flex-wrap: wrap; max-width: 560px; }
+.admin-login input, .admin-add input { flex: 1 1 12rem; }
+.admin select {
+  background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 12px; font: inherit; flex: 1 1 12rem;
+}
+.inline { display: inline; }
+button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+.flash { padding: 10px 14px; border-radius: 8px; background: var(--surface); }
+.flash.good { color: var(--good); }
+.flash.bad { color: var(--bad); }
+.good { color: var(--good); }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.stat b { display: block; font-size: 24px; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 13px; }
+.table-wrap { overflow-x: auto; }
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th { text-align: left; font-weight: 400; color: var(--muted); font-size: 13px; }
+.admin-table th, .admin-table td { padding: 8px 6px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.admin-table .actions { white-space: nowrap; text-align: right; }
+.admin-table .actions form + form { margin-left: 6px; }
+.admin pre, .admin code { background: var(--surface); padding: 2px 6px; border-radius: 4px; }
+.admin pre { padding: 12px; overflow-x: auto; }

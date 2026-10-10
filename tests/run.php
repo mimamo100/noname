@@ -13,6 +13,7 @@ require "$root/src/Dictionary.php";
 require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
 require "$root/src/Game.php";
+require "$root/src/Admin.php";
 
 $tests = [];
 function test(string $name, callable $fn): void
@@ -59,7 +60,7 @@ function testDbConnection(): PDO
 function testDb(): PDO
 {
     $db = testDbConnection();
-    $db->exec('DROP TABLE IF EXISTS reports, misses, burns, prompts, players, worlds');
+    $db->exec('DROP TABLE IF EXISTS word_decisions, reports, misses, burns, prompts, players, worlds');
     Game::installSchema($db);
     return $db;
 }

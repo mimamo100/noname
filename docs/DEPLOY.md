@@ -87,21 +87,25 @@ database aren't in the zip, so they're kept. If a new version needs database
 changes, the game makes them itself on the first visit, keeping all worlds
 and scores.
 
-## Reviewing reported words
+## The admin page
 
-When players think a word should count for a meaning prompt, they can report
-it. To see the reports, open **phpMyAdmin**, select your database, click
-**SQL** and run:
+The admin page at `https://unsaid.yourdomain.com/admin` shows reported words
+and a few stats. To turn it on, add your own long password to `config.php`:
 
-```sql
-SELECT category, word, COUNT(*) AS reports FROM reports
-GROUP BY category, word ORDER BY reports DESC;
+```php
+'admin_password' => 'choose-a-long-password',
 ```
 
-Send the list to whoever maintains the word data. Good answers go into
-`data/category-overrides.txt` (for example `sport: +squash`). Words missing
-from the dictionary altogether go into `data/extra-words.txt`. Then the
-dictionary is rebuilt.
+On the page you can:
+- **Accept** a reported word: it counts straight away, with no rebuild or upload.
+  A word missing from the dictionary is added to it too.
+- **Dismiss** a report that shouldn't count.
+- **Add a word** nobody has reported, to a meaning or just to the dictionary.
+- **Undo** any decision.
+
+Accepted words are stored in the database. To make them part of the word files
+for good, add them to `data/category-overrides.txt` or `data/extra-words.txt`
+when the game is next updated.
 
 ## Backups
 

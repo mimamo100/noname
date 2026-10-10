@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 final class Dictionary
 {
-    /** @var string[] words, most common first */
-    public readonly array $words;
+    /** @var string[] words, most common first (words added by the admin come last) */
+    public array $words;
     /** @var array<string, int> word => frequency rank */
     private array $rank;
     /** @var array<string, string> word => family root, for words in a family */
@@ -122,6 +122,33 @@ final class Dictionary
     }
 
     /** Whether a word is accepted for a category: a clear answer, or one with another meaning that fits ("squash"). */
+    /**
+     * Adds a word at runtime, from an admin decision stored in the database. It goes at the
+     * end of the list, so it counts as rare. Returns false for blocked or malformed words.
+     */
+    public function addWord(string $word): bool
+    {
+        if ($this->has($word)) return true;
+        if ($this->isBlocked($word) || !preg_match('/^[a-z]{3,30}$/', $word)) return false;
+        $this->rank[$word] = count($this->words);
+        $this->words[] = $word;
+        return true;
+    }
+
+    /** Makes a word a clear answer for a category at runtime, adding it to the dictionary if needed. */
+    public function addToCategory(string $id, string $word): bool
+    {
+        if (!isset($this->categories[$id]) || !$this->addWord($word)) return false;
+        if (!in_array($word, $this->categories[$id]['words'], true)) $this->categories[$id]['words'][] = $word;
+        unset($this->categorySets[$id]);
+        return true;
+    }
+
+    public function hasCategory(string $id): bool
+    {
+        return isset($this->categories[$id]);
+    }
+
     public function inCategory(string $id, string $word): bool
     {
         $this->categorySets[$id] ??= array_fill_keys(

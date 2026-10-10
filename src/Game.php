@@ -190,7 +190,7 @@ final class Game
     }
 
     /** A stored prompt's spec. Prompts from before the spec column were simple letter patterns. */
-    private static function specOf(array $row): array
+    public static function specOf(array $row): array
     {
         if (!empty($row['spec'])) return json_decode($row['spec'], true);
         return ['cat' => null, 'rules' => [[$row['type'], $row['letters']]]];
@@ -293,20 +293,34 @@ final class Game
     }
 
     /**
-     * Records a player's report that a word should count for the current prompt's meaning.
-     * Reports are for reviewing by hand; see docs/DEPLOY.md.
+     * Records a player's report that a word should count: for the current prompt's meaning,
+     * or as a real word missing from the dictionary. The admin page reviews reports.
      */
     public function report(string $worldId, ?string $token, string $rawWord): array
     {
         $player = $this->playerByToken($worldId, $token);
-        $word = mb_substr(strtolower(trim($rawWord)), 0, 40);
+        $word = strtolower(trim($rawWord));
+        if (!preg_match('/^[a-z]{3,30}$/', $word)) throw new GameError(400, 'Only words of 3–30 letters can be reported');
         $prompt = $this->currentPrompt($worldId) ?? throw new GameError(410, 'This world has run out of words');
-        if (!isset($prompt['spec']['cat']) || !$this->dictionary->has($word)) throw new GameError(400, 'Only words in the dictionary can be reported for a meaning prompt');
+        $category = $prompt['spec']['cat'] ?? Admin::DICTIONARY_ONLY;
+        if ($category === Admin::DICTIONARY_ONLY && $this->dictionary->has($word)) {
+            throw new GameError(400, 'That word is already in the dictionary');
+        }
         $this->db->prepare('
             INSERT IGNORE INTO reports (world_id, player_id, prompt_id, category, word, reported_at)
             VALUES (?, ?, ?, ?, ?, ?)')
-            ->execute([$worldId, $player['id'], $prompt['id'], $prompt['spec']['cat'], $word, $this->now()]);
+            ->execute([$worldId, $player['id'], $prompt['id'], $category, $word, $this->now()]);
         return ['ok' => true];
+    }
+
+    /** Adds the words the admin has accepted to this request's dictionary. */
+    public function applyWordDecisions(): void
+    {
+        $rows = $this->db->query("SELECT category, word FROM word_decisions WHERE decision = 'accepted'")->fetchAll();
+        foreach ($rows as $row) {
+            if ($row['category'] === Admin::DICTIONARY_ONLY) $this->dictionary->addWord($row['word']);
+            else $this->dictionary->addToCategory($row['category'], $row['word']);
+        }
     }
 
     /**

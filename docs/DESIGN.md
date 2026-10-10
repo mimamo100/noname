@@ -127,8 +127,9 @@ word-finder site. There are three kinds:
   missing from its list from a wrong one, so it gives the benefit of the
   doubt: these guesses cost nothing but don't score either. If a word has the right letters but
   isn't on our list for the meaning ("sofa" for *A sport or game with no R*),
-  it costs nothing, and the player can press **Report it**. Reports are saved
-  for review, so missing answers can be added to the overrides.
+  it costs nothing, and the player can press **Report it**. Words missing
+  from the dictionary can be reported the same way. The admin page (`/admin`)
+  lists reports, and accepting one makes the word count straight away.
 - Players can make at most **20 guesses a minute**, which stops scripts.
 - Penalties count in both the total and "this prompt" columns of the
   leaderboard.

@@ -53,6 +53,9 @@ if ($hasConfig && extension_loaded('pdo_mysql')) {
         $db->query('CREATE TABLE IF NOT EXISTS unsaid_check (id INT)');
         $db->query('DROP TABLE unsaid_check');
         report(true, 'The database user can create tables');
+        echo empty($config['admin_password'])
+            ? "[ -- ]  Admin page is off (set admin_password in config.php to turn it on)\n"
+            : "[ OK ]  Admin page is on: visit /admin\n";
     } catch (Exception $e) {
         report(false, 'Database: ' . $e->getMessage(),
             'Check the name, user and password in config.php (cPanel adds your account name in front, e.g. myacct_unsaid), '

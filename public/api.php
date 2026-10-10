@@ -16,6 +16,7 @@ require "$root/src/Dictionary.php";
 require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
 require "$root/src/Game.php";
+require "$root/src/Admin.php";
 
 function respond(int $status, array $body): never
 {
@@ -44,6 +45,7 @@ function route(Game $game): never
     [$api, $resource, $worldId, $action, $arg] = array_pad($parts, 5, null);
     if ($api !== 'api' || $resource !== 'worlds') throw new GameError(404, 'Not found');
     $token = $_SERVER['HTTP_X_PLAYER_TOKEN'] ?? null;
+    $game->applyWordDecisions();
 
     if ($worldId === Game::PUBLIC_WORLD_ID) $game->ensureWorld(Game::PUBLIC_WORLD_ID, 'The Public World');
 
