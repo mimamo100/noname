@@ -220,8 +220,9 @@ test('playing a word uses it and its family up for everyone', function () {
     same('Bob', $state['me']);
     same('Contains OO', $state['prompt']['label']);
     same(2, $state['dictionary']['burned']);
-    same('moon', $state['recent'][0]['word']);
-    same(1, $state['recent'][0]['familyCount']);
+    same($state['prompt']['id'], $state['said'][0]['promptId'], 'The current prompt comes first');
+    same('moon', $state['said'][0]['words'][0]['word']);
+    same(1, $state['said'][0]['words'][0]['familyCount']);
     same('Alice', $state['leaderboard'][0]['nickname']);
     same($played['points'], $state['leaderboard'][0]['total']);
 });
@@ -312,6 +313,21 @@ test('players see only their own misses', function () {
     same(['xyzzy'], array_column($game->state($world['id'], $a['token'])['myMisses'], 'word'), "Amy sees only hers");
     same(0, $game->state($world['id'], $a['token'])['myMisses'][0]['penalty']);
     same([], $game->state($world['id'], null)['myMisses'], 'Spectators see none');
+});
+
+test('just said shows every word of the current prompt, then earlier prompts', function () {
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $world = $game->createWorld('Said', null, 60_000);
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $p = $game->join($world['id'], 'Sal');
+    foreach (['moon', 'book', 'cool', 'boot', 'food'] as $w) check($game->play($world['id'], $p['token'], $w)['ok']);
+    $clock += 61_000; // Next prompt.
+    $state = $game->state($world['id'], null);
+    same(2, count($state['said']));
+    same([], $state['said'][0]['words'], 'Nothing said in the new prompt yet');
+    same('Contains OO', $state['said'][1]['prompt']);
+    same(['food', 'boot', 'cool', 'book', 'moon'], array_column($state['said'][1]['words'], 'word'));
 });
 
 test('guesses are rate limited', function () {

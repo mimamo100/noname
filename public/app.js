@@ -65,11 +65,7 @@ function render(state) {
   $('play-form').hidden = !joined || !state.prompt;
   $('join-form').hidden = joined;
 
-  $('recent').replaceChildren(...(state.recent.length ? state.recent.map((r) => el('li', {},
-    el('span', { className: 'said-word', textContent: r.word }),
-    el('span', { className: 'muted', textContent: ` by ${r.by}${r.familyCount ? ` (+${r.familyCount} family)` : ''}` }),
-    el('span', { className: 'points', textContent: `+${r.points}` }),
-  )) : [el('li', { className: 'muted', textContent: 'Nothing said yet. Be the first.' })]));
+  renderSaid(state.said ?? [], state.prompt?.id);
 
   $('tab-misses').hidden = !joined;
   renderMisses(state.myMisses ?? [], state.prompt?.id);
@@ -83,6 +79,39 @@ function render(state) {
 }
 
 let lastStateLoaded = false;
+
+// Earlier prompts the player has expanded, kept open across refreshes.
+const openPrompts = new Set();
+
+function saidList(words, emptyText) {
+  return el('ol', { className: 'recent' }, ...(words.length ? words.map((r) => el('li', {},
+    el('span', { className: 'said-word', textContent: r.word }),
+    el('span', { className: 'muted', textContent: ` by ${r.by}${r.familyCount ? ` (+${r.familyCount} family)` : ''}` }),
+    el('span', { className: 'points', textContent: `+${r.points}` }),
+  )) : [el('li', { className: 'muted', textContent: emptyText })]));
+}
+
+const countText = (n) => `${n} said`;
+
+// The current prompt's words in full, with earlier prompts collapsed underneath.
+function renderSaid(groups, currentPromptId) {
+  const parts = [];
+  for (const group of groups) {
+    if (group.promptId === currentPromptId) {
+      parts.push(el('p', { className: 'group-title', textContent: `This prompt · ${countText(group.words.length)}` }));
+      parts.push(saidList(group.words, 'Nothing said yet. Be the first.'));
+    } else {
+      const details = el('details', { className: 'earlier', open: openPrompts.has(group.promptId) },
+        el('summary', {}, el('span', { textContent: group.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(group.words.length)}` })),
+        saidList(group.words, 'Nothing was said.'));
+      details.addEventListener('toggle', () => (details.open ? openPrompts.add(group.promptId) : openPrompts.delete(group.promptId)));
+      parts.push(details);
+    }
+  }
+  const firstEarlier = parts.findIndex((part) => part.tagName === 'DETAILS');
+  if (firstEarlier >= 0) parts.splice(firstEarlier, 0, el('p', { className: 'group-title earlier-title', textContent: 'Earlier prompts' }));
+  $('recent').replaceChildren(...parts);
+}
 
 const MISS_REASONS = {
   'not-a-word': 'Not in the dictionary',

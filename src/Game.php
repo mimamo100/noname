@@ -309,6 +309,40 @@ final class Game
         return ['ok' => true];
     }
 
+    /**
+     * The words said in the world's latest prompts (the current one first), each with all
+     * its words, newest first. Older prompts' words can still be found with lookup().
+     */
+    private function saidByPrompt(string $worldId, int $prompts = 4): array
+    {
+        $stmt = $this->db->prepare("SELECT id, spec, label, type, letters FROM prompts WHERE world_id = ? ORDER BY id DESC LIMIT $prompts");
+        $stmt->execute([$worldId]);
+        $groups = [];
+        foreach ($stmt->fetchAll() as $row) {
+            $groups[(int) $row['id']] = [
+                'promptId' => (int) $row['id'],
+                'prompt' => $row['label'] ?? Prompts::describe(self::specOf($row), $this->dictionary),
+                'words' => [],
+            ];
+        }
+        if (!$groups) return [];
+        $ids = implode(',', array_keys($groups)); // Integers from the database.
+        $stmt = $this->db->prepare("
+            SELECT b.word, b.points, b.burned_at, b.prompt_id, p.nickname,
+              (SELECT COUNT(*) - 1 FROM burns f WHERE f.world_id = b.world_id AND f.played_word = b.word) AS family_count
+            FROM burns b JOIN players p ON p.id = b.player_id
+            WHERE b.world_id = ? AND b.word = b.played_word AND b.prompt_id IN ($ids)
+            ORDER BY b.id DESC");
+        $stmt->execute([$worldId]);
+        foreach ($stmt->fetchAll() as $r) {
+            $groups[(int) $r['prompt_id']]['words'][] = [
+                'word' => $r['word'], 'points' => (int) $r['points'], 'by' => $r['nickname'],
+                'at' => (int) $r['burned_at'], 'familyCount' => (int) $r['family_count'],
+            ];
+        }
+        return array_values($groups);
+    }
+
     /** A player's most recent wrong guesses, newest first, with the prompt each was for. */
     private function missesOf(int $playerId, int $limit = 50): array
     {
@@ -348,17 +382,7 @@ final class Game
         $prompt = $this->currentPrompt($worldId);
         $mult = $this->multipliers($worldId, $prompt);
 
-        $stmt = $this->db->prepare('
-            SELECT b.word, b.points, b.burned_at, p.nickname,
-              (SELECT COUNT(*) - 1 FROM burns f WHERE f.world_id = b.world_id AND f.played_word = b.word) AS family_count
-            FROM burns b JOIN players p ON p.id = b.player_id
-            WHERE b.world_id = ? AND b.word = b.played_word
-            ORDER BY b.id DESC LIMIT 25');
-        $stmt->execute([$worldId]);
-        $recent = array_map(fn ($r) => [
-            'word' => $r['word'], 'points' => (int) $r['points'], 'by' => $r['nickname'],
-            'at' => (int) $r['burned_at'], 'familyCount' => (int) $r['family_count'],
-        ], $stmt->fetchAll());
+        $said = $this->saidByPrompt($worldId);
 
         // Totals include penalties for wrong guesses, which are stored as negative points.
         $stmt = $this->db->prepare('
@@ -413,7 +437,8 @@ final class Game
             ] : null,
             'multipliers' => $mult,
             'dictionary' => ['size' => $this->dictionary->size(), 'burned' => count($this->burned($worldId))],
-            'recent' => $recent,
+            // Every word said in the current prompt and the few before it, newest prompt first.
+            'said' => $said,
             'leaderboard' => $leaderboard,
             'now' => $this->now(),
         ];
