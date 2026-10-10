@@ -17,7 +17,7 @@ feeling: -fit -fits -affect -affects -surrender -surrenders -torture -tortures -
 weather: -quiet -elements
 landform: -draw -draws -incline -ben -main
 disease: -collapse -collapses -pest -creeps
-sport: -plunge -plunges -ducking -tumbling
+sport: -plunge -plunges -ducking -tumbling +climbing +sailing +karate +fencing +hiking +jogging +yoga +kickboxing +taekwondo +snowboarding +skateboarding +windsurfing +canoeing +kayaking +abseiling +orienteering +paragliding +netball +badminton +volleyball +handball +lacrosse +curling +darts +pool +snooker +bowls
 building: -john
 plant: -cole -alexander
 tool: -bender -sanders

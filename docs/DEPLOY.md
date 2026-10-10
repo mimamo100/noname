@@ -99,7 +99,8 @@ GROUP BY category, word ORDER BY reports DESC;
 ```
 
 Send the list to whoever maintains the word data. Good answers go into
-`data/category-overrides.txt` (for example `sport: +squash`), and then the
+`data/category-overrides.txt` (for example `sport: +squash`). Words missing
+from the dictionary altogether go into `data/extra-words.txt`. Then the
 dictionary is rebuilt.
 
 ## Backups

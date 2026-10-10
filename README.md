@@ -47,6 +47,7 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 | `src/Scoring.php` | Points and multipliers |
 | `schema.sql` | Database tables |
 | `data/words.txt` | The word list, most common first |
+| `data/extra-words.txt` | Words added by hand that the main list misses (editable) |
 | `data/blocklist.txt` | Offensive words that can never be played (editable) |
 | `data/categories.json` | Meaning categories, generated from WordNet by `scripts/build-categories.py` |
 | `data/category-overrides.txt` | Hand corrections to the categories (editable) |
@@ -54,7 +55,8 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 
 ## Changing the word data
 
-After editing `data/blocklist.txt` or `data/category-overrides.txt`, rebuild:
+After editing `data/extra-words.txt`, `data/blocklist.txt` or
+`data/category-overrides.txt`, rebuild:
 
 ```sh
 php scripts/build-dictionary.php

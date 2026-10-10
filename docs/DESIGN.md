@@ -123,7 +123,9 @@ word-finder site. There are three kinds:
   costs 2 points. Pasting a list from a word-finder site mostly hits words
   that are already said, so it loses points.
 - **Typos are free**: a word that isn't in the dictionary costs nothing.
-- **Gaps in our lists are free too.** If a word has the right letters but
+- **Gaps in our lists are free too.** The game can't tell a real answer
+  missing from its list from a wrong one, so it gives the benefit of the
+  doubt: these guesses cost nothing but don't score either. If a word has the right letters but
   isn't on our list for the meaning ("sofa" for *A sport or game with no R*),
   it costs nothing, and the player can press **Report it**. Reports are saved
   for review, so missing answers can be added to the overrides.

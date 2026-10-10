@@ -1,0 +1,17 @@
+# Words added to the dictionary that the main word list misses.
+# One word per line, lowercase letters only. They're treated as rare words
+# (scoring a little more), and the blocklist still applies.
+# To also count a word for a meaning, add it in category-overrides.txt.
+# Rebuild after editing: php scripts/build-dictionary.php
+
+# Sports
+taekwondo
+windsurfing
+abseiling
+orienteering
+paragliding
+netball
+
+# UK spellings missing from the main list
+favourite
+favourites

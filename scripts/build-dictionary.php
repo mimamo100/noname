@@ -1,6 +1,7 @@
 <?php
 // Builds data/dictionary.php, the only data file the game reads, from:
 //   data/words.txt                 the word list, most common first
+//   data/extra-words.txt           hand-added words the list misses
 //   data/blocklist.txt             words that can never be played
 //   data/categories.json           meaning categories (built by scripts/build-categories.py)
 //   data/category-overrides.txt    hand corrections to the categories
@@ -38,6 +39,16 @@ if (in_array('--fetch', $argv, true)) {
 }
 
 $words = array_values(array_filter(array_map('trim', file("$dataDir/words.txt"))));
+
+// Hand-added words go at the end, so they count as rare.
+foreach (readList("$dataDir/extra-words.txt") as $word) {
+    $word = strtolower($word);
+    if (!preg_match('/^[a-z]{3,}$/', $word)) {
+        fwrite(STDERR, "extra-words.txt: \"$word\" must be 3+ lowercase letters\n");
+        exit(1);
+    }
+    if (!in_array($word, $words, true)) $words[] = $word;
+}
 
 // Remove blocked words, together with their families.
 $blocked = [];
