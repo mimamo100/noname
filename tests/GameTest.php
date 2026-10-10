@@ -308,6 +308,7 @@ test('players see only their own misses', function () {
     same(['already-burned', 'doesnt-fit'], array_column($bo, 'reason'));
     same([Game::PENALTY, Game::PENALTY], array_column($bo, 'penalty'));
     same('Contains OO', $bo[0]['prompt']);
+    same($game->state($world['id'], null)['prompt']['id'], $bo[0]['promptId'], 'Misses link to the current prompt');
     same(['xyzzy'], array_column($game->state($world['id'], $a['token'])['myMisses'], 'word'), "Amy sees only hers");
     same(0, $game->state($world['id'], $a['token'])['myMisses'][0]['penalty']);
     same([], $game->state($world['id'], null)['myMisses'], 'Spectators see none');

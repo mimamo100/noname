@@ -81,6 +81,8 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .miss-word { font-weight: 700; }
 .points.penalty { color: var(--bad); }
 .points.free { color: var(--muted); }
+#misses-list li { flex-wrap: wrap; }
+#misses-list button.link, .small-note { flex-basis: 100%; text-align: left; font-size: 13px; }
 h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 8px; }
 section + section h2 ~ h2, .leaderboard + h2 { margin-top: 24px; }
 

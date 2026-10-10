@@ -72,7 +72,7 @@ function render(state) {
   )) : [el('li', { className: 'muted', textContent: 'Nothing said yet. Be the first.' })]));
 
   $('tab-misses').hidden = !joined;
-  renderMisses(state.myMisses ?? []);
+  renderMisses(state.myMisses ?? [], state.prompt?.id);
 
   $('leaderboard').replaceChildren(...state.leaderboard.map((p) => el('tr', { className: p.nickname === state.me ? 'me' : '' },
     el('td', { textContent: p.nickname }),
@@ -91,7 +91,10 @@ const MISS_REASONS = {
   'not-in-category': 'Not on our list',
 };
 
-function renderMisses(misses) {
+// Words reported from the misses list on this device, so the button doesn't come back after a refresh.
+const reported = new Set();
+
+function renderMisses(misses, currentPromptId) {
   if (!misses.length) {
     $('misses-list').replaceChildren(el('li', { className: 'muted', textContent: 'No misses yet. Nice.' }));
     return;
@@ -108,6 +111,10 @@ function renderMisses(misses) {
       el('span', { className: 'muted', textContent: ` ${MISS_REASONS[m.reason] ?? m.reason}` }),
       el('span', { className: m.penalty ? 'points penalty' : 'points free', textContent: m.penalty ? `−${m.penalty}` : 'free' }),
     ));
+    // Reports are for the current prompt, so only offer them while it's still running.
+    if (m.reason === 'not-in-category' && m.promptId === currentPromptId) {
+      rows.at(-1).append(reported.has(m.word) ? el('span', { className: 'muted small-note', textContent: 'reported' }) : reportButton(m.word));
+    }
   }
   $('misses-list').replaceChildren(...rows);
 }
@@ -183,6 +190,7 @@ function reportButton(word) {
   button.addEventListener('click', async () => {
     try {
       await api(`/${encodeURIComponent(worldId)}/reports`, { method: 'POST', body: { word } });
+      reported.add(word);
       button.replaceWith('Thanks, reported.');
     } catch (err) {
       button.replaceWith(err.message);

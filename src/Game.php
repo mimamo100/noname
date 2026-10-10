@@ -405,6 +405,7 @@ final class Game
             // Only the player's own misses: other players never see them.
             'myMisses' => $myMisses,
             'prompt' => $prompt ? [
+                'id' => (int) $prompt['id'],
                 'label' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary),
                 'remaining' => (int) $prompt['remaining'],
                 'availableAtStart' => (int) $prompt['available_at_start'],
