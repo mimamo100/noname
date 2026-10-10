@@ -70,6 +70,17 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 
 .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
 @media (max-width: 700px) { .columns { grid-template-columns: 1fr; } }
+.tabs { display: flex; gap: 16px; margin-bottom: 8px; border-bottom: 1px solid var(--border); }
+.tab {
+  background: none; color: var(--muted); border-radius: 0; padding: 0 0 6px; font-size: 14px;
+  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; border-bottom: 2px solid transparent; margin-bottom: -1px;
+}
+.tab[aria-selected="true"] { color: var(--text); border-bottom-color: var(--ember); }
+.small { font-size: 13px; margin: 0 0 4px; }
+.miss-prompt { color: var(--muted); font-size: 13px; padding-top: 12px !important; border-bottom: 0 !important; }
+.miss-word { font-weight: 700; }
+.points.penalty { color: var(--bad); }
+.points.free { color: var(--muted); }
 h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 8px; }
 section + section h2 ~ h2, .leaderboard + h2 { margin-top: 24px; }
 

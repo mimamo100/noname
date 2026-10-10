@@ -309,6 +309,25 @@ final class Game
         return ['ok' => true];
     }
 
+    /** A player's most recent wrong guesses, newest first, with the prompt each was for. */
+    private function missesOf(int $playerId, int $limit = 50): array
+    {
+        $stmt = $this->db->prepare("
+            SELECT m.word, m.reason, m.points, m.missed_at, m.prompt_id, p.spec, p.label, p.type, p.letters
+            FROM misses m JOIN prompts p ON p.id = m.prompt_id
+            WHERE m.player_id = ?
+            ORDER BY m.id DESC LIMIT $limit");
+        $stmt->execute([$playerId]);
+        return array_map(fn ($r) => [
+            'word' => $r['word'],
+            'reason' => $r['reason'],
+            'penalty' => -(int) $r['points'],
+            'prompt' => $r['label'] ?? Prompts::describe(self::specOf($r), $this->dictionary),
+            'promptId' => (int) $r['prompt_id'],
+            'at' => (int) $r['missed_at'],
+        ], $stmt->fetchAll());
+    }
+
     private function checkRateLimit(array $player): void
     {
         $since = $this->now() - 60_000;
@@ -370,15 +389,21 @@ final class Game
         ], $stmt->fetchAll());
 
         $me = null;
+        $myMisses = [];
         if ($token) {
-            $stmt = $this->db->prepare('SELECT nickname FROM players WHERE world_id = ? AND token = ?');
+            $stmt = $this->db->prepare('SELECT id, nickname FROM players WHERE world_id = ? AND token = ?');
             $stmt->execute([$worldId, $token]);
-            $me = $stmt->fetchColumn() ?: null;
+            if ($player = $stmt->fetch()) {
+                $me = $player['nickname'];
+                $myMisses = $this->missesOf((int) $player['id']);
+            }
         }
 
         return [
             'world' => ['id' => $world['id'], 'name' => $world['name']],
             'me' => $me,
+            // Only the player's own misses: other players never see them.
+            'myMisses' => $myMisses,
             'prompt' => $prompt ? [
                 'label' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary),
                 'remaining' => (int) $prompt['remaining'],

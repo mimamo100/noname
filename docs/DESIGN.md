@@ -130,6 +130,10 @@ word-finder site. There are three kinds:
 - Players can make at most **20 guesses a minute**, which stops scripts.
 - Penalties count in both the total and "this prompt" columns of the
   leaderboard.
+- **My misses** lists a player's own wrong guesses (with the prompt, the
+  reason and any penalty). It's private: other players can't see your misses,
+  because "close" guesses would give them clues, and public mistakes would
+  make people afraid to try things.
 
 ## Offensive words
 

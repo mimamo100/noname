@@ -292,6 +292,27 @@ test('wrong guesses cost points, typos are free', function () {
     same(0, $board['Ben']['words']);
 });
 
+test('players see only their own misses', function () {
+    $game = makeGame();
+    $world = $game->createWorld('Misses');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $a = $game->join($world['id'], 'Amy');
+    $b = $game->join($world['id'], 'Bo');
+    $game->play($world['id'], $a['token'], 'moon');
+    $game->play($world['id'], $b['token'], 'cat');
+    $game->play($world['id'], $b['token'], 'moon');
+    $game->play($world['id'], $a['token'], 'xyzzy');
+
+    $bo = $game->state($world['id'], $b['token'])['myMisses'];
+    same(['moon', 'cat'], array_column($bo, 'word'), 'Newest first');
+    same(['already-burned', 'doesnt-fit'], array_column($bo, 'reason'));
+    same([Game::PENALTY, Game::PENALTY], array_column($bo, 'penalty'));
+    same('Contains OO', $bo[0]['prompt']);
+    same(['xyzzy'], array_column($game->state($world['id'], $a['token'])['myMisses'], 'word'), "Amy sees only hers");
+    same(0, $game->state($world['id'], $a['token'])['myMisses'][0]['penalty']);
+    same([], $game->state($world['id'], null)['myMisses'], 'Spectators see none');
+});
+
 test('guesses are rate limited', function () {
     $game = makeGame();
     $world = $game->createWorld('Fast');

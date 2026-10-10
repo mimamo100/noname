@@ -71,6 +71,9 @@ function render(state) {
     el('span', { className: 'points', textContent: `+${r.points}` }),
   )) : [el('li', { className: 'muted', textContent: 'Nothing said yet. Be the first.' })]));
 
+  $('tab-misses').hidden = !joined;
+  renderMisses(state.myMisses ?? []);
+
   $('leaderboard').replaceChildren(...state.leaderboard.map((p) => el('tr', { className: p.nickname === state.me ? 'me' : '' },
     el('td', { textContent: p.nickname }),
     el('td', { textContent: p.words }),
@@ -81,9 +84,53 @@ function render(state) {
 
 let lastStateLoaded = false;
 
+const MISS_REASONS = {
+  'not-a-word': 'Not in the dictionary',
+  'doesnt-fit': "Didn't fit",
+  'already-burned': 'Already said',
+  'not-in-category': 'Not on our list',
+};
+
+function renderMisses(misses) {
+  if (!misses.length) {
+    $('misses-list').replaceChildren(el('li', { className: 'muted', textContent: 'No misses yet. Nice.' }));
+    return;
+  }
+  const rows = [];
+  let lastPrompt = null;
+  for (const m of misses) {
+    if (m.promptId !== lastPrompt) {
+      rows.push(el('li', { className: 'miss-prompt', textContent: m.prompt }));
+      lastPrompt = m.promptId;
+    }
+    rows.push(el('li', {},
+      el('span', { className: 'miss-word', textContent: m.word }),
+      el('span', { className: 'muted', textContent: ` ${MISS_REASONS[m.reason] ?? m.reason}` }),
+      el('span', { className: m.penalty ? 'points penalty' : 'points free', textContent: m.penalty ? `−${m.penalty}` : 'free' }),
+    ));
+  }
+  $('misses-list').replaceChildren(...rows);
+}
+
+function showTab(name) {
+  const misses = name === 'misses' && !$('tab-misses').hidden;
+  $('tab-recent').setAttribute('aria-selected', String(!misses));
+  $('tab-misses').setAttribute('aria-selected', String(misses));
+  $('recent').hidden = misses;
+  $('misses').hidden = !misses;
+  try { localStorage.setItem('unsaid:tab', misses ? 'misses' : 'recent'); } catch { /* not saved: fine */ }
+}
+$('tab-recent').addEventListener('click', () => showTab('recent'));
+$('tab-misses').addEventListener('click', () => showTab('misses'));
+
 async function refresh() {
   try {
     render(await api(`/${encodeURIComponent(worldId)}`));
+    if (!lastStateLoaded) {
+      let saved = 'recent';
+      try { saved = localStorage.getItem('unsaid:tab') ?? 'recent'; } catch { /* default tab */ }
+      showTab(saved);
+    }
     lastStateLoaded = true;
   } catch (err) {
     if (lastStateLoaded) return; // A brief hiccup while playing: keep showing the game and retry on the next poll.
