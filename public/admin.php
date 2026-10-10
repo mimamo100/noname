@@ -1,6 +1,8 @@
 <?php
 // Admin page: review reported words, accept or dismiss them, add words, see a few stats.
-// Turn it on by setting 'admin_password' in config.php. Visit /admin.
+// Turn it on by setting 'admin_password' in config.php. It answers only at the address set
+// by 'admin_path' (default "admin"); every other address, including /admin.php, gets
+// "Not found", so the page can't be found by guessing.
 
 declare(strict_types=1);
 
@@ -35,9 +37,15 @@ function page(string $title, string $body): never
 $configPath = getenv('UNSAID_CONFIG') ?: "$root/config.php";
 $config = is_file($configPath) ? require $configPath : [];
 $password = (string) ($config['admin_password'] ?? '');
-if ($password === '') {
-    page('Admin', '<h1>Admin is turned off</h1><p>To turn it on, add a line like this to <code>config.php</code>, '
-        . 'using your own long password:</p><pre>\'admin_password\' => \'choose-a-long-password\',</pre>');
+$adminPath = trim((string) ($config['admin_path'] ?? 'admin'), '/');
+$adminUrl = '/' . $adminPath;
+$requested = trim((string) parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+if ($password === '' || !preg_match('/^[A-Za-z0-9_-]{4,64}$/', $adminPath) || !hash_equals($adminPath, $requested)) {
+    // Off, misconfigured (check.php says which), or the wrong address: look like any missing page.
+    http_response_code(404);
+    header('Content-Type: text/plain; charset=utf-8');
+    echo "Not found\n";
+    exit;
 }
 
 session_set_cookie_params([
@@ -58,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'login
     if (hash_equals($password, (string) ($_POST['password'] ?? ''))) {
         session_regenerate_id(true);
         $_SESSION['admin'] = true;
-        header('Location: /admin', true, 303);
+        header("Location: $adminUrl", true, 303);
         exit;
     }
     sleep(2); // Slows down password guessing.
@@ -94,7 +102,7 @@ try {
             case 'logout':
                 $_SESSION = [];
                 session_destroy();
-                header('Location: /admin', true, 303);
+                header("Location: $adminUrl", true, 303);
                 exit;
             case 'accept':
             case 'add':
@@ -110,13 +118,13 @@ try {
                 $_SESSION['flash'] = "Undone: “{$word}”.";
                 break;
         }
-        header('Location: /admin', true, 303); // So refreshing the page doesn't repeat the action.
+        header("Location: $adminUrl", true, 303); // So refreshing the page doesn't repeat the action.
         exit;
     }
 } catch (GameError $e) {
     $_SESSION['flash'] = $e->getMessage();
     $_SESSION['flashBad'] = true;
-    header('Location: /admin', true, 303);
+    header("Location: $adminUrl", true, 303);
     exit;
 } catch (Throwable $e) {
     error_log('Unsaid admin: ' . $e);

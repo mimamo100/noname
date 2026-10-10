@@ -12,7 +12,11 @@ Options -Indexes
 RewriteEngine On
 RewriteRule ^api/ api.php [L,QSA]
 RewriteRule ^w/ index.html [L]
-RewriteRule ^admin$ admin.php [L]
+# Other one-word addresses go to admin.php, which answers only at the admin_path set
+# in config.php and says "Not found" everywhere else.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^[A-Za-z0-9_-]+$ admin.php [L]
 
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|js|css)$">

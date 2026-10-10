@@ -8,8 +8,8 @@ if (str_starts_with($path, '/api/')) {
     require __DIR__ . '/api.php';
     return true;
 }
-if ($path === '/admin') {
-    require __DIR__ . '/admin.php';
+if (preg_match('{^/[A-Za-z0-9_-]+$}', $path) && !is_file(__DIR__ . $path)) {
+    require __DIR__ . '/admin.php'; // Answers only at config.php's admin_path.
     return true;
 }
 if ($path === '/' || str_starts_with($path, '/w/')) {

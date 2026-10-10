@@ -89,12 +89,18 @@ and scores.
 
 ## The admin page
 
-The admin page at `https://unsaid.yourdomain.com/admin` shows reported words
-and a few stats. To turn it on, add your own long password to `config.php`:
+The admin page shows reported words and a few stats. To turn it on, add two
+lines to `config.php`: a long password, and the page's address.
 
 ```php
 'admin_password' => 'choose-a-long-password',
+'admin_path' => 'backstage-7k2q',
 ```
+
+The page is then at `https://unsaid.yourdomain.com/backstage-7k2q`. Choose your
+own `admin_path` that nobody would guess (4–64 letters, numbers, `-` or `_`).
+Every other address, including `/admin`, says "Not found", so people trying the
+obvious learn nothing. Without an `admin_path`, the page is at `/admin`.
 
 On the page you can:
 - **Accept** a reported word: it counts straight away, with no rebuild or upload.

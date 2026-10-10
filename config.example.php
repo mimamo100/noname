@@ -6,6 +6,9 @@ return [
     'db_name' => 'cpaneluser_unsaid',
     'db_user' => 'cpaneluser_game',
     'db_pass' => 'change-me',
-    // Password for the admin page at /admin. Leave empty to turn the admin page off.
+    // The admin page. Leave the password empty to turn it off.
     'admin_password' => '',
+    // The admin page's address: https://your-site/<admin_path>. Pick something nobody
+    // would guess (4-64 letters, numbers, - or _). Every other address says "Not found".
+    'admin_path' => 'admin',
 ];

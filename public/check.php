@@ -53,9 +53,14 @@ if ($hasConfig && extension_loaded('pdo_mysql')) {
         $db->query('CREATE TABLE IF NOT EXISTS unsaid_check (id INT)');
         $db->query('DROP TABLE unsaid_check');
         report(true, 'The database user can create tables');
-        echo empty($config['admin_password'])
-            ? "[ -- ]  Admin page is off (set admin_password in config.php to turn it on)\n"
-            : "[ OK ]  Admin page is on: visit /admin\n";
+        if (empty($config['admin_password'])) {
+            echo "[ -- ]  Admin page is off (set admin_password in config.php to turn it on)\n";
+        } else {
+            $adminPath = trim(isset($config['admin_path']) ? (string) $config['admin_path'] : 'admin', '/');
+            report((bool) preg_match('/^[A-Za-z0-9_-]{4,64}$/', $adminPath), 'Admin page is on, at the admin_path set in config.php',
+                'admin_path must be 4-64 letters, numbers, - or _ (for example backstage-7k2q).');
+            if ($adminPath === 'admin') echo "        Tip: change admin_path in config.php to something nobody would guess.\n";
+        }
     } catch (Exception $e) {
         report(false, 'Database: ' . $e->getMessage(),
             'Check the name, user and password in config.php (cPanel adds your account name in front, e.g. myacct_unsaid), '
