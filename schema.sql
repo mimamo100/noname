@@ -69,3 +69,20 @@ CREATE TABLE IF NOT EXISTS misses (
   FOREIGN KEY (player_id) REFERENCES players(id),
   FOREIGN KEY (prompt_id) REFERENCES prompts(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Words players think should count for a meaning prompt ("squash" for "A sport or game").
+-- Review them in phpMyAdmin and add good ones to data/category-overrides.txt.
+CREATE TABLE IF NOT EXISTS reports (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  world_id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  player_id INT UNSIGNED NOT NULL,
+  prompt_id INT UNSIGNED NOT NULL,
+  category VARCHAR(20) CHARACTER SET ascii NOT NULL,
+  word VARCHAR(40) NOT NULL,
+  reported_at BIGINT NOT NULL,
+  UNIQUE KEY uniq_report (player_id, prompt_id, word),
+  KEY idx_category (category, word),
+  FOREIGN KEY (world_id) REFERENCES worlds(id),
+  FOREIGN KEY (player_id) REFERENCES players(id),
+  FOREIGN KEY (prompt_id) REFERENCES prompts(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -102,6 +102,7 @@ const penaltyText = (r) => (r.penalty ? ` −${r.penalty} ${r.penalty === 1 ? 'p
 const REASONS = {
   'not-a-word': (w) => `“${w}” isn't in the dictionary.`,
   'doesnt-fit': (w, r) => `“${w}” doesn't fit the prompt.${penaltyText(r)}`,
+  'not-in-category': (w, r) => `“${w}” isn't on our list for “${r.category}”. No penalty.`,
   'already-burned': (w, r) => r.burned
     ? `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''}.${penaltyText(r)}`
     : `“${w}” has already been said.${penaltyText(r)}`,
@@ -120,6 +121,7 @@ $('play-form').addEventListener('submit', async (e) => {
       input.value = '';
     } else {
       feedback(REASONS[result.reason](result.word, result), 'bad');
+      if (result.reason === 'not-in-category') $('feedback').append(' ', reportButton(result.word));
       input.select();
     }
     refresh();
@@ -127,6 +129,20 @@ $('play-form').addEventListener('submit', async (e) => {
     feedback(err.message, 'bad');
   }
 });
+
+// Lets players tell us when a real answer is missing from a meaning list.
+function reportButton(word) {
+  const button = el('button', { type: 'button', className: 'link', textContent: 'Report it — it should count' });
+  button.addEventListener('click', async () => {
+    try {
+      await api(`/${encodeURIComponent(worldId)}/reports`, { method: 'POST', body: { word } });
+      button.replaceWith('Thanks, reported.');
+    } catch (err) {
+      button.replaceWith(err.message);
+    }
+  });
+  return button;
+}
 
 $('join-form').addEventListener('submit', async (e) => {
   e.preventDefault();

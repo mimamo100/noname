@@ -11,9 +11,9 @@ final class Dictionary
     private array $familyOf = [];
     /** @var array<string, string[]> root => members */
     private array $families;
-    /** @var array<string, array{label: string, words: string[]}> */
+    /** @var array<string, array{label: string, words: string[], also?: string[]}> */
     private array $categories;
-    /** @var array<string, array<string, true>> category id => set of member words */
+    /** @var array<string, array<string, true>> category id => every accepted word */
     private array $categorySets = [];
     /** @var array<string, true> */
     private array $blocked;
@@ -110,15 +110,24 @@ final class Dictionary
         return $this->categories[$id]['label'] ?? $id;
     }
 
-    /** @return string[] the category's words, most common first */
+    /**
+     * The category's clear answers, most common first. These size prompts and are counted
+     * as "left unsaid".
+     *
+     * @return string[]
+     */
     public function categoryWords(string $id): array
     {
         return $this->categories[$id]['words'] ?? [];
     }
 
+    /** Whether a word is accepted for a category: a clear answer, or one with another meaning that fits ("squash"). */
     public function inCategory(string $id, string $word): bool
     {
-        $this->categorySets[$id] ??= array_fill_keys($this->categoryWords($id), true);
+        $this->categorySets[$id] ??= array_fill_keys(
+            array_merge($this->categoryWords($id), $this->categories[$id]['also'] ?? []),
+            true,
+        );
         return isset($this->categorySets[$id][$word]);
     }
 }

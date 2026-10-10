@@ -245,7 +245,15 @@ final class Game
             // Typos aren't penalised, but a word that doesn't fit or was already said costs points,
             // so pasting a list of answers from a word-finder site loses more than it gains.
             if (!$this->dictionary->has($word)) return $this->miss($player, $prompt, $word, 'not-a-word', 0);
-            if (!Prompts::matches($prompt['spec'], $this->dictionary, $word)) return $this->miss($player, $prompt, $word, 'doesnt-fit', self::PENALTY);
+            if (!Prompts::matches($prompt['spec'], $this->dictionary, $word)) {
+                // Right letters but not on our list for the meaning: our lists have gaps, so no
+                // penalty, and the player can report the word.
+                if (isset($prompt['spec']['cat']) && Prompts::matches(['cat' => null] + $prompt['spec'], $this->dictionary, $word)) {
+                    return $this->miss($player, $prompt, $word, 'not-in-category', 0)
+                        + ['category' => $this->dictionary->categoryLabel($prompt['spec']['cat'])];
+                }
+                return $this->miss($player, $prompt, $word, 'doesnt-fit', self::PENALTY);
+            }
             $burned = $this->burned($worldId);
             if (isset($burned[$word])) {
                 return $this->miss($player, $prompt, $word, 'already-burned', self::PENALTY)
@@ -282,6 +290,23 @@ final class Game
             VALUES (?, ?, ?, ?, ?, ?, ?)')
             ->execute([$player['world_id'], $player['id'], $prompt['id'], $word, $reason, -$penalty, $this->now()]);
         return ['ok' => false, 'word' => $word, 'reason' => $reason, 'penalty' => $penalty];
+    }
+
+    /**
+     * Records a player's report that a word should count for the current prompt's meaning.
+     * Reports are for reviewing by hand; see docs/DEPLOY.md.
+     */
+    public function report(string $worldId, ?string $token, string $rawWord): array
+    {
+        $player = $this->playerByToken($worldId, $token);
+        $word = mb_substr(strtolower(trim($rawWord)), 0, 40);
+        $prompt = $this->currentPrompt($worldId) ?? throw new GameError(410, 'This world has run out of words');
+        if (!isset($prompt['spec']['cat']) || !$this->dictionary->has($word)) throw new GameError(400, 'Only words in the dictionary can be reported for a meaning prompt');
+        $this->db->prepare('
+            INSERT IGNORE INTO reports (world_id, player_id, prompt_id, category, word, reported_at)
+            VALUES (?, ?, ?, ?, ?, ?)')
+            ->execute([$worldId, $player['id'], $prompt['id'], $prompt['spec']['cat'], $word, $this->now()]);
+        return ['ok' => true];
     }
 
     private function checkRateLimit(array $player): void

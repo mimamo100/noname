@@ -87,6 +87,21 @@ database aren't in the zip, so they're kept. If a new version needs database
 changes, the game makes them itself on the first visit, keeping all worlds
 and scores.
 
+## Reviewing reported words
+
+When players think a word should count for a meaning prompt, they can report
+it. To see the reports, open **phpMyAdmin**, select your database, click
+**SQL** and run:
+
+```sql
+SELECT category, word, COUNT(*) AS reports FROM reports
+GROUP BY category, word ORDER BY reports DESC;
+```
+
+Send the list to whoever maintains the word data. Good answers go into
+`data/category-overrides.txt` (for example `sport: +squash`), and then the
+dictionary is rebuilt.
+
 ## Backups
 
 Everything players do is in the database. To back it up, use **phpMyAdmin →

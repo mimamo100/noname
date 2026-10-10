@@ -8,11 +8,12 @@ const WORDS = [
     'city', 'cities', 'boot', 'food', 'catch', 'start', 'stare', 'stone', 'stoop',
     'story', 'mood', 'noon', 'zoo', 'zoom', 'robin', 'robins', 'owl', 'stork', 'crow',
     'almost', 'first', 'floor', 'level', 'yummy', 'gross', 'brother', 'brothers', 'daughter',
-    'daughters', 'box', 'boxes', 'news', 'new',
+    'daughters', 'box', 'boxes', 'news', 'new', 'squash', 'chess', 'sofa',
 ];
 
 const CATEGORIES = [
     'bird' => ['label' => 'A bird', 'words' => ['robin', 'robins', 'owl', 'stork', 'crow']],
+    'sport' => ['label' => 'A sport or game', 'words' => ['chess'], 'also' => ['squash']],
     'animal' => ['label' => 'An animal', 'words' => ['cat', 'cats', 'rat', 'robin', 'robins', 'owl', 'stork', 'crow']],
 ];
 
@@ -79,7 +80,8 @@ test('the real dictionary loads with categories and without blocked words', func
     check($d->inCategory('bird', 'robin'));
     check($d->inCategory('insect', 'fly'), 'fly counts as an insect');
     check($d->inCategory('colour', 'red') && $d->inCategory('colour', 'white'));
-    check(!$d->inCategory('animal', 'does'), 'does is a verb, not a deer');
+    check(!in_array('does', $d->categoryWords('animal'), true), 'does is mostly a verb, so not counted as an animal');
+    check($d->inCategory('sport', 'squash') && $d->inCategory('sport', 'chess'), 'Other meanings that fit are accepted');
     check(!$d->inCategory('animal', 'young'), 'Overrides remove odd members');
 });
 
@@ -232,8 +234,43 @@ test('meaning prompts accept only words in the category', function () {
     same('A bird', $game->state($world['id'], null)['prompt']['label']);
     same(4, $game->state($world['id'], null)['prompt']['remaining']);
     check($game->play($world['id'], $p['token'], 'robin')['ok']);
-    same('doesnt-fit', $game->play($world['id'], $p['token'], 'cat')['reason']);
+    same('not-in-category', $game->play($world['id'], $p['token'], 'cat')['reason'], 'cat is not a bird, but costs nothing');
     same(3, $game->state($world['id'], null)['prompt']['remaining']);
+});
+
+test('words with another meaning that fits are accepted but not counted', function () {
+    $d = testDictionary();
+    check($d->inCategory('sport', 'squash'), 'squash is accepted as a sport');
+    same(1, Prompts::countUnsaid(spec('sport'), $d, []), 'Only clear answers are counted');
+    $game = makeGame();
+    $world = $game->createWorld('Sports');
+    setPrompt($game, $world['id'], spec('sport', ['lacks', 'r']));
+    $p = $game->join($world['id'], 'Sid');
+    check($game->play($world['id'], $p['token'], 'squash')['ok'], 'squash fits "A sport or game with no R"');
+});
+
+test("a real word missing from a meaning list costs nothing and can be reported", function () {
+    $game = makeGame();
+    $world = $game->createWorld('Reports');
+    setPrompt($game, $world['id'], spec('sport', ['lacks', 'r']));
+    $p = $game->join($world['id'], 'Rae');
+
+    $missing = $game->play($world['id'], $p['token'], 'sofa');
+    same('not-in-category', $missing['reason'], 'Right letters, not on the list');
+    same(0, $missing['penalty']);
+    same('A sport or game', $missing['category']);
+    $wrong = $game->play($world['id'], $p['token'], 'robin');
+    same('doesnt-fit', $wrong['reason'], 'Wrong letters still cost points');
+    same(Game::PENALTY, $wrong['penalty']);
+
+    same(true, $game->report($world['id'], $p['token'], 'sofa')['ok']);
+    same(true, $game->report($world['id'], $p['token'], 'Sofa')['ok'], 'Reporting twice is harmless');
+    $rows = gameDb($game)->query('SELECT category, word FROM reports')->fetchAll(PDO::FETCH_ASSOC);
+    same([['category' => 'sport', 'word' => 'sofa']], $rows);
+    throwsStatus(400, fn () => $game->report($world['id'], $p['token'], 'xyzzy'));
+
+    setPrompt($game, $world['id'], spec(null, ['starts', 's']));
+    throwsStatus(400, fn () => $game->report($world['id'], $p['token'], 'sofa'), 'Only meaning prompts take reports');
 });
 
 test('wrong guesses cost points, typos are free', function () {
@@ -307,7 +344,7 @@ test('nicknames are validated, unique per world and not offensive', function () 
 test('older databases are upgraded and their prompts keep working', function () {
     $db = testDb();
     // Recreate the original prompts table, without the spec column.
-    $db->exec('DROP TABLE misses, burns, prompts');
+    $db->exec('DROP TABLE reports, misses, burns, prompts');
     $db->exec("CREATE TABLE prompts (
         id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
         world_id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,

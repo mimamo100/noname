@@ -59,7 +59,7 @@ function testDbConnection(): PDO
 function testDb(): PDO
 {
     $db = testDbConnection();
-    $db->exec('DROP TABLE IF EXISTS misses, burns, prompts, players, worlds');
+    $db->exec('DROP TABLE IF EXISTS reports, misses, burns, prompts, players, worlds');
     Game::installSchema($db);
     return $db;
 }

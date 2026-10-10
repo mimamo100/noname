@@ -97,6 +97,10 @@ word-finder site. There are three kinds:
   colours and so on), built from WordNet by `scripts/build-categories.py`.
   A word counts when its main meaning fits: *fly* is an insect, but *does*
   isn't an animal just because a doe is a deer.
+- **Any meaning counts for accepting an answer.** *Squash* is a sport even
+  though WordNet lists the vegetable first. Only words whose *main* meaning
+  fits are counted in "words left unsaid" and used to size prompts, so
+  obscure meanings don't inflate the counter.
 - **Corrections** go in `data/category-overrides.txt`, for example removing
   *young* from animals or adding *white* to colours. WordNet occasionally
   accepts odd answers (*queen* is an insect, as in queen bee). Accepting a
@@ -119,6 +123,10 @@ word-finder site. There are three kinds:
   costs 2 points. Pasting a list from a word-finder site mostly hits words
   that are already said, so it loses points.
 - **Typos are free**: a word that isn't in the dictionary costs nothing.
+- **Gaps in our lists are free too.** If a word has the right letters but
+  isn't on our list for the meaning ("sofa" for *A sport or game with no R*),
+  it costs nothing, and the player can press **Report it**. Reports are saved
+  for review, so missing answers can be added to the overrides.
 - Players can make at most **20 guesses a minute**, which stops scripts.
 - Penalties count in both the total and "this prompt" columns of the
   leaderboard.

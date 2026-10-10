@@ -58,6 +58,7 @@ test('HTTP API: create, join, play, look up', function () {
         same(401, $call('POST', "/api/worlds/$id/words", ['word' => $word])['status']);
         same(Game::PENALTY, $call('POST', "/api/worlds/$id/words", ['word' => $word], $token)['body']['penalty'], 'Already said.');
         same(400, $call('POST', "/api/worlds/$id/join", ['nickname' => 'fuck'])['status'], 'Offensive nickname.');
+        same(401, $call('POST', "/api/worlds/$id/reports", ['word' => 'sofa'])['status'], 'Reports need a player.');
         same(404, $call('GET', '/api/worlds/nope')['status']);
         same(400, $call('POST', "/api/worlds/$id/join", null)['status']);
         same('The Public World', $call('GET', '/api/worlds/public')['body']['world']['name']);

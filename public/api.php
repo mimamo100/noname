@@ -6,6 +6,7 @@
 //   POST /api/worlds/{id}/join            {nickname}  returns a player token
 //   POST /api/worlds/{id}/words           {word}      play a word (needs X-Player-Token)
 //   GET  /api/worlds/{id}/words/{word}                who said this word?
+//   POST /api/worlds/{id}/reports         {word}      report a word missing from a meaning (needs X-Player-Token)
 
 declare(strict_types=1);
 
@@ -52,6 +53,7 @@ function route(Game $game): never
     if ($method === 'POST' && $action === 'join') respond(201, $game->join($worldId, (string) (body()['nickname'] ?? '')));
     if ($method === 'POST' && $action === 'words') respond(200, $game->play($worldId, $token, (string) (body()['word'] ?? '')));
     if ($method === 'GET' && $action === 'words' && $arg !== null) respond(200, $game->lookup($worldId, $arg));
+    if ($method === 'POST' && $action === 'reports') respond(201, $game->report($worldId, $token, (string) (body()['word'] ?? '')));
     throw new GameError(404, 'Not found');
 }
 

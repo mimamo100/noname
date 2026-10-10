@@ -1,7 +1,7 @@
 # Corrections to the automatically built categories (data/categories.json).
 # Format:  category: +word +word -word
 #   +word  also counts for the category
-#   -word  doesn't count, even though WordNet says it does
+#   -word  doesn't count or isn't accepted, even though WordNet says it should be
 # Words not in the dictionary, or on the blocklist, are ignored.
 # Rebuild after editing: php scripts/build-dictionary.php
 

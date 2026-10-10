@@ -7,10 +7,13 @@ Uses WordNet, so it only runs on a development machine, never on the web server:
     python scripts/build-categories.py
     php scripts/build-dictionary.php
 
-A word belongs to a category when its main meaning is a kind of that category:
-either its most-used noun sense fits (when it's mostly used as a noun), or its
-first listed noun sense fits and WordNet has seen that sense in real text. So
-"dog" and "fly" are animals, but "does" isn't one just because a doe is a deer.
+Each category has two lists:
+  words  clear answers: the word's main meaning fits (its most-used sense if it's
+         mostly a noun, or its first listed sense if WordNet has seen it in real
+         text). These size prompts and are counted as "left unsaid".
+  also   accepted too, because some other meaning fits ("squash" is a sport, though
+         WordNet lists the vegetable first). Not counted, so obscure meanings don't
+         inflate the counter.
 Fix individual words in data/category-overrides.txt rather than here.
 """
 import json
@@ -84,18 +87,29 @@ def main_senses(word):
     return senses
 
 
+def all_senses(word):
+    """Every noun sense of the word, for accepting answers: "squash" the sport, not just the vegetable."""
+    base = wn.morphy(word, wn.NOUN)
+    return set(wn.synsets(base, wn.NOUN)) if base else set()
+
+
 def main():
     words = [w.strip() for w in open(os.path.join(ROOT, 'data', 'words.txt')) if w.strip()]
-    senses = {w: main_senses(w) for w in words}
+    main = {w: main_senses(w) for w in words}
+    every = {w: all_senses(w) for w in words}
     out = {}
     for cat_id, (label, roots) in CATEGORIES.items():
         kinds = set()
         for name in roots:
             root = wn.synset(name)
             kinds |= {root} | set(root.closure(lambda s: s.hyponyms()))
-        members = [w for w in words if senses[w] & kinds]
-        out[cat_id] = {'label': label, 'words': members}
-        print(f'{cat_id:12} {len(members):5}  {", ".join(members[:12])}')
+        # "words" are clear answers, used to size prompts and count what's left.
+        # "also" are words accepted because one of their other meanings fits.
+        members = [w for w in words if main[w] & kinds]
+        member_set = set(members)
+        also = [w for w in words if w not in member_set and every[w] & kinds]
+        out[cat_id] = {'label': label, 'words': members, 'also': also}
+        print(f'{cat_id:12} {len(members):5} +{len(also):4} also  {", ".join(members[:10])}')
     with open(os.path.join(ROOT, 'data', 'categories.json'), 'w') as f:
         json.dump(out, f, indent=1)
     print('Wrote data/categories.json')
