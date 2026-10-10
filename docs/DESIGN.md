@@ -23,7 +23,8 @@ language shrinks, players hunt for rarer words, and those words are worth more.
   Later it becomes seasonal (a new world each month).
 - **Private worlds.** Anyone can create one and share the link. Each world
   uses up its own copy of the dictionary.
-- **Identity.** A nickname per world. No accounts in the prototype.
+- **Accounts.** Everyone needs a free account to play, join or create
+  worlds; anyone can watch. See "Accounts" below.
 
 ## How you play
 
@@ -140,6 +141,24 @@ word-finder site. There are three kinds:
   reason and any penalty). It's private: other players can't see your misses,
   because "close" guesses would give them clues, and public mistakes would
   make people afraid to try things.
+
+## Accounts
+
+- **Signing in** is by email code: enter your email, get a 6-digit code, type
+  it in. New players also choose a name, unique across the game and shown in
+  every world ("Ann 2" if an old player there already has the name).
+- **Once per device.** The device then stays signed in for a year, renewed
+  whenever the player plays, so most players get one email per device.
+- **Limits:** 3 codes per email and 10 per network address an hour, 5 tries
+  per code, and codes expire after 15 minutes. Only hashes of codes and
+  session tokens are stored.
+- **Players from before accounts** are claimed automatically when they sign
+  in on the same browser, keeping their nickname and scores.
+- **World creators** are recorded as owners, ready for owner controls.
+- Emails go through the server's own mail by default, or any SMTP service
+  (`src/Mailer.php`).
+- Not yet: a "prove you're human" check (Cloudflare Turnstile) at sign-up,
+  if bot sign-ups appear.
 
 ## UK and US spelling
 

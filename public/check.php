@@ -53,6 +53,11 @@ if ($hasConfig && extension_loaded('pdo_mysql')) {
         $db->query('CREATE TABLE IF NOT EXISTS unsaid_check (id INT)');
         $db->query('DROP TABLE unsaid_check');
         report(true, 'The database user can create tables');
+        $mail = isset($config['mail']) && is_array($config['mail']) ? $config['mail'] : array();
+        $transport = isset($mail['transport']) ? $mail['transport'] : 'mail';
+        report(!empty($mail['from']), 'Sign-in emails are sent from ' . (!empty($mail['from']) ? $mail['from'] : '(not set)') . " using '$transport'",
+            "Add a 'mail' section to config.php with 'from' set to a real address on your domain (see config.example.php).");
+        if ($transport === 'log') echo "        Warning: 'log' only writes emails to a file. Use 'mail' or 'smtp' for real players.\n";
         if (empty($config['admin_password'])) {
             echo "[ -- ]  Admin page is off (set admin_password in config.php to turn it on)\n";
         } else {

@@ -99,3 +99,39 @@ CREATE TABLE IF NOT EXISTS word_decisions (
   decided_at BIGINT NOT NULL,
   PRIMARY KEY (category, word)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Accounts. Everyone needs one to play; signing in is by a code sent to their email.
+CREATE TABLE IF NOT EXISTS users (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(254) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
+  -- Shown as the player's name in every world. Case-insensitive, so "Ann" and "ann" clash.
+  name VARCHAR(40) NOT NULL,
+  created_at BIGINT NOT NULL,
+  last_seen_at BIGINT NOT NULL,
+  UNIQUE KEY uniq_email (email),
+  UNIQUE KEY uniq_name (name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- One-time sign-in codes. Only a hash of each code is stored.
+CREATE TABLE IF NOT EXISTS login_codes (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(254) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
+  code_hash CHAR(64) CHARACTER SET ascii NOT NULL,
+  ip VARCHAR(45) CHARACTER SET ascii NOT NULL,
+  attempts INT NOT NULL DEFAULT 0,
+  used TINYINT NOT NULL DEFAULT 0,
+  created_at BIGINT NOT NULL,
+  expires_at BIGINT NOT NULL,
+  KEY idx_email (email, created_at),
+  KEY idx_ip (ip, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Signed-in devices. Only a hash of each session token is stored.
+CREATE TABLE IF NOT EXISTS sessions (
+  token_hash CHAR(64) CHARACTER SET ascii NOT NULL PRIMARY KEY,
+  user_id INT UNSIGNED NOT NULL,
+  created_at BIGINT NOT NULL,
+  expires_at BIGINT NOT NULL,
+  KEY idx_user (user_id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -13,6 +13,7 @@
     <span class="world-name" id="world-name"></span>
     <button class="link" id="copy-link" hidden>Copy invite link</button>
     <button class="link" id="new-world">New private world</button>
+    <span id="account" class="account"></span>
   </header>
 
   <main>
@@ -34,11 +35,24 @@
     </form>
     <p id="feedback" class="feedback" role="status"></p>
 
-    <form id="join-form" class="join" hidden>
-      <p>Choose a nickname to play in this world.</p>
-      <input id="nickname" name="nickname" placeholder="Nickname" maxlength="20" required>
-      <button type="submit">Join</button>
-    </form>
+    <section id="signin" class="signin" hidden>
+      <form id="signin-email" class="join">
+        <p><b>Sign in to play.</b> It's free: we'll email you a code. You only need to do this once on each device.</p>
+        <input id="signin-email-input" type="email" placeholder="Your email" autocomplete="email" required>
+        <button type="submit">Email me a code</button>
+      </form>
+      <form id="signin-code" class="join" hidden>
+        <p>We've sent a 6-digit code to <b id="signin-email-shown"></b>. It can take a minute; check spam too.</p>
+        <input id="signin-code-input" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="6-digit code" required>
+        <button type="submit">Sign in</button>
+        <p class="small"><button type="button" class="link" id="signin-back">Use a different email</button></p>
+      </form>
+      <form id="signin-name" class="join" hidden>
+        <p><b>Welcome!</b> Choose the name other players will see. It's yours in every world.</p>
+        <input id="signin-name-input" maxlength="20" placeholder="Your name" autocomplete="nickname" required>
+        <button type="submit">Start playing</button>
+      </form>
+    </section>
 
     <div class="columns">
       <section>

@@ -104,6 +104,18 @@ final class Dictionary
         return isset($this->blocked[$word]);
     }
 
+    /** Whether any word in a name, or the whole name squashed together, is on the blocklist. */
+    public function isOffensiveName(string $name): bool
+    {
+        $lower = mb_strtolower($name);
+        $parts = preg_split('/[^a-z]+/', $lower, -1, PREG_SPLIT_NO_EMPTY);
+        $parts[] = preg_replace('/[^a-z]/', '', $lower);
+        foreach ($parts as $part) {
+            if ($this->isBlocked($part)) return true;
+        }
+        return false;
+    }
+
     /** @return string[] the word and every other word in its family */
     public function family(string $word): array
     {

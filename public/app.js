@@ -1,21 +1,40 @@
 const POLL_MS = 3000;
 const worldId = location.pathname.startsWith('/w/') ? decodeURIComponent(location.pathname.slice(3)) : 'public';
-const tokenKey = `unsaid:token:${worldId}`;
+const SESSION_KEY = 'unsaid:session';
 const $ = (id) => document.getElementById(id);
 
-function getToken() {
-  try { return localStorage.getItem(tokenKey); } catch { return null; }
+// The signed-in session lives in localStorage, so the device stays signed in.
+let session = null;
+try { session = localStorage.getItem(SESSION_KEY); } catch { /* private mode: signed in for this page only */ }
+function setSession(token) {
+  session = token;
+  try {
+    if (token) localStorage.setItem(SESSION_KEY, token);
+    else localStorage.removeItem(SESSION_KEY);
+  } catch { /* not saved: fine */ }
 }
-function setToken(token) {
-  try { localStorage.setItem(tokenKey, token); } catch { /* private mode: token lasts for this page only */ }
-  memoryToken = token;
-}
-let memoryToken = getToken();
 
-async function api(path, { method = 'GET', body } = {}) {
+// Player tokens from before accounts, so signing in can claim those players and their scores.
+function oldPlayerTokens() {
+  const tokens = [];
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith('unsaid:token:') || key.startsWith('burned-words:token:')) tokens.push(localStorage.getItem(key));
+    }
+  } catch { /* nothing to claim */ }
+  return tokens;
+}
+function forgetOldPlayerTokens() {
+  try {
+    for (const key of Object.keys(localStorage)) if (key.startsWith('unsaid:token:') || key.startsWith('burned-words:token:')) localStorage.removeItem(key);
+  } catch { /* fine */ }
+}
+
+async function request(url, { method = 'GET', body } = {}) {
   const headers = { 'Content-Type': 'application/json' };
-  if (memoryToken) headers['X-Player-Token'] = memoryToken;
-  const res = await fetch(`/api/worlds${path}`, { method, headers, body: body && JSON.stringify(body) });
+  if (session) headers['X-Session-Token'] = session;
+  const res = await fetch(url, { method, headers, body: body && JSON.stringify(body) });
   let data;
   try {
     data = await res.json();
@@ -26,6 +45,9 @@ async function api(path, { method = 'GET', body } = {}) {
   if (!res.ok) throw Object.assign(new Error(data.error ?? 'Request failed'), { status: res.status });
   return data;
 }
+
+const api = (path, options) => request(`/api/worlds${path}`, options);
+const authApi = (path, options) => request(`/api/auth${path}`, options);
 
 function timeLeft(ms) {
   if (ms <= 0) return 'now';
@@ -63,8 +85,11 @@ function render(state) {
   }
 
   const joined = Boolean(state.me);
-  $('play-form').hidden = !joined || !state.prompt;
-  $('join-form').hidden = joined;
+  const signedIn = Boolean(state.account);
+  if (!signedIn && session) setSession(null); // The session expired or was signed out elsewhere.
+  renderAccount(state.account);
+  $('play-form').hidden = !signedIn || !state.prompt;
+  $('signin').hidden = signedIn;
 
   renderSaid(state.said ?? [], state.prompt?.id);
 
@@ -200,7 +225,13 @@ $('play-form').addEventListener('submit', async (e) => {
   const word = input.value.trim();
   if (!word) return;
   try {
-    const result = await api(`/${encodeURIComponent(worldId)}/words`, { method: 'POST', body: { word } });
+    let result;
+    try {
+      result = await api(`/${encodeURIComponent(worldId)}/words`, { method: 'POST', body: { word } });
+    } catch (err) {
+      if (err.status === 401) { setSession(null); refresh(); } // Signed out elsewhere: show the sign-in box.
+      throw err;
+    }
     if (result.ok) {
       const family = result.alsoBurned.length ? ` Gone with it: ${result.alsoBurned.join(', ')}.` : '';
       feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}. Nobody can say it again.${family}`, 'good');
@@ -235,17 +266,71 @@ function reportButton(word, reason) {
   return button;
 }
 
-$('join-form').addEventListener('submit', async (e) => {
+// --- Signing in ---
+
+let signinEmail = '';
+
+function showSigninStep(step) {
+  for (const name of ['email', 'code', 'name']) $(`signin-${name}`).hidden = name !== step;
+  $(`signin-${step}-input`)?.focus();
+}
+
+function renderAccount(account) {
+  if (!account) {
+    const button = el('button', { type: 'button', className: 'link', textContent: 'Sign in' });
+    button.addEventListener('click', () => { showSigninStep('email'); $('signin').scrollIntoView({ block: 'center' }); });
+    $('account').replaceChildren(button);
+    return;
+  }
+  const out = el('button', { type: 'button', className: 'link', textContent: 'Sign out' });
+  out.addEventListener('click', async () => {
+    try { await authApi('/logout', { method: 'POST' }); } catch { /* signed out locally anyway */ }
+    setSession(null);
+    feedback('Signed out.', 'good');
+    refresh();
+  });
+  $('account').replaceChildren(el('span', { className: 'muted', textContent: `${account.name} · ` }), out);
+}
+
+$('signin-email').addEventListener('submit', async (e) => {
   e.preventDefault();
+  signinEmail = $('signin-email-input').value.trim();
   try {
-    const { token } = await api(`/${encodeURIComponent(worldId)}/join`, { method: 'POST', body: { nickname: $('nickname').value } });
-    setToken(token);
-    feedback('Welcome! Start saying words.', 'good');
-    await refresh();
-    $('word').focus();
+    await authApi('/start', { method: 'POST', body: { email: signinEmail } });
+    $('signin-email-shown').textContent = signinEmail;
+    $('signin-code-input').value = '';
+    showSigninStep('code');
+    feedback('', '');
   } catch (err) {
     feedback(err.message, 'bad');
   }
+});
+
+$('signin-back').addEventListener('click', () => showSigninStep('email'));
+
+async function verify(name) {
+  const code = $('signin-code-input').value.trim();
+  const result = await authApi('/verify', { method: 'POST', body: { email: signinEmail, code, name, claim: oldPlayerTokens() } });
+  if (result.needsName) {
+    showSigninStep('name');
+    return;
+  }
+  setSession(result.token);
+  forgetOldPlayerTokens();
+  showSigninStep('email');
+  feedback(`Welcome, ${result.user.name}! Start saying words.`, 'good');
+  await refresh();
+  $('word')?.focus();
+}
+
+$('signin-code').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  try { await verify(null); } catch (err) { feedback(err.message, 'bad'); }
+});
+
+$('signin-name').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  try { await verify($('signin-name-input').value); } catch (err) { feedback(err.message, 'bad'); }
 });
 
 $('lookup-form').addEventListener('submit', async (e) => {
@@ -272,7 +357,16 @@ $('copy-link').addEventListener('click', async () => {
   }
 });
 
-$('new-world').addEventListener('click', () => $('new-world-dialog').showModal());
+$('new-world').addEventListener('click', () => {
+  if (!session) {
+    feedback('Sign in first to create a private world.', 'bad');
+    showSigninStep('email');
+    $('signin').hidden = false;
+    $('signin').scrollIntoView({ block: 'center' });
+    return;
+  }
+  $('new-world-dialog').showModal();
+});
 $('new-world-cancel').addEventListener('click', () => $('new-world-dialog').close());
 $('new-world-form').addEventListener('submit', async (e) => {
   e.preventDefault();

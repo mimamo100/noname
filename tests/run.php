@@ -14,6 +14,8 @@ require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
 require "$root/src/Game.php";
 require "$root/src/Admin.php";
+require "$root/src/Mailer.php";
+require "$root/src/Auth.php";
 
 $tests = [];
 function test(string $name, callable $fn): void
@@ -60,12 +62,13 @@ function testDbConnection(): PDO
 function testDb(): PDO
 {
     $db = testDbConnection();
-    $db->exec('DROP TABLE IF EXISTS word_decisions, reports, misses, burns, prompts, players, worlds');
+    $db->exec('DROP TABLE IF EXISTS word_decisions, reports, misses, burns, prompts, players, sessions, login_codes, users, worlds');
     Game::installSchema($db);
     return $db;
 }
 
 require __DIR__ . '/GameTest.php';
+require __DIR__ . '/AuthTest.php';
 require __DIR__ . '/ApiTest.php';
 
 $failed = 0;

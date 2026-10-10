@@ -43,7 +43,26 @@ it runs.
 2. Edit `config.php` and fill in the full database name, user and password
    from step 3. `db_host` is almost always `localhost`.
 
-## 5. Check the PHP version
+## 5. Set up sign-in emails
+
+Players sign in with a code sent by email, once per device. The emails need a
+sender address on your domain, or they're likely to land in spam.
+
+1. In cPanel, go to **Email Accounts** and create an address such as
+   `noreply@yourdomain.com`. You don't need to read its inbox.
+2. Add a `mail` section to `config.php` (copy it from `config.example.php`) and
+   set `'from'` to that address. Leave `'transport' => 'mail'`, which uses your
+   server's own email.
+3. Once the game is running, sign in with your own email to check a code arrives.
+   If it lands in spam, mark it "not spam"; it improves over time.
+
+Shared hosting usually limits how many emails an hour your account can send
+(ask your host, or look in cPanel). That's plenty to start with. If sign-ups
+outgrow it, switch to an email service such as Brevo (free up to 300 a day) or
+Amazon SES: set `'transport' => 'smtp'` and the service's `smtp_` settings in
+`config.php`. No code changes are needed.
+
+## 6. Check the PHP version
 
 1. Go to **MultiPHP Manager**, tick the subdomain, and choose PHP 8.1 or later.
    Some servers ignore this setting, so `public/.htaccess` also selects cPanel's
@@ -52,17 +71,17 @@ it runs.
 2. If your host has **Select PHP Version** (CloudLinux), check under
    **Extensions** that `pdo_mysql` is ticked.
 
-## 6. Turn on HTTPS
+## 7. Turn on HTTPS
 
 Go to **SSL/TLS Status**, tick the subdomain and click **Run AutoSSL**. It can
 take a few minutes. New subdomains can also take a little while to start
 working while DNS updates.
 
-## 7. Play
+## 8. Play
 
 Visit `https://unsaid.yourdomain.com`. You should see the public world with a
-prompt. Click **New private world** to make one for friends, then use **Copy
-invite link** to share it.
+prompt. Sign in with your email to play. Click **New private world** to make one
+for friends, then use **Copy invite link** to share it.
 
 ## Troubleshooting
 
@@ -75,10 +94,11 @@ works, because it shows details about your server.
 |---|---|
 | "Missing config.php" | Step 4: the file must be in `unsaid/`, not in `public/`. |
 | "Something went wrong" | Usually wrong database details. Check `unsaid/public/error_log` or cPanel's **Errors** page for the exact message. |
-| "The game's server isn't responding properly" | The game's PHP code isn't being reached. Usually PHP is older than 8.1 (step 5), or `public/.htaccess` is missing: turn on **Show Hidden Files** in File Manager's settings and check it exists. If `check.php` passes, visit `/api/worlds/public` and send what it shows. |
+| "The game's server isn't responding properly" | The game's PHP code isn't being reached. Usually PHP is older than 8.1 (step 6), or `public/.htaccess` is missing: turn on **Show Hidden Files** in File Manager's settings and check it exists. If `check.php` passes, visit `/api/worlds/public` and send what it shows. |
 | Every PHP page (including `check.php`) shows an Apache "Internal Server Error … while trying to use an ErrorDocument" | File permissions: cPanel won't run PHP from group-writable files. In File Manager, set folders to **755** and files to **644** (select them, then **Permissions**). The zip from `scripts/build-zip.sh` already has these. |
-| A page full of PHP errors about syntax | PHP is older than 8.1. Redo step 5. |
-| The browser warns that the site isn't secure | AutoSSL hasn't finished. Wait, or rerun step 6. |
+| Sign-in codes never arrive | Check spam first. Then check the `mail` section of `config.php` ('from' must be an address on your domain) and cPanel's **Track Delivery** page, which shows whether the email was sent or refused. |
+| A page full of PHP errors about syntax | PHP is older than 8.1. Redo step 6. |
+| The browser warns that the site isn't secure | AutoSSL hasn't finished. Wait, or rerun step 7. |
 
 ## Updating
 

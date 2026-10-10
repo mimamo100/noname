@@ -32,6 +32,7 @@ final class Admin
             return (int) $stmt->fetchColumn();
         };
         return [
+            'accounts' => $count('SELECT COUNT(*) FROM users'),
             'worlds' => $count('SELECT COUNT(*) FROM worlds'),
             'players' => $count('SELECT COUNT(*) FROM players'),
             'saidToday' => $count('SELECT COUNT(*) FROM burns WHERE word = played_word AND burned_at > ?', [$since]),

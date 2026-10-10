@@ -46,6 +46,13 @@ final class Game
         foreach (array_filter(array_map('trim', explode(';', $sql))) as $statement) {
             $db->exec($statement);
         }
+        // Databases from before accounts: link players and worlds to users.
+        if (!$db->query("SHOW COLUMNS FROM players LIKE 'user_id'")->fetch()) {
+            $db->exec('ALTER TABLE players ADD COLUMN user_id INT UNSIGNED NULL AFTER world_id, ADD UNIQUE KEY uniq_user (world_id, user_id)');
+        }
+        if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'owner_user_id'")->fetch()) {
+            $db->exec('ALTER TABLE worlds ADD COLUMN owner_user_id INT UNSIGNED NULL');
+        }
         // Databases from before UK/US spelling choices.
         if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'spelling'")->fetch()) {
             $db->exec("ALTER TABLE worlds ADD COLUMN spelling VARCHAR(4) CHARACTER SET ascii NOT NULL DEFAULT 'both' AFTER prompt_duration_ms");
@@ -67,13 +74,13 @@ final class Game
 
     // --- Worlds and players ---
 
-    public function createWorld(string $name, ?string $id = null, int $promptDurationMs = self::DEFAULT_PROMPT_DURATION_MS, string $spelling = 'both'): array
+    public function createWorld(string $name, ?string $id = null, int $promptDurationMs = self::DEFAULT_PROMPT_DURATION_MS, string $spelling = 'both', ?int $ownerUserId = null): array
     {
         $id ??= bin2hex(random_bytes(4));
         $name = mb_substr(trim($name), 0, 40) ?: 'Unnamed world';
         if (!in_array($spelling, self::SPELLINGS, true)) throw new GameError(400, 'Spelling must be uk, us or both');
-        $this->db->prepare('INSERT INTO worlds (id, name, prompt_duration_ms, spelling, created_at) VALUES (?, ?, ?, ?, ?)')
-            ->execute([$id, $name, $promptDurationMs, $spelling, $this->now()]);
+        $this->db->prepare('INSERT INTO worlds (id, name, prompt_duration_ms, spelling, owner_user_id, created_at) VALUES (?, ?, ?, ?, ?, ?)')
+            ->execute([$id, $name, $promptDurationMs, $spelling, $ownerUserId, $this->now()]);
         $this->currentPrompt($id);
         return $this->world($id);
     }
@@ -105,7 +112,7 @@ final class Game
         if (!preg_match(self::NICKNAME_PATTERN, $name)) {
             throw new GameError(400, 'Nicknames are 1–20 letters, numbers, spaces, - or _');
         }
-        if ($this->isOffensive($name)) throw new GameError(400, 'Please choose a different nickname');
+        if ($this->dictionary->isOffensiveName($name)) throw new GameError(400, 'Please choose a different nickname');
         $token = bin2hex(random_bytes(24));
         try {
             $this->db->prepare('INSERT INTO players (world_id, nickname, token, created_at) VALUES (?, ?, ?, ?)')
@@ -118,16 +125,35 @@ final class Game
         return ['playerId' => (int) $this->db->lastInsertId(), 'nickname' => $name, 'token' => $token];
     }
 
-    /** Whether any word in the name, or the whole name squashed together, is on the blocklist. */
-    private function isOffensive(string $name): bool
+    /** The account's player in this world, or null if they haven't played there yet. */
+    public function playerForUser(string $worldId, int $userId): ?array
     {
-        $lower = mb_strtolower($name);
-        $parts = preg_split('/[^a-z]+/', $lower, -1, PREG_SPLIT_NO_EMPTY);
-        $parts[] = preg_replace('/[^a-z]/', '', $lower);
-        foreach ($parts as $part) {
-            if ($this->dictionary->isBlocked($part)) return true;
+        $stmt = $this->db->prepare('SELECT * FROM players WHERE world_id = ? AND user_id = ?');
+        $stmt->execute([$worldId, $userId]);
+        return $stmt->fetch() ?: null;
+    }
+
+    /**
+     * The account's player in this world, joining it with the account's name first if needed.
+     * If someone from before accounts already has that name here, a number is added ("Ann 2").
+     */
+    public function joinAsUser(string $worldId, array $user): array
+    {
+        if ($player = $this->playerForUser($worldId, (int) $user['id'])) return $player;
+        $this->world($worldId);
+        for ($n = 1; $n <= 50; $n++) {
+            $suffix = $n === 1 ? '' : " $n";
+            $name = mb_substr($user['name'], 0, 20 - mb_strlen($suffix)) . $suffix;
+            try {
+                $this->db->prepare('INSERT INTO players (world_id, user_id, nickname, token, created_at) VALUES (?, ?, ?, ?, ?)')
+                    ->execute([$worldId, $user['id'], $name, bin2hex(random_bytes(24)), $this->now()]);
+                return $this->playerForUser($worldId, (int) $user['id']);
+            } catch (PDOException $e) {
+                if ($e->getCode() !== '23000') throw $e;
+                if ($player = $this->playerForUser($worldId, (int) $user['id'])) return $player; // Joined in another request.
+            }
         }
-        return false;
+        throw new GameError(409, 'Could not join this world');
     }
 
     private function playerByToken(string $worldId, ?string $token): array
