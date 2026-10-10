@@ -185,6 +185,12 @@ Not yet:
 
 ## Ideas for later
 
+- **Undo and take back:** undoing an accepted word currently only affects
+  the future; anyone who already said it keeps the points, and it stays used
+  up in that world. A stronger admin option could remove those points, free
+  the word, and note it in the feed ("*sofa* — removed by the admin"). Only
+  worth adding if accepted words are ever abused.
+
 - **Word packs for private worlds:** themed dictionaries such as Music,
   Food & cooking, Sport, Nature, Film & TV and Science, chosen when creating a
   world. Draft lists can come from WordNet topic tags (about 300 music words,
