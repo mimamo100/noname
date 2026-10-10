@@ -185,6 +185,16 @@ Not yet:
 
 ## Ideas for later
 
+- **Private worlds as a paid subscription.** Today anyone can create private
+  worlds for free, without an account. A subscription would need: accounts
+  (email sign-in), payments (for example Stripe or PayPal), world ownership
+  tied to the account, and deciding what stays free (perhaps the public world
+  and joining others' worlds, with creating worlds paid).
+- **World owners.** The creator manages their world: remove players, require
+  approval to join, close to new players, make a new invite link (the old one
+  stops working), rename and delete. Should be built so it can attach to
+  accounts later.
+
 - **Undo and take back:** undoing an accepted word currently only affects
   the future; anyone who already said it keeps the points, and it stays used
   up in that world. A stronger admin option could remove those points, free
