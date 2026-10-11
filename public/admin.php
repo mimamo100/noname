@@ -14,6 +14,7 @@ require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
 require "$root/src/Game.php";
 require "$root/src/Admin.php";
+require "$root/src/Housekeeping.php";
 
 header('Cache-Control: no-store');
 header('X-Frame-Options: DENY');
@@ -113,6 +114,11 @@ try {
             case 'dismiss':
                 $admin->decide($category, $word, 'dismissed');
                 $_SESSION['flash'] = "Dismissed “{$word}”.";
+                break;
+            case 'housekeeping':
+                $cacheDir = $config['cache_dir'] ?? "$root/cache";
+                (new Housekeeping($db, (int) ($config['housekeeping']['keep_days'] ?? 30), $cacheDir ?: null))->run();
+                $_SESSION['flash'] = 'Housekeeping done.';
                 break;
             case 'recount':
                 Game::recountScores($db);
@@ -215,5 +221,22 @@ $html .= '<p class="muted small">Accepted words are kept in the database. To mak
 $html .= '<h2>Scores</h2><p class="muted">Each player\'s total is kept as a running count. If you change the '
     . '<code>burns</code> or <code>misses</code> tables by hand (in phpMyAdmin), recount so the leaderboards match.</p>'
     . button($csrf, 'recount', 'Recount scores', [], 'secondary');
+
+$lastRun = Housekeeping::lastRun($db);
+$html .= '<h2>Housekeeping</h2>';
+if ($lastRun) {
+    $labels = [
+        'signInCodes' => 'old sign-in codes', 'sessions' => 'expired sessions', 'freeMisses' => 'old free misses',
+        'finishedWorlds' => 'finished worlds tidied', 'words' => 'their words', 'misses' => 'their misses', 'cacheFiles' => 'cache files',
+    ];
+    $parts = [];
+    foreach ($lastRun['done'] as $key => $count) $parts[] = $count . ' ' . ($labels[$key] ?? $key);
+    $stale = $lastRun['at'] < (int) floor(microtime(true) * 1000) - 2 * 86_400_000;
+    $html .= '<p class="' . ($stale ? 'bad' : 'muted') . '">Last ran ' . h($when((int) $lastRun['at'])) . ($stale ? ': more than two days ago. Is the cron job still set up?' : '') . '</p>'
+        . '<p class="muted small">Removed: ' . h(implode(', ', $parts)) . '.</p>';
+} else {
+    $html .= '<p class="bad">Never run. Set up the daily cron job (see docs/DEPLOY.md, "Housekeeping").</p>';
+}
+$html .= button($csrf, 'housekeeping', 'Run housekeeping now', [], 'secondary');
 
 page('Admin', $html);

@@ -79,9 +79,37 @@ working while DNS updates.
 
 ## 8. Play
 
-Visit `https://unsaid.yourdomain.com`. You should see the public world with a
-prompt. Sign in with your email to play. Click **New private world** to make one
-for friends, then use **Copy invite link** to share it.
+Visit `https://unsaid.yourdomain.com`. You should see the big world with a
+prompt. Sign in with your email to play. **Join a room** puts you in a room of
+up to 60 players. Click **New private world** to make one for friends, then
+use **Copy invite link** to share it.
+
+## 9. Housekeeping
+
+A small job tidies the database once a day (old sign-in codes, expired
+sessions, old misses, and the detail of worlds that finished a month ago). Set
+it up once:
+
+1. In cPanel, open **Cron Jobs**.
+2. Under **Cron Email**, enter your email address if you'd like to hear about
+   errors. (It only emails when something goes wrong.)
+3. Under **Add New Cron Job**, choose **Once Per Day** from Common Settings,
+   then change **Hour** to 4 (4am, when few people play).
+4. In **Command**, paste this, changing `youraccount` to your cPanel username
+   (your home directory is shown under **General Information** on cPanel's
+   front page):
+
+   ```
+   /opt/cpanel/ea-php81/root/usr/bin/php /home/youraccount/unsaid/scripts/housekeeping.php > /dev/null
+   ```
+
+   This uses PHP 8.1, the same as the game. If your host has a newer version,
+   `ea-php82` or `ea-php83` work too.
+5. Click **Add New Cron Job**.
+
+The admin page's **Housekeeping** section shows when it last ran. To check the
+command straight away, press **Run housekeeping now** there; the next morning,
+"Last ran" should show about 4am.
 
 ## Troubleshooting
 

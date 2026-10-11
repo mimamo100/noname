@@ -103,17 +103,19 @@ final class Game
     }
 
     /**
-     * Recalculates every player's running totals from the words and misses tables. Run
+     * Recalculates players' running totals from the words and misses tables. Run
      * automatically when the totals are added; run it again after editing those tables by hand.
+     * Finished worlds are left alone: housekeeping deletes their detail, but their final
+     * scores stand.
      */
     public static function recountScores(PDO $db, ?string $worldId = null): void
     {
         $db->prepare('
-            UPDATE players p SET
-              score = (SELECT COALESCE(SUM(points), 0) FROM burns WHERE player_id = p.id)
-                    + (SELECT COALESCE(SUM(points), 0) FROM misses WHERE player_id = p.id),
-              words = (SELECT COUNT(*) FROM burns WHERE player_id = p.id AND word = played_word)
-            WHERE ? IS NULL OR p.world_id = ?')
+            UPDATE players p JOIN worlds w ON w.id = p.world_id SET
+              p.score = (SELECT COALESCE(SUM(points), 0) FROM burns WHERE player_id = p.id)
+                      + (SELECT COALESCE(SUM(points), 0) FROM misses WHERE player_id = p.id),
+              p.words = (SELECT COUNT(*) FROM burns WHERE player_id = p.id AND word = played_word)
+            WHERE (? IS NULL OR p.world_id = ?) AND w.ended_at IS NULL')
             ->execute([$worldId, $worldId]);
         $db->prepare('UPDATE worlds SET version = version + 1 WHERE ? IS NULL OR id = ?')->execute([$worldId, $worldId]);
     }

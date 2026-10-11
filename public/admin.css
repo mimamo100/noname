@@ -26,3 +26,4 @@ button.secondary { background: var(--surface); color: var(--text); border: 1px s
 .admin-table .actions form + form { margin-left: 6px; }
 .admin pre, .admin code { background: var(--surface); padding: 2px 6px; border-radius: 4px; }
 .admin pre { padding: 12px; overflow-x: auto; }
+.admin .bad { color: var(--bad); }

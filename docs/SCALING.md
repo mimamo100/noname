@@ -85,19 +85,23 @@ words, which grows with the world, and polling itself could be
 replaced by pushed updates, which needs a VPS (from about £5–20 a month). The
 code is plain PHP and MySQL, so it moves without changes.
 
-## 3. Housekeeping
+## 3. Housekeeping (done: needs its daily cron job)
 
-- **Old sign-in codes:** delete codes older than a day. They also hold
-  network addresses, which are personal data.
-- **Expired sessions:** delete them.
-- **Finished rounds and rooms:** after about 30 days, delete their words,
-  misses and prompts, keeping the results rows that My games shows.
-- **Misses:** keep the last 30 days, or only those for recent prompts (My
-  misses shows the last 50 anyway). This keeps the biggest growing table in
-  check.
+`scripts/housekeeping.php` runs once a day from a cPanel **Cron Job** (see
+DEPLOY.md, "Housekeeping"). It deletes:
+- **sign-in codes** older than two days (they hold email and network
+  addresses, which are personal data; the sign-in limits only look back a day)
+- **expired sessions**
+- **free misses** (typos, words not on our lists) older than 30 days. Misses
+  that cost points stay, as scores include them, and they're the minority.
+- **finished worlds' detail:** for rounds and rooms that finished more than 30
+  days ago, their words and misses. Final standings (results), players' final
+  scores and the prompts stay, so My games and the final leaderboard still work.
+- **cached world states** nobody has looked at for a day.
 
-This can run on a cPanel **Cron Job** once a day, or a little at a time during
-normal requests.
+It deletes in batches of 5,000, so players don't notice. The admin page shows
+when it last ran (in red if more than two days ago) and has a **Run
+housekeeping now** button. The 30 days is `keep_days` in `config.php`.
 
 ## 4. Email
 
@@ -124,6 +128,7 @@ weekly), covers this.
 
 ## Suggested order
 
-1. Now, while small: housekeeping (3) and a privacy notice (5). Both are small.
+1. Now, while small: set up the housekeeping cron job (3) and write a privacy
+   notice (5).
 2. Before promoting: switch to an email service (4).
 3. When shared hosting strains: move to a VPS (2).

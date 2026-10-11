@@ -154,3 +154,9 @@ CREATE TABLE IF NOT EXISTS results (
   KEY idx_world (world_id, place),
   FOREIGN KEY (world_id) REFERENCES worlds(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Small bits of state, such as when housekeeping last ran.
+CREATE TABLE IF NOT EXISTS meta (
+  name VARCHAR(40) CHARACTER SET ascii NOT NULL PRIMARY KEY,
+  value TEXT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

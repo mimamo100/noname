@@ -25,6 +25,11 @@ return [
         'away_days' => 7,   // A player who hasn't guessed for this long gives up their seat.
         'max' => 50,        // Most rooms open at once, to protect the server.
     ],
+    // Daily housekeeping (scripts/housekeeping.php, run by a cron job): how long to keep
+    // free misses and the words of finished worlds. Final standings are kept for good.
+    'housekeeping' => [
+        'keep_days' => 30,
+    ],
     // Each world's state is kept here for a couple of seconds, so busy worlds stay fast.
     // The folder is created if needed. Set to false to turn caching off.
     // 'cache_dir' => __DIR__ . '/cache',
