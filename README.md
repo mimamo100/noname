@@ -11,6 +11,7 @@ left unsaid, scores rise, so clever late players can still catch up.
 - Game design: [docs/DESIGN.md](docs/DESIGN.md)
 - Putting it on a cPanel host: [docs/DEPLOY.md](docs/DEPLOY.md)
 - Growing to many players: [docs/SCALING.md](docs/SCALING.md)
+- Reviewing the meaning categories: [docs/DICTIONARY-REVIEW.md](docs/DICTIONARY-REVIEW.md)
 
 ## Requirements
 
@@ -58,6 +59,7 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 | `data/categories.json` | Meaning categories, generated from WordNet by `scripts/build-categories.py` |
 | `data/category-overrides.txt` | Hand corrections to the categories (editable) |
 | `data/dictionary.php` | The file the game reads, generated from all of the above |
+| `scripts/category-report.php` | Shows a category's words, or how given words stand in it |
 
 ## Changing the word data
 
