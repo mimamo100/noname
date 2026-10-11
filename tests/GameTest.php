@@ -435,6 +435,32 @@ test('wrong guesses cost points, typos are free', function () {
     same(0, $board['Ben']['words']);
 });
 
+test('the prompt leaderboard ranks the current prompt alone', function () {
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $world = $game->createWorld('Late', null, 60_000);
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $early = $game->join($world['id'], 'Early');
+    $before = $game->play($world['id'], $early['token'], 'moon')['points']
+        + $game->play($world['id'], $early['token'], 'book')['points'];
+    $clock += 61_000;
+    $game->state($world['id'], null); // Let the game move on to a new prompt.
+    setPrompt($game, $world['id'], spec('bird'));
+
+    same([], $game->state($world['id'], null)['promptBoard'], 'Empty until someone tries the new prompt');
+    $late = $game->join($world['id'], 'Late');
+    $points = $game->play($world['id'], $late['token'], 'robin')['points'];
+    $game->play($world['id'], $early['token'], 'robin'); // Already said by Late: a penalty.
+
+    $state = $game->state($world['id'], null);
+    $overall = array_column($state['leaderboard'], 'total', 'nickname');
+    same($before - Game::PENALTY, $overall['Early'], 'Overall keeps the earlier prompt');
+    same([
+        ['nickname' => 'Late', 'points' => $points, 'words' => 1],
+        ['nickname' => 'Early', 'points' => -Game::PENALTY, 'words' => 0],
+    ], $state['promptBoard']);
+});
+
 test('players see only their own misses', function () {
     $game = makeGame();
     $world = $game->createWorld('Misses');

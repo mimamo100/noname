@@ -103,6 +103,8 @@ section + section h2 ~ h2, .leaderboard + h2 { margin-top: 24px; }
 .leaderboard th, .leaderboard td { text-align: right; padding: 6px 4px; border-bottom: 1px solid var(--border); }
 .leaderboard th:first-child, .leaderboard td:first-child { text-align: left; }
 .leaderboard th { font-weight: 400; color: var(--muted); font-size: 13px; }
+.leaderboard td.rank { color: var(--muted); width: 2em; text-align: left; }
+.leaderboard th:first-child + th, .leaderboard td.rank + td { text-align: left; }
 .leaderboard tr.me td { color: var(--ember); font-weight: 700; }
 
 .rules { margin-top: 32px; color: var(--muted); }

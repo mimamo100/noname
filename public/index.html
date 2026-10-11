@@ -68,10 +68,24 @@
       </section>
       <section>
         <h2>Leaderboard</h2>
-        <table class="leaderboard">
-          <thead><tr><th>Player</th><th>Words</th><th>This prompt</th><th>Total</th></tr></thead>
-          <tbody id="leaderboard"></tbody>
-        </table>
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" class="tab" id="tab-overall" aria-selected="true" aria-controls="board-overall">Overall</button>
+          <button type="button" role="tab" class="tab" id="tab-prompt" aria-selected="false" aria-controls="board-prompt">This prompt</button>
+        </div>
+        <div id="board-overall" role="tabpanel" aria-labelledby="tab-overall">
+          <table class="leaderboard">
+            <thead><tr><th></th><th>Player</th><th>Words</th><th>Total</th></tr></thead>
+            <tbody id="leaderboard"></tbody>
+          </table>
+        </div>
+        <div id="board-prompt" role="tabpanel" aria-labelledby="tab-prompt" hidden>
+          <p class="muted small">Everyone starts level on each new prompt.</p>
+          <table class="leaderboard">
+            <thead><tr><th></th><th>Player</th><th>Words</th><th>Points</th></tr></thead>
+            <tbody id="prompt-board"></tbody>
+          </table>
+          <p id="prompt-board-empty" class="muted" hidden>Nobody has tried this prompt yet. First in leads.</p>
+        </div>
         <h2>Who said it?</h2>
         <form id="lookup-form" class="lookup" autocomplete="off">
           <input id="lookup" placeholder="Look up any word" maxlength="30" autocapitalize="off" spellcheck="false" required>

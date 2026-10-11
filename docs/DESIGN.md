@@ -135,8 +135,10 @@ word-finder site. There are three kinds:
   from the dictionary can be reported the same way. The admin page (`/admin`)
   lists reports, and accepting one makes the word count straight away.
 - Players can make at most **20 guesses a minute**, which stops scripts.
-- Penalties count in both the total and "this prompt" columns of the
-  leaderboard.
+- The leaderboard has two tabs: **Overall** ranks everyone by total score,
+  and **This prompt** ranks only the current prompt, so everyone starts level
+  on each new prompt and a late arrival can still come top. Penalties count
+  in both.
 - **Just said** lists every word said in the current prompt, newest first,
   with the three prompts before it collapsed underneath. Any older word can be
   found with **Who said it?**.

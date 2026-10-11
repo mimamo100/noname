@@ -96,12 +96,24 @@ function render(state) {
   $('tab-misses').hidden = !joined;
   renderMisses(state.myMisses ?? [], state.prompt?.id);
 
-  $('leaderboard').replaceChildren(...state.leaderboard.map((p) => el('tr', { className: p.nickname === state.me ? 'me' : '' },
-    el('td', { textContent: p.nickname }),
-    el('td', { textContent: p.words }),
-    el('td', { textContent: p.thisPrompt }),
-    el('td', { textContent: p.total }),
-  )));
+  $('leaderboard').replaceChildren(...boardRows(state.leaderboard, 'total', state.me));
+  const promptBoard = state.promptBoard ?? [];
+  $('prompt-board').replaceChildren(...boardRows(promptBoard, 'points', state.me));
+  $('prompt-board-empty').hidden = promptBoard.length > 0;
+}
+
+// Leaderboard rows with positions; players on the same score share a position.
+function boardRows(players, scoreKey, me) {
+  let rank = 0;
+  return players.map((p, i) => {
+    if (i === 0 || p[scoreKey] !== players[i - 1][scoreKey]) rank = i + 1;
+    return el('tr', { className: p.nickname === me ? 'me' : '' },
+      el('td', { className: 'rank', textContent: rank }),
+      el('td', { textContent: p.nickname }),
+      el('td', { textContent: p.words }),
+      el('td', { textContent: p[scoreKey] }),
+    );
+  });
 }
 
 let lastStateLoaded = false;
@@ -191,6 +203,18 @@ function showTab(name) {
   $('misses').hidden = !misses;
   try { localStorage.setItem('unsaid:tab', misses ? 'misses' : 'recent'); } catch { /* not saved: fine */ }
 }
+function showBoard(name) {
+  const prompt = name === 'prompt';
+  $('tab-overall').setAttribute('aria-selected', String(!prompt));
+  $('tab-prompt').setAttribute('aria-selected', String(prompt));
+  $('board-overall').hidden = prompt;
+  $('board-prompt').hidden = !prompt;
+  try { localStorage.setItem('unsaid:board', name); } catch { /* not saved: fine */ }
+}
+$('tab-overall').addEventListener('click', () => showBoard('overall'));
+$('tab-prompt').addEventListener('click', () => showBoard('prompt'));
+try { if (localStorage.getItem('unsaid:board') === 'prompt') showBoard('prompt'); } catch { /* default board */ }
+
 $('tab-recent').addEventListener('click', () => showTab('recent'));
 $('tab-misses').addEventListener('click', () => showTab('misses'));
 

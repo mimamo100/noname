@@ -497,6 +497,26 @@ final class Game
             'thisPrompt' => (int) $r['this_prompt'], 'words' => (int) $r['words'],
         ], $stmt->fetchAll());
 
+        // The same, ranked by the current prompt alone, so late arrivals can top something.
+        // Only players who have tried a word in this prompt are listed.
+        $stmt = $this->db->prepare('
+            SELECT p.nickname, COALESCE(b.words, 0) AS words, COALESCE(b.points, 0) + COALESCE(m.points, 0) AS points
+            FROM players p
+            LEFT JOIN (
+              SELECT player_id, COUNT(CASE WHEN word = played_word THEN 1 END) AS words, SUM(points) AS points
+              FROM burns WHERE prompt_id = ? GROUP BY player_id
+            ) b ON b.player_id = p.id
+            LEFT JOIN (
+              SELECT player_id, SUM(points) AS points FROM misses WHERE prompt_id = ? GROUP BY player_id
+            ) m ON m.player_id = p.id
+            WHERE p.world_id = ? AND (b.player_id IS NOT NULL OR m.player_id IS NOT NULL)
+            ORDER BY points DESC, words DESC, p.nickname
+            LIMIT 50');
+        $stmt->execute([$promptId, $promptId, $worldId]);
+        $promptBoard = array_map(fn ($r) => [
+            'nickname' => $r['nickname'], 'points' => (int) $r['points'], 'words' => (int) $r['words'],
+        ], $stmt->fetchAll());
+
         $me = null;
         $myMisses = [];
         if ($token) {
@@ -525,6 +545,7 @@ final class Game
             // Every word said in the current prompt and the few before it, newest prompt first.
             'said' => $said,
             'leaderboard' => $leaderboard,
+            'promptBoard' => $promptBoard,
             'now' => $this->now(),
         ];
     }
