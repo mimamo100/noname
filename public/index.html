@@ -100,9 +100,14 @@
         <li>Type words that fit the current prompt. Some prompts are about meaning (“A bird”), some about letters (“Starts and ends with N”), and some both (“An animal starting with B”).</li>
         <li>Once a word is said, <b>nobody in this world can say it again, ever</b>. Its family goes with it: say <i>cat</i> and <i>cats</i> is gone too.</li>
         <li>Plurals count as their singular: <i>brothers</i> is judged and scored as <i>brother</i>, so it doesn't fit “8+ letters”.</li>
-        <li>Longer and rarer words score more. Scores rise as fewer words are left unsaid, both in the whole dictionary and in the current prompt.</li>
+        <li><b>Scoring.</b> A word's points are its length minus 2 (at least 1), times up to ×3 for rarer words, times two scarcity multipliers shown under the prompt:
+          <ul>
+            <li><b>World ×</b> rises as this world's dictionary gets used up: ×1.0 when it's new, ×2.0 when half the words are said, ×4.0 at three quarters, up to ×10.</li>
+            <li><b>Prompt ×</b> rises as the current prompt runs dry: the answers it started with divided by those left. A prompt that began with 40 answers and has 20 left gives ×2.0, up to ×5. It goes back to ×1.0 with each new prompt.</li>
+          </ul>
+          The two multiply together, so the last answers to a prompt late in a world's life are worth the most. That's how late arrivals can catch up.</li>
         <li>You can save a word for later when it's worth more, but someone else might say it first.</li>
-        <li>Careful: a word that doesn't fit, or has already been said, costs 2 points. Typos are free, and so is a real answer missing from our lists: report it so we can add it.</li>
+        <li>Careful: a word that doesn't fit, or that someone else has already said, costs 2 points. Repeating your own word is free. Typos are free, and so is a real answer missing from our lists: report it so we can add it.</li>
         <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
         <li>The prompt changes when nothing fits any more, or when its time runs out.</li>
       </ul>
