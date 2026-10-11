@@ -46,33 +46,43 @@ Options, which can be combined:
 This matters more than any technical issue, and is worth deciding before
 promoting the game widely.
 
-## 2. Polling is the real server load
+## 2. Polling is the real server load (mostly done)
 
-Each open game page asks the server for the world's state every 3 seconds.
-Each request loads the dictionary, the world's said words, counts what's left
-for the prompt and builds the leaderboard: about 10–30 ms of server work.
+Each open game page asks the server for the world's state every few seconds.
+That is where the server's work goes, so the game already does the following:
 
-- 20 players with the game open ≈ 7 requests a second: fine.
-- 300 players with it open ≈ 100 requests a second: more than shared hosting
-  allows. cPanel plans limit simultaneous PHP processes ("entry processes")
-  and CPU.
+1. **One answer shared between viewers.** Each world's state is kept in a
+   small file in the `cache` folder (next to `config.php`) for 2 seconds, so
+   100 people watching a world cost one database run every 2 seconds, not 100.
+   Every world has a version number that goes up whenever a word is said, so
+   a new word shows straight away rather than after the 2 seconds.
+2. **Running totals instead of recounting.** Each player's score and word
+   count are stored and updated as they play, so the leaderboard no longer
+   re-adds every word and miss in the world. (If you edit the `burns` or
+   `misses` tables by hand, press **Recount scores** on the admin page.)
+3. **Short "nothing changed" answers.** The page says which version it has,
+   and if nothing is new the server replies in 67 bytes instead of about
+   20 KB. Pages also check less often when the world is quiet (every 6, then
+   12 seconds) and every 30 seconds in a background tab.
+4. **OPcache.** `check.php` says whether it's on. Without it, every request
+   rereads the 1.8 MB dictionary (40–260 ms). Turn it on in cPanel > Select
+   PHP Version > Extensions if it's off.
 
-Fixes, roughly in order of value:
-1. **Share one answer between viewers.** Cache each world's state for about
-   2 seconds, so 100 viewers of a world cost one computation, not 100.
-2. **Keep counts instead of recounting:** store each prompt's "left unsaid"
-   count and each player's score, updated when a word is said, instead of
-   recounting every request.
-3. **Poll less when nothing happens:** slow to every 10–15 seconds when the
-   page is in the background or the world is quiet, and send "nothing
-   changed" answers that cost almost nothing.
-4. **Make sure OPcache is on** (cPanel > Select PHP Version), so the 1.5 MB
-   dictionary is kept in memory rather than reread every request.
+Measured on a test world with 15,000 words said, 300 players and 40,000
+misses (Apache, OPcache on):
 
-With 1–3 in place, shared hosting should cope with a few hundred players
-online at once. Beyond that, move to a small VPS (from about £5–20 a month),
-where live updates (pushing changes rather than polling) also become possible.
-The code is plain PHP and MySQL, so it moves without changes.
+| | Before | Now |
+|---|---|---|
+| A poll | about 140 ms, 22 KB | about 15 ms, 22 KB |
+| A poll with nothing new | the same | about 9 ms, 67 bytes |
+| Rebuilding a world's state (at most every 2 s) | about 115 ms | about 55 ms |
+
+So shared hosting should cope with a few hundred players online at once; by
+then most of each request's cost is PHP starting up and checking the
+session. What's left for later: the rebuild still reads all of a world's said
+words, which grows with the world, and polling itself could be
+replaced by pushed updates, which needs a VPS (from about £5–20 a month). The
+code is plain PHP and MySQL, so it moves without changes.
 
 ## 3. Housekeeping
 
@@ -114,6 +124,4 @@ weekly), covers this.
 1. Now, while small: housekeeping (3) and a privacy notice (5). Both are small.
 2. Before promoting: decide the public world design (1), and switch to an
    email service (4).
-3. When more than about 50 players are online together: caching and
-   counters (2).
-4. When shared hosting strains: move to a VPS.
+3. When shared hosting strains: move to a VPS (2).

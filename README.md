@@ -46,6 +46,7 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 | `src/Dictionary.php`, `src/WordFamilies.php` | Word list, rarity and word families |
 | `src/Prompts.php` | Prompt patterns and the prompt picker |
 | `src/Scoring.php` | Points and multipliers |
+| `src/StateCache.php` | Keeps each world's state for a couple of seconds, shared between viewers |
 | `schema.sql` | Database tables |
 | `data/words.txt` | The word list, most common first |
 | `data/extra-words.txt` | Words added by hand that the main list misses (editable) |

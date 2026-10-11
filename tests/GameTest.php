@@ -457,7 +457,7 @@ test('wrong guesses cost points, typos are free', function () {
     $board = array_column($game->state($world['id'], null)['leaderboard'], null, 'nickname');
     same($points, $board['Ann']['total']);
     same(-2 * Game::PENALTY, $board['Ben']['total']);
-    same(-2 * Game::PENALTY, $board['Ben']['thisPrompt']);
+    same(-2 * Game::PENALTY, array_column($game->state($world['id'], null)['promptBoard'], 'points', 'nickname')['Ben']);
     same(0, $board['Ben']['words']);
 });
 
@@ -485,6 +485,69 @@ test('the prompt leaderboard ranks the current prompt alone', function () {
         ['nickname' => 'Late', 'points' => $points, 'words' => 1],
         ['nickname' => 'Early', 'points' => -Game::PENALTY, 'words' => 0],
     ], $state['promptBoard']);
+});
+
+test('running score totals match a full recount', function () {
+    $game = makeGame();
+    $db = gameDb($game);
+    $world = $game->createWorld('Totals');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $a = $game->join($world['id'], 'Ann');
+    $b = $game->join($world['id'], 'Ben');
+    $game->play($world['id'], $a['token'], 'moon');
+    $game->play($world['id'], $a['token'], 'book');
+    $game->play($world['id'], $b['token'], 'moon'); // Already said: a penalty.
+    $game->play($world['id'], $b['token'], 'xyzzy'); // Typo: free.
+    $board = fn () => array_map(fn ($p) => [$p['nickname'], $p['total'], $p['words']], $game->state($world['id'], null)['leaderboard']);
+    $kept = $board();
+    $db->exec('UPDATE players SET score = 0, words = 0');
+    Game::recountScores($db, $world['id']);
+    same($kept, $board());
+    same(['Ben', -Game::PENALTY, 0], $kept[1]);
+});
+
+test('older databases get score totals filled in', function () {
+    $game = makeGame();
+    $db = gameDb($game);
+    $world = $game->createWorld('Old');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $points = $game->play($world['id'], $game->join($world['id'], 'Ann')['token'], 'moon')['points'];
+    $db->exec('ALTER TABLE players DROP KEY idx_score, DROP COLUMN score, DROP COLUMN words');
+    $db->exec('ALTER TABLE worlds DROP COLUMN version');
+    Game::installSchema($db);
+    same([$points, 1], [(int) $db->query('SELECT score FROM players')->fetchColumn(), (int) $db->query('SELECT words FROM players')->fetchColumn()]);
+});
+
+test('the state cache shares one answer between viewers but shows new words at once', function () {
+    $dir = sys_get_temp_dir() . '/unsaid-cache-test-' . bin2hex(random_bytes(4));
+    $cache = StateCache::open($dir, 60);
+    $db = testDb();
+    $game = new Game($db, testDictionary(), fn () => 1_000, promptMin: 1, promptMax: 1000, stateCache: $cache);
+    $world = $game->createWorld('Cached');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $first = $game->state($world['id'], null);
+    // A change the game doesn't know about (no version bump) stays hidden while the copy is fresh...
+    $db->exec("UPDATE worlds SET name = 'Renamed'");
+    same('Cached', $game->state($world['id'], null)['world']['name'], 'Served from the cache');
+    // ...but saying a word shows straight away.
+    $game->play($world['id'], $game->join($world['id'], 'Ann')['token'], 'moon');
+    $after = $game->state($world['id'], null);
+    same('moon', $after['said'][0]['words'][0]['word']);
+    same('Renamed', $after['world']['name']);
+    check($first['prompt']['remaining'] > $after['prompt']['remaining']);
+
+    $calls = 0;
+    $short = new StateCache($dir, 0.2);
+    $compute = function () use (&$calls) { $calls++; return ['n' => $calls]; };
+    $short->get('x', 1, $compute);
+    $short->get('x', 1, $compute);
+    same(1, $calls, 'Fresh copy reused');
+    $short->get('x', 2, $compute);
+    same(2, $calls, 'New version recomputed');
+    usleep(250_000);
+    same(['n' => 3], $short->get('x', 2, $compute), 'Old copy recomputed');
+    array_map('unlink', glob("$dir/*"));
+    rmdir($dir);
 });
 
 test('players see only their own misses', function () {

@@ -33,6 +33,7 @@ final class Game
         ?callable $clock = null,
         private readonly int $promptMin = 10,
         private readonly int $promptMax = 80,
+        private readonly ?StateCache $stateCache = null,
     ) {
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -57,6 +58,18 @@ final class Game
         if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'spelling'")->fetch()) {
             $db->exec("ALTER TABLE worlds ADD COLUMN spelling VARCHAR(4) CHARACTER SET ascii NOT NULL DEFAULT 'both' AFTER prompt_duration_ms");
         }
+        // Goes up whenever a world's shared state changes, so cached copies know they're out of date.
+        if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'version'")->fetch()) {
+            $db->exec('ALTER TABLE worlds ADD COLUMN version INT UNSIGNED NOT NULL DEFAULT 0');
+        }
+        // Running totals for the overall leaderboard, so polls don't re-add every word and miss.
+        if (!$db->query("SHOW COLUMNS FROM players LIKE 'score'")->fetch()) {
+            $db->exec('ALTER TABLE players
+                ADD COLUMN score INT NOT NULL DEFAULT 0,
+                ADD COLUMN words INT UNSIGNED NOT NULL DEFAULT 0,
+                ADD KEY idx_score (world_id, score)');
+            self::recountScores($db);
+        }
         // Databases from before the new prompt types: add the spec columns.
         if (!$db->query("SHOW COLUMNS FROM prompts LIKE 'spec'")->fetch()) {
             $db->exec("ALTER TABLE prompts
@@ -65,6 +78,28 @@ final class Game
                 MODIFY type VARCHAR(10) CHARACTER SET ascii NULL,
                 MODIFY letters VARCHAR(5) CHARACTER SET ascii COLLATE ascii_bin NULL");
         }
+    }
+
+    /**
+     * Recalculates every player's running totals from the words and misses tables. Run
+     * automatically when the totals are added; run it again after editing those tables by hand.
+     */
+    public static function recountScores(PDO $db, ?string $worldId = null): void
+    {
+        $db->prepare('
+            UPDATE players p SET
+              score = (SELECT COALESCE(SUM(points), 0) FROM burns WHERE player_id = p.id)
+                    + (SELECT COALESCE(SUM(points), 0) FROM misses WHERE player_id = p.id),
+              words = (SELECT COUNT(*) FROM burns WHERE player_id = p.id AND word = played_word)
+            WHERE ? IS NULL OR p.world_id = ?')
+            ->execute([$worldId, $worldId]);
+        $db->prepare('UPDATE worlds SET version = version + 1 WHERE ? IS NULL OR id = ?')->execute([$worldId, $worldId]);
+    }
+
+    /** Marks the world's shared state as changed, for the state cache. */
+    private function changed(string $worldId): void
+    {
+        $this->db->prepare('UPDATE worlds SET version = version + 1 WHERE id = ?')->execute([$worldId]);
     }
 
     private function now(): int
@@ -255,6 +290,7 @@ final class Game
             if ($prompt = $this->livePrompt($worldId)) return $prompt; // Another request rotated it first.
             $world = $this->world($worldId);
             $this->db->prepare('UPDATE prompts SET ended_at = ? WHERE world_id = ? AND ended_at IS NULL')->execute([$this->now(), $worldId]);
+            $this->changed($worldId);
             $stmt = $this->db->prepare('SELECT spec, type, letters FROM prompts WHERE world_id = ?');
             $stmt->execute([$worldId]);
             $used = [];
@@ -337,6 +373,8 @@ final class Game
                 $insert->execute([$worldId, $w, $word, $player['id'], $prompt['id'], $w === $word ? $points : 0, $at]);
                 $this->burnedCache[$worldId][$w] = true;
             }
+            $this->db->prepare('UPDATE players SET score = score + ?, words = words + 1 WHERE id = ?')->execute([$points, $player['id']]);
+            $this->changed($worldId);
             return [
                 'ok' => true,
                 'word' => $word,
@@ -353,6 +391,11 @@ final class Game
             INSERT INTO misses (world_id, player_id, prompt_id, word, reason, points, missed_at)
             VALUES (?, ?, ?, ?, ?, ?, ?)')
             ->execute([$player['world_id'], $player['id'], $prompt['id'], $word, $reason, -$penalty, $this->now()]);
+        if ($penalty) {
+            // Penalties show on the leaderboards; free misses are private.
+            $this->db->prepare('UPDATE players SET score = score - ? WHERE id = ?')->execute([$penalty, $player['id']]);
+            $this->changed($player['world_id']);
+        }
         return ['ok' => false, 'word' => $word, 'reason' => $reason, 'penalty' => $penalty];
     }
 
@@ -427,39 +470,51 @@ final class Game
         // Report status: the player's report of this word for this prompt, and the admin's decision.
         $stmt = $this->db->prepare("
             SELECT m.word, m.reason, m.points, m.missed_at, m.prompt_id, p.spec, p.label, p.type, p.letters,
-              r.id AS report_id, d.decision,
-              b.player_id AS said_by_id, b.prompt_id AS said_prompt_id, bp.nickname AS said_by,
-              bpr.spec AS said_spec, bpr.label AS said_label, bpr.type AS said_type, bpr.letters AS said_letters
+              m.world_id, r.id AS report_id, d.decision
             FROM misses m
             JOIN prompts p ON p.id = m.prompt_id
             LEFT JOIN reports r ON r.player_id = m.player_id AND r.prompt_id = m.prompt_id AND r.word = m.word
             LEFT JOIN word_decisions d ON d.category = r.category AND d.word = r.word
-            -- Whether the word has been used up since (by anyone, for any prompt).
-            LEFT JOIN burns b ON b.world_id = m.world_id AND b.word = m.word
-            LEFT JOIN players bp ON bp.id = b.player_id
-            LEFT JOIN prompts bpr ON bpr.id = b.prompt_id
             WHERE m.player_id = ?
             ORDER BY m.id DESC LIMIT $limit");
         $stmt->execute([$playerId]);
-        return array_map(fn ($r) => [
-            'word' => $r['word'],
-            'reason' => $r['reason'],
-            'penalty' => -(int) $r['points'],
-            'prompt' => $r['label'] ?? Prompts::describe(self::specOf($r), $this->dictionary),
-            'promptId' => (int) $r['prompt_id'],
-            'at' => (int) $r['missed_at'],
-            // null (not reported), 'reported' (waiting), 'accepted' or 'dismissed'.
-            'reportStatus' => $r['report_id'] ? ($r['decision'] ?? 'reported') : null,
-            // Who has used the word up, and for which prompt; null while it's still unsaid.
-            'said' => $r['said_by_id'] === null ? null : [
-                'by' => $r['said_by'],
-                'byYou' => (int) $r['said_by_id'] === $playerId,
-                'promptId' => (int) $r['said_prompt_id'],
-                'prompt' => $r['said_label'] ?? Prompts::describe(self::specOf([
-                    'spec' => $r['said_spec'], 'type' => $r['said_type'], 'letters' => $r['said_letters'],
-                ]), $this->dictionary),
-            ],
-        ], $stmt->fetchAll());
+        $rows = $stmt->fetchAll();
+
+        // Whether each word has been used up since (by anyone, for any prompt). Looked up
+        // separately: joining misses to burns can't use the index, as their word columns differ.
+        $saidSince = [];
+        if ($rows) {
+            $words = array_values(array_unique(array_column($rows, 'word')));
+            $stmt = $this->db->prepare('
+                SELECT b.word, b.player_id AS said_by_id, b.prompt_id AS said_prompt_id, bp.nickname AS said_by,
+                  bpr.spec AS said_spec, bpr.label AS said_label, bpr.type AS said_type, bpr.letters AS said_letters
+                FROM burns b JOIN players bp ON bp.id = b.player_id JOIN prompts bpr ON bpr.id = b.prompt_id
+                WHERE b.world_id = ? AND b.word IN (' . implode(',', array_fill(0, count($words), '?')) . ')');
+            $stmt->execute([$rows[0]['world_id'], ...$words]);
+            foreach ($stmt->fetchAll() as $b) $saidSince[$b['word']] = $b;
+        }
+        return array_map(function ($r) use ($saidSince, $playerId) {
+            $b = $saidSince[$r['word']] ?? null;
+            return [
+                'word' => $r['word'],
+                'reason' => $r['reason'],
+                'penalty' => -(int) $r['points'],
+                'prompt' => $r['label'] ?? Prompts::describe(self::specOf($r), $this->dictionary),
+                'promptId' => (int) $r['prompt_id'],
+                'at' => (int) $r['missed_at'],
+                // null (not reported), 'reported' (waiting), 'accepted' or 'dismissed'.
+                'reportStatus' => $r['report_id'] ? ($r['decision'] ?? 'reported') : null,
+                // Who has used the word up, and for which prompt; null while it's still unsaid.
+                'said' => $b === null ? null : [
+                    'by' => $b['said_by'],
+                    'byYou' => (int) $b['said_by_id'] === $playerId,
+                    'promptId' => (int) $b['said_prompt_id'],
+                    'prompt' => $b['said_label'] ?? Prompts::describe(self::specOf([
+                        'spec' => $b['said_spec'], 'type' => $b['said_type'], 'letters' => $b['said_letters'],
+                    ]), $this->dictionary),
+                ],
+            ];
+            }, $rows);
     }
 
     private function checkRateLimit(array $player): void
@@ -476,40 +531,50 @@ final class Game
 
     // --- State for the client ---
 
+    /**
+     * Everything a page needs to show a world. The shared part is the same for every viewer,
+     * so it comes from the state cache when there is one; only the player's own part is
+     * worked out on each request.
+     */
     public function state(string $worldId, ?string $token): array
     {
         $world = $this->world($worldId);
+        $shared = $this->stateCache
+            ? $this->stateCache->get($worldId, (int) ($world['version'] ?? 0), fn () => $this->sharedState($world))
+            : $this->sharedState($world);
+
+        $me = null;
+        $myMisses = [];
+        if ($token) {
+            $stmt = $this->db->prepare('SELECT id, nickname FROM players WHERE world_id = ? AND token = ?');
+            $stmt->execute([$worldId, $token]);
+            if ($player = $stmt->fetch()) {
+                $me = $player['nickname'];
+                $myMisses = $this->missesOf((int) $player['id']);
+            }
+        }
+        return [
+            'me' => $me,
+            // Only the player's own misses: other players never see them.
+            'myMisses' => $myMisses,
+        ] + $shared + ['now' => $this->now()];
+    }
+
+    /** The part of a world's state that's the same for everyone watching it. */
+    private function sharedState(array $world): array
+    {
+        $worldId = $world['id'];
         $prompt = $this->currentPrompt($worldId);
         $mult = $this->multipliers($worldId, $prompt);
-
-        $said = $this->saidByPrompt($worldId);
-
-        // Totals include penalties for wrong guesses, which are stored as negative points.
-        $stmt = $this->db->prepare('
-            SELECT p.nickname, s.words,
-              s.points + COALESCE(m.points, 0) AS total,
-              s.prompt_points + COALESCE(m.prompt_points, 0) AS this_prompt
-            FROM players p
-            JOIN (
-              SELECT p2.id,
-                COUNT(CASE WHEN b.word = b.played_word THEN 1 END) AS words,
-                COALESCE(SUM(b.points), 0) AS points,
-                COALESCE(SUM(CASE WHEN b.prompt_id = ? THEN b.points END), 0) AS prompt_points
-              FROM players p2 LEFT JOIN burns b ON b.player_id = p2.id
-              WHERE p2.world_id = ?
-              GROUP BY p2.id
-            ) s ON s.id = p.id
-            LEFT JOIN (
-              SELECT player_id, SUM(points) AS points, SUM(CASE WHEN prompt_id = ? THEN points ELSE 0 END) AS prompt_points
-              FROM misses WHERE world_id = ? GROUP BY player_id
-            ) m ON m.player_id = p.id
-            ORDER BY total DESC, s.words DESC, p.nickname
-            LIMIT 50');
         $promptId = $prompt['id'] ?? -1;
-        $stmt->execute([$promptId, $worldId, $promptId, $worldId]);
+
+        // Scores include penalties for wrong guesses. Kept as running totals on each player.
+        $stmt = $this->db->prepare('
+            SELECT nickname, score, words FROM players WHERE world_id = ?
+            ORDER BY score DESC, words DESC, nickname LIMIT 50');
+        $stmt->execute([$worldId]);
         $leaderboard = array_map(fn ($r) => [
-            'nickname' => $r['nickname'], 'total' => (int) $r['total'],
-            'thisPrompt' => (int) $r['this_prompt'], 'words' => (int) $r['words'],
+            'nickname' => $r['nickname'], 'total' => (int) $r['score'], 'words' => (int) $r['words'],
         ], $stmt->fetchAll());
 
         // The same, ranked by the current prompt alone, so late arrivals can top something.
@@ -532,22 +597,8 @@ final class Game
             'nickname' => $r['nickname'], 'points' => (int) $r['points'], 'words' => (int) $r['words'],
         ], $stmt->fetchAll());
 
-        $me = null;
-        $myMisses = [];
-        if ($token) {
-            $stmt = $this->db->prepare('SELECT id, nickname FROM players WHERE world_id = ? AND token = ?');
-            $stmt->execute([$worldId, $token]);
-            if ($player = $stmt->fetch()) {
-                $me = $player['nickname'];
-                $myMisses = $this->missesOf((int) $player['id']);
-            }
-        }
-
         return [
             'world' => ['id' => $world['id'], 'name' => $world['name'], 'spelling' => $world['spelling'] ?? 'both'],
-            'me' => $me,
-            // Only the player's own misses: other players never see them.
-            'myMisses' => $myMisses,
             'prompt' => $prompt ? [
                 'id' => (int) $prompt['id'],
                 'label' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary),
@@ -558,10 +609,9 @@ final class Game
             'multipliers' => $mult,
             'dictionary' => ['size' => $this->dictionary->size(), 'burned' => count($this->burned($worldId))],
             // Every word said in the current prompt and the few before it, newest prompt first.
-            'said' => $said,
+            'said' => $this->saidByPrompt($worldId),
             'leaderboard' => $leaderboard,
             'promptBoard' => $promptBoard,
-            'now' => $this->now(),
         ];
     }
 }

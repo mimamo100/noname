@@ -8,7 +8,8 @@
 //   GET  /api/auth/me                                              the signed-in account, or null
 //
 //   POST /api/worlds                      {name, spelling}  create a private world (account needed)
-//   GET  /api/worlds/{id}                                   world state (anyone can watch)
+//   GET  /api/worlds/{id}?since={version}                   world state (anyone can watch); just
+//                                                           {unchanged, version, now} if it's the same as last time
 //   POST /api/worlds/{id}/join                              join with the account's name (account needed)
 //   POST /api/worlds/{id}/words           {word}            say a word, joining first if needed (account needed)
 //   GET  /api/worlds/{id}/words/{word}                      who said this word?
@@ -21,6 +22,7 @@ require "$root/src/WordFamilies.php";
 require "$root/src/Dictionary.php";
 require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
+require "$root/src/StateCache.php";
 require "$root/src/Game.php";
 require "$root/src/Admin.php";
 require "$root/src/Mailer.php";
@@ -87,7 +89,13 @@ function route(Game $game, Auth $auth): never
     if ($worldId === null) throw new GameError(404, 'Not found');
     if ($method === 'GET' && $action === null) {
         $player = $user ? $game->playerForUser($worldId, $user['id']) : null;
-        respond(200, $game->state($worldId, $player['token'] ?? null) + ['account' => $user ? ['name' => $user['name']] : null]);
+        $state = $game->state($worldId, $player['token'] ?? null) + ['account' => $user ? ['name' => $user['name']] : null];
+        // Pages poll every few seconds, mostly for nothing new: then a tiny answer will do.
+        $now = $state['now'];
+        unset($state['now']);
+        $version = substr(md5(json_encode($state)), 0, 16);
+        if (($_GET['since'] ?? null) === $version) respond(200, ['unchanged' => true, 'version' => $version, 'now' => $now]);
+        respond(200, $state + ['version' => $version, 'now' => $now]);
     }
     if ($method === 'POST' && $action === 'join') {
         $player = $game->joinAsUser($worldId, $needUser());
@@ -115,7 +123,9 @@ try {
         $config['db_pass'],
     );
     $dictionary = Dictionary::load();
-    $game = new Game($db, $dictionary);
+    // World states are cached in this folder for a couple of seconds ('cache_dir' => false turns it off).
+    $cacheDir = $config['cache_dir'] ?? "$root/cache";
+    $game = new Game($db, $dictionary, stateCache: $cacheDir ? StateCache::open($cacheDir) : null);
     $auth = new Auth($db, new Mailer($config['mail'] ?? []), $dictionary);
     try {
         route($game, $auth);

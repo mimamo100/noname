@@ -11,6 +11,7 @@ require "$root/src/WordFamilies.php";
 require "$root/src/Dictionary.php";
 require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
+require "$root/src/StateCache.php";
 require "$root/src/Game.php";
 require "$root/src/Admin.php";
 
@@ -113,6 +114,10 @@ try {
                 $admin->decide($category, $word, 'dismissed');
                 $_SESSION['flash'] = "Dismissed “{$word}”.";
                 break;
+            case 'recount':
+                Game::recountScores($db);
+                $_SESSION['flash'] = 'Scores recounted.';
+                break;
             case 'undo':
                 $admin->undo($category, $word);
                 $_SESSION['flash'] = "Undone: “{$word}”.";
@@ -206,5 +211,9 @@ if (!$decisions) {
 }
 $html .= '<p class="muted small">Accepted words are kept in the database. To make them permanent in the word files, '
     . 'add them to <code>data/category-overrides.txt</code> or <code>data/extra-words.txt</code> when the game is next updated.</p>';
+
+$html .= '<h2>Scores</h2><p class="muted">Each player\'s total is kept as a running count. If you change the '
+    . '<code>burns</code> or <code>misses</code> tables by hand (in phpMyAdmin), recount so the leaderboards match.</p>'
+    . button($csrf, 'recount', 'Recount scores', [], 'secondary');
 
 page('Admin', $html);

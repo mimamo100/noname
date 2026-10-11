@@ -6,12 +6,14 @@ test('HTTP API: sign in, create, play, look up', function () {
     testDb(); // Start from empty tables.
     $mailLog = tempnam(sys_get_temp_dir(), 'unsaidmail');
     $config = tempnam(sys_get_temp_dir(), 'unsaidconfig');
+    $cacheDir = sys_get_temp_dir() . '/unsaid-api-cache-' . bin2hex(random_bytes(4));
     file_put_contents($config, '<?php return ' . var_export([
         'db_host' => getenv('TEST_DB_HOST') ?: 'localhost',
         'db_name' => getenv('TEST_DB_NAME'),
         'db_user' => getenv('TEST_DB_USER') ?: 'root',
         'db_pass' => getenv('TEST_DB_PASS') ?: '',
         'mail' => ['transport' => 'log', 'log_file' => $mailLog, 'from' => 'noreply@example.com'],
+        'cache_dir' => $cacheDir,
     ], true) . ';');
     $port = random_int(20000, 40000);
     $public = dirname(__DIR__) . '/public';
@@ -69,6 +71,10 @@ test('HTTP API: sign in, create, play, look up', function () {
 
         $state = $call('GET', "/api/worlds/$id", null, $session);
         same('Kim', $state['body']['account']['name']);
+        $same = $call('GET', "/api/worlds/$id?since={$state['body']['version']}", null, $session)['body'];
+        same([true, $state['body']['version']], [$same['unchanged'], $same['version']], 'Nothing new: a short answer');
+        check(!isset($same['said']));
+        check(!isset($call('GET', "/api/worlds/$id?since={$state['body']['version']}")['body']['unchanged']), 'Different viewer, different answer');
         same(null, $state['body']['me'], 'Not a player until the first word');
         $spec = json_decode(testDbConnection()->query("SELECT spec FROM prompts WHERE world_id = '$id'")->fetchColumn(), true);
         $word = Prompts::fitting($spec, Dictionary::load())[0];
@@ -91,5 +97,7 @@ test('HTTP API: sign in, create, play, look up', function () {
         proc_terminate($server);
         unlink($config);
         @unlink($mailLog);
+        array_map('unlink', glob("$cacheDir/*"));
+        @rmdir($cacheDir);
     }
 });

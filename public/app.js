@@ -1,4 +1,8 @@
+// How often to check for changes: every 3 seconds, slowing down when the world goes quiet
+// or the page is in the background, where nobody is watching.
 const POLL_MS = 3000;
+const QUIET_POLL_MS = [6000, 12000]; // After a minute, then two minutes, with nothing new.
+const HIDDEN_POLL_MS = 30000;
 const worldId = location.pathname.startsWith('/w/') ? decodeURIComponent(location.pathname.slice(3)) : 'public';
 const SESSION_KEY = 'unsaid:session';
 const $ = (id) => document.getElementById(id);
@@ -64,6 +68,10 @@ function el(tag, attrs = {}, ...children) {
   return node;
 }
 
+function renderClock(state) {
+  if (state.prompt) $('ends-in').textContent = timeLeft(state.prompt.endsAt - state.now);
+}
+
 function render(state) {
   document.title = `${state.world.name} · Unsaid`;
   const spellingNote = { uk: ' · UK spelling', us: ' · US spelling' }[state.world.spelling] ?? '';
@@ -78,7 +86,7 @@ function render(state) {
     $('remaining').textContent = state.prompt.remaining;
     const used = 1 - state.prompt.remaining / state.prompt.availableAtStart;
     $('meter-fill').style.width = `${Math.round(used * 100)}%`;
-    $('ends-in').textContent = timeLeft(state.prompt.endsAt - state.now);
+    renderClock(state);
   } else {
     $('prompt-label').textContent = 'This world has run out of words';
     $('remaining').textContent = '0';
@@ -227,9 +235,27 @@ try { if (localStorage.getItem('unsaid:board') === 'prompt') showBoard('prompt')
 $('tab-recent').addEventListener('click', () => showTab('recent'));
 $('tab-misses').addEventListener('click', () => showTab('misses'));
 
+// The last full state, and how many polls in a row have found nothing new.
+let lastState = null;
+let quietPolls = 0;
+let refreshCount = 0;
+
 async function refresh() {
+  const thisRefresh = ++refreshCount;
   try {
-    render(await api(`/${encodeURIComponent(worldId)}`));
+    // The server answers just "unchanged" if nothing is new since the version we have.
+    const since = lastState ? `?since=${encodeURIComponent(lastState.version)}` : '';
+    const state = await api(`/${encodeURIComponent(worldId)}${since}`);
+    if (thisRefresh !== refreshCount) return; // A newer refresh started meanwhile: let it win.
+    if (state.unchanged && lastState) {
+      quietPolls++;
+      lastState.now = state.now;
+      renderClock(lastState);
+      return;
+    }
+    quietPolls = 0;
+    lastState = state;
+    render(state);
     if (!lastStateLoaded) {
       let saved = 'recent';
       try { saved = localStorage.getItem('unsaid:tab') ?? 'recent'; } catch { /* default tab */ }
@@ -425,5 +451,29 @@ $('new-world-form').addEventListener('submit', async (e) => {
   }
 });
 
-setInterval(refresh, POLL_MS);
+function pollDelay() {
+  if (document.hidden) return HIDDEN_POLL_MS;
+  if (quietPolls >= 40) return QUIET_POLL_MS[1];
+  if (quietPolls >= 20) return QUIET_POLL_MS[0];
+  return POLL_MS;
+}
+
+let pollTimer;
+function schedulePoll() {
+  clearTimeout(pollTimer);
+  pollTimer = setTimeout(async () => {
+    await refresh();
+    schedulePoll();
+  }, pollDelay());
+}
+
+// Back to the page: catch up at once, then poll at full speed again.
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) return;
+  quietPolls = 0;
+  refresh();
+  schedulePoll();
+});
+
 refresh();
+schedulePoll();

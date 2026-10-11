@@ -11,6 +11,9 @@ return [
     // The admin page's address: https://your-site/<admin_path>. Pick something nobody
     // would guess (4-64 letters, numbers, - or _). Every other address says "Not found".
     'admin_path' => 'admin',
+    // Each world's state is kept here for a couple of seconds, so busy worlds stay fast.
+    // The folder is created if needed. Set to false to turn caching off.
+    // 'cache_dir' => __DIR__ . '/cache',
 
     // Sign-in emails. 'from' should be a real address on your domain (create it in
     // cPanel > Email Accounts), so the codes don't land in spam.
