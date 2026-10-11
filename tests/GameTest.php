@@ -376,6 +376,46 @@ test('the real dictionary links UK and US spellings', function () {
     same([], $d->wrongSpellings('both'));
 });
 
+test('an already-said word is reported as such before the meaning is checked', function () {
+    // The "fencing" case: said for a sport, then tried for a meaning it isn't listed under.
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $world = $game->createWorld('Fencing', null, 60_000);
+    setPrompt($game, $world['id'], spec('sport'));
+    $me = $game->join($world['id'], 'Me');
+    $other = $game->join($world['id'], 'Other');
+    check($game->play($world['id'], $me['token'], 'chess')['ok']);
+    $clock += 61_000;
+    $game->state($world['id'], null); // Let the game move on to a new prompt.
+    setPrompt($game, $world['id'], spec('bird'));
+
+    $mine = $game->play($world['id'], $me['token'], 'chess');
+    same('already-burned', $mine['reason'], 'Not "not on our list", which would invite a pointless report');
+    same(0, $mine['penalty'], 'Repeating your own word is free');
+    same(true, $mine['byYou']);
+    same('A sport or game', $mine['burned']['prompt'], 'Says which prompt it was said for');
+
+    $theirs = $game->play($world['id'], $other['token'], 'chess');
+    same(Game::PENALTY, $theirs['penalty'], "Someone else's word still costs points");
+    same(false, $theirs['byYou']);
+    same('Me', $theirs['burned']['by']);
+});
+
+test('my misses show what happened to my reports', function () {
+    $game = makeGame();
+    $db = gameDb($game);
+    $world = $game->createWorld('Reports');
+    setPrompt($game, $world['id'], spec('sport'));
+    $p = $game->join($world['id'], 'Rae');
+    $game->play($world['id'], $p['token'], 'sofa');
+    $status = fn () => $game->state($world['id'], $p['token'])['myMisses'][0]['reportStatus'];
+    same(null, $status());
+    $game->report($world['id'], $p['token'], 'sofa');
+    same('reported', $status(), 'Remembered by the server, not just the page');
+    (new Admin($db, testDictionary()))->decide('sport', 'sofa', 'accepted');
+    same('accepted', $status());
+});
+
 test('wrong guesses cost points, typos are free', function () {
     $game = makeGame();
     $world = $game->createWorld('Penalties');

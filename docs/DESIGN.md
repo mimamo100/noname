@@ -120,9 +120,12 @@ word-finder site. There are three kinds:
 
 ## Penalties and limits
 
-- A guess that **doesn't fit** the prompt, or has **already been said**,
-  costs 2 points. Pasting a list from a word-finder site mostly hits words
-  that are already said, so it loses points.
+- A guess that **doesn't fit** the prompt, or has **already been said** by
+  someone else, costs 2 points. Pasting a list from a word-finder site mostly
+  hits words that are already said, so it loses points.
+- **Repeating your own word is free.** "Already said" is checked before the
+  meaning and letters, and the message says when the word was said and for
+  which prompt, since that may be several prompts ago and out of sight.
 - **Typos are free**: a word that isn't in the dictionary costs nothing.
 - **Gaps in our lists are free too.** The game can't tell a real answer
   missing from its list from a wrong one, so it gives the benefit of the
@@ -138,7 +141,8 @@ word-finder site. There are three kinds:
   with the three prompts before it collapsed underneath. Any older word can be
   found with **Who said it?**.
 - **My misses** lists a player's own wrong guesses (with the prompt, the
-  reason and any penalty). It's private: other players can't see your misses,
+  reason and any penalty, plus what happened to any report: waiting,
+  accepted or dismissed). It's private: other players can't see your misses,
   because "close" guesses would give them clues, and public mistakes would
   make people afraid to try things.
 

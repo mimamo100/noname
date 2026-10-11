@@ -73,7 +73,9 @@ class Mailer
     private function sendLog(string $to, string $subject, string $body): void
     {
         $file = $this->config['log_file'] ?? (sys_get_temp_dir() . '/unsaid-mail.log');
-        file_put_contents($file, "To: $to\nSubject: $subject\n\n$body\n----\n", FILE_APPEND | LOCK_EX);
+        if (@file_put_contents($file, "To: $to\nSubject: $subject\n\n$body\n----\n", FILE_APPEND | LOCK_EX) === false) {
+            throw new RuntimeException("Can't write to the mail log $file");
+        }
     }
 
     private function sendSmtp(string $to, string $subject, string $body): void

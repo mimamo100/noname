@@ -193,15 +193,21 @@ final class Game
         $this->world($worldId);
         $word = strtolower(trim($rawWord));
         $stmt = $this->db->prepare('
-            SELECT b.played_word, b.burned_at, p.nickname
-            FROM burns b JOIN players p ON p.id = b.player_id
+            SELECT b.played_word, b.burned_at, b.player_id, p.nickname, pr.spec, pr.label, pr.type, pr.letters
+            FROM burns b JOIN players p ON p.id = b.player_id JOIN prompts pr ON pr.id = b.prompt_id
             WHERE b.world_id = ? AND b.word = ?');
         $stmt->execute([$worldId, $word]);
         $row = $stmt->fetch();
         return [
             'word' => $word,
             'inDictionary' => $this->dictionary->has($word),
-            'burned' => $row ? ['by' => $row['nickname'], 'at' => (int) $row['burned_at'], 'playedWord' => $row['played_word']] : null,
+            'burned' => $row ? [
+                'by' => $row['nickname'],
+                'playerId' => (int) $row['player_id'],
+                'at' => (int) $row['burned_at'],
+                'playedWord' => $row['played_word'],
+                'prompt' => $row['label'] ?? Prompts::describe(self::specOf($row), $this->dictionary),
+            ] : null,
         ];
     }
 
@@ -299,6 +305,15 @@ final class Game
                     'suggestions' => array_values(array_filter($this->dictionary->otherSpellings($word), fn ($w) => !isset($wrong[$w]))),
                 ];
             }
+            // Already said comes before checking the prompt, so nobody is told to report a word
+            // that's used up anyway. Repeating your own word is an honest slip, so it's free.
+            $burned = $this->burned($worldId);
+            if (isset($burned[$word])) {
+                $said = $this->lookup($worldId, $word)['burned'];
+                $mine = $said && $said['playerId'] === (int) $player['id'];
+                return $this->miss($player, $prompt, $word, 'already-burned', $mine ? 0 : self::PENALTY)
+                    + ['burned' => $said, 'byYou' => $mine];
+            }
             if (!Prompts::matches($prompt['spec'], $this->dictionary, $word)) {
                 // Right letters but not on our list for the meaning: our lists have gaps, so no
                 // penalty, and the player can report the word.
@@ -307,11 +322,6 @@ final class Game
                         + ['category' => $this->dictionary->categoryLabel($prompt['spec']['cat'])];
                 }
                 return $this->miss($player, $prompt, $word, 'doesnt-fit', self::PENALTY);
-            }
-            $burned = $this->burned($worldId);
-            if (isset($burned[$word])) {
-                return $this->miss($player, $prompt, $word, 'already-burned', self::PENALTY)
-                    + ['burned' => $this->lookup($worldId, $word)['burned']];
             }
 
             $mult = $this->multipliers($worldId, $prompt);
@@ -414,9 +424,14 @@ final class Game
     /** A player's most recent wrong guesses, newest first, with the prompt each was for. */
     private function missesOf(int $playerId, int $limit = 50): array
     {
+        // Report status: the player's report of this word for this prompt, and the admin's decision.
         $stmt = $this->db->prepare("
-            SELECT m.word, m.reason, m.points, m.missed_at, m.prompt_id, p.spec, p.label, p.type, p.letters
-            FROM misses m JOIN prompts p ON p.id = m.prompt_id
+            SELECT m.word, m.reason, m.points, m.missed_at, m.prompt_id, p.spec, p.label, p.type, p.letters,
+              r.id AS report_id, d.decision
+            FROM misses m
+            JOIN prompts p ON p.id = m.prompt_id
+            LEFT JOIN reports r ON r.player_id = m.player_id AND r.prompt_id = m.prompt_id AND r.word = m.word
+            LEFT JOIN word_decisions d ON d.category = r.category AND d.word = r.word
             WHERE m.player_id = ?
             ORDER BY m.id DESC LIMIT $limit");
         $stmt->execute([$playerId]);
@@ -427,6 +442,8 @@ final class Game
             'prompt' => $r['label'] ?? Prompts::describe(self::specOf($r), $this->dictionary),
             'promptId' => (int) $r['prompt_id'],
             'at' => (int) $r['missed_at'],
+            // null (not reported), 'reported' (waiting), 'accepted' or 'dismissed'.
+            'reportStatus' => $r['report_id'] ? ($r['decision'] ?? 'reported') : null,
         ], $stmt->fetchAll());
     }
 

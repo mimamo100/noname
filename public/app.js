@@ -147,8 +147,13 @@ const MISS_REASONS = {
   'wrong-spelling': 'Other spelling',
 };
 
-// Words reported from the misses list on this device, so the button doesn't come back after a refresh.
+// Words reported in this visit, until the server's next update includes the report.
 const reported = new Set();
+const REPORT_STATUS = {
+  reported: 'Reported: waiting for a decision',
+  accepted: 'Report accepted: it counts now, so try it again',
+  dismissed: "Report reviewed: it doesn't count",
+};
 
 function renderMisses(misses, currentPromptId) {
   if (!misses.length) {
@@ -168,8 +173,11 @@ function renderMisses(misses, currentPromptId) {
       el('span', { className: m.penalty ? 'points penalty' : 'points free', textContent: m.penalty ? `−${m.penalty}` : 'free' }),
     ));
     // Reports are for the current prompt, so only offer them while it's still running.
-    if (isReportable(m) && m.promptId === currentPromptId) {
-      rows.at(-1).append(reported.has(m.word) ? el('span', { className: 'muted small-note', textContent: 'reported' }) : reportButton(m.word, m.reason));
+    const status = m.reportStatus ?? (reported.has(m.word) ? 'reported' : null);
+    if (status) {
+      rows.at(-1).append(el('span', { className: 'muted small-note', textContent: REPORT_STATUS[status] }));
+    } else if (isReportable(m) && m.promptId === currentPromptId) {
+      rows.at(-1).append(reportButton(m.word, m.reason));
     }
   }
   $('misses-list').replaceChildren(...rows);
@@ -207,6 +215,8 @@ function feedback(text, kind) {
   $('feedback').className = `feedback ${kind}`;
 }
 
+const shortDate = (ms) => new Date(ms).toLocaleString(undefined, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+
 const penaltyText = (r) => (r.penalty ? ` −${r.penalty} ${r.penalty === 1 ? 'point' : 'points'}.` : '');
 
 const REASONS = {
@@ -215,7 +225,9 @@ const REASONS = {
   'not-in-category': (w, r) => `“${w}” isn't on our list for “${r.category}”. No penalty.`,
   'wrong-spelling': (w, r) => `This world uses ${r.spelling === 'uk' ? 'UK' : 'US'} spelling${r.suggestions?.length ? `: try “${r.suggestions[0]}”` : ''}. No penalty.`,
   'already-burned': (w, r) => r.burned
-    ? `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''}.${penaltyText(r)}`
+    ? (r.byYou
+      ? `You already said “${r.burned.playedWord}”${r.burned.playedWord !== w ? ` (which uses up “${w}”)` : ''} on ${shortDate(r.burned.at)}, for “${r.burned.prompt}”. No penalty.`
+      : `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''} on ${shortDate(r.burned.at)}, for “${r.burned.prompt}”.${penaltyText(r)}`)
     : `“${w}” has already been said.${penaltyText(r)}`,
 };
 

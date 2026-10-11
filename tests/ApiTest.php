@@ -77,7 +77,8 @@ test('HTTP API: sign in, create, play, look up', function () {
         same(true, $played['body']['ok'], 'Play.');
         same('Kim', $call('GET', "/api/worlds/$id", null, $session)['body']['me'], 'Joined on the first word');
         same('Kim', $call('GET', "/api/worlds/$id/words/$word")['body']['burned']['by']);
-        same(Game::PENALTY, $call('POST', "/api/worlds/$id/words", ['word' => $word], $session)['body']['penalty'], 'Already said.');
+        $again = $call('POST', "/api/worlds/$id/words", ['word' => $word], $session)['body'];
+        same(['already-burned', 0, true], [$again['reason'], $again['penalty'], $again['byYou']], 'Repeating your own word is free.');
         same(401, $call('POST', "/api/worlds/$id/reports", ['word' => 'sofa'])['status'], 'Reports need an account.');
 
         same(200, $call('POST', '/api/auth/logout', null, $session)['status']);
