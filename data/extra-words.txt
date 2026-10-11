@@ -15,3 +15,22 @@ netball
 # UK spellings missing from the main list
 favourite
 favourites
+
+# Landscape
+moorland
+moorlands
+heathland
+heathlands
+marshland
+marshlands
+wetland
+wetlands
+copse
+copses
+hedgerow
+hedgerows
+upland
+uplands
+lowland
+headland
+headlands

@@ -91,6 +91,14 @@ test('the real dictionary loads with categories and without blocked words', func
     check(!$d->inCategory('animal', 'young'), 'Overrides remove odd members');
 });
 
+test('plurals of hand-added category words count too', function () {
+    $d = testDictionary();
+    check(!$d->inCategory('sport', 'books'));
+    $d->addToCategory('sport', 'book'); // As an override or an accepted report does.
+    check($d->inCategory('sport', 'book') && $d->inCategory('sport', 'books'));
+    check(!$d->inCategory('sport', 'cats'), 'Only plurals of words on the list');
+});
+
 test('letter rules match words', function () {
     $d = testDictionary();
     $cases = [

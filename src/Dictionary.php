@@ -208,6 +208,10 @@ final class Dictionary
             array_merge($this->categoryWords($id), $this->categories[$id]['also'] ?? []),
             true,
         );
-        return isset($this->categorySets[$id][$word]);
+        if (isset($this->categorySets[$id][$word])) return true;
+        // A plural counts if its singular does: hand-added words (overrides, the admin page)
+        // come without their plurals.
+        $singular = $this->singular($word);
+        return $singular !== $word && isset($this->categorySets[$id][$singular]);
     }
 }

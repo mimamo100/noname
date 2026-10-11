@@ -49,7 +49,7 @@ CATEGORIES = {
     'plant': ('A plant or flower', ['plant.n.02', 'flower.n.01']),
     'tree': ('A tree', ['tree.n.01']),
     'weather': ('Weather', ['atmospheric_phenomenon.n.01', 'weather.n.01']),
-    'landform': ('A landscape feature', ['geological_formation.n.01', 'body_of_water.n.01']),
+    'landform': ('A natural landscape feature', ['geological_formation.n.01', 'body_of_water.n.01']),
     'disease': ('An illness', ['disease.n.01', 'illness.n.01']),
     'crime': ('A crime', ['crime.n.01']),
     'sound': ('A sound', ['sound.n.04', 'noise.n.01']),
