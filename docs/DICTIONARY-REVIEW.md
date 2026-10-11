@@ -16,7 +16,7 @@ need these on your computer first:
 - **git**, and a copy of the repository on the branch with the latest work:
 
   ```sh
-  git clone https://github.com/mimamo100/noname.git unsaid
+  git clone https://github.com/mimamo100/unsaid.git unsaid
   cd unsaid
   git checkout claude/zealous-tesla-2ixwxu
   ```
