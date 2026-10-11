@@ -43,8 +43,10 @@ language shrinks, players hunt for rarer words, and those words are worth more.
   best score, most words, words said in all, best word). A finished world
   stays viewable with its final leaderboard. All the detail (who said what)
   is kept too; deleting it after about 30 days is a future housekeeping job.
-- **Private worlds.** Anyone can create one and share the link. Each world
-  uses up its own copy of the dictionary.
+- **Private worlds.** For a group of friends. Each world uses up its own
+  copy of the dictionary. See "Plans and private worlds" below.
+- **Competitions** (planned, next): private worlds
+  with teams and a fixed start and end. See "Competitions" below.
 - **Accounts.** Everyone needs a free account to play, join or create
   worlds; anyone can watch. See "Accounts" below.
 
@@ -229,6 +231,65 @@ Not yet:
 - Should private worlds end too, and could their owners start them afresh?
 - Is 24 hours the right prompt length for small friend groups?
 
+## Plans and private worlds
+
+Three tiers of account. Until payments are added, the admin sets an
+account's plan on the admin page.
+
+| Plan | Can |
+|---|---|
+| **Free** | Play the big world and rooms; join private worlds and competitions they're invited to |
+| **Host** (first paid tier) | Also create private worlds: up to 3 open at once |
+| **Organiser** (second paid tier) | Also run competitions with teams |
+
+**Creating a private world:** name, spelling (UK, US or both), pace
+(prompts of 1 hour, 4 hours or a day) and an optional player limit.
+
+**Invite links.** A private world's invite link is its address plus a code
+(`/w/abcd1234?invite=…`). Only its players and people with the current link
+can see or join it. Its players can copy the link to invite others.
+
+**Owner controls** (a settings panel only the owner sees):
+- rename; change the pace (for prompts from then on); set or change the
+  player limit
+- **new invite link**: the old one stops working, so a link shared too
+  widely can be shut; existing players carry on
+- **close to new players**, and open again
+- **remove a player**: their words stay used up (taking them back would
+  unravel everyone else's scores), but they drop off the leaderboards, and
+  can't see the world or rejoin it
+- **end the world**: it finishes like a room, with final standings and
+  entries in My games
+- **delete**: only once it has ended, or if nobody else has played.
+
+**Limits:** a Host can own 3 open private worlds at once (ended ones don't
+count). A private world with no guesses for 60 days ends automatically
+(housekeeping). Worlds created before plans existed keep working.
+
+**My worlds** (next to the player's name) lists every world they're in: the
+big world, their room, and their private worlds, with their score, the
+number of players, how much is left and when someone last played.
+
+## Competitions (planned)
+
+For organisers: a private world with teams, such as a quiz night, a class or
+an office contest.
+- **Set-up:** name, spelling and pace (5-minute prompts suit a live event,
+  longer ones a week-long contest), a **start and end time**, and **teams**
+  (2–20) with a team size limit (say 8), so teams are roughly even.
+- **Each team has its own invite link**: "send this to your team" is all
+  players need to do. The organiser can move or remove players until the
+  start.
+- **Before the start**, the page shows the teams forming and a countdown; at
+  the start the first prompt appears for everyone at once.
+- **Play** is as usual: a word said by anyone is gone for everyone, so teams
+  race each other for the good answers. A team's score is the **total** of
+  its players' scores. Leaderboards for teams and for individuals (each with
+  "this prompt" and overall), with each player's team shown, in team colours,
+  and who said each word visible to all.
+- **At the end**, final team and individual standings, in My games too
+  ("Team Owls, 2nd of 6").
+
 ## Ideas for later
 
 - **Account names:** suggest alternatives when a name is taken ("Ann 7");
@@ -237,15 +298,8 @@ Not yet:
   signing in); and pre-fill a new account's name with the old nickname this
   browser played under.
 
-- **Private worlds as a paid subscription.** Today anyone can create private
-  worlds for free, without an account. A subscription would need: accounts
-  (email sign-in), payments (for example Stripe or PayPal), world ownership
-  tied to the account, and deciding what stays free (perhaps the public world
-  and joining others' worlds, with creating worlds paid).
-- **World owners.** The creator manages their world: remove players, require
-  approval to join, close to new players, make a new invite link (the old one
-  stops working), rename and delete. Should be built so it can attach to
-  accounts later.
+- **Payments** for the Host and Organiser plans (for example Stripe or
+  PayPal), setting the account's plan automatically.
 
 - **Undo and take back:** undoing an accepted word currently only affects
   the future; anyone who already said it keeps the points, and it stays used

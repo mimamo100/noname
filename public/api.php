@@ -8,10 +8,11 @@
 //   GET  /api/auth/me                                              the signed-in account, or null
 //
 //   GET  /api/me/history                                           finished games and personal bests (account needed)
+//   GET  /api/me/worlds                                            rooms and private worlds you're in (account needed)
 //
 //   POST /api/rooms                                         join a room: your own, or one with a free seat (account needed)
 //
-//   POST /api/worlds                      {name, spelling}  create a private world (account needed)
+//   POST /api/worlds                      {name, spelling, promptHours, maxPlayers}  create a private world (Host plan)
 //   ("big" as a world id means the big world's current round)
 //   GET  /api/worlds/{id}?since={version}                   world state (anyone can watch); just
 //                                                           {unchanged, version, now} if it's the same as last time
@@ -19,6 +20,13 @@
 //   POST /api/worlds/{id}/words           {word}            say a word, joining first if needed (account needed)
 //   GET  /api/worlds/{id}/words/{word}                      who said this word?
 //   POST /api/worlds/{id}/reports         {word}            report a missing word (account needed)
+//   Private worlds: add ?invite={code} to any of the above to see or join with an invite link.
+//   GET  /api/worlds/{id}/settings                          a private world's settings and players (owner)
+//   POST /api/worlds/{id}/settings        {name, promptHours, maxPlayers, closed}  change them (owner)
+//   POST /api/worlds/{id}/invite                            a new invite link; the old one stops working (owner)
+//   POST /api/worlds/{id}/remove          {nickname}        remove a player (owner)
+//   POST /api/worlds/{id}/end                               finish the world (owner)
+//   POST /api/worlds/{id}/delete                            delete it: once ended, or if nobody else joined (owner)
 
 declare(strict_types=1);
 
@@ -30,6 +38,7 @@ require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
 require "$root/src/Game.php";
 require "$root/src/Lobby.php";
+require "$root/src/PrivateWorlds.php";
 require "$root/src/Admin.php";
 require "$root/src/Mailer.php";
 require "$root/src/Auth.php";
@@ -52,7 +61,7 @@ function body(): array
     return $data;
 }
 
-function route(Game $game, Auth $auth, Lobby $lobby): never
+function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private): never
 {
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -84,6 +93,7 @@ function route(Game $game, Auth $auth, Lobby $lobby): never
     }
 
     if ($resource === 'me' && $method === 'GET' && $worldId === 'history') respond(200, $lobby->history((int) $needUser()['id']));
+    if ($resource === 'me' && $method === 'GET' && $worldId === 'worlds') respond(200, ['worlds' => $private->myWorlds($needUser())]);
     if ($resource === 'rooms' && $method === 'POST' && $worldId === null) {
         $game->applyWordDecisions();
         respond(200, $lobby->joinRoom($needUser()));
@@ -93,15 +103,39 @@ function route(Game $game, Auth $auth, Lobby $lobby): never
     $isBigWorld = $worldId === Lobby::BIG_WORLD_ALIAS;
     if ($isBigWorld) $worldId = $lobby->bigWorldId();
 
-    if ($method === 'POST' && $worldId === null) {
-        $owner = $needUser();
-        $b = body();
-        respond(201, $game->createWorld((string) ($b['name'] ?? ''), null, Game::DEFAULT_PROMPT_DURATION_MS, (string) ($b['spelling'] ?? 'both'), $owner['id']));
-    }
+    if ($method === 'POST' && $worldId === null) respond(201, $private->create($needUser(), body()));
     if ($worldId === null) throw new GameError(404, 'Not found');
+
+    // Owner controls for private worlds.
+    if ($action === 'settings' && $method === 'GET') respond(200, $private->settings($worldId, $needUser()));
+    if ($action === 'settings' && $method === 'POST') respond(200, $private->update($worldId, $needUser(), body()));
+    if ($action === 'invite' && $method === 'POST') respond(200, ['invite' => $private->newInvite($worldId, $needUser())]);
+    if ($action === 'remove' && $method === 'POST') {
+        $private->removePlayer($worldId, $needUser(), (string) (body()['nickname'] ?? ''));
+        respond(200, ['ok' => true]);
+    }
+    if ($action === 'end' && $method === 'POST') {
+        $private->end($worldId, $needUser());
+        respond(200, ['ok' => true]);
+    }
+    if ($action === 'delete' && $method === 'POST') {
+        $private->delete($worldId, $needUser());
+        respond(200, ['ok' => true]);
+    }
+
+    // Everything else: who may see the world, and who may play in it.
+    $world = $game->world($worldId);
+    $invite = isset($_GET['invite']) ? (string) $_GET['invite'] : null;
+    $private->checkCanView($world, $user, $invite);
+    $playerFor = fn () => ($world['kind'] ?? 'private') === 'private'
+        ? $private->playerFor($world, $needUser(), $invite)
+        : $lobby->playerFor($worldId, $needUser());
+
     if ($method === 'GET' && $action === null) {
         $player = $user ? $game->playerForUser($worldId, $user['id']) : null;
-        $state = $game->state($worldId, $player['token'] ?? null) + ['account' => $user ? ['name' => $user['name']] : null];
+        $state = $game->state($worldId, $player['token'] ?? null)
+            + ['account' => $user ? ['name' => $user['name'], 'plan' => $user['plan']] : null]
+            + $private->personal($world, $user);
         if ($isBigWorld) {
             $state['lastRound'] = $lobby->lastRound();
             $state['myRoom'] = $user ? $lobby->myRoom((int) $user['id']) : null;
@@ -113,19 +147,10 @@ function route(Game $game, Auth $auth, Lobby $lobby): never
         if (($_GET['since'] ?? null) === $version) respond(200, ['unchanged' => true, 'version' => $version, 'now' => $now]);
         respond(200, $state + ['version' => $version, 'now' => $now]);
     }
-    if ($method === 'POST' && $action === 'join') {
-        $player = $lobby->playerFor($worldId, $needUser());
-        respond(201, ['nickname' => $player['nickname']]);
-    }
-    if ($method === 'POST' && $action === 'words') {
-        $player = $lobby->playerFor($worldId, $needUser());
-        respond(200, $game->play($worldId, $player['token'], (string) (body()['word'] ?? '')));
-    }
+    if ($method === 'POST' && $action === 'join') respond(201, ['nickname' => $playerFor()['nickname']]);
+    if ($method === 'POST' && $action === 'words') respond(200, $game->play($worldId, $playerFor()['token'], (string) (body()['word'] ?? '')));
     if ($method === 'GET' && $action === 'words' && $arg !== null) respond(200, $game->lookup($worldId, $arg));
-    if ($method === 'POST' && $action === 'reports') {
-        $player = $lobby->playerFor($worldId, $needUser());
-        respond(201, $game->report($worldId, $player['token'], (string) (body()['word'] ?? '')));
-    }
+    if ($method === 'POST' && $action === 'reports') respond(201, $game->report($worldId, $playerFor()['token'], (string) (body()['word'] ?? '')));
     throw new GameError(404, 'Not found');
 }
 
@@ -144,15 +169,16 @@ try {
     $game = new Game($db, $dictionary, stateCache: $cacheDir ? StateCache::open($cacheDir) : null,
         awayAfterMs: (int) (($config['rooms']['away_days'] ?? 7) * 86_400_000));
     $lobby = new Lobby($db, $game, $config);
+    $private = new PrivateWorlds($db, $game);
     $auth = new Auth($db, new Mailer($config['mail'] ?? []), $dictionary);
     try {
-        route($game, $auth, $lobby);
+        route($game, $auth, $lobby, $private);
     } catch (PDOException $e) {
         // A missing table or column means a new install or an older database: set up or upgrade, then retry.
         if (!in_array($e->getCode(), ['42S02', '42S22'], true)) throw $e;
         if ($db->inTransaction()) $db->rollBack();
         Game::installSchema($db);
-        route($game, $auth, $lobby);
+        route($game, $auth, $lobby, $private);
     }
 } catch (GameError $e) {
     respond($e->status, ['error' => $e->getMessage()]);

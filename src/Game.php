@@ -84,6 +84,25 @@ final class Game
                 COALESCE((SELECT MAX(burned_at) FROM burns WHERE player_id = p.id), 0),
                 COALESCE((SELECT MAX(missed_at) FROM misses WHERE player_id = p.id), 0))');
         }
+        // Plans (free, host, organiser), and private worlds' invite links and owner controls.
+        if (!$db->query("SHOW COLUMNS FROM users LIKE 'plan'")->fetch()) {
+            $db->exec("ALTER TABLE users ADD COLUMN plan VARCHAR(12) CHARACTER SET ascii NOT NULL DEFAULT 'free'");
+        }
+        if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'invite_code'")->fetch()) {
+            $db->exec('ALTER TABLE worlds
+                ADD COLUMN invite_code VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NULL,
+                ADD COLUMN closed TINYINT NOT NULL DEFAULT 0,
+                ADD COLUMN max_players SMALLINT UNSIGNED NULL,
+                ADD KEY idx_owner (owner_user_id, kind, ended_at)');
+            // Existing private worlds get a code: their players carry on, newcomers need the new link.
+            $update = $db->prepare('UPDATE worlds SET invite_code = ? WHERE id = ?');
+            foreach ($db->query("SELECT id FROM worlds WHERE kind = 'private'")->fetchAll(PDO::FETCH_COLUMN) as $id) {
+                $update->execute([self::newInviteCode(), $id]);
+            }
+        }
+        if (!$db->query("SHOW COLUMNS FROM players LIKE 'removed'")->fetch()) {
+            $db->exec('ALTER TABLE players ADD COLUMN removed TINYINT NOT NULL DEFAULT 0');
+        }
         // Running totals for the overall leaderboard, so polls don't re-add every word and miss.
         if (!$db->query("SHOW COLUMNS FROM players LIKE 'score'")->fetch()) {
             $db->exec('ALTER TABLE players
@@ -120,13 +139,18 @@ final class Game
         $db->prepare('UPDATE worlds SET version = version + 1 WHERE ? IS NULL OR id = ?')->execute([$worldId, $worldId]);
     }
 
+    public static function newInviteCode(): string
+    {
+        return bin2hex(random_bytes(5));
+    }
+
     public function dictionarySize(): int
     {
         return $this->dictionary->size();
     }
 
     /** Marks the world's shared state as changed, for the state cache. */
-    private function changed(string $worldId): void
+    public function changed(string $worldId): void
     {
         $this->db->prepare('UPDATE worlds SET version = version + 1 WHERE id = ?')->execute([$worldId]);
     }
@@ -139,7 +163,7 @@ final class Game
     // --- Worlds and players ---
 
     /**
-     * @param array{kind?: string, endsAt?: int, promptMin?: int, promptMax?: int} $options
+     * @param array{kind?: string, endsAt?: int, promptMin?: int, promptMax?: int, maxPlayers?: int} $options
      *   kind: 'private' (default), 'public' (a round of the big world, ending at endsAt) or 'room';
      *   promptMin/promptMax: how many answers each prompt should have.
      */
@@ -149,11 +173,13 @@ final class Game
         $name = mb_substr(trim($name), 0, 40) ?: 'Unnamed world';
         if (!in_array($spelling, self::SPELLINGS, true)) throw new GameError(400, 'Spelling must be uk, us or both');
         $this->db->prepare('
-            INSERT INTO worlds (id, name, kind, prompt_duration_ms, spelling, owner_user_id, prompt_min, prompt_max, ends_at, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+            INSERT INTO worlds (id, name, kind, prompt_duration_ms, spelling, owner_user_id, prompt_min, prompt_max, ends_at,
+              invite_code, max_players, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
             ->execute([
-                $id, $name, $options['kind'] ?? 'private', $promptDurationMs, $spelling, $ownerUserId,
-                $options['promptMin'] ?? null, $options['promptMax'] ?? null, $options['endsAt'] ?? null, $this->now(),
+                $id, $name, $kind = $options['kind'] ?? 'private', $promptDurationMs, $spelling, $ownerUserId,
+                $options['promptMin'] ?? null, $options['promptMax'] ?? null, $options['endsAt'] ?? null,
+                $kind === 'private' ? self::newInviteCode() : null, $options['maxPlayers'] ?? null, $this->now(),
             ]);
         $this->currentPrompt($id);
         return $this->world($id);
@@ -221,7 +247,9 @@ final class Game
     {
         $stmt = $this->db->prepare('SELECT * FROM players WHERE world_id = ? AND token = ?');
         $stmt->execute([$worldId, (string) $token]);
-        return $stmt->fetch() ?: throw new GameError(401, 'Join this world first');
+        $player = $stmt->fetch() ?: throw new GameError(401, 'Join this world first');
+        if ($player['removed']) throw new GameError(403, "You've been removed from this world");
+        return $player;
     }
 
     // --- Burned words ---
@@ -365,7 +393,7 @@ final class Game
 
             $stmt = $this->db->prepare('
                 SELECT id, user_id, nickname, score, words FROM players
-                WHERE world_id = ? AND (words > 0 OR score <> 0)
+                WHERE world_id = ? AND removed = 0 AND (words > 0 OR score <> 0)
                 ORDER BY score DESC, words DESC, nickname');
             $stmt->execute([$worldId]);
             $players = $stmt->fetchAll();
@@ -641,7 +669,7 @@ final class Game
         $me = null;
         $myMisses = [];
         if ($token) {
-            $stmt = $this->db->prepare('SELECT id, nickname FROM players WHERE world_id = ? AND token = ?');
+            $stmt = $this->db->prepare('SELECT id, nickname FROM players WHERE world_id = ? AND token = ? AND removed = 0');
             $stmt->execute([$worldId, $token]);
             if ($player = $stmt->fetch()) {
                 $me = $player['nickname'];
@@ -667,7 +695,7 @@ final class Game
 
         // Scores include penalties for wrong guesses. Kept as running totals on each player.
         $stmt = $this->db->prepare('
-            SELECT nickname, score, words, last_active_at FROM players WHERE world_id = ?
+            SELECT nickname, score, words, last_active_at FROM players WHERE world_id = ? AND removed = 0
             ORDER BY score DESC, words DESC, nickname LIMIT 50');
         $stmt->execute([$worldId]);
         // In rooms, players who've stopped playing show as away: their seat is free for someone new.
@@ -688,7 +716,7 @@ final class Game
             LEFT JOIN (
               SELECT player_id, SUM(points) AS points FROM misses WHERE prompt_id = ? GROUP BY player_id
             ) m ON m.player_id = p.id
-            WHERE p.world_id = ? AND (b.player_id IS NOT NULL OR m.player_id IS NOT NULL)
+            WHERE p.world_id = ? AND p.removed = 0 AND (b.player_id IS NOT NULL OR m.player_id IS NOT NULL)
             ORDER BY points DESC, words DESC, p.nickname
             LIMIT 50');
         $stmt->execute([$promptId, $promptId, $worldId]);
@@ -700,6 +728,7 @@ final class Game
             'world' => [
                 'id' => $world['id'], 'name' => $world['name'], 'spelling' => $world['spelling'] ?? 'both',
                 'kind' => $world['kind'] ?? 'private',
+                'closed' => (bool) ($world['closed'] ?? false),
                 'endsAt' => isset($world['ends_at']) ? (int) $world['ends_at'] : null,
                 // Set once the world is over: out of words, or the round's time is up.
                 'ended' => $ended,

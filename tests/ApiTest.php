@@ -63,11 +63,22 @@ test('HTTP API: sign in, create, play, look up', function () {
         same('Kim', $call('GET', '/api/auth/me', null, $session)['body']['user']['name']);
         same(400, $call('POST', '/api/auth/verify', ['email' => 'kim@example.com', 'code' => '000000'])['status']);
 
-        same('uk', $call('POST', '/api/worlds', ['name' => 'Brits', 'spelling' => 'uk'], $session)['body']['spelling']);
+        same(403, $call('POST', '/api/worlds', ['name' => 'Free'], $session)['status'], 'Private worlds need the Host plan');
+        testDbConnection()->exec("UPDATE users SET plan = 'host' WHERE email = 'kim@example.com'");
+        same('host', $call('GET', '/api/auth/me', null, $session)['body']['user']['plan']);
+        $brits = $call('POST', '/api/worlds', ['name' => 'Brits', 'spelling' => 'uk', 'promptHours' => 4], $session)['body'];
+        same('uk', $call('GET', "/api/worlds/{$brits['id']}", null, $session)['body']['world']['spelling']);
         same(400, $call('POST', '/api/worlds', ['name' => 'Nope', 'spelling' => 'fr'], $session)['status']);
         $created = $call('POST', '/api/worlds', ['name' => 'Friends'], $session);
         same(201, $created['status'], 'Create world.');
         $id = $created['body']['id'];
+
+        // Private: only with the invite link, or as the owner or a player.
+        same(403, $call('GET', "/api/worlds/$id")['status']);
+        same(200, $call('GET', "/api/worlds/$id?invite={$created['body']['invite']}")['status']);
+        same(true, $call('GET', "/api/worlds/$id", null, $session)['body']['isOwner']);
+        same(4, $call('GET', "/api/worlds/{$brits['id']}/settings", null, $session)['body']['promptHours']);
+        same(401, $call('GET', "/api/worlds/$id/settings")['status']);
 
         $state = $call('GET', "/api/worlds/$id", null, $session);
         same('Kim', $state['body']['account']['name']);
@@ -82,10 +93,11 @@ test('HTTP API: sign in, create, play, look up', function () {
         $played = $call('POST', "/api/worlds/$id/words", ['word' => $word], $session);
         same(true, $played['body']['ok'], 'Play.');
         same('Kim', $call('GET', "/api/worlds/$id", null, $session)['body']['me'], 'Joined on the first word');
-        same('Kim', $call('GET', "/api/worlds/$id/words/$word")['body']['burned']['by']);
+        same('Kim', $call('GET', "/api/worlds/$id/words/$word", null, $session)['body']['burned']['by']);
+        same(403, $call('GET', "/api/worlds/$id/words/$word")['status'], 'Private: not without the link');
         $again = $call('POST', "/api/worlds/$id/words", ['word' => $word], $session)['body'];
         same(['already-burned', 0, true], [$again['reason'], $again['penalty'], $again['byYou']], 'Repeating your own word is free.');
-        same(401, $call('POST', "/api/worlds/$id/reports", ['word' => 'sofa'])['status'], 'Reports need an account.');
+        same(401, $call('POST', "/api/worlds/$id/reports?invite={$created['body']['invite']}", ['word' => 'sofa'])['status'], 'Reports need an account.');
 
         $room = $call('POST', '/api/rooms', null, $session)['body'];
         same('Room 1', $room['name']);
@@ -95,7 +107,7 @@ test('HTTP API: sign in, create, play, look up', function () {
         same([], $call('GET', '/api/me/history', null, $session)['body']['games']);
 
         same(200, $call('POST', '/api/auth/logout', null, $session)['status']);
-        same(401, $call('POST', "/api/worlds/$id/words", ['word' => $word], $session)['status'], 'Signed out');
+        same(401, $call('POST', "/api/worlds/$id/words?invite={$created['body']['invite']}", ['word' => $word], $session)['status'], 'Signed out');
 
         same(404, $call('GET', '/api/worlds/nope')['status']);
         $big = $call('GET', '/api/worlds/big', null, $session)['body'];

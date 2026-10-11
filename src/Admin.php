@@ -100,6 +100,36 @@ final class Admin
     }
 
     /** @return array<string, string> category id => label, for the "add a word" form */
+    /**
+     * Accounts matching a name or email (part of either), or with no search, every account on
+     * a paid plan. Newest first, at most 50.
+     */
+    public function accounts(string $search = ''): array
+    {
+        $search = trim($search);
+        if ($search === '') {
+            $stmt = $this->db->query("SELECT id, name, email, plan, created_at FROM users WHERE plan <> 'free' ORDER BY id DESC LIMIT 50");
+        } else {
+            $like = '%' . addcslashes($search, '%_\\') . '%';
+            $stmt = $this->db->prepare('SELECT id, name, email, plan, created_at FROM users WHERE name LIKE ? OR email LIKE ? ORDER BY id DESC LIMIT 50');
+            $stmt->execute([$like, $like]);
+        }
+        return array_map(fn ($u) => [
+            'id' => (int) $u['id'], 'name' => $u['name'], 'email' => $u['email'], 'plan' => $u['plan'], 'createdAt' => (int) $u['created_at'],
+        ], $stmt->fetchAll());
+    }
+
+    /** Sets an account's plan by hand, until payments do it. */
+    public function setPlan(int $userId, string $plan): string
+    {
+        if (!in_array($plan, PrivateWorlds::PLANS, true)) throw new GameError(400, 'Unknown plan');
+        $stmt = $this->db->prepare('UPDATE users SET plan = ? WHERE id = ?');
+        $stmt->execute([$plan, $userId]);
+        $name = $this->db->prepare('SELECT name FROM users WHERE id = ?');
+        $name->execute([$userId]);
+        return $name->fetchColumn() ?: throw new GameError(404, 'No such account');
+    }
+
     public function categories(): array
     {
         $out = [];

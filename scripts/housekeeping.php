@@ -31,5 +31,9 @@ $db = new PDO(
 );
 Game::installSchema($db);
 $cacheDir = $config['cache_dir'] ?? "$root/cache";
-$done = (new Housekeeping($db, (int) ($config['housekeeping']['keep_days'] ?? 30), $cacheDir ?: null))->run();
+$game = new Game($db, Dictionary::load());
+$done = (new Housekeeping(
+    $db, (int) ($config['housekeeping']['keep_days'] ?? 30), $cacheDir ?: null,
+    game: $game, idleDays: (int) ($config['housekeeping']['idle_days'] ?? 60),
+))->run();
 foreach ($done as $what => $count) echo "$what: $count\n";

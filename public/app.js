@@ -50,7 +50,10 @@ async function request(url, { method = 'GET', body } = {}) {
   return data;
 }
 
-const api = (path, options) => request(`/api/worlds${path}`, options);
+// A private world's invite link carries a code, which every request for the world passes on.
+const invite = new URLSearchParams(location.search).get('invite');
+const withInvite = (url) => (invite ? `${url}${url.includes('?') ? '&' : '?'}invite=${encodeURIComponent(invite)}` : url);
+const api = (path, options) => request(withInvite(`/api/worlds${path}`), options);
 const rootApi = (path, options) => request(`/api${path}`, options);
 const authApi = (path, options) => request(`/api/auth${path}`, options);
 
@@ -151,7 +154,8 @@ function render(state) {
     $('remaining').textContent = '0';
     $('ends-in').textContent = '–';
   }
-  $('copy-link').hidden = state.world.kind !== 'private';
+  $('copy-link').hidden = !state.invite;
+  $('world-settings').hidden = !state.isOwner;
   renderLobby(state);
 
   const joined = Boolean(state.me);
@@ -326,7 +330,8 @@ async function refresh() {
     lastStateLoaded = true;
   } catch (err) {
     if (lastStateLoaded) return; // A brief hiccup while playing: keep showing the game and retry on the next poll.
-    $('prompt-label').textContent = err.status === 404 && err.message === 'World not found' ? 'World not found' : 'Something went wrong';
+    $('prompt-label').textContent = err.status === 404 && err.message === 'World not found' ? 'World not found'
+      : err.status === 403 ? 'Private world' : 'Something went wrong';
     feedback(err.message, 'bad');
   }
 }
@@ -424,8 +429,105 @@ function renderAccount(account) {
   });
   const games = el('button', { type: 'button', className: 'link', textContent: 'My games' });
   games.addEventListener('click', showHistory);
-  $('account').replaceChildren(el('span', { className: 'muted', textContent: `${account.name} · ` }), games, el('span', { className: 'muted', textContent: ' · ' }), out);
+  const worlds = el('button', { type: 'button', className: 'link', textContent: 'My worlds' });
+  worlds.addEventListener('click', showWorlds);
+  const dot = () => el('span', { className: 'muted', textContent: ' · ' });
+  $('account').replaceChildren(el('span', { className: 'muted', textContent: account.name }), dot(), worlds, dot(), games, dot(), out);
 }
+
+function ago(ms) {
+  const mins = Math.floor((Date.now() - ms) / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins}m ago`;
+  if (mins < 48 * 60) return `${Math.floor(mins / 60)}h ago`;
+  return `${Math.floor(mins / 1440)} days ago`;
+}
+
+async function showWorlds() {
+  const big = el('li', {}, el('a', { href: '/', textContent: 'The Big World' }), el('div', { className: 'muted small', textContent: 'Everyone signed in, afresh every round' }));
+  $('worlds-list').replaceChildren(big, el('li', { className: 'muted', textContent: 'Loading…' }));
+  $('worlds-dialog').showModal();
+  try {
+    const { worlds } = await rootApi('/me/worlds');
+    $('worlds-list').replaceChildren(big, ...worlds.map((w) => el('li', {},
+      el('a', { href: `/w/${encodeURIComponent(w.id)}`, textContent: w.name }),
+      ' ', el('span', { className: 'when', textContent: w.kind === 'room' ? 'room' : w.isOwner ? 'private · yours' : 'private' }),
+      el('div', { className: 'small', textContent: w.ended ? 'Ended. Open it to delete it, or see it in My games.' : [
+        `${w.players} ${w.players === 1 ? 'player' : 'players'}`,
+        `${Math.round(w.left * 100)}% left`,
+        ...(w.score !== null ? [`you: ${w.score} points`] : []),
+        w.lastPlayed ? `played ${ago(w.lastPlayed)}` : 'not played yet',
+      ].join(' · ') }),
+    )), ...(worlds.length ? [] : [el('li', { className: 'muted', textContent: 'No rooms or private worlds yet. Join a room from the big world, or open an invite link.' })]));
+  } catch (err) {
+    $('worlds-list').replaceChildren(big, el('li', { className: 'bad', textContent: err.message }));
+  }
+}
+$('worlds-close').addEventListener('click', () => $('worlds-dialog').close());
+
+// --- World settings, for a private world's owner ---
+
+let settings = null;
+
+async function loadSettings() {
+  settings = await api(`/${encodeURIComponent(lastState.world.id)}/settings`);
+  $('settings-name').value = settings.name;
+  for (const radio of document.querySelectorAll('input[name="settings-pace"]')) radio.checked = Number(radio.value) === settings.promptHours;
+  $('settings-max').value = settings.maxPlayers ?? '';
+  $('settings-closed').checked = settings.closed;
+  $('settings-invite').textContent = inviteUrl(settings.invite);
+  $('settings-end').disabled = settings.ended;
+  $('settings-delete').disabled = !settings.canDelete;
+  $('settings-players').replaceChildren(...settings.players.map((p) => {
+    const row = el('li', {}, el('b', { textContent: p.nickname }), ' ',
+      el('span', { className: 'when', textContent: `${p.words} words · ${p.score} points · last played ${ago(p.lastActive)}` }));
+    if (!p.isYou) {
+      const remove = el('button', { type: 'button', className: 'link row-actions', textContent: 'Remove' });
+      remove.addEventListener('click', () => settingsAction(`Remove ${p.nickname}? Their words stay used up, but they leave the leaderboard and can't come back.`,
+        'remove', { nickname: p.nickname }, `${p.nickname} has been removed.`));
+      row.prepend(remove);
+    }
+    return row;
+  }));
+}
+
+async function settingsAction(question, action, body, done) {
+  if (question && !confirm(question)) return;
+  try {
+    const result = await api(`/${encodeURIComponent(lastState.world.id)}/${action}`, { method: 'POST', body });
+    if (action === 'delete') { location.href = '/'; return; }
+    await loadSettings();
+    feedback(done, 'good');
+    refresh();
+    return result;
+  } catch (err) {
+    feedback(err.message, 'bad');
+  }
+}
+
+$('world-settings').addEventListener('click', async () => {
+  try {
+    await loadSettings();
+    $('settings-dialog').showModal();
+  } catch (err) {
+    feedback(err.message, 'bad');
+  }
+});
+$('settings-close').addEventListener('click', () => $('settings-dialog').close());
+$('settings-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const pace = document.querySelector('input[name="settings-pace"]:checked');
+  await settingsAction(null, 'settings', {
+    name: $('settings-name').value,
+    promptHours: Number(pace.value),
+    maxPlayers: $('settings-max').value ? Number($('settings-max').value) : null,
+    closed: $('settings-closed').checked,
+  }, 'Settings saved.');
+});
+$('settings-copy').addEventListener('click', () => copyText(inviteUrl(settings.invite), 'Invite link copied.'));
+$('settings-new-invite').addEventListener('click', () => settingsAction('Make a new invite link? The old one will stop working.', 'invite', {}, 'New invite link made. Send it to anyone still to join.'));
+$('settings-end').addEventListener('click', () => settingsAction('End this world for everyone? Final standings go into everyone\'s My games. This can\'t be undone.', 'end', {}, 'The world has ended.'));
+$('settings-delete').addEventListener('click', () => settingsAction('Delete this world and everything in it? This can\'t be undone.', 'delete', {}, ''));
 
 async function showHistory() {
   $('history').replaceChildren(el('p', { className: 'muted', textContent: 'Loading…' }));
@@ -520,16 +622,23 @@ $('lookup-form').addEventListener('submit', async (e) => {
   }
 });
 
-$('copy-link').addEventListener('click', async () => {
+const inviteUrl = (code) => `${location.origin}/w/${encodeURIComponent(lastState.world.id)}?invite=${encodeURIComponent(code)}`;
+
+async function copyText(text, done) {
   try {
-    await navigator.clipboard.writeText(location.href);
-    feedback('Invite link copied. Send it to your friends!', 'good');
+    await navigator.clipboard.writeText(text);
+    feedback(done, 'good');
   } catch {
-    feedback(`Share this link: ${location.href}`, 'good');
+    feedback(`Share this link: ${text}`, 'good');
   }
-});
+}
+$('copy-link').addEventListener('click', () => copyText(inviteUrl(lastState.invite), 'Invite link copied. Send it to your friends!'));
 
 $('new-world').addEventListener('click', () => {
+  if (session && lastState?.account && lastState.account.plan === 'free') {
+    feedback('Creating private worlds needs the Host plan. You can join anyone\'s private world with their invite link.', 'bad');
+    return;
+  }
   if (!session) {
     feedback('Sign in first to create a private world.', 'bad');
     showSigninStep('email');
@@ -544,7 +653,9 @@ $('new-world-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const spelling = new FormData(e.target).get('spelling');
   try {
-    const world = await api('', { method: 'POST', body: { name: $('new-world-name').value, spelling } });
+    const promptHours = Number(new FormData(e.target).get('pace'));
+    const maxPlayers = $('new-world-max').value ? Number($('new-world-max').value) : null;
+    const world = await api('', { method: 'POST', body: { name: $('new-world-name').value, spelling, promptHours, maxPlayers } });
     location.href = `/w/${encodeURIComponent(world.id)}`;
   } catch (err) {
     $('new-world-dialog').close();

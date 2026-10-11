@@ -156,6 +156,11 @@ On the page you can:
 - **Dismiss** a report that shouldn't count.
 - **Add a word** nobody has reported, to a meaning or just to the dictionary.
 - **Undo** any decision.
+- **Set an account's plan** (Free, Host or Organiser) under **Accounts and
+  plans**: find the account by name or email, pick the plan, Save. Until
+  payments are added, this is how accounts get private worlds. With nothing
+  searched, the list shows every account on a paid plan.
+- **Recount scores**, and see when **housekeeping** last ran or run it now.
 
 Accepted words are stored in the database. To make them part of the word files
 for good, add them to `data/category-overrides.txt` or `data/extra-words.txt`

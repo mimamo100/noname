@@ -59,3 +59,20 @@ test('housekeeping removes cache files nobody has used for a day', function () {
     unlink("$dir/new.json");
     rmdir($dir);
 });
+
+test('housekeeping ends private worlds nobody has played for 60 days', function () {
+    $clock = 10 * DAY_MS;
+    $game = new Game(testDb(), testDictionary(), function () use (&$clock) { return $clock; }, promptMin: 1, promptMax: 1000);
+    $db = gameDb($game);
+    $idle = $game->createWorld('Idle');
+    $busy = $game->createWorld('Busy');
+    $room = $game->createWorld('Room', null, Game::DEFAULT_PROMPT_DURATION_MS, 'both', null, ['kind' => 'room']);
+    $clock = 50 * DAY_MS;
+    setPrompt($game, $busy['id'], spec(null, ['contains', 'oo']));
+    $game->play($busy['id'], $game->join($busy['id'], 'Ann')['token'], 'moon');
+    $clock = 100 * DAY_MS;
+    same(1, (new Housekeeping($db, 30, null, fn () => $clock, $game))->run()['idleWorldsEnded']);
+    check($game->world($idle['id'])['ended_at'] !== null);
+    check($game->world($busy['id'])['ended_at'] === null, 'Played 50 days ago');
+    check($game->world($room['id'])['ended_at'] === null, 'Rooms end when their words run out');
+});

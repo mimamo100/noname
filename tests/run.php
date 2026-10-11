@@ -15,6 +15,7 @@ require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
 require "$root/src/Game.php";
 require "$root/src/Lobby.php";
+require "$root/src/PrivateWorlds.php";
 require "$root/src/Housekeeping.php";
 require "$root/src/Admin.php";
 require "$root/src/Mailer.php";
@@ -73,6 +74,7 @@ function testDb(): PDO
 require __DIR__ . '/GameTest.php';
 require __DIR__ . '/LobbyTest.php';
 require __DIR__ . '/HousekeepingTest.php';
+require __DIR__ . '/PrivateWorldsTest.php';
 require __DIR__ . '/AuthTest.php';
 require __DIR__ . '/ApiTest.php';
 

@@ -29,6 +29,7 @@ return [
     // free misses and the words of finished worlds. Final standings are kept for good.
     'housekeeping' => [
         'keep_days' => 30,
+        'idle_days' => 60, // A private world with no guesses for this long ends.
     ],
     // Each world's state is kept here for a couple of seconds, so busy worlds stay fast.
     // The folder is created if needed. Set to false to turn caching off.

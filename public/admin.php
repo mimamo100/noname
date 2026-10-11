@@ -13,6 +13,7 @@ require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
 require "$root/src/Game.php";
+require "$root/src/PrivateWorlds.php";
 require "$root/src/Admin.php";
 require "$root/src/Housekeeping.php";
 
@@ -117,8 +118,16 @@ try {
                 break;
             case 'housekeeping':
                 $cacheDir = $config['cache_dir'] ?? "$root/cache";
-                (new Housekeeping($db, (int) ($config['housekeeping']['keep_days'] ?? 30), $cacheDir ?: null))->run();
+                (new Housekeeping(
+                    $db, (int) ($config['housekeeping']['keep_days'] ?? 30), $cacheDir ?: null,
+                    game: new Game($db, $dictionary), idleDays: (int) ($config['housekeeping']['idle_days'] ?? 60),
+                ))->run();
                 $_SESSION['flash'] = 'Housekeeping done.';
+                break;
+            case 'plan':
+                $plan = (string) ($_POST['plan'] ?? '');
+                $name = $admin->setPlan((int) ($_POST['user'] ?? 0), $plan);
+                $_SESSION['flash'] = "$name is now on the " . ucfirst($plan) . ' plan.';
                 break;
             case 'recount':
                 Game::recountScores($db);
@@ -222,12 +231,37 @@ $html .= '<h2>Scores</h2><p class="muted">Each player\'s total is kept as a runn
     . '<code>burns</code> or <code>misses</code> tables by hand (in phpMyAdmin), recount so the leaderboards match.</p>'
     . button($csrf, 'recount', 'Recount scores', [], 'secondary');
 
+// Plans: set by hand until payments are added.
+$search = trim((string) ($_GET['account'] ?? ''));
+$accounts = $admin->accounts($search);
+$planNames = ['free' => 'Free', 'host' => 'Host: private worlds', 'organiser' => 'Organiser: private worlds and competitions'];
+$html .= '<h2>Accounts and plans</h2>'
+    . '<form method="get" class="admin-add" id="account-search"><input name="account" value="' . h($search) . '" placeholder="Name or email">'
+    . '<button type="submit">Find</button></form>'
+    . '<p class="muted small">' . ($search === '' ? 'Accounts on a paid plan:' : 'Matching accounts:') . '</p>';
+if (!$accounts) {
+    $html .= '<p class="muted">' . ($search === '' ? 'None yet. Find an account to change its plan.' : 'No accounts found.') . '</p>';
+} else {
+    $html .= '<div class="table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>Email</th><th>Plan</th></tr></thead><tbody>';
+    foreach ($accounts as $a) {
+        $options = '';
+        foreach ($planNames as $value => $label) {
+            $options .= '<option value="' . $value . '"' . ($a['plan'] === $value ? ' selected' : '') . '>' . h($label) . '</option>';
+        }
+        $html .= '<tr><td><b>' . h($a['name']) . '</b></td><td class="muted small">' . h($a['email']) . '</td><td>'
+            . '<form method="post" class="inline plan-form">' . hidden(['csrf' => $csrf, 'action' => 'plan', 'user' => (string) $a['id']])
+            . '<select name="plan">' . $options . '</select> <button type="submit" class="secondary">Save</button></form></td></tr>';
+    }
+    $html .= '</tbody></table></div>';
+}
+
 $lastRun = Housekeeping::lastRun($db);
 $html .= '<h2>Housekeeping</h2>';
 if ($lastRun) {
     $labels = [
         'signInCodes' => 'old sign-in codes', 'sessions' => 'expired sessions', 'freeMisses' => 'old free misses',
         'finishedWorlds' => 'finished worlds tidied', 'words' => 'their words', 'misses' => 'their misses', 'cacheFiles' => 'cache files',
+        'idleWorldsEnded' => 'idle private worlds ended',
     ];
     $parts = [];
     foreach ($lastRun['done'] as $key => $count) $parts[] = $count . ' ' . ($labels[$key] ?? $key);

@@ -136,3 +136,13 @@ dialog h2 { margin-top: 0; }
 .history-list a { color: var(--text); font-weight: 700; }
 .history-list .when { color: var(--muted); font-size: 13px; }
 #history-dialog { width: min(560px, calc(100vw - 32px)); }
+
+/* My worlds and world settings */
+#worlds-dialog, #settings-dialog { width: min(560px, calc(100vw - 32px)); }
+#settings-dialog h3 { margin: 20px 0 6px; font-size: 15px; }
+#settings-dialog code { word-break: break-all; }
+.check { display: flex; gap: 8px; align-items: center; margin: 8px 0; }
+.history-list .row-actions { float: right; }
+button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 6px 12px; }
+button.danger { color: var(--bad); }
+button:disabled { opacity: 0.45; cursor: default; filter: none; }
