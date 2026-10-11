@@ -12,7 +12,6 @@ final class GameError extends RuntimeException
 final class Game
 {
     public const DEFAULT_PROMPT_DURATION_MS = 24 * 60 * 60 * 1000;
-    public const PUBLIC_WORLD_ID = 'public';
     public const SPELLINGS = ['both', 'uk', 'us'];
     private const NICKNAME_PATTERN = '/^[\p{L}\p{N}_ -]{1,20}$/u';
     /** Points lost for a guess that doesn't fit the prompt or has already been said. */
@@ -34,6 +33,8 @@ final class Game
         private readonly int $promptMin = 10,
         private readonly int $promptMax = 80,
         private readonly ?StateCache $stateCache = null,
+        /** After this long without a guess, a room player shows as away and their seat is free. */
+        public readonly int $awayAfterMs = 7 * 86_400_000,
     ) {
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -61,6 +62,27 @@ final class Game
         // Goes up whenever a world's shared state changes, so cached copies know they're out of date.
         if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'version'")->fetch()) {
             $db->exec('ALTER TABLE worlds ADD COLUMN version INT UNSIGNED NOT NULL DEFAULT 0');
+        }
+        // Kinds of world (private, the big world's rounds, rooms) and how they end.
+        if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'kind'")->fetch()) {
+            $db->exec("ALTER TABLE worlds
+                ADD COLUMN kind VARCHAR(8) CHARACTER SET ascii NOT NULL DEFAULT 'private' AFTER name,
+                ADD COLUMN prompt_min SMALLINT UNSIGNED NULL,
+                ADD COLUMN prompt_max SMALLINT UNSIGNED NULL,
+                ADD COLUMN ends_at BIGINT NULL,
+                ADD COLUMN ended_at BIGINT NULL,
+                ADD KEY idx_kind (kind, ended_at)");
+            // The old public world becomes the big world's first round, finished when the next starts.
+            $db->exec("UPDATE worlds SET kind = 'public' WHERE id = 'public'");
+        }
+        // When each player last guessed, so rooms can free the seats of players who've stopped.
+        if (!$db->query("SHOW COLUMNS FROM players LIKE 'last_active_at'")->fetch()) {
+            // Also an index for finding an account's players across worlds ("Back to your room", My games).
+            $db->exec('ALTER TABLE players ADD COLUMN last_active_at BIGINT NOT NULL DEFAULT 0,
+                ADD KEY idx_active (world_id, last_active_at), ADD KEY idx_user_id (user_id)');
+            $db->exec('UPDATE players p SET last_active_at = GREATEST(created_at,
+                COALESCE((SELECT MAX(burned_at) FROM burns WHERE player_id = p.id), 0),
+                COALESCE((SELECT MAX(missed_at) FROM misses WHERE player_id = p.id), 0))');
         }
         // Running totals for the overall leaderboard, so polls don't re-add every word and miss.
         if (!$db->query("SHOW COLUMNS FROM players LIKE 'score'")->fetch()) {
@@ -96,6 +118,11 @@ final class Game
         $db->prepare('UPDATE worlds SET version = version + 1 WHERE ? IS NULL OR id = ?')->execute([$worldId, $worldId]);
     }
 
+    public function dictionarySize(): int
+    {
+        return $this->dictionary->size();
+    }
+
     /** Marks the world's shared state as changed, for the state cache. */
     private function changed(string $worldId): void
     {
@@ -109,28 +136,25 @@ final class Game
 
     // --- Worlds and players ---
 
-    public function createWorld(string $name, ?string $id = null, int $promptDurationMs = self::DEFAULT_PROMPT_DURATION_MS, string $spelling = 'both', ?int $ownerUserId = null): array
+    /**
+     * @param array{kind?: string, endsAt?: int, promptMin?: int, promptMax?: int} $options
+     *   kind: 'private' (default), 'public' (a round of the big world, ending at endsAt) or 'room';
+     *   promptMin/promptMax: how many answers each prompt should have.
+     */
+    public function createWorld(string $name, ?string $id = null, int $promptDurationMs = self::DEFAULT_PROMPT_DURATION_MS, string $spelling = 'both', ?int $ownerUserId = null, array $options = []): array
     {
         $id ??= bin2hex(random_bytes(4));
         $name = mb_substr(trim($name), 0, 40) ?: 'Unnamed world';
         if (!in_array($spelling, self::SPELLINGS, true)) throw new GameError(400, 'Spelling must be uk, us or both');
-        $this->db->prepare('INSERT INTO worlds (id, name, prompt_duration_ms, spelling, owner_user_id, created_at) VALUES (?, ?, ?, ?, ?, ?)')
-            ->execute([$id, $name, $promptDurationMs, $spelling, $ownerUserId, $this->now()]);
+        $this->db->prepare('
+            INSERT INTO worlds (id, name, kind, prompt_duration_ms, spelling, owner_user_id, prompt_min, prompt_max, ends_at, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+            ->execute([
+                $id, $name, $options['kind'] ?? 'private', $promptDurationMs, $spelling, $ownerUserId,
+                $options['promptMin'] ?? null, $options['promptMax'] ?? null, $options['endsAt'] ?? null, $this->now(),
+            ]);
         $this->currentPrompt($id);
         return $this->world($id);
-    }
-
-    public function ensureWorld(string $id, string $name): array
-    {
-        $stmt = $this->db->prepare('SELECT 1 FROM worlds WHERE id = ?');
-        $stmt->execute([$id]);
-        if ($stmt->fetchColumn()) return $this->world($id);
-        try {
-            return $this->createWorld($name, $id);
-        } catch (PDOException $e) {
-            if ($e->getCode() !== '23000') throw $e;
-            return $this->world($id); // Another request created it first.
-        }
     }
 
     public function world(string $id): array
@@ -150,8 +174,8 @@ final class Game
         if ($this->dictionary->isOffensiveName($name)) throw new GameError(400, 'Please choose a different nickname');
         $token = bin2hex(random_bytes(24));
         try {
-            $this->db->prepare('INSERT INTO players (world_id, nickname, token, created_at) VALUES (?, ?, ?, ?)')
-                ->execute([$worldId, $name, $token, $this->now()]);
+            $this->db->prepare('INSERT INTO players (world_id, nickname, token, created_at, last_active_at) VALUES (?, ?, ?, ?, ?)')
+                ->execute([$worldId, $name, $token, $this->now(), $this->now()]);
         } catch (PDOException $e) {
             // The nickname column is case-insensitive, so "robin" clashes with "Robin".
             if ($e->getCode() === '23000') throw new GameError(409, 'That nickname is taken in this world');
@@ -180,8 +204,8 @@ final class Game
             $suffix = $n === 1 ? '' : " $n";
             $name = mb_substr($user['name'], 0, 20 - mb_strlen($suffix)) . $suffix;
             try {
-                $this->db->prepare('INSERT INTO players (world_id, user_id, nickname, token, created_at) VALUES (?, ?, ?, ?, ?)')
-                    ->execute([$worldId, $user['id'], $name, bin2hex(random_bytes(24)), $this->now()]);
+                $this->db->prepare('INSERT INTO players (world_id, user_id, nickname, token, created_at, last_active_at) VALUES (?, ?, ?, ?, ?, ?)')
+                    ->execute([$worldId, $user['id'], $name, bin2hex(random_bytes(24)), $this->now(), $this->now()]);
                 return $this->playerForUser($worldId, (int) $user['id']);
             } catch (PDOException $e) {
                 if ($e->getCode() !== '23000') throw $e;
@@ -286,28 +310,87 @@ final class Game
     /** Returns the active prompt, rotating it first if it has expired or run dry. Null when the world has no words left. */
     public function currentPrompt(string $worldId): ?array
     {
+        if ($this->world($worldId)['ended_at'] ?? null) return null;
         return $this->livePrompt($worldId) ?? $this->withWorldLock($worldId, function () use ($worldId) {
             if ($prompt = $this->livePrompt($worldId)) return $prompt; // Another request rotated it first.
             $world = $this->world($worldId);
+            if ($world['ended_at'] ?? null) return null; // Another request finished it first.
             $this->db->prepare('UPDATE prompts SET ended_at = ? WHERE world_id = ? AND ended_at IS NULL')->execute([$this->now(), $worldId]);
             $this->changed($worldId);
+            $endsAt = isset($world['ends_at']) ? (int) $world['ends_at'] : null;
+            if ($endsAt !== null && $this->now() >= $endsAt) {
+                $this->finishWorld($worldId); // The round's time is up.
+                return null;
+            }
             $stmt = $this->db->prepare('SELECT spec, type, letters FROM prompts WHERE world_id = ?');
             $stmt->execute([$worldId]);
             $used = [];
             foreach ($stmt->fetchAll() as $row) $used[Prompts::key(self::specOf($row))] = true;
-            $next = Prompts::pick($this->dictionary, $this->unavailable($worldId), $used, $this->promptMin, $this->promptMax);
-            if (!$next) return null;
+            $next = Prompts::pick(
+                $this->dictionary, $this->unavailable($worldId), $used,
+                (int) ($world['prompt_min'] ?? $this->promptMin), (int) ($world['prompt_max'] ?? $this->promptMax),
+            );
+            if (!$next) {
+                $this->finishWorld($worldId); // Out of words.
+                return null;
+            }
             $start = $this->now();
             $this->db->prepare('
                 INSERT INTO prompts (world_id, spec, label, available_at_start, started_at, ends_at)
                 VALUES (?, ?, ?, ?, ?, ?)')
                 ->execute([
                     $worldId, Prompts::key($next['spec']), Prompts::describe($next['spec'], $this->dictionary),
-                    $next['available'], $start, $start + (int) $world['prompt_duration_ms'],
+                    // A round's last prompt stops when the round does.
+                    $next['available'], $start, min($start + (int) $world['prompt_duration_ms'], $endsAt ?? PHP_INT_MAX),
                 ]);
             $stmt = $this->db->prepare('SELECT * FROM prompts WHERE id = ?');
             $stmt->execute([$this->db->lastInsertId()]);
             return ['spec' => $next['spec'], 'remaining' => $next['available']] + $stmt->fetch();
+        });
+    }
+
+    /**
+     * Ends a world and records its final standings in results, for "My games". Everyone who
+     * said a word or lost points is placed; players on the same score share a place.
+     */
+    public function finishWorld(string $worldId): void
+    {
+        $this->withWorldLock($worldId, function () use ($worldId) {
+            $stmt = $this->db->prepare('SELECT ended_at FROM worlds WHERE id = ?');
+            $stmt->execute([$worldId]);
+            if ($stmt->fetchColumn()) return; // Already finished.
+            $now = $this->now();
+
+            $stmt = $this->db->prepare('
+                SELECT id, user_id, nickname, score, words FROM players
+                WHERE world_id = ? AND (words > 0 OR score <> 0)
+                ORDER BY score DESC, words DESC, nickname');
+            $stmt->execute([$worldId]);
+            $players = $stmt->fetchAll();
+
+            // Each player's best word: the most points for one word.
+            $best = [];
+            $stmt = $this->db->prepare('SELECT player_id, played_word, points FROM burns WHERE world_id = ? AND word = played_word');
+            $stmt->execute([$worldId]);
+            foreach ($stmt->fetchAll() as $b) {
+                if (!isset($best[$b['player_id']]) || $b['points'] > $best[$b['player_id']]['points']) $best[$b['player_id']] = $b;
+            }
+
+            $insert = $this->db->prepare('
+                INSERT INTO results (world_id, user_id, nickname, place, players, score, words, best_word, best_points, ended_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+            $place = 0;
+            foreach ($players as $i => $p) {
+                if ($i === 0 || $p['score'] !== $players[$i - 1]['score']) $place = $i + 1;
+                $b = $best[$p['id']] ?? null;
+                $insert->execute([
+                    $worldId, $p['user_id'], $p['nickname'], $place, count($players), $p['score'], $p['words'],
+                    $b['played_word'] ?? null, $b['points'] ?? null, $now,
+                ]);
+            }
+            $this->db->prepare('UPDATE worlds SET ended_at = ? WHERE id = ?')->execute([$now, $worldId]);
+            $this->db->prepare('UPDATE prompts SET ended_at = ? WHERE world_id = ? AND ended_at IS NULL')->execute([$now, $worldId]);
+            $this->changed($worldId);
         });
     }
 
@@ -328,7 +411,7 @@ final class Game
         $this->checkRateLimit($player);
         return $this->withWorldLock($worldId, function () use ($worldId, $player, $word) {
             unset($this->burnedCache[$worldId]); // Re-read under the lock.
-            $prompt = $this->currentPrompt($worldId) ?? throw new GameError(410, 'This world has run out of words');
+            $prompt = $this->currentPrompt($worldId) ?? throw new GameError(410, $this->endedMessage($this->world($worldId)));
 
             // Typos aren't penalised, but a word that doesn't fit or was already said costs points,
             // so pasting a list of answers from a word-finder site loses more than it gains.
@@ -373,7 +456,8 @@ final class Game
                 $insert->execute([$worldId, $w, $word, $player['id'], $prompt['id'], $w === $word ? $points : 0, $at]);
                 $this->burnedCache[$worldId][$w] = true;
             }
-            $this->db->prepare('UPDATE players SET score = score + ?, words = words + 1 WHERE id = ?')->execute([$points, $player['id']]);
+            $this->db->prepare('UPDATE players SET score = score + ?, words = words + 1, last_active_at = ? WHERE id = ?')
+                ->execute([$points, $at, $player['id']]);
             $this->changed($worldId);
             return [
                 'ok' => true,
@@ -385,17 +469,26 @@ final class Game
         });
     }
 
+    /** Why a finished world can't be played any more: for someone trying to play, or looking at it. */
+    public function endedMessage(array $world, bool $playing = true): string
+    {
+        return match ($world['kind'] ?? 'private') {
+            'public' => $playing ? 'This round has finished. Reload the page for the new one.' : 'This round of the big world has finished.',
+            'room' => 'This room has run out of words. Join a new room from the home page.',
+            default => 'This world has run out of words',
+        };
+    }
+
     private function miss(array $player, array $prompt, string $word, string $reason, int $penalty): array
     {
         $this->db->prepare('
             INSERT INTO misses (world_id, player_id, prompt_id, word, reason, points, missed_at)
             VALUES (?, ?, ?, ?, ?, ?, ?)')
             ->execute([$player['world_id'], $player['id'], $prompt['id'], $word, $reason, -$penalty, $this->now()]);
-        if ($penalty) {
-            // Penalties show on the leaderboards; free misses are private.
-            $this->db->prepare('UPDATE players SET score = score - ? WHERE id = ?')->execute([$penalty, $player['id']]);
-            $this->changed($player['world_id']);
-        }
+        $this->db->prepare('UPDATE players SET score = score - ?, last_active_at = ? WHERE id = ?')
+            ->execute([$penalty, $this->now(), $player['id']]);
+        // Penalties show on the leaderboards; free misses are private.
+        if ($penalty) $this->changed($player['world_id']);
         return ['ok' => false, 'word' => $word, 'reason' => $reason, 'penalty' => $penalty];
     }
 
@@ -565,17 +658,21 @@ final class Game
     {
         $worldId = $world['id'];
         $prompt = $this->currentPrompt($worldId);
+        if (!$prompt) $world = $this->world($worldId); // It may have just finished.
+        $ended = (bool) ($world['ended_at'] ?? null);
         $mult = $this->multipliers($worldId, $prompt);
         $promptId = $prompt['id'] ?? -1;
 
         // Scores include penalties for wrong guesses. Kept as running totals on each player.
         $stmt = $this->db->prepare('
-            SELECT nickname, score, words FROM players WHERE world_id = ?
+            SELECT nickname, score, words, last_active_at FROM players WHERE world_id = ?
             ORDER BY score DESC, words DESC, nickname LIMIT 50');
         $stmt->execute([$worldId]);
+        // In rooms, players who've stopped playing show as away: their seat is free for someone new.
+        $awaySince = ($world['kind'] ?? '') === 'room' && !$world['ended_at'] ? $this->now() - $this->awayAfterMs : null;
         $leaderboard = array_map(fn ($r) => [
             'nickname' => $r['nickname'], 'total' => (int) $r['score'], 'words' => (int) $r['words'],
-        ], $stmt->fetchAll());
+        ] + ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : []), $stmt->fetchAll());
 
         // The same, ranked by the current prompt alone, so late arrivals can top something.
         // Only players who have tried a word in this prompt are listed.
@@ -598,7 +695,14 @@ final class Game
         ], $stmt->fetchAll());
 
         return [
-            'world' => ['id' => $world['id'], 'name' => $world['name'], 'spelling' => $world['spelling'] ?? 'both'],
+            'world' => [
+                'id' => $world['id'], 'name' => $world['name'], 'spelling' => $world['spelling'] ?? 'both',
+                'kind' => $world['kind'] ?? 'private',
+                'endsAt' => isset($world['ends_at']) ? (int) $world['ends_at'] : null,
+                // Set once the world is over: out of words, or the round's time is up.
+                'ended' => $ended,
+                'endedMessage' => $ended ? $this->endedMessage($world, playing: false) : null,
+            ],
             'prompt' => $prompt ? [
                 'id' => (int) $prompt['id'],
                 'label' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary),

@@ -19,8 +19,30 @@ language shrinks, players hunt for rarer words, and those words are worth more.
 
 - **Asynchronous.** Nobody waits for other players. You drop in whenever you
   like and play against the world's current state.
-- **Public world.** One shared world that anyone can join straight away.
-  Later it becomes seasonal (a new world each month).
+- **The big world.** One world for everyone signed in: the introduction to
+  the game, fast and busy. It starts afresh every day at midnight UK time
+  (configurable down to every hour). Each round is its own world (id
+  `p` + its start time, such as `p202610120000`); the address `/` and
+  `/api/worlds/big` always mean the current round. Its prompts are bigger
+  (60–400 answers) and shorter (15 minutes), and the last prompt stops when
+  the round does. The page counts down to the next round and shows the last
+  round's top three.
+- **Rooms.** Worlds of up to 60 players where words feel scarce: about 50
+  active players use a room up in roughly three weeks. "Join a room" puts you
+  back in your own room, or in the busiest room with a free seat (skipping
+  rooms more than three quarters used up), or opens a new one, up to 50 at
+  once. A player who hasn't guessed for 7 days shows as *away* and their seat
+  is free for someone new; their words and points stay. If they come back and
+  there's still a seat, they carry on; if not, they're offered a new room. A
+  room finishes when it runs out of words, and its players move on to new
+  rooms. Rooms can only be joined this way, not by link.
+- **Finished worlds and My games.** When a round or room finishes, every
+  player who said a word or lost points gets a results row: place (shared on
+  equal scores), out of how many, score, words and best word. **My games**
+  shows these, newest first, with personal bests (games, wins, best finish,
+  best score, most words, words said in all, best word). A finished world
+  stays viewable with its final leaderboard. All the detail (who said what)
+  is kept too; deleting it after about 30 days is a future housekeeping job.
 - **Private worlds.** Anyone can create one and share the link. Each world
   uses up its own copy of the dictionary.
 - **Accounts.** Everyone needs a free account to play, join or create
@@ -204,9 +226,7 @@ Not yet:
 
 ## Open questions
 
-- Should players see their own history of said words, as a trophy case?
-- Should a world end (when X% of the dictionary is said, or by date), and what
-  does the ending look like?
+- Should private worlds end too, and could their owners start them afresh?
 - Is 24 hours the right prompt length for small friend groups?
 
 ## Ideas for later

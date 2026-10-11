@@ -7,7 +7,12 @@
 //   POST /api/auth/logout                                          sign this device out
 //   GET  /api/auth/me                                              the signed-in account, or null
 //
+//   GET  /api/me/history                                           finished games and personal bests (account needed)
+//
+//   POST /api/rooms                                         join a room: your own, or one with a free seat (account needed)
+//
 //   POST /api/worlds                      {name, spelling}  create a private world (account needed)
+//   ("big" as a world id means the big world's current round)
 //   GET  /api/worlds/{id}?since={version}                   world state (anyone can watch); just
 //                                                           {unchanged, version, now} if it's the same as last time
 //   POST /api/worlds/{id}/join                              join with the account's name (account needed)
@@ -24,6 +29,7 @@ require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
 require "$root/src/Game.php";
+require "$root/src/Lobby.php";
 require "$root/src/Admin.php";
 require "$root/src/Mailer.php";
 require "$root/src/Auth.php";
@@ -46,7 +52,7 @@ function body(): array
     return $data;
 }
 
-function route(Game $game, Auth $auth): never
+function route(Game $game, Auth $auth, Lobby $lobby): never
 {
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -77,9 +83,15 @@ function route(Game $game, Auth $auth): never
         throw new GameError(404, 'Not found');
     }
 
+    if ($resource === 'me' && $method === 'GET' && $worldId === 'history') respond(200, $lobby->history((int) $needUser()['id']));
+    if ($resource === 'rooms' && $method === 'POST' && $worldId === null) {
+        $game->applyWordDecisions();
+        respond(200, $lobby->joinRoom($needUser()));
+    }
     if ($resource !== 'worlds') throw new GameError(404, 'Not found');
     $game->applyWordDecisions();
-    if ($worldId === Game::PUBLIC_WORLD_ID) $game->ensureWorld(Game::PUBLIC_WORLD_ID, 'The Public World');
+    $isBigWorld = $worldId === Lobby::BIG_WORLD_ALIAS;
+    if ($isBigWorld) $worldId = $lobby->bigWorldId();
 
     if ($method === 'POST' && $worldId === null) {
         $owner = $needUser();
@@ -90,6 +102,10 @@ function route(Game $game, Auth $auth): never
     if ($method === 'GET' && $action === null) {
         $player = $user ? $game->playerForUser($worldId, $user['id']) : null;
         $state = $game->state($worldId, $player['token'] ?? null) + ['account' => $user ? ['name' => $user['name']] : null];
+        if ($isBigWorld) {
+            $state['lastRound'] = $lobby->lastRound();
+            $state['myRoom'] = $user ? $lobby->myRoom((int) $user['id']) : null;
+        }
         // Pages poll every few seconds, mostly for nothing new: then a tiny answer will do.
         $now = $state['now'];
         unset($state['now']);
@@ -98,16 +114,16 @@ function route(Game $game, Auth $auth): never
         respond(200, $state + ['version' => $version, 'now' => $now]);
     }
     if ($method === 'POST' && $action === 'join') {
-        $player = $game->joinAsUser($worldId, $needUser());
+        $player = $lobby->playerFor($worldId, $needUser());
         respond(201, ['nickname' => $player['nickname']]);
     }
     if ($method === 'POST' && $action === 'words') {
-        $player = $game->joinAsUser($worldId, $needUser());
+        $player = $lobby->playerFor($worldId, $needUser());
         respond(200, $game->play($worldId, $player['token'], (string) (body()['word'] ?? '')));
     }
     if ($method === 'GET' && $action === 'words' && $arg !== null) respond(200, $game->lookup($worldId, $arg));
     if ($method === 'POST' && $action === 'reports') {
-        $player = $game->joinAsUser($worldId, $needUser());
+        $player = $lobby->playerFor($worldId, $needUser());
         respond(201, $game->report($worldId, $player['token'], (string) (body()['word'] ?? '')));
     }
     throw new GameError(404, 'Not found');
@@ -125,16 +141,18 @@ try {
     $dictionary = Dictionary::load();
     // World states are cached in this folder for a couple of seconds ('cache_dir' => false turns it off).
     $cacheDir = $config['cache_dir'] ?? "$root/cache";
-    $game = new Game($db, $dictionary, stateCache: $cacheDir ? StateCache::open($cacheDir) : null);
+    $game = new Game($db, $dictionary, stateCache: $cacheDir ? StateCache::open($cacheDir) : null,
+        awayAfterMs: (int) (($config['rooms']['away_days'] ?? 7) * 86_400_000));
+    $lobby = new Lobby($db, $game, $config);
     $auth = new Auth($db, new Mailer($config['mail'] ?? []), $dictionary);
     try {
-        route($game, $auth);
+        route($game, $auth, $lobby);
     } catch (PDOException $e) {
         // A missing table or column means a new install or an older database: set up or upgrade, then retry.
         if (!in_array($e->getCode(), ['42S02', '42S22'], true)) throw $e;
         if ($db->inTransaction()) $db->rollBack();
         Game::installSchema($db);
-        route($game, $auth);
+        route($game, $auth, $lobby);
     }
 } catch (GameError $e) {
     respond($e->status, ['error' => $e->getMessage()]);

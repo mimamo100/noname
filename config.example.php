@@ -11,6 +11,20 @@ return [
     // The admin page's address: https://your-site/<admin_path>. Pick something nobody
     // would guess (4-64 letters, numbers, - or _). Every other address says "Not found".
     'admin_path' => 'admin',
+    // The big world: open to everyone signed in, started afresh every round_hours
+    // (1, 2, 3, 4, 6, 8, 12 or 24), counted from midnight in this timezone.
+    'big_world' => [
+        'round_hours' => 24,
+        'timezone' => 'Europe/London',
+        'prompt_minutes' => 15,         // How long each prompt lasts at most.
+        'prompt_answers' => [60, 400],  // How many answers each prompt has.
+    ],
+    // Rooms: filled automatically, and finished when their words run out.
+    'rooms' => [
+        'size' => 60,       // Players per room.
+        'away_days' => 7,   // A player who hasn't guessed for this long gives up their seat.
+        'max' => 50,        // Most rooms open at once, to protect the server.
+    ],
     // Each world's state is kept here for a couple of seconds, so busy worlds stay fast.
     // The folder is created if needed. Set to false to turn caching off.
     // 'cache_dir' => __DIR__ . '/cache',

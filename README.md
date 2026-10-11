@@ -43,6 +43,7 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 |---|---|
 | `public/` | Everything served to the web: the page, browser code, `api.php` and `.htaccess` |
 | `src/Game.php` | Worlds, players, playing words and prompt rotation |
+| `src/Lobby.php` | The big world's daily rounds, rooms, and My games |
 | `src/Dictionary.php`, `src/WordFamilies.php` | Word list, rarity and word families |
 | `src/Prompts.php` | Prompt patterns and the prompt picker |
 | `src/Scoring.php` | Points and multipliers |

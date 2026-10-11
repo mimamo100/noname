@@ -135,3 +135,22 @@ CREATE TABLE IF NOT EXISTS sessions (
   KEY idx_user (user_id),
   FOREIGN KEY (user_id) REFERENCES users(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Final standings of finished worlds (big world rounds, rooms that ran out of words),
+-- one row per player. Kept for good: it's what "My games" shows.
+CREATE TABLE IF NOT EXISTS results (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  world_id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  user_id INT UNSIGNED NULL,
+  nickname VARCHAR(40) NOT NULL,
+  place INT UNSIGNED NOT NULL,
+  players INT UNSIGNED NOT NULL,
+  score INT NOT NULL,
+  words INT UNSIGNED NOT NULL,
+  best_word VARCHAR(40) CHARACTER SET ascii NULL,
+  best_points INT NULL,
+  ended_at BIGINT NOT NULL,
+  KEY idx_user (user_id, ended_at),
+  KEY idx_world (world_id, place),
+  FOREIGN KEY (world_id) REFERENCES worlds(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

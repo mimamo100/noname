@@ -3,7 +3,7 @@
 const POLL_MS = 3000;
 const QUIET_POLL_MS = [6000, 12000]; // After a minute, then two minutes, with nothing new.
 const HIDDEN_POLL_MS = 30000;
-const worldId = location.pathname.startsWith('/w/') ? decodeURIComponent(location.pathname.slice(3)) : 'public';
+const worldId = location.pathname.startsWith('/w/') ? decodeURIComponent(location.pathname.slice(3)) : 'big';
 const SESSION_KEY = 'unsaid:session';
 const $ = (id) => document.getElementById(id);
 
@@ -51,6 +51,7 @@ async function request(url, { method = 'GET', body } = {}) {
 }
 
 const api = (path, options) => request(`/api/worlds${path}`, options);
+const rootApi = (path, options) => request(`/api${path}`, options);
 const authApi = (path, options) => request(`/api/auth${path}`, options);
 
 function timeLeft(ms) {
@@ -70,7 +71,65 @@ function el(tag, attrs = {}, ...children) {
 
 function renderClock(state) {
   if (state.prompt) $('ends-in').textContent = timeLeft(state.prompt.endsAt - state.now);
+  if (state.world.kind === 'public' && state.world.endsAt) {
+    $('round-info').textContent = `Everyone signed in plays here, and it starts afresh every round. This round ends in ${timeLeft(state.world.endsAt - state.now)}.`;
+  }
 }
+
+// 1st, 2nd, 3rd, 4th… 11th, 12th, 13th… 21st
+function ordinal(n) {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+function renderLobby(state) {
+  const big = state.world.kind === 'public';
+  $('lobby').hidden = !big;
+  if (big) {
+    const last = state.lastRound;
+    $('last-round').hidden = !last;
+    if (last) {
+      $('last-round').replaceChildren(
+        el('b', { textContent: 'Last round: ' }),
+        last.winners.map((w) => `${ordinal(w.place)} ${w.nickname} (${w.score})`).join(' · '),
+      );
+    }
+    $('room-button').textContent = state.myRoom ? `Back to ${state.myRoom.name}` : 'Join a room';
+  }
+
+  // A finished world: say why, and where to play next. Rooms are also only for their own players.
+  const room = state.world.kind === 'room';
+  const ended = state.world.ended;
+  const notMine = room && !ended && !state.me;
+  $('ended').hidden = !ended && !notMine;
+  if (ended) {
+    $('ended-message').textContent = state.world.endedMessage;
+    $('ended-button').textContent = room ? 'Join a new room' : 'Go to the big world';
+    $('ended-button').onclick = room ? joinRoom : () => { location.href = '/'; };
+  } else if (notMine) {
+    $('ended-message').textContent = "You can watch this room, but only its own players can say words. Join a room to play.";
+    $('ended-button').textContent = 'Join a room';
+    $('ended-button').onclick = joinRoom;
+  }
+}
+
+async function joinRoom() {
+  if (!session) {
+    feedback('Sign in first to join a room.', 'bad');
+    showSigninStep('email');
+    $('signin').hidden = false;
+    $('signin').scrollIntoView({ block: 'center' });
+    return;
+  }
+  try {
+    const room = await rootApi('/rooms', { method: 'POST' });
+    location.href = `/w/${encodeURIComponent(room.id)}`;
+  } catch (err) {
+    feedback(err.message, 'bad');
+  }
+}
+$('room-button').addEventListener('click', joinRoom);
 
 function render(state) {
   document.title = `${state.world.name} · Unsaid`;
@@ -88,15 +147,18 @@ function render(state) {
     $('meter-fill').style.width = `${Math.round(used * 100)}%`;
     renderClock(state);
   } else {
-    $('prompt-label').textContent = 'This world has run out of words';
+    $('prompt-label').textContent = state.world.ended ? 'Finished' : 'This world has run out of words';
     $('remaining').textContent = '0';
+    $('ends-in').textContent = '–';
   }
+  $('copy-link').hidden = state.world.kind !== 'private';
+  renderLobby(state);
 
   const joined = Boolean(state.me);
   const signedIn = Boolean(state.account);
   if (!signedIn && session) setSession(null); // The session expired or was signed out elsewhere.
   renderAccount(state.account);
-  $('play-form').hidden = !signedIn || !state.prompt;
+  $('play-form').hidden = !signedIn || !state.prompt || (state.world.kind === 'room' && !joined);
   $('signin').hidden = signedIn;
 
   renderSaid(state.said ?? [], state.prompt?.id);
@@ -117,7 +179,7 @@ function boardRows(players, scoreKey, me) {
     if (i === 0 || p[scoreKey] !== players[i - 1][scoreKey]) rank = i + 1;
     return el('tr', { className: p.nickname === me ? 'me' : '' },
       el('td', { className: 'rank', textContent: rank }),
-      el('td', { textContent: p.nickname }),
+      el('td', {}, p.nickname, ...(p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
       el('td', { textContent: p.words }),
       el('td', { textContent: p[scoreKey] }),
     );
@@ -360,8 +422,48 @@ function renderAccount(account) {
     feedback('Signed out.', 'good');
     refresh();
   });
-  $('account').replaceChildren(el('span', { className: 'muted', textContent: `${account.name} · ` }), out);
+  const games = el('button', { type: 'button', className: 'link', textContent: 'My games' });
+  games.addEventListener('click', showHistory);
+  $('account').replaceChildren(el('span', { className: 'muted', textContent: `${account.name} · ` }), games, el('span', { className: 'muted', textContent: ' · ' }), out);
 }
+
+async function showHistory() {
+  $('history').replaceChildren(el('p', { className: 'muted', textContent: 'Loading…' }));
+  $('history-dialog').showModal();
+  try {
+    const { bests, games } = await rootApi('/me/history');
+    if (!games.length) {
+      $('history').replaceChildren(el('p', { className: 'muted', textContent:
+        `No finished games yet. Big world rounds finish at the end of each round, and rooms when their words run out.${bests.wordsSaid ? ` So far you've said ${bests.wordsSaid.toLocaleString()} words.` : ''}` }));
+      return;
+    }
+    const best = (value, label) => el('div', {}, el('b', { textContent: value }), el('span', { textContent: label }));
+    $('history').replaceChildren(
+      el('div', { className: 'bests' },
+        best(bests.games, bests.games === 1 ? 'game' : 'games'),
+        best(bests.wins, bests.wins === 1 ? 'win' : 'wins'),
+        best(ordinal(bests.bestPlace), 'best finish'),
+        best(bests.bestScore, 'best score'),
+        best(bests.mostWords, 'most words in a game'),
+        best(bests.wordsSaid.toLocaleString(), 'words said in all'),
+        ...(bests.bestWord ? [best(bests.bestWord.word, `best word (+${bests.bestWord.points})`)] : []),
+      ),
+      el('ol', { className: 'history-list' }, ...games.map((g) => el('li', {},
+        el('a', { href: `/w/${encodeURIComponent(g.worldId)}`, textContent: g.name }),
+        ' ', el('span', { className: 'when', textContent: shortDate(g.endedAt) }),
+        el('div', { textContent: [
+          `${ordinal(g.place)} of ${g.players}`,
+          `${g.score} points`,
+          `${g.words} ${g.words === 1 ? 'word' : 'words'}`,
+          ...(g.bestWord ? [`best: ${g.bestWord} (+${g.bestPoints})`] : []),
+        ].join(' · ') }),
+      ))),
+    );
+  } catch (err) {
+    $('history').replaceChildren(el('p', { className: 'bad', textContent: err.message }));
+  }
+}
+$('history-close').addEventListener('click', () => $('history-dialog').close());
 
 $('signin-email').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -418,7 +520,6 @@ $('lookup-form').addEventListener('submit', async (e) => {
   }
 });
 
-$('copy-link').hidden = worldId === 'public';
 $('copy-link').addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(location.href);

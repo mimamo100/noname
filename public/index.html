@@ -29,6 +29,11 @@
       </div>
     </section>
 
+    <section id="ended" class="notice" hidden>
+      <p id="ended-message"></p>
+      <button type="button" id="ended-button"></button>
+    </section>
+
     <form id="play-form" class="play" autocomplete="off" hidden>
       <input id="word" name="word" placeholder="Type a word…" maxlength="30" autocapitalize="off" spellcheck="false" required>
       <button type="submit">Say it</button>
@@ -52,6 +57,15 @@
         <input id="signin-name-input" maxlength="20" placeholder="Your name" autocomplete="nickname" required>
         <button type="submit">Start playing</button>
       </form>
+    </section>
+
+    <section id="lobby" class="notice" hidden>
+      <p id="round-info" class="muted small"></p>
+      <p id="last-round" class="small" hidden></p>
+      <div class="lobby-rooms">
+        <p class="small"><b>Rooms:</b> play with up to 60 others in a world of your own, where the words run out over weeks.</p>
+        <button type="button" id="room-button">Join a room</button>
+      </div>
     </section>
 
     <div class="columns">
@@ -110,6 +124,8 @@
         <li>Careful: a word that doesn't fit, or that someone else has already said, costs 2 points. Repeating your own word is free. Typos are free, and so is a real answer missing from our lists: report it so we can add it.</li>
         <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
         <li>The prompt changes when nothing fits any more, or when its time runs out.</li>
+        <li><b>Where to play.</b> The big world is open to everyone signed in and starts afresh every day, with quick prompts. <b>Rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private worlds</b> are for you and the friends you invite.</li>
+        <li><b>My games</b> (next to your name) shows how you finished in past rounds and rooms, and your personal bests.</li>
       </ul>
       <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words said in this world.</p>
     </details>
@@ -133,6 +149,14 @@
         <button type="submit">Create world</button>
       </div>
     </form>
+  </dialog>
+
+  <dialog id="history-dialog">
+    <h2>My games</h2>
+    <div id="history"></div>
+    <div class="dialog-buttons">
+      <button type="button" class="link" id="history-close">Close</button>
+    </div>
   </dialog>
 
   <script type="module" src="/app.js"></script>

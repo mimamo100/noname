@@ -89,6 +89,6 @@ if ($hasConfig && extension_loaded('pdo_mysql')) {
 }
 
 echo "\n" . ($failures === 0
-    ? "Everything looks good. If the game still says Loading..., visit /api/worlds/public and send the result.\n"
+    ? "Everything looks good. If the game still says Loading..., visit /api/worlds/big and send the result.\n"
     : "$failures problem(s) found. Fix them in order, then reload this page.\n");
 echo "\nDelete public/check.php once the game is working.\n";

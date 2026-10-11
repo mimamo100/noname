@@ -47,10 +47,10 @@ test('HTTP API: sign in, create, play, look up', function () {
         };
 
         // Without an account: watching works, playing and creating don't.
-        same(200, $call('GET', '/api/worlds/public')['status']);
-        same(null, $call('GET', '/api/worlds/public')['body']['account']);
+        same(200, $call('GET', '/api/worlds/big')['status']);
+        same(null, $call('GET', '/api/worlds/big')['body']['account']);
         same(401, $call('POST', '/api/worlds', ['name' => 'Nope'])['status']);
-        same(401, $call('POST', '/api/worlds/public/words', ['word' => 'cat'])['status']);
+        same(401, $call('POST', '/api/worlds/big/words', ['word' => 'cat'])['status']);
         same(null, $call('GET', '/api/auth/me')['body']['user']);
 
         // Signing up.
@@ -87,11 +87,20 @@ test('HTTP API: sign in, create, play, look up', function () {
         same(['already-burned', 0, true], [$again['reason'], $again['penalty'], $again['byYou']], 'Repeating your own word is free.');
         same(401, $call('POST', "/api/worlds/$id/reports", ['word' => 'sofa'])['status'], 'Reports need an account.');
 
+        $room = $call('POST', '/api/rooms', null, $session)['body'];
+        same('Room 1', $room['name']);
+        same($room, $call('GET', '/api/worlds/big', null, $session)['body']['myRoom']);
+        same(true, $call('POST', "/api/worlds/{$room['id']}/join", null, $session)['status'] === 201);
+        same(401, $call('POST', '/api/rooms')['status']);
+        same([], $call('GET', '/api/me/history', null, $session)['body']['games']);
+
         same(200, $call('POST', '/api/auth/logout', null, $session)['status']);
         same(401, $call('POST', "/api/worlds/$id/words", ['word' => $word], $session)['status'], 'Signed out');
 
         same(404, $call('GET', '/api/worlds/nope')['status']);
-        same('The Public World', $call('GET', '/api/worlds/public')['body']['world']['name']);
+        $big = $call('GET', '/api/worlds/big', null, $session)['body'];
+        check(str_starts_with($big['world']['name'], 'The Big World, '), 'The big world');
+        same(['public', null, null], [$big['world']['kind'], $big['lastRound'], $big['myRoom']]);
         check(str_contains($call('GET', "/w/$id")['raw'], 'Unsaid'), 'World page should serve index.html');
     } finally {
         proc_terminate($server);

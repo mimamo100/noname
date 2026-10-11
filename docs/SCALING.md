@@ -19,32 +19,33 @@ measurements.
 So the database stays small, except for `misses` and `login_codes`, which only
 need tidying (see 3 below). Most cPanel plans allow 1–10 GB of databases.
 
-## 1. The public world runs out of words (a game design issue)
+## 1. The public world runs out of words (decided)
 
 A world has about 21,500 distinct answers. With many players, one shared world
 burns through them fast:
 
-| Active players a day | Words said a day (20 each) | Public world used up in |
+| Active players a day | Words said a day (20 each) | One world used up in |
 |---|---|---|
 | 50 | 1,000 | about 3 weeks |
 | 500 | 10,000 | about 2 days |
 | 10,000 | 200,000 | a few hours |
 
-Each prompt (10–80 answers) would also last minutes rather than a day. The
-game is at its best when a world belongs to a group small enough for words to
-feel scarce but not instantly gone.
+So the game has two kinds of public play (see DESIGN.md, "Worlds"):
+- **The big world** starts afresh every day, with bigger, shorter prompts, so
+  running out within the day is part of the fun.
+- **Rooms** of up to 60 players hold the slow game where words feel scarce,
+  lasting a few weeks each. New rooms open as players arrive, up to a limit
+  (50 by default) that protects the server.
 
-Options, which can be combined:
-- **Public rooms:** several public worlds, each with room for, say, 50 active
-  players. New players join the least crowded one, and a new room opens when
-  all are full.
-- **Seasons:** public worlds reset weekly or monthly, with a final leaderboard.
-  A natural ending, and a reason to come back.
-- **Daily world:** one fresh public world a day, the same for everyone, like
-  Wordle.
+One limit to know: plays in one world are handled one at a time, so a single
+world takes a few dozen words a second at most, roughly 1,000–2,000 people
+playing hard at the same moment. That's fine for rooms; for the big world
+it's the ceiling before it would need splitting.
 
-This matters more than any technical issue, and is worth deciding before
-promoting the game widely.
+Each finished round or room keeps a small results row per player for good,
+plus all its detail. A busy big world round could add about 5 MB of detail a
+day, so deleting detail older than about 30 days belongs with the
+housekeeping below.
 
 ## 2. Polling is the real server load (mostly done)
 
@@ -89,6 +90,8 @@ code is plain PHP and MySQL, so it moves without changes.
 - **Old sign-in codes:** delete codes older than a day. They also hold
   network addresses, which are personal data.
 - **Expired sessions:** delete them.
+- **Finished rounds and rooms:** after about 30 days, delete their words,
+  misses and prompts, keeping the results rows that My games shows.
 - **Misses:** keep the last 30 days, or only those for recent prompts (My
   misses shows the last 50 anyway). This keeps the biggest growing table in
   check.
@@ -122,6 +125,5 @@ weekly), covers this.
 ## Suggested order
 
 1. Now, while small: housekeeping (3) and a privacy notice (5). Both are small.
-2. Before promoting: decide the public world design (1), and switch to an
-   email service (4).
+2. Before promoting: switch to an email service (4).
 3. When shared hosting strains: move to a VPS (2).

@@ -94,7 +94,7 @@ works, because it shows details about your server.
 |---|---|
 | "Missing config.php" | Step 4: the file must be in `unsaid/`, not in `public/`. |
 | "Something went wrong" | Usually wrong database details. Check `unsaid/public/error_log` or cPanel's **Errors** page for the exact message. |
-| "The game's server isn't responding properly" | The game's PHP code isn't being reached. Usually PHP is older than 8.1 (step 6), or `public/.htaccess` is missing: turn on **Show Hidden Files** in File Manager's settings and check it exists. If `check.php` passes, visit `/api/worlds/public` and send what it shows. |
+| "The game's server isn't responding properly" | The game's PHP code isn't being reached. Usually PHP is older than 8.1 (step 6), or `public/.htaccess` is missing: turn on **Show Hidden Files** in File Manager's settings and check it exists. If `check.php` passes, visit `/api/worlds/big` and send what it shows. |
 | Every PHP page (including `check.php`) shows an Apache "Internal Server Error … while trying to use an ErrorDocument" | File permissions: cPanel won't run PHP from group-writable files. In File Manager, set folders to **755** and files to **644** (select them, then **Permissions**). The zip from `scripts/build-zip.sh` already has these. |
 | Sign-in codes never arrive | Check spam first. Then check the `mail` section of `config.php` ('from' must be an address on your domain) and cPanel's **Track Delivery** page, which shows whether the email was sent or refused. |
 | A page full of PHP errors about syntax | PHP is older than 8.1. Redo step 6. |
