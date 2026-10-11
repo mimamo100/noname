@@ -1,11 +1,40 @@
 # Dictionary review: instructions for a Claude session
 
 These are instructions for reviewing the game's meaning categories. Start a
-session on this repository and say: **"Follow docs/DICTIONARY-REVIEW.md"**.
+Claude Code session in a copy of this repository (see "Before you start") and
+say: **"Follow docs/DICTIONARY-REVIEW.md"**.
 
 The review has two stages with a stop in between. Stage 1 proposes changes
 and writes them up for the owner. Stage 2 applies only what the owner
 approves. **Don't change any word files in stage 1.**
+
+## Before you start (on your own computer)
+
+The session works on a copy of the repository and runs its scripts, so you
+need these on your computer first:
+
+- **git**, and a copy of the repository on the branch with the latest work:
+
+  ```sh
+  git clone https://github.com/mimamo100/noname.git unsaid
+  cd unsaid
+  git checkout claude/zealous-tesla-2ixwxu
+  ```
+
+  (Or, once that branch is merged, the main branch.)
+- **PHP 8.1 or later on the command line**, with the `mbstring` extension.
+  Check with `php -v` and `php -m`. On a Mac: `brew install php`. On Windows:
+  download it from windows.php.net, and in `php.ini` make sure the line
+  `extension=mbstring` has no `;` in front.
+- **Claude Code**, started in that folder.
+- Only for new categories (stage 2, step 4): **Python 3** with NLTK. The
+  session can install NLTK itself.
+- Not needed: MySQL, Apache or the server. The tests need a database, so the
+  session will skip them if there isn't one; the checks in stage 2 cover the
+  word data.
+
+The session doesn't need to read the game's code: everything it needs is in
+this file, `scripts/category-report.php` and the `data/` files.
 
 ## Background: what a category is
 
@@ -139,8 +168,11 @@ editing, rebuild with `php scripts/build-dictionary.php`.
      `php -r 'foreach (["WordFamilies","Dictionary","Prompts"] as $f) require "src/$f.php"; $d = Dictionary::load(); foreach ($d->categoryIds() as $id) printf("%-12s %d\n", $id, Prompts::countUnsaid(["cat" => $id, "rules" => []], $d, []));'`
    - If MySQL or MariaDB is available, run the tests (see README.md).
 7. Commit with a message summarising the changes per category, and push.
-8. Build the upload zip with `sh scripts/build-zip.sh <path>/unsaid.zip` and
-   send it to the owner. Accepted changes take effect when it's uploaded; a
-   prompt that's running at the time has its count updated.
+8. Tell the owner how to put it live. The game reads only
+   `data/dictionary.php`, so uploading that one file is enough: in cPanel's
+   File Manager, open the game's `data` folder and upload it over the old
+   one. (The full zip, from `sh scripts/build-zip.sh unsaid.zip`, works too,
+   but needs `sh` and Python, which Windows lacks without Git Bash.) Changes
+   take effect at once; a prompt running at the time has its count updated.
 9. Update `docs/dictionary-review/PROPOSALS.md`: mark it as applied, noting
    anything left out.
