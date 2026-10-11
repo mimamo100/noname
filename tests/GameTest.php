@@ -414,6 +414,32 @@ test('my misses show what happened to my reports', function () {
     same('reported', $status(), 'Remembered by the server, not just the page');
     (new Admin($db, testDictionary()))->decide('sport', 'sofa', 'accepted');
     same('accepted', $status());
+    same(null, $game->state($world['id'], $p['token'])['myMisses'][0]['said']);
+    $game->applyWordDecisions(); // As each new request does.
+    check($game->play($world['id'], $p['token'], 'sofa')['ok']);
+    $said = $game->state($world['id'], $p['token'])['myMisses'][0]['said'];
+    same([true, 'A sport or game'], [$said['byYou'], $said['prompt']], 'Said since, for the same prompt');
+});
+
+test('my misses say when an accepted word was used up elsewhere', function () {
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $db = gameDb($game);
+    $world = $game->createWorld('Used up', null, 60_000);
+    setPrompt($game, $world['id'], spec('sport'));
+    $rae = $game->join($world['id'], 'Rae');
+    $sam = $game->join($world['id'], 'Sam');
+    $game->play($world['id'], $rae['token'], 'sofa');
+    $game->report($world['id'], $rae['token'], 'sofa');
+    $clock += 61_000;
+    $game->state($world['id'], null); // Let the game move on to a new prompt.
+    setPrompt($game, $world['id'], spec(null, ['contains', 'fa']));
+    check($game->play($world['id'], $sam['token'], 'sofa')['ok']);
+    (new Admin($db, testDictionary()))->decide('sport', 'sofa', 'accepted');
+
+    $miss = $game->state($world['id'], $rae['token'])['myMisses'][0];
+    same('accepted', $miss['reportStatus']);
+    same(['Sam', false, 'Contains FA'], [$miss['said']['by'], $miss['said']['byYou'], $miss['said']['prompt']]);
 });
 
 test('wrong guesses cost points, typos are free', function () {

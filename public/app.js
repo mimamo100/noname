@@ -163,9 +163,18 @@ const MISS_REASONS = {
 const reported = new Set();
 const REPORT_STATUS = {
   reported: 'Reported: waiting for a decision',
-  accepted: 'Report accepted: it counts now, so try it again',
   dismissed: "Report reviewed: it doesn't count",
 };
+
+// An accepted word may have been used up since, by the player or someone else.
+function reportStatusText(status, m, currentPromptId) {
+  if (status !== 'accepted') return REPORT_STATUS[status];
+  const said = m.said;
+  if (!said) return m.promptId === currentPromptId ? 'Report accepted: it counts now, so try it again' : 'Report accepted: it counts from now on';
+  if (said.byYou && said.promptId === m.promptId) return "Report accepted: you've said it since";
+  const who = said.byYou ? 'you' : said.by;
+  return `Report accepted, but it's used up: ${who} said it for “${said.prompt}”`;
+}
 
 function renderMisses(misses, currentPromptId) {
   if (!misses.length) {
@@ -187,7 +196,7 @@ function renderMisses(misses, currentPromptId) {
     // Reports are for the current prompt, so only offer them while it's still running.
     const status = m.reportStatus ?? (reported.has(m.word) ? 'reported' : null);
     if (status) {
-      rows.at(-1).append(el('span', { className: 'muted small-note', textContent: REPORT_STATUS[status] }));
+      rows.at(-1).append(el('span', { className: 'muted small-note', textContent: reportStatusText(status, m, currentPromptId) }));
     } else if (isReportable(m) && m.promptId === currentPromptId) {
       rows.at(-1).append(reportButton(m.word, m.reason));
     }

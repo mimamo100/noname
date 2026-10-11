@@ -427,11 +427,17 @@ final class Game
         // Report status: the player's report of this word for this prompt, and the admin's decision.
         $stmt = $this->db->prepare("
             SELECT m.word, m.reason, m.points, m.missed_at, m.prompt_id, p.spec, p.label, p.type, p.letters,
-              r.id AS report_id, d.decision
+              r.id AS report_id, d.decision,
+              b.player_id AS said_by_id, b.prompt_id AS said_prompt_id, bp.nickname AS said_by,
+              bpr.spec AS said_spec, bpr.label AS said_label, bpr.type AS said_type, bpr.letters AS said_letters
             FROM misses m
             JOIN prompts p ON p.id = m.prompt_id
             LEFT JOIN reports r ON r.player_id = m.player_id AND r.prompt_id = m.prompt_id AND r.word = m.word
             LEFT JOIN word_decisions d ON d.category = r.category AND d.word = r.word
+            -- Whether the word has been used up since (by anyone, for any prompt).
+            LEFT JOIN burns b ON b.world_id = m.world_id AND b.word = m.word
+            LEFT JOIN players bp ON bp.id = b.player_id
+            LEFT JOIN prompts bpr ON bpr.id = b.prompt_id
             WHERE m.player_id = ?
             ORDER BY m.id DESC LIMIT $limit");
         $stmt->execute([$playerId]);
@@ -444,6 +450,15 @@ final class Game
             'at' => (int) $r['missed_at'],
             // null (not reported), 'reported' (waiting), 'accepted' or 'dismissed'.
             'reportStatus' => $r['report_id'] ? ($r['decision'] ?? 'reported') : null,
+            // Who has used the word up, and for which prompt; null while it's still unsaid.
+            'said' => $r['said_by_id'] === null ? null : [
+                'by' => $r['said_by'],
+                'byYou' => (int) $r['said_by_id'] === $playerId,
+                'promptId' => (int) $r['said_prompt_id'],
+                'prompt' => $r['said_label'] ?? Prompts::describe(self::specOf([
+                    'spec' => $r['said_spec'], 'type' => $r['said_type'], 'letters' => $r['said_letters'],
+                ]), $this->dictionary),
+            ],
         ], $stmt->fetchAll());
     }
 

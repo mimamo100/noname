@@ -144,7 +144,8 @@ word-finder site. There are three kinds:
   found with **Who said it?**.
 - **My misses** lists a player's own wrong guesses (with the prompt, the
   reason and any penalty, plus what happened to any report: waiting,
-  accepted or dismissed). It's private: other players can't see your misses,
+  accepted or dismissed. An accepted word that has since been used up, for
+  any prompt, says who used it and where). It's private: other players can't see your misses,
   because "close" guesses would give them clues, and public mistakes would
   make people afraid to try things.
 
