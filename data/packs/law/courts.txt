@@ -27,8 +27,6 @@ stockade stockades
 supermax supermaxes
 gulag gulags
 slammer slammers
-calaboose calabooses
-hoosegow hoosegows
 precinct precincts
 
 also:
@@ -63,3 +61,5 @@ senate
 station
 lawfirm lawfirms
 practice
+calaboose calabooses
+hoosegow hoosegows

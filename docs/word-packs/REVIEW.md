@@ -19,7 +19,7 @@ _Elements, particles, lab kit, cells, space and more for keen scientists._
 - **A part of a cell** (51): amyloplast, axon, capsule, centriole, centromere, centrosome, chloroplast, chromatid, chromatin, chromoplast, chromosome, cilium, crista, cytoplasm, cytoskeleton, cytosol, dendrite, desmosome, endosome, flagellum, glycocalyx, glyoxysome, granum, leucoplast, lysosome, membrane, microfilament, microtubule, microvillus, mitochondrion, …
 - **A subatomic particle** (30): antineutrino, antineutron, antiproton, antiquark, axion, baryon, boson, deuteron, electron, fermion, gluon, graviton, hadron, hyperon, kaon, lepton, meson, muon, neutrino, neutron, nucleon, phonon, photon, pion, positron, proton, quark, tachyon, tau, upsilon
 
-## Law: 664 answers
+## Law: 662 answers
 
 _Crimes, courts, writs and Latin: the language of lawyers, judges and crime dramas._
 
@@ -33,8 +33,8 @@ _Crimes, courts, writs and Latin: the language of lawyers, judges and crime dram
 - **A police or evidence term** (41): arrest, autopsy, ballistics, bloodstain, breathalyser, clue, confession, constable, contraband, corroboration, detective, dragnet, entrapment, evidence, exhibit, fingerprint, forensics, handcuffs, hearsay, interrogation, investigation, investigator, lineup, manhunt, motive, mugshot, pathologist, police, policeman, policewoman, …
 - **A legal job or title** (41): adjudicator, advocate, arbitrator, attorney, bailiff, barrister, bencher, bondsman, conciliator, conveyancer, coroner, counsel, executioner, gaoler, hangman, judge, jurisconsult, jurist, lawgiver, lawmaker, lawyer, legislator, liquidator, litigator, magistrate, marshal, mediator, notary, ombudsman, paralegal, …
 - **A legal document** (37): agreement, amendment, brief, bylaw, certificate, charter, codicil, constitution, contract, declaration, decree, deed, deposition, directive, disclaimer, docket, edict, indenture, indictment, injunction, interrogatory, legislation, memorandum, ordinance, permit, petition, pleading, prenup, regulation, statute, …
-- **A court, legal body or place** (30): assizes, borstal, bridewell, calaboose, chambers, chancery, consistory, court, courthouse, courtroom, gaol, gulag, hoosegow, jailhouse, judiciary, lawcourt, legislature, lockup, magistracy, moot, parliament, penitentiary, precinct, prison, reformatory, registry, slammer, stockade, supermax, tribunal
 - **A Latin or Law French legal term** (30): affidavit, alias, alibi, amicus, autrefois, capias, caveat, certiorari, delict, detinue, dictum, estoppel, feme, fiat, jus, laches, lex, mandamus, mittimus, mortmain, nisi, obiter, oyez, proviso, quorum, replevin, subpoena, venire, versus, veto
+- **A court, legal body or place** (28): assizes, borstal, bridewell, chambers, chancery, consistory, court, courthouse, courtroom, gaol, gulag, jailhouse, judiciary, lawcourt, legislature, lockup, magistracy, moot, parliament, penitentiary, precinct, prison, reformatory, registry, slammer, stockade, supermax, tribunal
 
 ## Music: 935 answers
 

@@ -2673,151 +2673,141 @@ return array (
     ),
     104 => 
     array (
-      0 => 'calaboose',
-      1 => 'calabooses',
-    ),
-    105 => 
-    array (
-      0 => 'hoosegow',
-      1 => 'hoosegows',
-    ),
-    106 => 
-    array (
       0 => 'precinct',
       1 => 'precincts',
     ),
-    107 => 
+    105 => 
     array (
       0 => 'eyre',
       1 => 'eyres',
     ),
-    108 => 
+    106 => 
     array (
       0 => 'leet',
       1 => 'leets',
     ),
-    109 => 
+    107 => 
     array (
       0 => 'inn',
       1 => 'inns',
       2 => 'inning',
       3 => 'innings',
     ),
-    110 => 
+    108 => 
     array (
       0 => 'dock',
       1 => 'docks',
       2 => 'docking',
       3 => 'docked',
     ),
-    111 => 
+    109 => 
     array (
       0 => 'bench',
       1 => 'benches',
       2 => 'benched',
     ),
-    112 => 
+    110 => 
     array (
       0 => 'bar',
       1 => 'bars',
       2 => 'barred',
       3 => 'barring',
     ),
-    113 => 
+    111 => 
     array (
       0 => 'gallery',
       1 => 'galleries',
     ),
-    114 => 
+    112 => 
     array (
       0 => 'sessions',
       1 => 'session',
     ),
-    115 => 
+    113 => 
     array (
       0 => 'cell',
       1 => 'cells',
     ),
-    116 => 
+    114 => 
     array (
       0 => 'cellblock',
       1 => 'cellblocks',
     ),
-    117 => 
+    115 => 
     array (
       0 => 'brig',
       1 => 'brigs',
     ),
-    118 => 
+    116 => 
     array (
       0 => 'hulk',
       1 => 'hulks',
     ),
-    119 => 
+    117 => 
     array (
       0 => 'glasshouse',
       1 => 'glasshouses',
     ),
-    120 => 
+    118 => 
     array (
       0 => 'clink',
       1 => 'clinking',
       2 => 'clinks',
     ),
-    121 => 
+    119 => 
     array (
       0 => 'nick',
       1 => 'nicked',
       2 => 'nicks',
       3 => 'nicking',
     ),
-    122 => 
+    120 => 
     array (
       0 => 'stir',
       1 => 'stirring',
       2 => 'stirred',
       3 => 'stirs',
     ),
-    123 => 
+    121 => 
     array (
       0 => 'cooler',
       1 => 'coolers',
     ),
-    124 => 
+    122 => 
     array (
       0 => 'pen',
       1 => 'pens',
       2 => 'penned',
     ),
-    125 => 
+    123 => 
     array (
       0 => 'jug',
       1 => 'jugs',
     ),
-    126 => 
+    124 => 
     array (
       0 => 'can',
       1 => 'cans',
       2 => 'canned',
       3 => 'canning',
     ),
-    127 => 
+    125 => 
     array (
       0 => 'dungeon',
       1 => 'dungeons',
     ),
-    128 => 
+    126 => 
     array (
       0 => 'station',
       1 => 'stations',
       2 => 'stationed',
     ),
-    129 => 
+    127 => 
     array (
       0 => 'lawfirm',
       1 => 'lawfirms',
     ),
-    130 => 
+    128 => 
     array (
       0 => 'practice',
       1 => 'practicing',
@@ -2826,6 +2816,16 @@ return array (
       4 => 'practices',
       5 => 'practising',
       6 => 'practised',
+    ),
+    129 => 
+    array (
+      0 => 'calaboose',
+      1 => 'calabooses',
+    ),
+    130 => 
+    array (
+      0 => 'hoosegow',
+      1 => 'hoosegows',
     ),
     131 => 
     array (
@@ -6244,12 +6244,8 @@ return array (
         53 => 'gulags',
         54 => 'slammer',
         55 => 'slammers',
-        56 => 'calaboose',
-        57 => 'calabooses',
-        58 => 'hoosegow',
-        59 => 'hoosegows',
-        60 => 'precinct',
-        61 => 'precincts',
+        56 => 'precinct',
+        57 => 'precincts',
       ),
       'also' => 
       array (
@@ -6297,8 +6293,12 @@ return array (
         41 => 'lawfirm',
         42 => 'lawfirms',
         43 => 'practice',
+        44 => 'calaboose',
+        45 => 'calabooses',
+        46 => 'hoosegow',
+        47 => 'hoosegows',
       ),
-      'answers' => 30,
+      'answers' => 28,
     ),
     'law.crime' => 
     array (
