@@ -347,8 +347,9 @@ As built:
   doesn't empty them at once.
 - **Links:** each team's link joins that team (a "Join Owls" button before the
   start, or simply saying a word once it's on). A separate watching link lets
-  people follow without playing. Players see a "Copy team link" button to
-  invite teammates. Late joiners can join a team with room until the end.
+  people follow without playing. Only the organiser is shown the links, so
+  they decide who gets them (players aren't offered their team's link to
+  pass on). Late joiners can join a team with room until the end.
 - **Players can't switch teams** by opening another team's link; the
   organiser can move them before the start, and remove them at any time.
 - **Organiser controls** (Competition settings): rename; before the start,

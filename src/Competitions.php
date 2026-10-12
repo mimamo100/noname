@@ -182,11 +182,11 @@ final class Competitions
         $out = ['isOwner' => $this->isOwner($world, $user), 'myTeam' => null, 'invite' => null, 'joiningTeam' => null];
         $player = $user ? $this->game->playerForUser($world['id'], (int) $user['id']) : null;
         if ($player && !$player['removed'] && $player['team_id'] !== null) {
-            $stmt = $this->db->prepare('SELECT name, position, invite_code FROM teams WHERE id = ?');
+            // No team link for players: the organiser decides who gets it.
+            $stmt = $this->db->prepare('SELECT name, position FROM teams WHERE id = ?');
             $stmt->execute([$player['team_id']]);
             if ($team = $stmt->fetch()) {
                 $out['myTeam'] = ['name' => $team['name'], 'position' => (int) $team['position']];
-                $out['invite'] = $team['invite_code']; // To pass on to teammates.
             }
         } elseif ($team = $this->teamByInvite($world['id'], $invite)) {
             // Opened a team's link but not joined yet: saying a word joins this team.

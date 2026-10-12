@@ -199,7 +199,7 @@ function renderCompetition(state) {
   const parts = [el('p', { id: 'competition-clock' })];
   if (state.myTeam) {
     parts.push(el('p', {}, "You're in ", ...teamDot(state.myTeam.position), el('b', { textContent: state.myTeam.name }),
-      started ? '. Every point you score counts for your team.' : '. Send teammates your team link (Copy team link, at the top).'));
+      started ? '. Every point you score counts for your team.' : '. Every point you score will count for your team.'));
   } else if (state.joiningTeam) {
     const join = el('button', { type: 'button', textContent: `Join ${state.joiningTeam.name}` });
     join.addEventListener('click', async () => {
@@ -486,7 +486,7 @@ function render(state) {
   }
   const competition = state.world.kind === 'competition';
   $('copy-link').hidden = !state.invite;
-  $('copy-link').textContent = competition ? 'Copy team link' : 'Copy invite link';
+  $('copy-link').textContent = 'Copy invite link';
   $('world-settings').hidden = !state.isOwner;
   $('world-settings').textContent = competition ? 'Competition settings' : 'World settings';
   renderCompetition(state);

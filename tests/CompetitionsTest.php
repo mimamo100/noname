@@ -59,7 +59,7 @@ test('a competition: teams join by their links, it starts on time, and teams sco
     $cyP = $comps->playerFor($world(), $cy, teamCode($db, $id, 'Foxes'));
     same($annP['id'], $comps->playerFor($world(), $ann, teamCode($db, $id, 'Foxes'))['id'], 'No switching team by opening another link');
     same(['name' => 'Owls', 'position' => 0], $comps->personal($world(), $ann, null)['myTeam']);
-    same(teamCode($db, $id, 'Owls'), $comps->personal($world(), $ann, null)['invite'], 'Players can pass on their team link');
+    same(null, $comps->personal($world(), $ann, null)['invite'], "Players aren't shown their team's link");
     same('Bats', $comps->personal($world(), $dee, teamCode($db, $id, 'Bats'))['joiningTeam']['name']);
     same(['Owls', 'Foxes', 'Bats'], array_map(fn ($code) => $db->query("SELECT name FROM teams WHERE invite_code = '$code'")->fetchColumn(),
         array_values($comps->personal($world(), $org, null)['teamLinks'])), "The organiser gets every team's link");
