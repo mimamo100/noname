@@ -40,7 +40,6 @@ disbarment
 servitude
 confinement
 internment
-amercement
 stoning
 branding
 gibbet gibbets
@@ -48,6 +47,7 @@ retribution
 rehabilitation
 
 also:
+amercement
 punishment punishments
 sentence sentences sentenced
 compensation

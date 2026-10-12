@@ -8,8 +8,6 @@ tribunal tribunals
 chancery chanceries
 chambers chamber
 assizes assize
-eyre eyres
-leet leets
 consistory consistories
 moot moots
 judiciary judiciaries
@@ -34,6 +32,8 @@ hoosegow hoosegows
 precinct precincts
 
 also:
+eyre eyres
+leet leets
 inn inns
 dock docks
 bench benches

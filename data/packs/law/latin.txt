@@ -23,10 +23,8 @@ estoppel
 oyez
 autrefois
 feme
-puisne
 mortmain
 laches
-assumpsit
 venire
 lex
 jus
@@ -34,6 +32,8 @@ delict delicts
 veto vetoes
 
 also:
+puisne
+assumpsit
 habeascorpus
 bonafide
 probono

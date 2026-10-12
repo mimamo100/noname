@@ -52,14 +52,14 @@ tranquillo
 appassionato
 pesante
 leggiero
+
+also:
 molto
 poco
 assai
 sempre
 subito
 simile
-
-also:
 atempo
 mezzoforte
 mezzopiano

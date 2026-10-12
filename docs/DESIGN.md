@@ -358,6 +358,8 @@ a music quiz.
   of named things (stars, moons, constellations): the lists would never end,
   and there'd be no fair way to choose. Units named after people (*newton*)
   are ordinary words, and the planets are a small closed set, so they're in.
+- **Obscure terms go in a category's `also:` list**: accepted and scoring, but
+  not counted in the prompt's size or the words left unsaid.
 
 ## Ideas for later
 

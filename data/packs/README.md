@@ -35,6 +35,10 @@ The format is like `data/categories/` (see its README), with these differences:
   them, and no fair way to choose. Words named after people that are now
   ordinary words are fine (units such as *newton* and *kelvin*, *svengali*).
   The planets, a small closed set, are in.
+- **Obscure but correct terms go under `also:`** (*molto*, *assumpsit*,
+  *amercement*): they're accepted and score, but don't count towards the
+  answers a prompt has, so a prompt never leaves the room hunting for words
+  only a specialist knows.
 
 A world plays a pack **on its own** (the pack is the whole dictionary; prompts
 of 5–40 answers) or **with everyday words** (the everyday dictionary plus the
