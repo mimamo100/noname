@@ -52,6 +52,21 @@ function respond(int $status, array $body): never
     exit;
 }
 
+/**
+ * The admin page's address, if this browser is logged in to it, for an Admin link next to the
+ * player's name. Only looked at when the admin cookie is present, and read without locking the
+ * session, so ordinary polls cost nothing.
+ */
+function adminLink(array $config): ?string
+{
+    if (empty($_COOKIE['unsaid_admin']) || empty($config['admin_password'])) return null;
+    session_name('unsaid_admin');
+    if (!@session_start(['read_and_close' => true])) return null;
+    $isAdmin = !empty($_SESSION['admin']);
+    $_SESSION = [];
+    return $isAdmin ? '/' . trim((string) ($config['admin_path'] ?? 'admin'), '/') : null;
+}
+
 function body(): array
 {
     $raw = file_get_contents('php://input', length: 10_000);
@@ -61,7 +76,7 @@ function body(): array
     return $data;
 }
 
-function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private): never
+function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, array $config): never
 {
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -133,6 +148,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private): ne
         $player = $user ? $game->playerForUser($worldId, $user['id']) : null;
         $state = $game->state($worldId, $player['token'] ?? null)
             + ['account' => $user ? ['name' => $user['name'], 'plan' => $user['plan']] : null]
+            + ['admin' => adminLink($config)]
             + $private->personal($world, $user);
         if ($isBigWorld) {
             $state['lastRound'] = $lobby->lastRound();
@@ -170,13 +186,13 @@ try {
     $private = new PrivateWorlds($db, $game);
     $auth = new Auth($db, new Mailer($config['mail'] ?? []), $dictionary);
     try {
-        route($game, $auth, $lobby, $private);
+        route($game, $auth, $lobby, $private, $config);
     } catch (PDOException $e) {
         // A missing table or column means a new install or an older database: set up or upgrade, then retry.
         if (!in_array($e->getCode(), ['42S02', '42S22'], true)) throw $e;
         if ($db->inTransaction()) $db->rollBack();
         Game::installSchema($db);
-        route($game, $auth, $lobby, $private);
+        route($game, $auth, $lobby, $private, $config);
     }
 } catch (GameError $e) {
     respond($e->status, ['error' => $e->getMessage()]);

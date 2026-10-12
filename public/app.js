@@ -161,7 +161,7 @@ function render(state) {
   const joined = Boolean(state.me);
   const signedIn = Boolean(state.account);
   if (!signedIn && session) setSession(null); // The session expired or was signed out elsewhere.
-  renderAccount(state.account);
+  renderAccount(state.account, state.admin);
   $('play-form').hidden = !signedIn || !state.prompt || (state.world.kind === 'room' && !joined);
   $('signin').hidden = signedIn;
 
@@ -430,11 +430,12 @@ function showSigninStep(step) {
   $(`signin-${step}-input`)?.focus();
 }
 
-function renderAccount(account) {
+function renderAccount(account, adminUrl) {
+  const admin = adminUrl ? [el('span', { className: 'muted', textContent: ' · ' }), el('a', { href: adminUrl, className: 'admin-link', textContent: 'Admin' })] : [];
   if (!account) {
     const button = el('button', { type: 'button', className: 'link', textContent: 'Sign in' });
     button.addEventListener('click', () => { showSigninStep('email'); $('signin').scrollIntoView({ block: 'center' }); });
-    $('account').replaceChildren(button);
+    $('account').replaceChildren(button, ...admin);
     return;
   }
   const out = el('button', { type: 'button', className: 'link', textContent: 'Sign out' });
@@ -449,7 +450,7 @@ function renderAccount(account) {
   const worlds = el('button', { type: 'button', className: 'link', textContent: 'My worlds' });
   worlds.addEventListener('click', showWorlds);
   const dot = () => el('span', { className: 'muted', textContent: ' · ' });
-  $('account').replaceChildren(el('span', { className: 'muted', textContent: account.name }), dot(), worlds, dot(), games, dot(), out);
+  $('account').replaceChildren(el('span', { className: 'muted', textContent: account.name }), dot(), worlds, dot(), games, dot(), out, ...admin);
 }
 
 function ago(ms) {
