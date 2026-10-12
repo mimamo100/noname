@@ -57,27 +57,27 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 | `data/blocklist.txt` | Offensive words that can never be played (editable) |
 | `data/spellings.json` | UK/US spelling pairs, generated from VarCon by `scripts/build-spellings.php` |
 | `data/spelling-links.txt` | Extra UK/US spelling pairs (editable) |
-| `data/categories.json` | Meaning categories, generated from WordNet by `scripts/build-categories.py` |
-| `data/category-overrides.txt` | Hand corrections to the categories (editable) |
+| `data/categories/` | Meaning categories, one file each (editable; see the README there) |
 | `data/dictionary.php` | The file the game reads, generated from all of the above |
 | `scripts/category-report.php` | Shows a category's words, or how given words stand in it |
 
 ## Changing the word data
 
-After editing `data/extra-words.txt`, `data/blocklist.txt` or
-`data/category-overrides.txt`, rebuild:
+After editing `data/extra-words.txt`, `data/blocklist.txt` or a file in
+`data/categories/`, rebuild:
 
 ```sh
 php scripts/build-dictionary.php
 ```
 
-To rebuild the categories themselves from WordNet (rarely needed), you also
-need Python with NLTK, on your own computer rather than the server:
+To draft a brand-new category from WordNet, you also need Python with NLTK,
+on your own computer rather than the server. It writes a first draft to edit
+by hand, and never touches an existing category:
 
 ```sh
 pip install nltk
 python -c "import nltk; nltk.download('wordnet')"
-python scripts/build-categories.py
+python scripts/build-categories.py herb "A herb, spice or sauce" flavorer.n.01
 php scripts/build-dictionary.php
 ```
 

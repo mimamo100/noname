@@ -3,8 +3,7 @@
 //   data/words.txt                 the word list, most common first
 //   data/extra-words.txt           hand-added words the list misses
 //   data/blocklist.txt             words that can never be played
-//   data/categories.json           meaning categories (built by scripts/build-categories.py)
-//   data/category-overrides.txt    hand corrections to the categories
+//   data/categories/<id>.txt       meaning categories, one file each
 //   data/spellings.json            UK/US spellings (built by scripts/build-spellings.php)
 //   data/spelling-links.txt        hand-added UK/US spelling links
 //
@@ -128,26 +127,34 @@ $known = array_flip($words);
 $usOnly = array_values(array_unique(array_filter(array_merge($spellings['usOnly'], $manualUs), fn ($w) => isset($known[$w]))));
 $ukOnly = array_values(array_unique(array_filter(array_merge($spellings['ukOnly'], $manualUk), fn ($w) => isset($known[$w]))));
 
-// Meaning categories, with hand corrections applied.
+// Meaning categories, one hand-kept file each (see data/categories/README.md).
 $categories = [];
-foreach (json_decode(file_get_contents("$dataDir/categories.json"), true) as $id => $category) {
-    $categories[$id] = [
-        'label' => $category['label'],
-        'words' => array_fill_keys($category['words'], true),
-        'also' => array_fill_keys($category['also'] ?? [], true),
-    ];
-}
-foreach (readList("$dataDir/category-overrides.txt") as $line) {
-    [$id, $changes] = array_map('trim', explode(':', $line, 2)) + [1 => ''];
-    if (!isset($categories[$id])) {
-        fwrite(STDERR, "category-overrides.txt: unknown category \"$id\"\n");
+foreach (glob("$dataDir/categories/*.txt") as $path) {
+    $id = basename($path, '.txt');
+    $category = ['label' => null, 'words' => [], 'also' => []];
+    $list = 'words';
+    foreach (readList($path) as $line) {
+        if (str_starts_with($line, 'label:')) {
+            $category['label'] = trim(substr($line, 6));
+        } elseif ($line === 'also:') {
+            $list = 'also';
+        } elseif (preg_match('/^[a-z]+$/', $line)) {
+            $category[$list][$line] = true;
+        } else {
+            fwrite(STDERR, "categories/$id.txt: \"$line\" must be one lowercase word\n");
+            exit(1);
+        }
+    }
+    if ($category['label'] === null) {
+        fwrite(STDERR, "categories/$id.txt: no \"label:\" line\n");
         exit(1);
     }
-    foreach (preg_split('/\s+/', $changes, -1, PREG_SPLIT_NO_EMPTY) as $change) {
-        $word = strtolower(substr($change, 1));
-        if ($change[0] === '+') $categories[$id]['words'][$word] = true;
-        elseif ($change[0] === '-') unset($categories[$id]['words'][$word], $categories[$id]['also'][$word]);
-    }
+    $categories[$id] = $category;
+}
+// Animal takes in the more specific animal categories, so each word is listed once.
+foreach (['mammal', 'bird', 'fish', 'insect'] as $id) {
+    $categories['animal']['words'] += $categories[$id]['words'];
+    $categories['animal']['also'] += $categories[$id]['also'];
 }
 // Other spellings belong wherever their partner does: "jewellery" is worn like "jewelry".
 foreach ($categories as $id => $category) {

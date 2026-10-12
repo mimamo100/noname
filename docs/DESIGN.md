@@ -119,17 +119,19 @@ word-finder site. There are three kinds:
 | Letters only | the rest | *Letters in alphabetical order, 6+ letters*, *Starts and ends with N*, *Two Ys, no L* |
 
 - **Meanings** come from 31 categories (animals, foods, jobs, feelings,
-  colours and so on), built from WordNet by `scripts/build-categories.py`.
-  A word counts when its main meaning fits: *fly* is an insect, but *does*
-  isn't an animal just because a doe is a deer.
+  colours and so on), kept by hand in `data/categories/`, one file each.
+  They were first drafted from WordNet (`scripts/build-categories.py` still
+  drafts new ones) and then reviewed. A word counts when its main meaning
+  fits: *fly* is an insect, but *does* isn't an animal just because a doe is
+  a deer.
 - **Any meaning counts for accepting an answer.** *Squash* is a sport even
   though WordNet lists the vegetable first. Only words whose *main* meaning
   fits are counted in "words left unsaid" and used to size prompts, so
   obscure meanings don't inflate the counter.
-- **Corrections** go in `data/category-overrides.txt`, for example removing
-  *young* from animals or adding *white* to colours. WordNet occasionally
-  accepts odd answers (*queen* is an insect, as in queen bee). Accepting a
-  surprising answer is better than rejecting a sensible one.
+- **Corrections** are made in the category's file. The aim is every answer
+  a player is likely to think of, since a missing one is frustrating and
+  becomes a suggestion to approve. Accepting a surprising answer is better
+  than rejecting a sensible one.
 - **Size.** A new prompt is only chosen if it has 10–80 distinct answers still
   unsaid, counting a word family once. Late in a world, when nothing fits
   that range, the game takes the richest prompt it can find.

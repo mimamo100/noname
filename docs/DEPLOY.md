@@ -163,8 +163,9 @@ On the page you can:
 - **Recount scores**, and see when **housekeeping** last ran or run it now.
 
 Accepted words are stored in the database. To make them part of the word files
-for good, add them to `data/category-overrides.txt` or `data/extra-words.txt`
-when the game is next updated.
+for good, add them to the category's file in `data/categories/` (and to
+`data/extra-words.txt` if they aren't in the dictionary) when the game is
+next updated.
 
 ## Backups
 

@@ -1,62 +1,30 @@
-"""Builds data/categories.json: which dictionary words belong to each meaning category.
+"""Drafts a NEW meaning category from WordNet, as data/categories/<id>.txt.
 
-Uses WordNet, so it only runs on a development machine, never on the web server:
+The categories are kept by hand (see data/categories/README.md). WordNet is only a
+starting point for a new one: run this once, then edit the draft before committing it.
+It never overwrites an existing category. Needs NLTK, so it only runs on a development
+machine:
 
     pip install nltk
     python -c "import nltk; nltk.download('wordnet')"
-    python scripts/build-categories.py
+    python scripts/build-categories.py herb "A herb, spice or sauce" flavorer.n.01
     php scripts/build-dictionary.php
 
-Each category has two lists:
-  words  clear answers: the word's main meaning fits (its most-used sense if it's
+The draft has two lists:
+  main   clear answers: the word's main meaning fits (its most-used sense if it's
          mostly a noun, or its first listed sense if WordNet has seen it in real
          text). These size prompts and are counted as "left unsaid".
   also   accepted too, because some other meaning fits ("squash" is a sport, though
          WordNet lists the vegetable first). Not counted, so obscure meanings don't
          inflate the counter.
-Fix individual words in data/category-overrides.txt rather than here.
+Expect to move everyday answers from also to main, remove odd members, and add
+answers WordNet files elsewhere.
 """
-import json
 import os
+import sys
 from nltk.corpus import wordnet as wn
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# id: (label, WordNet synsets whose kinds belong to the category)
-CATEGORIES = {
-    'animal': ('An animal', ['animal.n.01']),
-    'mammal': ('A mammal', ['mammal.n.01']),
-    'bird': ('A bird', ['bird.n.01']),
-    'fish': ('A fish', ['fish.n.01']),
-    'insect': ('An insect or bug', ['insect.n.01', 'arachnid.n.01']),
-    'food': ('A food', ['food.n.02', 'food.n.01']),
-    'fruit': ('A fruit', ['edible_fruit.n.01']),
-    'vegetable': ('A vegetable', ['vegetable.n.01']),
-    'drink': ('A drink', ['beverage.n.01']),
-    'clothing': ('Something you wear', ['clothing.n.01', 'footwear.n.02', 'headdress.n.01', 'jewelry.n.01']),
-    'body': ('A part of the body', ['body_part.n.01']),
-    'job': ('A job', ['worker.n.01', 'professional.n.01']),
-    'relative': ('A family member', ['relative.n.01']),
-    'feeling': ('A feeling', ['feeling.n.01', 'emotion.n.01']),
-    'tool': ('A tool', ['tool.n.01']),
-    'vehicle': ('A vehicle', ['vehicle.n.01', 'craft.n.02']),
-    'instrument': ('A musical instrument', ['musical_instrument.n.01']),
-    'furniture': ('A piece of furniture', ['furniture.n.01']),
-    'kitchen': ('Something in a kitchen', ['kitchen_utensil.n.01', 'kitchen_appliance.n.01', 'cutlery.n.02', 'crockery.n.01', 'cookware.n.01']),
-    'building': ('A building or room', ['building.n.01', 'room.n.01']),
-    'weapon': ('A weapon', ['weapon.n.01']),
-    'sport': ('A sport or game', ['sport.n.01', 'game.n.01']),
-    'plant': ('A plant or flower', ['plant.n.02', 'flower.n.01']),
-    'tree': ('A tree', ['tree.n.01']),
-    'weather': ('Weather', ['atmospheric_phenomenon.n.01', 'weather.n.01']),
-    'landform': ('A natural landscape feature', ['geological_formation.n.01', 'body_of_water.n.01']),
-    'disease': ('An illness', ['disease.n.01', 'illness.n.01']),
-    'crime': ('A crime', ['crime.n.01']),
-    'sound': ('A sound', ['sound.n.04', 'noise.n.01']),
-    'colour': ('A colour', ['chromatic_color.n.01', 'achromatic_color.n.01']),
-    'music': ('A kind of music or dance', ['dance.n.01', 'genre.n.03', 'musical_composition.n.01']),
-}
-
 
 
 def lemma_count(synset, base):
@@ -93,26 +61,29 @@ def all_senses(word):
     return set(wn.synsets(base, wn.NOUN)) if base else set()
 
 
+def read_words(name):
+    with open(os.path.join(ROOT, 'data', name), encoding='utf-8') as f:
+        return [w for w in (line.split('#')[0].strip().lower() for line in f) if w]
+
+
 def main():
-    words = [w.strip() for w in open(os.path.join(ROOT, 'data', 'words.txt')) if w.strip()]
-    main = {w: main_senses(w) for w in words}
-    every = {w: all_senses(w) for w in words}
-    out = {}
-    for cat_id, (label, roots) in CATEGORIES.items():
-        kinds = set()
-        for name in roots:
-            root = wn.synset(name)
-            kinds |= {root} | set(root.closure(lambda s: s.hyponyms()))
-        # "words" are clear answers, used to size prompts and count what's left.
-        # "also" are words accepted because one of their other meanings fits.
-        members = [w for w in words if main[w] & kinds]
-        member_set = set(members)
-        also = [w for w in words if w not in member_set and every[w] & kinds]
-        out[cat_id] = {'label': label, 'words': members, 'also': also}
-        print(f'{cat_id:12} {len(members):5} +{len(also):4} also  {", ".join(members[:10])}')
-    with open(os.path.join(ROOT, 'data', 'categories.json'), 'w') as f:
-        json.dump(out, f, indent=1)
-    print('Wrote data/categories.json')
+    if len(sys.argv) < 4:
+        sys.exit('Usage: python scripts/build-categories.py <id> "<label>" <synset> [<synset>...]')
+    cat_id, label, roots = sys.argv[1], sys.argv[2], sys.argv[3:]
+    path = os.path.join(ROOT, 'data', 'categories', cat_id + '.txt')
+    if os.path.exists(path):
+        sys.exit(f'data/categories/{cat_id}.txt already exists. Edit it by hand instead.')
+    words = list(dict.fromkeys(read_words('words.txt') + read_words('extra-words.txt')))
+    kinds = set()
+    for name in roots:
+        root = wn.synset(name)
+        kinds |= {root} | set(root.closure(lambda s: s.hyponyms()))
+    members = [w for w in words if main_senses(w) & kinds]
+    member_set = set(members)
+    also = [w for w in words if w not in member_set and all_senses(w) & kinds]
+    with open(path, 'w', encoding='utf-8', newline='\n') as f:
+        f.write(f'label: {label}\n\n' + '\n'.join(sorted(members)) + '\n\nalso:\n' + '\n'.join(sorted(also)) + '\n')
+    print(f'Wrote data/categories/{cat_id}.txt: {len(members)} main, {len(also)} also. Edit it before committing.')
 
 
 if __name__ == '__main__':

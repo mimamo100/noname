@@ -1,7 +1,7 @@
 # Words added to the dictionary that the main word list misses.
 # One word per line, lowercase letters only. They're treated as rare words
 # (scoring a little more), and the blocklist still applies.
-# To also count a word for a meaning, add it in category-overrides.txt.
+# To also count a word for a meaning, add it to its file in data/categories/.
 # Rebuild after editing: php scripts/build-dictionary.php
 
 # Sports

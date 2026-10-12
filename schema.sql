@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS misses (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Words players think should count for a meaning prompt ("squash" for "A sport or game").
--- Review them in phpMyAdmin and add good ones to data/category-overrides.txt.
+-- Review them in phpMyAdmin and add good ones to data/categories/<id>.txt.
 CREATE TABLE IF NOT EXISTS reports (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   world_id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,

@@ -226,7 +226,7 @@ if (!$decisions) {
     $html .= '</tbody></table></div>';
 }
 $html .= '<p class="muted small">Accepted words are kept in the database. To make them permanent in the word files, '
-    . 'add them to <code>data/category-overrides.txt</code> or <code>data/extra-words.txt</code> when the game is next updated.</p>';
+    . 'add them to their category file in <code>data/categories/</code> (and to <code>data/extra-words.txt</code> if they are not in the dictionary) when the game is next updated.</p>';
 
 $html .= '<h2>Scores</h2><p class="muted">Each player\'s total is kept as a running count. If you change the '
     . '<code>burns</code> or <code>misses</code> tables by hand (in phpMyAdmin), recount so the leaderboards match.</p>'
