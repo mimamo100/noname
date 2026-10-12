@@ -138,41 +138,57 @@ editing, rebuild with `php scripts/build-dictionary.php`.
 
 ## Stage 2: apply what's approved
 
-1. Edit `data/category-overrides.txt`: extend each category's existing line
-   (keep what's already there) with the approved `+` and `-` words.
-2. Add approved words that are NOT IN DICTIONARY to `data/extra-words.txt`,
+Decided on 2026-10-12: the categories stop being generated from WordNet.
+They become plain files kept in the repository and edited by hand, one per
+category, and the approved changes go straight into those files. WordNet is
+only used to draft a new category, once.
+
+1. **Freeze the categories.** Write `data/categories/<id>.txt` for every
+   category from what the game has now (`data/categories.json` with
+   `data/category-overrides.txt` applied): the label on the first line, then
+   the *main* words, then an `also:` line and the *also* words, one per line,
+   sorted. Leave out plurals whose singular is listed if the game accepts
+   those plurals anyway (check how before relying on it).
+2. **Read the folder.** Change `scripts/build-dictionary.php` to read
+   `data/categories/` instead of `categories.json` and the overrides. Rebuild
+   and check that every category in `data/dictionary.php` is exactly what it
+   was before (same words, same lists). Commit this on its own, before any
+   word changes.
+3. **Make the WordNet script a drafting tool.** Change
+   `scripts/build-categories.py` so it writes a draft file for a category
+   that doesn't exist yet and never overwrites an existing one. Delete
+   `data/categories.json` and `data/category-overrides.txt`, and update
+   every mention of them (README.md, docs/DESIGN.md, docs/DEPLOY.md,
+   `public/admin.php`, `schema.sql`, the `data/extra-words.txt` header).
+4. **Apply the approved changes** to the category files: removes, adds,
+   promotions from *also*, and labels. When removing a word, remove its
+   plural too.
+5. Add approved words that are NOT IN DICTIONARY to `data/extra-words.txt`,
    with their plurals, under a heading per category.
-3. Change approved labels in `data/categories.json` *and*
-   `scripts/build-categories.py`.
-4. For approved new categories: add them to `CATEGORIES` in
-   `scripts/build-categories.py` and rebuild the categories, which needs
-   Python with NLTK:
+6. **New categories:** draft each approved one with the drafting tool
+   (needs Python with NLTK), then clean the draft using the proposals before
+   committing it:
 
    ```sh
    pip install nltk
    python -c "import nltk; nltk.download('wordnet')"
-   python scripts/build-categories.py
    ```
 
-   This rewrites `data/categories.json` from WordNet, so do it **after** step
-   3 (the labels come from `build-categories.py`). Then check that every
-   category's size is close to what it was, since overrides are applied
-   afterwards. If NLTK can't be installed, skip new categories and say so.
-5. Rebuild: `php scripts/build-dictionary.php`. Fix any "unknown category"
-   warnings.
-6. Check:
+   If NLTK can't be installed, skip new categories and say so.
+7. Rebuild: `php scripts/build-dictionary.php`.
+8. Check:
    - `php scripts/category-report.php`: compare sizes with before.
    - Spot-check several added and removed words per category with
      `php scripts/category-report.php <id> <words…>`.
    - Each category should still give prompts: run
      `php -r 'foreach (["WordFamilies","Dictionary","Prompts"] as $f) require "src/$f.php"; $d = Dictionary::load(); foreach ($d->categoryIds() as $id) printf("%-12s %d\n", $id, Prompts::countUnsaid(["cat" => $id, "rules" => []], $d, []));'`
    - If MySQL or MariaDB is available, run the tests (see README.md).
-7. Commit with a message summarising the changes per category, and push.
-8. Tell the owner how to put it live. The game reads only
+9. Commit with a message summarising the changes per category, and push.
+10. Tell the owner how to put it live. The game reads only
    `data/dictionary.php`, so uploading that one file is enough: in cPanel's
    File Manager, open the game's `data` folder and upload it over the old
    one. (The full zip, from `sh scripts/build-zip.sh unsaid.zip`, works too,
    but needs `sh` and Python, which Windows lacks without Git Bash.) Changes
    take effect at once; a prompt running at the time has its count updated.
-9. Update `docs/dictionary-review/PROPOSALS.md`: mark it as applied, noting
-   anything left out.
+11. Update `docs/dictionary-review/PROPOSALS.md`: mark it as applied, noting
+    anything left out.

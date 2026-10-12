@@ -20,9 +20,10 @@ All 31 categories were reviewed. Every proposed word's status was checked with `
 
 ### Things to decide besides the word lists
 
-- **Food and drink:** the review proposes removing about 80 drinks from food by hand. A cleaner fix is a rule in `build-categories.py` that keeps drink words out of food. Which do you prefer?
+- **Decided: categories become hand-kept files.** They will no longer be generated from WordNet. Each category becomes a plain file in the repository (`data/categories/<id>.txt`), and the approved changes go straight into those files. The overrides file goes away. WordNet is only used to draft a new category, once. See stage 2 in [DICTIONARY-REVIEW.md](../DICTIONARY-REVIEW.md).
+- **Decided: drinks are not food.** Food and drink stay separate categories. With hand-kept files, the drinks are simply deleted from food (keeping milk and chocolate, which are both).
 - **Animal:** should animal's *main* automatically include every *main* word of mammal, bird, fish and insect, and drop their removes? Otherwise each fix has to be made twice.
-- **Overrides and plurals:** a `-word` override doesn't remove the plural, so some leftovers from earlier fixes are still accepted: *professionals*, *academics*, *coles*, *quiets*, *wormholes*, *cavities*, *pests*. The proposals list them, and stage 2 will write the plurals out. Alternatively, `build-dictionary.php` could remove plurals automatically.
+- **Plurals left over from earlier fixes:** a `-word` override doesn't remove the plural, so some leftovers are still accepted: *professionals*, *academics*, *coles*, *quiets*, *wormholes*, *cavities*, *pests*. The proposals list them, and they go when the files are cleaned up.
 - **Two earlier overrides do nothing:** `+cyan` and `+ochre` (colour), because neither word is in the dictionary. They need adding to `extra-words.txt`.
 - **The blocklist blocks whole word families**, so `pubes` also blocks *pub* and *pubs*. *Pricked/pricking*, *cocked/cocking* and *hump/humped* are blocked the same way. *Tit* and *cock* (birds) and *nipple* (body) are blocked directly. Should any of these be playable?
 - **Long add lists:** job (about 170), sound (about 115), music (about 110), bird (about 105) and food go past the target of about 60. That's because these categories have the biggest gaps. You can approve them as they are, or ask for a trimmed list.
