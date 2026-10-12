@@ -583,6 +583,10 @@ final class Game
             $singular = $this->dictionary->singular($word);
             $points = Scoring::scoreWord($singular, $this->dictionary->rarity($singular), $mult['world'], $mult['prompt']);
             $family = array_values(array_filter($this->dictionary->family($word), fn ($w) => !isset($burned[$w])));
+            // The prompt's last answer scores double. Only worth checking when one answer is left.
+            $lastAnswer = (int) $prompt['remaining'] === 1
+                && Prompts::countUnsaid($prompt['spec'], $this->dictionary, $this->unavailable($worldId) + array_fill_keys($family, true)) === 0;
+            if ($lastAnswer) $points *= 2;
             $insert = $this->db->prepare('
                 INSERT INTO burns (world_id, word, played_word, player_id, prompt_id, points, burned_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?)');
@@ -602,7 +606,7 @@ final class Game
                 'points' => $points,
                 'alsoBurned' => array_values(array_filter($family, fn ($w) => $w !== $word)),
                 'multipliers' => $mult,
-            ] + ($streak !== null ? ['streak' => $streak] : []);
+            ] + ($lastAnswer ? ['lastAnswer' => true] : []) + ($streak !== null ? ['streak' => $streak] : []);
         });
     }
 

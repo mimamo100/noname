@@ -161,7 +161,8 @@ test('plurals count as their singular for length rules and points', function () 
     $world = $game->createWorld('Plurals');
     setPrompt($game, $world['id'], spec(null, ['contains', 'ox']));
     $p = $game->join($world['id'], 'Pam');
-    same(Scoring::scoreWord('box', $d->rarity('box'), 1, 1), $game->play($world['id'], $p['token'], 'boxes')['points'], 'boxes scores as box');
+    // Box is the only answer, so it's also the last one: double points.
+    same(2 * Scoring::scoreWord('box', $d->rarity('box'), 1, 1), $game->play($world['id'], $p['token'], 'boxes')['points'], 'boxes scores as box');
 });
 
 test('letter rules never ask for an S that a plural would supply', function () {
@@ -660,9 +661,15 @@ test('the prompt rotates when it runs dry or times out', function () {
     $world = $game->createWorld('Rotate', null, 60_000);
     setPrompt($game, $world['id'], spec(null, ['starts', 'zo']));
     $p = $game->join($world['id'], 'Pat');
-    check($game->play($world['id'], $p['token'], 'zoo')['ok']);
-    check($game->play($world['id'], $p['token'], 'zoom')['ok']);
+    $zoo = $game->play($world['id'], $p['token'], 'zoo');
+    check($zoo['ok'] && !isset($zoo['lastAnswer']));
+    $zoom = $game->play($world['id'], $p['token'], 'zoom');
+    same(true, $zoom['lastAnswer'], 'The last answer');
+    same(2 * Scoring::scoreWord('zoom', testDictionary()->rarity('zoom'), $zoom['multipliers']['world'], $zoom['multipliers']['prompt']),
+        $zoom['points'], 'scores double');
     $afterDry = $game->state($world['id'], null)['prompt']['label'];
+    $said = $game->state($world['id'], null)['said'][1];
+    same(0, $said['unsaid']['count'], 'Every answer was said');
     check($afterDry !== 'Starts with ZO', 'Did not rotate when dry');
 
     $clock += 61_000;

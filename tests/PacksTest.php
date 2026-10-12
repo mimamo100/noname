@@ -63,7 +63,7 @@ test('a world with a pack plays the pack: its prompts, its words, and its size',
 
     $game = makeGameOn($db, $packs->dictionary($made['id'], 'only', testDictionary()));
     $state = $game->state($world['id'], null);
-    check(str_starts_with($state['prompt']['label'], 'A '), 'A prompt from the pack: ' . $state['prompt']['label']);
+    check($state['prompt']['availableAtStart'] >= 5 && $state['prompt']['availableAtStart'] <= 40, 'A pack-sized prompt: ' . $state['prompt']['label']);
     setPrompt($game, $world['id'], ['cat' => "{$made['id']}.c3", 'rules' => []]);
     $p = $private->playerFor($game->world($world['id']), $org, null);
     same(true, $game->play($world['id'], $p['token'], 'nuclei')['ok'], 'Irregular forms listed together count');

@@ -157,6 +157,10 @@ word-finder site. There are three kinds:
 - **Repeating your own word is free.** "Already said" is checked before the
   meaning and letters, and the message says when the word was said and for
   which prompt, since that may be several prompts ago and out of sight.
+- **The last answer scores double:** whoever says a prompt's last answer (so
+  it runs dry) gets double points, marked 🏁 in the feed. The prompt
+  multiplier already rises as a prompt runs dry; this gives the end of a small
+  prompt a clear finish. Big world prompts mostly time out first.
 - **Spaces, hyphens and apostrophes are dropped** from what players type, so
   "tea towel" and "T-shirt" play as *teatowel* and *tshirt* (the joined forms
   are in categories' *also* lists where they fit).

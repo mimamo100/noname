@@ -567,9 +567,11 @@ function saidWord(r) {
   return span;
 }
 
-function saidList(words, emptyText) {
-  return el('ol', { className: 'recent' }, ...(words.length ? words.map((r) => el('li', {},
+// cleared: the prompt ran out of answers, so its newest word was the last one (double points).
+function saidList(words, emptyText, cleared = false) {
+  return el('ol', { className: 'recent' }, ...(words.length ? words.map((r, i) => el('li', {},
     saidWord(r),
+    ...(cleared && i === 0 ? [el('span', { className: 'last-answer', title: 'The last answer: double points', textContent: '🏁' })] : []),
     el('span', { className: 'muted' }, ' by ', ...teamDot(r.team), `${r.by}${r.familyCount ? ` (+${r.familyCount} family)` : ''}`),
     el('span', { className: 'points', textContent: `+${r.points}` }),
   )) : [el('li', { className: 'muted', textContent: emptyText })]));
@@ -591,7 +593,8 @@ function renderLastUnsaid(groups, currentPromptId) {
   $('last-unsaid').replaceChildren(
     el('p', { className: 'eyebrow', textContent: 'Last prompt' }),
     el('p', {}, el('b', { textContent: last.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(last.words.length)}` })),
-    el('p', {}, last.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(last.unsaid)),
+    el('p', {}, last.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(last.unsaid),
+      ...(!last.unsaid.count && last.words.length ? [` 🏁 ${last.words[0].by} said the last one, for double points.`] : [])),
   );
 }
 
@@ -606,7 +609,7 @@ function renderSaid(groups, currentPromptId) {
       const details = el('details', { className: 'earlier', open: openPrompts.has(group.promptId) },
         el('summary', {}, el('span', { textContent: group.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(group.words.length)}` })),
         ...(group.unsaid ? [el('p', { className: 'small unsaid-line' }, group.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(group.unsaid))] : []),
-        saidList(group.words, 'Nothing was said.'));
+        saidList(group.words, 'Nothing was said.', group.unsaid?.count === 0));
       details.addEventListener('toggle', () => (details.open ? openPrompts.add(group.promptId) : openPrompts.delete(group.promptId)));
       parts.push(details);
     }
@@ -766,7 +769,8 @@ $('play-form').addEventListener('submit', async (e) => {
     if (result.ok) {
       const family = result.alsoBurned.length ? ` Gone with it: ${result.alsoBurned.join(', ')}.` : '';
       const streak = result.streak > 1 ? ` That's ${result.streak} days in a row!` : '';
-      feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}. Nobody can say it again.${family}${streak}`, 'good');
+      const last = result.lastAnswer ? ' That was the last answer, so it scores double!' : '';
+      feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}.${last} Nobody can say it again.${family}${streak}`, 'good');
       input.value = '';
     } else {
       feedback(REASONS[result.reason](result.word, result), 'bad');
