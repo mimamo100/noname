@@ -195,9 +195,26 @@ let lastStateLoaded = false;
 // Earlier prompts the player has expanded, kept open across refreshes.
 const openPrompts = new Set();
 
+// Masked words (mild rude words) show as p***s until tapped, so the page stays clean at a
+// glance but anyone can check before trying one. Tapped words stay shown across refreshes.
+const revealed = new Set();
+const mask = (word) => word[0] + '*'.repeat(word.length - 2) + word.at(-1);
+
+function saidWord(r) {
+  if (!r.masked || revealed.has(r.word)) return el('span', { className: 'said-word', textContent: r.word });
+  const span = el('span', { className: 'said-word masked', textContent: mask(r.word), title: 'Tap to show the word', tabIndex: 0, role: 'button' });
+  const show = () => {
+    revealed.add(r.word);
+    span.replaceWith(el('span', { className: 'said-word', textContent: r.word }));
+  };
+  span.addEventListener('click', show);
+  span.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(); } });
+  return span;
+}
+
 function saidList(words, emptyText) {
   return el('ol', { className: 'recent' }, ...(words.length ? words.map((r) => el('li', {},
-    el('span', { className: 'said-word', textContent: r.word }),
+    saidWord(r),
     el('span', { className: 'muted', textContent: ` by ${r.by}${r.familyCount ? ` (+${r.familyCount} family)` : ''}` }),
     el('span', { className: 'points', textContent: `+${r.points}` }),
   )) : [el('li', { className: 'muted', textContent: emptyText })]));
@@ -353,7 +370,7 @@ const REASONS = {
   'already-burned': (w, r) => r.burned
     ? (r.byYou
       ? `You already said “${r.burned.playedWord}”${r.burned.playedWord !== w ? ` (which uses up “${w}”)` : ''} on ${shortDate(r.burned.at)}, for “${r.burned.prompt}”. No penalty.`
-      : `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''} on ${shortDate(r.burned.at)}, for “${r.burned.prompt}”.${penaltyText(r)}`)
+      : `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''} on ${shortDate(r.burned.at)}, for “${r.burned.prompt}”.${r.penalty ? penaltyText(r) : ' No penalty, as it was hidden.'}`)
     : `“${w}” has already been said.${penaltyText(r)}`,
 };
 

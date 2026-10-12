@@ -250,6 +250,8 @@ final class Prompts
         arsort($counts);
         foreach ($counts as $k => $_) {
             [$type, $letters] = explode(':', $k);
+            // Never a prompt that spells a rude word ("Contains ASS").
+            if ($dictionary->isBlocked($letters) || $dictionary->isMasked($letters)) continue;
             $spec = ['cat' => null, 'rules' => [[$type, $letters]]];
             if (!isset($used[self::key($spec)])) return ['spec' => $spec, 'available' => self::countUnsaid($spec, $dictionary, $burned)];
         }

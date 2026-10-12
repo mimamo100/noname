@@ -670,3 +670,37 @@ test('older databases are upgraded and their prompts keep working', function () 
     check($game->play('old', $p['token'], 'book')['ok']);
     same(Game::PENALTY, $game->play('old', $p['token'], 'cat')['penalty']);
 });
+
+test('masked words are playable, hidden in the feed, free to repeat, and kept out of names and prompts', function () {
+    $words = ['tit', 'tits', 'moon', 'assess', 'assets', 'passage', 'classes', 'masses', 'grass', 'ass', 'cat'];
+    $dictionary = Dictionary::fromWords($words, [], [], [], ['tit', 'tits', 'ass']);
+    $game = new Game(testDb(), $dictionary, fn () => 1_000, promptMin: 1, promptMax: 1000);
+    $world = $game->createWorld('Masked');
+    setPrompt($game, $world['id'], spec(null, ['contains', 't']));
+    $ann = $game->join($world['id'], 'Ann');
+    $ben = $game->join($world['id'], 'Ben');
+    check($game->play($world['id'], $ann['token'], 'tit')['ok'], 'Playable and scores');
+
+    $feed = $game->state($world['id'], null)['said'][0]['words'];
+    same(['tit', true], [$feed[0]['word'], $feed[0]['masked']]);
+    $again = $game->play($world['id'], $ben['token'], 'tits');
+    same(['already-burned', 0], [$again['reason'], $again['penalty']], "Ben couldn't see it, so it's free");
+
+    check($dictionary->isOffensiveName('Big Tits') && $dictionary->isOffensiveName('ass'));
+    check(!$dictionary->isOffensiveName('Cat'));
+
+    // The fallback prompt picks common letter strings, but never one that is a rude word.
+    $simple = new ReflectionMethod(Prompts::class, 'simplePrompt');
+    $allPicks = function (Dictionary $d) use ($simple): array {
+        $used = [];
+        $letters = [];
+        while ($pick = $simple->invoke(null, $d, [], $used)) {
+            $used[Prompts::key($pick['spec'])] = true;
+            $letters[] = $pick['spec']['rules'][0][1];
+        }
+        return $letters;
+    };
+    $plain = $allPicks(Dictionary::fromWords($words));
+    check(in_array('ass', $plain, true) && in_array('tit', $plain, true), 'Without masking they come up');
+    same([], array_values(array_intersect(['ass', 'tit'], $allPicks($dictionary))), 'With masking they never do');
+});

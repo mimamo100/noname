@@ -210,13 +210,27 @@ word-finder site. There are three kinds:
 
 ## Offensive words
 
-`data/blocklist.txt` lists slurs, strong profanity and explicit sexual terms.
-Blocked words, and the words formed from them (*cocks*, *cocked*), are
-removed from the dictionary, so they can never be played, appear in a prompt
-or show in the feed. Blocking never goes the other way: *pubes* doesn't block
-*pub*. Nicknames
-containing a blocked word are refused. Words that are innocent in their main
-meaning (*spade*, *queen*, *pansy*, *hoe*) are deliberately allowed.
+Two lists, both hand-kept:
+
+- **Blocked** (`data/blocklist.txt`): slurs, strong swearing, sexual crimes
+  and the most explicit acts. Blocked words, and the words formed from them
+  (*fucking*), are removed from the dictionary, so they can never be played,
+  appear in a prompt or show in the feed.
+- **Masked** (`data/masked.txt`): milder rude words, body and sex terms and
+  sex work (*arse*, *bitch*, *penis*, *nipple*, *porn*, *whore*). They're
+  ordinary answers: playable, scoring as usual, counted in "words left
+  unsaid" and listed in categories where they fit (*penis* in "A part of the
+  body"). But other players see them as *p\*\*\*s* in Just said, with a
+  dotted underline: tapping shows the word. Who said it? answers normally
+  (you typed the word). Saying a masked word someone else has already said is
+  free, as they only saw it masked. Innocent words formed from a masked one
+  stay visible with a `!` line (*!cocked*, *!pricked*).
+
+Both lists cover the words formed from a listed word, but never go the other
+way: *pubes* doesn't block or mask *pub*. Neither kind can appear in a name,
+and the fallback prompt never picks a letter string that is one ("Contains
+ASS"). Words that are innocent in their main meaning (*spade*, *queen*,
+*pansy*, *hoe*, *bimbo*) are ordinary words.
 
 ## Prototype scope
 

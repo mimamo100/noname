@@ -13,6 +13,7 @@ ankles
 antenna
 antler
 antlers
+anus
 aorta
 appendage
 appendix
@@ -42,6 +43,7 @@ bladders
 blowhole
 bonce
 bone
+boob
 booty
 bosom
 bottom
@@ -84,6 +86,7 @@ chopper
 clavicle
 claw
 claws
+clitoris
 coccyx
 cochlea
 collarbone
@@ -171,6 +174,7 @@ forelock
 foreskin
 gallbladder
 genitalia
+genitals
 gill
 gizzard
 gland
@@ -285,6 +289,7 @@ navel
 neck
 necks
 nerve
+nipple
 noddle
 node
 noggin
@@ -309,6 +314,7 @@ pec
 pecs
 peeper
 pelvis
+penis
 pericardium
 phalanx
 phallus
@@ -327,6 +333,7 @@ pouch
 privates
 proboscis
 prostate
+pubes
 pupil
 quad
 quill
@@ -435,6 +442,7 @@ underbelly
 urethra
 uterus
 uvula
+vagina
 valve
 valves
 vein
@@ -446,6 +454,7 @@ vessel
 vessels
 visage
 vitals
+vulva
 waist
 waistline
 wattle

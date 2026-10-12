@@ -455,12 +455,14 @@ final class Game
                 ];
             }
             // Already said comes before checking the prompt, so nobody is told to report a word
-            // that's used up anyway. Repeating your own word is an honest slip, so it's free.
+            // that's used up anyway. Repeating your own word is an honest slip, so it's free, and
+            // so is repeating a masked word, which others only saw as p***s.
             $burned = $this->burned($worldId);
             if (isset($burned[$word])) {
                 $said = $this->lookup($worldId, $word)['burned'];
                 $mine = $said && $said['playerId'] === (int) $player['id'];
-                return $this->miss($player, $prompt, $word, 'already-burned', $mine ? 0 : self::PENALTY)
+                $masked = $said && $this->dictionary->isMasked($said['playedWord']);
+                return $this->miss($player, $prompt, $word, 'already-burned', $mine || $masked ? 0 : self::PENALTY)
                     + ['burned' => $said, 'byYou' => $mine];
             }
             if (!Prompts::matches($prompt['spec'], $this->dictionary, $word)) {
@@ -582,7 +584,7 @@ final class Game
             $groups[(int) $r['prompt_id']]['words'][] = [
                 'word' => $r['word'], 'points' => (int) $r['points'], 'by' => $r['nickname'],
                 'at' => (int) $r['burned_at'], 'familyCount' => (int) $r['family_count'],
-            ];
+            ] + ($this->dictionary->isMasked($r['word']) ? ['masked' => true] : []);
         }
         return array_values($groups);
     }

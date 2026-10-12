@@ -17,6 +17,8 @@ final class Dictionary
     private array $categorySets = [];
     /** @var array<string, true> */
     private array $blocked;
+    /** @var array<string, true> playable, but shown masked to other players */
+    private array $masked;
     /** @var array{usOnly: string[], ukOnly: string[], partners: array<string, string[]>} */
     private array $spelling;
 
@@ -25,9 +27,11 @@ final class Dictionary
      * @param array<string, string[]> $families
      * @param array<string, array{label: string, words: string[]}> $categories
      * @param string[] $blocked
+     * @param string[] $masked
      */
-    public function __construct(array $words, array $families, array $categories = [], array $blocked = [], array $spelling = [])
+    public function __construct(array $words, array $families, array $categories = [], array $blocked = [], array $spelling = [], array $masked = [])
     {
+        $this->masked = array_fill_keys($masked, true);
         $this->spelling = $spelling + ['usOnly' => [], 'ukOnly' => [], 'partners' => []];
         $this->words = $words;
         $this->rank = array_flip($words);
@@ -42,11 +46,11 @@ final class Dictionary
     public static function load(?string $path = null): self
     {
         $data = require $path ?? dirname(__DIR__) . '/data/dictionary.php';
-        return new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? []);
+        return new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? [], $data['masked'] ?? []);
     }
 
     /** Builds a dictionary directly from a word list (used by tests). */
-    public static function fromWords(array $words, array $categories = [], array $blocked = [], array $spelling = []): self
+    public static function fromWords(array $words, array $categories = [], array $blocked = [], array $spelling = [], array $masked = []): self
     {
         $families = WordFamilies::build($words);
         // Linked spellings join one family, as the build script does.
@@ -59,7 +63,7 @@ final class Dictionary
                 unset($families[$b]);
             }
         }
-        return new self($words, $families, $categories, $blocked, $spelling);
+        return new self($words, $families, $categories, $blocked, $spelling, $masked);
     }
 
     private static function findFamily(array $families, string $word): string
@@ -104,14 +108,20 @@ final class Dictionary
         return isset($this->blocked[$word]);
     }
 
-    /** Whether any word in a name, or the whole name squashed together, is on the blocklist. */
+    /** A word players can say, but that's shown masked to others (p***s). */
+    public function isMasked(string $word): bool
+    {
+        return isset($this->masked[$word]);
+    }
+
+    /** Whether any word in a name, or the whole name squashed together, is blocked or masked. */
     public function isOffensiveName(string $name): bool
     {
         $lower = mb_strtolower($name);
         $parts = preg_split('/[^a-z]+/', $lower, -1, PREG_SPLIT_NO_EMPTY);
         $parts[] = preg_replace('/[^a-z]/', '', $lower);
         foreach ($parts as $part) {
-            if ($this->isBlocked($part)) return true;
+            if ($this->isBlocked($part) || $this->isMasked($part)) return true;
         }
         return false;
     }

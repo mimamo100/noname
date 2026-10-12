@@ -1,0 +1,78 @@
+# Words that can be played and score as usual, but are shown masked to other players
+# (p***s in the Just said feed, tap to reveal). They never appear in prompts and
+# can't be used in names. Strong swearing, slurs and sexual crimes are in
+# blocklist.txt instead.
+#
+# One word per line. Like blocking, masking a word also masks the words formed
+# from it (tit -> tits). To keep an innocent word formed from a masked one
+# unmasked, list it with a ! in front (!prickly).
+# Rebuild after editing: php scripts/build-dictionary.php
+
+# Mild swearing and insults
+arse
+ass
+bitch
+bastard
+bollocks
+bugger
+sodding
+piss
+pissed
+turd
+tosser
+putz
+prick
+dick
+cock
+pecker
+fanny
+
+# Sex work
+whore
+whorehouse
+hooker
+slut
+
+# Body
+penis
+vagina
+vulva
+clitoris
+genital
+genitals
+pubes
+anus
+anal
+nipple
+boob
+tit
+titty
+titties
+semen
+spunk
+ejaculation
+busty
+
+# Sex
+porn
+porno
+pornography
+smut
+erotic
+horny
+orgasm
+orgy
+dominatrix
+vibrator
+threesome
+nympho
+dildo
+masturbate
+masturbation
+masturbating
+
+# Innocent words formed from masked ones
+!cocked
+!cocking
+!pricked
+!pricking

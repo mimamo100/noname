@@ -55,6 +55,7 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 | `data/words.txt` | The word list, most common first |
 | `data/extra-words.txt` | Words added by hand that the main list misses (editable) |
 | `data/blocklist.txt` | Offensive words that can never be played (editable) |
+| `data/masked.txt` | Rude words that can be played but are shown masked (p\*\*\*s) to others (editable) |
 | `data/spellings.json` | UK/US spelling pairs, generated from VarCon by `scripts/build-spellings.php` |
 | `data/spelling-links.txt` | Extra UK/US spelling pairs (editable) |
 | `data/categories/` | Meaning categories, one file each (editable; see the README there) |
@@ -63,7 +64,7 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 
 ## Changing the word data
 
-After editing `data/extra-words.txt`, `data/blocklist.txt` or a file in
+After editing `data/extra-words.txt`, `data/blocklist.txt`, `data/masked.txt` or a file in
 `data/categories/`, rebuild:
 
 ```sh

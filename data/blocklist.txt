@@ -1,4 +1,6 @@
-# Words that can never be played, shown or used in a prompt.
+# Words that can never be played, shown or used in a prompt: slurs, strong
+# swearing and sexual crimes. Milder rude words are playable but masked: see
+# masked.txt.
 # One word per line; blocking a word also blocks the words formed from it
 # (fuck -> fucking), but not the word it seems to come from (pubes -> pub).
 # Rebuild after editing: php scripts/build-dictionary.php
@@ -55,54 +57,13 @@ bullshit
 horseshit
 chickenshit
 shithead
-ass
 asshole
-arse
-bitch
-bastard
 cunt
 twat
-cock
 cocksucker
-dick
-prick
-pecker
 pussy
-piss
-pissed
-turd
-putz
-tosser
-bollocks
-bugger
-sodding
-fanny
-whore
-whorehouse
-slut
-hooker
-bimbo
-bimbos
 
 # Explicit sexual terms
-porn
-porno
-pornography
-smut
-erotic
-horny
-nympho
-orgasm
-orgy
-threesome
-semen
-spunk
-ejaculation
-masturbate
-masturbation
-masturbating
-dildo
-vibrator
 blowjob
 fellatio
 sodomy
@@ -111,21 +72,5 @@ incest
 pedophile
 rape
 rapist
-dominatrix
-busty
-boob
-tit
-titties
-titty
-nipple
-penis
-vagina
-vulva
-clitoris
-genital
-genitals
-pubes
-anus
-anal
 poon
 humping
