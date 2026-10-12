@@ -68,8 +68,6 @@ infringement infringements
 joyriding
 looting
 malfeasance
-misfeasance
-nonfeasance
 misconduct
 malpractice
 misdemeanour misdemeanours misdemeanor misdemeanors
@@ -102,16 +100,9 @@ stealing
 thieving
 thievery
 misappropriation
-peculation
-defalcation
 skimming
 possession
 intimidation
-embracery
-misprision
-barratry
-champerty
-uttering
 harbouring harboring
 abetting
 assassination assassinations
@@ -193,3 +184,12 @@ hostagetaking
 ramraiding
 lesemajesty
 warcrime warcrimes
+embracery
+misprision
+barratry
+champerty
+peculation
+defalcation
+uttering
+misfeasance
+nonfeasance

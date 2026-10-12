@@ -3127,12 +3127,6 @@ return array (
     ),
     182 => 
     array (
-      0 => 'uttering',
-      1 => 'utter',
-      2 => 'uttered',
-    ),
-    183 => 
-    array (
       0 => 'harbouring',
       1 => 'harboring',
       2 => 'harbor',
@@ -3142,207 +3136,207 @@ return array (
       6 => 'harboured',
       7 => 'harbours',
     ),
-    184 => 
+    183 => 
     array (
       0 => 'assassination',
       1 => 'assassinations',
     ),
-    185 => 
+    184 => 
     array (
       0 => 'regicide',
       1 => 'regicides',
     ),
-    186 => 
+    185 => 
     array (
       0 => 'patricide',
       1 => 'patricides',
     ),
-    187 => 
+    186 => 
     array (
       0 => 'matricide',
       1 => 'matricides',
     ),
-    188 => 
+    187 => 
     array (
       0 => 'fratricide',
       1 => 'fratricides',
     ),
-    189 => 
+    188 => 
     array (
       0 => 'parricide',
       1 => 'parricides',
     ),
-    190 => 
+    189 => 
     array (
       0 => 'filicide',
       1 => 'filicides',
     ),
-    191 => 
+    190 => 
     array (
       0 => 'lynching',
       1 => 'lynchings',
       2 => 'lynch',
       3 => 'lynched',
     ),
-    192 => 
+    191 => 
     array (
       0 => 'torture',
       1 => 'tortured',
       2 => 'torturing',
       3 => 'tortures',
     ),
-    193 => 
+    192 => 
     array (
       0 => 'rebellion',
       1 => 'rebellions',
     ),
-    194 => 
+    193 => 
     array (
       0 => 'hacking',
       1 => 'hack',
       2 => 'hacked',
       3 => 'hacks',
     ),
-    195 => 
+    194 => 
     array (
       0 => 'graft',
       1 => 'grafts',
       2 => 'grafted',
       3 => 'grafting',
     ),
-    196 => 
+    195 => 
     array (
       0 => 'abuse',
       1 => 'abused',
       2 => 'abusing',
       3 => 'abuses',
     ),
-    197 => 
+    196 => 
     array (
       0 => 'neglect',
       1 => 'neglected',
       2 => 'neglecting',
     ),
-    198 => 
+    197 => 
     array (
       0 => 'squatting',
       1 => 'squat',
       2 => 'squats',
     ),
-    199 => 
+    198 => 
     array (
       0 => 'truancy',
       1 => 'truancies',
     ),
-    200 => 
+    199 => 
     array (
       0 => 'begging',
       1 => 'beg',
       2 => 'begged',
       3 => 'begs',
     ),
-    201 => 
+    200 => 
     array (
       0 => 'loitering',
       1 => 'loiter',
     ),
-    202 => 
+    201 => 
     array (
       0 => 'littering',
       1 => 'litter',
       2 => 'littered',
     ),
-    203 => 
+    202 => 
     array (
       0 => 'duelling',
       1 => 'dueling',
       2 => 'duel',
       3 => 'duels',
     ),
-    204 => 
+    203 => 
     array (
       0 => 'heist',
       1 => 'heists',
     ),
-    205 => 
+    204 => 
     array (
       0 => 'streaking',
       1 => 'streak',
       2 => 'streaks',
     ),
-    206 => 
+    205 => 
     array (
       0 => 'crime',
       1 => 'crimes',
     ),
-    207 => 
+    206 => 
     array (
       0 => 'offence',
       1 => 'offences',
       2 => 'offense',
       3 => 'offenses',
     ),
-    208 => 
+    207 => 
     array (
       0 => 'dealing',
       1 => 'deal',
       2 => 'deals',
       3 => 'dealings',
     ),
-    209 => 
+    208 => 
     array (
       0 => 'pinching',
       1 => 'pinch',
       2 => 'pinched',
       3 => 'pinches',
     ),
-    210 => 
+    209 => 
     array (
       0 => 'holdup',
       1 => 'holdups',
     ),
-    211 => 
+    210 => 
     array (
       0 => 'stickup',
       1 => 'stickups',
     ),
-    212 => 
+    211 => 
     array (
       0 => 'shakedown',
       1 => 'shakedowns',
     ),
-    213 => 
+    212 => 
     array (
       0 => 'scam',
       1 => 'scams',
       2 => 'scamming',
       3 => 'scammed',
     ),
-    214 => 
+    213 => 
     array (
       0 => 'swindle',
       1 => 'swindles',
     ),
-    215 => 
+    214 => 
     array (
       0 => 'con',
       1 => 'cons',
     ),
-    216 => 
+    215 => 
     array (
       0 => 'cheating',
       1 => 'cheat',
       2 => 'cheated',
       3 => 'cheats',
     ),
-    217 => 
+    216 => 
     array (
       0 => 'attempt',
       1 => 'attempted',
       2 => 'attempts',
       3 => 'attempting',
     ),
-    218 => 
+    217 => 
     array (
       0 => 'stabbing',
       1 => 'stabbings',
@@ -3350,28 +3344,34 @@ return array (
       3 => 'stab',
       4 => 'stabs',
     ),
-    219 => 
+    218 => 
     array (
       0 => 'shooting',
       1 => 'shootings',
       2 => 'shoot',
       3 => 'shoots',
     ),
-    220 => 
+    219 => 
     array (
       0 => 'wiretapping',
       1 => 'wiretap',
       2 => 'wiretaps',
     ),
-    221 => 
+    220 => 
     array (
       0 => 'massacre',
       1 => 'massacres',
     ),
-    222 => 
+    221 => 
     array (
       0 => 'warcrime',
       1 => 'warcrimes',
+    ),
+    222 => 
+    array (
+      0 => 'uttering',
+      1 => 'utter',
+      2 => 'uttered',
     ),
     223 => 
     array (
@@ -6391,108 +6391,99 @@ return array (
         83 => 'joyriding',
         84 => 'looting',
         85 => 'malfeasance',
-        86 => 'misfeasance',
-        87 => 'nonfeasance',
-        88 => 'misconduct',
-        89 => 'malpractice',
-        90 => 'misdemeanour',
-        91 => 'misdemeanours',
-        92 => 'misdemeanor',
-        93 => 'misdemeanors',
-        94 => 'felony',
-        95 => 'felonies',
-        96 => 'mugging',
-        97 => 'muggings',
-        98 => 'obstruction',
-        99 => 'piracy',
-        100 => 'poaching',
-        101 => 'rustling',
-        102 => 'sabotage',
-        103 => 'solicitation',
-        104 => 'soliciting',
-        105 => 'procuring',
-        106 => 'pimping',
-        107 => 'prostitution',
-        108 => 'speeding',
-        109 => 'tampering',
-        110 => 'voyeurism',
-        111 => 'upskirting',
-        112 => 'grooming',
-        113 => 'molestation',
-        114 => 'wounding',
-        115 => 'woundings',
-        116 => 'maiming',
-        117 => 'mutiny',
-        118 => 'mutinies',
-        119 => 'poisoning',
-        120 => 'poisonings',
-        121 => 'pickpocketing',
-        122 => 'safecracking',
-        123 => 'pilfering',
-        124 => 'stealing',
-        125 => 'thieving',
-        126 => 'thievery',
-        127 => 'misappropriation',
-        128 => 'peculation',
-        129 => 'defalcation',
-        130 => 'skimming',
-        131 => 'possession',
-        132 => 'intimidation',
-        133 => 'embracery',
-        134 => 'misprision',
-        135 => 'barratry',
-        136 => 'champerty',
-        137 => 'uttering',
-        138 => 'harbouring',
-        139 => 'harboring',
-        140 => 'abetting',
-        141 => 'assassination',
-        142 => 'assassinations',
-        143 => 'regicide',
-        144 => 'patricide',
-        145 => 'matricide',
-        146 => 'fratricide',
-        147 => 'parricide',
-        148 => 'filicide',
-        149 => 'lynching',
-        150 => 'lynchings',
-        151 => 'vigilantism',
-        152 => 'torture',
-        153 => 'slavery',
-        154 => 'insurrection',
-        155 => 'rebellion',
-        156 => 'subversion',
-        157 => 'gunrunning',
-        158 => 'hacking',
-        159 => 'phishing',
-        160 => 'loansharking',
-        161 => 'evasion',
-        162 => 'graft',
-        163 => 'collusion',
-        164 => 'coercion',
-        165 => 'cruelty',
-        166 => 'abuse',
-        167 => 'neglect',
-        168 => 'endangerment',
-        169 => 'strangulation',
-        170 => 'mayhem',
-        171 => 'squatting',
-        172 => 'truancy',
-        173 => 'vagrancy',
-        174 => 'begging',
-        175 => 'loitering',
-        176 => 'littering',
-        177 => 'jaywalking',
-        178 => 'desecration',
-        179 => 'sacrilege',
-        180 => 'duelling',
-        181 => 'dueling',
-        182 => 'usury',
-        183 => 'heist',
-        184 => 'heists',
-        185 => 'scrumping',
-        186 => 'streaking',
-        187 => 'insubordination',
+        86 => 'misconduct',
+        87 => 'malpractice',
+        88 => 'misdemeanour',
+        89 => 'misdemeanours',
+        90 => 'misdemeanor',
+        91 => 'misdemeanors',
+        92 => 'felony',
+        93 => 'felonies',
+        94 => 'mugging',
+        95 => 'muggings',
+        96 => 'obstruction',
+        97 => 'piracy',
+        98 => 'poaching',
+        99 => 'rustling',
+        100 => 'sabotage',
+        101 => 'solicitation',
+        102 => 'soliciting',
+        103 => 'procuring',
+        104 => 'pimping',
+        105 => 'prostitution',
+        106 => 'speeding',
+        107 => 'tampering',
+        108 => 'voyeurism',
+        109 => 'upskirting',
+        110 => 'grooming',
+        111 => 'molestation',
+        112 => 'wounding',
+        113 => 'woundings',
+        114 => 'maiming',
+        115 => 'mutiny',
+        116 => 'mutinies',
+        117 => 'poisoning',
+        118 => 'poisonings',
+        119 => 'pickpocketing',
+        120 => 'safecracking',
+        121 => 'pilfering',
+        122 => 'stealing',
+        123 => 'thieving',
+        124 => 'thievery',
+        125 => 'misappropriation',
+        126 => 'skimming',
+        127 => 'possession',
+        128 => 'intimidation',
+        129 => 'harbouring',
+        130 => 'harboring',
+        131 => 'abetting',
+        132 => 'assassination',
+        133 => 'assassinations',
+        134 => 'regicide',
+        135 => 'patricide',
+        136 => 'matricide',
+        137 => 'fratricide',
+        138 => 'parricide',
+        139 => 'filicide',
+        140 => 'lynching',
+        141 => 'lynchings',
+        142 => 'vigilantism',
+        143 => 'torture',
+        144 => 'slavery',
+        145 => 'insurrection',
+        146 => 'rebellion',
+        147 => 'subversion',
+        148 => 'gunrunning',
+        149 => 'hacking',
+        150 => 'phishing',
+        151 => 'loansharking',
+        152 => 'evasion',
+        153 => 'graft',
+        154 => 'collusion',
+        155 => 'coercion',
+        156 => 'cruelty',
+        157 => 'abuse',
+        158 => 'neglect',
+        159 => 'endangerment',
+        160 => 'strangulation',
+        161 => 'mayhem',
+        162 => 'squatting',
+        163 => 'truancy',
+        164 => 'vagrancy',
+        165 => 'begging',
+        166 => 'loitering',
+        167 => 'littering',
+        168 => 'jaywalking',
+        169 => 'desecration',
+        170 => 'sacrilege',
+        171 => 'duelling',
+        172 => 'dueling',
+        173 => 'usury',
+        174 => 'heist',
+        175 => 'heists',
+        176 => 'scrumping',
+        177 => 'streaking',
+        178 => 'insubordination',
       ),
       'also' => 
       array (
@@ -6544,8 +6535,17 @@ return array (
         45 => 'lesemajesty',
         46 => 'warcrime',
         47 => 'warcrimes',
+        48 => 'embracery',
+        49 => 'misprision',
+        50 => 'barratry',
+        51 => 'champerty',
+        52 => 'peculation',
+        53 => 'defalcation',
+        54 => 'uttering',
+        55 => 'misfeasance',
+        56 => 'nonfeasance',
       ),
-      'answers' => 157,
+      'answers' => 148,
     ),
     'law.documents' => 
     array (
