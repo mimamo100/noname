@@ -19,7 +19,7 @@ test('HTTP API: sign in, create, play, look up', function () {
     $public = dirname(__DIR__) . '/public';
     $server = proc_open(
         [PHP_BINARY, '-S', "127.0.0.1:$port", '-t', $public, "$public/router.php"],
-        [1 => ['file', '/dev/null', 'w'], 2 => ['file', '/dev/null', 'w']],
+        [1 => ['file', $devNull = PHP_OS_FAMILY === 'Windows' ? 'NUL' : '/dev/null', 'w'], 2 => ['file', $devNull, 'w']],
         $pipes,
         null,
         ['UNSAID_CONFIG' => $config] + getenv(),
