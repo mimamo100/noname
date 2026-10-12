@@ -157,6 +157,9 @@ word-finder site. There are three kinds:
 - **Repeating your own word is free.** "Already said" is checked before the
   meaning and letters, and the message says when the word was said and for
   which prompt, since that may be several prompts ago and out of sight.
+- **Spaces, hyphens and apostrophes are dropped** from what players type, so
+  "tea towel" and "T-shirt" play as *teatowel* and *tshirt* (the joined forms
+  are in categories' *also* lists where they fit).
 - **Typos are free**: a word that isn't in the dictionary costs nothing.
 - **Gaps in our lists are free too.** The game can't tell a real answer
   missing from its list from a wrong one, so it gives the benefit of the
@@ -397,12 +400,6 @@ a music quiz.
   up in that world. A stronger admin option could remove those points, free
   the word, and note it in the feed ("*sofa* — removed by the admin"). Only
   worth adding if accepted words are ever abused.
-
-- **Join up what players type:** read "tea towel" or "T-shirt" as *teatowel*
-  or *tshirt* by dropping spaces and hyphens, so two-word and hyphenated
-  answers can be played without players having to guess they must be
-  squashed together. The joined forms are already accepted (in a category's
-  *also* list) where they fit.
 
 - **More word packs** (the mechanism is built; see "Word packs"): themed dictionaries such as Music,
   Food & cooking, Sport, Nature, Film & TV and Science, chosen when creating a

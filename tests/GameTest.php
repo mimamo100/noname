@@ -623,6 +623,18 @@ test('the unsaid reveal is noted when the prompt ends, and leaves masked words o
     same(['count' => 4, 'words' => ['cat', 'assets', 'start']], end($said)['unsaid'], 'tit is counted but not shown');
 });
 
+test('spaces, hyphens and apostrophes are dropped from what players type', function () {
+    same('teatowel', Game::typed(' Tea towel '));
+    same('tshirt', Game::typed('T-Shirt'));
+    same('dont', Game::typed("don\u{2019}t"));
+    $game = makeGame();
+    $world = $game->createWorld('Typed');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $p = $game->join($world['id'], 'Ty');
+    same('book', $game->play($world['id'], $p['token'], 'Bo-ok')['word']);
+    same('Ty', $game->lookup($world['id'], 'B OOK')['burned']['by']);
+});
+
 test('guesses are rate limited', function () {
     $game = makeGame();
     $world = $game->createWorld('Fast');

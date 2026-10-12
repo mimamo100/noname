@@ -333,10 +333,19 @@ final class Game
         return $this->burned($worldId) + $this->wrongSpellings($worldId);
     }
 
+    /**
+     * A typed word as the dictionary has it: lower case, with spaces, hyphens and apostrophes
+     * dropped, so "tea towel" and "T-shirt" are played as teatowel and tshirt.
+     */
+    public static function typed(string $rawWord): string
+    {
+        return strtolower(preg_replace("/[\\s\\-'\u{2018}\u{2019}]+/u", '', $rawWord) ?? '');
+    }
+
     public function lookup(string $worldId, string $rawWord): array
     {
         $this->world($worldId);
-        $word = strtolower(trim($rawWord));
+        $word = self::typed($rawWord);
         $stmt = $this->db->prepare('
             SELECT b.played_word, b.burned_at, b.player_id, p.nickname, pr.spec, pr.label, pr.type, pr.letters
             FROM burns b JOIN players p ON p.id = b.player_id JOIN prompts pr ON pr.id = b.prompt_id
@@ -531,7 +540,7 @@ final class Game
     public function play(string $worldId, ?string $token, string $rawWord): array
     {
         $player = $this->playerByToken($worldId, $token);
-        $word = mb_substr(strtolower(trim($rawWord)), 0, 40);
+        $word = mb_substr(self::typed($rawWord), 0, 40);
         $this->checkRateLimit($player);
         return $this->withWorldLock($worldId, function () use ($worldId, $player, $word) {
             unset($this->burnedCache[$worldId]); // Re-read under the lock.
@@ -636,7 +645,7 @@ final class Game
     public function report(string $worldId, ?string $token, string $rawWord): array
     {
         $player = $this->playerByToken($worldId, $token);
-        $word = strtolower(trim($rawWord));
+        $word = self::typed($rawWord);
         if (!preg_match('/^[a-z]{3,30}$/', $word)) throw new GameError(400, 'Only words of 3–30 letters can be reported');
         $prompt = $this->currentPrompt($worldId) ?? throw new GameError(410, 'This world has run out of words');
         $category = $prompt['spec']['cat'] ?? Admin::DICTIONARY_ONLY;
