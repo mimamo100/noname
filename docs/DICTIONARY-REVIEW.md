@@ -107,8 +107,10 @@ editing, rebuild with `php scripts/build-dictionary.php`.
        reason. Only clear cases.
      - **add**: common answers missing from *main*, including any that are
        only in *also*. Mark each one: already main / also (promote) / in the
-       dictionary / NOT IN DICTIONARY. Aim for the answers most people would
-       give first, then good less-common ones. Up to about 60 per category.
+       dictionary / NOT IN DICTIONARY. Start with the answers most people
+       would give first, then good less-common ones. **No limit:** the aim is
+       every answer a player is likely to think of, because a missing one is
+       frustrating to play and ends up as a suggestion someone must approve.
      - **label**: a better label, if the current one promises more or less
        than the list delivers.
      - **notes**: anything else, such as a category that overlaps another
