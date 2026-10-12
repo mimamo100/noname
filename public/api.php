@@ -73,6 +73,18 @@ function adminLink(array $config): ?string
     return $isAdmin ? '/' . trim((string) ($config['admin_path'] ?? 'admin'), '/') : null;
 }
 
+/** Logs this browser out of the admin page too, when its game account signs out. */
+function endAdminSession(): void
+{
+    if (empty($_COOKIE['unsaid_admin'])) return;
+    session_name('unsaid_admin');
+    if (!@session_start()) return;
+    $_SESSION = [];
+    session_destroy();
+    setcookie('unsaid_admin', '', ['expires' => time() - 3600, 'path' => '/', 'httponly' => true, 'samesite' => 'Strict',
+        'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off']);
+}
+
 function body(): array
 {
     $raw = file_get_contents('php://input', length: 10_000);
@@ -107,6 +119,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         }
         if ($method === 'POST' && $authAction === 'logout') {
             $auth->logout($session);
+            endAdminSession();
             respond(200, ['ok' => true]);
         }
         if ($method === 'GET' && $authAction === 'me') respond(200, ['user' => $user]);

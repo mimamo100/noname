@@ -336,7 +336,6 @@ function render(state) {
   $('copy-link').textContent = competition ? 'Copy team link' : 'Copy invite link';
   $('world-settings').hidden = !state.isOwner;
   $('world-settings').textContent = competition ? 'Competition settings' : 'World settings';
-  $('new-competition').hidden = state.account?.plan !== 'organiser';
   renderCompetition(state);
   renderLobby(state);
 
@@ -632,28 +631,42 @@ function showSigninStep(step) {
   $(`signin-${step}-input`)?.focus();
 }
 
+// The header's account area: "Sign in", or the player's name opening a menu.
 function renderAccount(account, adminUrl) {
-  const admin = adminUrl ? [el('span', { className: 'muted', textContent: ' · ' }), el('a', { href: adminUrl, className: 'admin-link', textContent: 'Admin' })] : [];
-  if (!account) {
-    const button = el('button', { type: 'button', className: 'link', textContent: 'Sign in' });
-    button.addEventListener('click', () => { showSigninStep('email'); $('signin').scrollIntoView({ block: 'center' }); });
-    $('account').replaceChildren(button, ...admin);
-    return;
-  }
-  const out = el('button', { type: 'button', className: 'link', textContent: 'Sign out' });
-  out.addEventListener('click', async () => {
-    try { await authApi('/logout', { method: 'POST' }); } catch { /* signed out locally anyway */ }
-    setSession(null);
-    feedback('Signed out.', 'good');
-    refresh();
-  });
-  const games = el('button', { type: 'button', className: 'link', textContent: 'My games' });
-  games.addEventListener('click', showHistory);
-  const worlds = el('button', { type: 'button', className: 'link', textContent: 'My worlds' });
-  worlds.addEventListener('click', showWorlds);
-  const dot = () => el('span', { className: 'muted', textContent: ' · ' });
-  $('account').replaceChildren(el('span', { className: 'muted', textContent: account.name }), dot(), worlds, dot(), games, dot(), out, ...admin);
+  $('signin-link').hidden = Boolean(account);
+  $('account').hidden = !account;
+  $('admin-link').hidden = Boolean(account) || !adminUrl;
+  if (adminUrl) { $('admin-link').href = adminUrl; $('menu-admin').href = adminUrl; }
+  $('menu-admin').hidden = !adminUrl;
+  if (!account) { closeMenu(); return; }
+  $('account-button').textContent = account.name;
+  $('new-competition').hidden = account.plan !== 'organiser';
 }
+
+function closeMenu() {
+  $('account-menu').hidden = true;
+  $('account-button').setAttribute('aria-expanded', 'false');
+}
+$('account-button').addEventListener('click', (e) => {
+  e.stopPropagation();
+  const open = $('account-menu').hidden;
+  $('account-menu').hidden = !open;
+  $('account-button').setAttribute('aria-expanded', String(open));
+  if (open) $('account-menu').querySelector('button:not([hidden]), a:not([hidden])').focus();
+});
+// Choosing anything, clicking elsewhere or pressing Escape closes the menu.
+$('account-menu').addEventListener('click', closeMenu);
+document.addEventListener('click', (e) => { if (!$('account').contains(e.target)) closeMenu(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('account-menu').hidden) { closeMenu(); $('account-button').focus(); } });
+$('signin-link').addEventListener('click', () => { showSigninStep('email'); $('signin').hidden = false; $('signin').scrollIntoView({ block: 'center' }); });
+$('menu-worlds').addEventListener('click', () => showWorlds());
+$('menu-games').addEventListener('click', () => showHistory());
+$('menu-signout').addEventListener('click', async () => {
+  try { await authApi('/logout', { method: 'POST' }); } catch { /* signed out locally anyway */ }
+  setSession(null);
+  feedback('Signed out.', 'good');
+  refresh();
+});
 
 function ago(ms) {
   const mins = Math.floor((Date.now() - ms) / 60000);

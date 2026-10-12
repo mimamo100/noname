@@ -13,9 +13,21 @@
     <span class="world-name" id="world-name"></span>
     <button class="link" id="copy-link" hidden>Copy invite link</button>
     <button class="link" id="world-settings" hidden>World settings</button>
-    <button class="link" id="new-world">New private world</button>
-    <button class="link" id="new-competition" hidden>New competition</button>
-    <span id="account" class="account"></span>
+    <span class="account-area">
+      <button class="link" id="signin-link" hidden>Sign in</button>
+      <a class="admin-link" id="admin-link" hidden>Admin</a>
+      <span class="menu-wrap" id="account" hidden>
+        <button type="button" class="account-button" id="account-button" aria-haspopup="menu" aria-expanded="false" aria-controls="account-menu"></button>
+        <span class="menu" id="account-menu" role="menu" hidden>
+          <button type="button" role="menuitem" id="menu-worlds">My worlds</button>
+          <button type="button" role="menuitem" id="menu-games">My games</button>
+          <button type="button" role="menuitem" id="new-world">New private world</button>
+          <button type="button" role="menuitem" id="new-competition" hidden>New competition</button>
+          <a role="menuitem" id="menu-admin" hidden>Admin</a>
+          <button type="button" role="menuitem" id="menu-signout">Sign out</button>
+        </span>
+      </span>
+    </span>
   </header>
 
   <main>
@@ -136,7 +148,7 @@
         <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
         <li>The prompt changes when nothing fits any more, or when its time runs out.</li>
         <li><b>Where to play.</b> The big world is open to everyone signed in and starts afresh every day, with quick prompts. <b>Rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private worlds</b> are for you and the friends you invite: anyone can join one with its invite link, and creating one needs the Host plan. <b>Competitions</b> pit teams against each other between a start and an end time: open your team's link to join it, and every point you score counts for your team. Running one needs the Organiser plan.</li>
-        <li><b>My worlds</b> (next to your name) lists the rooms and private worlds you're in. <b>My games</b> shows how you finished in past rounds and rooms, and your personal bests.</li>
+        <li><b>My worlds</b> (under your name, top right) lists the rooms and private worlds you're in. <b>My games</b> shows how you finished in past rounds and rooms, and your personal bests.</li>
       </ul>
       <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words said in this world.</p>
     </details>
