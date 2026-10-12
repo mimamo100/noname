@@ -42,6 +42,8 @@ $done = (new Housekeeping(
 // The daily email, for accounts that asked for it. Needs site_url for its links.
 if (!empty($config['site_url'])) {
     $streaks = new Streaks($db, $config['big_world']['timezone'] ?? 'Europe/London');
-    $done['dailyEmails'] = (new Reminders($db, $streaks))->send(new Mailer($config['mail'] ?? []), $config['site_url'], (int) ($config['daily_email_limit'] ?? 300));
+    // No web visitor here to take the domain from, so a missing 'from' comes from site_url.
+    $mail = ($config['mail'] ?? []) + ['from' => 'noreply@' . preg_replace('/^www\./', '', (string) parse_url($config['site_url'], PHP_URL_HOST))];
+    $done['dailyEmails'] = (new Reminders($db, $streaks))->send(new Mailer($mail), $config['site_url'], (int) ($config['daily_email_limit'] ?? 300));
 }
 foreach ($done as $what => $count) echo "$what: $count\n";
