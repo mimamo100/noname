@@ -190,11 +190,15 @@ $html .= '<h2>Reported words</h2>'
     . '<b>Download</b> the open reports, add the words you approve to <code>data/categories/</code> (or '
     . '<code>data/extra-words.txt</code>), rebuild and upload <code>data/dictionary.php</code>, then press '
     . '<b>Mark all reviewed</b>. Players then see “accepted” for words that now count, and “reviewed” for the rest.</p>';
+$legacy = $admin->legacyAccepted();
+if ($reports || $legacy) {
+    $html .= '<p><a class="button-link" href="' . h($adminUrl) . '?download=reports">Download reports</a> '
+        . button($csrf, 'reviewed', 'Mark all reviewed', [], 'secondary') . '</p>';
+}
 if (!$reports) {
     $html .= '<p class="muted">No reports waiting. When players press “Report it”, the words appear here.</p>';
 } else {
-    $html .= '<p><a class="button-link" href="' . h($adminUrl) . '?download=reports">Download reports</a> '
-        . button($csrf, 'reviewed', 'Mark all reviewed', [], 'secondary') . '</p>'
+    $html .= ''
         . '<div class="table-wrap"><table class="admin-table">'
         . '<thead><tr><th>Word</th><th>Reported for</th><th>Players</th><th>Prompts</th></tr></thead><tbody>';
     foreach ($reports as $r) {
@@ -207,11 +211,12 @@ if (!$reports) {
     }
     $html .= '</tbody></table></div>';
 }
-$legacy = $admin->legacyAccepted();
 if ($legacy) {
-    $html .= '<p class="bad small">' . count($legacy) . ' ' . (count($legacy) === 1 ? 'word' : 'words')
-        . ' accepted on this page before are not in the word files, so they no longer count: '
-        . h(implode(', ', array_column($legacy, 'word'))) . '. They are listed at the end of the download.</p>';
+    $one = count($legacy) === 1;
+    $html .= '<p class="bad small">' . count($legacy) . ($one ? ' word' : ' words') . ' accepted on this page before '
+        . ($one ? 'is' : 'are') . ' not in the word files, so ' . ($one ? 'it no longer counts' : 'they no longer count') . ': '
+        . h(implode(', ', array_column($legacy, 'word'))) . '. ' . ($one ? 'It is' : 'They are') . ' at the end of the download. '
+        . 'Add ' . ($one ? 'it' : 'any you want') . ' to the files; <b>Mark all reviewed</b> then clears this list.</p>';
 }
 
 $html .= '<h2>Scores</h2><p class="muted">Each player\'s total is kept as a running count. If you change the '

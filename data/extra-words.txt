@@ -7065,3 +7065,25 @@ pegasus
 cerberus
 cupids
 medusas
+
+# Man-made landscape features
+bridleway
+bridleways
+towpath
+towpaths
+breakwater
+breakwaters
+seawall
+seawalls
+stile
+stiles
+henge
+henges
+menhir
+menhirs
+dolmen
+dolmens
+colliery
+collieries
+racecourse
+racecourses

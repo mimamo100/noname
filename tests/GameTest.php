@@ -340,6 +340,8 @@ test('reports are a queue: downloaded, folded into the word files, then marked r
     same(['sofa'], array_column((new Admin($db, testDictionary()))->legacyAccepted(), 'word'), 'Chess is in the files already');
     check(str_contains((new Admin($db, testDictionary()))->reportsText(), 'Accepted on the admin page earlier'));
     same([], (new Admin($db, withSofaAsSport()))->legacyAccepted());
+    (new Admin($db, testDictionary()))->markReviewed();
+    same([], (new Admin($db, testDictionary()))->legacyAccepted(), 'Marking reviewed clears the old list too');
 
     same([2, 2], [$admin->stats()['activeToday'], $admin->stats()['activeWeek']], 'Ann and Bea played');
     $later = (new Admin($db, testDictionary(), fn () => $clock + 2 * 86_400_000))->stats();

@@ -141,11 +141,20 @@ final class Admin
         return array_values(array_map(fn ($r) => $r + ['categoryLabel' => $this->categoryLabel($r['category'])], $missing));
     }
 
-    /** Closes every open report: the ones the files now cover show as accepted, the rest as reviewed. */
+    /**
+     * Closes every open report: the ones the files now cover show as accepted, the rest as
+     * reviewed. Words accepted the old way have been in the download too, so they're done with:
+     * whatever the files don't have by now was decided against.
+     */
     public function markReviewed(): int
     {
         $stmt = $this->db->prepare('UPDATE reports SET reviewed_at = ? WHERE reviewed_at IS NULL');
         $stmt->execute([$this->now()]);
+        try {
+            $this->db->exec('DELETE FROM word_decisions');
+        } catch (PDOException) {
+            // A database from after that table was retired.
+        }
         return $stmt->rowCount();
     }
 

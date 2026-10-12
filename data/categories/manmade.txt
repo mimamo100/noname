@@ -1,0 +1,122 @@
+label: A man-made landscape feature
+
+# Built things you'd see in a landscape. "A landscape feature" includes this
+# category, so these count there too. Managed land (field, orchard, pasture,
+# hedgerow) stays in landform.txt. Landmark buildings are also in building.txt.
+
+# Roads, paths and railways
+bridge
+bridleway
+bypass
+crossroads
+footpath
+highway
+junction
+lane
+motorway
+path
+railway
+road
+roundabout
+towpath
+track
+
+# Water
+aqueduct
+breakwater
+canal
+causeway
+dam
+ditch
+dock
+embankment
+fountain
+jetty
+lock
+marina
+pier
+port
+quay
+reservoir
+seawall
+sluice
+tunnel
+viaduct
+weir
+wharf
+
+# Settlements and farms
+city
+farm
+hamlet
+settlement
+suburb
+town
+village
+
+# Boundaries
+fence
+gate
+stile
+wall
+
+# Landmarks and monuments
+beacon
+cairn
+dolmen
+henge
+memorial
+menhir
+milestone
+monument
+obelisk
+signpost
+statue
+
+# Landmark buildings
+abbey
+barn
+castle
+cathedral
+chapel
+church
+cottage
+croft
+farmstead
+folly
+fort
+fortress
+lighthouse
+mill
+pagoda
+priory
+pyramid
+ruin
+spire
+steeple
+tower
+watermill
+windmill
+
+# Industry and masts
+colliery
+mast
+mine
+pylon
+quarry
+
+# Open spaces
+cemetery
+churchyard
+garden
+graveyard
+maze
+moat
+park
+racecourse
+rampart
+
+also:
+barrow
+square
+well
