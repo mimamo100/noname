@@ -457,6 +457,7 @@ function render(state) {
   $('signin').hidden = signedIn;
 
   renderSaid(state.said ?? [], state.prompt?.id);
+  renderLastUnsaid(state.said ?? [], state.prompt?.id);
 
   $('tab-misses').hidden = !joined;
   renderMisses(state.myMisses ?? [], state.prompt?.id);
@@ -529,6 +530,24 @@ function saidList(words, emptyText) {
 
 const countText = (n) => `${n} said`;
 
+// What nobody said in an ended prompt: the commonest answers left, the "oh, of course!" words.
+function unsaidText(u) {
+  if (!u.count) return 'Every answer was said!';
+  const more = u.count - u.words.length;
+  return `${u.words.join(', ')}${more > 0 ? `${u.words.length ? ' and ' : ''}${more.toLocaleString()} more` : ''}`;
+}
+
+function renderLastUnsaid(groups, currentPromptId) {
+  const last = groups.find((g) => g.promptId !== currentPromptId && g.unsaid);
+  $('last-unsaid').hidden = !last;
+  if (!last) return;
+  $('last-unsaid').replaceChildren(
+    el('p', { className: 'eyebrow', textContent: 'Last prompt' }),
+    el('p', {}, el('b', { textContent: last.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(last.words.length)}` })),
+    el('p', {}, last.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(last.unsaid)),
+  );
+}
+
 // The current prompt's words in full, with earlier prompts collapsed underneath.
 function renderSaid(groups, currentPromptId) {
   const parts = [];
@@ -539,6 +558,7 @@ function renderSaid(groups, currentPromptId) {
     } else {
       const details = el('details', { className: 'earlier', open: openPrompts.has(group.promptId) },
         el('summary', {}, el('span', { textContent: group.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(group.words.length)}` })),
+        ...(group.unsaid ? [el('p', { className: 'small unsaid-line' }, group.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(group.unsaid))] : []),
         saidList(group.words, 'Nothing was said.'));
       details.addEventListener('toggle', () => (details.open ? openPrompts.add(group.promptId) : openPrompts.delete(group.promptId)));
       parts.push(details);

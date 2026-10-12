@@ -171,6 +171,12 @@ word-finder site. There are three kinds:
 - **Just said** lists every word said in the current prompt, newest first,
   with the three prompts before it collapsed underneath. Any older word can be
   found with **Who said it?**.
+- **Nobody said:** when a prompt ends, the page shows what was left unsaid:
+  how many answers, and the 12 commonest (one word per family, masked words
+  counted but not shown), so players see the "oh, of course!" words they
+  missed. It's noted on the prompt as it ends (later prompts use words up
+  too) and shown under **Last prompt** and with each earlier prompt in the
+  feed.
 - **My misses** lists a player's own wrong guesses (with the prompt, the
   reason and any penalty, plus what happened to any report: waiting,
   accepted or dismissed. An accepted word that has since been used up, for

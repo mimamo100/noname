@@ -84,6 +84,26 @@ final class Prompts
         return count($roots);
     }
 
+    /**
+     * The unsaid answers, one word per family (the commonest form), most common first.
+     *
+     * @param array<string, true> $burned
+     * @return string[]
+     */
+    public static function unsaid(array $spec, Dictionary $dictionary, array $burned): array
+    {
+        $test = self::compile($spec, $dictionary);
+        $pool = isset($spec['cat']) ? $dictionary->categoryWords($spec['cat']) : $dictionary->words;
+        $found = [];
+        foreach ($pool as $word) {
+            if (isset($burned[$word]) || !$dictionary->has($word) || !$test($word)) continue;
+            $found[$dictionary->familyRoot($word)] ??= $word;
+        }
+        $words = array_values($found);
+        usort($words, fn ($a, $b) => $dictionary->rarity($a) <=> $dictionary->rarity($b));
+        return $words;
+    }
+
     // --- Describing ---
 
     public static function describe(array $spec, Dictionary $dictionary): string

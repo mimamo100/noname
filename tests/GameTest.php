@@ -604,6 +604,23 @@ test('just said shows every word of the current prompt, then earlier prompts', f
     same([], $state['said'][0]['words'], 'Nothing said in the new prompt yet');
     same('Contains OO', $state['said'][1]['prompt']);
     same(['food', 'boot', 'cool', 'book', 'moon'], array_column($state['said'][1]['words'], 'word'));
+    same(['count' => 6, 'words' => ['stoop', 'mood', 'noon', 'zoo', 'zoom', 'floor']], $state['said'][1]['unsaid'],
+        'What nobody said, most common first');
+    check(!isset($state['said'][0]['unsaid']), 'Not for the prompt still running');
+});
+
+test('the unsaid reveal is noted when the prompt ends, and leaves masked words out', function () {
+    $clock = 1_000;
+    $dictionary = Dictionary::fromWords(['cat', 'cats', 'tit', 'tits', 'moon', 'assets', 'start'], [], [], [], ['tit', 'tits']);
+    $game = new Game(testDb(), $dictionary, function () use (&$clock) { return $clock; }, promptMin: 1, promptMax: 1000);
+    $world = $game->createWorld('Reveal', null, 60_000);
+    setPrompt($game, $world['id'], spec(null, ['contains', 't']));
+    $clock += 61_000;
+    $game->state($world['id'], null);
+    // Noted at the end, as later prompts use words up too.
+    same('4', (string) gameDb($game)->query("SELECT unsaid_count FROM prompts WHERE world_id = '{$world['id']}' ORDER BY id LIMIT 1")->fetchColumn());
+    $said = $game->state($world['id'], null)['said'];
+    same(['count' => 4, 'words' => ['cat', 'assets', 'start']], end($said)['unsaid'], 'tit is counted but not shown');
 });
 
 test('guesses are rate limited', function () {

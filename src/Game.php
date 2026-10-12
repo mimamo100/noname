@@ -134,6 +134,10 @@ final class Game
                 ADD KEY idx_score (world_id, score)');
             self::recountScores($db);
         }
+        // What was left unsaid when each prompt ended: how many answers, and the commonest few.
+        if (!$db->query("SHOW COLUMNS FROM prompts LIKE 'unsaid_count'")->fetch()) {
+            $db->exec('ALTER TABLE prompts ADD COLUMN unsaid_count INT UNSIGNED NULL, ADD COLUMN unsaid_words TEXT NULL');
+        }
         // Databases from before the new prompt types: add the spec columns.
         if (!$db->query("SHOW COLUMNS FROM prompts LIKE 'spec'")->fetch()) {
             $db->exec("ALTER TABLE prompts
@@ -387,7 +391,7 @@ final class Game
             if ($prompt = $this->livePrompt($worldId)) return $prompt; // Another request rotated it first.
             $world = $this->world($worldId);
             if ($world['ended_at'] ?? null) return null; // Another request finished it first.
-            $this->db->prepare('UPDATE prompts SET ended_at = ? WHERE world_id = ? AND ended_at IS NULL')->execute([$this->now(), $worldId]);
+            $this->endOpenPrompts($worldId);
             $this->changed($worldId);
             $endsAt = isset($world['ends_at']) ? (int) $world['ends_at'] : null;
             if ($endsAt !== null && $this->now() >= $endsAt) {
@@ -419,6 +423,27 @@ final class Game
             $stmt->execute([$this->db->lastInsertId()]);
             return ['spec' => $next['spec'], 'remaining' => $next['available']] + $stmt->fetch();
         });
+    }
+
+    /** How many of the commonest unsaid answers a finished prompt shows. */
+    public const UNSAID_SHOWN = 12;
+
+    /**
+     * Ends the world's open prompt, noting what was left unsaid: the number of answers, and
+     * the commonest few (one word per family; masked words are counted but not shown), for
+     * the "Nobody said" reveal. Noted now, as later prompts use words up too.
+     */
+    private function endOpenPrompts(string $worldId): void
+    {
+        $stmt = $this->db->prepare('SELECT * FROM prompts WHERE world_id = ? AND ended_at IS NULL');
+        $stmt->execute([$worldId]);
+        $update = $this->db->prepare('UPDATE prompts SET ended_at = ?, unsaid_count = ?, unsaid_words = ? WHERE id = ?');
+        unset($this->burnedCache[$worldId]);
+        foreach ($stmt->fetchAll() as $prompt) {
+            $unsaid = Prompts::unsaid(self::specOf($prompt), $this->dictionary, $this->unavailable($worldId));
+            $shown = array_slice(array_values(array_filter($unsaid, fn ($w) => !$this->dictionary->isMasked($w))), 0, self::UNSAID_SHOWN);
+            $update->execute([$this->now(), count($unsaid), json_encode($shown), $prompt['id']]);
+        }
     }
 
     /**
@@ -475,7 +500,7 @@ final class Game
                 }
             }
             $this->db->prepare('UPDATE worlds SET ended_at = ? WHERE id = ?')->execute([$now, $worldId]);
-            $this->db->prepare('UPDATE prompts SET ended_at = ? WHERE world_id = ? AND ended_at IS NULL')->execute([$now, $worldId]);
+            $this->endOpenPrompts($worldId);
             $this->changed($worldId);
         });
     }
@@ -616,7 +641,7 @@ final class Game
      */
     private function saidByPrompt(string $worldId, int $prompts = 4, array $teamOf = []): array
     {
-        $stmt = $this->db->prepare("SELECT id, spec, label, type, letters FROM prompts WHERE world_id = ? ORDER BY id DESC LIMIT $prompts");
+        $stmt = $this->db->prepare("SELECT id, spec, label, type, letters, unsaid_count, unsaid_words FROM prompts WHERE world_id = ? ORDER BY id DESC LIMIT $prompts");
         $stmt->execute([$worldId]);
         $groups = [];
         foreach ($stmt->fetchAll() as $row) {
@@ -624,7 +649,10 @@ final class Game
                 'promptId' => (int) $row['id'],
                 'prompt' => $row['label'] ?? Prompts::describe(self::specOf($row), $this->dictionary),
                 'words' => [],
-            ];
+            ] + ($row['unsaid_count'] === null ? [] : [
+                // An ended prompt: what nobody said.
+                'unsaid' => ['count' => (int) $row['unsaid_count'], 'words' => json_decode((string) $row['unsaid_words'], true) ?: []],
+            ]);
         }
         if (!$groups) return [];
         $ids = implode(',', array_keys($groups)); // Integers from the database.
