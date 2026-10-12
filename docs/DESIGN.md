@@ -307,6 +307,12 @@ an office contest.
   the word, and note it in the feed ("*sofa* — removed by the admin"). Only
   worth adding if accepted words are ever abused.
 
+- **Join up what players type:** read "tea towel" or "T-shirt" as *teatowel*
+  or *tshirt* by dropping spaces and hyphens, so two-word and hyphenated
+  answers can be played without players having to guess they must be
+  squashed together. The joined forms are already accepted (in a category's
+  *also* list) where they fit.
+
 - **Word packs for private worlds:** themed dictionaries such as Music,
   Food & cooking, Sport, Nature, Film & TV and Science, chosen when creating a
   world. Draft lists can come from WordNet topic tags (about 300 music words,
