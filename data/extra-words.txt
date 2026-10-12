@@ -7057,3 +7057,11 @@ ndebele
 fulani
 kikuyu
 luganda
+
+# Mythical beings known by name.
+minotaur
+minotaurs
+pegasus
+cerberus
+cupids
+medusas

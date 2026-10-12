@@ -17,10 +17,12 @@ boogeyman
 bugbear
 centaur
 centaurs
+cerberus
 changeling
 chimera
 chupacabra
 cockatrice
+cupid
 cyclops
 demon
 demons
@@ -76,9 +78,11 @@ leprechauns
 leviathan
 lycanthrope
 manticore
+medusa
 mermaid
 mermaids
 merman
+minotaur
 monster
 monsters
 naiad
@@ -89,6 +93,7 @@ ogre
 ogres
 ogress
 orc
+pegasus
 phantom
 phantoms
 phoenix
