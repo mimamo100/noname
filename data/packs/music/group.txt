@@ -1,0 +1,47 @@
+label: A group of musicians
+
+band bands
+orchestra orchestras
+choir choirs
+quartet quartets
+quintet quintets
+sextet sextets
+septet septets
+octet octets
+nonet nonets
+trio trios
+duo duos
+duet duets
+ensemble ensembles
+combo combos
+philharmonic philharmonics
+sinfonietta sinfoniettas
+consort consorts
+supergroup supergroups
+gamelan gamelans
+mariachi mariachis
+steelband steelbands
+showband showbands
+troupe troupes
+woodwind woodwinds
+percussion
+brass
+
+also:
+group groups
+outfit outfits
+lineup lineups
+section sections
+boyband boybands
+girlband girlbands
+girlgroup girlgroups
+bigband bigbands
+brassband brassbands
+jazzband jazzbands
+jugband jugbands
+pipeband pipebands
+marchingband marchingbands
+coverband coverbands
+houseband housebands
+rhythmsection rhythmsections
+collective collectives

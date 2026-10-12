@@ -1,0 +1,88 @@
+label: A unit of measurement used in science
+
+ampere amperes
+angstrom angstroms
+atmosphere atmospheres
+bar bars
+barn barns
+becquerel becquerels
+calorie calories
+candela candelas
+celsius
+centimetre centimeter centimetres centimeters
+coulomb coulombs
+curie curies
+dalton daltons
+day days
+decibel decibels
+degree degrees
+dioptre diopter dioptres diopters
+dyne dynes
+electronvolt electronvolts
+erg ergs
+fahrenheit
+farad farads
+gauss
+gigahertz
+gram gramme grams grammes
+gray grays
+hectare hectares
+henry henrys henries
+hertz
+hour hours
+joule joules
+katal katals
+kelvin kelvins
+kilogram kilogramme kilograms kilogrammes
+kilohertz
+kilojoule kilojoules
+kilometre kilometer kilometres kilometers
+kilopascal kilopascals
+kilowatt kilowatts
+litre liter litres liters
+lumen lumens
+lux
+megahertz
+megawatt megawatts
+metre meter metres meters
+mho mhos
+microgram micrograms
+micrometre micrometer micrometres micrometers
+micron microns
+microsecond microseconds
+millibar millibars
+milligram milligrams
+millilitre milliliter millilitres milliliters
+millimetre millimeter millimetres millimeters
+millisecond milliseconds
+minute minutes
+mole moles
+nanometre nanometer nanometres nanometers
+nanosecond nanoseconds
+newton newtons
+ohm ohms
+parsec parsecs
+pascal pascals
+picometre picometer picometres picometers
+radian radians
+rankine
+roentgen roentgens
+rutherford rutherfords
+second seconds
+siemens
+sievert sieverts
+steradian steradians
+tesla teslas
+tonne tonnes
+torr
+volt volts
+watt watts
+weber webers
+year years
+
+also:
+astronomicalunit astronomicalunits
+cubiccentimetre cubiccentimeter cubiccentimetres cubiccentimeters
+kilowatthour kilowatthours
+lightsecond lightseconds
+lightyear lightyears

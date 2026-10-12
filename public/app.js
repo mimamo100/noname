@@ -186,6 +186,7 @@ $('new-competition').addEventListener('click', () => {
   start.setHours(start.getHours() + 1, 0, 0, 0);
   $('comp-starts').value = toLocalInput(start.getTime());
   $('comp-ends').value = toLocalInput(start.getTime() + 3_600_000);
+  loadPackChoices('cp');
   $('comp-dialog').showModal();
 });
 $('comp-cancel').addEventListener('click', () => $('comp-dialog').close());
@@ -200,6 +201,7 @@ $('comp-form').addEventListener('submit', async (e) => {
       teams: $('comp-teams').value.split('\n'),
       teamSize: $('comp-size').value ? Number($('comp-size').value) : null,
       spelling: new FormData(e.target).get('comp-spelling'),
+      ...packChoice('cp'),
     } });
     location.href = `/w/${encodeURIComponent(made.id)}`;
   } catch (err) {
@@ -291,6 +293,97 @@ $('cs-end').addEventListener('click', () => compAction('end', {}, 'The competiti
 $('cs-delete').addEventListener('click', () => compAction('delete', {}, '', 'Delete this competition and everything in it? This can\'t be undone.'));
 $('cs-close').addEventListener('click', () => $('comp-settings-dialog').close());
 
+// --- Word packs ---
+
+// Fills a create dialog's Words choice: everyday words, curated packs, and the organiser's own.
+async function loadPackChoices(prefix) {
+  const select = $(`${prefix}-pack`);
+  try {
+    const { curated, custom } = await rootApi('/packs');
+    const option = (p) => el('option', { value: p.id, textContent: `${p.name} (${p.words.toLocaleString()} words)`, title: p.description || '' });
+    select.replaceChildren(el('option', { value: '', textContent: 'Everyday words' }),
+      ...(curated.length ? [el('optgroup', { label: 'Word packs' }, ...curated.map(option))] : []),
+      ...(custom.length ? [el('optgroup', { label: 'Your packs' }, ...custom.map(option))] : []));
+  } catch { /* Everyday words only */ }
+  $(`${prefix}-pack-mode`).hidden = !select.value;
+}
+for (const prefix of ['nw', 'cp']) {
+  $(`${prefix}-pack`).addEventListener('change', () => { $(`${prefix}-pack-mode`).hidden = !$(`${prefix}-pack`).value; });
+}
+const packChoice = (prefix) => ($(`${prefix}-pack`).value
+  ? { pack: $(`${prefix}-pack`).value, packMode: document.querySelector(`input[name="${prefix}-mode"]:checked`).value }
+  : {});
+
+// The organiser's own packs: a list, and an editor.
+let myPacks = [];
+let editingPack = null;
+
+async function showPacks() {
+  $('pack-form').hidden = true;
+  $('packs-list').hidden = false;
+  $('packs-buttons').hidden = false;
+  $('packs-list').replaceChildren(el('li', { className: 'muted', textContent: 'Loading…' }));
+  if (!$('packs-dialog').open) $('packs-dialog').showModal();
+  try {
+    ({ packs: myPacks } = await rootApi('/me/packs'));
+    $('packs-list').replaceChildren(...(myPacks.length ? myPacks.map((p) => {
+      const edit = el('button', { type: 'button', className: 'link row-actions', textContent: 'Edit' });
+      edit.addEventListener('click', () => editPack(p));
+      return el('li', {}, edit, el('b', { textContent: p.name }), ' ',
+        el('span', { className: 'when', textContent: `${p.words.toLocaleString()} words` }),
+        ...(p.reported.length ? [el('div', { className: 'small', textContent: `Players suggested ${p.reported.length} ${p.reported.length === 1 ? 'word' : 'words'}` })] : []),
+        ...(p.description ? [el('div', { className: 'muted small', textContent: p.description })] : []));
+    }) : [el('li', { className: 'muted', textContent: 'No packs yet. Make one with New pack.' })]));
+  } catch (err) {
+    $('packs-list').replaceChildren(el('li', { className: 'bad', textContent: err.message }));
+  }
+}
+
+function editPack(pack) {
+  editingPack = pack;
+  $('pack-name').value = pack?.name ?? '';
+  $('pack-description').value = pack?.description ?? '';
+  $('pack-text').value = pack?.text ?? '';
+  $('pack-delete').hidden = !pack;
+  const reported = pack?.reported ?? [];
+  const seen = el('button', { type: 'button', className: 'link', textContent: 'Mark as seen' });
+  seen.addEventListener('click', async () => {
+    try { await rootApi(`/packs/${encodeURIComponent(pack.id)}/seen`, { method: 'POST' }); $('pack-reported').replaceChildren(); } catch (err) { alert(err.message); }
+  });
+  $('pack-reported').replaceChildren(...(reported.length ? [
+    el('p', {}, el('b', { textContent: 'Players suggested: ' }), reported.map((r) => `${r.word}${r.players > 1 ? ` (${r.players})` : ''}`).join(', '), '. ',
+      'Add any that should count to a list above. ', seen),
+  ] : []));
+  $('packs-list').hidden = true;
+  $('packs-buttons').hidden = true;
+  $('pack-form').hidden = false;
+}
+
+$('menu-packs').addEventListener('click', showPacks);
+$('packs-close').addEventListener('click', () => $('packs-dialog').close());
+$('pack-new').addEventListener('click', () => editPack(null));
+$('pack-cancel').addEventListener('click', showPacks);
+$('pack-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const body = { name: $('pack-name').value, description: $('pack-description').value, text: $('pack-text').value };
+  try {
+    const saved = await rootApi(editingPack ? `/packs/${encodeURIComponent(editingPack.id)}` : '/packs', { method: 'POST', body });
+    feedback(`Saved “${body.name}”: ${saved.words.toLocaleString()} words in ${saved.lists.length} ${saved.lists.length === 1 ? 'list' : 'lists'}.`, 'good');
+    showPacks();
+  } catch (err) {
+    alert(err.message);
+  }
+});
+$('pack-delete').addEventListener('click', async () => {
+  if (!confirm(`Delete “${editingPack.name}”? This can't be undone.`)) return;
+  try {
+    await rootApi(`/packs/${encodeURIComponent(editingPack.id)}/delete`, { method: 'POST' });
+    showPacks();
+  } catch (err) {
+    alert(err.message);
+  }
+});
+
 async function joinRoom() {
   if (!session) {
     feedback('Sign in first to join a room.', 'bad');
@@ -311,7 +404,8 @@ $('room-button').addEventListener('click', joinRoom);
 function render(state) {
   document.title = `${state.world.name} · Unsaid`;
   const spellingNote = { uk: ' · UK spelling', us: ' · US spelling' }[state.world.spelling] ?? '';
-  $('world-name').textContent = state.world.name + spellingNote;
+  const packNote = state.pack ? ` · ${state.pack.name} words` : '';
+  $('world-name').textContent = state.world.name + packNote + spellingNote;
   $('dict-size').textContent = state.dictionary.size.toLocaleString();
   $('dict-burned').textContent = state.dictionary.burned.toLocaleString();
   $('world-mult').textContent = state.multipliers.world.toFixed(1);
@@ -643,6 +737,7 @@ function renderAccount(account, adminUrl) {
   if (!account) { closeMenu(); return; }
   $('account-button').textContent = account.name;
   $('new-competition').hidden = account.plan !== 'organiser';
+  $('menu-packs').hidden = account.plan !== 'organiser';
 }
 
 function closeMenu() {
@@ -687,6 +782,7 @@ async function showWorlds() {
     $('worlds-list').replaceChildren(big, ...worlds.map((w) => el('li', {},
       el('a', { href: `/w/${encodeURIComponent(w.id)}`, textContent: w.name }),
       ' ', el('span', { className: 'when', textContent: (w.kind === 'room' ? 'room' : w.kind === 'competition' ? 'competition' : 'private') + (w.isOwner ? ' · yours' : '') }),
+      ...(w.packName ? [el('span', { className: 'when', textContent: ` · ${w.packName} words` })] : []),
       el('div', { className: 'small', textContent: w.ended ? 'Ended. Open it to delete it, or see it in My games.' : [
         ...(w.kind === 'competition' && w.startsAt > Date.now() ? [`starts ${whenText(w.startsAt)}`] : []),
         ...(w.kind === 'competition' && w.startsAt <= Date.now() ? [`ends in ${timeLeft(w.endsAt - Date.now())}`] : []),
@@ -890,6 +986,7 @@ $('new-world').addEventListener('click', () => {
     $('signin').scrollIntoView({ block: 'center' });
     return;
   }
+  loadPackChoices('nw');
   $('new-world-dialog').showModal();
 });
 $('new-world-cancel').addEventListener('click', () => $('new-world-dialog').close());
@@ -899,7 +996,7 @@ $('new-world-form').addEventListener('submit', async (e) => {
   try {
     const promptHours = Number(new FormData(e.target).get('pace'));
     const maxPlayers = $('new-world-max').value ? Number($('new-world-max').value) : null;
-    const world = await api('', { method: 'POST', body: { name: $('new-world-name').value, spelling, promptHours, maxPlayers } });
+    const world = await api('', { method: 'POST', body: { name: $('new-world-name').value, spelling, promptHours, maxPlayers, ...packChoice('nw') } });
     location.href = `/w/${encodeURIComponent(world.id)}`;
   } catch (err) {
     $('new-world-dialog').close();

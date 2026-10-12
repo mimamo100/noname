@@ -1,0 +1,40 @@
+label: A singing voice or singer
+
+singer singers
+vocalist vocalists
+soprano sopranos
+mezzo mezzos
+contralto contraltos
+alto altos
+countertenor countertenors
+tenor tenors
+baritone baritones
+bass basses
+basso bassos
+treble trebles
+falsetto falsettos
+castrato castrati
+coloratura coloraturas
+soubrette soubrettes
+chorister choristers
+choirboy choirboys
+choirgirl choirgirls
+caroller carollers caroler carolers
+cantor cantors
+crooner crooners
+diva divas
+chanteuse chanteuses
+songstress songstresses
+balladeer balladeers
+belter belters
+yodeller yodellers yodeler yodelers
+rapper rappers
+emcee emcees
+beatboxer beatboxers
+
+also:
+songbird songbirds
+warbler warblers
+primadonna primadonnas
+mezzosoprano mezzosopranos
+backingsinger backingsingers

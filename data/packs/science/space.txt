@@ -1,0 +1,96 @@
+label: Something in space
+
+andromeda
+arcturus
+asterism asterisms
+asteroid asteroids
+aurora auroras aurorae
+betelgeuse
+binary binaries
+blazar blazars
+bolide bolides
+callisto
+cassiopeia
+centaur centaurs
+ceres
+charon
+cluster clusters
+comet comets
+constellation constellations
+corona coronas coronae
+cosmos
+deimos
+dwarf dwarfs dwarves
+earth
+eclipse eclipses
+enceladus
+eris
+europa
+exomoon exomoons
+exoplanet exoplanets
+fireball fireballs
+flare flares
+galaxy galaxies
+ganymede
+haumea
+heliosphere heliospheres
+hypernova hypernovae hypernovas
+jupiter
+magnetar magnetars
+magnetosphere magnetospheres
+makemake
+mars
+meteor meteors
+meteorite meteorites
+meteoroid meteoroids
+miranda
+moon moons
+moonlet moonlets
+nebula nebulae nebulas
+neptune
+nova novae novas
+oberon
+orion
+phobos
+planet planets
+planetesimal planetesimals
+planetoid planetoids
+pleiades
+pluto
+polaris
+protostar protostars
+pulsar pulsars
+quasar quasars
+rigel
+satellite satellites
+saturn
+singularity singularities
+sirius
+star stars
+sun suns
+sunspot sunspots
+supercluster superclusters
+supergiant supergiants
+supernova supernovae supernovas
+titan
+titania
+triton
+universe universes
+uranus
+vega
+venus
+void voids
+wormhole wormholes
+
+also:
+asteroidbelt asteroidbelts
+blackhole blackholes
+browndwarf browndwarfs
+kuiperbelt
+meteorshower meteorshowers
+milkyway
+neutronstar neutronstars
+oortcloud
+redgiant redgiants
+solarwind
+whitedwarf whitedwarfs

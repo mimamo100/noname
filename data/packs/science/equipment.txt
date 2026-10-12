@@ -1,0 +1,103 @@
+label: A piece of laboratory equipment
+
+alembic alembics
+ammeter ammeters
+anemometer anemometers
+autoclave autoclaves
+balance balances
+barometer barometers
+beaker beakers
+bioreactor bioreactors
+burette buret burettes burets
+burner burners
+calorimeter calorimeters
+centrifuge centrifuges
+clamp clamps
+colorimeter colorimeters
+condenser condensers
+crucible crucibles
+cuvette cuvettes
+cylinder cylinders
+desiccator desiccators
+dropper droppers
+dynamometer dynamometers
+electrode electrodes
+electroscope electroscopes
+eyewash eyewashes
+fermenter fermenters
+flask flasks
+forceps
+funnel funnels
+galvanometer galvanometers
+gauze gauzes
+goggles
+hotplate hotplates
+hydrometer hydrometers
+hygrometer hygrometers
+incubator incubators
+joulemeter joulemeters
+laser lasers
+lens lenses
+loupe loupes
+magnet magnets
+magnifier magnifiers
+manometer manometers
+microscope microscopes
+microtome microtomes
+mortar mortars
+multimeter multimeters
+ohmmeter ohmmeters
+oscilloscope oscilloscopes
+pestle pestles
+pipette pipet pipettes pipets
+pooter pooters
+potometer potometers
+prism prisms
+protractor protractors
+pulley pulleys
+quadrat quadrats
+respirometer respirometers
+retort retorts
+rheostat rheostats
+scalpel scalpels
+seismometer seismometers
+sieve sieves
+spatula spatulas
+spectrometer spectrometers
+spectroscope spectroscopes
+spirometer spirometers
+stirrer stirrers
+stopclock stopclocks
+stopper stoppers
+stopwatch stopwatches
+syringe syringes
+telescope telescopes
+thermocouple thermocouples
+thermometer thermometers
+timer timers
+tongs
+tripod tripods
+tweezers
+voltmeter voltmeters
+
+also:
+bunsenburner bunsenburners
+conicalflask conicalflasks
+datalogger dataloggers
+evaporatingbasin evaporatingbasins
+evaporatingdish evaporatingdishes
+fumecupboard fumecupboards
+gasjar gasjars
+glassware
+labcoat labcoats
+measuringcylinder measuringcylinders
+newtonmeter newtonmeters
+petridish petridishes
+retortstand retortstands
+scales
+spottingtile spottingtiles
+testtube testtubes
+tile tiles
+washbottle washbottles
+watchglass watchglasses
+wireloop wireloops

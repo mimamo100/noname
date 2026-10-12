@@ -1,0 +1,95 @@
+label: An earth science term
+
+anticline anticlines
+aquifer aquifers
+asthenosphere
+avalanche avalanches
+basalt basalts
+bedrock
+caldera calderas
+chalk chalks
+cirrus
+climate climates
+cloud clouds
+continent continents
+core cores
+crater craters
+crust crusts
+cumulonimbus
+cumulus cumuli
+cyclone cyclones
+delta deltas
+deposition
+drought droughts
+dune dunes
+earthquake earthquakes
+epicentre epicenter epicentres epicenters
+erosion
+estuary estuaries
+fault faults
+feldspar feldspars
+fold folds
+fossil fossils
+front fronts
+geyser geysers
+glacier glaciers
+gneiss
+granite granites
+groundwater
+hail
+humidity
+hurricane hurricanes
+igneous
+ionosphere
+isobar isobars
+lava lavas
+limestone limestones
+lithosphere
+magma magmas
+mantle mantles
+marble marbles
+meander meanders
+mesosphere
+metamorphic
+mica micas
+mineral minerals
+monsoon monsoons
+moraine moraines
+obsidian
+permafrost
+plate plates
+precipitation
+pumice
+quartz
+rain
+sandstone sandstones
+schist schists
+sediment sediments
+sedimentary
+seismograph seismographs
+shale shales
+slate slates
+stalactite stalactites
+stalagmite stalagmites
+stratosphere
+stratum strata
+stratus
+subduction
+syncline synclines
+tectonics
+thermosphere
+thunderstorm thunderstorms
+tornado tornadoes tornados
+tributary tributaries
+troposphere
+tsunami tsunamis
+typhoon typhoons
+volcano volcanoes volcanos
+weathering
+gypsum
+
+also:
+jetstream jetstreams
+platetectonics
+tectonicplate tectonicplates
+watercycle

@@ -1,0 +1,89 @@
+label: A kind of piece or song
+
+song songs
+tune tunes
+symphony symphonies
+sonata sonatas
+sonatina sonatinas
+concerto concertos concerti
+fugue fugues
+oratorio oratorios
+cantata cantatas
+opera operas
+operetta operettas
+musical musicals
+overture overtures
+prelude preludes
+etude etudes
+nocturne nocturnes
+rhapsody rhapsodies
+serenade serenades
+suite suites
+partita partitas
+toccata toccatas
+fantasia fantasias
+impromptu impromptus
+intermezzo intermezzos intermezzi
+scherzo scherzos scherzi
+rondo rondos
+requiem requiems
+mass masses
+motet motets
+madrigal madrigals
+anthem anthems
+hymn hymns
+carol carols
+chant chants
+plainsong
+plainchant
+psalm psalms
+canticle canticles
+chorale chorales
+magnificat magnificats
+lied lieder
+chanson chansons
+aria arias
+recitative recitatives
+ballad ballads
+ballade ballades
+lullaby lullabies
+lament laments
+elegy elegies
+dirge dirges
+threnody threnodies
+march marches
+fanfare fanfares
+shanty shanties
+ditty ditties
+jingle jingles
+canon canons
+barcarolle barcarolles
+bagatelle bagatelles
+divertimento divertimentos divertimenti
+sinfonia sinfonias
+pastorale pastorales
+capriccio capriccios
+caprice caprices
+humoresque humoresques
+passacaglia passacaglias
+chaconne chaconnes
+raga ragas
+spiritual spirituals
+zarzuela zarzuelas
+masque masques
+singspiel singspiels
+
+also:
+air airs
+round rounds
+glee glees
+invention inventions
+variation variations
+passion passions
+gloria glorias
+potpourri
+tonepoem tonepoems
+lovesong lovesongs
+torchsong torchsongs
+powerballad powerballads
+nurseryrhyme nurseryrhymes

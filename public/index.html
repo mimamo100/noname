@@ -24,6 +24,7 @@
           <button type="button" role="menuitem" id="menu-games">My games</button>
           <button type="button" role="menuitem" id="new-world">New private world</button>
           <button type="button" role="menuitem" id="new-competition" hidden>New competition</button>
+          <button type="button" role="menuitem" id="menu-packs" hidden>My word packs</button>
           <a role="menuitem" id="menu-admin" hidden>Admin</a>
           <button type="button" role="menuitem" id="menu-signout">Sign out</button>
         </span>
@@ -148,7 +149,7 @@
         <li>Careful: a word that doesn't fit, or that someone else has already said, costs 2 points. Repeating your own word is free. Typos are free, and so is a real answer missing from our lists: report it so we can add it.</li>
         <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
         <li>The prompt changes when nothing fits any more, or when its time runs out.</li>
-        <li><b>Where to play.</b> The big world is open to everyone signed in and starts afresh every day, with quick prompts. <b>Rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private worlds</b> are for you and the friends you invite: anyone can join one with its invite link, and creating one needs the Host plan. <b>Competitions</b> pit teams against each other between a start and an end time: open your team's link to join it, and every point you score counts for your team. Running one needs the Organiser plan.</li>
+        <li><b>Where to play.</b> The big world is open to everyone signed in and starts afresh every day, with quick prompts. <b>Rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private worlds</b> are for you and the friends you invite: anyone can join one with its invite link, and creating one needs the Host plan. Private worlds and competitions can use a <b>word pack</b> (Science, Law, Music…) instead of everyday words. <b>Competitions</b> pit teams against each other between a start and an end time: open your team's link to join it, and every point you score counts for your team. Running one needs the Organiser plan.</li>
         <li><b>My worlds</b> (under your name, top right) lists the rooms and private worlds you're in. <b>My games</b> shows how you finished in past rounds and rooms, and your personal bests.</li>
       </ul>
       <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words said in this world.</p>
@@ -166,6 +167,14 @@
         <label><input type="radio" name="spelling" value="both" checked><span>UK and US (<i>colour</i> or <i>color</i>)</span></label>
         <label><input type="radio" name="spelling" value="uk"><span>UK only (<i>colour</i>)</span></label>
         <label><input type="radio" name="spelling" value="us"><span>US only (<i>color</i>)</span></label>
+      </fieldset>
+      <label class="field">Words
+        <select id="nw-pack" class="pack-select"><option value="">Everyday words</option></select>
+      </label>
+      <fieldset class="field" id="nw-pack-mode" hidden>
+        <legend>Use the pack's words</legend>
+        <label><input type="radio" name="nw-mode" value="only" checked><span>On their own</span></label>
+        <label><input type="radio" name="nw-mode" value="mixed"><span>With everyday words too</span></label>
       </fieldset>
       <fieldset class="field">
         <legend>Pace: each prompt lasts up to</legend>
@@ -205,6 +214,14 @@
           <option value="1440">A day (a long contest)</option>
         </select>
       </label>
+      <label class="field">Words
+        <select id="cp-pack" class="pack-select"><option value="">Everyday words</option></select>
+      </label>
+      <fieldset class="field" id="cp-pack-mode" hidden>
+        <legend>Use the pack's words</legend>
+        <label><input type="radio" name="cp-mode" value="only" checked><span>On their own</span></label>
+        <label><input type="radio" name="cp-mode" value="mixed"><span>With everyday words too</span></label>
+      </fieldset>
       <label class="field">Teams, one per line (2–20)
         <textarea id="comp-teams" rows="4" required>Owls
 Foxes</textarea>
@@ -260,6 +277,31 @@ Foxes</textarea>
       <button type="button" class="secondary danger" id="cs-delete">Delete</button>
     </p>
     <div class="dialog-buttons"><button type="button" class="link" id="cs-close">Close</button></div>
+  </dialog>
+
+  <dialog id="packs-dialog">
+    <h2>My word packs</h2>
+    <p class="muted small">Your own themed words for your private worlds and competitions: a topic you teach, your company's products, a quiz theme.</p>
+    <ul id="packs-list" class="history-list"></ul>
+    <form id="pack-form" hidden>
+      <label class="field">Name <input id="pack-name" maxlength="40" required placeholder="e.g. Space"></label>
+      <label class="field">Description <span class="muted small">(optional)</span> <input id="pack-description" maxlength="200"></label>
+      <label class="field">Lists
+        <textarea id="pack-text" rows="14" required placeholder="A planet&#10;mercury&#10;venus&#10;mars&#10;&#10;A moon&#10;titan&#10;europa"></textarea>
+      </label>
+      <p class="muted small">Each list starts with its prompt (“A planet”), then one word per line. Leave a blank line between lists.
+        Put other forms of a word on the same line, like <i>nucleus nuclei</i>, so both count as one answer. Words need 3–30 letters, a to z.</p>
+      <div id="pack-reported" class="small"></div>
+      <div class="dialog-buttons">
+        <button type="button" class="link danger" id="pack-delete" hidden>Delete pack</button>
+        <button type="button" class="link" id="pack-cancel">Back</button>
+        <button type="submit">Save pack</button>
+      </div>
+    </form>
+    <div class="dialog-buttons" id="packs-buttons">
+      <button type="button" class="link" id="packs-close">Close</button>
+      <button type="button" id="pack-new">New pack</button>
+    </div>
   </dialog>
 
   <dialog id="worlds-dialog">

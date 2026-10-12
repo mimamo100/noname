@@ -14,6 +14,8 @@ require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
 require "$root/src/Game.php";
 require "$root/src/PrivateWorlds.php";
+require "$root/src/Competitions.php";
+require "$root/src/Packs.php";
 require "$root/src/Admin.php";
 require "$root/src/Housekeeping.php";
 
@@ -94,7 +96,9 @@ try {
     );
     Game::installSchema($db); // Cheap, and makes sure the admin tables exist.
     $dictionary = Dictionary::load();
-    $admin = new Admin($db, $dictionary);
+    $cacheDir = $config['cache_dir'] ?? "$root/cache";
+    $packs = new Packs($db, $cacheDir ?: null);
+    $admin = new Admin($db, $dictionary, packs: $packs);
 
     // The open reports as a text file, to work through and fold into the word files.
     if (($_GET['download'] ?? '') === 'reports') {
@@ -130,6 +134,10 @@ try {
                 $plan = (string) ($_POST['plan'] ?? '');
                 $name = $admin->setPlan((int) ($_POST['user'] ?? 0), $plan);
                 $_SESSION['flash'] = "$name is now on the " . ucfirst($plan) . ' plan.';
+                break;
+            case 'removepack':
+                $packs->remove((string) ($_POST['pack'] ?? ''));
+                $_SESSION['flash'] = 'Pack removed. Worlds that used it now play everyday words.';
                 break;
             case 'recount':
                 Game::recountScores($db);
@@ -243,6 +251,21 @@ if (!$accounts) {
         $html .= '<tr><td><b>' . h($a['name']) . '</b></td><td class="muted small">' . h($a['email']) . '</td><td>'
             . '<form method="post" class="inline plan-form">' . hidden(['csrf' => $csrf, 'action' => 'plan', 'user' => (string) $a['id']])
             . '<select name="plan">' . $options . '</select> <button type="submit" class="secondary">Save</button></form></td></tr>';
+    }
+    $html .= '</tbody></table></div>';
+}
+
+// Organisers' own word packs, so a bad one can be taken down.
+$customPacks = $packs->all();
+$html .= '<h2>Organisers\' word packs</h2>';
+if (!$customPacks) {
+    $html .= '<p class="muted">None yet.</p>';
+} else {
+    $html .= '<div class="table-wrap"><table class="admin-table"><thead><tr><th>Pack</th><th>Owner</th><th>Words</th><th>Changed</th><th></th></tr></thead><tbody>';
+    foreach ($customPacks as $pk) {
+        $html .= '<tr><td><b>' . h($pk['name']) . '</b></td><td>' . h((string) $pk['owner']) . '</td><td>' . (int) $pk['words'] . '</td>'
+            . '<td class="muted small">' . h($when((int) $pk['updated_at'])) . '</td>'
+            . '<td class="actions">' . button($csrf, 'removepack', 'Remove', ['pack' => $pk['id']], 'link') . '</td></tr>';
     }
     $html .= '</tbody></table></div>';
 }

@@ -17,6 +17,7 @@ require "$root/src/Game.php";
 require "$root/src/Lobby.php";
 require "$root/src/PrivateWorlds.php";
 require "$root/src/Competitions.php";
+require "$root/src/Packs.php";
 require "$root/src/Housekeeping.php";
 require "$root/src/Admin.php";
 require "$root/src/Mailer.php";
@@ -67,7 +68,7 @@ function testDbConnection(): PDO
 function testDb(): PDO
 {
     $db = testDbConnection();
-    $db->exec('DROP TABLE IF EXISTS team_results, teams, meta, results, word_decisions, reports, misses, burns, prompts, players, sessions, login_codes, users, worlds');
+    $db->exec('DROP TABLE IF EXISTS packs, team_results, teams, meta, results, word_decisions, reports, misses, burns, prompts, players, sessions, login_codes, users, worlds');
     Game::installSchema($db);
     return $db;
 }
@@ -77,6 +78,7 @@ require __DIR__ . '/LobbyTest.php';
 require __DIR__ . '/HousekeepingTest.php';
 require __DIR__ . '/PrivateWorldsTest.php';
 require __DIR__ . '/CompetitionsTest.php';
+require __DIR__ . '/PacksTest.php';
 require __DIR__ . '/AuthTest.php';
 require __DIR__ . '/ApiTest.php';
 

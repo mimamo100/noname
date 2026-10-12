@@ -1,0 +1,68 @@
+label: A Latin or Law French legal term
+
+affidavit affidavits
+subpoena subpoenas subpoenaed
+alibi alibis
+alias aliases
+quorum quorums
+versus
+mandamus
+certiorari
+obiter
+dictum dicta
+amicus amici
+proviso provisos provisoes
+caveat caveats
+fiat fiats
+nisi
+capias
+mittimus
+replevin
+detinue
+estoppel
+oyez
+autrefois
+feme
+puisne
+mortmain
+laches
+assumpsit
+venire
+lex
+jus
+delict delicts
+veto vetoes
+
+also:
+habeascorpus
+bonafide
+probono
+mensrea
+actusreus
+ultravires
+intravires
+subjudice
+primafacie
+dejure
+defacto
+exparte
+incamera
+ratio
+quantum
+locus
+corpus
+nolo
+injuria
+culpa
+dolus
+animus
+verbatim
+quasi
+emptor
+caveatemptor
+quidproquo
+modusoperandi
+statusquo
+proforma
+resjudicata
+staredecisis

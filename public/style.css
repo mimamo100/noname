@@ -182,3 +182,8 @@ button:disabled { opacity: 0.45; cursor: default; filter: none; }
 textarea, select { font: inherit; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; width: 100%; box-sizing: border-box; }
 .prompt-card.waiting .counter, .prompt-card.waiting .meter, .prompt-card.waiting .stats { display: none; }
 button.link.nudge { color: var(--ember); font-size: 14px; }
+
+/* Word packs */
+#packs-dialog { width: min(600px, calc(100vw - 32px)); }
+#pack-text { font-family: ui-monospace, monospace; font-size: 14px; }
+.world-pack { color: var(--muted); font-size: 14px; }

@@ -1,0 +1,81 @@
+label: A contract or business law term
+
+offer offers
+acceptance
+consideration
+breach breaches
+warranty warranties
+indemnity indemnities
+clause clauses
+condition conditions
+termination
+rescission
+misrepresentation misrepresentations
+frustration
+repudiation
+novation
+assignment assignments
+waiver waivers
+damages
+remedy remedies
+liability liabilities
+guarantee guarantees guaranty guaranties
+collateral
+licence licences license licenses
+royalty royalties
+copyright copyrights
+trademark trademarks
+patent patents
+franchise franchises
+partnership partnerships
+incorporation
+merger mergers
+takeover takeovers
+liquidation
+receivership
+dissolution
+shareholder shareholders
+fiduciary fiduciaries
+subrogation
+garnishment
+retainer retainers
+duress
+privity
+rectification
+severability
+counteroffer counteroffers
+revocation
+obligation obligations
+debenture debentures
+bailment bailments
+consignment consignments
+voidable
+unenforceable
+unconscionability
+
+also:
+term terms
+company companies
+acquisition acquisitions
+administration
+director directors
+agency
+setoff
+tender
+mistake
+illegality
+quantummeruit
+forcemajeure
+exclusion
+limitation
+lapse
+invitation
+promise promises
+security
+pledge pledges
+hirepurchase
+articles
+void
+rescind
+renege
+passingoff

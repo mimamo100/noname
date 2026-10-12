@@ -47,6 +47,8 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 | `src/Game.php` | Worlds, players, playing words and prompt rotation |
 | `src/Lobby.php` | The big world's daily rounds, rooms, and My games |
 | `src/PrivateWorlds.php` | Plans, private worlds' invite links and owner controls, and My worlds |
+| `src/Packs.php` | Word packs: building them, organisers' own packs, and the dictionary a pack world plays |
+| `data/packs/` | Curated word packs (Science, Law, Music), one folder each (editable) |
 | `src/Competitions.php` | Competitions: teams, their invite links, start and end times, organiser controls |
 | `src/Housekeeping.php`, `scripts/housekeeping.php` | Daily tidying, run by a cron job |
 | `src/Dictionary.php`, `src/WordFamilies.php` | Word list, rarity and word families |

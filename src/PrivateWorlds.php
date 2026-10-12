@@ -44,9 +44,21 @@ final class PrivateWorlds
             $this->paceMs($input['promptHours'] ?? 24),
             (string) ($input['spelling'] ?? 'both'),
             (int) $user['id'],
-            ['kind' => 'private', 'maxPlayers' => $this->maxPlayers($input['maxPlayers'] ?? null)],
+            ['kind' => 'private', 'maxPlayers' => $this->maxPlayers($input['maxPlayers'] ?? null)] + self::packOptions($input),
         );
         return ['id' => $world['id'], 'name' => $world['name'], 'invite' => $world['invite_code']];
+    }
+
+    /**
+     * World options for a word pack, if one was chosen (the caller has checked the account may
+     * use it). A pack-only world is small, so its prompts are too.
+     */
+    public static function packOptions(array $input): array
+    {
+        if (empty($input['pack'])) return [];
+        $mode = (string) ($input['packMode'] ?? 'only');
+        if (!in_array($mode, Packs::MODES, true)) throw new GameError(400, 'Choose the pack only, or the pack with everyday words');
+        return ['pack' => (string) $input['pack'], 'packMode' => $mode] + ($mode === 'only' ? ['promptMin' => 5, 'promptMax' => 40] : []);
     }
 
     private function paceMs(mixed $hours): int
@@ -270,7 +282,10 @@ final class PrivateWorlds
                 'words' => $w['words'] === null ? null : (int) $w['words'],
                 'players' => (int) $count,
                 'lastPlayed' => (int) $lastPlayed ?: null,
-                'left' => max(0, 1 - (int) $burned->fetchColumn() / $this->game->dictionarySize()),
+                'burned' => $burnedCount = (int) $burned->fetchColumn(),
+                'left' => max(0, 1 - $burnedCount / $this->game->dictionarySize()),
+                'pack' => $w['pack'] ?? null,
+                'packMode' => $w['pack_mode'] ?? null,
                 'startsAt' => isset($w['starts_at']) ? (int) $w['starts_at'] : null,
                 'endsAt' => isset($w['ends_at']) ? (int) $w['ends_at'] : null,
             ];

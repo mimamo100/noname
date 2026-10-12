@@ -11,6 +11,12 @@
 //   GET  /api/me/worlds                                            rooms and private worlds you're in (account needed)
 //
 //   POST /api/rooms                                         join a room: your own, or one with a free seat (account needed)
+//   GET  /api/packs                                         word packs this account may use: {curated, custom}
+//   GET  /api/me/packs                                      the account's own word packs, with their text (Organiser plan)
+//   POST /api/packs                       {name, description, text}  make a word pack (Organiser plan)
+//   POST /api/packs/{id}                  {name, description, text}  change it;  POST /api/packs/{id}/delete
+//   POST /api/packs/{id}/seen                               mark players' suggested words for the pack as seen
+//   Creating a private world or competition takes {pack, packMode: 'only' | 'mixed'} too.
 //   POST /api/competitions                {name, spelling, startsAt, endsAt, promptMinutes, teams[], teamSize}  (Organiser plan)
 //
 //   POST /api/worlds                      {name, spelling, promptHours, maxPlayers}  create a private world (Host plan)
@@ -45,6 +51,7 @@ require "$root/src/Game.php";
 require "$root/src/Lobby.php";
 require "$root/src/PrivateWorlds.php";
 require "$root/src/Competitions.php";
+require "$root/src/Packs.php";
 require "$root/src/Admin.php";
 require "$root/src/Mailer.php";
 require "$root/src/Auth.php";
@@ -94,7 +101,7 @@ function body(): array
     return $data;
 }
 
-function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Competitions $competitions, array $config): never
+function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Competitions $competitions, Packs $packs, Closure $gameWith, array $config): never
 {
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -127,8 +134,38 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
     }
 
     if ($resource === 'me' && $method === 'GET' && $worldId === 'history') respond(200, $lobby->history((int) $needUser()['id']));
-    if ($resource === 'me' && $method === 'GET' && $worldId === 'worlds') respond(200, ['worlds' => $private->myWorlds($needUser())]);
-    if ($resource === 'competitions' && $method === 'POST' && $worldId === null) respond(201, $competitions->create($needUser(), body()));
+    if ($resource === 'me' && $method === 'GET' && $worldId === 'worlds') {
+        $everyday = $game->dictionarySize();
+        // Pack worlds: their name, and how much is left of the pack rather than the everyday dictionary.
+        $worlds = array_map(function ($w) use ($packs, $game, $everyday) {
+            if (!$w['pack']) return $w;
+            $size = $packs->dictionary($w['pack'], $w['packMode'] ?? 'only', $game->dictionary())->size();
+            return ['packName' => $packs->name($w['pack'], $game->dictionary()), 'left' => max(0, 1 - $w['burned'] / max(1, $size))] + $w;
+        }, $private->myWorlds($needUser()));
+        respond(200, ['worlds' => $worlds]);
+    }
+    // Word packs: the ones you may use, and organisers' own.
+    if ($resource === 'packs' && $method === 'GET' && $worldId === null) respond(200, $packs->available($user));
+    if ($resource === 'me' && $method === 'GET' && $worldId === 'packs') respond(200, ['packs' => $packs->mine($needUser())]);
+    if ($resource === 'packs' && $method === 'POST') {
+        $b = body();
+        [$name, $description, $text] = [(string) ($b['name'] ?? ''), (string) ($b['description'] ?? ''), (string) ($b['text'] ?? '')];
+        if ($worldId === null) respond(201, $packs->create($needUser(), $name, $description, $text, $game->dictionary()));
+        if ($action === 'delete') {
+            $packs->delete($needUser(), $worldId);
+            respond(200, ['ok' => true]);
+        }
+        if ($action === 'seen') {
+            $packs->markReportsSeen($needUser(), $worldId);
+            respond(200, ['ok' => true]);
+        }
+        if ($action === null) respond(200, $packs->update($needUser(), $worldId, $name, $description, $text, $game->dictionary()));
+    }
+    if ($resource === 'competitions' && $method === 'POST' && $worldId === null) {
+        $b = body();
+        if (!empty($b['pack'])) $packs->checkUsable($needUser(), (string) $b['pack']);
+        respond(201, $competitions->create($needUser(), $b));
+    }
     if ($resource === 'rooms' && $method === 'POST' && $worldId === null) {
         respond(200, $lobby->joinRoom($needUser()));
     }
@@ -136,10 +173,16 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
     $isBigWorld = $worldId === Lobby::BIG_WORLD_ALIAS;
     if ($isBigWorld) $worldId = $lobby->bigWorldId();
 
-    if ($method === 'POST' && $worldId === null) respond(201, $private->create($needUser(), body()));
+    if ($method === 'POST' && $worldId === null) {
+        $b = body();
+        if (!empty($b['pack'])) $packs->checkUsable($needUser(), (string) $b['pack']);
+        respond(201, $private->create($needUser(), $b));
+    }
     if ($worldId === null) throw new GameError(404, 'Not found');
     $world = $game->world($worldId);
     $isCompetition = ($world['kind'] ?? '') === 'competition';
+    // A world with a word pack plays with that pack's dictionary.
+    if (!empty($world['pack'])) $game = $gameWith($packs->dictionary($world['pack'], $world['pack_mode'] ?? 'only', $game->dictionary()));
 
     // Owner controls: for private worlds and competitions.
     $owned = $isCompetition ? $competitions : $private;
@@ -193,6 +236,9 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
             + ['account' => $user ? ['name' => $user['name'], 'plan' => $user['plan']] : null]
             + ['admin' => adminLink($config)]
             + ($isCompetition ? $competitions->personal($world, $user, $invite) : $private->personal($world, $user));
+        if (!empty($world['pack'])) {
+            $state['pack'] = ['name' => $packs->name($world['pack'], $game->dictionary()) ?? 'a removed pack', 'mode' => $world['pack_mode'] ?? 'only'];
+        }
         if ($isBigWorld) {
             $state['lastRound'] = $lobby->lastRound();
             $state['myRoom'] = $user ? $lobby->myRoom((int) $user['id']) : null;
@@ -223,20 +269,24 @@ try {
     $dictionary = Dictionary::load();
     // World states are cached in this folder for a couple of seconds ('cache_dir' => false turns it off).
     $cacheDir = $config['cache_dir'] ?? "$root/cache";
-    $game = new Game($db, $dictionary, stateCache: $cacheDir ? StateCache::open($cacheDir) : null,
-        awayAfterMs: (int) (($config['rooms']['away_days'] ?? 7) * 86_400_000));
+    $stateCache = $cacheDir ? StateCache::open($cacheDir) : null;
+    $awayAfterMs = (int) (($config['rooms']['away_days'] ?? 7) * 86_400_000);
+    // A game for a dictionary: the everyday one, or a word pack's for a world that plays one.
+    $gameWith = fn (Dictionary $d) => new Game($db, $d, stateCache: $stateCache, awayAfterMs: $awayAfterMs);
+    $game = $gameWith($dictionary);
+    $packs = new Packs($db, $cacheDir ?: null);
     $lobby = new Lobby($db, $game, $config);
     $private = new PrivateWorlds($db, $game);
     $competitions = new Competitions($db, $game);
     $auth = new Auth($db, new Mailer($config['mail'] ?? []), $dictionary);
     try {
-        route($game, $auth, $lobby, $private, $competitions, $config);
+        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config);
     } catch (PDOException $e) {
         // A missing table or column means a new install or an older database: set up or upgrade, then retry.
         if (!in_array($e->getCode(), ['42S02', '42S22'], true)) throw $e;
         if ($db->inTransaction()) $db->rollBack();
         Game::installSchema($db);
-        route($game, $auth, $lobby, $private, $competitions, $config);
+        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config);
     }
 } catch (GameError $e) {
     respond($e->status, ['error' => $e->getMessage()]);

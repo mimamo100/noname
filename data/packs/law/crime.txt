@@ -1,0 +1,195 @@
+label: A crime or offence
+
+murder murders
+manslaughter
+homicide homicides
+theft thefts
+fraud frauds
+burglary burglaries
+robbery robberies
+assault assaults
+battery
+arson
+blackmail
+bribery
+kidnapping kidnappings
+kidnap kidnaps
+abduction abductions
+extortion
+embezzlement
+forgery forgeries
+counterfeiting
+perjury
+treason
+sedition
+terrorism
+espionage
+smuggling
+trafficking
+racketeering
+laundering
+larceny
+shoplifting
+affray
+riot riots
+rioting
+harassment
+stalking
+trespass
+vandalism
+libel
+slander
+defamation
+bigamy
+polygamy
+blasphemy
+bootlegging
+moonshining
+carjacking carjackings
+conspiracy conspiracies
+contempt
+corruption
+cybercrime cybercrimes
+cyberstalking
+deception
+desertion
+drunkenness
+genocide
+hijacking hijackings
+skyjacking skyjackings
+hooliganism
+housebreaking
+impersonation
+incitement
+indecency
+obscenity
+infanticide
+infringement infringements
+joyriding
+looting
+malfeasance
+misfeasance
+nonfeasance
+misconduct
+malpractice
+misdemeanour misdemeanours misdemeanor misdemeanors
+felony felonies
+mugging muggings
+obstruction
+piracy
+poaching
+rustling
+sabotage
+solicitation
+soliciting
+procuring
+pimping
+prostitution
+speeding
+tampering
+voyeurism
+upskirting
+grooming
+molestation
+wounding woundings
+maiming
+mutiny mutinies
+poisoning poisonings
+pickpocketing
+safecracking
+pilfering
+stealing
+thieving
+thievery
+misappropriation
+peculation
+defalcation
+skimming
+possession
+intimidation
+embracery
+misprision
+barratry
+champerty
+uttering
+harbouring harboring
+abetting
+assassination assassinations
+regicide
+patricide
+matricide
+fratricide
+parricide
+filicide
+lynching lynchings
+vigilantism
+torture
+slavery
+insurrection
+rebellion
+subversion
+gunrunning
+hacking
+phishing
+loansharking
+evasion
+graft
+collusion
+coercion
+cruelty
+abuse
+neglect
+endangerment
+strangulation
+mayhem
+squatting
+truancy
+vagrancy
+begging
+loitering
+littering
+jaywalking
+desecration
+sacrilege
+duelling dueling
+usury
+heist heists
+scrumping
+streaking
+insubordination
+
+also:
+crime crimes
+offence offences offense offenses
+dealing
+fencing
+nicking
+pinching
+holdup holdups
+stickup stickups
+shakedown shakedowns
+scam scams
+swindle swindles
+con cons
+hustle
+cheating
+attempt
+stabbing stabbings
+shooting shootings
+exposure
+plagiarism
+witchcraft
+cannibalism
+euthanasia
+gambling
+wiretapping
+massacre massacres
+flytipping
+drinkdriving
+insidertrading
+insiderdealing
+identitytheft
+hostagetaking
+ramraiding
+lesemajesty
+warcrime warcrimes

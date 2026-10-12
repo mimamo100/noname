@@ -333,6 +333,30 @@ As built:
   Teams tab on the leaderboard (team, players, this prompt, total); a colour
   dot for each player's team on the leaderboards and in Just said.
 
+## Word packs
+
+Themed vocabularies for specialised games: a science department, a law firm,
+a music quiz.
+
+- **Curated packs** (Science, Law, Music) are kept by hand in `data/packs/`
+  (see its README), drafted by Claude and approved by the owner. Hosts and
+  organisers can use them.
+- **Organisers' own packs** are written on the site (menu: My word packs): lists
+  separated by blank lines, each a prompt line ("A planet") then one word per
+  line, with other forms of a word on the same line. At least 30 answers, at
+  most 5,000. Only their owner can use them. Words players report in a custom
+  pack's worlds are shown to its owner in the pack editor, not to the admin;
+  the admin page lists custom packs and can remove one (its worlds then play
+  everyday words).
+- **Choosing:** when creating a private world or competition, "Words" offers
+  everyday words or a pack, used **on its own** (the pack is the whole
+  dictionary; prompts of 5–40 answers; everyday words aren't accepted) or
+  **with everyday words** (prompts come from the pack's categories, letter
+  prompts from all the words). The world's name shows the pack ("Chambers ·
+  Law words").
+- **Names** (bands, composers, scientists) break the ordinary-words rule, so
+  they're proposed separately for the owner to decide.
+
 ## Ideas for later
 
 - **Account names:** suggest alternatives when a name is taken ("Ann 7");
@@ -356,7 +380,7 @@ As built:
   squashed together. The joined forms are already accepted (in a category's
   *also* list) where they fit.
 
-- **Word packs for private worlds:** themed dictionaries such as Music,
+- **More word packs** (the mechanism is built; see "Word packs"): themed dictionaries such as Music,
   Food & cooking, Sport, Nature, Film & TV and Science, chosen when creating a
   world. Draft lists can come from WordNet topic tags (about 300 music words,
   950 food words, 450 sport words), but they need main-meaning filtering and a

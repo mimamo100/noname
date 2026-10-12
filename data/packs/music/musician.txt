@@ -1,0 +1,76 @@
+label: A musician
+
+musician musicians
+instrumentalist instrumentalists
+guitarist guitarists
+bassist bassists
+drummer drummers
+percussionist percussionists
+keyboardist keyboardists
+pianist pianists
+organist organists
+harpsichordist harpsichordists
+violinist violinists
+fiddler fiddlers
+violist violists
+cellist cellists
+harpist harpists
+flautist flautists flutist flutists
+clarinettist clarinettists clarinetist clarinetists
+oboist oboists
+bassoonist bassoonists
+saxophonist saxophonists
+trumpeter trumpeters
+trombonist trombonists
+bugler buglers
+piper pipers
+fifer fifers
+accordionist accordionists
+banjoist banjoists
+lutenist lutenists
+sitarist sitarists
+timpanist timpanists
+campanologist campanologists
+bellringer bellringers
+turntablist turntablists
+deejay deejays
+composer composers
+songwriter songwriters
+lyricist lyricists
+librettist librettists
+arranger arrangers
+orchestrator orchestrators
+conductor conductors
+maestro maestros maestri
+bandleader bandleaders
+bandmaster bandmasters
+choirmaster choirmasters
+concertmaster concertmasters
+accompanist accompanists
+soloist soloists
+virtuoso virtuosos virtuosi
+frontman frontmen
+frontwoman frontwomen
+sideman sidemen
+bandmate bandmates
+axeman axemen axman axmen
+shredder shredders
+sticksman sticksmen
+jazzman jazzmen
+bluesman bluesmen
+busker buskers
+minstrel minstrels
+troubadour troubadours
+idol idols
+heartthrob heartthrobs
+
+also:
+player players
+leader leaders
+bard bards
+prodigy prodigies
+star stars
+popstar popstars
+rockstar rockstars
+multiinstrumentalist multiinstrumentalists
+singersongwriter singersongwriters

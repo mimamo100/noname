@@ -1,0 +1,115 @@
+label: A music theory or notation term
+
+note notes
+chord chords
+scale scales
+key keys
+clef clefs
+stave staves
+octave octaves
+interval intervals
+cadence cadences
+arpeggio arpeggios
+harmony harmonies
+melody melodies
+rhythm rhythms
+tempo tempos tempi
+tone tones
+semitone semitones
+pitch pitches
+tonic tonics
+dominant dominants
+subdominant subdominants
+mediant mediants
+submediant submediants
+supertonic supertonics
+triad triads
+unison unisons
+dissonance dissonances
+consonance consonances
+discord discords
+chromaticism
+sharp sharps
+flat flats
+natural naturals
+accidental accidentals
+crotchet crotchets
+quaver quavers
+semiquaver semiquavers
+demisemiquaver demisemiquavers
+hemidemisemiquaver hemidemisemiquavers
+minim minims
+semibreve semibreves
+breve breves
+rest rests
+slur slurs
+bar bars
+measure measures
+barline barlines
+mode modes
+modulation modulations
+transposition transpositions
+counterpoint
+polyphony
+monophony
+homophony
+syncopation
+triplet triplets
+metre metres meter meters
+downbeat downbeats
+upbeat upbeats
+offbeat offbeats
+anacrusis
+ornament ornaments
+trill trills
+mordent mordents
+appoggiatura appoggiaturas
+acciaccatura acciaccaturas
+harmonic harmonics
+overtone overtones
+timbre timbres
+dynamics
+tuning tunings
+atonality
+tonality tonalities
+inversion inversions
+phrase phrases
+solfege
+notation
+score scores
+fingering fingerings
+
+also:
+staff staffs
+halftone halftones
+major
+minor
+third thirds
+fourth fourths
+fifth fifths
+seventh sevenths
+tie ties
+beam beams
+ledger
+timesignature timesignatures
+keysignature keysignatures
+signature signatures
+turn turns
+gracenote gracenotes
+temperament
+pentatonic
+resolution
+suspension suspensions
+sequence sequences
+repeat repeats
+solfa
+doh
+ray
+fah
+soh
+lah
+tab tabs
+tablature
+sheet
+manuscript
+transcription transcriptions

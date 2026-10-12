@@ -1,0 +1,65 @@
+label: A court, legal body or place
+
+court courts
+courtroom courtrooms
+courthouse courthouses
+lawcourt lawcourts
+tribunal tribunals
+chancery chanceries
+chambers chamber
+assizes assize
+eyre eyres
+leet leets
+consistory consistories
+moot moots
+judiciary judiciaries
+magistracy magistracies
+parliament parliaments
+legislature legislatures
+registry registries
+prison prisons
+gaol gaols jail jails
+jailhouse jailhouses
+penitentiary penitentiaries
+borstal borstals
+reformatory reformatories
+bridewell bridewells
+lockup lockups
+stockade stockades
+supermax supermaxes
+gulag gulags
+slammer slammers
+calaboose calabooses
+hoosegow hoosegows
+precinct precincts
+
+also:
+inn inns
+dock docks
+bench benches
+bar bars
+gallery galleries
+witnessbox
+jurybox
+sessions
+crowncourt
+exchequer
+cell cells
+cellblock cellblocks
+brig brigs
+hulk hulks
+glasshouse
+clink
+nick
+stir
+cooler
+pen
+jug
+can
+chokey
+dungeon dungeons
+deathrow
+senate
+station
+lawfirm lawfirms
+practice

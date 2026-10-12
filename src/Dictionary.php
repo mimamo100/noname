@@ -49,6 +49,50 @@ final class Dictionary
         return new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? [], $data['masked'] ?? []);
     }
 
+    /**
+     * A dictionary of just a word pack's words (see Packs), with its categories. The blocklist,
+     * masking and UK/US spellings stay as they are.
+     */
+    public function onlyPack(array $pack): self
+    {
+        return new self($pack['words'], self::keyedFamilies($pack['families']), $pack['categories'],
+            array_keys($this->blocked), $this->spelling, array_keys($this->masked));
+    }
+
+    /**
+     * The everyday dictionary plus a word pack: the pack's words that are new come last (so
+     * they count as rare), families are joined where the pack links forms ("nucleus nuclei"),
+     * and the categories are the pack's, so its prompts are the pack's.
+     */
+    public function withPack(array $pack): self
+    {
+        $words = $this->words;
+        foreach ($pack['words'] as $word) {
+            if (!isset($this->rank[$word])) $words[] = $word;
+        }
+        $families = $this->families;
+        foreach ($pack['families'] as $members) {
+            $joined = $members;
+            foreach ($members as $member) {
+                $root = $this->familyOf[$member] ?? null;
+                if ($root !== null && isset($families[$root])) {
+                    array_push($joined, ...$families[$root]);
+                    unset($families[$root]);
+                }
+            }
+            $families['pack:' . $members[0]] = array_values(array_unique($joined));
+        }
+        return new self($words, $families, $pack['categories'], array_keys($this->blocked), $this->spelling, array_keys($this->masked));
+    }
+
+    /** @param string[][] $families */
+    private static function keyedFamilies(array $families): array
+    {
+        $keyed = [];
+        foreach ($families as $members) $keyed[$members[0]] = $members;
+        return $keyed;
+    }
+
     /** Builds a dictionary directly from a word list (used by tests). */
     public static function fromWords(array $words, array $categories = [], array $blocked = [], array $spelling = [], array $masked = []): self
     {

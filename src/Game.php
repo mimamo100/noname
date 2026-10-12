@@ -119,6 +119,13 @@ final class Game
         if (!$db->query("SHOW COLUMNS FROM results LIKE 'team_name'")->fetch()) {
             $db->exec('ALTER TABLE results ADD COLUMN team_name VARCHAR(40) NULL');
         }
+        // Word packs: which pack a world plays, and how ('only' its words, or 'mixed' with everyday
+        // ones). Pack categories ("science.element") need longer names in reports.
+        if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'pack'")->fetch()) {
+            $db->exec('ALTER TABLE worlds ADD COLUMN pack VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NULL,
+                ADD COLUMN pack_mode VARCHAR(8) CHARACTER SET ascii NULL');
+            $db->exec('ALTER TABLE reports MODIFY category VARCHAR(64) CHARACTER SET ascii NOT NULL');
+        }
         // Running totals for the overall leaderboard, so polls don't re-add every word and miss.
         if (!$db->query("SHOW COLUMNS FROM players LIKE 'score'")->fetch()) {
             $db->exec('ALTER TABLE players
@@ -160,6 +167,11 @@ final class Game
         return bin2hex(random_bytes(5));
     }
 
+    public function dictionary(): Dictionary
+    {
+        return $this->dictionary;
+    }
+
     public function dictionarySize(): int
     {
         return $this->dictionary->size();
@@ -179,7 +191,8 @@ final class Game
     // --- Worlds and players ---
 
     /**
-     * @param array{kind?: string, startsAt?: int, endsAt?: int, promptMin?: int, promptMax?: int, maxPlayers?: int, teamSize?: int} $options
+     * @param array{kind?: string, startsAt?: int, endsAt?: int, promptMin?: int, promptMax?: int, maxPlayers?: int, teamSize?: int,
+     *   pack?: string, packMode?: string} $options
      *   kind 'competition' has teams (see Competitions) and starts at startsAt.
      *   kind: 'private' (default), 'public' (a round of the big world, ending at endsAt) or 'room';
      *   promptMin/promptMax: how many answers each prompt should have.
@@ -198,11 +211,16 @@ final class Game
                 $options['promptMin'] ?? null, $options['promptMax'] ?? null, $options['endsAt'] ?? null,
                 in_array($kind, ['private', 'competition'], true) ? self::newInviteCode() : null, $options['maxPlayers'] ?? null, $this->now(),
             ]);
+        if (isset($options['pack'])) {
+            $this->db->prepare('UPDATE worlds SET pack = ?, pack_mode = ? WHERE id = ?')
+                ->execute([$options['pack'], $options['packMode'] ?? 'only', $id]);
+        }
         if (isset($options['startsAt']) || isset($options['teamSize'])) {
             $this->db->prepare('UPDATE worlds SET starts_at = ?, team_size = ? WHERE id = ?')
                 ->execute([$options['startsAt'] ?? null, $options['teamSize'] ?? null, $id]);
         }
-        $this->currentPrompt($id);
+        // A pack world's first prompt comes from the pack, picked when the world is first opened.
+        if (!isset($options['pack'])) $this->currentPrompt($id);
         return $this->world($id);
     }
 

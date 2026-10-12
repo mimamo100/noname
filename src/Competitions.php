@@ -65,7 +65,7 @@ final class Competitions
                 'teamSize' => $this->teamSize($input['teamSize'] ?? null),
                 // Short prompts for a live event get more answers, so a busy room doesn't empty them at once.
                 'promptMin' => $minutes <= 15 ? 30 : null, 'promptMax' => $minutes <= 15 ? 200 : null,
-            ],
+            ] + PrivateWorlds::packOptions($input) /* A pack-only world's smaller prompts win. */ ,
         );
         foreach ($names as $i => $name) $this->insertTeam($world['id'], $name, $i);
         return ['id' => $world['id'], 'name' => $world['name']];

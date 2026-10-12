@@ -188,3 +188,17 @@ CREATE TABLE IF NOT EXISTS team_results (
   KEY idx_world (world_id, place),
   FOREIGN KEY (world_id) REFERENCES worlds(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Organisers' own word packs (curated packs are files in data/packs/). The source is the
+-- text the organiser wrote: lists separated by blank lines, each a label line then words.
+CREATE TABLE IF NOT EXISTS packs (
+  id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL PRIMARY KEY,
+  owner_user_id INT UNSIGNED NOT NULL,
+  name VARCHAR(40) NOT NULL,
+  description VARCHAR(200) NOT NULL DEFAULT '',
+  source MEDIUMTEXT NOT NULL,
+  words INT UNSIGNED NOT NULL,
+  created_at BIGINT NOT NULL,
+  updated_at BIGINT NOT NULL,
+  KEY idx_owner (owner_user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,0 +1,76 @@
+label: A property or inheritance term
+
+easement easements
+freehold freeholds
+leasehold leaseholds
+freeholder freeholders
+leaseholder leaseholders
+commonhold commonholds
+copyhold copyholds
+covenant covenants
+lien liens
+mortgage mortgages
+lease leases
+sublease subleases
+sublet sublets subletting
+landlord landlords
+tenant tenants
+tenancy tenancies
+conveyance conveyances
+estate estates
+squatter squatters
+encumbrance encumbrances incumbrance incumbrances
+wayleave wayleaves
+boundary boundaries
+curtilage curtilages
+fixture fixtures
+chattel chattels
+nuisance nuisances
+repossession repossessions
+foreclosure foreclosures
+eviction evictions
+ejectment ejectments
+distraint distraints
+tenure tenures
+seisin
+escheat escheats
+reversion reversions
+remainderman remaindermen
+trust trusts
+bequest bequests
+devise devises
+inheritance
+intestacy
+entail entails
+primogeniture
+jointure jointures
+dower dowers
+demesne demesnes
+enfranchisement
+gazump gazumps gazumped gazumping
+escrow escrows
+zoning
+quitclaim quitclaims
+
+also:
+title titles
+fee fees
+feesimple
+profit profits
+rightofway
+distress
+rent rents
+groundrent
+remainder remainders
+legacy legacies
+gazunder gazunders gazundered gazundering
+exchange
+completion
+survey surveys
+deposit deposits
+partition partitions
+dowry dowries
+manor manors
+lodger lodgers
+holding holdings
+landregistry

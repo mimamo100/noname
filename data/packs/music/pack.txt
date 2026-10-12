@@ -1,0 +1,2 @@
+name: Music
+description: Genres, instruments, theory, singers, gigs and dances, from Bach to Britpop.

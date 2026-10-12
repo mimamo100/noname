@@ -1,0 +1,76 @@
+label: Part of a song, or how it's played
+
+verse verses
+chorus choruses
+bridge bridges
+riff riffs
+hook hooks
+intro intros
+outro outros
+solo solos
+lick licks
+refrain refrains
+coda codas
+cadenza cadenzas
+movement movements
+interlude interludes
+finale finales
+reprise reprises
+recapitulation recapitulations
+breakdown breakdowns
+lyric lyrics
+vocal vocals
+accompaniment accompaniments
+descant descants
+ostinato ostinatos
+motif motifs
+leitmotif leitmotifs
+backbeat backbeats
+groove grooves
+beat beats
+drumroll drumrolls
+rimshot rimshots
+paradiddle paradiddles
+handclap handclaps
+strum strums strumming strummed
+pluck plucks plucking plucked
+shred shreds shredding shredded
+fingerpicking
+vibrato vibratos
+tremolo tremolos
+glissando glissandos glissandi
+portamento
+melisma melismas
+scat scats scatting scatted
+yodel yodels yodelling yodelled yodeling yodeled
+croon croons crooning crooned
+growl growls
+beatbox beatboxes beatboxing beatboxed
+vamp vamps vamping vamped
+improvisation improvisations
+adlib adlibs
+feedback
+
+also:
+theme themes
+introduction introductions
+exposition expositions
+development developments
+buildup buildups
+drop drops
+fade fades
+fadeout fadeouts
+prechorus prechoruses
+middleeight middleeights
+countin countins
+backing
+tapping
+picking
+bend bends
+hammeron hammerons
+pulloff pulloffs
+powerchord powerchords
+fill fills
+blastbeat blastbeats
+hookline hooklines
+improv

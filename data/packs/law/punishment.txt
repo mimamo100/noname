@@ -1,0 +1,81 @@
+label: A punishment or sentence
+
+fine fines
+probation
+parole
+custody
+imprisonment
+incarceration
+detention detentions
+curfew curfews
+tagging
+execution executions
+hanging hangings
+beheading beheadings
+decapitation
+guillotine guillotines
+gallows
+crucifixion crucifixions
+flogging floggings
+whipping whippings
+caning canings
+birching
+pillory pillories
+transportation
+banishment
+exile
+deportation deportations
+outlawry
+attainder
+forfeiture forfeitures
+confiscation
+penalty penalties
+restitution
+reparation reparations
+disqualification
+reprimand reprimands
+admonishment
+censure
+disbarment
+servitude
+confinement
+internment
+amercement
+stoning
+branding
+gibbet gibbets
+retribution
+rehabilitation
+
+also:
+punishment punishments
+sentence sentences sentenced
+compensation
+ban bans
+suspension
+warning warnings
+expulsion
+electrocution
+stocks
+duckingstool
+lashes
+lifer
+life
+death
+time
+porridge
+stretch
+solitary
+hardlabour
+chaingang
+bindover
+discharge
+scaffold
+noose
+penance
+deterrence
+mutilation
+castration
+garrotte
+keelhauling
+communityservice

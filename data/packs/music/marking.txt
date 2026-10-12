@@ -1,0 +1,69 @@
+label: A tempo or dynamics marking
+
+allegro
+adagio adagios
+andante andantes
+largo largos
+lento
+presto
+vivace
+moderato
+allegretto
+andantino
+larghetto
+prestissimo
+grave
+rubato
+ritardando
+rallentando
+accelerando
+ritenuto
+forte
+fortissimo
+piano
+pianissimo
+sforzando
+crescendo crescendos crescendi
+diminuendo diminuendos
+decrescendo decrescendos
+staccato
+legato
+pizzicato
+arco
+tenuto
+marcato
+fermata fermatas
+dolce
+cantabile
+espressivo
+agitato
+maestoso
+grandioso
+giocoso
+scherzando
+sostenuto
+morendo
+smorzando
+tutti
+segno
+tacet
+animato
+tranquillo
+appassionato
+pesante
+leggiero
+molto
+poco
+assai
+sempre
+subito
+simile
+
+also:
+atempo
+mezzoforte
+mezzopiano
+dacapo
+dalsegno
+fine
+accent accents

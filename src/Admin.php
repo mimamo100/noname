@@ -14,7 +14,7 @@ final class Admin
     /** Category used for reports and decisions about the dictionary itself, not a meaning. */
     public const DICTIONARY_ONLY = '';
 
-    public function __construct(private readonly PDO $db, private readonly Dictionary $dictionary, private $clock = null)
+    public function __construct(private readonly PDO $db, private readonly Dictionary $dictionary, private $clock = null, private readonly ?Packs $packs = null)
     {
         $this->clock ??= fn () => (int) floor(microtime(true) * 1000);
     }
@@ -63,7 +63,7 @@ final class Admin
               MIN(r.reported_at) AS first_reported, MAX(r.reported_at) AS last_reported,
               SUBSTRING_INDEX(GROUP_CONCAT(DISTINCT r.prompt_id ORDER BY r.prompt_id DESC), ',', 3) AS prompt_ids
             FROM reports r
-            WHERE r.reviewed_at IS NULL
+            WHERE r.reviewed_at IS NULL AND r.category NOT REGEXP '^p[0-9a-f]{8}[.]'
             GROUP BY r.category, r.word
             ORDER BY players DESC, last_reported DESC")->fetchAll(PDO::FETCH_ASSOC);
         return array_map(fn ($r) => [
@@ -75,10 +75,8 @@ final class Admin
             'firstReported' => (int) $r['first_reported'],
             'lastReported' => (int) $r['last_reported'],
             'prompts' => array_values(array_unique(array_map(fn ($id) => $this->promptLabel((int) $id), explode(',', (string) $r['prompt_ids'])))),
-            'inDictionary' => $this->dictionary->has($r['word']),
-            'counts' => $r['category'] === self::DICTIONARY_ONLY
-                ? $this->dictionary->has($r['word'])
-                : $this->dictionary->inCategory($r['category'], $r['word']),
+            'inDictionary' => str_contains($r['category'], '.') || $this->dictionary->has($r['word']), // Pack words needn't be everyday words.
+            'counts' => $this->counts($r['category'], $r['word']),
         ], $rows);
     }
 
@@ -107,9 +105,10 @@ final class Admin
         ksort($groups);
         if (!$groups) $out .= "\nNo open reports.\n";
         foreach ($groups as $key => $reports) {
+            $file = str_contains($key, '.') ? 'packs/' . str_replace('.', '/', $key) . '.txt' : "categories/$key.txt";
             $out .= $key === 'dictionary'
                 ? "\n## Not in the dictionary (extra-words.txt)\n"
-                : "\n## $key: {$reports[0]['categoryLabel']} (categories/$key.txt)\n";
+                : "\n## $key: {$reports[0]['categoryLabel']} ($file)\n";
             foreach ($reports as $r) {
                 $out .= sprintf("%-20s %d %s, %s%s\n",
                     $r['word'], $r['players'], $r['players'] === 1 ? 'player' : 'players', $date($r['lastReported']),
@@ -199,6 +198,29 @@ final class Admin
 
     private function categoryLabel(string $category): string
     {
-        return $category === self::DICTIONARY_ONLY ? 'Dictionary only' : $this->dictionary->categoryLabel($category);
+        if ($category === self::DICTIONARY_ONLY) return 'Dictionary only';
+        $dictionary = $this->dictionaryFor($category);
+        return $dictionary->hasCategory($category) ? $dictionary->categoryLabel($category) : $category;
+    }
+
+    /** The dictionary a category belongs to: everyday, or a curated pack's ("science.element"). */
+    private function dictionaryFor(string $category): Dictionary
+    {
+        if (!str_contains($category, '.') || !$this->packs) return $this->dictionary;
+        return $this->packs->dictionary(strstr($category, '.', true), 'only', $this->dictionary);
+    }
+
+    /** Whether a reported word now counts for its category. */
+    private function counts(string $category, string $word): bool
+    {
+        if ($category === self::DICTIONARY_ONLY) return $this->dictionary->has($word);
+        $dictionary = $this->dictionaryFor($category);
+        return $dictionary->hasCategory($category) && $dictionary->inCategory($category, $word);
+    }
+
+    /** Organisers' own packs have ids like p1a2b3c4d: reports on those are theirs to act on, not the admin's. */
+    public static function isCustomPackCategory(string $category): bool
+    {
+        return (bool) preg_match('/^p[0-9a-f]{8}\./', $category);
     }
 }
