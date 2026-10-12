@@ -103,6 +103,10 @@ final class Game
         if (!$db->query("SHOW COLUMNS FROM players LIKE 'removed'")->fetch()) {
             $db->exec('ALTER TABLE players ADD COLUMN removed TINYINT NOT NULL DEFAULT 0');
         }
+        // Reports are a queue for the word files: reviewed_at is set once the admin has been through them.
+        if (!$db->query("SHOW COLUMNS FROM reports LIKE 'reviewed_at'")->fetch()) {
+            $db->exec('ALTER TABLE reports ADD COLUMN reviewed_at BIGINT NULL, ADD KEY idx_open (reviewed_at)');
+        }
         // Running totals for the overall leaderboard, so polls don't re-add every word and miss.
         if (!$db->query("SHOW COLUMNS FROM players LIKE 'score'")->fetch()) {
             $db->exec('ALTER TABLE players
@@ -545,16 +549,6 @@ final class Game
         return ['ok' => true];
     }
 
-    /** Adds the words the admin has accepted to this request's dictionary. */
-    public function applyWordDecisions(): void
-    {
-        $rows = $this->db->query("SELECT category, word FROM word_decisions WHERE decision = 'accepted'")->fetchAll();
-        foreach ($rows as $row) {
-            if ($row['category'] === Admin::DICTIONARY_ONLY) $this->dictionary->addWord($row['word']);
-            else $this->dictionary->addToCategory($row['category'], $row['word']);
-        }
-    }
-
     /**
      * The words said in the world's latest prompts (the current one first), each with all
      * its words, newest first. Older prompts' words can still be found with lookup().
@@ -592,14 +586,13 @@ final class Game
     /** A player's most recent wrong guesses, newest first, with the prompt each was for. */
     private function missesOf(int $playerId, int $limit = 50): array
     {
-        // Report status: the player's report of this word for this prompt, and the admin's decision.
+        // Report status: the player's report of this word for this prompt, if any.
         $stmt = $this->db->prepare("
             SELECT m.word, m.reason, m.points, m.missed_at, m.prompt_id, p.spec, p.label, p.type, p.letters,
-              m.world_id, r.id AS report_id, d.decision
+              m.world_id, r.id AS report_id, r.category AS report_category, r.reviewed_at
             FROM misses m
             JOIN prompts p ON p.id = m.prompt_id
             LEFT JOIN reports r ON r.player_id = m.player_id AND r.prompt_id = m.prompt_id AND r.word = m.word
-            LEFT JOIN word_decisions d ON d.category = r.category AND d.word = r.word
             WHERE m.player_id = ?
             ORDER BY m.id DESC LIMIT $limit");
         $stmt->execute([$playerId]);
@@ -628,7 +621,7 @@ final class Game
                 'promptId' => (int) $r['prompt_id'],
                 'at' => (int) $r['missed_at'],
                 // null (not reported), 'reported' (waiting), 'accepted' or 'dismissed'.
-                'reportStatus' => $r['report_id'] ? ($r['decision'] ?? 'reported') : null,
+                'reportStatus' => $r['report_id'] ? $this->reportStatus($r['report_category'], $r['word'], $r['reviewed_at'] !== null) : null,
                 // Who has used the word up, and for which prompt; null while it's still unsaid.
                 'said' => $b === null ? null : [
                     'by' => $b['said_by'],
@@ -640,6 +633,17 @@ final class Game
                 ],
             ];
             }, $rows);
+    }
+
+    /**
+     * What became of a report, judged by the word files: 'accepted' once the word counts (after
+     * an update to the dictionary), 'dismissed' if the admin reviewed it and it still doesn't,
+     * and 'reported' while it waits.
+     */
+    public function reportStatus(string $category, string $word, bool $reviewed): string
+    {
+        $counts = $category === Admin::DICTIONARY_ONLY ? $this->dictionary->has($word) : $this->dictionary->inCategory($category, $word);
+        return $counts ? 'accepted' : ($reviewed ? 'dismissed' : 'reported');
     }
 
     private function checkRateLimit(array $player): void

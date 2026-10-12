@@ -158,8 +158,11 @@ word-finder site. There are three kinds:
   doubt: these guesses cost nothing but don't score either. If a word has the right letters but
   isn't on our list for the meaning ("sofa" for *A sport or game with no R*),
   it costs nothing, and the player can press **Report it**. Words missing
-  from the dictionary can be reported the same way. The admin page (`/admin`)
-  lists reports, and accepting one makes the word count straight away.
+  from the dictionary can be reported the same way. Reports are a queue for
+  the word files, which are the only source of truth: the admin downloads
+  them, approved words go into `data/categories/`, and they count once the
+  rebuilt dictionary is uploaded. My misses then shows each report as
+  accepted (the word counts now) or reviewed.
 - Players can make at most **20 guesses a minute**, which stops scripts.
 - The leaderboard has two tabs: **Overall** ranks everyone by total score,
   and **This prompt** ranks only the current prompt, so everyone starts level

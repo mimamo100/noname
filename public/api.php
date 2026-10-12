@@ -95,11 +95,9 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private): ne
     if ($resource === 'me' && $method === 'GET' && $worldId === 'history') respond(200, $lobby->history((int) $needUser()['id']));
     if ($resource === 'me' && $method === 'GET' && $worldId === 'worlds') respond(200, ['worlds' => $private->myWorlds($needUser())]);
     if ($resource === 'rooms' && $method === 'POST' && $worldId === null) {
-        $game->applyWordDecisions();
         respond(200, $lobby->joinRoom($needUser()));
     }
     if ($resource !== 'worlds') throw new GameError(404, 'Not found');
-    $game->applyWordDecisions();
     $isBigWorld = $worldId === Lobby::BIG_WORLD_ALIAS;
     if ($isBigWorld) $worldId = $lobby->bigWorldId();
 

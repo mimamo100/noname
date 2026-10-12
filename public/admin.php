@@ -96,25 +96,27 @@ try {
     $dictionary = Dictionary::load();
     $admin = new Admin($db, $dictionary);
 
+    // The open reports as a text file, to work through and fold into the word files.
+    if (($_GET['download'] ?? '') === 'reports') {
+        header('Content-Type: text/plain; charset=utf-8');
+        header('Content-Disposition: attachment; filename="unsaid-reports-' . date('Y-m-d') . '.txt"');
+        header('Cache-Control: no-store');
+        echo $admin->reportsText();
+        exit;
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!hash_equals($csrf, (string) ($_POST['csrf'] ?? ''))) throw new GameError(400, 'This page was out of date. Please try again.');
         $action = (string) ($_POST['action'] ?? '');
-        $category = (string) ($_POST['category'] ?? '');
-        $word = (string) ($_POST['word'] ?? '');
         switch ($action) {
             case 'logout':
                 $_SESSION = [];
                 session_destroy();
                 header("Location: $adminUrl", true, 303);
                 exit;
-            case 'accept':
-            case 'add':
-                $admin->decide($category, $word, 'accepted');
-                $_SESSION['flash'] = "Accepted “{$word}”. It counts from now on.";
-                break;
-            case 'dismiss':
-                $admin->decide($category, $word, 'dismissed');
-                $_SESSION['flash'] = "Dismissed “{$word}”.";
+            case 'reviewed':
+                $count = $admin->markReviewed();
+                $_SESSION['flash'] = "$count " . ($count === 1 ? 'report' : 'reports') . ' marked reviewed.';
                 break;
             case 'housekeeping':
                 $cacheDir = $config['cache_dir'] ?? "$root/cache";
@@ -132,10 +134,6 @@ try {
             case 'recount':
                 Game::recountScores($db);
                 $_SESSION['flash'] = 'Scores recounted.';
-                break;
-            case 'undo':
-                $admin->undo($category, $word);
-                $_SESSION['flash'] = "Undone: “{$word}”.";
                 break;
         }
         header("Location: $adminUrl", true, 303); // So refreshing the page doesn't repeat the action.
@@ -172,7 +170,6 @@ function button(string $csrf, string $action, string $label, array $fields = [],
 
 $stats = $admin->stats();
 $reports = $admin->openReports();
-$decisions = $admin->decisions();
 $when = fn (int $ms) => date('j M, H:i', intdiv($ms, 1000));
 
 $html = $flash ? '<p class="flash ' . ($flashBad ? 'bad' : 'good') . '">' . h($flash) . '</p>' : '';
@@ -188,45 +185,34 @@ foreach ([
 }
 $html .= '</div>';
 
-$html .= '<h2>Reported words</h2>';
+$html .= '<h2>Reported words</h2>'
+    . '<p class="muted">Reports never change the game by themselves: the word files are the only source of truth. '
+    . '<b>Download</b> the open reports, add the words you approve to <code>data/categories/</code> (or '
+    . '<code>data/extra-words.txt</code>), rebuild and upload <code>data/dictionary.php</code>, then press '
+    . '<b>Mark all reviewed</b>. Players then see “accepted” for words that now count, and “reviewed” for the rest.</p>';
 if (!$reports) {
     $html .= '<p class="muted">No reports waiting. When players press “Report it”, the words appear here.</p>';
 } else {
-    $html .= '<p class="muted">Accept a word to make it count straight away. Dismiss it if it shouldn’t.</p><div class="table-wrap"><table class="admin-table">'
-        . '<thead><tr><th>Word</th><th>Should count as</th><th>Reports</th><th>Prompts</th><th></th></tr></thead><tbody>';
+    $html .= '<p><a class="button-link" href="' . h($adminUrl) . '?download=reports">Download reports</a> '
+        . button($csrf, 'reviewed', 'Mark all reviewed', [], 'secondary') . '</p>'
+        . '<div class="table-wrap"><table class="admin-table">'
+        . '<thead><tr><th>Word</th><th>Reported for</th><th>Players</th><th>Prompts</th></tr></thead><tbody>';
     foreach ($reports as $r) {
-        $fields = ['category' => $r['category'], 'word' => $r['word']];
-        $html .= '<tr><td><b>' . h($r['word']) . '</b>' . ($r['inDictionary'] ? '' : '<br><span class="muted small">not in dictionary yet</span>') . '</td>'
+        $note = $r['counts'] ? '<br><span class="good small">counts now</span>'
+            : ($r['inDictionary'] ? '' : '<br><span class="muted small">not in dictionary yet</span>');
+        $html .= '<tr><td><b>' . h($r['word']) . '</b>' . $note . '</td>'
             . '<td>' . h($r['categoryLabel']) . '</td>'
-            . '<td>' . $r['reports'] . ($r['players'] > 1 ? ' <span class="muted">(' . $r['players'] . ' players)</span>' : '') . '</td>'
-            . '<td class="muted small">' . implode('<br>', array_map('h', $r['prompts'])) . '</td>'
-            . '<td class="actions">' . button($csrf, 'accept', 'Accept', $fields) . button($csrf, 'dismiss', 'Dismiss', $fields, 'secondary') . '</td></tr>';
+            . '<td>' . $r['players'] . '</td>'
+            . '<td class="muted small">' . implode('<br>', array_map('h', $r['prompts'])) . '</td></tr>';
     }
     $html .= '</tbody></table></div>';
 }
-
-$options = '<option value="">Dictionary only (no meaning)</option>';
-foreach ($admin->categories() as $id => $label) $options .= '<option value="' . h($id) . '">' . h($label) . '</option>';
-$html .= '<h2>Add a word</h2><p class="muted">For a word nobody has reported yet.</p>'
-    . '<form method="post" class="admin-add">' . hidden(['csrf' => $csrf, 'action' => 'add'])
-    . '<input name="word" placeholder="Word" required pattern="[A-Za-z]{3,30}" title="3–30 letters">'
-    . '<select name="category">' . $options . '</select><button type="submit">Add</button></form>';
-
-$html .= '<h2>Decisions</h2>';
-if (!$decisions) {
-    $html .= '<p class="muted">None yet.</p>';
-} else {
-    $html .= '<div class="table-wrap"><table class="admin-table"><thead><tr><th>Word</th><th>Category</th><th>Decision</th><th>When</th><th></th></tr></thead><tbody>';
-    foreach ($decisions as $d) {
-        $html .= '<tr><td><b>' . h($d['word']) . '</b></td><td>' . h($d['categoryLabel']) . '</td>'
-            . '<td class="' . ($d['decision'] === 'accepted' ? 'good' : 'muted') . '">' . h(ucfirst($d['decision'])) . '</td>'
-            . '<td class="muted small">' . h($when($d['decidedAt'])) . '</td>'
-            . '<td class="actions">' . button($csrf, 'undo', 'Undo', ['category' => $d['category'], 'word' => $d['word']], 'link') . '</td></tr>';
-    }
-    $html .= '</tbody></table></div>';
+$legacy = $admin->legacyAccepted();
+if ($legacy) {
+    $html .= '<p class="bad small">' . count($legacy) . ' ' . (count($legacy) === 1 ? 'word' : 'words')
+        . ' accepted on this page before are not in the word files, so they no longer count: '
+        . h(implode(', ', array_column($legacy, 'word'))) . '. They are listed at the end of the download.</p>';
 }
-$html .= '<p class="muted small">Accepted words are kept in the database. To make them permanent in the word files, '
-    . 'add them to their category file in <code>data/categories/</code> (and to <code>data/extra-words.txt</code> if they are not in the dictionary) when the game is next updated.</p>';
 
 $html .= '<h2>Scores</h2><p class="muted">Each player\'s total is kept as a running count. If you change the '
     . '<code>burns</code> or <code>misses</code> tables by hand (in phpMyAdmin), recount so the leaderboards match.</p>'
@@ -261,6 +247,7 @@ $html .= '<h2>Housekeeping</h2>';
 if ($lastRun) {
     $labels = [
         'signInCodes' => 'old sign-in codes', 'sessions' => 'expired sessions', 'freeMisses' => 'old free misses',
+        'reviewedReports' => 'old reviewed reports',
         'finishedWorlds' => 'finished worlds tidied', 'words' => 'their words', 'misses' => 'their misses', 'cacheFiles' => 'cache files',
         'idleWorldsEnded' => 'idle private worlds ended',
     ];

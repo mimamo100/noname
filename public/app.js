@@ -413,7 +413,7 @@ function reportButton(word, reason) {
     try {
       await api(`/${encodeURIComponent(worldId)}/reports`, { method: 'POST', body: { word } });
       reported.add(word);
-      button.replaceWith('Thanks, reported.');
+      button.replaceWith('Thanks, reported. My misses will show what happens to it.');
     } catch (err) {
       button.replaceWith(err.message);
     }

@@ -35,3 +35,12 @@ sole
 
 To draft a brand-new category from WordNet, see
 `scripts/build-categories.py`. Never rerun it over an existing category.
+
+## From players' reports
+
+Players report answers our lists are missing. The admin page's **Download
+reports** gives a text file grouped by category file, with how many players
+reported each word. Add the approved words here (and to
+`data/extra-words.txt` if the file marks them NOT IN DICTIONARY), keeping the
+rules above, rebuild, and upload `data/dictionary.php`. Then press **Mark all
+reviewed** on the admin page.

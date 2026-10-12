@@ -137,7 +137,7 @@ and scores.
 
 ## The admin page
 
-The admin page shows reported words and a few stats. To turn it on, add two
+The admin page shows reported words, accounts and plans, and a few stats. To turn it on, add two
 lines to `config.php`: a long password, and the page's address.
 
 ```php
@@ -151,21 +151,26 @@ Every other address, including `/admin`, says "Not found", so people trying the
 obvious learn nothing. Without an `admin_path`, the page is at `/admin`.
 
 On the page you can:
-- **Accept** a reported word: it counts straight away, with no rebuild or upload.
-  A word missing from the dictionary is added to it too.
-- **Dismiss** a report that shouldn't count.
-- **Add a word** nobody has reported, to a meaning or just to the dictionary.
-- **Undo** any decision.
+- **See reported words**: words players say should count, with how many
+  players reported each and for which prompts. Reports never change the game
+  by themselves; the word files are the only source of truth. To act on them:
+  1. **Download reports**: a text file grouped by category file.
+  2. Add the words you approve to `data/categories/<id>.txt` (and to
+     `data/extra-words.txt` if they aren't in the dictionary), by hand or in a
+     Claude session given the file.
+  3. Rebuild (`php scripts/build-dictionary.php`) and upload
+     `data/dictionary.php`. Approved words count from then on.
+  4. Press **Mark all reviewed**. Each reporter's My misses then shows
+     "accepted" for words that now count and "reviewed" for the rest.
 - **Set an account's plan** (Free, Host or Organiser) under **Accounts and
   plans**: find the account by name or email, pick the plan, Save. Until
   payments are added, this is how accounts get private worlds. With nothing
   searched, the list shows every account on a paid plan.
 - **Recount scores**, and see when **housekeeping** last ran or run it now.
 
-Accepted words are stored in the database. To make them part of the word files
-for good, add them to the category's file in `data/categories/` (and to
-`data/extra-words.txt` if they aren't in the dictionary) when the game is
-next updated.
+Words accepted on this page before reports became a queue were stored in the
+database. If any aren't in the word files yet, the page lists them, and they
+appear at the end of the download, so they can be added to the files.
 
 ## Backups
 

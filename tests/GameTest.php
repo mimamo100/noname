@@ -30,6 +30,14 @@ function testDictionary(): Dictionary
     return Dictionary::fromWords(WORDS, CATEGORIES, BLOCKED, SPELLING);
 }
 
+/** The test dictionary after the word files were updated to count "sofa" as a sport, as an approved report would be. */
+function withSofaAsSport(): Dictionary
+{
+    $d = testDictionary();
+    $d->addToCategory('sport', 'sofa');
+    return $d;
+}
+
 function makeGame(?callable $clock = null): Game
 {
     return new Game(testDb(), testDictionary(), $clock ?? fn () => 1_000, promptMin: 1, promptMax: 1000);
@@ -94,7 +102,7 @@ test('the real dictionary loads with categories and without blocked words', func
 test('plurals of hand-added category words count too', function () {
     $d = testDictionary();
     check(!$d->inCategory('sport', 'books'));
-    $d->addToCategory('sport', 'book'); // As an override or an accepted report does.
+    $d->addToCategory('sport', 'book'); // As a hand-added word in a category file does.
     check($d->inCategory('sport', 'book') && $d->inCategory('sport', 'books'));
     check(!$d->inCategory('sport', 'cats'), 'Only plurals of words on the list');
 });
@@ -289,7 +297,7 @@ test("a real word missing from a meaning list costs nothing and can be reported"
     same(true, $game->report($world['id'], $p['token'], 'netball')['ok'], 'Words missing from the dictionary can be reported on any prompt');
 });
 
-test('the admin can accept, dismiss and undo reported words', function () {
+test('reports are a queue: downloaded, folded into the word files, then marked reviewed', function () {
     $clock = 5_000;
     $game = makeGame(function () use (&$clock) { return $clock; });
     $db = gameDb($game);
@@ -298,6 +306,8 @@ test('the admin can accept, dismiss and undo reported words', function () {
     $p = $game->join($world['id'], 'Ann');
     $q = $game->join($world['id'], 'Bea');
     same('not-in-category', $game->play($world['id'], $p['token'], 'sofa')['reason']);
+    $game->play($world['id'], $q['token'], 'sofa');
+    $game->play($world['id'], $p['token'], 'netball');
     $game->report($world['id'], $p['token'], 'sofa');
     $game->report($world['id'], $q['token'], 'sofa');
     $game->report($world['id'], $p['token'], 'netball');
@@ -305,36 +315,33 @@ test('the admin can accept, dismiss and undo reported words', function () {
     $admin = new Admin($db, testDictionary(), fn () => $clock);
     $reports = $admin->openReports();
     same(['sofa', 'netball'], array_column($reports, 'word'), 'Most-reported first');
-    same(2, $reports[0]['reports']);
-    same(2, $reports[0]['players']);
-    same('A sport or game', $reports[0]['categoryLabel']);
-    same(['A sport or game'], $reports[0]['prompts']);
+    same([2, 'A sport or game', ['A sport or game'], false], [$reports[0]['players'], $reports[0]['categoryLabel'], $reports[0]['prompts'], $reports[0]['counts']]);
     same(false, $reports[1]['inDictionary']);
+    same(2, $admin->stats()['openReports']);
+    $text = $admin->reportsText();
+    check(str_contains($text, "## sport: A sport or game (categories/sport.txt)"), 'Grouped by category file');
+    check((bool) preg_match('/^sofa +2 players/m', $text) && (bool) preg_match('/^netball .*NOT IN DICTIONARY/m', $text));
+    same('reported', $game->state($world['id'], $p['token'])['myMisses'][1]['reportStatus'], 'Nothing changes until the files do');
 
-    // Accepting makes the word count straight away, for a fresh request.
-    $admin->decide('sport', 'sofa', 'accepted');
-    $admin->decide('sport', 'netball', 'dismissed');
+    // The files are updated and uploaded: sofa counts now, netball doesn't.
+    $updated = new Game($db, withSofaAsSport(), fn () => $clock, promptMin: 1, promptMax: 1000);
+    $admin = new Admin($db, withSofaAsSport(), fn () => $clock);
+    same([true, false], array_column($admin->openReports(), 'counts'));
+    same(1, $admin->stats()['openReports'], 'Words that count now are no longer open');
+    check(!str_contains($admin->reportsText(), 'sofa '), 'Nor in the download');
+    $statuses = fn () => array_column($updated->state($world['id'], $p['token'])['myMisses'], 'reportStatus', 'word');
+    same(['netball' => 'reported', 'sofa' => 'accepted'], $statuses());
+    same(3, $admin->markReviewed(), 'Two reports of sofa, one of netball');
     same([], $admin->openReports());
-    $fresh = new Game($db, testDictionary(), fn () => $clock, promptMin: 1, promptMax: 1000);
-    $fresh->applyWordDecisions();
-    check($fresh->play($world['id'], $q['token'], 'sofa')['ok'], 'An accepted word counts');
+    same(['netball' => 'dismissed', 'sofa' => 'accepted'], $statuses());
 
-    // An accepted word that wasn't in the dictionary is added to it.
-    $admin->decide(Admin::DICTIONARY_ONLY, 'Zorbing', 'accepted');
-    $dictionary = testDictionary();
-    (new Game($db, $dictionary, fn () => $clock))->applyWordDecisions();
-    check($dictionary->has('zorbing'));
+    // Words accepted under the old live acceptance, which the files don't have, are listed to fold in.
+    $db->exec("INSERT INTO word_decisions (category, word, decision, decided_at) VALUES ('sport', 'sofa', 'accepted', 0), ('sport', 'chess', 'accepted', 0), ('sport', 'cat', 'dismissed', 0)");
+    same(['sofa'], array_column((new Admin($db, testDictionary()))->legacyAccepted(), 'word'), 'Chess is in the files already');
+    check(str_contains((new Admin($db, testDictionary()))->reportsText(), 'Accepted on the admin page earlier'));
+    same([], (new Admin($db, withSofaAsSport()))->legacyAccepted());
 
-    // Undo brings a dismissed report back.
-    $admin->undo('sport', 'netball');
-    same(['netball'], array_column($admin->openReports(), 'word'));
-    same(['zorbing', 'sofa'], array_column(array_filter($admin->decisions(), fn ($d) => $d['decision'] === 'accepted'), 'word'));
-
-    throwsStatus(400, fn () => $admin->decide('sport', 'gross', 'accepted'), 'Blocked words stay blocked');
-    throwsStatus(400, fn () => $admin->decide('nope', 'sofa', 'accepted'));
-    throwsStatus(400, fn () => $admin->decide('sport', 'two words', 'accepted'));
-    same(1, $admin->stats()['openReports']);
-    same([2, 2], [$admin->stats()['activeToday'], $admin->stats()['activeWeek']], 'Ann and Bea joined');
+    same([2, 2], [$admin->stats()['activeToday'], $admin->stats()['activeWeek']], 'Ann and Bea played');
     $later = (new Admin($db, testDictionary(), fn () => $clock + 2 * 86_400_000))->stats();
     same([0, 2], [$later['activeToday'], $later['activeWeek']], 'Two days on');
 });
@@ -418,14 +425,14 @@ test('my misses show what happened to my reports', function () {
     setPrompt($game, $world['id'], spec('sport'));
     $p = $game->join($world['id'], 'Rae');
     $game->play($world['id'], $p['token'], 'sofa');
-    $status = fn () => $game->state($world['id'], $p['token'])['myMisses'][0]['reportStatus'];
+    $status = function () use (&$game, $world, $p) { return $game->state($world['id'], $p['token'])['myMisses'][0]['reportStatus']; };
     same(null, $status());
     $game->report($world['id'], $p['token'], 'sofa');
     same('reported', $status(), 'Remembered by the server, not just the page');
-    (new Admin($db, testDictionary()))->decide('sport', 'sofa', 'accepted');
+    // The word files are updated and uploaded, so it counts now.
+    $game = new Game($db, withSofaAsSport(), fn () => 1_000, promptMin: 1, promptMax: 1000);
     same('accepted', $status());
     same(null, $game->state($world['id'], $p['token'])['myMisses'][0]['said']);
-    $game->applyWordDecisions(); // As each new request does.
     check($game->play($world['id'], $p['token'], 'sofa')['ok']);
     $said = $game->state($world['id'], $p['token'])['myMisses'][0]['said'];
     same([true, 'A sport or game'], [$said['byYou'], $said['prompt']], 'Said since, for the same prompt');
@@ -445,9 +452,9 @@ test('my misses say when an accepted word was used up elsewhere', function () {
     $game->state($world['id'], null); // Let the game move on to a new prompt.
     setPrompt($game, $world['id'], spec(null, ['contains', 'fa']));
     check($game->play($world['id'], $sam['token'], 'sofa')['ok']);
-    (new Admin($db, testDictionary()))->decide('sport', 'sofa', 'accepted');
+    $updated = new Game($db, withSofaAsSport(), function () use (&$clock) { return $clock; }, promptMin: 1, promptMax: 1000);
 
-    $miss = $game->state($world['id'], $rae['token'])['myMisses'][0];
+    $miss = $updated->state($world['id'], $rae['token'])['myMisses'][0];
     same('accepted', $miss['reportStatus']);
     same(['Sam', false, 'Contains FA'], [$miss['said']['by'], $miss['said']['byYou'], $miss['said']['prompt']]);
 });

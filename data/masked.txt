@@ -3,6 +3,10 @@
 # can't be used in names. Strong swearing, slurs and sexual crimes are in
 # blocklist.txt instead.
 #
+# Words with an innocent everyday meaning are left as ordinary words: tit (a bird),
+# cock (a rooster), bitch (a female dog), ass (a donkey), hooker (rugby), prick,
+# pecker and spunk.
+#
 # One word per line. Like blocking, masking a word also masks the words formed
 # from it (tit -> tits). To keep an innocent word formed from a masked one
 # unmasked, list it with a ! in front (!prickly).
@@ -10,8 +14,6 @@
 
 # Mild swearing and insults
 arse
-ass
-bitch
 bastard
 bollocks
 bugger
@@ -21,16 +23,12 @@ pissed
 turd
 tosser
 putz
-prick
 dick
-cock
-pecker
 fanny
 
 # Sex work
 whore
 whorehouse
-hooker
 slut
 
 # Body
@@ -45,11 +43,9 @@ anus
 anal
 nipple
 boob
-tit
 titty
 titties
 semen
-spunk
 ejaculation
 busty
 
@@ -71,8 +67,4 @@ masturbate
 masturbation
 masturbating
 
-# Innocent words formed from masked ones
-!cocked
-!cocking
-!pricked
-!pricking
+# Innocent words formed from masked ones (none at the moment)

@@ -27,3 +27,4 @@ button.secondary { background: var(--surface); color: var(--text); border: 1px s
 .admin pre, .admin code { background: var(--surface); padding: 2px 6px; border-radius: 4px; }
 .admin pre { padding: 12px; overflow-x: auto; }
 .admin .bad { color: var(--bad); }
+a.button-link { display: inline-block; background: var(--ember); color: #1b0f05; border-radius: 8px; padding: 10px 16px; font-weight: 700; text-decoration: none; margin-right: 8px; }

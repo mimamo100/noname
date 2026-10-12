@@ -37,6 +37,7 @@ chicken
 chicks
 chiffchaff
 chough
+cock
 cockatiel
 cockatoo
 cockerel
@@ -256,6 +257,7 @@ tanager
 teal
 tern
 thrush
+tit
 toucan
 treecreeper
 turkey

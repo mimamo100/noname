@@ -7,6 +7,7 @@ declare(strict_types=1);
  * - sign-in codes older than two days (they hold email and network addresses, and the
  *   sign-in limits only look back one day)
  * - signed-in devices whose session has expired
+ * - reports reviewed more than keep_days ago
  * - free misses (typos, words not on our lists) older than keep_days; misses that cost
  *   points stay, as scores include them
  * - the words and misses of worlds that finished more than keep_days ago; their final
@@ -48,6 +49,7 @@ final class Housekeeping
             'signInCodes' => $this->deleteInBatches('DELETE FROM login_codes WHERE created_at < ?', [$now - self::CODE_DAYS * self::DAY_MS]),
             'sessions' => $this->deleteInBatches('DELETE FROM sessions WHERE expires_at < ?', [$now]),
             'freeMisses' => $this->deleteInBatches('DELETE FROM misses WHERE points = 0 AND missed_at < ?', [$keepSince]),
+            'reviewedReports' => $this->deleteInBatches('DELETE FROM reports WHERE reviewed_at < ?', [$keepSince]),
             'finishedWorlds' => 0,
             'words' => 0,
             'misses' => 0,
