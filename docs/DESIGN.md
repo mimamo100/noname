@@ -8,7 +8,7 @@ language shrinks, players hunt for rarer words, and those words are worth more.
 
 ## The dictionary
 
-- Every world starts with the same fixed list: about 32,000 common English
+- Every world starts with the same fixed list: about 39,600 common English
   words (3+ letters), built by `scripts/build-dictionary.php`.
 - A word must be in both the ENABLE word list (no proper nouns, no
   abbreviations) and a large frequency list from film subtitles, so obscure

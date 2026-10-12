@@ -25,7 +25,7 @@ report(extension_loaded('pdo_mysql'), 'pdo_mysql extension',
 report(extension_loaded('mbstring'), 'mbstring extension',
     'cPanel > Select PHP Version > Extensions: tick mbstring.');
 
-// Not required, but without it every request rereads the 1.8 MB dictionary.
+// Not required, but without it every request rereads the 2.5 MB dictionary.
 $opcacheStatus = function_exists('opcache_get_status') ? @opcache_get_status(false) : false;
 $opcacheOn = is_array($opcacheStatus) ? !empty($opcacheStatus['opcache_enabled']) : (bool) ini_get('opcache.enable');
 echo ($opcacheOn ? '[ OK ]  ' : '[ -- ]  ') . 'OPcache is ' . ($opcacheOn ? 'on' : 'off') . "\n";

@@ -8,7 +8,7 @@ measurements.
 
 | Table | One row per | Growth | Rough size |
 |---|---|---|---|
-| `burns` | word said, plus each family member it uses up (about 2–3 rows per word) | **Capped per world**: a world can never hold more than the dictionary (about 32,700 rows) | about 5–8 MB for a world whose whole dictionary is used up; most private worlds use a few hundred KB |
+| `burns` | word said, plus each family member it uses up (about 2–3 rows per word) | **Capped per world**: a world can never hold more than the dictionary (about 39,600 rows) | about 5–8 MB for a world whose whole dictionary is used up; most private worlds use a few hundred KB |
 | `misses` | wrong guess | **Grows forever** | about 150 bytes each: 10,000 players × 10 misses a day ≈ 15 MB a day, 5 GB a year |
 | `players` | account in a world | Slow | tiny |
 | `prompts` | prompt (about one a day per world) | Slow | tiny |
@@ -21,7 +21,7 @@ need tidying (see 3 below). Most cPanel plans allow 1–10 GB of databases.
 
 ## 1. The public world runs out of words (decided)
 
-A world has about 21,500 distinct answers. With many players, one shared world
+A world has about 24,000 distinct answers. With many players, one shared world
 burns through them fast:
 
 | Active players a day | Words said a day (20 each) | One world used up in |
@@ -66,7 +66,7 @@ That is where the server's work goes, so the game already does the following:
    20 KB. Pages also check less often when the world is quiet (every 6, then
    12 seconds) and every 30 seconds in a background tab.
 4. **OPcache.** `check.php` says whether it's on. Without it, every request
-   rereads the 1.8 MB dictionary (40–260 ms). Turn it on in cPanel > Select
+   rereads the 2.5 MB dictionary (60–300 ms). Turn it on in cPanel > Select
    PHP Version > Extensions if it's off.
 
 Measured on a test world with 15,000 words said, 300 players and 40,000

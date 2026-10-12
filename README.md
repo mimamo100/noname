@@ -2,7 +2,7 @@
 
 > Every word you play, no one can say again.
 
-A word game where each world starts with the same dictionary of about 32,000
+A word game where each world starts with the same dictionary of about 39,600
 common English words. Players type words that fit the current prompt (such as
 *contains "OO"*). Once a word is said, nobody in that world can say it
 again, and its family goes with it (*cat* takes *cats*). As fewer words are
