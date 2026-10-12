@@ -1,6 +1,18 @@
 # Dictionary review: proposals
 
-Stage 1 of [DICTIONARY-REVIEW.md](../DICTIONARY-REVIEW.md), 12 October 2026. **Nothing has been changed yet.** Reply with anything to leave out, change or add, or "approved".
+Stage 1 of [DICTIONARY-REVIEW.md](../DICTIONARY-REVIEW.md), 12 October 2026. **Approved by the owner and applied the same day** (stage 2).
+
+## Applied
+
+- **Categories are hand-kept files** in `data/categories/`, one per category, frozen from the old data first with no change to any list. `category-overrides.txt` and `categories.json` are gone; `build-categories.py` only drafts new categories.
+- **All approved changes applied** to the 31 categories, with removed words' plurals removed too, and run-together phrases in *also*. Three labels changed (kitchen, weather, landform). 4,224 new words and plurals went into `extra-words.txt`.
+- **Nesting:** a category file can say `includes:`. Animal includes mammal, bird, fish, insect, reptile and sea; mammal includes dog; food includes dessert and dish; vehicle includes boat. Each word is listed once, in the most specific category.
+- **15 new categories**, drafted from WordNet, then cleaned and completed with no limit: dessert, dish, flavouring, fabric, metal, rock, container, reptile, sea, dog, unit, money, myth, boat, subject (855 more new words). Sea creatures leave out sharks and rays, which are fish.
+- **Missing plurals added:** 1,779 plurals of clear answers that the word list lacked (*spaniels*, *terriers*, *anemones*), each confirmed by ENABLE, for categories of countable things.
+- **Blocking only goes downwards**, freeing *pub*, *hump* and *sod*. *Genital*, *bimbo* and *whorehouse* are blocked directly until the masked list exists. *Pub* added to building.
+- **Left out:** *ox* (the game needs 3+ letters; *oxen* is in). A few extra removals for consistency: *queen* and *humanity* (mammal), *tonic* and *bitter* (food), *furnishing* (clothing), *facial* (body), *subsidiary* and *highlander* (job), *mum* (plant), *wreck* (boat), *sucker* (dessert), *jetski* (boat).
+- **Still open:** the masked list (which words go on it, and the code). Spanish, Latin, Italian, Russian and Chinese aren't in the dictionary although English, French and German are, so "A subject you can study" lacks them. Named mythical beings (*minotaur*, *pegasus*, *cerberus*) were left out as names.
+- The dictionary grew from 32,698 to 39,541 words. The tests pass (54 of 54).
 
 ## Summary
 

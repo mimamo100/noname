@@ -1,5 +1,10 @@
 # Dictionary review: instructions for a Claude session
 
+> **Done once, in October 2026** (see `docs/dictionary-review/PROPOSALS.md`).
+> Since then the categories are hand-kept files in `data/categories/`, so
+> parts of this file describe the system as it was then. Kept as the record
+> and as a template for a future review.
+
 These are instructions for reviewing the game's meaning categories. Start a
 Claude Code session in a copy of this repository (see "Before you start") and
 say: **"Follow docs/DICTIONARY-REVIEW.md"**.
@@ -39,7 +44,7 @@ this file, `scripts/category-report.php` and the `data/` files.
 ## Background: what a category is
 
 Meaning prompts ask for "A bird", "A fish with no R" and so on. Each meaning
-is a *category*: a list of the dictionary's words that fit it. There are 31
+is a *category*: a list of the dictionary's words that fit it. There are 46
 today. List them with:
 
 ```sh
@@ -56,9 +61,9 @@ Each category has two lists:
   is a sport, though its main meaning is the vegetable). Accepted, but not
   counted, so obscure meanings don't inflate the counter.
 
-The lists are built automatically from WordNet by
-`scripts/build-categories.py`, which goes by each word's *main meaning*. That
-causes the two problems this review is for:
+The lists were first built automatically from WordNet, which goes by each
+word's *main meaning*. That caused the two problems the October 2026 review
+was for:
 
 1. **Everyday members missing from main.** WordNet often files a word's main
    meaning elsewhere. Examples found so far: carrot, onion and leek are only
@@ -72,8 +77,8 @@ causes the two problems this review is for:
 
 How the game uses the lists:
 
-- Only words in the dictionary (`data/dictionary.php`, about 32,700 common
-  words) can be played. A word missing from the dictionary must be added to
+- Only words in the dictionary (`data/dictionary.php`, about 39,500 words)
+  can be played. A word missing from the dictionary must be added to
   `data/extra-words.txt` as well. It scores as a rare word.
 - **Plurals take care of themselves:** a plural counts when its singular is on
   the list, so add singulars only. For a plural to be playable at all, it must
@@ -86,11 +91,10 @@ How the game uses the lists:
   word that only fits through a meaning nobody would think of is not.
 - `data/blocklist.txt` words can never be played; don't propose them.
 
-Corrections go in `data/category-overrides.txt`, one line per category:
-`fish: +cod +trout -molly` (`+` adds to main, also promoting a word from
-*also*; `-` removes from both lists). Labels live in `data/categories.json`
-and in `CATEGORIES` in `scripts/build-categories.py`; change both. After
-editing, rebuild with `php scripts/build-dictionary.php`.
+Corrections are made in the category's file, `data/categories/<id>.txt`
+(the format is in `data/categories/README.md`; the label is its first line).
+Before the October 2026 review they went in an overrides file, which no
+longer exists. After editing, rebuild with `php scripts/build-dictionary.php`.
 
 ## Stage 1: propose
 
