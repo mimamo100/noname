@@ -148,7 +148,10 @@ only used to draft a new category, once.
    `data/category-overrides.txt` applied): the label on the first line, then
    the *main* words, then an `also:` line and the *also* words, one per line,
    sorted. Leave out plurals whose singular is listed if the game accepts
-   those plurals anyway (check how before relying on it).
+   those plurals anyway (check how before relying on it). **Animal** is the
+   exception: `animal.txt` keeps only the words that aren't in mammal, bird,
+   fish or insect, and the build adds those four categories' *main* and
+   *also* words to animal's (decided 2026-10-12, so no fix is made twice).
 2. **Read the folder.** Change `scripts/build-dictionary.php` to read
    `data/categories/` instead of `categories.json` and the overrides. Rebuild
    and check that every category in `data/dictionary.php` is exactly what it
