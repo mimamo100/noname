@@ -9,10 +9,24 @@ declare(strict_types=1);
  */
 final class Reminders
 {
+    /** @var callable(): int */
+    private $clock;
+
     public function __construct(
         private readonly PDO $db,
         private readonly Streaks $streaks,
+        ?callable $clock = null,
     ) {
+        $this->clock = $clock ?? fn () => (int) floor(microtime(true) * 1000);
+    }
+
+    /** The last send, for the admin page: when, how many went, how many wanted one, and whether the mail server refused. */
+    public static function lastRun(PDO $db): ?array
+    {
+        $stmt = $db->prepare('SELECT value FROM meta WHERE name = ?');
+        $stmt->execute(['daily_emails']);
+        $value = $stmt->fetchColumn();
+        return $value === false ? null : json_decode($value, true);
     }
 
     /** Turns the daily email on or off for an account. */
@@ -41,19 +55,20 @@ final class Reminders
     public function send(Mailer $mailer, string $siteUrl, int $limit = 300): int
     {
         $today = $this->streaks->day();
-        $stmt = $this->db->prepare("
-            SELECT id, email, name, reminder_token FROM users
-            WHERE reminders = 1 AND (reminder_day IS NULL OR reminder_day <> ?) AND (streak_day IS NULL OR streak_day <> ?)
-            ORDER BY id LIMIT $limit");
+        $due = 'reminders = 1 AND (reminder_day IS NULL OR reminder_day <> ?) AND (streak_day IS NULL OR streak_day <> ?)';
+        $stmt = $this->db->prepare("SELECT COUNT(*) FROM users WHERE $due");
+        $stmt->execute([$today, $today]);
+        $wanted = (int) $stmt->fetchColumn();
+        $stmt = $this->db->prepare("SELECT id, email, name, reminder_token FROM users WHERE $due ORDER BY id LIMIT $limit");
         $stmt->execute([$today, $today]);
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if (!$users) return 0;
 
         $lastRound = $this->db->query("SELECT id FROM worlds WHERE kind = 'public' AND ended_at IS NOT NULL ORDER BY ended_at DESC LIMIT 1")->fetchColumn();
         $result = $this->db->prepare('SELECT place, players, score FROM results WHERE world_id = ? AND user_id = ?');
         $sent = $this->db->prepare('UPDATE users SET reminder_day = ? WHERE id = ?');
         $siteUrl = rtrim($siteUrl, '/');
         $count = 0;
+        $refused = false;
         foreach ($users as $u) {
             $lines = ["Hi {$u['name']},", '', 'The big world has started afresh: every word is unsaid again, and everyone starts level.'];
             $streak = $this->streaks->of((int) $u['id'])['streak'];
@@ -69,11 +84,15 @@ final class Reminders
                 $mailer->send($u['email'], 'Unsaid: a new day of words', implode("\n", $lines) . "\n");
             } catch (RuntimeException $e) {
                 error_log('Unsaid reminder: ' . $e->getMessage());
+                $refused = true;
                 break; // The mail server is refusing: try again tomorrow.
             }
             $sent->execute([$today, $u['id']]);
             $count++;
         }
+        $this->db->prepare('REPLACE INTO meta (name, value) VALUES (?, ?)')->execute(['daily_emails', json_encode([
+            'at' => ($this->clock)(), 'sent' => $count, 'wanted' => $wanted, 'limit' => $limit, 'refused' => $refused,
+        ])]);
         return $count;
     }
 

@@ -49,7 +49,14 @@ test('the daily email goes once a day to those who asked and haven\'t played, an
     $clock += 86_400_000;
     $streaks->played($ben['id']); // Already played today.
 
-    same(1, $reminders->send($mailer, 'https://unsaid.example/'));
+    $reminders->set($cy['id'], true);
+    same(1, $reminders->send($mailer, 'https://unsaid.example/', limit: 1), 'Ann, then the limit');
+    same([1, 2, 1, false], array_values(array_intersect_key(Reminders::lastRun($db), array_flip(['sent', 'wanted', 'limit', 'refused']))),
+        'Recorded for the admin page: Cy was over the limit');
+    $stats = (new Admin($db, testDictionary()))->emailStats();
+    same(3, $stats['remindersOn']);
+    same(1, $stats['lastDaily']['sent']);
+    $reminders->set($cy['id'], false);
     $mail = file_get_contents($log);
     check(str_contains($mail, 'ann@example.com') && !str_contains($mail, 'ben@example.com') && !str_contains($mail, 'cy@example.com'));
     check(str_contains($mail, 'Play: https://unsaid.example/'));

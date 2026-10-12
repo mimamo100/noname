@@ -19,6 +19,7 @@ require "$root/src/Competitions.php";
 require "$root/src/Packs.php";
 require "$root/src/Admin.php";
 require "$root/src/Housekeeping.php";
+require "$root/src/Reminders.php";
 
 header('Cache-Control: no-store');
 header('X-Frame-Options: DENY');
@@ -269,6 +270,41 @@ if (!$customPacks) {
             . '<td class="actions">' . button($csrf, 'removepack', 'Remove', ['pack' => $pk['id']], 'link') . '</td></tr>';
     }
     $html .= '</tbody></table></div>';
+}
+
+// Emails, against the host's sending limit.
+$emails = $admin->emailStats();
+$dailyLimit = (int) ($config['daily_email_limit'] ?? 300);
+$html .= '<h2>Emails</h2>'
+    . '<p class="muted">Your hosting company limits how many emails the site can send, usually per hour (their help pages '
+    . 'or support will tell you the number). Sign-in codes and the daily email share that limit, and the daily emails all go '
+    . 'at once, when housekeeping runs.</p><div class="stat-row">';
+foreach ([
+    'Sign-in emails (last hour)' => $emails['codesHour'], 'Sign-in emails (24h)' => $emails['codesDay'],
+    'Busiest hour (24h)' => $emails['busiestHour'], 'Daily email turned on' => $emails['remindersOn'],
+    'Daily email limit' => $dailyLimit,
+] as $label => $value) {
+    $html .= '<div class="stat"><b>' . number_format($value) . '</b><span>' . h($label) . '</span></div>';
+}
+$html .= '</div>';
+if (empty($config['site_url'])) {
+    $html .= '<p class="bad">The daily email is off: set <code>site_url</code> in config.php (see docs/DEPLOY.md, "Housekeeping").</p>';
+}
+if ($last = $emails['lastDaily']) {
+    $html .= '<p class="muted">Daily email last sent ' . h($when((int) $last['at'])) . ': ' . number_format($last['sent'])
+        . ' ' . ($last['sent'] === 1 ? 'email' : 'emails') . '.</p>';
+    if ($last['refused']) {
+        $html .= '<p class="bad">The mail server refused some, probably the hourly limit: the rest go tomorrow. '
+            . 'cPanel\'s Track Delivery (under Email) shows why.</p>';
+    } elseif ($last['wanted'] > $last['sent']) {
+        $over = $last['wanted'] - $last['sent'];
+        $html .= '<p class="bad">' . number_format($over) . ' more ' . ($over === 1 ? 'was' : 'were') . ' due but over the limit of '
+            . number_format($last['limit']) . ': they get theirs the next day. Raise <code>daily_email_limit</code> if your host '
+            . 'allows, or send through an email service (LAUNCH.md).</p>';
+    }
+}
+if ($emails['remindersOn'] > $dailyLimit) {
+    $html .= '<p class="bad">More players have the daily email on than the daily limit allows.</p>';
 }
 
 $lastRun = Housekeeping::lastRun($db);

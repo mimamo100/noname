@@ -45,6 +45,29 @@ final class Admin
         ];
     }
 
+    /**
+     * Emails the site has sent, against the host's sending limit (usually per hour): sign-in
+     * codes in the last hour and day, the busiest hour, and how many accounts want the daily
+     * email. Each sign-in code is one email.
+     */
+    public function emailStats(): array
+    {
+        $now = $this->now();
+        $count = function (string $sql, array $args = []): int {
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute($args);
+            return (int) $stmt->fetchColumn();
+        };
+        return [
+            'codesHour' => $count('SELECT COUNT(*) FROM login_codes WHERE created_at > ?', [$now - 3_600_000]),
+            'codesDay' => $count('SELECT COUNT(*) FROM login_codes WHERE created_at > ?', [$now - 86_400_000]),
+            'busiestHour' => $count('SELECT COALESCE(MAX(n), 0) FROM (
+                SELECT COUNT(*) AS n FROM login_codes WHERE created_at > ? GROUP BY FLOOR(created_at / 3600000)) h', [$now - 86_400_000]),
+            'remindersOn' => $count('SELECT COUNT(*) FROM users WHERE reminders = 1'),
+            'lastDaily' => Reminders::lastRun($this->db),
+        ];
+    }
+
     private function activeSince(int $since): int
     {
         $stmt = $this->db->prepare('SELECT COUNT(DISTINCT user_id) + COALESCE(SUM(user_id IS NULL), 0) FROM players WHERE last_active_at > ?');
