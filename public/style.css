@@ -46,7 +46,7 @@ main { max-width: 960px; margin: 0 auto; padding: 0 16px 48px; }
 .menu #menu-signout { border-top: 1px solid var(--border); border-radius: 0 0 6px 6px; margin-top: 4px; color: var(--muted); }
 .signin .join { margin-top: 16px; }
 .signin p { margin: 0 0 4px; }
-.world-name { color: var(--muted); flex: 1 1 8rem; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.world-name { color: var(--muted); flex: 0 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 button, input { font: inherit; }
 button {
@@ -181,3 +181,4 @@ button:disabled { opacity: 0.45; cursor: default; filter: none; }
 .cs-team li { display: flex; gap: 8px; align-items: center; justify-content: space-between; padding: 3px 0; font-size: 14px; }
 textarea, select { font: inherit; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; width: 100%; box-sizing: border-box; }
 .prompt-card.waiting .counter, .prompt-card.waiting .meter, .prompt-card.waiting .stats { display: none; }
+button.link.nudge { color: var(--ember); font-size: 14px; }

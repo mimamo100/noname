@@ -337,6 +337,8 @@ function render(state) {
   $('world-settings').hidden = !state.isOwner;
   $('world-settings').textContent = competition ? 'Competition settings' : 'World settings';
   renderCompetition(state);
+  // On the big world, a nudge towards private worlds for anyone who can't make one yet.
+  $('create-own').hidden = state.world.kind !== 'public' || ['host', 'organiser'].includes(state.account?.plan);
   renderLobby(state);
 
   const joined = Boolean(state.me);
@@ -875,13 +877,14 @@ async function copyText(text, done) {
 }
 $('copy-link').addEventListener('click', () => copyText(inviteUrl(lastState.invite), 'Invite link copied. Send it to your friends!'));
 
+$('create-own').addEventListener('click', () => $('new-world').click());
 $('new-world').addEventListener('click', () => {
   if (session && lastState?.account && lastState.account.plan === 'free') {
-    feedback('Creating private worlds needs the Host plan. You can join anyone\'s private world with their invite link.', 'bad');
+    feedback('Private worlds, for you and the friends you invite, come with the Host plan. Meanwhile you can join anyone\'s private world with their invite link.', '');
     return;
   }
   if (!session) {
-    feedback('Sign in first to create a private world.', 'bad');
+    feedback('Sign in first: private worlds are for you and the friends you invite.', '');
     showSigninStep('email');
     $('signin').hidden = false;
     $('signin').scrollIntoView({ block: 'center' });
