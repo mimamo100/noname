@@ -27,9 +27,11 @@ sole
 - **Plurals** count when their singular is listed, so add singulars. When
   removing a word, remove any plural listed too.
 - **UK and US spellings** are one answer: either spelling covers both.
-- **animal** lists only animals that fit none of mammal, bird, fish and
-  insect. The build adds those four categories' words to it, so a fix is
-  only ever made in one place.
+- **includes:** (optional, after the label) names categories whose words
+  also belong to this one: `includes: mammal bird fish insect` in
+  `animal.txt`. The build adds their *main* and *also* words, so list each
+  word once, in the most specific category, and a fix is only ever made in
+  one place.
 
 To draft a brand-new category from WordNet, see
 `scripts/build-categories.py`. Never rerun it over an existing category.

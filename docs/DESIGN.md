@@ -118,7 +118,7 @@ word-finder site. There are three kinds:
 | Meaning only | about a fifth | *A bird*, *A musical instrument*, *Weather* |
 | Letters only | the rest | *Letters in alphabetical order, 6+ letters*, *Starts and ends with N*, *Two Ys, no L* |
 
-- **Meanings** come from 31 categories (animals, foods, jobs, feelings,
+- **Meanings** come from 46 categories (animals, foods, jobs, feelings,
   colours and so on), kept by hand in `data/categories/`, one file each.
   They were first drafted from WordNet (`scripts/build-categories.py` still
   drafts new ones) and then reviewed. A word counts when its main meaning

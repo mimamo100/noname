@@ -392,7 +392,6 @@ washhouse
 washroom
 watermill
 wheelhouse
-whorehouse
 wigwam
 windmill
 winery

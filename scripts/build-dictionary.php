@@ -137,11 +137,13 @@ $ukOnly = array_values(array_unique(array_filter(array_merge($spellings['ukOnly'
 $categories = [];
 foreach (glob("$dataDir/categories/*.txt") as $path) {
     $id = basename($path, '.txt');
-    $category = ['label' => null, 'words' => [], 'also' => []];
+    $category = ['label' => null, 'words' => [], 'also' => [], 'includes' => []];
     $list = 'words';
     foreach (readList($path) as $line) {
         if (str_starts_with($line, 'label:')) {
             $category['label'] = trim(substr($line, 6));
+        } elseif (str_starts_with($line, 'includes:')) {
+            $category['includes'] = preg_split('/\s+/', trim(substr($line, 9)), -1, PREG_SPLIT_NO_EMPTY);
         } elseif ($line === 'also:') {
             $list = 'also';
         } elseif (preg_match('/^[a-z]+$/', $line)) {
@@ -157,11 +159,28 @@ foreach (glob("$dataDir/categories/*.txt") as $path) {
     }
     $categories[$id] = $category;
 }
-// Animal takes in the more specific animal categories, so each word is listed once.
-foreach (['mammal', 'bird', 'fish', 'insect'] as $id) {
-    $categories['animal']['words'] += $categories[$id]['words'];
-    $categories['animal']['also'] += $categories[$id]['also'];
-}
+// A category takes in the categories it includes ("animal" includes "bird"), so each
+// word is listed once. Included categories can include others in turn.
+$merged = [];
+$merge = function (string $id, array $path = []) use (&$merge, &$merged, &$categories): void {
+    if (isset($merged[$id])) return;
+    if (in_array($id, $path, true)) {
+        fwrite(STDERR, 'categories: includes go round in a circle: ' . implode(' -> ', [...$path, $id]) . "\n");
+        exit(1);
+    }
+    foreach ($categories[$id]['includes'] as $sub) {
+        if (!isset($categories[$sub])) {
+            fwrite(STDERR, "categories/$id.txt: includes unknown category \"$sub\"\n");
+            exit(1);
+        }
+        $merge($sub, [...$path, $id]);
+        $categories[$id]['words'] += $categories[$sub]['words'];
+        $categories[$id]['also'] += $categories[$sub]['also'];
+    }
+    $merged[$id] = true;
+};
+foreach (array_keys($categories) as $id) $merge($id);
+foreach ($categories as $id => $category) unset($categories[$id]['includes']);
 // Other spellings belong wherever their partner does: "jewellery" is worn like "jewelry".
 foreach ($categories as $id => $category) {
     foreach (['words', 'also'] as $list) {
