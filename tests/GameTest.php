@@ -334,7 +334,9 @@ test('the admin can accept, dismiss and undo reported words', function () {
     throwsStatus(400, fn () => $admin->decide('nope', 'sofa', 'accepted'));
     throwsStatus(400, fn () => $admin->decide('sport', 'two words', 'accepted'));
     same(1, $admin->stats()['openReports']);
-    same(2, $admin->stats()['players']);
+    same([2, 2], [$admin->stats()['activeToday'], $admin->stats()['activeWeek']], 'Ann and Bea joined');
+    $later = (new Admin($db, testDictionary(), fn () => $clock + 2 * 86_400_000))->stats();
+    same([0, 2], [$later['activeToday'], $later['activeWeek']], 'Two days on');
 });
 
 test('UK and US spellings are one answer', function () {

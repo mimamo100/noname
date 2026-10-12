@@ -34,7 +34,10 @@ final class Admin
         return [
             'accounts' => $count('SELECT COUNT(*) FROM users'),
             'worlds' => $count('SELECT COUNT(*) FROM worlds'),
-            'players' => $count('SELECT COUNT(*) FROM players'),
+            // People who played (guessed or joined a world) in the last day and week. Each account
+            // counts once however many worlds it played in; players from before accounts count singly.
+            'activeToday' => $this->activeSince($this->now() - 24 * 60 * 60 * 1000),
+            'activeWeek' => $this->activeSince($this->now() - 7 * 24 * 60 * 60 * 1000),
             'saidToday' => $count('SELECT COUNT(*) FROM burns WHERE word = played_word AND burned_at > ?', [$since]),
             'missesToday' => $count('SELECT COUNT(*) FROM misses WHERE missed_at > ?', [$since]),
             'openReports' => count($this->openReports()),
@@ -42,6 +45,13 @@ final class Admin
     }
 
     /** Reported words without a decision yet, most-reported first. */
+    private function activeSince(int $since): int
+    {
+        $stmt = $this->db->prepare('SELECT COUNT(DISTINCT user_id) + COALESCE(SUM(user_id IS NULL), 0) FROM players WHERE last_active_at > ?');
+        $stmt->execute([$since]);
+        return (int) $stmt->fetchColumn();
+    }
+
     public function openReports(): array
     {
         $rows = $this->db->query("

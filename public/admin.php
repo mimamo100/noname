@@ -180,7 +180,8 @@ $html .= '<div class="admin-head"><h1>Admin</h1>' . button($csrf, 'logout', 'Log
 
 $html .= '<div class="stat-row">';
 foreach ([
-    'Accounts' => $stats['accounts'], 'Worlds' => $stats['worlds'], 'Players' => $stats['players'], 'Words said (24h)' => $stats['saidToday'],
+    'Accounts' => $stats['accounts'], 'Active today' => $stats['activeToday'], 'Active this week' => $stats['activeWeek'],
+    'Worlds' => $stats['worlds'], 'Words said (24h)' => $stats['saidToday'],
     'Misses (24h)' => $stats['missesToday'], 'Open reports' => $stats['openReports'],
 ] as $label => $value) {
     $html .= '<div class="stat"><b>' . number_format($value) . '</b><span>' . h($label) . '</span></div>';
