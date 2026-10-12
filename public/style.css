@@ -190,3 +190,4 @@ button.link.nudge { color: var(--ember); font-size: 14px; }
 .reveal p:last-child { margin-bottom: 0; }
 .reveal .eyebrow { margin-bottom: 4px; }
 .unsaid-line { margin: 4px 0 8px; }
+.share { margin-top: 6px; }

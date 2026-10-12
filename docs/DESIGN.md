@@ -41,7 +41,12 @@ language shrinks, players hunt for rarer words, and those words are worth more.
   equal scores), out of how many, score, words and best word. **My games**
   shows these, newest first, with personal bests (games, wins, best finish,
   best score, most words, words said in all, best word). A finished world
-  stays viewable with its final leaderboard. All the detail (who said what)
+  stays viewable with its final leaderboard. **Sharing:** a Share button (in
+  My games, on the finished world's page, and by the big world's last round)
+  copies a short result to paste anywhere, or opens the share sheet on a
+  phone: the world, place, points, words and best word (masked words as
+  p***s), with a link to watch the world (or to the game, for private worlds
+  and competitions, which need an invite). All the detail (who said what)
   is kept too; deleting it after about 30 days is a future housekeeping job.
 - **Private worlds.** For a group of friends. Each world uses up its own
   copy of the dictionary. See "Plans and private worlds" below.

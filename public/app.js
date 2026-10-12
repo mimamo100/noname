@@ -87,6 +87,48 @@ function ordinal(n) {
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
+// --- Sharing a result ---
+
+const MEDALS = { 1: '🥇', 2: '🥈', 3: '🥉' };
+
+function shareText(g) {
+  const lines = [
+    `Unsaid · ${g.name}`,
+    `${MEDALS[g.place] ? `${MEDALS[g.place]} ` : ''}${ordinal(g.place)} of ${g.players} · ${g.score} points · ${g.words} ${g.words === 1 ? 'word' : 'words'}`,
+  ];
+  if (g.team) lines.push(`Team ${g.team.name}${g.team.place ? `: ${ordinal(g.team.place)} of ${g.team.teams}` : ''}`);
+  if (g.bestWord) lines.push(`Best word: ${g.bestMasked ? mask(g.bestWord) : g.bestWord} (+${g.bestPoints})`);
+  return lines.join('\n');
+}
+
+// Anyone can watch the big world's rounds and rooms; private worlds and competitions need a link, so send people to the game itself.
+const shareUrl = (g) => (g.kind === 'public' || g.kind === 'room' ? `${location.origin}/w/${encodeURIComponent(g.worldId)}` : `${location.origin}/`);
+
+// Phones get the share sheet; elsewhere the result is copied, and the button says so.
+async function shareResult(g, button) {
+  const text = shareText(g);
+  const url = shareUrl(g);
+  if (navigator.share && matchMedia('(pointer: coarse)').matches) {
+    try { await navigator.share({ text, url }); return; } catch (err) { if (err.name === 'AbortError') return; }
+  }
+  try {
+    await navigator.clipboard.writeText(`${text}\n${url}`);
+    const label = button.textContent;
+    button.textContent = 'Copied: paste it anywhere';
+    setTimeout(() => { button.textContent = label; }, 2500);
+  } catch {
+    prompt('Copy your result:', `${text}\n${url}`);
+  }
+}
+
+function shareButton(g, label = 'Share') {
+  const button = el('button', { type: 'button', className: 'secondary small share', textContent: label });
+  button.addEventListener('click', () => shareResult(g, button));
+  return button;
+}
+
+const resultLine = (g) => `${MEDALS[g.place] ? `${MEDALS[g.place]} ` : ''}${ordinal(g.place)} of ${g.players} with ${g.score} points`;
+
 function renderLobby(state) {
   const big = state.world.kind === 'public';
   $('lobby').hidden = !big;
@@ -97,6 +139,7 @@ function renderLobby(state) {
       $('last-round').replaceChildren(
         el('b', { textContent: 'Last round: ' }),
         last.winners.map((w) => `${ordinal(w.place)} ${w.nickname} (${w.score})`).join(' · '),
+        ...(last.mine ? [el('br'), `You came ${resultLine(last.mine)}. `, shareButton(last.mine, 'Share your result')] : []),
       );
     }
     $('room-button').textContent = state.myRoom ? `Back to ${state.myRoom.name}` : 'Join a room';
@@ -107,6 +150,10 @@ function renderLobby(state) {
   const ended = state.world.ended;
   const notMine = room && !ended && !state.me;
   $('ended').hidden = !ended && !notMine;
+  $('ended-result').hidden = !(ended && state.myResult);
+  if (ended && state.myResult) {
+    $('ended-result').replaceChildren(`You came ${resultLine(state.myResult)}. `, shareButton(state.myResult, 'Share your result'));
+  }
   if (ended) {
     $('ended-message').textContent = state.world.endedMessage;
     $('ended-button').textContent = room ? 'Join a new room' : 'Go to the big world';
@@ -930,6 +977,7 @@ async function showHistory() {
           `${g.words} ${g.words === 1 ? 'word' : 'words'}`,
           ...(g.bestWord ? [`best: ${g.bestWord} (+${g.bestPoints})`] : []),
         ].join(' · ') }),
+        shareButton(g),
       ))),
     );
   } catch (err) {

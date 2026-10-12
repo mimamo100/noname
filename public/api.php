@@ -239,8 +239,11 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         if (!empty($world['pack'])) {
             $state['pack'] = ['name' => $packs->name($world['pack'], $game->dictionary()) ?? 'a removed pack', 'mode' => $world['pack_mode'] ?? 'only'];
         }
+        // How the viewer finished, to share.
+        if ($user && !empty($state['world']['ended'])) $state['myResult'] = $lobby->result($world['id'], (int) $user['id']);
         if ($isBigWorld) {
             $state['lastRound'] = $lobby->lastRound();
+            if ($user && $state['lastRound']) $state['lastRound']['mine'] = $lobby->result($state['lastRound']['id'], (int) $user['id']);
             $state['myRoom'] = $user ? $lobby->myRoom((int) $user['id']) : null;
         }
         // Pages poll every few seconds, mostly for nothing new: then a tiny answer will do.

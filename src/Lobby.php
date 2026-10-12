@@ -198,25 +198,42 @@ final class Lobby
 
     // --- My games ---
 
-    /** The account's finished games, newest first, and its personal bests. */
-    public function history(int $userId): array
+    private const RESULTS_SQL = '
+        SELECT r.world_id, w.name, w.kind, r.place, r.players, r.score, r.words, r.best_word, r.best_points, r.ended_at,
+          r.team_name, tr.place AS team_place, tr.teams
+        FROM results r JOIN worlds w ON w.id = r.world_id
+        LEFT JOIN team_results tr ON tr.world_id = r.world_id AND tr.name = r.team_name';
+
+    private function resultRow(array $r): array
     {
-        $stmt = $this->db->prepare('
-            SELECT r.world_id, w.name, w.kind, r.place, r.players, r.score, r.words, r.best_word, r.best_points, r.ended_at,
-              r.team_name, tr.place AS team_place, tr.teams
-            FROM results r JOIN worlds w ON w.id = r.world_id
-            LEFT JOIN team_results tr ON tr.world_id = r.world_id AND tr.name = r.team_name
-            WHERE r.user_id = ? ORDER BY r.ended_at DESC LIMIT 100');
-        $stmt->execute([$userId]);
-        $games = array_map(fn ($r) => [
+        return [
             'worldId' => $r['world_id'], 'name' => $r['name'], 'kind' => $r['kind'],
             'place' => (int) $r['place'], 'players' => (int) $r['players'],
             'score' => (int) $r['score'], 'words' => (int) $r['words'],
             'bestWord' => $r['best_word'], 'bestPoints' => $r['best_points'] === null ? null : (int) $r['best_points'],
+            // A masked best word is shown as p***s when shared.
+            'bestMasked' => $r['best_word'] !== null && $this->game->dictionary()->isMasked($r['best_word']),
             'endedAt' => (int) $r['ended_at'],
             'team' => $r['team_name'] === null ? null
                 : ['name' => $r['team_name'], 'place' => $r['team_place'] === null ? null : (int) $r['team_place'], 'teams' => (int) $r['teams']],
-        ], $stmt->fetchAll());
+        ];
+    }
+
+    /** How the account finished in one world, for sharing; null if it didn't play there or it hasn't finished. */
+    public function result(string $worldId, int $userId): ?array
+    {
+        $stmt = $this->db->prepare(self::RESULTS_SQL . ' WHERE r.world_id = ? AND r.user_id = ?');
+        $stmt->execute([$worldId, $userId]);
+        $row = $stmt->fetch();
+        return $row ? $this->resultRow($row) : null;
+    }
+
+    /** The account's finished games, newest first, and its personal bests. */
+    public function history(int $userId): array
+    {
+        $stmt = $this->db->prepare(self::RESULTS_SQL . ' WHERE r.user_id = ? ORDER BY r.ended_at DESC LIMIT 100');
+        $stmt->execute([$userId]);
+        $games = array_map([$this, 'resultRow'], $stmt->fetchAll());
 
         $stmt = $this->db->prepare('
             SELECT COUNT(*) AS games, MIN(place) AS best_place, MAX(score) AS best_score, MAX(words) AS most_words,

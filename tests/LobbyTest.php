@@ -73,6 +73,9 @@ test('a finished round records everyone\'s results, shown in My games', function
     same(['The Big World, 12 Oct', 1, 2, 2], [$game1['name'], $game1['place'], $game1['players'], $game1['words']]);
     same(max($moon, $book), $game1['bestPoints']);
     same([], $lobby->history(makeUser($db, 'Dee')['id'])['games']);
+    same($game1, $lobby->result($first, $ann['id']), 'One result, to share');
+    same(false, $game1['bestMasked']);
+    same(null, $lobby->result($second, $ann['id']), 'Not finished yet');
 });
 
 test('a round\'s last prompt stops when the round does', function () {
