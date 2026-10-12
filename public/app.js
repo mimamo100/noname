@@ -167,11 +167,23 @@ function renderCompetition(state) {
   } else if (!state.isOwner) {
     parts.push(el('p', { className: 'muted small', textContent: "You're watching. To play, open your team's invite link from the organiser." }));
   }
+  if (!started && state.isOwner && state.teamLinks) {
+    // The organiser's next step: each team's link, right here rather than in the settings.
+    parts.push(el('p', {}, el('b', { textContent: 'Next: send each team its link.' }),
+      ' Whoever opens a team\'s link joins that team. You can move players between teams in Competition settings until the start.'));
+  }
   if (!started) {
-    parts.push(el('ul', { className: 'teams-forming' }, ...state.teams.slice().sort((a, b) => a.position - b.position).map((t) => el('li', {},
-      ...teamDot(t.position), el('b', { textContent: t.name }), ' ',
-      el('span', { className: 'muted small', textContent: t.players.length ? t.players.join(', ') : 'nobody yet' }),
-    ))));
+    const links = !state.isOwner ? null : state.teamLinks;
+    parts.push(el('ul', { className: 'teams-forming' }, ...state.teams.slice().sort((a, b) => a.position - b.position).map((t) => {
+      const copy = [];
+      if (links && links[t.id]) {
+        const button = el('button', { type: 'button', className: 'secondary small', textContent: 'Copy link' });
+        button.addEventListener('click', () => copyText(compUrl(links[t.id]), `Link for ${t.name} copied. Send it to the ${t.name} players.`));
+        copy.push(button, ' ');
+      }
+      return el('li', {}, ...copy, ...teamDot(t.position), el('b', { textContent: t.name }), ' ',
+        el('span', { className: 'muted small', textContent: t.players.length ? t.players.join(', ') : 'nobody yet' }));
+    })));
   }
   $('competition').replaceChildren(...parts);
   renderCompetitionClock(state);
@@ -203,7 +215,7 @@ $('comp-form').addEventListener('submit', async (e) => {
       spelling: new FormData(e.target).get('comp-spelling'),
       ...packChoice('cp'),
     } });
-    location.href = `/w/${encodeURIComponent(made.id)}`;
+    location.href = `/w/${encodeURIComponent(made.id)}#created`;
   } catch (err) {
     feedback(err.message, 'bad');
     $('comp-dialog').close();
@@ -246,7 +258,7 @@ async function loadCompSettings() {
     const rename = el('button', { type: 'button', className: 'secondary', textContent: 'Rename' });
     rename.addEventListener('click', () => compAction('teams', { rename: t.id, name: name.value }, 'Team renamed.'));
     const copy = el('button', { type: 'button', className: 'secondary', textContent: 'Copy link' });
-    copy.addEventListener('click', () => copyText(compUrl(t.invite), `${t.name}'s link copied.`));
+    copy.addEventListener('click', () => copyText(compUrl(t.invite), `Link for ${t.name} copied.`));
     const fresh = el('button', { type: 'button', className: 'link', textContent: 'New link' });
     fresh.addEventListener('click', () => compAction('invite', { team: t.id }, `New link for ${t.name}.`, `Make a new link for ${t.name}? The old one stops working.`));
     const head = [...teamDot(t.position), name, rename, copy, fresh];
@@ -1027,6 +1039,12 @@ document.addEventListener('visibilitychange', () => {
   refresh();
   schedulePoll();
 });
+
+// Just made a competition: say what to do next.
+if (location.hash === '#created') {
+  history.replaceState(null, '', location.pathname + location.search);
+  feedback('Your competition is ready. Now send each team its link, using the Copy link buttons below.', 'good');
+}
 
 refresh();
 schedulePoll();

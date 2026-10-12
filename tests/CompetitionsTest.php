@@ -61,6 +61,9 @@ test('a competition: teams join by their links, it starts on time, and teams sco
     same(['name' => 'Owls', 'position' => 0], $comps->personal($world(), $ann, null)['myTeam']);
     same(teamCode($db, $id, 'Owls'), $comps->personal($world(), $ann, null)['invite'], 'Players can pass on their team link');
     same('Bats', $comps->personal($world(), $dee, teamCode($db, $id, 'Bats'))['joiningTeam']['name']);
+    same(['Owls', 'Foxes', 'Bats'], array_map(fn ($code) => $db->query("SELECT name FROM teams WHERE invite_code = '$code'")->fetchColumn(),
+        array_values($comps->personal($world(), $org, null)['teamLinks'])), "The organiser gets every team's link");
+    check(!isset($comps->personal($world(), $ann, null)['teamLinks']), "Players don't");
 
     // Before the start: no prompt, no playing, teams forming.
     $state = $game->state($id, null);

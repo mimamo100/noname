@@ -192,6 +192,12 @@ final class Competitions
             // Opened a team's link but not joined yet: saying a word joins this team.
             $out['joiningTeam'] = ['name' => $team['name'], 'position' => (int) $team['position']];
         }
+        if ($out['isOwner']) {
+            // So the organiser can send each team its link from the page itself.
+            $stmt = $this->db->prepare('SELECT id, invite_code FROM teams WHERE world_id = ?');
+            $stmt->execute([$world['id']]);
+            $out['teamLinks'] = array_map('strval', array_column($stmt->fetchAll(), 'invite_code', 'id'));
+        }
         return $out;
     }
 
