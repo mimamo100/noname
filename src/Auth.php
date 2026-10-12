@@ -140,7 +140,8 @@ final class Auth
 
     private static function publicUser(array $user): array
     {
-        return ['id' => (int) $user['id'], 'name' => $user['name'], 'email' => $user['email'], 'plan' => $user['plan'] ?? 'free'];
+        return ['id' => (int) $user['id'], 'name' => $user['name'], 'email' => $user['email'], 'plan' => $user['plan'] ?? 'free',
+            'reminders' => (bool) ($user['reminders'] ?? false)];
     }
 
     /** Links players from before accounts (identified by their old tokens) to this account. */

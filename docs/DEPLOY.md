@@ -107,6 +107,14 @@ it up once:
    `ea-php82` or `ea-php83` work too.
 5. Click **Add New Cron Job**.
 
+The same job sends the **daily email** to players who turned it on (account
+menu: Daily email), as long as `site_url` in `config.php` is set to your site's
+address (it's used for the links in the email). At most `daily_email_limit`
+go each day (300 unless you change it), to stay under your host's mail limit;
+anyone over the limit gets theirs the next day. Once many players turn it on,
+send email through an email service instead (the `smtp` settings in
+`config.php`; see LAUNCH.md).
+
 The admin page's **Housekeeping** section shows when it last ran. To check the
 command straight away, press **Run housekeeping now** there; the next morning,
 "Last ran" should show about 4am.

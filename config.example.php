@@ -35,6 +35,11 @@ return [
     // The folder is created if needed. Set to false to turn caching off.
     // 'cache_dir' => __DIR__ . '/cache',
 
+    // The site's address, for links in emails (the daily email that players can ask for).
+    'site_url' => 'https://yourdomain.com',
+    // Most daily emails sent each day: keep it under your mail server's daily limit.
+    'daily_email_limit' => 300,
+
     // Sign-in emails. 'from' should be a real address on your domain (create it in
     // cPanel > Email Accounts), so the codes don't land in spam.
     'mail' => [

@@ -765,7 +765,8 @@ $('play-form').addEventListener('submit', async (e) => {
     }
     if (result.ok) {
       const family = result.alsoBurned.length ? ` Gone with it: ${result.alsoBurned.join(', ')}.` : '';
-      feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}. Nobody can say it again.${family}`, 'good');
+      const streak = result.streak > 1 ? ` That's ${result.streak} days in a row!` : '';
+      feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}. Nobody can say it again.${family}${streak}`, 'good');
       input.value = '';
     } else {
       feedback(REASONS[result.reason](result.word, result), 'bad');
@@ -817,6 +818,7 @@ function renderAccount(account, adminUrl) {
   $('account-button').textContent = account.name;
   $('new-competition').hidden = account.plan !== 'organiser';
   $('menu-packs').hidden = account.plan !== 'organiser';
+  $('menu-reminders').textContent = `Daily email: ${account.reminders ? 'on' : 'off'}`;
 }
 
 function closeMenu() {
@@ -837,6 +839,16 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('acco
 $('signin-link').addEventListener('click', () => { showSigninStep('email'); $('signin').hidden = false; $('signin').scrollIntoView({ block: 'center' }); });
 $('menu-worlds').addEventListener('click', () => showWorlds());
 $('menu-games').addEventListener('click', () => showHistory());
+$('menu-reminders').addEventListener('click', async () => {
+  const on = !lastState?.account?.reminders;
+  try {
+    await rootApi('/me/reminders', { method: 'POST', body: { on } });
+    feedback(on
+      ? "Daily email on: each morning, when the big world starts afresh, we'll email you unless you've already played. Turn it off here, or from the link in any email."
+      : 'Daily email off.', 'good');
+    refresh();
+  } catch (err) { feedback(err.message, 'bad'); }
+});
 $('menu-signout').addEventListener('click', async () => {
   try { await authApi('/logout', { method: 'POST' }); } catch { /* signed out locally anyway */ }
   setSession(null);
@@ -951,14 +963,19 @@ async function showHistory() {
   $('history-dialog').showModal();
   try {
     const { bests, games } = await rootApi('/me/history');
+    const best = (value, label) => el('div', {}, el('b', { textContent: value }), el('span', { textContent: label }));
+    const streaks = [
+      best(bests.streak, `${bests.streak === 1 ? 'day' : 'days'} in a row${bests.streak && !bests.playedToday ? ': play today to keep it' : ''}`),
+      best(bests.bestStreak, 'best run of days'),
+    ];
     if (!games.length) {
-      $('history').replaceChildren(el('p', { className: 'muted', textContent:
+      $('history').replaceChildren(el('div', { className: 'bests' }, ...streaks), el('p', { className: 'muted', textContent:
         `No finished games yet. Big world rounds finish at the end of each round, and rooms when their words run out.${bests.wordsSaid ? ` So far you've said ${bests.wordsSaid.toLocaleString()} words.` : ''}` }));
       return;
     }
-    const best = (value, label) => el('div', {}, el('b', { textContent: value }), el('span', { textContent: label }));
     $('history').replaceChildren(
       el('div', { className: 'bests' },
+        ...streaks,
         best(bests.games, bests.games === 1 ? 'game' : 'games'),
         best(bests.wins, bests.wins === 1 ? 'win' : 'wins'),
         best(ordinal(bests.bestPlace), 'best finish'),
@@ -1107,6 +1124,15 @@ document.addEventListener('visibilitychange', () => {
   refresh();
   schedulePoll();
 });
+
+// The link at the bottom of a daily email stops them, without signing in.
+const stopEmails = new URLSearchParams(location.search).get('stop-emails');
+if (stopEmails) {
+  history.replaceState(null, '', location.pathname);
+  rootApi('/reminders/stop', { method: 'POST', body: { token: stopEmails } })
+    .then(() => feedback("Done: we won't send you the daily email any more.", 'good'))
+    .catch((err) => feedback(err.message, 'bad'));
+}
 
 // Just made a competition: say what to do next.
 if (location.hash === '#created') {

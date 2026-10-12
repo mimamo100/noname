@@ -9,6 +9,8 @@
 //
 //   GET  /api/me/history                                           finished games and personal bests (account needed)
 //   GET  /api/me/worlds                                            rooms and private worlds you're in (account needed)
+//   POST /api/me/reminders                {on}                     the daily email on or off (account needed)
+//   POST /api/reminders/stop              {token}                  stop the daily email, from its link
 //
 //   POST /api/rooms                                         join a room: your own, or one with a free seat (account needed)
 //   GET  /api/packs                                         word packs this account may use: {curated, custom}
@@ -47,6 +49,7 @@ require "$root/src/Dictionary.php";
 require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
+require "$root/src/Streaks.php";
 require "$root/src/Game.php";
 require "$root/src/Lobby.php";
 require "$root/src/PrivateWorlds.php";
@@ -55,6 +58,7 @@ require "$root/src/Packs.php";
 require "$root/src/Admin.php";
 require "$root/src/Mailer.php";
 require "$root/src/Auth.php";
+require "$root/src/Reminders.php";
 
 function respond(int $status, array $body): never
 {
@@ -101,7 +105,7 @@ function body(): array
     return $data;
 }
 
-function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Competitions $competitions, Packs $packs, Closure $gameWith, array $config): never
+function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Competitions $competitions, Packs $packs, Closure $gameWith, array $config, Streaks $streaks, Reminders $reminders): never
 {
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -133,7 +137,20 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         throw new GameError(404, 'Not found');
     }
 
-    if ($resource === 'me' && $method === 'GET' && $worldId === 'history') respond(200, $lobby->history((int) $needUser()['id']));
+    if ($resource === 'me' && $method === 'GET' && $worldId === 'history') {
+        $history = $lobby->history((int) $needUser()['id']);
+        $history['bests'] += $streaks->of((int) $needUser()['id']);
+        respond(200, $history);
+    }
+    // The daily email: on or off for the account, or off from the link in an email.
+    if ($resource === 'me' && $method === 'POST' && $worldId === 'reminders') {
+        $reminders->set((int) $needUser()['id'], (bool) (body()['on'] ?? false));
+        respond(200, ['ok' => true]);
+    }
+    if ($resource === 'reminders' && $method === 'POST' && $worldId === 'stop') {
+        if (!$reminders->stop((string) (body()['token'] ?? ''))) throw new GameError(404, 'That link has expired.');
+        respond(200, ['ok' => true]);
+    }
     if ($resource === 'me' && $method === 'GET' && $worldId === 'worlds') {
         $everyday = $game->dictionarySize();
         // Pack worlds: their name, and how much is left of the pack rather than the everyday dictionary.
@@ -233,7 +250,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
     if ($method === 'GET' && $action === null) {
         $player = $user ? $game->playerForUser($worldId, $user['id']) : null;
         $state = $game->state($worldId, $player['token'] ?? null)
-            + ['account' => $user ? ['name' => $user['name'], 'plan' => $user['plan']] : null]
+            + ['account' => $user ? ['name' => $user['name'], 'plan' => $user['plan'], 'reminders' => $user['reminders']] : null]
             + ['admin' => adminLink($config)]
             + ($isCompetition ? $competitions->personal($world, $user, $invite) : $private->personal($world, $user));
         if (!empty($world['pack'])) {
@@ -275,7 +292,9 @@ try {
     $stateCache = $cacheDir ? StateCache::open($cacheDir) : null;
     $awayAfterMs = (int) (($config['rooms']['away_days'] ?? 7) * 86_400_000);
     // A game for a dictionary: the everyday one, or a word pack's for a world that plays one.
-    $gameWith = fn (Dictionary $d) => new Game($db, $d, stateCache: $stateCache, awayAfterMs: $awayAfterMs);
+    $streaks = new Streaks($db, $config['big_world']['timezone'] ?? 'Europe/London');
+    $reminders = new Reminders($db, $streaks);
+    $gameWith = fn (Dictionary $d) => new Game($db, $d, stateCache: $stateCache, awayAfterMs: $awayAfterMs, streaks: $streaks);
     $game = $gameWith($dictionary);
     $packs = new Packs($db, $cacheDir ?: null);
     $lobby = new Lobby($db, $game, $config);
@@ -283,13 +302,13 @@ try {
     $competitions = new Competitions($db, $game);
     $auth = new Auth($db, new Mailer($config['mail'] ?? []), $dictionary);
     try {
-        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config);
+        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config, $streaks, $reminders);
     } catch (PDOException $e) {
         // A missing table or column means a new install or an older database: set up or upgrade, then retry.
         if (!in_array($e->getCode(), ['42S02', '42S22'], true)) throw $e;
         if ($db->inTransaction()) $db->rollBack();
         Game::installSchema($db);
-        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config);
+        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config, $streaks, $reminders);
     }
 } catch (GameError $e) {
     respond($e->status, ['error' => $e->getMessage()]);

@@ -35,6 +35,8 @@ final class Game
         private readonly ?StateCache $stateCache = null,
         /** After this long without a guess, a room player shows as away and their seat is free. */
         public readonly int $awayAfterMs = 7 * 86_400_000,
+        /** Counts accounts' days in a row; without it, streaks aren't kept. */
+        private readonly ?Streaks $streaks = null,
     ) {
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -133,6 +135,17 @@ final class Game
                 ADD COLUMN words INT UNSIGNED NOT NULL DEFAULT 0,
                 ADD KEY idx_score (world_id, score)');
             self::recountScores($db);
+        }
+        // Streaks (days in a row with a word said) and the optional daily email.
+        if (!$db->query("SHOW COLUMNS FROM users LIKE 'streak'")->fetch()) {
+            $db->exec('ALTER TABLE users
+                ADD COLUMN streak SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+                ADD COLUMN streak_best SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+                ADD COLUMN streak_day CHAR(10) CHARACTER SET ascii NULL,
+                ADD COLUMN reminders TINYINT NOT NULL DEFAULT 0,
+                ADD COLUMN reminder_day CHAR(10) CHARACTER SET ascii NULL,
+                ADD COLUMN reminder_token CHAR(32) CHARACTER SET ascii NULL,
+                ADD KEY idx_reminders (reminders)');
         }
         // What was left unsaid when each prompt ended: how many answers, and the commonest few.
         if (!$db->query("SHOW COLUMNS FROM prompts LIKE 'unsaid_count'")->fetch()) {
@@ -572,13 +585,15 @@ final class Game
             $this->db->prepare('UPDATE players SET score = score + ?, words = words + 1, last_active_at = ? WHERE id = ?')
                 ->execute([$points, $at, $player['id']]);
             $this->changed($worldId);
+            // The day's first word: the streak it makes.
+            $streak = $player['user_id'] !== null ? $this->streaks?->played((int) $player['user_id']) : null;
             return [
                 'ok' => true,
                 'word' => $word,
                 'points' => $points,
                 'alsoBurned' => array_values(array_filter($family, fn ($w) => $w !== $word)),
                 'multipliers' => $mult,
-            ];
+            ] + ($streak !== null ? ['streak' => $streak] : []);
         });
     }
 

@@ -191,6 +191,15 @@ word-finder site. There are three kinds:
 
 ## Accounts
 
+- **Streaks:** the days in a row an account has said a word, anywhere (UK
+  days, matching the big world's rounds), and its best run. Kept on the
+  account, as words are tidied away a month after a world finishes. The day's
+  first word says "That's 5 days in a row!", and My games shows both.
+- **Daily email** (off unless a player turns it on, in the account menu):
+  sent by the daily housekeeping job when the big world starts afresh, to
+  those who haven't played yet that day, with their streak and how they did in
+  the last round. Each email has a link that turns it off without signing in.
+
 - **Signing in** is by email code: enter your email, get a 6-digit code, type
   it in. New players also choose a name, unique across the game and shown in
   every world ("Ann 2" if an old player there already has the name).

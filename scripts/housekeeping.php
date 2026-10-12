@@ -19,8 +19,11 @@ require "$root/src/Dictionary.php";
 require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
+require "$root/src/Streaks.php";
 require "$root/src/Game.php";
 require "$root/src/Housekeeping.php";
+require "$root/src/Mailer.php";
+require "$root/src/Reminders.php";
 
 $config = require getenv('UNSAID_CONFIG') ?: "$root/config.php";
 $db = new PDO(
@@ -36,4 +39,9 @@ $done = (new Housekeeping(
     $db, (int) ($config['housekeeping']['keep_days'] ?? 30), $cacheDir ?: null,
     game: $game, idleDays: (int) ($config['housekeeping']['idle_days'] ?? 60),
 ))->run();
+// The daily email, for accounts that asked for it. Needs site_url for its links.
+if (!empty($config['site_url'])) {
+    $streaks = new Streaks($db, $config['big_world']['timezone'] ?? 'Europe/London');
+    $done['dailyEmails'] = (new Reminders($db, $streaks))->send(new Mailer($config['mail'] ?? []), $config['site_url'], (int) ($config['daily_email_limit'] ?? 300));
+}
 foreach ($done as $what => $count) echo "$what: $count\n";

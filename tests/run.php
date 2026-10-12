@@ -13,6 +13,7 @@ require "$root/src/Dictionary.php";
 require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
+require "$root/src/Streaks.php";
 require "$root/src/Game.php";
 require "$root/src/Lobby.php";
 require "$root/src/PrivateWorlds.php";
@@ -22,6 +23,7 @@ require "$root/src/Housekeeping.php";
 require "$root/src/Admin.php";
 require "$root/src/Mailer.php";
 require "$root/src/Auth.php";
+require "$root/src/Reminders.php";
 
 $tests = [];
 function test(string $name, callable $fn): void
@@ -80,6 +82,7 @@ require __DIR__ . '/PrivateWorldsTest.php';
 require __DIR__ . '/CompetitionsTest.php';
 require __DIR__ . '/PacksTest.php';
 require __DIR__ . '/AuthTest.php';
+require __DIR__ . '/StreaksTest.php';
 require __DIR__ . '/ApiTest.php';
 
 $failed = 0;

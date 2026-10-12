@@ -12,6 +12,7 @@ require "$root/src/Dictionary.php";
 require "$root/src/Prompts.php";
 require "$root/src/Scoring.php";
 require "$root/src/StateCache.php";
+require "$root/src/Streaks.php";
 require "$root/src/Game.php";
 require "$root/src/PrivateWorlds.php";
 require "$root/src/Competitions.php";
