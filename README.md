@@ -12,6 +12,7 @@ left unsaid, scores rise, so clever late players can still catch up.
 - Putting it on a cPanel host: [docs/DEPLOY.md](docs/DEPLOY.md)
 - Growing to many players: [docs/SCALING.md](docs/SCALING.md)
 - Reviewing the meaning categories: [docs/DICTIONARY-REVIEW.md](docs/DICTIONARY-REVIEW.md)
+- Before the first live release: [docs/LAUNCH.md](docs/LAUNCH.md)
 
 ## Requirements
 
