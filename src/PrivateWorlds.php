@@ -243,11 +243,11 @@ final class PrivateWorlds
     {
         $stmt = $this->db->prepare("
             SELECT w.*, p.score, p.words FROM players p JOIN worlds w ON w.id = p.world_id
-            WHERE p.user_id = ? AND p.removed = 0 AND w.kind IN ('room', 'private') AND w.ended_at IS NULL");
+            WHERE p.user_id = ? AND p.removed = 0 AND w.kind IN ('room', 'private', 'competition') AND w.ended_at IS NULL");
         $stmt->execute([$user['id']]);
         $worlds = [];
         foreach ($stmt->fetchAll() as $w) $worlds[$w['id']] = $w;
-        $stmt = $this->db->prepare("SELECT w.*, NULL AS score, NULL AS words FROM worlds w WHERE owner_user_id = ? AND kind = 'private'");
+        $stmt = $this->db->prepare("SELECT w.*, NULL AS score, NULL AS words FROM worlds w WHERE owner_user_id = ? AND kind IN ('private', 'competition')");
         $stmt->execute([$user['id']]);
         foreach ($stmt->fetchAll() as $w) {
             if (isset($worlds[$w['id']])) continue;
@@ -271,6 +271,8 @@ final class PrivateWorlds
                 'players' => (int) $count,
                 'lastPlayed' => (int) $lastPlayed ?: null,
                 'left' => max(0, 1 - (int) $burned->fetchColumn() / $this->game->dictionarySize()),
+                'startsAt' => isset($w['starts_at']) ? (int) $w['starts_at'] : null,
+                'endsAt' => isset($w['ends_at']) ? (int) $w['ends_at'] : null,
             ];
         }
         usort($out, fn ($a, $b) => [$a['ended'], -($a['lastPlayed'] ?? 0)] <=> [$b['ended'], -($b['lastPlayed'] ?? 0)]);

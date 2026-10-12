@@ -148,3 +148,21 @@ button.secondary { background: var(--surface); color: var(--text); border: 1px s
 button.danger { color: var(--bad); }
 button:disabled { opacity: 0.45; cursor: default; filter: none; }
 .admin-link { color: var(--muted); }
+
+/* Competitions: team colours (by team position) */
+.team-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: baseline; }
+.team-0 { background: #f28c38; } .team-1 { background: #4aa3df; } .team-2 { background: #6cc070; } .team-3 { background: #d65db1; }
+.team-4 { background: #e8c547; } .team-5 { background: #8f7ce0; } .team-6 { background: #3fc1b0; } .team-7 { background: #e0605f; }
+.team-8 { background: #a3a3a3; } .team-9 { background: #b08b5b; }
+#competition .teams-forming { list-style: none; padding: 0; margin: 8px 0 0; }
+#competition .teams-forming li { padding: 4px 0; }
+#comp-dialog, #comp-settings-dialog { width: min(560px, calc(100vw - 32px)); }
+#comp-settings-dialog h3 { margin: 20px 0 6px; font-size: 15px; }
+#comp-settings-dialog code { word-break: break-all; }
+.cs-team { border-top: 1px solid var(--border); padding: 10px 0; }
+.cs-team-head { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.cs-team-head input { flex: 1 1 140px; }
+.cs-team ul { list-style: none; padding: 0; margin: 6px 0 0; }
+.cs-team li { display: flex; gap: 8px; align-items: center; justify-content: space-between; padding: 3px 0; font-size: 14px; }
+textarea, select { font: inherit; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; width: 100%; box-sizing: border-box; }
+.prompt-card.waiting .counter, .prompt-card.waiting .meter, .prompt-card.waiting .stats { display: none; }

@@ -45,7 +45,7 @@ language shrinks, players hunt for rarer words, and those words are worth more.
   is kept too; deleting it after about 30 days is a future housekeeping job.
 - **Private worlds.** For a group of friends. Each world uses up its own
   copy of the dictionary. See "Plans and private worlds" below.
-- **Competitions** (planned, next): private worlds
+- **Competitions:** private worlds
   with teams and a fixed start and end. See "Competitions" below.
 - **Accounts.** Everyone needs a free account to play, join or create
   worlds; anyone can watch. See "Accounts" below.
@@ -291,7 +291,7 @@ count). A private world with no guesses for 60 days ends automatically
 big world, their room, and their private worlds, with their score, the
 number of players, how much is left and when someone last played.
 
-## Competitions (planned)
+## Competitions
 
 For organisers: a private world with teams, such as a quiz night, a class or
 an office contest.
@@ -309,7 +309,29 @@ an office contest.
   "this prompt" and overall), with each player's team shown, in team colours,
   and who said each word visible to all.
 - **At the end**, final team and individual standings, in My games too
-  ("Team Owls, 2nd of 6").
+  ("Team Owls, 2nd of 6"). A competition nobody looks at after its end is
+  finished by the nightly housekeeping, so its results are still recorded.
+
+As built:
+- **Creating** (Organiser plan, up to 3 planned or running at once): name,
+  start and end (up to 31 days apart), prompt length (5, 15 or 60 minutes,
+  4 hours or a day), 2–20 team names, an optional team size (up to 50), and
+  spelling. Prompts of 15 minutes or less get 30–200 answers, so a busy room
+  doesn't empty them at once.
+- **Links:** each team's link joins that team (a "Join Owls" button before the
+  start, or simply saying a word once it's on). A separate watching link lets
+  people follow without playing. Players see a "Copy team link" button to
+  invite teammates. Late joiners can join a team with room until the end.
+- **Players can't switch teams** by opening another team's link; the
+  organiser can move them before the start, and remove them at any time.
+- **Organiser controls** (Competition settings): rename; before the start,
+  change the times, pace and team size, add, rename or remove teams; after
+  it, move the end; make a new link for any team; end now; delete (before
+  the start or after the end). The organiser only plays if they join a team
+  through its link.
+- **On the page:** a countdown and the teams forming before the start; a
+  Teams tab on the leaderboard (team, players, this prompt, total); a colour
+  dot for each player's team on the leaderboards and in Just said.
 
 ## Ideas for later
 

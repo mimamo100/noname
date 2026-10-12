@@ -202,8 +202,10 @@ final class Lobby
     public function history(int $userId): array
     {
         $stmt = $this->db->prepare('
-            SELECT r.world_id, w.name, w.kind, r.place, r.players, r.score, r.words, r.best_word, r.best_points, r.ended_at
+            SELECT r.world_id, w.name, w.kind, r.place, r.players, r.score, r.words, r.best_word, r.best_points, r.ended_at,
+              r.team_name, tr.place AS team_place, tr.teams
             FROM results r JOIN worlds w ON w.id = r.world_id
+            LEFT JOIN team_results tr ON tr.world_id = r.world_id AND tr.name = r.team_name
             WHERE r.user_id = ? ORDER BY r.ended_at DESC LIMIT 100');
         $stmt->execute([$userId]);
         $games = array_map(fn ($r) => [
@@ -212,6 +214,8 @@ final class Lobby
             'score' => (int) $r['score'], 'words' => (int) $r['words'],
             'bestWord' => $r['best_word'], 'bestPoints' => $r['best_points'] === null ? null : (int) $r['best_points'],
             'endedAt' => (int) $r['ended_at'],
+            'team' => $r['team_name'] === null ? null
+                : ['name' => $r['team_name'], 'place' => $r['team_place'] === null ? null : (int) $r['team_place'], 'teams' => (int) $r['teams']],
         ], $stmt->fetchAll());
 
         $stmt = $this->db->prepare('

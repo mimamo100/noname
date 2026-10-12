@@ -160,3 +160,31 @@ CREATE TABLE IF NOT EXISTS meta (
   name VARCHAR(40) CHARACTER SET ascii NOT NULL PRIMARY KEY,
   value TEXT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Teams in a competition. Each has its own invite link; position picks its colour.
+CREATE TABLE IF NOT EXISTS teams (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  world_id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  name VARCHAR(40) NOT NULL,
+  invite_code VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  position TINYINT UNSIGNED NOT NULL,
+  created_at BIGINT NOT NULL,
+  UNIQUE KEY uniq_name (world_id, name),
+  KEY idx_invite (invite_code),
+  FOREIGN KEY (world_id) REFERENCES worlds(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Final team standings of finished competitions, for My games.
+CREATE TABLE IF NOT EXISTS team_results (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  world_id VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+  team_id INT UNSIGNED NOT NULL,
+  name VARCHAR(40) NOT NULL,
+  place INT UNSIGNED NOT NULL,
+  teams INT UNSIGNED NOT NULL,
+  score INT NOT NULL,
+  players INT UNSIGNED NOT NULL,
+  ended_at BIGINT NOT NULL,
+  KEY idx_world (world_id, place),
+  FOREIGN KEY (world_id) REFERENCES worlds(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

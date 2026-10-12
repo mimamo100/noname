@@ -14,6 +14,7 @@ declare(strict_types=1);
  *   standings stay in results, which is what My games shows
  * - cached world states nobody has looked at for a day
  * - private worlds nobody has guessed in for idle_days: they end, like a finished room
+ * - competitions and big world rounds past their end that nobody has visited since: they finish
  *
  * Deletes in batches, so the game keeps running smoothly meanwhile. Each run is recorded in
  * the meta table, and the admin page shows when it last ran.
@@ -55,6 +56,7 @@ final class Housekeeping
             'misses' => 0,
             'cacheFiles' => $this->cleanCache($now),
             'idleWorldsEnded' => $this->endIdleWorlds($now),
+            'overdueWorldsFinished' => $this->finishOverdueWorlds($now),
         ];
 
         // Finished worlds' detail. Their players keep their final scores, so the final
@@ -92,6 +94,20 @@ final class Housekeeping
             WHERE w.kind = 'private' AND w.ended_at IS NULL AND w.created_at < :since
             AND COALESCE((SELECT MAX(last_active_at) FROM players WHERE world_id = w.id), 0) < :since");
         $stmt->execute(['since' => $now - $this->idleDays * self::DAY_MS]);
+        $ids = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        foreach ($ids as $id) $this->game->finishWorld($id);
+        return count($ids);
+    }
+
+    /**
+     * Finishes competitions and big world rounds whose end has passed but that nobody has looked
+     * at since (finishing happens on the next visit otherwise), so their results are recorded.
+     */
+    private function finishOverdueWorlds(int $now): int
+    {
+        if (!$this->game) return 0;
+        $stmt = $this->db->prepare('SELECT id FROM worlds WHERE ended_at IS NULL AND ends_at IS NOT NULL AND ends_at < ?');
+        $stmt->execute([$now]);
         $ids = $stmt->fetchAll(PDO::FETCH_COLUMN);
         foreach ($ids as $id) $this->game->finishWorld($id);
         return count($ids);

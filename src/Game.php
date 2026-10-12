@@ -107,6 +107,18 @@ final class Game
         if (!$db->query("SHOW COLUMNS FROM reports LIKE 'reviewed_at'")->fetch()) {
             $db->exec('ALTER TABLE reports ADD COLUMN reviewed_at BIGINT NULL, ADD KEY idx_open (reviewed_at)');
         }
+        // Competitions: a start time, a team size limit, players' teams, and team names in results.
+        // The kind column was made for 8 letters, and "competition" has 11.
+        if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'starts_at'")->fetch()) {
+            $db->exec("ALTER TABLE worlds ADD COLUMN starts_at BIGINT NULL, ADD COLUMN team_size SMALLINT UNSIGNED NULL,
+                MODIFY kind VARCHAR(12) CHARACTER SET ascii NOT NULL DEFAULT 'private'");
+        }
+        if (!$db->query("SHOW COLUMNS FROM players LIKE 'team_id'")->fetch()) {
+            $db->exec('ALTER TABLE players ADD COLUMN team_id INT UNSIGNED NULL, ADD KEY idx_team (team_id)');
+        }
+        if (!$db->query("SHOW COLUMNS FROM results LIKE 'team_name'")->fetch()) {
+            $db->exec('ALTER TABLE results ADD COLUMN team_name VARCHAR(40) NULL');
+        }
         // Running totals for the overall leaderboard, so polls don't re-add every word and miss.
         if (!$db->query("SHOW COLUMNS FROM players LIKE 'score'")->fetch()) {
             $db->exec('ALTER TABLE players
@@ -167,7 +179,8 @@ final class Game
     // --- Worlds and players ---
 
     /**
-     * @param array{kind?: string, endsAt?: int, promptMin?: int, promptMax?: int, maxPlayers?: int} $options
+     * @param array{kind?: string, startsAt?: int, endsAt?: int, promptMin?: int, promptMax?: int, maxPlayers?: int, teamSize?: int} $options
+     *   kind 'competition' has teams (see Competitions) and starts at startsAt.
      *   kind: 'private' (default), 'public' (a round of the big world, ending at endsAt) or 'room';
      *   promptMin/promptMax: how many answers each prompt should have.
      */
@@ -183,8 +196,12 @@ final class Game
             ->execute([
                 $id, $name, $kind = $options['kind'] ?? 'private', $promptDurationMs, $spelling, $ownerUserId,
                 $options['promptMin'] ?? null, $options['promptMax'] ?? null, $options['endsAt'] ?? null,
-                $kind === 'private' ? self::newInviteCode() : null, $options['maxPlayers'] ?? null, $this->now(),
+                in_array($kind, ['private', 'competition'], true) ? self::newInviteCode() : null, $options['maxPlayers'] ?? null, $this->now(),
             ]);
+        if (isset($options['startsAt']) || isset($options['teamSize'])) {
+            $this->db->prepare('UPDATE worlds SET starts_at = ?, team_size = ? WHERE id = ?')
+                ->execute([$options['startsAt'] ?? null, $options['teamSize'] ?? null, $id]);
+        }
         $this->currentPrompt($id);
         return $this->world($id);
     }
@@ -344,7 +361,10 @@ final class Game
     /** Returns the active prompt, rotating it first if it has expired or run dry. Null when the world has no words left. */
     public function currentPrompt(string $worldId): ?array
     {
-        if ($this->world($worldId)['ended_at'] ?? null) return null;
+        $world = $this->world($worldId);
+        if ($world['ended_at'] ?? null) return null;
+        // A competition has no prompt until it starts.
+        if (isset($world['starts_at']) && $this->now() < (int) $world['starts_at']) return null;
         return $this->livePrompt($worldId) ?? $this->withWorldLock($worldId, function () use ($worldId) {
             if ($prompt = $this->livePrompt($worldId)) return $prompt; // Another request rotated it first.
             $world = $this->world($worldId);
@@ -396,9 +416,10 @@ final class Game
             $now = $this->now();
 
             $stmt = $this->db->prepare('
-                SELECT id, user_id, nickname, score, words FROM players
-                WHERE world_id = ? AND removed = 0 AND (words > 0 OR score <> 0)
-                ORDER BY score DESC, words DESC, nickname');
+                SELECT p.id, p.user_id, p.nickname, p.score, p.words, t.name AS team_name FROM players p
+                LEFT JOIN teams t ON t.id = p.team_id
+                WHERE p.world_id = ? AND p.removed = 0 AND (p.words > 0 OR p.score <> 0)
+                ORDER BY p.score DESC, p.words DESC, p.nickname');
             $stmt->execute([$worldId]);
             $players = $stmt->fetchAll();
 
@@ -411,16 +432,29 @@ final class Game
             }
 
             $insert = $this->db->prepare('
-                INSERT INTO results (world_id, user_id, nickname, place, players, score, words, best_word, best_points, ended_at)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                INSERT INTO results (world_id, user_id, nickname, place, players, score, words, best_word, best_points, team_name, ended_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
             $place = 0;
             foreach ($players as $i => $p) {
                 if ($i === 0 || $p['score'] !== $players[$i - 1]['score']) $place = $i + 1;
                 $b = $best[$p['id']] ?? null;
                 $insert->execute([
                     $worldId, $p['user_id'], $p['nickname'], $place, count($players), $p['score'], $p['words'],
-                    $b['played_word'] ?? null, $b['points'] ?? null, $now,
+                    $b['played_word'] ?? null, $b['points'] ?? null, $p['team_name'], $now,
                 ]);
+            }
+            // A competition's teams, every team placed (an empty one comes last with 0).
+            $world = $this->world($worldId);
+            if (($world['kind'] ?? '') === 'competition') {
+                $teams = $this->teamStandings($worldId, -1);
+                $insert = $this->db->prepare('
+                    INSERT INTO team_results (world_id, team_id, name, place, teams, score, players, ended_at)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+                $place = 0;
+                foreach ($teams as $i => $t) {
+                    if ($i === 0 || $t['score'] !== $teams[$i - 1]['score']) $place = $i + 1;
+                    $insert->execute([$worldId, $t['id'], $t['name'], $place, count($teams), $t['score'], count($t['players']), $now]);
+                }
             }
             $this->db->prepare('UPDATE worlds SET ended_at = ? WHERE id = ?')->execute([$now, $worldId]);
             $this->db->prepare('UPDATE prompts SET ended_at = ? WHERE world_id = ? AND ended_at IS NULL')->execute([$now, $worldId]);
@@ -445,7 +479,7 @@ final class Game
         $this->checkRateLimit($player);
         return $this->withWorldLock($worldId, function () use ($worldId, $player, $word) {
             unset($this->burnedCache[$worldId]); // Re-read under the lock.
-            $prompt = $this->currentPrompt($worldId) ?? throw new GameError(410, $this->endedMessage($this->world($worldId)));
+            $prompt = $this->currentPrompt($worldId) ?? throw $this->noPromptError($this->world($worldId));
 
             // Typos aren't penalised, but a word that doesn't fit or was already said costs points,
             // so pasting a list of answers from a word-finder site loses more than it gains.
@@ -505,12 +539,21 @@ final class Game
         });
     }
 
+    private function noPromptError(array $world): GameError
+    {
+        if (isset($world['starts_at']) && $this->now() < (int) $world['starts_at'] && !$world['ended_at']) {
+            return new GameError(409, "The competition hasn't started yet.");
+        }
+        return new GameError(410, $this->endedMessage($world));
+    }
+
     /** Why a finished world can't be played any more: for someone trying to play, or looking at it. */
     public function endedMessage(array $world, bool $playing = true): string
     {
         return match ($world['kind'] ?? 'private') {
             'public' => $playing ? 'This round has finished. Reload the page for the new one.' : 'This round of the big world has finished.',
             'room' => 'This room has run out of words. Join a new room from the home page.',
+            'competition' => 'This competition has finished.',
             default => 'This world has run out of words',
         };
     }
@@ -553,7 +596,7 @@ final class Game
      * The words said in the world's latest prompts (the current one first), each with all
      * its words, newest first. Older prompts' words can still be found with lookup().
      */
-    private function saidByPrompt(string $worldId, int $prompts = 4): array
+    private function saidByPrompt(string $worldId, int $prompts = 4, array $teamOf = []): array
     {
         $stmt = $this->db->prepare("SELECT id, spec, label, type, letters FROM prompts WHERE world_id = ? ORDER BY id DESC LIMIT $prompts");
         $stmt->execute([$worldId]);
@@ -568,7 +611,7 @@ final class Game
         if (!$groups) return [];
         $ids = implode(',', array_keys($groups)); // Integers from the database.
         $stmt = $this->db->prepare("
-            SELECT b.word, b.points, b.burned_at, b.prompt_id, p.nickname,
+            SELECT b.word, b.points, b.burned_at, b.prompt_id, p.nickname, p.team_id,
               (SELECT COUNT(*) - 1 FROM burns f WHERE f.world_id = b.world_id AND f.played_word = b.word) AS family_count
             FROM burns b JOIN players p ON p.id = b.player_id
             WHERE b.world_id = ? AND b.word = b.played_word AND b.prompt_id IN ($ids)
@@ -578,7 +621,8 @@ final class Game
             $groups[(int) $r['prompt_id']]['words'][] = [
                 'word' => $r['word'], 'points' => (int) $r['points'], 'by' => $r['nickname'],
                 'at' => (int) $r['burned_at'], 'familyCount' => (int) $r['family_count'],
-            ] + ($this->dictionary->isMasked($r['word']) ? ['masked' => true] : []);
+            ] + ($this->dictionary->isMasked($r['word']) ? ['masked' => true] : [])
+              + (isset($teamOf[$r['team_id']]) ? ['team' => $teamOf[$r['team_id']]] : []);
         }
         return array_values($groups);
     }
@@ -699,21 +743,26 @@ final class Game
         $mult = $this->multipliers($worldId, $prompt);
         $promptId = $prompt['id'] ?? -1;
 
+        $isCompetition = ($world['kind'] ?? '') === 'competition';
+        $teams = $isCompetition ? $this->teamStandings($worldId, $promptId) : null;
+        $teamOf = $teams ? array_column($teams, 'position', 'id') : [];
+        $withTeam = fn (array $row, $teamId) => $isCompetition && isset($teamOf[$teamId]) ? $row + ['team' => $teamOf[$teamId]] : $row;
+
         // Scores include penalties for wrong guesses. Kept as running totals on each player.
         $stmt = $this->db->prepare('
-            SELECT nickname, score, words, last_active_at FROM players WHERE world_id = ? AND removed = 0
+            SELECT nickname, score, words, last_active_at, team_id FROM players WHERE world_id = ? AND removed = 0
             ORDER BY score DESC, words DESC, nickname LIMIT 50');
         $stmt->execute([$worldId]);
         // In rooms, players who've stopped playing show as away: their seat is free for someone new.
         $awaySince = ($world['kind'] ?? '') === 'room' && !$world['ended_at'] ? $this->now() - $this->awayAfterMs : null;
-        $leaderboard = array_map(fn ($r) => [
+        $leaderboard = array_map(fn ($r) => $withTeam([
             'nickname' => $r['nickname'], 'total' => (int) $r['score'], 'words' => (int) $r['words'],
-        ] + ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : []), $stmt->fetchAll());
+        ] + ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : []), $r['team_id']), $stmt->fetchAll());
 
         // The same, ranked by the current prompt alone, so late arrivals can top something.
         // Only players who have tried a word in this prompt are listed.
         $stmt = $this->db->prepare('
-            SELECT p.nickname, COALESCE(b.words, 0) AS words, COALESCE(b.points, 0) + COALESCE(m.points, 0) AS points
+            SELECT p.nickname, p.team_id, COALESCE(b.words, 0) AS words, COALESCE(b.points, 0) + COALESCE(m.points, 0) AS points
             FROM players p
             LEFT JOIN (
               SELECT player_id, COUNT(CASE WHEN word = played_word THEN 1 END) AS words, SUM(points) AS points
@@ -726,9 +775,9 @@ final class Game
             ORDER BY points DESC, words DESC, p.nickname
             LIMIT 50');
         $stmt->execute([$promptId, $promptId, $worldId]);
-        $promptBoard = array_map(fn ($r) => [
+        $promptBoard = array_map(fn ($r) => $withTeam([
             'nickname' => $r['nickname'], 'points' => (int) $r['points'], 'words' => (int) $r['words'],
-        ], $stmt->fetchAll());
+        ], $r['team_id']), $stmt->fetchAll());
 
         return [
             'world' => [
@@ -736,6 +785,8 @@ final class Game
                 'kind' => $world['kind'] ?? 'private',
                 'closed' => (bool) ($world['closed'] ?? false),
                 'endsAt' => isset($world['ends_at']) ? (int) $world['ends_at'] : null,
+                'startsAt' => isset($world['starts_at']) ? (int) $world['starts_at'] : null,
+                'teamSize' => isset($world['team_size']) ? (int) $world['team_size'] : null,
                 // Set once the world is over: out of words, or the round's time is up.
                 'ended' => $ended,
                 'endedMessage' => $ended ? $this->endedMessage($world, playing: false) : null,
@@ -750,9 +801,46 @@ final class Game
             'multipliers' => $mult,
             'dictionary' => ['size' => $this->dictionary->size(), 'burned' => count($this->burned($worldId))],
             // Every word said in the current prompt and the few before it, newest prompt first.
-            'said' => $this->saidByPrompt($worldId),
+            'said' => $this->saidByPrompt($worldId, teamOf: $teamOf),
             'leaderboard' => $leaderboard,
             'promptBoard' => $promptBoard,
-        ];
+        ] + ($isCompetition ? ['teams' => $teams] : []);
+    }
+
+    /**
+     * A competition's teams, best first: each team's score is the total of its players' scores
+     * (penalties included), with this prompt's points, and its players' names.
+     */
+    public function teamStandings(string $worldId, int $promptId): array
+    {
+        $stmt = $this->db->prepare('SELECT id, name, position FROM teams WHERE world_id = ? ORDER BY position');
+        $stmt->execute([$worldId]);
+        $teams = [];
+        foreach ($stmt->fetchAll() as $t) {
+            $teams[(int) $t['id']] = ['id' => (int) $t['id'], 'name' => $t['name'], 'position' => (int) $t['position'],
+                'score' => 0, 'thisPrompt' => 0, 'words' => 0, 'players' => []];
+        }
+        $stmt = $this->db->prepare('SELECT team_id, nickname, score, words FROM players WHERE world_id = ? AND removed = 0 AND team_id IS NOT NULL ORDER BY nickname');
+        $stmt->execute([$worldId]);
+        foreach ($stmt->fetchAll() as $p) {
+            if (!isset($teams[(int) $p['team_id']])) continue;
+            $team = &$teams[(int) $p['team_id']];
+            $team['score'] += (int) $p['score'];
+            $team['words'] += (int) $p['words'];
+            $team['players'][] = $p['nickname'];
+            unset($team);
+        }
+        foreach (['burns', 'misses'] as $table) {
+            $stmt = $this->db->prepare("
+                SELECT p.team_id, SUM(x.points) AS points FROM $table x JOIN players p ON p.id = x.player_id
+                WHERE x.prompt_id = ? AND p.removed = 0 AND p.team_id IS NOT NULL GROUP BY p.team_id");
+            $stmt->execute([$promptId]);
+            foreach ($stmt->fetchAll() as $r) {
+                if (isset($teams[(int) $r['team_id']])) $teams[(int) $r['team_id']]['thisPrompt'] += (int) $r['points'];
+            }
+        }
+        $teams = array_values($teams);
+        usort($teams, fn ($a, $b) => [$b['score'], $b['words'], $a['position']] <=> [$a['score'], $a['words'], $b['position']]);
+        return $teams;
     }
 }

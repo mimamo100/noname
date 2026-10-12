@@ -11,6 +11,7 @@
 //   GET  /api/me/worlds                                            rooms and private worlds you're in (account needed)
 //
 //   POST /api/rooms                                         join a room: your own, or one with a free seat (account needed)
+//   POST /api/competitions                {name, spelling, startsAt, endsAt, promptMinutes, teams[], teamSize}  (Organiser plan)
 //
 //   POST /api/worlds                      {name, spelling, promptHours, maxPlayers}  create a private world (Host plan)
 //   ("big" as a world id means the big world's current round)
@@ -27,6 +28,10 @@
 //   POST /api/worlds/{id}/remove          {nickname}        remove a player (owner)
 //   POST /api/worlds/{id}/end                               finish the world (owner)
 //   POST /api/worlds/{id}/delete                            delete it: once ended, or if nobody else joined (owner)
+//   Competitions also: invite takes {team} (none = the watching link);
+//   POST /api/worlds/{id}/teams           {add} | {rename, name} | {remove}  teams, before the start (organiser)
+//   POST /api/worlds/{id}/move            {nickname, team}  move a player, before the start (organiser)
+//   A competition's team links join that team: ?invite={team code}.
 
 declare(strict_types=1);
 
@@ -39,6 +44,7 @@ require "$root/src/StateCache.php";
 require "$root/src/Game.php";
 require "$root/src/Lobby.php";
 require "$root/src/PrivateWorlds.php";
+require "$root/src/Competitions.php";
 require "$root/src/Admin.php";
 require "$root/src/Mailer.php";
 require "$root/src/Auth.php";
@@ -76,7 +82,7 @@ function body(): array
     return $data;
 }
 
-function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, array $config): never
+function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Competitions $competitions, array $config): never
 {
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -109,6 +115,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, arr
 
     if ($resource === 'me' && $method === 'GET' && $worldId === 'history') respond(200, $lobby->history((int) $needUser()['id']));
     if ($resource === 'me' && $method === 'GET' && $worldId === 'worlds') respond(200, ['worlds' => $private->myWorlds($needUser())]);
+    if ($resource === 'competitions' && $method === 'POST' && $worldId === null) respond(201, $competitions->create($needUser(), body()));
     if ($resource === 'rooms' && $method === 'POST' && $worldId === null) {
         respond(200, $lobby->joinRoom($needUser()));
     }
@@ -118,38 +125,61 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, arr
 
     if ($method === 'POST' && $worldId === null) respond(201, $private->create($needUser(), body()));
     if ($worldId === null) throw new GameError(404, 'Not found');
+    $world = $game->world($worldId);
+    $isCompetition = ($world['kind'] ?? '') === 'competition';
 
-    // Owner controls for private worlds.
-    if ($action === 'settings' && $method === 'GET') respond(200, $private->settings($worldId, $needUser()));
-    if ($action === 'settings' && $method === 'POST') respond(200, $private->update($worldId, $needUser(), body()));
-    if ($action === 'invite' && $method === 'POST') respond(200, ['invite' => $private->newInvite($worldId, $needUser())]);
+    // Owner controls: for private worlds and competitions.
+    $owned = $isCompetition ? $competitions : $private;
+    if ($action === 'settings' && $method === 'GET') respond(200, $owned->settings($worldId, $needUser()));
+    if ($action === 'settings' && $method === 'POST') respond(200, $owned->update($worldId, $needUser(), body()));
+    if ($action === 'invite' && $method === 'POST') {
+        $team = body()['team'] ?? null;
+        respond(200, ['invite' => $isCompetition
+            ? $competitions->newInvite($worldId, $needUser(), $team === null ? null : (int) $team)
+            : $private->newInvite($worldId, $needUser())]);
+    }
     if ($action === 'remove' && $method === 'POST') {
-        $private->removePlayer($worldId, $needUser(), (string) (body()['nickname'] ?? ''));
+        $owned->removePlayer($worldId, $needUser(), (string) (body()['nickname'] ?? ''));
         respond(200, ['ok' => true]);
     }
     if ($action === 'end' && $method === 'POST') {
-        $private->end($worldId, $needUser());
+        $owned->end($worldId, $needUser());
         respond(200, ['ok' => true]);
     }
     if ($action === 'delete' && $method === 'POST') {
-        $private->delete($worldId, $needUser());
+        $owned->delete($worldId, $needUser());
         respond(200, ['ok' => true]);
+    }
+    if ($isCompetition && $action === 'teams' && $method === 'POST') {
+        $b = body();
+        if (isset($b['add'])) $competitions->addTeam($worldId, $needUser(), (string) $b['add']);
+        elseif (isset($b['rename'])) $competitions->renameTeam($worldId, $needUser(), (int) $b['rename'], (string) ($b['name'] ?? ''));
+        elseif (isset($b['remove'])) $competitions->removeTeam($worldId, $needUser(), (int) $b['remove']);
+        else throw new GameError(400, 'Say add, rename or remove');
+        respond(200, $competitions->settings($worldId, $needUser()));
+    }
+    if ($isCompetition && $action === 'move' && $method === 'POST') {
+        $b = body();
+        $competitions->movePlayer($worldId, $needUser(), (string) ($b['nickname'] ?? ''), (int) ($b['team'] ?? 0));
+        respond(200, $competitions->settings($worldId, $needUser()));
     }
 
     // Everything else: who may see the world, and who may play in it.
-    $world = $game->world($worldId);
     $invite = isset($_GET['invite']) ? (string) $_GET['invite'] : null;
-    $private->checkCanView($world, $user, $invite);
-    $playerFor = fn () => ($world['kind'] ?? 'private') === 'private'
-        ? $private->playerFor($world, $needUser(), $invite)
-        : $lobby->playerFor($worldId, $needUser());
+    if ($isCompetition) $competitions->checkCanView($world, $user, $invite);
+    else $private->checkCanView($world, $user, $invite);
+    $playerFor = fn () => match ($world['kind'] ?? 'private') {
+        'private' => $private->playerFor($world, $needUser(), $invite),
+        'competition' => $competitions->playerFor($world, $needUser(), $invite),
+        default => $lobby->playerFor($worldId, $needUser()),
+    };
 
     if ($method === 'GET' && $action === null) {
         $player = $user ? $game->playerForUser($worldId, $user['id']) : null;
         $state = $game->state($worldId, $player['token'] ?? null)
             + ['account' => $user ? ['name' => $user['name'], 'plan' => $user['plan']] : null]
             + ['admin' => adminLink($config)]
-            + $private->personal($world, $user);
+            + ($isCompetition ? $competitions->personal($world, $user, $invite) : $private->personal($world, $user));
         if ($isBigWorld) {
             $state['lastRound'] = $lobby->lastRound();
             $state['myRoom'] = $user ? $lobby->myRoom((int) $user['id']) : null;
@@ -184,15 +214,16 @@ try {
         awayAfterMs: (int) (($config['rooms']['away_days'] ?? 7) * 86_400_000));
     $lobby = new Lobby($db, $game, $config);
     $private = new PrivateWorlds($db, $game);
+    $competitions = new Competitions($db, $game);
     $auth = new Auth($db, new Mailer($config['mail'] ?? []), $dictionary);
     try {
-        route($game, $auth, $lobby, $private, $config);
+        route($game, $auth, $lobby, $private, $competitions, $config);
     } catch (PDOException $e) {
         // A missing table or column means a new install or an older database: set up or upgrade, then retry.
         if (!in_array($e->getCode(), ['42S02', '42S22'], true)) throw $e;
         if ($db->inTransaction()) $db->rollBack();
         Game::installSchema($db);
-        route($game, $auth, $lobby, $private, $config);
+        route($game, $auth, $lobby, $private, $competitions, $config);
     }
 } catch (GameError $e) {
     respond($e->status, ['error' => $e->getMessage()]);

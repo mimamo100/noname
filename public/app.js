@@ -74,6 +74,7 @@ function el(tag, attrs = {}, ...children) {
 
 function renderClock(state) {
   if (state.prompt) $('ends-in').textContent = timeLeft(state.prompt.endsAt - state.now);
+  if (state.world.kind === 'competition') renderCompetitionClock(state);
   if (state.world.kind === 'public' && state.world.endsAt) {
     $('round-info').textContent = `Everyone signed in plays here, and it starts afresh every round. This round ends in ${timeLeft(state.world.endsAt - state.now)}.`;
   }
@@ -117,6 +118,179 @@ function renderLobby(state) {
   }
 }
 
+// --- Competitions ---
+
+const whenText = (ms) => new Date(ms).toLocaleString(undefined, { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+let competitionShown = false;
+
+function renderCompetitionClock(state) {
+  const line = document.getElementById('competition-clock');
+  if (!line || state.world.ended) return;
+  const started = state.now >= state.world.startsAt;
+  line.textContent = started
+    ? `It's on: ends in ${timeLeft(state.world.endsAt - state.now)}.`
+    : `Starts in ${timeLeft(state.world.startsAt - state.now)} (${whenText(state.world.startsAt)}), ends ${whenText(state.world.endsAt)}.`;
+}
+
+function renderCompetition(state) {
+  const competition = state.world.kind === 'competition';
+  $('tab-teams').hidden = !competition;
+  $('competition').hidden = !competition || state.world.ended;
+  if (!competition) {
+    if (board === 'teams') showBoard('overall', false);
+    competitionShown = false;
+    return;
+  }
+  if (!competitionShown) {
+    competitionShown = true;
+    let saved = null;
+    try { saved = localStorage.getItem('unsaid:board'); } catch { /* default */ }
+    showBoard(saved === 'prompt' || saved === 'overall' ? saved : 'teams', false);
+  }
+  if (state.world.ended) return;
+  const started = state.now >= state.world.startsAt;
+  const parts = [el('p', { id: 'competition-clock' })];
+  if (state.myTeam) {
+    parts.push(el('p', {}, "You're in ", ...teamDot(state.myTeam.position), el('b', { textContent: state.myTeam.name }),
+      started ? '. Every point you score counts for your team.' : '. Send teammates your team link (Copy team link, at the top).'));
+  } else if (state.joiningTeam) {
+    const join = el('button', { type: 'button', textContent: `Join ${state.joiningTeam.name}` });
+    join.addEventListener('click', async () => {
+      if (!session) { showSigninStep('email'); $('signin').hidden = false; $('signin').scrollIntoView({ block: 'center' }); return; }
+      try {
+        await api(`/${encodeURIComponent(worldId)}/join`, { method: 'POST' });
+        feedback(`You've joined ${state.joiningTeam.name}.`, 'good');
+        refresh();
+      } catch (err) { feedback(err.message, 'bad'); }
+    });
+    parts.push(el('p', {}, "This is the link for ", ...teamDot(state.joiningTeam.position), el('b', { textContent: state.joiningTeam.name }), '. '), join);
+  } else if (!state.isOwner) {
+    parts.push(el('p', { className: 'muted small', textContent: "You're watching. To play, open your team's invite link from the organiser." }));
+  }
+  if (!started) {
+    parts.push(el('ul', { className: 'teams-forming' }, ...state.teams.slice().sort((a, b) => a.position - b.position).map((t) => el('li', {},
+      ...teamDot(t.position), el('b', { textContent: t.name }), ' ',
+      el('span', { className: 'muted small', textContent: t.players.length ? t.players.join(', ') : 'nobody yet' }),
+    ))));
+  }
+  $('competition').replaceChildren(...parts);
+  renderCompetitionClock(state);
+}
+
+// Times for datetime-local inputs, in the viewer's own time zone.
+const toLocalInput = (ms) => { const d = new Date(ms); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 16); };
+const fromLocalInput = (value) => new Date(value).getTime();
+
+$('new-competition').addEventListener('click', () => {
+  const start = new Date();
+  start.setHours(start.getHours() + 1, 0, 0, 0);
+  $('comp-starts').value = toLocalInput(start.getTime());
+  $('comp-ends').value = toLocalInput(start.getTime() + 3_600_000);
+  $('comp-dialog').showModal();
+});
+$('comp-cancel').addEventListener('click', () => $('comp-dialog').close());
+$('comp-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  try {
+    const made = await rootApi('/competitions', { method: 'POST', body: {
+      name: $('comp-name').value,
+      startsAt: fromLocalInput($('comp-starts').value),
+      endsAt: fromLocalInput($('comp-ends').value),
+      promptMinutes: Number($('comp-pace').value),
+      teams: $('comp-teams').value.split('\n'),
+      teamSize: $('comp-size').value ? Number($('comp-size').value) : null,
+      spelling: new FormData(e.target).get('comp-spelling'),
+    } });
+    location.href = `/w/${encodeURIComponent(made.id)}`;
+  } catch (err) {
+    feedback(err.message, 'bad');
+    $('comp-dialog').close();
+  }
+});
+
+let compSettings = null;
+const compUrl = (code) => `${location.origin}/w/${encodeURIComponent(lastState.world.id)}?invite=${encodeURIComponent(code)}`;
+
+async function compAction(action, body, done, question) {
+  if (question && !confirm(question)) return;
+  try {
+    const result = await api(`/${encodeURIComponent(lastState.world.id)}/${action}`, { method: 'POST', body });
+    if (action === 'delete') { location.href = '/'; return; }
+    await loadCompSettings();
+    if (done) feedback(done, 'good');
+    refresh();
+    return result;
+  } catch (err) {
+    feedback(err.message, 'bad');
+    alert(err.message);
+  }
+}
+
+async function loadCompSettings() {
+  const c = compSettings = await api(`/${encodeURIComponent(lastState.world.id)}/settings`);
+  $('cs-name').value = c.name;
+  $('cs-starts').value = toLocalInput(c.startsAt);
+  $('cs-ends').value = toLocalInput(c.endsAt);
+  $('cs-pace').value = String(c.promptMinutes);
+  $('cs-size').value = c.teamSize ?? '';
+  for (const id of ['cs-starts', 'cs-pace', 'cs-size']) $(id).disabled = c.started;
+  $('cs-started-note').hidden = !c.started;
+  $('cs-add-team').hidden = c.started || c.ended;
+  $('cs-watch').textContent = compUrl(c.watchInvite);
+  $('cs-end').disabled = c.ended;
+  $('cs-delete').disabled = !c.canDelete;
+  $('cs-teams').replaceChildren(...c.teams.map((t) => {
+    const name = el('input', { value: t.name, maxLength: 30 });
+    const rename = el('button', { type: 'button', className: 'secondary', textContent: 'Rename' });
+    rename.addEventListener('click', () => compAction('teams', { rename: t.id, name: name.value }, 'Team renamed.'));
+    const copy = el('button', { type: 'button', className: 'secondary', textContent: 'Copy link' });
+    copy.addEventListener('click', () => copyText(compUrl(t.invite), `${t.name}'s link copied.`));
+    const fresh = el('button', { type: 'button', className: 'link', textContent: 'New link' });
+    fresh.addEventListener('click', () => compAction('invite', { team: t.id }, `New link for ${t.name}.`, `Make a new link for ${t.name}? The old one stops working.`));
+    const head = [...teamDot(t.position), name, rename, copy, fresh];
+    if (!c.started && !t.players.length) {
+      const remove = el('button', { type: 'button', className: 'link', textContent: 'Remove team' });
+      remove.addEventListener('click', () => compAction('teams', { remove: t.id }, `${t.name} removed.`, `Remove ${t.name}?`));
+      head.push(remove);
+    }
+    return el('div', { className: 'cs-team' },
+      el('div', { className: 'cs-team-head' }, ...head),
+      el('ul', {}, ...(t.players.length ? t.players.map((p) => {
+        const actions = [];
+        if (!c.started) {
+          const move = el('select', {}, el('option', { value: '', textContent: 'Move to…' }),
+            ...c.teams.filter((o) => o.id !== t.id).map((o) => el('option', { value: o.id, textContent: o.name })));
+          move.addEventListener('change', () => move.value && compAction('move', { nickname: p.nickname, team: Number(move.value) }, `${p.nickname} moved.`));
+          actions.push(move);
+        }
+        const remove = el('button', { type: 'button', className: 'link', textContent: 'Remove' });
+        remove.addEventListener('click', () => compAction('remove', { nickname: p.nickname }, `${p.nickname} removed.`,
+          `Remove ${p.nickname}? Their words stay used up, but their points leave the team and they can't come back.`));
+        actions.push(remove);
+        return el('li', {}, el('span', {}, el('b', { textContent: p.nickname }), ` ${p.score} points`), el('span', {}, ...actions));
+      }) : [el('li', { className: 'muted', textContent: 'Nobody yet' })])),
+    );
+  }));
+}
+
+$('comp-settings-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const body = { name: $('cs-name').value, endsAt: fromLocalInput($('cs-ends').value) };
+  if (!compSettings.started) {
+    Object.assign(body, { startsAt: fromLocalInput($('cs-starts').value), promptMinutes: Number($('cs-pace').value),
+      teamSize: $('cs-size').value ? Number($('cs-size').value) : null });
+  }
+  compAction('settings', body, 'Settings saved.');
+});
+$('cs-add-team').addEventListener('submit', (e) => {
+  e.preventDefault();
+  compAction('teams', { add: $('cs-new-team').value }, 'Team added.').then(() => { $('cs-new-team').value = ''; });
+});
+$('cs-copy-watch').addEventListener('click', () => copyText(compUrl(compSettings.watchInvite), 'Watching link copied.'));
+$('cs-end').addEventListener('click', () => compAction('end', {}, 'The competition has ended.', 'End the competition now for everyone? Final standings are as they are now. This can\'t be undone.'));
+$('cs-delete').addEventListener('click', () => compAction('delete', {}, '', 'Delete this competition and everything in it? This can\'t be undone.'));
+$('cs-close').addEventListener('click', () => $('comp-settings-dialog').close());
+
 async function joinRoom() {
   if (!session) {
     feedback('Sign in first to join a room.', 'bad');
@@ -143,6 +317,9 @@ function render(state) {
   $('world-mult').textContent = state.multipliers.world.toFixed(1);
   $('prompt-mult').textContent = state.multipliers.prompt.toFixed(1);
 
+  // A competition before its start has no prompt yet: just say so, without empty counters.
+  const waiting = state.world.kind === 'competition' && !state.world.ended && state.now < state.world.startsAt;
+  document.querySelector('.prompt-card').classList.toggle('waiting', waiting);
   if (state.prompt) {
     $('prompt-label').textContent = state.prompt.label;
     $('remaining').textContent = state.prompt.remaining;
@@ -150,19 +327,26 @@ function render(state) {
     $('meter-fill').style.width = `${Math.round(used * 100)}%`;
     renderClock(state);
   } else {
-    $('prompt-label').textContent = state.world.ended ? 'Finished' : 'This world has run out of words';
+    $('prompt-label').textContent = state.world.ended ? 'Finished' : waiting ? 'The first prompt appears at the start' : 'This world has run out of words';
     $('remaining').textContent = '0';
     $('ends-in').textContent = '–';
   }
+  const competition = state.world.kind === 'competition';
   $('copy-link').hidden = !state.invite;
+  $('copy-link').textContent = competition ? 'Copy team link' : 'Copy invite link';
   $('world-settings').hidden = !state.isOwner;
+  $('world-settings').textContent = competition ? 'Competition settings' : 'World settings';
+  $('new-competition').hidden = state.account?.plan !== 'organiser';
+  renderCompetition(state);
   renderLobby(state);
 
   const joined = Boolean(state.me);
   const signedIn = Boolean(state.account);
   if (!signedIn && session) setSession(null); // The session expired or was signed out elsewhere.
   renderAccount(state.account, state.admin);
-  $('play-form').hidden = !signedIn || !state.prompt || (state.world.kind === 'room' && !joined);
+  // In a competition, only team members (or someone who opened a team's link) can play.
+  const watching = state.world.kind === 'competition' && !state.myTeam && !state.joiningTeam;
+  $('play-form').hidden = !signedIn || !state.prompt || (state.world.kind === 'room' && !joined) || watching;
   $('signin').hidden = signedIn;
 
   renderSaid(state.said ?? [], state.prompt?.id);
@@ -174,7 +358,23 @@ function render(state) {
   const promptBoard = state.promptBoard ?? [];
   $('prompt-board').replaceChildren(...boardRows(promptBoard, 'points', state.me));
   $('prompt-board-empty').hidden = promptBoard.length > 0;
+  if (state.teams) {
+    let rank = 0;
+    $('team-board').replaceChildren(...state.teams.map((t, i) => {
+      if (i === 0 || t.score !== state.teams[i - 1].score) rank = i + 1;
+      return el('tr', { className: state.myTeam?.name === t.name ? 'me' : '' },
+        el('td', { className: 'rank', textContent: rank }),
+        el('td', {}, ...teamDot(t.position), t.name),
+        el('td', { textContent: t.players.length }),
+        el('td', { textContent: t.thisPrompt }),
+        el('td', { textContent: t.score }),
+      );
+    }));
+  }
 }
+
+// A competition team's colour, by its position.
+const teamDot = (position) => (position === undefined || position === null ? [] : [el('span', { className: `team-dot team-${position % 10}` })]);
 
 // Leaderboard rows with positions; players on the same score share a position.
 function boardRows(players, scoreKey, me) {
@@ -183,7 +383,7 @@ function boardRows(players, scoreKey, me) {
     if (i === 0 || p[scoreKey] !== players[i - 1][scoreKey]) rank = i + 1;
     return el('tr', { className: p.nickname === me ? 'me' : '' },
       el('td', { className: 'rank', textContent: rank }),
-      el('td', {}, p.nickname, ...(p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
+      el('td', {}, ...teamDot(p.team), p.nickname, ...(p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
       el('td', { textContent: p.words }),
       el('td', { textContent: p[scoreKey] }),
     );
@@ -215,7 +415,7 @@ function saidWord(r) {
 function saidList(words, emptyText) {
   return el('ol', { className: 'recent' }, ...(words.length ? words.map((r) => el('li', {},
     saidWord(r),
-    el('span', { className: 'muted', textContent: ` by ${r.by}${r.familyCount ? ` (+${r.familyCount} family)` : ''}` }),
+    el('span', { className: 'muted' }, ' by ', ...teamDot(r.team), `${r.by}${r.familyCount ? ` (+${r.familyCount} family)` : ''}`),
     el('span', { className: 'points', textContent: `+${r.points}` }),
   )) : [el('li', { className: 'muted', textContent: emptyText })]));
 }
@@ -303,17 +503,19 @@ function showTab(name) {
   $('misses').hidden = !misses;
   try { localStorage.setItem('unsaid:tab', misses ? 'misses' : 'recent'); } catch { /* not saved: fine */ }
 }
-function showBoard(name) {
-  const prompt = name === 'prompt';
-  $('tab-overall').setAttribute('aria-selected', String(!prompt));
-  $('tab-prompt').setAttribute('aria-selected', String(prompt));
-  $('board-overall').hidden = prompt;
-  $('board-prompt').hidden = !prompt;
-  try { localStorage.setItem('unsaid:board', name); } catch { /* not saved: fine */ }
+// Leaderboard tabs: Teams (competitions only), Overall and This prompt.
+let board = 'overall';
+function showBoard(name, remember = true) {
+  if (name === 'teams' && $('tab-teams').hidden) name = 'overall';
+  board = name;
+  for (const b of ['teams', 'overall', 'prompt']) {
+    $(`tab-${b}`).setAttribute('aria-selected', String(b === name));
+    $(`board-${b}`).hidden = b !== name;
+  }
+  if (remember) try { localStorage.setItem('unsaid:board', name); } catch { /* not saved: fine */ }
 }
-$('tab-overall').addEventListener('click', () => showBoard('overall'));
-$('tab-prompt').addEventListener('click', () => showBoard('prompt'));
-try { if (localStorage.getItem('unsaid:board') === 'prompt') showBoard('prompt'); } catch { /* default board */ }
+for (const b of ['teams', 'overall', 'prompt']) $(`tab-${b}`).addEventListener('click', () => showBoard(b));
+try { if (localStorage.getItem('unsaid:board') === 'prompt') showBoard('prompt', false); } catch { /* default board */ }
 
 $('tab-recent').addEventListener('click', () => showTab('recent'));
 $('tab-misses').addEventListener('click', () => showTab('misses'));
@@ -469,8 +671,10 @@ async function showWorlds() {
     const { worlds } = await rootApi('/me/worlds');
     $('worlds-list').replaceChildren(big, ...worlds.map((w) => el('li', {},
       el('a', { href: `/w/${encodeURIComponent(w.id)}`, textContent: w.name }),
-      ' ', el('span', { className: 'when', textContent: w.kind === 'room' ? 'room' : w.isOwner ? 'private · yours' : 'private' }),
+      ' ', el('span', { className: 'when', textContent: (w.kind === 'room' ? 'room' : w.kind === 'competition' ? 'competition' : 'private') + (w.isOwner ? ' · yours' : '') }),
       el('div', { className: 'small', textContent: w.ended ? 'Ended. Open it to delete it, or see it in My games.' : [
+        ...(w.kind === 'competition' && w.startsAt > Date.now() ? [`starts ${whenText(w.startsAt)}`] : []),
+        ...(w.kind === 'competition' && w.startsAt <= Date.now() ? [`ends in ${timeLeft(w.endsAt - Date.now())}`] : []),
         `${w.players} ${w.players === 1 ? 'player' : 'players'}`,
         `${Math.round(w.left * 100)}% left`,
         ...(w.score !== null ? [`you: ${w.score} points`] : []),
@@ -525,6 +729,11 @@ async function settingsAction(question, action, body, done) {
 
 $('world-settings').addEventListener('click', async () => {
   try {
+    if (lastState.world.kind === 'competition') {
+      await loadCompSettings();
+      $('comp-settings-dialog').showModal();
+      return;
+    }
     await loadSettings();
     $('settings-dialog').showModal();
   } catch (err) {
@@ -571,6 +780,7 @@ async function showHistory() {
       el('ol', { className: 'history-list' }, ...games.map((g) => el('li', {},
         el('a', { href: `/w/${encodeURIComponent(g.worldId)}`, textContent: g.name }),
         ' ', el('span', { className: 'when', textContent: shortDate(g.endedAt) }),
+        ...(g.team ? [el('div', {}, 'Team ', el('b', { textContent: g.team.name }), g.team.place ? `: ${ordinal(g.team.place)} of ${g.team.teams} teams` : '')] : []),
         el('div', { textContent: [
           `${ordinal(g.place)} of ${g.players}`,
           `${g.score} points`,

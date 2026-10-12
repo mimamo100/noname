@@ -14,6 +14,7 @@
     <button class="link" id="copy-link" hidden>Copy invite link</button>
     <button class="link" id="world-settings" hidden>World settings</button>
     <button class="link" id="new-world">New private world</button>
+    <button class="link" id="new-competition" hidden>New competition</button>
     <span id="account" class="account"></span>
   </header>
 
@@ -34,6 +35,8 @@
       <p id="ended-message"></p>
       <button type="button" id="ended-button"></button>
     </section>
+
+    <section id="competition" class="notice" hidden></section>
 
     <form id="play-form" class="play" autocomplete="off" hidden>
       <input id="word" name="word" placeholder="Type a word…" maxlength="30" autocapitalize="off" spellcheck="false" required>
@@ -84,8 +87,15 @@
       <section>
         <h2>Leaderboard</h2>
         <div class="tabs" role="tablist">
+          <button type="button" role="tab" class="tab" id="tab-teams" aria-selected="false" aria-controls="board-teams" hidden>Teams</button>
           <button type="button" role="tab" class="tab" id="tab-overall" aria-selected="true" aria-controls="board-overall">Overall</button>
           <button type="button" role="tab" class="tab" id="tab-prompt" aria-selected="false" aria-controls="board-prompt">This prompt</button>
+        </div>
+        <div id="board-teams" role="tabpanel" aria-labelledby="tab-teams" hidden>
+          <table class="leaderboard">
+            <thead><tr><th></th><th>Team</th><th>Players</th><th>This prompt</th><th>Total</th></tr></thead>
+            <tbody id="team-board"></tbody>
+          </table>
         </div>
         <div id="board-overall" role="tabpanel" aria-labelledby="tab-overall">
           <table class="leaderboard">
@@ -125,7 +135,7 @@
         <li>Careful: a word that doesn't fit, or that someone else has already said, costs 2 points. Repeating your own word is free. Typos are free, and so is a real answer missing from our lists: report it so we can add it.</li>
         <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
         <li>The prompt changes when nothing fits any more, or when its time runs out.</li>
-        <li><b>Where to play.</b> The big world is open to everyone signed in and starts afresh every day, with quick prompts. <b>Rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private worlds</b> are for you and the friends you invite: anyone can join one with its invite link, and creating one needs the Host plan.</li>
+        <li><b>Where to play.</b> The big world is open to everyone signed in and starts afresh every day, with quick prompts. <b>Rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private worlds</b> are for you and the friends you invite: anyone can join one with its invite link, and creating one needs the Host plan. <b>Competitions</b> pit teams against each other between a start and an end time: open your team's link to join it, and every point you score counts for your team. Running one needs the Organiser plan.</li>
         <li><b>My worlds</b> (next to your name) lists the rooms and private worlds you're in. <b>My games</b> shows how you finished in past rounds and rooms, and your personal bests.</li>
       </ul>
       <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words said in this world.</p>
@@ -159,6 +169,84 @@
         <button type="submit">Create world</button>
       </div>
     </form>
+  </dialog>
+
+  <dialog id="comp-dialog">
+    <form id="comp-form" method="dialog">
+      <h2>New competition</h2>
+      <label class="field">Name
+        <input id="comp-name" maxlength="40" placeholder="e.g. Friday quiz night" required>
+      </label>
+      <label class="field">Starts
+        <input id="comp-starts" type="datetime-local" required>
+      </label>
+      <label class="field">Ends
+        <input id="comp-ends" type="datetime-local" required>
+      </label>
+      <label class="field">Each prompt lasts up to
+        <select id="comp-pace">
+          <option value="5">5 minutes (a live event)</option>
+          <option value="15" selected>15 minutes</option>
+          <option value="60">An hour</option>
+          <option value="240">4 hours</option>
+          <option value="1440">A day (a long contest)</option>
+        </select>
+      </label>
+      <label class="field">Teams, one per line (2–20)
+        <textarea id="comp-teams" rows="4" required>Owls
+Foxes</textarea>
+      </label>
+      <label class="field">Players per team <span class="muted small">(optional)</span>
+        <input id="comp-size" type="number" min="1" max="50" placeholder="No limit">
+      </label>
+      <fieldset class="field">
+        <legend>Spelling</legend>
+        <label><input type="radio" name="comp-spelling" value="both" checked><span>UK and US</span></label>
+        <label><input type="radio" name="comp-spelling" value="uk"><span>UK only</span></label>
+        <label><input type="radio" name="comp-spelling" value="us"><span>US only</span></label>
+      </fieldset>
+      <p class="muted small">Each team gets its own invite link. You can change all this until it starts.</p>
+      <div class="dialog-buttons">
+        <button type="button" class="link" id="comp-cancel">Cancel</button>
+        <button type="submit">Create competition</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="comp-settings-dialog">
+    <form id="comp-settings-form">
+      <h2>Competition settings</h2>
+      <label class="field">Name <input id="cs-name" maxlength="40" required></label>
+      <label class="field">Starts <input id="cs-starts" type="datetime-local" required></label>
+      <label class="field">Ends <input id="cs-ends" type="datetime-local" required></label>
+      <label class="field">Each prompt lasts up to
+        <select id="cs-pace">
+          <option value="5">5 minutes</option><option value="15">15 minutes</option><option value="60">An hour</option>
+          <option value="240">4 hours</option><option value="1440">A day</option>
+        </select>
+      </label>
+      <label class="field">Players per team <input id="cs-size" type="number" min="1" max="50" placeholder="No limit"></label>
+      <p class="muted small" id="cs-started-note" hidden>It has started: only the name and the end can change now.</p>
+      <div class="dialog-buttons"><button type="submit">Save</button></div>
+    </form>
+    <h3>Teams</h3>
+    <p class="muted small">Send each team its own link. Opening it and saying a word joins that team.</p>
+    <div id="cs-teams"></div>
+    <form id="cs-add-team" class="join" hidden>
+      <input id="cs-new-team" maxlength="30" placeholder="New team name" required>
+      <button type="submit" class="secondary">Add team</button>
+    </form>
+    <h3>Watching link</h3>
+    <p class="muted small">For people who want to follow along without playing.</p>
+    <p class="small"><code id="cs-watch"></code></p>
+    <p class="small"><button type="button" class="secondary" id="cs-copy-watch">Copy</button></p>
+    <h3>End or delete</h3>
+    <p class="muted small">Ending finishes it now, with final standings. You can delete a competition before it starts or once it has finished.</p>
+    <p class="small">
+      <button type="button" class="secondary" id="cs-end">End now</button>
+      <button type="button" class="secondary danger" id="cs-delete">Delete</button>
+    </p>
+    <div class="dialog-buttons"><button type="button" class="link" id="cs-close">Close</button></div>
   </dialog>
 
   <dialog id="worlds-dialog">

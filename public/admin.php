@@ -254,7 +254,7 @@ if ($lastRun) {
         'signInCodes' => 'old sign-in codes', 'sessions' => 'expired sessions', 'freeMisses' => 'old free misses',
         'reviewedReports' => 'old reviewed reports',
         'finishedWorlds' => 'finished worlds tidied', 'words' => 'their words', 'misses' => 'their misses', 'cacheFiles' => 'cache files',
-        'idleWorldsEnded' => 'idle private worlds ended',
+        'idleWorldsEnded' => 'idle private worlds ended', 'overdueWorldsFinished' => 'finished competitions and rounds recorded',
     ];
     $parts = [];
     foreach ($lastRun['done'] as $key => $count) $parts[] = $count . ' ' . ($labels[$key] ?? $key);
