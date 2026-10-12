@@ -51,12 +51,18 @@ foreach (readList("$dataDir/extra-words.txt") as $word) {
     if (!in_array($word, $words, true)) $words[] = $word;
 }
 
-// Remove blocked words, together with their families.
-$blocked = [];
-foreach (readList("$dataDir/blocklist.txt") as $word) $blocked[$word] = true;
-foreach (WordFamilies::build($words) as $members) {
-    if (array_intersect_key(array_flip($members), $blocked)) {
-        foreach ($members as $member) $blocked[$member] = true;
+// Remove blocked words, together with the words formed from them ("cocks", "cocked").
+// Never the word a blocked one seems to be formed from: "pubes" doesn't block "pub".
+$listed = array_flip(readList("$dataDir/blocklist.txt"));
+$blocked = $listed;
+$parent = WordFamilies::parents(array_merge($words, array_keys($listed)));
+foreach ($words as $word) {
+    for ($w = $word; ; $w = $parent[$w]) {
+        if (isset($listed[$w])) {
+            $blocked[$word] = true;
+            break;
+        }
+        if ($parent[$w] === $w) break;
     }
 }
 $words = array_values(array_filter($words, fn ($w) => !isset($blocked[$w])));

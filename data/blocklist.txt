@@ -1,5 +1,6 @@
 # Words that can never be played, shown or used in a prompt.
-# One word per line; blocking a word also blocks its family (fuck -> fucking).
+# One word per line; blocking a word also blocks the words formed from it
+# (fuck -> fucking), but not the word it seems to come from (pubes -> pub).
 # Rebuild after editing: php scripts/build-dictionary.php
 #
 # Sources: hand-reviewed from the LDNOOBW list (CC BY 4.0,
@@ -79,6 +80,7 @@ fanny
 whore
 slut
 hooker
+bimbo
 bimbos
 
 # Explicit sexual terms
@@ -119,6 +121,7 @@ penis
 vagina
 vulva
 clitoris
+genital
 genitals
 pubes
 anus

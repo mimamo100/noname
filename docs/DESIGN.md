@@ -211,8 +211,10 @@ word-finder site. There are three kinds:
 ## Offensive words
 
 `data/blocklist.txt` lists slurs, strong profanity and explicit sexual terms.
-Blocked words, and their families, are removed from the dictionary, so they
-can never be played, appear in a prompt or show in the feed. Nicknames
+Blocked words, and the words formed from them (*cocks*, *cocked*), are
+removed from the dictionary, so they can never be played, appear in a prompt
+or show in the feed. Blocking never goes the other way: *pubes* doesn't block
+*pub*. Nicknames
 containing a blocked word are refused. Words that are innocent in their main
 meaning (*spade*, *queen*, *pansy*, *hoe*) are deliberately allowed.
 

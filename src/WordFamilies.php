@@ -11,6 +11,24 @@ final class WordFamilies
      */
     public static function build(array $words): array
     {
+        $parent = self::parents($words);
+        $members = [];
+        foreach ($words as $word) {
+            $root = $word;
+            while ($parent[$root] !== $root) $root = $parent[$root]; // Roots are always shorter, so this ends.
+            $members[$root][] = $word;
+        }
+        return array_filter($members, fn (array $m) => count($m) > 1);
+    }
+
+    /**
+     * Each word's parent: the word it's formed from ("boxes" -> "box"), or itself.
+     *
+     * @param string[] $words
+     * @return array<string, string>
+     */
+    public static function parents(array $words): array
+    {
         $known = array_flip($words);
         $parent = [];
         foreach ($words as $word) {
@@ -22,13 +40,7 @@ final class WordFamilies
                 }
             }
         }
-        $members = [];
-        foreach ($words as $word) {
-            $root = $word;
-            while ($parent[$root] !== $root) $root = $parent[$root]; // Roots are always shorter, so this ends.
-            $members[$root][] = $word;
-        }
-        return array_filter($members, fn (array $m) => count($m) > 1);
+        return $parent;
     }
 
     /** Words ending in S that aren't plurals of the word without it ("news" isn't more than one "new"). */
