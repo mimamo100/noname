@@ -354,8 +354,10 @@ a music quiz.
   **with everyday words** (prompts come from the pack's categories, letter
   prompts from all the words). The world's name shows the pack ("Chambers ·
   Law words").
-- **Names** (bands, composers, scientists) break the ordinary-words rule, so
-  they're proposed separately for the owner to decide.
+- **No names** of people (bands, composers, scientists), nor open-ended sets
+  of named things (stars, moons, constellations): the lists would never end,
+  and there'd be no fair way to choose. Units named after people (*newton*)
+  are ordinary words, and the planets are a small closed set, so they're in.
 
 ## Ideas for later
 

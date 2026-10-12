@@ -30,8 +30,11 @@ The format is like `data/categories/` (see its README), with these differences:
   forms along: *acid* brings *acids*). The forms count as one answer.
 - **No `includes:`**, and a category's id is `<pack>.<file>` in the game
   (`science.element`), so it never clashes with an everyday category.
-- **Names** (bands, scientists, composers) aren't in the lists; proposals wait
-  in each pack's `PROPOSED-NAMES.md` for the owner's decision.
+- **No names** of people (bands, artists, composers, scientists) or of
+  open-ended sets like stars, moons and constellations: there'd be no end to
+  them, and no fair way to choose. Words named after people that are now
+  ordinary words are fine (units such as *newton* and *kelvin*, *svengali*).
+  The planets, a small closed set, are in.
 
 A world plays a pack **on its own** (the pack is the whole dictionary; prompts
 of 5–40 answers) or **with everyday words** (the everyday dictionary plus the
