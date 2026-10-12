@@ -31,7 +31,14 @@ sole
   also belong to this one: `includes: mammal bird fish insect` in
   `animal.txt`. The build adds their *main* and *also* words, so list each
   word once, in the most specific category, and a fix is only ever made in
-  one place.
+  one place. One deliberate exception: a word can be a clear answer in the
+  broader category but only an *also* in the narrower one (*pancake* is a
+  food, but only loosely a dessert; *dingo* is a mammal, but only loosely a
+  dog). Then it's listed in both.
+- **The build checks the files** and prints warnings (it still builds): a
+  listed word that isn't in the dictionary (usually a typo, or a word
+  missing from `extra-words.txt`) or is blocked, and a listing that adds
+  nothing because an included category already has the word.
 
 To draft a brand-new category from WordNet, see
 `scripts/build-categories.py`. Never rerun it over an existing category.
