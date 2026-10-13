@@ -44,7 +44,7 @@ Final scores: Dee 920 (inflated: on the first prompt she played words she'd look
 
 - **Joining through the invite worked first time** for everyone, and the next prompt always came at once (prompts lasted about 2 to 11 minutes).
 - Without an invite, or with a wrong one, a non-member gets the same message: "This is a private world. You need an invite link from one of its players." A wrong code could say the link isn't valid. Members are let in regardless of the invite.
-- **The owner (Mimamo) never appeared on the leaderboard**, even at 0 (they hadn't played a word; the owner may expect to be listed).
+- The owner (Mimamo) didn't appear on the leaderboard because they didn't play in this round: as expected, not a bug.
 - The prompt leaderboard lists players with 0 points who only had misses.
 - Eve at phone width: in a small world the layout works well, since Just said stays short; "Copy invite link" is at the top; "Ends in 23h 56m" looked odd on a prompt that ran dry in minutes.
 - The anonymous view sends the world multiplier with about 50 decimal places.
@@ -57,4 +57,4 @@ Final scores: Dee 920 (inflated: on the first prompt she played words she'd look
 4. Say why a word doesn't fit; judge plurals by the length typed (or explain); let players report category misses.
 5. Make the pack and the private world obvious: say "not in this world's Science words", and give private worlds their own look.
 6. Science lists: organs in biology, overlaps in physics, the other gaps above.
-7. Show the owner on the leaderboard; hide 0-point rows on the prompt leaderboard; round the multiplier in the API.
+7. Hide 0-point rows on the prompt leaderboard; round the multiplier in the API.
