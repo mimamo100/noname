@@ -44,8 +44,6 @@ lithium
 magnesium
 manganese
 mercury
-metal
-metals
 molybdenum
 neodymium
 neptunium

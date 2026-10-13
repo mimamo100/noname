@@ -44,8 +44,6 @@ fluorspar
 gabbro
 galena
 garnet
-gem
-gems
 gemstone
 geode
 gneiss
@@ -77,8 +75,6 @@ marble
 marbles
 marcasite
 mica
-mineral
-minerals
 moonstone
 morganite
 mudstone
@@ -97,9 +93,7 @@ pyrite
 quartz
 quartzite
 rhyolite
-rock
 rock salt
-rocks
 rubies
 ruby
 sandstone

@@ -5,8 +5,6 @@ alligator
 alligators
 allosaurus
 allosauruses
-amphibian
-amphibians
 anaconda
 ankylosaurus
 ankylosauruses
@@ -90,8 +88,6 @@ pythons
 rattler
 rattlesnake
 rattlesnakes
-reptile
-reptiles
 salamander
 serpent
 serpents

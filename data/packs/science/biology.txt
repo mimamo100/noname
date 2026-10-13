@@ -14,6 +14,7 @@ anther, anthers
 antibiotic, antibiotics
 antibody, antibodies
 antigen, antigens
+appendix, appendices, appendixes
 artery, arteries
 autotroph, autotrophs
 bacterium, bacteria
@@ -22,7 +23,9 @@ biomass
 biome, biomes
 biosphere
 biotic
+bladder, bladders
 blood
+brain, brains
 camouflage
 capillary, capillaries
 carbohydrate, carbohydrates
@@ -58,19 +61,24 @@ foetus, fetus, foetuses, fetuses
 food chain, food chains
 food web, food webs
 fungus, fungi, funguses
+gall bladder, gallbladder, gall bladders, gallbladders
 gamete, gametes
+gene editing
 gene, genes
+genetic engineering
 genome, genomes
 genotype, genotypes
 genus, genera
-germination
+germination, germinate, germinates, germinated, germinating
 gestation
 gland, glands
 glucose
 glycogen
+grafting
 habitat, habitats
 haemoglobin, hemoglobin
 haploid
+heart, hearts
 herbivore, herbivores
 heredity
 heterotroph, heterotrophs
@@ -85,10 +93,16 @@ immunity
 inheritance
 instinct
 insulin
+intestine, intestines
 invertebrate, invertebrates
+kidney, kidneys
 kingdom
+large intestine, large intestines
 larva, larvae
+larynx, larynxes, larynges
 lipid, lipids
+liver, livers
+lung, lungs
 lymph
 lymphocyte, lymphocytes
 mammal
@@ -110,6 +124,7 @@ neurotransmitter, neurotransmitters
 niche
 nucleotide, nucleotides
 nutrient, nutrients
+oesophagus, esophagus, oesophagi, esophagi, oesophaguses, esophaguses
 oestrogen, estrogen
 omnivore, omnivores
 organ, organs
@@ -118,11 +133,13 @@ osmosis
 ovary, ovaries
 ovule, ovules
 ovum, ova
+pancreas, pancreases
 parasite, parasites
 parasitism
 pathogen, pathogens
 petal
 phagocyte, phagocytes
+pharynx, pharynxes, pharynges
 phenotype, phenotypes
 phloem
 photosynthesis
@@ -149,24 +166,32 @@ saliva
 scavenger
 selection
 sepal, sepals
+skin
+small intestine, small intestines
 speciation
 species
 sperm, sperms
+spleen, spleens
 spore, spores
 stamen, stamens
 starch
 stem cell, stem cells
 stigma, stigmas, stigmata
 stoma, stomata
+stomach, stomachs
 succession
 symbiosis
 synapse, synapses
 testosterone
+thymus, thymuses, thymi
+thyroid, thyroids
 tissue, tissues
+trachea, tracheae, tracheas
 trait
 transcription
 translation
 transpiration
+uterus, uteri, uteruses
 vaccine, vaccines
 variation
 vein, veins
@@ -182,10 +207,12 @@ apoptosis
 clade, clades
 cladistics
 codominance
+colon, colons
 commensalism
 cytokinesis
 deoxyribonucleic acid
 detritivore, detritivores
+duodenum, duodena, duodenums
 epigenetics
 erythrocyte, erythrocytes
 exon, exons

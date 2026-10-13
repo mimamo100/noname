@@ -145,8 +145,6 @@ tamarisk
 tangerine
 tangerines
 teak
-tree
-trees
 walnut
 wattle
 whitebeam

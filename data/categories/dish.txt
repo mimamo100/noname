@@ -48,8 +48,6 @@ dal
 dhal
 dhansak
 dinner
-dish
-dishes
 dolmas
 doner
 dopiaza
@@ -96,7 +94,6 @@ lasagne
 lunch
 luncheon
 macaroni
-meal
 meatball
 meatballs
 meatloaf

@@ -59,6 +59,52 @@ final class Prompts
         };
     }
 
+    /**
+     * Why a word breaks the prompt's letter rules, in a few words for the player ("it has an E",
+     * "it's 4 letters, not 5+"), or null if it keeps them all. Only the first broken rule is named.
+     */
+    public static function whyNot(array $spec, Dictionary $dictionary, string $word): ?string
+    {
+        $singular = $dictionary->singular($word);
+        $length = fn (string $w) => strlen($dictionary->singular($w));
+        // Length rules judge a plural as its singular: say so, or "flasks" being 5 letters is a mystery.
+        $asSingular = $singular !== $word ? " (“{$word}” counts as “{$singular}”)" : '';
+        foreach ($spec['rules'] ?? [] as $rule) {
+            if (self::ruleTest($rule, $length)($word)) continue;
+            [$type, $a, $b] = $rule + [null, null, null];
+            $upper = is_string($a) ? strtoupper($a) : $a;
+            $n = $length($word);
+            return match ($type) {
+                'starts' => "it doesn't start with $upper",
+                'ends' => "it doesn't end in $upper",
+                'contains' => "it has no $upper",
+                'lacks' => 'it has ' . (in_array($upper, ['A', 'E', 'F', 'H', 'I', 'L', 'M', 'N', 'O', 'R', 'S', 'X'], true) ? 'an' : 'a') . " $upper",
+                'bookends' => "it doesn't start and end with $upper",
+                'double' => "it has no double $upper",
+                'count' => 'it has ' . substr_count($word, (string) $a) . " {$upper}s, not $b",
+                'minLen' => "it's $n letters$asSingular, not $a or more",
+                'maxLen' => "it's $n letters$asSingular, not $a or fewer",
+                'len' => "it's $n letters$asSingular, not $a",
+                'alpha' => self::alphaWhy($word),
+                'oneVowel' => 'it has more than one vowel',
+                'onlyVowel' => str_contains($word, (string) $a) ? "it has vowels other than $upper" : "it has no $upper",
+                default => null,
+            };
+        }
+        return null;
+    }
+
+    /** "its letters aren't in alphabetical order: H comes before E" */
+    private static function alphaWhy(string $word): string
+    {
+        for ($i = 1; $i < strlen($word); $i++) {
+            if ($word[$i] < $word[$i - 1]) {
+                return "its letters aren't in alphabetical order: " . strtoupper($word[$i - 1]) . ' comes before ' . strtoupper($word[$i]);
+            }
+        }
+        return "its letters aren't in alphabetical order";
+    }
+
     /** @return string[] matching words from the dictionary, most common first */
     public static function fitting(array $spec, Dictionary $dictionary): array
     {

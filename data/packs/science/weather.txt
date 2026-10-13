@@ -49,7 +49,6 @@ freeze
 freezing rain
 front, fronts
 frost
-frosty
 funnel cloud, funnel clouds
 gale
 global warming
@@ -110,7 +109,6 @@ snowy
 squall
 storm
 storm surge, storm surges
-stormy
 stratocumulus
 stratosphere
 stratus
@@ -169,6 +167,7 @@ foehn, fohn
 fog bank, fog banks
 fogbow, fogbows
 frontal rainfall
+frosty
 graupel
 ground frost
 haar
@@ -209,6 +208,7 @@ shelf cloud, shelf clouds
 showery
 simoom
 sirocco, siroccos
+stormy
 sun dog, sun dogs
 supercell, supercells
 synoptic chart, synoptic charts

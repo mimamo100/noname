@@ -87,8 +87,6 @@ freediving
 freerunning
 frisbee
 futsal
-game
-games
 gin
 gliding
 golf
@@ -228,8 +226,6 @@ spearfishing
 speed skating
 speedway
 spillikins
-sport
-sports
 sprinting
 squash
 steeplechase

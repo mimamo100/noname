@@ -55,8 +55,6 @@ brasserie
 brewery
 brothel
 brothels
-building
-buildings
 bungalow
 bungalows
 bunker
@@ -295,7 +293,6 @@ restroom
 restrooms
 rink
 roadhouse
-room
 roundhouse
 sacristy
 saleroom
@@ -458,7 +455,6 @@ operas
 pantheon
 residence
 residences
-rooms
 ruin
 ruins
 schools

@@ -81,7 +81,7 @@ test('a competition: teams join by their links, it starts on time, and teams sco
     $moon = $game->play($id, $annP['token'], 'moon')['points'];
     $book = $game->play($id, $benP['token'], 'book')['points'];
     $cool = $game->play($id, $cyP['token'], 'cool')['points'];
-    $game->play($id, $cyP['token'], 'moon'); // Already said by Ann: a penalty.
+    $game->play($id, $cyP['token'], 'cat'); // Doesn't fit: a penalty.
     throwsStatus(400, fn () => $comps->movePlayer($id, $org, 'Ben', 1), 'No moves after the start');
 
     $state = $game->state($id, null);

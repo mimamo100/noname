@@ -2,15 +2,23 @@ label: A bird
 
 albatross
 ani
+arctic tern
 auk
 avocet
+bald eagle
 bantam
-bird
-birds
+barn owl
+barnacle goose
+bird of paradise
 bittern
+black grouse
+black swan
+black-headed gull
 blackbird
 blackbirds
 blackcap
+blue jay
+blue tit
 bluebird
 bluebirds
 booby
@@ -25,10 +33,12 @@ bunting
 bustard
 buzzard
 buzzards
+canada goose
 canary
 capercaillie
 capon
 cardinal
+carrion crow
 cassowary
 chaffinch
 chick
@@ -37,10 +47,12 @@ chicken
 chicks
 chiffchaff
 chough
+coal tit
 cock
 cockatiel
 cockatoo
 cockerel
+collared dove
 condor
 conure
 coot
@@ -67,10 +79,12 @@ ducks
 dunlin
 dunnock
 eagle
+eagle owl
 eagles
 eaglet
 egret
 eider
+emperor penguin
 emu
 falcon
 falcons
@@ -85,12 +99,15 @@ flycatcher
 fowl
 frigatebird
 fulmar
+gadwall
 galah
 gander
 gannet
 geese
 godwit
 goldcrest
+golden eagle
+golden plover
 goldeneye
 goldfinch
 goosander
@@ -98,9 +115,16 @@ goose
 goshawk
 gosling
 grackle
+great crested grebe
+great spotted woodpecker
+great tit
 grebe
+green woodpecker
 greenfinch
 greenshank
+grey heron
+grey partridge
+grey wagtail
 greylag
 grouse
 guan
@@ -112,11 +136,16 @@ hawfinch
 hawk
 hawks
 hen
+hen harrier
 hens
 heron
+herring gull
 hobby
+hooded crow
 hoopoe
 hornbill
+house martin
+house sparrow
 hummingbird
 hummingbirds
 ibis
@@ -126,6 +155,7 @@ jay
 kakapo
 kea
 kestrel
+king penguin
 kingfisher
 kite
 kittiwake
@@ -136,6 +166,10 @@ lammergeier
 lapwing
 lark
 linnet
+little egret
+little grebe
+little owl
+long-tailed tit
 loon
 lorikeet
 lovebird
@@ -144,16 +178,21 @@ lyrebird
 macaw
 magpie
 mallard
+mandarin duck
 marabou
+marsh tit
 martin
 meadowlark
 merganser
 merlin
 mina
 minas
+mistle thrush
 moa
 mockingbird
 moorhen
+mute swan
+myna
 mynah
 nestling
 nighthawk
@@ -183,31 +222,34 @@ pelicans
 penguin
 penguins
 peregrine
+peregrine falcon
 petrel
 phalarope
 pheasant
 pheasants
+pied wagtail
 pigeon
 pigeons
 pintail
 pipit
 plover
 pochard
-poultry
 ptarmigan
 puffin
 pullet
 quail
 quetzal
 rail
-raptor
-raptors
 raven
 razorbill
+red grouse
+red kite
 redpoll
 redshank
 redstart
 redwing
+reed bunting
+reed warbler
 rhea
 roadrunner
 robin
@@ -217,14 +259,19 @@ rooster
 roosters
 rosella
 ruff
+sand martin
 sanderling
 sandgrouse
 sandpiper
+scaup
 scoter
+sea eagle
 seabird
 seabirds
 seagull
 seagulls
+secretary bird
+sedge warbler
 serin
 shag
 shearwater
@@ -237,7 +284,8 @@ skua
 skylark
 smew
 snipe
-songbird
+snowy owl
+song thrush
 sparrow
 sparrowhawk
 sparrows
@@ -255,15 +303,19 @@ swan
 swans
 swift
 tanager
+tawny owl
 teal
 tern
 thrush
 tit
 toucan
+tree sparrow
 treecreeper
+tufted duck
 turkey
 turkeys
 turnstone
+turtle dove
 vulture
 vultures
 wader
@@ -276,6 +328,7 @@ whimbrel
 whinchat
 whitethroat
 wigeon
+willow warbler
 wood pigeon
 woodcock
 woodpecker
@@ -285,34 +338,64 @@ yellowhammer
 
 also:
 argus
+barn swallow
 barnacle
+barnacle geese
 barnacles
+bearded tit
+black kite
+bobolink
 boobies
+bulbul
+canada geese
 canaries
+caracara
 cardinals
+cattle egret
 chat
 chats
 chickens
 cob
+common gull
+common tern
+corn bunting
+cowbird
 cranes
 creeper
 creepers
+crested tit
 diver
 divers
 ducklings
 flicker
 flickers
+garden warbler
+golden oriole
+great black-backed gull
+great skua
 guinea
 guineas
 gulls
 harpy
+hoatzin
 hobbies
 homer
+honey buzzard
+jacana
+junco
+kingbird
 kites
 knots
 larks
 layer
 layers
+lesser black-backed gull
+lesser spotted woodpecker
+little tern
+long-eared owl
+mandarin
+manx shearwater
+marsh harrier
 martins
 mew
 mews
@@ -322,19 +405,44 @@ peewee
 pen
 pens
 phoebe
+pied flycatcher
+pink-footed geese
+pink-footed goose
+potoo
 rails
 ravens
+red-legged partridge
 reeve
 reeves
+ring ouzel
+ringed plover
+rock dove
 roller
 rollers
 rooks
+ruddy duck
+short-eared owl
 snipes
+snow bunting
+snow geese
+snow goose
+spotted flycatcher
 stilts
+stock dove
+stone curlew
+storm petrel
 swallows
 tom
 toms
+trogon
 trumpeter
-turtledove
+tui
 warblers
+water rail
 weavers
+white-tailed eagle
+whooper swan
+willow tit
+wood duck
+wood warbler
+yellow wagtail

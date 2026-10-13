@@ -41,11 +41,6 @@ deerhounds
 doberman
 dobermann
 dobermans
-dog
-doggie
-doggies
-doggy
-dogs
 elkhound
 foxhound
 foxhounds

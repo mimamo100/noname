@@ -85,6 +85,7 @@ fermentation
 fluoride
 formula, formulae, formulas
 gas
+glycol, glycols
 halide, halides
 halogen, halogens
 hydrate
@@ -114,6 +115,7 @@ malleable
 metal, metals
 metalloid, metalloids
 methane
+methyl
 mixture, mixtures
 molar
 molarity

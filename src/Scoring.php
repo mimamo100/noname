@@ -4,7 +4,10 @@ declare(strict_types=1);
 final class Scoring
 {
     public const WORLD_MULTIPLIER_CAP = 10;
-    public const PROMPT_BONUS_CAP = 5;
+    /** The prompt bonus at most: reached only if every answer were said (a prompt ends sooner). */
+    public const PROMPT_BONUS_CAP = 2;
+    /** Extra points for the answer that finishes a prompt. */
+    public const CLOSING_BONUS = 10;
 
     /** Rises as the whole dictionary is burned: x1 at the start, x2 at half, x5 at 80%. */
     public static function worldMultiplier(int $burnedCount, int $dictionarySize): float
@@ -13,12 +16,17 @@ final class Scoring
         return $remaining <= 0 ? self::WORLD_MULTIPLIER_CAP : min(self::WORLD_MULTIPLIER_CAP, 1 / $remaining);
     }
 
-    /** Rises as the current prompt runs dry, relative to what was available when it began. */
+    /**
+     * Rises gently as the current prompt runs dry: x1 at the start, plus the share of its answers
+     * already said (x1.5 when half are said), so late answers are worth more without swamping
+     * what was said early. Rarity and length still do most of the work.
+     */
     public static function promptBonus(int $remainingNow, int $availableAtStart): float
     {
-        if ($availableAtStart <= 0 || $remainingNow <= 0) return self::PROMPT_BONUS_CAP;
+        if ($availableAtStart <= 0) return 1.0;
+        $used = ($availableAtStart - $remainingNow) / $availableAtStart;
         // Never below x1, even if the count rules changed while a prompt was running.
-        return max(1.0, min(self::PROMPT_BONUS_CAP, $availableAtStart / $remainingNow));
+        return round(max(1.0, min(self::PROMPT_BONUS_CAP, 1 + $used)), 2);
     }
 
     /** $rarity: 0 for the most common word, approaching 1 for the rarest. */

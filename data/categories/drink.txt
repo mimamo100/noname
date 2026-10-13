@@ -252,8 +252,6 @@ brews
 cokes
 collins
 coolers
-drink
-drinks
 grasshopper
 grasshoppers
 mimosas

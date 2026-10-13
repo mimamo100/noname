@@ -16,8 +16,6 @@ blackfly
 blowfly
 bluebottle
 botfly
-bug
-bugs
 bumblebee
 butterfly
 caddis
@@ -68,8 +66,6 @@ housefly
 hoverfly
 ichneumon
 inchworm
-insect
-insects
 katydid
 lacewing
 ladybird

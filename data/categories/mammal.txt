@@ -89,6 +89,7 @@ deer
 degu
 dingo
 doe
+dog
 dolphin
 donkey
 dormouse
@@ -196,8 +197,6 @@ loris
 lynx
 macaque
 maltese
-mammal
-mammals
 mammoth
 mammoths
 manatee

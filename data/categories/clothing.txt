@@ -103,7 +103,6 @@ cloak
 cloche
 clog
 clothes
-clothing
 coat
 coats
 codpiece
@@ -653,7 +652,5 @@ walkers
 wash
 washes
 washing
-wear
 wearable
-wears
 white

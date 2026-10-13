@@ -420,8 +420,6 @@ snaps
 snores
 song
 songs
-sound
-sounds
 splattering
 sputters
 squawks

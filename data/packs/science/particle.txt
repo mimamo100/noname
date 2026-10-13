@@ -1,6 +1,6 @@
 label: A subatomic particle
 
-alpha, alphas
+alpha particle, alpha, alpha particles, alphas
 antineutrino, antineutrinos
 antineutron, antineutrons
 antiparticle, antiparticles
@@ -8,9 +8,10 @@ antiproton, antiprotons
 antiquark, antiquarks
 axion, axions
 baryon, baryons
-beta, betas
+beta particle, beta, beta particles, betas
 boson, bosons
 deuteron, deuterons
+down quark, down quarks
 electron, electrons
 fermion, fermions
 gluon, gluons
@@ -30,15 +31,17 @@ positron, positrons
 proton, protons
 quark, quarks
 tachyon, tachyons
-tau, taus
+tau, tauon, taus, tauons
+top quark, top quarks
+up quark, up quarks
 
 also:
-alpha particle, alpha particles
 antielectron, antielectrons
 antimatter
 antimuon, antimuons
 anyon, anyons
-beta particle, beta particles
+bottom quark, bottom quarks
+charm quark, charm quarks
 diquark, diquarks
 elementary particle, elementary particles
 eta, etas
@@ -61,11 +64,13 @@ plasmon, plasmons
 pomeron, pomerons
 preon, preons
 quasiparticle, quasiparticles
+rho, rhos
 selectron, selectrons
 sigma, sigmas
 sneutrino, sneutrinos
 sparticle, sparticles
 squark, squarks
+strange quark, strange quarks
 tetraquark, tetraquarks
 triton, tritons
 upsilon, upsilons

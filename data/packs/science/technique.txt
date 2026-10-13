@@ -33,7 +33,6 @@ disinfection
 dissection, dissections
 dissolving
 distillation, distilling
-drying
 electrolysis
 electrophoresis
 evaporation
@@ -106,6 +105,7 @@ also:
 autoradiography
 cryopreservation
 cytometry
+drying
 electroplating
 electroporation
 elisa

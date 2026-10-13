@@ -147,8 +147,6 @@ progeny
 quadruplet
 quintuplet
 relation
-relative
-relatives
 scion
 sextuplet
 sibling
@@ -197,8 +195,6 @@ boys
 children
 cuckold
 descendants
-families
-family
 girl
 girls
 grooms

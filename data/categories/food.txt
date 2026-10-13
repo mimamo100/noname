@@ -244,8 +244,6 @@ flatbread
 flounder
 flour
 focaccia
-food
-foods
 fowl
 frangipane
 frankfurter
@@ -805,6 +803,7 @@ cuts
 dates
 delicacies
 delicacy
+dessert
 dietary
 dips
 dog
@@ -981,6 +980,7 @@ stocks
 stout
 suds
 swedes
+sweet
 swill
 tangerines
 tarts

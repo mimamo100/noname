@@ -50,7 +50,7 @@ test('a finished round records everyone\'s results, shown in My games', function
     setPrompt($game, $first, spec(null, ['contains', 'oo']));
     $moon = $game->play($first, $lobby->playerFor($first, $ann)['token'], 'moon')['points'];
     $book = $game->play($first, $lobby->playerFor($first, $ann)['token'], 'book')['points'];
-    $game->play($first, $lobby->playerFor($first, $ben)['token'], 'moon'); // Already said: a penalty.
+    $game->play($first, $lobby->playerFor($first, $ben)['token'], 'cat'); // Doesn't fit: a penalty.
     $lobby->playerFor($first, makeUser($db, 'Cy')); // Joined but never guessed: not placed.
     same(null, $lobby->lastRound());
 

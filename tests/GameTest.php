@@ -51,7 +51,8 @@ function gameDb(Game $game): PDO
 /** Forces a known prompt so tests don't depend on random picks. */
 function setPrompt(Game $game, string $worldId, array $spec): void
 {
-    $remaining = Prompts::countUnsaid($spec, testDictionary(), []);
+    // Counted with the game's own dictionary: a prompt with too few answers would end at once.
+    $remaining = Prompts::countUnsaid($spec, $game->dictionary(), []);
     gameDb($game)->prepare('UPDATE prompts SET spec = ?, label = NULL, available_at_start = ? WHERE world_id = ? AND ended_at IS NULL')
         ->execute([Prompts::key($spec), $remaining, $worldId]);
 }
@@ -161,8 +162,8 @@ test('plurals count as their singular for length rules and points', function () 
     $world = $game->createWorld('Plurals');
     setPrompt($game, $world['id'], spec(null, ['contains', 'ox']));
     $p = $game->join($world['id'], 'Pam');
-    // Box is the only answer, so it's also the last one: double points.
-    same(2 * Scoring::scoreWord('box', $d->rarity('box'), 1, 1), $game->play($world['id'], $p['token'], 'boxes')['points'], 'boxes scores as box');
+    // Box is the only answer, so it also finishes the prompt: the closing bonus.
+    same(Scoring::scoreWord('box', $d->rarity('box'), 1, 1) + Scoring::CLOSING_BONUS, $game->play($world['id'], $p['token'], 'boxes')['points'], 'boxes scores as box');
 });
 
 test('letter rules never ask for an S that a plural would supply', function () {
@@ -214,8 +215,9 @@ test('scoring rises with length, rarity and scarcity', function () {
     same(5.0, round(Scoring::worldMultiplier(80, 100), 6));
     same(10.0, Scoring::worldMultiplier(100, 100));
     same(1.0, Scoring::promptBonus(40, 40));
-    same(4.0, Scoring::promptBonus(10, 40));
-    same(5.0, Scoring::promptBonus(1, 40));
+    same(1.5, Scoring::promptBonus(20, 40), 'Gently: x1 plus the share said');
+    same(1.75, Scoring::promptBonus(10, 40));
+    same(2.0, Scoring::promptBonus(0, 40), 'At most x2');
     same(1.0, Scoring::promptBonus(50, 40), 'Never below x1');
     same(1, Scoring::scoreWord('cat', 0, 1, 1));
     check(Scoring::scoreWord('cataract', 0, 1, 1) > Scoring::scoreWord('cat', 0, 1, 1));
@@ -463,7 +465,8 @@ test('my misses say when an accepted word was used up elsewhere', function () {
 });
 
 test('wrong guesses cost points, typos are free', function () {
-    $game = makeGame();
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
     $world = $game->createWorld('Penalties');
     setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
     $a = $game->join($world['id'], 'Ann');
@@ -471,8 +474,11 @@ test('wrong guesses cost points, typos are free', function () {
     $points = $game->play($world['id'], $a['token'], 'moon')['points'];
 
     same(0, $game->play($world['id'], $b['token'], 'xyzzy')['penalty'], 'Typos are free');
+    $justNow = $game->play($world['id'], $b['token'], 'moons');
+    same([0, true], [$justNow['penalty'], $justNow['justNow']], 'Said by someone else moments ago: free');
+    $clock += Game::SAID_GRACE_MS + 1;
     same(Game::PENALTY, $game->play($world['id'], $b['token'], 'cat')['penalty'], "Doesn't fit");
-    same(Game::PENALTY, $game->play($world['id'], $b['token'], 'moon')['penalty'], 'Already said');
+    same(Game::PENALTY, $game->play($world['id'], $b['token'], 'moon')['penalty'], 'Already said, a while ago');
 
     $board = array_column($game->state($world['id'], null)['leaderboard'], null, 'nickname');
     same($points, $board['Ann']['total']);
@@ -484,19 +490,20 @@ test('wrong guesses cost points, typos are free', function () {
 test('the prompt leaderboard ranks the current prompt alone', function () {
     $clock = 1_000;
     $game = makeGame(function () use (&$clock) { return $clock; });
-    $world = $game->createWorld('Late', null, 60_000);
+    $world = $game->createWorld('Late', null, 600_000);
     setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
     $early = $game->join($world['id'], 'Early');
     $before = $game->play($world['id'], $early['token'], 'moon')['points']
         + $game->play($world['id'], $early['token'], 'book')['points'];
-    $clock += 61_000;
+    $clock += 601_000;
     $game->state($world['id'], null); // Let the game move on to a new prompt.
     setPrompt($game, $world['id'], spec('bird'));
 
     same([], $game->state($world['id'], null)['promptBoard'], 'Empty until someone tries the new prompt');
     $late = $game->join($world['id'], 'Late');
     $points = $game->play($world['id'], $late['token'], 'robin')['points'];
-    $game->play($world['id'], $early['token'], 'robin'); // Already said by Late: a penalty.
+    $clock += Game::SAID_GRACE_MS + 1;
+    $game->play($world['id'], $early['token'], 'robin'); // Already said by Late, a while ago: a penalty.
 
     $state = $game->state($world['id'], null);
     $overall = array_column($state['leaderboard'], 'total', 'nickname');
@@ -516,7 +523,7 @@ test('running score totals match a full recount', function () {
     $b = $game->join($world['id'], 'Ben');
     $game->play($world['id'], $a['token'], 'moon');
     $game->play($world['id'], $a['token'], 'book');
-    $game->play($world['id'], $b['token'], 'moon'); // Already said: a penalty.
+    $game->play($world['id'], $b['token'], 'cat'); // Doesn't fit: a penalty.
     $game->play($world['id'], $b['token'], 'xyzzy'); // Typo: free.
     $board = fn () => array_map(fn ($p) => [$p['nickname'], $p['total'], $p['words']], $game->state($world['id'], null)['leaderboard']);
     $kept = $board();
@@ -584,7 +591,7 @@ test('players see only their own misses', function () {
     $bo = $game->state($world['id'], $b['token'])['myMisses'];
     same(['moon', 'cat'], array_column($bo, 'word'), 'Newest first');
     same(['already-burned', 'doesnt-fit'], array_column($bo, 'reason'));
-    same([Game::PENALTY, Game::PENALTY], array_column($bo, 'penalty'));
+    same([0, Game::PENALTY], array_column($bo, 'penalty'), 'Amy said moon moments ago, so it was free');
     same('Contains OO', $bo[0]['prompt']);
     same($game->state($world['id'], null)['prompt']['id'], $bo[0]['promptId'], 'Misses link to the current prompt');
     same(['xyzzy'], array_column($game->state($world['id'], $a['token'])['myMisses'], 'word'), "Amy sees only hers");
@@ -662,18 +669,82 @@ test('the prompt rotates when it runs dry or times out', function () {
     setPrompt($game, $world['id'], spec(null, ['starts', 'zo']));
     $p = $game->join($world['id'], 'Pat');
     $zoo = $game->play($world['id'], $p['token'], 'zoo');
-    check($zoo['ok'] && !isset($zoo['lastAnswer']));
+    check($zoo['ok'] && !isset($zoo['closing']));
     $zoom = $game->play($world['id'], $p['token'], 'zoom');
-    same(true, $zoom['lastAnswer'], 'The last answer');
-    same(2 * Scoring::scoreWord('zoom', testDictionary()->rarity('zoom'), $zoom['multipliers']['world'], $zoom['multipliers']['prompt']),
-        $zoom['points'], 'scores double');
+    same(true, $zoom['closing'], 'The answer that finishes it');
+    same(Scoring::scoreWord('zoom', testDictionary()->rarity('zoom'), $zoom['multipliers']['world'], $zoom['multipliers']['prompt']) + Scoring::CLOSING_BONUS,
+        $zoom['points'], 'earns the closing bonus');
     $afterDry = $game->state($world['id'], null)['prompt']['label'];
     $said = $game->state($world['id'], null)['said'][1];
     same(0, $said['unsaid']['count'], 'Every answer was said');
+    same('zoom', $said['closingWord']);
     check($afterDry !== 'Starts with ZO', 'Did not rotate when dry');
 
     $clock += 61_000;
     check($game->state($world['id'], null)['prompt']['label'] !== $afterDry, 'Did not rotate on timeout');
+});
+
+test('a prompt ends once 80% of its answers are said', function () {
+    $game = makeGame();
+    $world = $game->createWorld('Share');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo'])); // 11 answers: it ends with 2 left.
+    $p = $game->join($world['id'], 'Pat');
+    same(2, $game->state($world['id'], null)['prompt']['endsWhenLeft']);
+    foreach (['moon', 'book', 'cool', 'boot', 'food', 'stoop', 'mood', 'noon'] as $w) check(!isset($game->play($world['id'], $p['token'], $w)['closing']));
+    same([3, 'Contains OO'], [$game->state($world['id'], null)['prompt']['remaining'], $game->state($world['id'], null)['prompt']['label']]);
+    same(true, $game->play($world['id'], $p['token'], 'zoo')['closing'], 'The ninth answer finishes it');
+    check($game->state($world['id'], null)['prompt']['label'] !== 'Contains OO', 'A new prompt');
+    same(2, $game->state($world['id'], null)['said'][1]['unsaid']['count'], 'Two left unsaid');
+});
+
+test('answers a category accepts without counting score without the prompt bonus', function () {
+    $game = makeGame();
+    $world = $game->createWorld('Also');
+    setPrompt($game, $world['id'], spec('animal'));
+    $p = $game->join($world['id'], 'Pat');
+    foreach (['cat', 'rat', 'robin', 'owl', 'stork'] as $w) $game->play($world['id'], $p['token'], $w); // 5 of 6: x1.83 now.
+    setPrompt($game, $world['id'], spec('sport'));
+    gameDb($game)->exec("UPDATE prompts SET available_at_start = 4 WHERE world_id = '{$world['id']}' AND ended_at IS NULL"); // As if 3 were said.
+    $squash = $game->play($world['id'], $p['token'], 'squash');
+    same([true, 1.0], [$squash['uncounted'], $squash['multipliers']['prompt']], 'Squash is only an "also" sport');
+    same(1, $game->state($world['id'], null)['prompt']['remaining'], "It doesn't bring the count down");
+    $chess = $game->play($world['id'], $p['token'], 'chess');
+    same(1.75, $chess['multipliers']['prompt'], 'A counted answer gets the bonus');
+});
+
+test('why a word does not fit', function () {
+    $d = testDictionary();
+    same('it has an E', Prompts::whyNot(spec(null, ['lacks', 'e']), $d, 'agree'));
+    same("it doesn't start with ST", Prompts::whyNot(spec(null, ['starts', 'st']), $d, 'moon'));
+    same('it\'s 7 letters (“brothers” counts as “brother”), not 8 or more', Prompts::whyNot(spec(null, ['minLen', 8]), $d, 'brothers'));
+    same("its letters aren't in alphabetical order: O comes before N", Prompts::whyNot(spec(null, ['alpha']), $d, 'moon'));
+    same(null, Prompts::whyNot(spec(null, ['contains', 'oo']), $d, 'moon'));
+    $game = makeGame();
+    $world = $game->createWorld('Why');
+    setPrompt($game, $world['id'], spec(null, ['lacks', 'e']));
+    $p = $game->join($world['id'], 'Pat');
+    $miss = $game->play($world['id'], $p['token'], '  Agree ');
+    same(['doesnt-fit', 'it has an E', 'agree'], [$miss['reason'], $miss['why'], $miss['word']]);
+    same('dont know', $game->play($world['id'], $p['token'], 'Dont  Know')['word'], 'An unknown word is echoed as typed');
+});
+
+test('a word sent just as the prompt changed is judged against the old one', function () {
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $world = $game->createWorld('Grace', null, 60_000);
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $p = $game->join($world['id'], 'Pat');
+    $old = $game->state($world['id'], null)['prompt']['id'];
+    $clock += 61_000;
+    $game->state($world['id'], null); // The prompt changes.
+    setPrompt($game, $world['id'], spec(null, ['starts', 'zo']));
+    $clock += 10_000;
+    $late = $game->play($world['id'], $p['token'], 'moon', $old);
+    same([true, 'Contains OO'], [$late['ok'], $late['previousPrompt']], 'Counted for the prompt the player saw');
+    $miss = $game->play($world['id'], $p['token'], 'cat', $old);
+    same(['doesnt-fit', 0], [$miss['reason'], $miss['penalty']], "A miss for the old prompt is free");
+    $clock += Game::PROMPT_GRACE_MS;
+    same('doesnt-fit', $game->play($world['id'], $p['token'], 'book', $old)['reason'], 'Too late: judged against the new prompt');
 });
 
 test('nicknames are validated, unique per world and not offensive', function () {

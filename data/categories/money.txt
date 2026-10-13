@@ -10,8 +10,6 @@ centavo
 centime
 cents
 chon
-coin
-coins
 cordoba
 crown
 crowns

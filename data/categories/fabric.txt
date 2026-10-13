@@ -33,8 +33,6 @@ deerskin
 denim
 doeskin
 elastane
-fabric
-fabrics
 felt
 flannel
 flannelette

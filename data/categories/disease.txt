@@ -92,8 +92,6 @@ dermatitis
 diabetes
 diarrhoea
 diphtheria
-disease
-diseases
 disorder
 distemper
 diverticulitis
@@ -148,8 +146,6 @@ hypochondria
 hypotension
 hypothermia
 hypothyroidism
-illness
-illnesses
 impetigo
 incontinence
 indigestion

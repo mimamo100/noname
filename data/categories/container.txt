@@ -60,7 +60,6 @@ coffer
 coffers
 coffin
 coffins
-container
 cool box
 cooler
 crate

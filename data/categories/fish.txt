@@ -41,8 +41,6 @@ dogfish
 dory
 eel
 elver
-fish
-fishes
 flatfish
 flounder
 fugu

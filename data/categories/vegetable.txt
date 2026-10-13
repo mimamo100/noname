@@ -121,8 +121,6 @@ truffle
 tuber
 turnip
 veg
-vegetable
-vegetables
 veggie
 veggies
 watercress

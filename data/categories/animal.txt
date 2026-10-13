@@ -2,8 +2,6 @@ label: An animal
 includes: mammal bird fish insect reptile sea
 
 ammonite
-animal
-animals
 basilisk
 beast
 beastie

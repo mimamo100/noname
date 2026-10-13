@@ -196,8 +196,6 @@ filbert
 fir
 fireweed
 flax
-flower
-flowers
 flytrap
 forget-me-not
 forsythia
@@ -630,8 +628,6 @@ peppers
 perennial
 pink
 pinks
-plant
-plants
 plum
 pollard
 potato

@@ -56,7 +56,6 @@ escritoire
 etagere
 footrest
 footstool
-furniture
 futon
 hallstand
 hammock

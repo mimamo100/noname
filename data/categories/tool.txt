@@ -155,8 +155,6 @@ strimmer
 strop
 switchblade
 tongs
-tool
-tools
 toothpick
 toothpicks
 trimmer

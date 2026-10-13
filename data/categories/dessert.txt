@@ -41,8 +41,6 @@ crumble
 cupcake
 cupcakes
 custard
-dessert
-desserts
 donut
 donuts
 doughnut
@@ -121,9 +119,7 @@ strudel
 sugarplum
 sundae
 sundaes
-sweet
 sweetmeat
-sweets
 syllabub
 syllabubs
 taffy

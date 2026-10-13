@@ -157,8 +157,6 @@ grand
 grands
 horns
 hurdygurdy
-instrument
-instruments
 organs
 pipes
 recorders

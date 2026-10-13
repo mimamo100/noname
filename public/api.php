@@ -26,9 +26,10 @@
 //   GET  /api/worlds/{id}?since={version}                   world state (anyone can watch); just
 //                                                           {unchanged, version, now} if it's the same as last time
 //   POST /api/worlds/{id}/join                              join with the account's name (account needed)
-//   POST /api/worlds/{id}/words           {word}            say a word, joining first if needed (account needed)
+//   POST /api/worlds/{id}/words           {word, promptId?} say a word, joining first if needed (account needed); promptId
+//                                                           is the prompt shown, so a word sent just as it changed counts for it
 //   GET  /api/worlds/{id}/words/{word}                      who said this word?
-//   POST /api/worlds/{id}/reports         {word}            report a missing word (account needed)
+//   POST /api/worlds/{id}/reports         {word, promptId?} report a missing word, for that prompt (default: the current one)
 //   Private worlds: add ?invite={code} to any of the above to see or join with an invite link.
 //   GET  /api/worlds/{id}/settings                          a private world's settings and players (owner)
 //   POST /api/worlds/{id}/settings        {name, promptHours, maxPlayers, closed}  change them (owner)
@@ -271,9 +272,15 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         respond(200, $state + ['version' => $version, 'now' => $now]);
     }
     if ($method === 'POST' && $action === 'join') respond(201, ['nickname' => $playerFor()['nickname']]);
-    if ($method === 'POST' && $action === 'words') respond(200, $game->play($worldId, $playerFor()['token'], (string) (body()['word'] ?? '')));
+    if ($method === 'POST' && $action === 'words') {
+        $b = body();
+        respond(200, $game->play($worldId, $playerFor()['token'], (string) ($b['word'] ?? ''), isset($b['promptId']) ? (int) $b['promptId'] : null));
+    }
     if ($method === 'GET' && $action === 'words' && $arg !== null) respond(200, $game->lookup($worldId, $arg));
-    if ($method === 'POST' && $action === 'reports') respond(201, $game->report($worldId, $playerFor()['token'], (string) (body()['word'] ?? '')));
+    if ($method === 'POST' && $action === 'reports') {
+        $b = body();
+        respond(201, $game->report($worldId, $playerFor()['token'], (string) ($b['word'] ?? ''), isset($b['promptId']) ? (int) $b['promptId'] : null));
+    }
     throw new GameError(404, 'Not found');
 }
 

@@ -151,8 +151,6 @@ typhoons
 unsettled
 warm
 waterspout
-weather
-weathers
 westerly
 wet
 whirlwind

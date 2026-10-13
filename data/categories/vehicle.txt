@@ -199,8 +199,6 @@ tube
 tumbril
 unicycle
 van
-vehicle
-vehicles
 velocipede
 vessel
 waggon
@@ -216,6 +214,7 @@ bandwagon
 barrow
 barrows
 bikes
+boat
 bob
 bobs
 buses
@@ -251,6 +250,7 @@ saloons
 scrambler
 semi
 semis
+ship
 skateboards
 sleeper
 sleepers

@@ -2,11 +2,15 @@ label: A physics term
 
 absorption
 acceleration, accelerations
+ampere, amp, amperes, amps
 amplitude, amplitudes
+antimatter
 antinode, antinodes
 atom
 attraction
 battery
+big bang
+black hole, black holes
 buoyancy
 capacitance
 capacitor, capacitors
@@ -39,6 +43,7 @@ efficiency, efficiencies
 elasticity
 electricity
 electromagnet, electromagnets
+electron, electrons
 electrostatics
 emission, emissions
 energy, energies
@@ -64,7 +69,9 @@ gravity
 half-life, half-lives
 harmonic, harmonics
 heat
+hertz
 hologram
+hooke's law
 impulse, impulses
 inductance
 induction
@@ -72,9 +79,14 @@ inductor, inductors
 inertia
 infrared
 insulator, insulators
+intensity, intensities
 interference
 isotope
+joule, joules
+kelvin, kelvins
+kinetic
 kinetic energy
+length, lengths
 lever
 lift
 light
@@ -90,14 +102,19 @@ microwave, microwaves
 moment, moments
 momentum, momenta
 motion
+neutrino, neutrinos
+neutron, neutrons
+newton, newtons
 node
 nucleus
+ohm, ohms
 orbit
 oscillation, oscillations
 particle
 pendulum, pendulums
 period, periods
 phase
+photon, photons
 pitch
 plasma
 polarisation, polarization
@@ -106,7 +123,9 @@ potential energy
 power
 pressure, pressures
 projectile, projectiles
+proton, protons
 quantum, quanta
+quark, quarks
 radiation
 radio wave, radio waves
 radioactivity
@@ -133,10 +152,10 @@ speed, speeds
 spin
 static
 strain
+strength, strengths
 stress
 superconductor, superconductors
 superposition
-switch
 temperature, temperatures
 tension
 terminal velocity
@@ -154,7 +173,9 @@ vacuum, vacuums, vacua
 vector, vectors
 velocity, velocities
 viscosity
+volt, volts
 voltage, voltages
+watt, watts
 wave, waves
 wavelength, wavelengths
 weight, weights
@@ -164,11 +185,20 @@ x-ray, x-rays
 also:
 black body, black bodies
 blueshift
+boson, bosons
 coherence
+coulomb, coulombs
 focal length, focal lengths
+higgs boson, higgs bosons
 hysteresis
+light year, light years
 opacity
+pascal, pascals
 phosphorescence
 photoelectric
 piezoelectric
+positron, positrons
+switch
+tesla, teslas
 wavefront, wavefronts
+wormhole, wormholes

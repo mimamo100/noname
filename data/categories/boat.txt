@@ -11,8 +11,6 @@ battlecruiser
 battleship
 battleships
 bireme
-boat
-boats
 brig
 brigantine
 brigantines
@@ -100,8 +98,6 @@ sailing boat
 sampan
 sampans
 schooner
-ship
-ships
 skiff
 sloop
 speedboat
