@@ -60,9 +60,11 @@ The same rules as the dictionary review (PROPOSALS.md):
 
 ## How added words score
 
-Hand-added words go after the main word list, ordered by how often they appear in film
-subtitles, so a fairly common one (*thicken*) doesn't score as one of the rarest. The counts
-are in `data/extra-word-counts.txt`; after adding words, run
+Hand-added words are placed by how often they appear in film subtitles, so a fairly common
+one (*thicken*) doesn't score as one of the rarest. One as common as the main list's words
+(*chinese*, which subtitles usually capitalise) joins the main list at its place; the rest
+follow it, most common first. The counts are in `data/extra-word-counts.txt` and
+`data/word-counts.txt` (the main list's); after adding words, run
 `php -d memory_limit=1G scripts/count-extra-words.php`, then rebuild. Words with no count
 (most category words, such as *capybara*) come last, as before.
 

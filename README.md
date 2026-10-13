@@ -59,6 +59,7 @@ TEST_DB_NAME=unsaid_test TEST_DB_USER=me TEST_DB_PASS=secret php tests/run.php
 | `data/words.txt` | The word list, most common first |
 | `data/extra-words.txt` | Words added by hand that the main list misses (editable) |
 | `data/extra-word-counts.txt` | How common each added word is, for scoring; from `scripts/count-extra-words.php` |
+| `data/word-counts.txt` | How common each word in `words.txt` is, so added words are placed among them; from the same script |
 | `data/blocklist.txt` | Offensive words that can never be played (editable) |
 | `data/masked.txt` | Rude words that can be played but are shown masked (p\*\*\*s) to others (editable) |
 | `data/spellings.json` | UK/US spelling pairs, generated from VarCon by `scripts/build-spellings.php` |

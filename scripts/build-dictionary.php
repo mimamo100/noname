@@ -45,9 +45,11 @@ if (in_array('--fetch', $argv, true)) {
 
 $words = array_values(array_filter(array_map('trim', file("$dataDir/words.txt"))));
 
-// Hand-added words go after the word list, ordered by how often they appear in film subtitles
-// (data/extra-word-counts.txt, from scripts/count-extra-words.php), so a fairly common one
-// (thicken) isn't scored as one of the rarest. Words without a count come last, as written.
+// Hand-added words are placed by how often they appear in film subtitles (data/extra-word-counts.txt,
+// from scripts/count-extra-words.php), so a fairly common one (thicken) isn't scored as one of the
+// rarest. One as common as the main list's words (chinese, which subtitles capitalise) joins the
+// main list at its place (data/word-counts.txt has the main list's counts); the rest follow it,
+// most common first, and words without a count come last, as written.
 $counts = [];
 if (is_file("$dataDir/extra-word-counts.txt")) {
     foreach (readList("$dataDir/extra-word-counts.txt") as $line) {
@@ -66,7 +68,25 @@ foreach (readList("$dataDir/extra-words.txt") as $word) {
     if (!isset($listed[$word])) $extra[$word] ??= count($extra);
 }
 uksort($extra, fn ($a, $b) => [-($counts[$a] ?? -1), $extra[$a]] <=> [-($counts[$b] ?? -1), $extra[$b]]);
-array_push($words, ...array_keys($extra));
+$mainCounts = [];
+if (is_file("$dataDir/word-counts.txt")) {
+    foreach (readList("$dataDir/word-counts.txt") as $line) {
+        [$word, $count] = explode(' ', $line) + [null, 0];
+        $mainCounts[$word] = (int) $count;
+    }
+}
+// Merge: before each main word, any hand-added words more common than it. A main word without a
+// count keeps its place (it counts as common as the word before it).
+$pending = array_keys($extra);
+$merged = [];
+$previous = PHP_INT_MAX;
+foreach ($words as $word) {
+    $count = $mainCounts[$word] ?? $previous;
+    while ($pending && ($counts[$pending[0]] ?? -1) > $count) $merged[] = array_shift($pending);
+    $merged[] = $word;
+    $previous = $count;
+}
+$words = array_merge($merged, $pending);
 
 // Words the family rules would join to an unrelated word: "bunting" (the bird) isn't formed
 // from "bunt". Each starts its own family, which its plural still joins ("buntings").
