@@ -26,6 +26,12 @@ final class Streaks
         return $now->modify("$offset days")->format('Y-m-d');
     }
 
+    /** The hour of the day (0-23), in the same timezone. */
+    public function hour(): int
+    {
+        return (int) (new DateTimeImmutable('@' . intdiv(($this->clock)(), 1000)))->setTimezone($this->timezone)->format('G');
+    }
+
     /**
      * Records that the account said a word. Returns the streak when this was its first word
      * today (one more than yesterday's, or 1 after a gap), and null otherwise.

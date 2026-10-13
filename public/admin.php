@@ -180,6 +180,8 @@ function button(string $csrf, string $action, string $label, array $fields = [],
 
 $stats = $admin->stats();
 $reports = $admin->openReports();
+// Times in the big world's timezone (UK time by default), not the server's.
+date_default_timezone_set($config['big_world']['timezone'] ?? 'Europe/London');
 $when = fn (int $ms) => date('j M, H:i', intdiv($ms, 1000));
 
 $html = $flash ? '<p class="flash ' . ($flashBad ? 'bad' : 'good') . '">' . h($flash) . '</p>' : '';
@@ -274,37 +276,35 @@ if (!$customPacks) {
 
 // Emails, against the host's sending limit.
 $emails = $admin->emailStats();
-$dailyLimit = (int) ($config['daily_email_limit'] ?? 300);
+$perHour = (int) ($config['daily_email']['per_hour'] ?? 150);
+$fromHour = (int) ($config['daily_email']['from_hour'] ?? 7);
 $html .= '<h2>Emails</h2>'
-    . '<p class="muted">Your hosting company limits how many emails the site can send, usually per hour (their help pages '
-    . 'or support will tell you the number). Sign-in codes and the daily email share that limit, and the daily emails all go '
-    . 'at once, when housekeeping runs.</p><div class="stat-row">';
+    . '<p class="muted">Your hosting company limits how many emails the site can send each hour. Sign-in codes and the '
+    . 'daily email share that limit, so the daily email goes in hourly batches of up to ' . number_format($perHour)
+    . ', from ' . sprintf('%d:00', $fromHour) . ' (<code>daily_email</code> in config.php).</p><div class="stat-row">';
 foreach ([
     'Sign-in emails (last hour)' => $emails['codesHour'], 'Sign-in emails (24h)' => $emails['codesDay'],
     'Busiest hour (24h)' => $emails['busiestHour'], 'Daily email turned on' => $emails['remindersOn'],
-    'Daily email limit' => $dailyLimit,
+    'Daily emails per hour' => $perHour,
 ] as $label => $value) {
     $html .= '<div class="stat"><b>' . number_format($value) . '</b><span>' . h($label) . '</span></div>';
 }
 $html .= '</div>';
+$last = $emails['lastDaily'];
 if (empty($config['site_url'])) {
-    $html .= '<p class="bad">The daily email is off: set <code>site_url</code> in config.php (see docs/DEPLOY.md, "Housekeeping").</p>';
+    $html .= '<p class="bad">The daily email is off: set <code>site_url</code> in config.php (see docs/DEPLOY.md, "Daily email").</p>';
+} elseif (!$last && $emails['remindersOn'] > 0) {
+    $html .= '<p class="bad">The daily email hasn\'t been sent yet. Is its hourly cron job set up (docs/DEPLOY.md, "Daily email")?</p>';
 }
-if ($last = $emails['lastDaily']) {
-    $html .= '<p class="muted">Daily email last sent ' . h($when((int) $last['at'])) . ': ' . number_format($last['sent'])
-        . ' ' . ($last['sent'] === 1 ? 'email' : 'emails') . '.</p>';
+if ($last && isset($last['sentToday'])) {
+    $html .= '<p class="muted">Last batch ' . h($when((int) $last['at'])) . ': ' . number_format($last['sent'])
+        . ' sent, ' . number_format($last['sentToday']) . ' that day in all.</p>';
     if ($last['refused']) {
-        $html .= '<p class="bad">The mail server refused some, probably the hourly limit: the rest go tomorrow. '
-            . 'cPanel\'s Track Delivery (under Email) shows why.</p>';
-    } elseif ($last['wanted'] > $last['sent']) {
-        $over = $last['wanted'] - $last['sent'];
-        $html .= '<p class="bad">' . number_format($over) . ' more ' . ($over === 1 ? 'was' : 'were') . ' due but over the limit of '
-            . number_format($last['limit']) . ': they get theirs the next day. Raise <code>daily_email_limit</code> if your host '
-            . 'allows, or send through an email service (LAUNCH.md).</p>';
+        $html .= '<p class="bad">The mail server refused one, probably your host\'s hourly limit: lower <code>per_hour</code>. '
+            . 'The rest go in the next batches. cPanel\'s Track Delivery (under Email) shows why.</p>';
+    } elseif ($last['due'] > 0) {
+        $html .= '<p class="muted">' . number_format($last['due']) . ' still to go, in the next hourly batches.</p>';
     }
-}
-if ($emails['remindersOn'] > $dailyLimit) {
-    $html .= '<p class="bad">More players have the daily email on than the daily limit allows.</p>';
 }
 
 $lastRun = Housekeeping::lastRun($db);

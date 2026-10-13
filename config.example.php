@@ -37,8 +37,13 @@ return [
 
     // The site's address, for links in emails (the daily email that players can ask for).
     'site_url' => 'https://yourdomain.com',
-    // Most daily emails sent each day: keep it under your mail server's daily limit.
-    'daily_email_limit' => 300,
+    // The daily email players can ask for: sent in hourly batches (scripts/daily-email.php,
+    // run by a cron job every hour), starting at from_hour in the big world's timezone.
+    // Keep per_hour well under your host's hourly email limit: sign-in codes share it.
+    'daily_email' => [
+        'from_hour' => 7,
+        'per_hour' => 150,
+    ],
 
     // Sign-in emails. 'from' should be a real address on your domain (create it in
     // cPanel > Email Accounts), so the codes don't land in spam.

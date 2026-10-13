@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 /**
  * The daily email, for accounts that ask for it: the big world has started afresh, with the
- * account's streak and how it did in the last round. Sent by the daily housekeeping job
- * (scripts/housekeeping.php), at most once a day, and not to anyone who has already played
- * today. Every email has a link that stops them, without signing in.
+ * account's streak and how it did in the last round. Sent in hourly batches from a set hour
+ * of the morning (scripts/daily-email.php, run by a cron job every hour), so the host's
+ * hourly sending limit is never reached. At most once a day, and not to anyone who has
+ * already played today. Every email has a link that stops them, without signing in.
  */
 final class Reminders
 {
@@ -20,7 +21,10 @@ final class Reminders
         $this->clock = $clock ?? fn () => (int) floor(microtime(true) * 1000);
     }
 
-    /** The last send, for the admin page: when, how many went, how many wanted one, and whether the mail server refused. */
+    /**
+     * The last batch, for the admin page: when, how many it sent, how many went that day in
+     * all, how many are still due, and whether the mail server refused.
+     */
     public static function lastRun(PDO $db): ?array
     {
         $stmt = $db->prepare('SELECT value FROM meta WHERE name = ?');
@@ -49,11 +53,13 @@ final class Reminders
     }
 
     /**
-     * Sends today's emails, up to $limit (the mail server's limits come first; anyone left
-     * over gets theirs tomorrow). Returns how many were sent.
+     * Sends a batch of today's emails: up to $perRun, and none before $fromHour (anyone left
+     * waits for the next run). Returns how many were sent.
      */
-    public function send(Mailer $mailer, string $siteUrl, int $limit = 300): int
+    public function send(Mailer $mailer, string $siteUrl, int $perRun = 150, int $fromHour = 7): int
     {
+        if ($this->streaks->hour() < $fromHour) return 0;
+        $limit = max(0, $perRun);
         $today = $this->streaks->day();
         $due = 'reminders = 1 AND (reminder_day IS NULL OR reminder_day <> ?) AND (streak_day IS NULL OR streak_day <> ?)';
         $stmt = $this->db->prepare("SELECT COUNT(*) FROM users WHERE $due");
@@ -90,8 +96,11 @@ final class Reminders
             $sent->execute([$today, $u['id']]);
             $count++;
         }
+        $before = self::lastRun($this->db);
         $this->db->prepare('REPLACE INTO meta (name, value) VALUES (?, ?)')->execute(['daily_emails', json_encode([
-            'at' => ($this->clock)(), 'sent' => $count, 'wanted' => $wanted, 'limit' => $limit, 'refused' => $refused,
+            'at' => ($this->clock)(), 'day' => $today, 'sent' => $count,
+            'sentToday' => (($before['day'] ?? null) === $today ? (int) $before['sentToday'] : 0) + $count,
+            'due' => $wanted - $count, 'perRun' => $limit, 'refused' => $refused,
         ])]);
         return $count;
     }

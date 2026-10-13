@@ -107,17 +107,37 @@ it up once:
    `ea-php82` or `ea-php83` work too.
 5. Click **Add New Cron Job**.
 
-The same job sends the **daily email** to players who turned it on (account
-menu: Daily email), as long as `site_url` in `config.php` is set to your site's
-address (it's used for the links in the email). At most `daily_email_limit`
-go each day (300 unless you change it), to stay under your host's mail limit;
-anyone over the limit gets theirs the next day. Once many players turn it on,
-send email through an email service instead (the `smtp` settings in
-`config.php`; see LAUNCH.md).
-
 The admin page's **Housekeeping** section shows when it last ran. To check the
 command straight away, press **Run housekeeping now** there; the next morning,
 "Last ran" should show about 4am.
+
+## 10. Daily email
+
+Players can ask for a daily email (account menu: Daily email) reminding them
+that the big world has started afresh. A second cron job sends them, in hourly
+batches, so the site never goes over your host's hourly email limit (sign-in
+codes share it). Set it up once:
+
+1. In `config.php`, set `site_url` to your site's address, such as
+   `'site_url' => 'https://yourdomain.com',` (it's used for the links in the
+   email). Without it, nothing is sent.
+2. Check the `daily_email` settings (see `config.example.php`): `from_hour`
+   (7, so 7am in the big world's timezone) and `per_hour` (150). Keep
+   `per_hour` well under your host's hourly limit: with a limit of 200, 150
+   leaves room for sign-in codes.
+3. In cPanel's **Cron Jobs**, add another job: choose **Once Per Hour** from
+   Common Settings, and paste this as the **Command** (again with your cPanel
+   username):
+
+   ```
+   /opt/cpanel/ea-php81/root/usr/bin/php /home/youraccount/unsaid/scripts/daily-email.php > /dev/null
+   ```
+
+Each run before `from_hour` does nothing; from then on each run sends up to
+`per_hour` emails until everyone due one has it (150 an hour gets about 1,000
+out by mid-afternoon). The admin page's **Emails** section shows each batch.
+When that's not enough, send through an email service instead (the `smtp`
+settings in `config.php`; see LAUNCH.md), then raise `per_hour`.
 
 ## Troubleshooting
 

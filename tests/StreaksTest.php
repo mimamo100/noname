@@ -34,40 +34,46 @@ test('a day\'s first word reports the streak', function () {
     same(2, $game->play($world['id'], $ann['token'], 'cool')['streak']);
 });
 
-test('the daily email goes once a day to those who asked and haven\'t played, and its link stops it', function () {
-    $clock = ms('2026-10-12 03:00 UTC');
+test('the daily email goes in hourly batches from the morning, once a day, to those who asked and haven\'t played', function () {
+    $clock = ms('2026-10-12 05:00 UTC'); // 6am in the UK: too early.
     $db = testDb();
     $streaks = new Streaks($db, 'Europe/London', function () use (&$clock) { return $clock; });
-    $reminders = new Reminders($db, $streaks);
+    $reminders = new Reminders($db, $streaks, function () use (&$clock) { return $clock; });
     $log = tempnam(sys_get_temp_dir(), 'mail');
     $mailer = new Mailer(['transport' => 'log', 'log_file' => $log, 'from' => 'noreply@example.com']);
-    [$ann, $ben, $cy] = [makeUser($db, 'Ann'), makeUser($db, 'Ben'), makeUser($db, 'Cy')];
-    $reminders->set($ann['id'], true);
-    $reminders->set($ben['id'], true);
+    $site = 'https://unsaid.example/';
+    [$ann, $ben, $cy, $dee] = [makeUser($db, 'Ann'), makeUser($db, 'Ben'), makeUser($db, 'Cy'), makeUser($db, 'Dee')];
+    foreach ([$ann, $ben, $cy] as $u) $reminders->set($u['id'], true);
     $clock -= 86_400_000;
     $streaks->played($ann['id']); // Yesterday.
     $clock += 86_400_000;
     $streaks->played($ben['id']); // Already played today.
 
-    $reminders->set($cy['id'], true);
-    same(1, $reminders->send($mailer, 'https://unsaid.example/', limit: 1), 'Ann, then the limit');
-    same([1, 2, 1, false], array_values(array_intersect_key(Reminders::lastRun($db), array_flip(['sent', 'wanted', 'limit', 'refused']))),
-        'Recorded for the admin page: Cy was over the limit');
+    same(0, $reminders->send($mailer, $site, perRun: 1, fromHour: 7), 'Not before 7am');
+    same(null, Reminders::lastRun($db));
+    $clock += 2 * 3_600_000; // 8am.
+    same(1, $reminders->send($mailer, $site, perRun: 1, fromHour: 7), 'One batch of one: Ann');
+    $last = Reminders::lastRun($db);
+    same([1, 1, 1, false], [$last['sent'], $last['sentToday'], $last['due'], $last['refused']], 'Cy is still due');
+    $clock += 3_600_000; // 9am: the next batch.
+    same(1, $reminders->send($mailer, $site, perRun: 1, fromHour: 7), 'Cy');
+    same([2, 0], [Reminders::lastRun($db)['sentToday'], Reminders::lastRun($db)['due']]);
+    same(0, $reminders->send($mailer, $site, perRun: 1, fromHour: 7), 'Once a day');
     $stats = (new Admin($db, testDictionary()))->emailStats();
     same(3, $stats['remindersOn']);
-    same(1, $stats['lastDaily']['sent']);
-    $reminders->set($cy['id'], false);
-    $mail = file_get_contents($log);
-    check(str_contains($mail, 'ann@example.com') && !str_contains($mail, 'ben@example.com') && !str_contains($mail, 'cy@example.com'));
-    check(str_contains($mail, 'Play: https://unsaid.example/'));
-    same(0, $reminders->send($mailer, 'https://unsaid.example/'), 'Once a day');
 
-    preg_match('/stop-emails=([0-9a-f]{32})/', $mail, $m);
+    $mail = file_get_contents($log);
+    check(str_contains($mail, 'ann@example.com') && str_contains($mail, 'cy@example.com') && !str_contains($mail, 'ben@example.com'));
+    check(str_contains($mail, 'Play: https://unsaid.example/'));
+    preg_match('/To: ann@example.com.*?stop-emails=([0-9a-f]{32})/s', $mail, $m);
     check($reminders->stop($m[1]));
     check(!$reminders->stop('0123456789abcdef0123456789abcdef'));
-    $clock += 86_400_000;
+    $reminders->set($cy['id'], false);
+
+    $clock += 86_400_000; // Tomorrow at 9am: Ben, not Ann, who stopped them.
     file_put_contents($log, '');
-    same(1, $reminders->send($mailer, 'https://unsaid.example/'), 'Tomorrow: Ben, not Ann, who stopped them');
+    same(1, $reminders->send($mailer, $site, perRun: 10, fromHour: 7));
     check(str_contains(file_get_contents($log), 'ben@example.com') && !str_contains(file_get_contents($log), 'ann@example.com'));
+    same(1, Reminders::lastRun($db)['sentToday'], 'A new day starts the count again');
     unlink($log);
 });
