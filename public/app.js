@@ -102,8 +102,13 @@ function shareText(g) {
   ];
   if (g.team) lines.push(`Team ${g.team.name}${g.team.place ? `: ${ordinal(g.team.place)} of ${g.team.teams}` : ''}`);
   if (g.bestWord) lines.push(`Best word: ${g.bestMasked ? mask(g.bestWord) : g.bestWord} (+${g.bestPoints})`);
+  // For someone who has never heard of it.
+  lines.push('', 'Unsaid is a word game where every word can only be said once. Have a go:');
   return lines.join('\n');
 }
+
+// The subject when shared by email, and the share sheet's title.
+const shareTitle = (g) => `Unsaid: my result in ${g.name}`;
 
 // Anyone can watch the big world's rounds and rooms; private worlds and competitions need a link, so send people to the game itself.
 const shareUrl = (g) => (g.kind === 'public' || g.kind === 'room' ? `${location.origin}/w/${encodeURIComponent(g.worldId)}` : `${location.origin}/`);
@@ -113,7 +118,7 @@ async function shareResult(g, button) {
   const text = shareText(g);
   const url = shareUrl(g);
   if (navigator.share && matchMedia('(pointer: coarse)').matches) {
-    try { await navigator.share({ text, url }); return; } catch (err) { if (err.name === 'AbortError') return; }
+    try { await navigator.share({ title: shareTitle(g), text, url }); return; } catch (err) { if (err.name === 'AbortError') return; }
   }
   try {
     await navigator.clipboard.writeText(`${text}\n${url}`);
@@ -154,10 +159,8 @@ function renderLobby(state) {
   const ended = state.world.ended;
   const notMine = room && !ended && !state.me;
   $('ended').hidden = !ended && !notMine;
-  $('ended-result').hidden = !(ended && state.myResult);
-  if (ended && state.myResult) {
-    $('ended-result').replaceChildren(`You came ${resultLine(state.myResult)}. `, shareButton(state.myResult, 'Share your result'));
-  }
+  // The results card (in place of the prompt card) shows the player's own result now.
+  $('ended-result').hidden = true;
   if (ended) {
     $('ended-message').textContent = state.world.endedMessage;
     $('ended-button').textContent = room ? 'Join a new room' : 'Go to the big world';
@@ -167,6 +170,61 @@ function renderLobby(state) {
     $('ended-button').textContent = 'Join a room';
     $('ended-button').onclick = joinRoom;
   }
+}
+
+// --- Results, when a world finishes ---
+
+const points = (n) => `${n.toLocaleString()} ${Math.abs(n) === 1 ? 'point' : 'points'}`;
+
+function renderResults(state) {
+  const board = state.leaderboard ?? [];
+  const teams = state.teams ?? null;
+  const parts = [el('p', { className: 'eyebrow', textContent: 'Final result' })];
+  let iWon = false;
+  if (teams && teams.length) {
+    // Teams, best first: a winner, or a draw at the top.
+    const [first, second] = teams;
+    const draw = second && second.score === first.score;
+    parts.push(el('h1', { textContent: draw ? "It's a draw!" : `${first.name} win!` }));
+    parts.push(el('p', { className: 'result-score', textContent: teams.map((t) => `${t.name} ${t.score.toLocaleString()}`).join(' · ') }));
+    if (!draw && first.players.length) parts.push(el('p', { className: 'muted' }, `Well played ${first.players.join(', ')}.`));
+    iWon = !draw && state.myTeam?.name === first.name;
+  } else if (board.length) {
+    const top = board.filter((p) => p.total === board[0].total);
+    parts.push(el('h1', { textContent: top.length > 1 ? `${top.map((p) => p.nickname).join(' and ')} share first place!` : `${board[0].nickname} wins!` }));
+    parts.push(el('p', { className: 'result-score', textContent: `with ${points(board[0].total)}, out of ${board.length} ${board.length === 1 ? 'player' : 'players'}` }));
+    iWon = top.some((p) => p.nickname === state.me);
+  } else {
+    parts.push(el('h1', { textContent: 'Finished' }));
+  }
+  if (teams && board.length) parts.push(el('p', { className: 'muted' }, `Top scorer: ${board[0].nickname}, ${points(board[0].total)}.`));
+  const mine = state.myResult;
+  if (mine) {
+    const team = mine.team?.place ? ` ${mine.team.name} came ${ordinal(mine.team.place)} of ${mine.team.teams}.` : '';
+    parts.push(el('p', { className: 'result-mine' }, `You finished ${resultLine(mine)}.${team} `, shareButton(mine, 'Share your result')));
+  }
+  $('results').replaceChildren(...parts);
+  if (iWon) celebrate(state.world.id);
+}
+
+// A short shower of confetti for the winners, once per world on each device.
+function celebrate(worldId) {
+  const key = `unsaid:celebrated:${worldId}`;
+  try { if (localStorage.getItem(key)) return; localStorage.setItem(key, '1'); } catch { /* celebrate anyway */ }
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const colours = ['#ff7a29', '#ffd166', '#8fd18b', '#3cc2cf', '#a58bff', '#ff8a80'];
+  const layer = el('div', { className: 'confetti', ariaHidden: 'true' });
+  for (let i = 0; i < 80; i++) {
+    const bit = el('span');
+    bit.style.left = `${Math.random() * 100}%`;
+    bit.style.background = colours[i % colours.length];
+    bit.style.animationDelay = `${Math.random() * 0.8}s`;
+    bit.style.animationDuration = `${2 + Math.random() * 1.5}s`;
+    bit.style.transform = `rotate(${Math.random() * 360}deg)`;
+    layer.append(bit);
+  }
+  document.body.append(layer);
+  setTimeout(() => layer.remove(), 4500);
 }
 
 // --- Competitions ---
@@ -204,6 +262,8 @@ function renderCompetition(state) {
   if (state.myTeam) {
     parts.push(el('p', {}, "You're in ", ...teamDot(state.myTeam.position), el('b', { textContent: state.myTeam.name }),
       started ? '. Every point you score counts for your team.' : '. Every point you score will count for your team.'));
+    if (state.movedFrom) parts.push(el('p', { className: 'small' }, `The organiser moved you here from ${state.movedFrom}.`));
+    if (state.otherTeamLink) parts.push(el('p', { className: 'small' }, `This link is for ${state.otherTeamLink}, but you're on ${state.myTeam.name}: players can't change team. Ask the organiser if you should.`));
   } else if (state.joiningTeam) {
     const join = el('button', { type: 'button', textContent: `Join ${state.joiningTeam.name}` });
     join.addEventListener('click', async () => {
@@ -489,12 +549,16 @@ function render(state) {
   $('prompt-mult').textContent = state.multipliers.prompt.toFixed(2).replace(/0$/, '');
   // The player's own place, without scrolling down to the leaderboard.
   const me = state.myStanding;
-  $('my-standing').hidden = !me;
+  $('my-standing').hidden = !me || state.world.ended; // A finished world's results card says it.
   if (me) $('my-standing').replaceChildren('You: ', el('b', { textContent: `${ordinal(me.place)} of ${me.of}` }), ` · ${me.score} ${Math.abs(me.score) === 1 ? 'point' : 'points'}`);
 
   // A competition before its start has no prompt yet: just say so, without empty counters.
   const waiting = state.world.kind === 'competition' && !state.world.ended && state.now < state.world.startsAt;
   document.querySelector('.prompt-card').classList.toggle('waiting', waiting);
+  // A finished world shows its result in place of the prompt.
+  document.querySelector('.prompt-card').classList.toggle('results', state.world.ended);
+  $('results').hidden = !state.world.ended;
+  if (state.world.ended) renderResults(state);
   if (state.prompt) {
     $('prompt-label').textContent = state.prompt.label;
     $('remaining').textContent = state.prompt.remaining;
@@ -802,7 +866,10 @@ const REASONS = {
   'already-burned': (w, r) => r.burned
     ? (r.byYou
       ? `You already said “${r.burned.playedWord}”${r.burned.playedWord !== w ? ` (which uses up “${w}”)` : ''} ${saidAt(r.burned.at)}, for “${r.burned.prompt}”. No penalty.`
-      : `${r.burned.by} already said “${w}”${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''} ${saidAt(r.burned.at)}, for “${r.burned.prompt}”.${r.penalty ? penaltyText(r) : r.justNow ? ' No penalty, as it was moments ago.' : ' No penalty, as it was hidden.'}`)
+      : `${r.otherSpelling ? `“${w}” is the same answer as “${r.burned.playedWord}”, which ${r.burned.by} said`
+        : r.burned.playedWord !== w ? `${r.burned.by} used up “${w}” by saying “${r.burned.playedWord}”`
+        : `${r.burned.by} already said “${w}”`} ${saidAt(r.burned.at)}, for “${r.burned.prompt}”.${r.penalty ? penaltyText(r)
+        : r.teamMate ? ' No penalty, as it was your team-mate.' : r.justNow ? ' No penalty, as it was moments ago.' : ' No penalty, as it was hidden.'}`)
     : `“${w}” has already been said.${penaltyText(r)}`,
 };
 
@@ -818,6 +885,7 @@ $('play-form').addEventListener('submit', async (e) => {
       result = await api(`/${encodeURIComponent(worldId)}/words`, { method: 'POST', body: { word, promptId: lastState?.prompt?.id } });
     } catch (err) {
       if (err.status === 401) { setSession(null); refresh(); } // Signed out elsewhere: show the sign-in box.
+      if (err.status === 410) { refresh(); throw new Error(`${err.message} The result is at the top.`); } // It just finished.
       throw err;
     }
     if (result.ok) {
@@ -831,7 +899,7 @@ $('play-form').addEventListener('submit', async (e) => {
     } else {
       const forOld = result.previousPrompt ? ` (Judged against the last prompt, “${result.previousPrompt}”, as it had only just changed.)` : '';
       feedback(REASONS[result.reason](result.word, result) + forOld, 'bad');
-      if (isReportable(result)) $('feedback').append(' ', reportButton(result.word, result.reason, lastState?.prompt?.id));
+      if (isReportable(result)) $('feedback').append(' ', reportButton(result.word, result.reason, result.promptId));
       input.select();
     }
     refresh();

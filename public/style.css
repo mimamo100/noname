@@ -213,3 +213,13 @@ body[data-kind="room"] { --band: var(--ember); }
 /* Choices in the create forms: the picked one stands out, so a setting isn't missed. */
 fieldset.field label { padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
 fieldset.field label:has(input:checked) { border-color: var(--ember); background: rgb(255 122 41 / 0.1); font-weight: 600; }
+
+/* A finished world: the result in place of the prompt. */
+.prompt-card.results > :not(#results) { display: none; }
+#results h1 { margin: 4px 0 8px; font-size: clamp(28px, 7vw, 44px); line-height: 1.1; }
+#results p { margin: 6px 0; }
+.result-score { font-size: 20px; font-weight: 700; color: var(--ember); }
+.result-mine { margin-top: 14px !important; }
+.confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 50; }
+.confetti span { position: absolute; top: -12px; width: 8px; height: 14px; border-radius: 2px; animation: confetti-fall linear forwards; }
+@keyframes confetti-fall { to { top: 105%; transform: rotate(720deg); } }

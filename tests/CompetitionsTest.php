@@ -147,3 +147,43 @@ test('housekeeping records competitions that ended unseen', function () {
     same(1, (new Housekeeping($db, 30, null, fn () => $clock, $game))->run()['overdueWorldsFinished']);
     check($game->world($made['id'])['ended_at'] !== null);
 });
+
+test('a team-mate\'s word is free; players are told about another team\'s link and being moved', function () {
+    $clock = 1_000 * HOUR_MS;
+    [$db, $game, $comps, $org] = makeCompetitions($clock);
+    $made = $comps->create($org, ['name' => 'Quiz', 'startsAt' => $clock + HOUR_MS, 'endsAt' => $clock + 3 * HOUR_MS,
+        'promptMinutes' => 60, 'teams' => ['Owls', 'Foxes']]);
+    $id = $made['id'];
+    $world = fn () => $game->world($id);
+    [$ann, $ben, $cy] = array_map(fn ($n) => makeUser($db, $n) + ['plan' => 'free'], ['Ann', 'Ben', 'Cy']);
+    $annP = $comps->playerFor($world(), $ann, teamCode($db, $id, 'Owls'));
+    $benP = $comps->playerFor($world(), $ben, teamCode($db, $id, 'Owls'));
+    $cyP = $comps->playerFor($world(), $cy, teamCode($db, $id, 'Foxes'));
+    throwsStatus(409, fn () => $comps->checkStarted($world()), 'Words are refused before the start');
+
+    same('Foxes', $comps->personal($world(), $ann, teamCode($db, $id, 'Foxes'))['otherTeamLink'], "Ann opened the Foxes' link");
+    $comps->movePlayer($id, $org, 'Ben', (int) $db->query("SELECT id FROM teams WHERE world_id = '$id' AND name = 'Foxes'")->fetchColumn());
+    same(['Foxes', 'Owls'], [$comps->personal($world(), $ben, null)['myTeam']['name'], $comps->personal($world(), $ben, null)['movedFrom']]);
+
+    $clock += HOUR_MS;
+    $comps->checkStarted($world());
+    $game->state($id, null);
+    setPrompt($game, $id, spec(null, ['contains', 'oo']));
+    $game->play($id, $cyP['token'], 'moon');
+    $clock += Game::SAID_GRACE_MS + 1;
+    $mate = $game->play($id, $benP['token'], 'moon'); // Ben is on the Foxes now, with Cy.
+    same([0, true], [$mate['penalty'], $mate['teamMate']], "A team-mate's word is free");
+    same(Game::PENALTY, $game->play($id, $annP['token'], 'moon')['penalty'], "An opponent's costs");
+});
+
+test('no prompt starts in the last few minutes of a competition', function () {
+    $clock = 1_000 * HOUR_MS;
+    [$db, $game, $comps, $org] = makeCompetitions($clock);
+    $made = $comps->create($org, ['name' => 'Short', 'startsAt' => $clock + HOUR_MS, 'endsAt' => $clock + HOUR_MS + 18 * 60_000,
+        'promptMinutes' => 15, 'teams' => ['Owls', 'Foxes']]);
+    $clock += HOUR_MS;
+    $first = $game->state($made['id'], null)['prompt'];
+    same($clock + 18 * 60_000, $first['endsAt'], 'It would have left 3 minutes, so it runs to the end');
+    $clock += 14 * 60_000;
+    same(0, $game->state($made['id'], null)['prompt']['endsWhenLeft'], 'In the last minutes it runs on rather than ending at 80%');
+});

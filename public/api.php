@@ -272,6 +272,8 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         respond(200, $state + ['version' => $version, 'now' => $now]);
     }
     if ($method === 'POST' && $action === 'join') respond(201, ['nickname' => $playerFor()['nickname']]);
+    // Before a competition starts, a word or report is refused before it could join a team.
+    if ($isCompetition && $method === 'POST' && in_array($action, ['words', 'reports'], true)) $competitions->checkStarted($world);
     if ($method === 'POST' && $action === 'words') {
         $b = body();
         respond(200, $game->play($worldId, $playerFor()['token'], (string) ($b['word'] ?? ''), isset($b['promptId']) ? (int) $b['promptId'] : null));

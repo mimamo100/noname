@@ -27,6 +27,11 @@ final class Game
     public const SAID_GRACE_MS = 60_000;
     /** For this long after a prompt changes, a word sent for the old one is judged against it. */
     public const PROMPT_GRACE_MS = 30_000;
+    /**
+     * In a world with an end time (a competition, a big world round), no prompt starts this close
+     * to the end: the one before runs on to the end instead, and doesn't stop at END_SHARE.
+     */
+    public const LAST_PROMPT_MS = 5 * 60_000;
 
     /** @var array<string, array<string, true>> worldId => burned words, cached for this request */
     private array $burnedCache = [];
@@ -159,6 +164,14 @@ final class Game
         // What was left unsaid when each prompt ended: how many answers, and the commonest few.
         if (!$db->query("SHOW COLUMNS FROM prompts LIKE 'unsaid_count'")->fetch()) {
             $db->exec('ALTER TABLE prompts ADD COLUMN unsaid_count INT UNSIGNED NULL, ADD COLUMN unsaid_words TEXT NULL');
+        }
+        // How a missed word was typed ("double decker"), for My misses; the word column has it joined.
+        if (!$db->query("SHOW COLUMNS FROM misses LIKE 'written'")->fetch()) {
+            $db->exec('ALTER TABLE misses ADD COLUMN written VARCHAR(60) NULL');
+        }
+        // A competition player moved by the organiser: the team they were on, to tell them.
+        if (!$db->query("SHOW COLUMNS FROM players LIKE 'moved_from'")->fetch()) {
+            $db->exec('ALTER TABLE players ADD COLUMN moved_from VARCHAR(40) NULL');
         }
         // The word that finished a prompt (it got the closing bonus), for the feed.
         if (!$db->query("SHOW COLUMNS FROM prompts LIKE 'closing_word'")->fetch()) {
@@ -405,8 +418,18 @@ final class Game
         if (!$prompt) return null;
         $prompt['spec'] = self::specOf($prompt);
         $prompt['remaining'] = Prompts::countUnsaid($prompt['spec'], $this->dictionary, $this->unavailable($worldId));
-        $finished = $prompt['remaining'] <= self::endsWhenLeft((int) $prompt['available_at_start']);
-        return !$finished && $this->now() < (int) $prompt['ends_at'] ? $prompt : null;
+        $finished = $prompt['remaining'] <= ($this->inLastMinutes($worldId) ? 0 : self::endsWhenLeft((int) $prompt['available_at_start']));
+        // A prompt never outlives its world, even if the organiser moved the end earlier.
+        $worldEndsAt = $this->world($worldId)['ends_at'] ?? null;
+        $over = $this->now() >= (int) $prompt['ends_at'] || ($worldEndsAt !== null && $this->now() >= (int) $worldEndsAt);
+        return !$finished && !$over ? $prompt : null;
+    }
+
+    /** Whether the world ends within LAST_PROMPT_MS: then the prompt runs on to the end. */
+    private function inLastMinutes(string $worldId): bool
+    {
+        $endsAt = $this->world($worldId)['ends_at'] ?? null;
+        return $endsAt !== null && $this->now() >= (int) $endsAt - self::LAST_PROMPT_MS;
     }
 
     /** A prompt that started with this many answers ends when this many are left (see END_SHARE). */
@@ -458,8 +481,10 @@ final class Game
                 VALUES (?, ?, ?, ?, ?, ?)')
                 ->execute([
                     $worldId, Prompts::key($next['spec']), Prompts::describe($next['spec'], $this->dictionary),
-                    // A round's last prompt stops when the round does.
-                    $next['available'], $start, min($start + (int) $world['prompt_duration_ms'], $endsAt ?? PHP_INT_MAX),
+                    // A round's last prompt stops when the round does; one that would end in the last few
+                    // minutes runs on to the end, so no prompt starts with only minutes to go.
+                    $next['available'], $start, ($endsAt !== null && $endsAt - ($start + (int) $world['prompt_duration_ms']) < self::LAST_PROMPT_MS)
+                        ? $endsAt : $start + (int) $world['prompt_duration_ms'],
                 ]);
             $stmt = $this->db->prepare('SELECT * FROM prompts WHERE id = ?');
             $stmt->execute([$this->db->lastInsertId()]);
@@ -578,7 +603,7 @@ final class Game
             $prompt = $previous ?? $prompt ?? throw $this->noPromptError($this->world($worldId));
             $shown = $this->dictionary->display($word) !== $word ? $this->dictionary->display($word) : $typed;
             $miss = fn (string $reason, int $penalty, array $extra = []) =>
-                ['word' => $shown] + $this->miss($player, $prompt, $word, $reason, $previous ? 0 : $penalty) + $extra
+                ['word' => $shown] + $this->miss($player, $prompt, $word, $reason, $previous ? 0 : $penalty, $shown) + $extra
                 + ($previous ? ['previousPrompt' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary)] : []);
 
             // Typos aren't penalised, but a word that doesn't fit or was already said costs points,
@@ -607,8 +632,16 @@ final class Game
                 $mine = $said && $said['playerId'] === (int) $player['id'];
                 $masked = $said && $this->dictionary->isMasked(self::typed($said['playedWord']));
                 $justNow = $said && $said['at'] > $this->now() - self::SAID_GRACE_MS;
-                return $miss('already-burned', $mine || $masked || $justNow ? 0 : self::PENALTY,
-                    ['burned' => $said, 'byYou' => $mine] + ($justNow && !$mine ? ['justNow' => true] : []));
+                // In a competition, a team-mate's word is free too: only an opponent's costs.
+                $teamMate = !$mine && $said && $player['team_id'] !== null && $this->teamOf($said['playerId']) === (int) $player['team_id'];
+                // The other spelling of a word already said ("aluminum" after "aluminium") is the same answer.
+                $playedJoined = self::typed($said['playedWord'] ?? '');
+                $otherSpelling = $said && in_array($playedJoined, $this->dictionary->otherSpellings($word), true);
+                return $miss('already-burned', $mine || $masked || $justNow || $teamMate ? 0 : self::PENALTY,
+                    ['burned' => $said, 'byYou' => $mine]
+                    + ($justNow && !$mine ? ['justNow' => true] : [])
+                    + ($teamMate ? ['teamMate' => true] : [])
+                    + ($otherSpelling ? ['otherSpelling' => true] : []));
             }
             // Right letters but not on our list for the meaning: our lists have gaps, so no penalty,
             // and the player can report the word.
@@ -630,9 +663,11 @@ final class Game
             if (!$counted) $mult['prompt'] = 1.0;
             // A plural scores as its singular, so adding an S earns nothing extra.
             $singular = $this->dictionary->singular($word);
-            $points = Scoring::scoreWord($singular, $this->dictionary->rarity($singular), $mult['world'], $mult['prompt']);
+            // A phrase scores by its words as written ("paddle steamer"), not its joined length.
+            $written = $this->dictionary->display($singular);
+            $points = Scoring::scoreWord($written, $this->rarityOf($singular, $written), $mult['world'], $mult['prompt']);
             // The answer that finishes the prompt (see END_SHARE) earns a flat bonus.
-            $closing = !$previous && $counted && $after <= self::endsWhenLeft((int) $prompt['available_at_start']);
+            $closing = !$previous && $counted && $after <= ($this->inLastMinutes($worldId) ? 0 : self::endsWhenLeft((int) $prompt['available_at_start']));
             if ($closing) {
                 $points += Scoring::CLOSING_BONUS;
                 $this->db->prepare('UPDATE prompts SET closing_word = ? WHERE id = ?')->execute([$word, $prompt['id']]);
@@ -660,6 +695,31 @@ final class Game
               + ($previous ? ['previousPrompt' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary)] : [])
               + ($streak !== null ? ['streak' => $streak] : []);
         });
+    }
+
+    /**
+     * How rare a word is, for scoring. A phrase ("paddle steamer") is mostly hand-added, so it
+     * would count as one of the rarest words; it takes the rarity of its longest word instead
+     * ("steamer"), the word it's scored on, when the dictionary knows that word.
+     */
+    private function rarityOf(string $word, string $written): float
+    {
+        $parts = preg_split('/[\s\-]+/', $written, -1, PREG_SPLIT_NO_EMPTY);
+        if (count($parts) > 1) {
+            usort($parts, fn ($a, $b) => strlen(self::typed($b)) <=> strlen(self::typed($a)));
+            $longest = self::typed($parts[0]);
+            if ($this->dictionary->has($longest)) return $this->dictionary->rarity($longest);
+        }
+        return $this->dictionary->rarity($word);
+    }
+
+    /** A player's competition team, or null. */
+    private function teamOf(int $playerId): ?int
+    {
+        $stmt = $this->db->prepare('SELECT team_id FROM players WHERE id = ?');
+        $stmt->execute([$playerId]);
+        $team = $stmt->fetchColumn();
+        return $team === false || $team === null ? null : (int) $team;
     }
 
     /**
@@ -696,17 +756,18 @@ final class Game
         };
     }
 
-    private function miss(array $player, array $prompt, string $word, string $reason, int $penalty): array
+    private function miss(array $player, array $prompt, string $word, string $reason, int $penalty, ?string $written = null): array
     {
         $this->db->prepare('
-            INSERT INTO misses (world_id, player_id, prompt_id, word, reason, points, missed_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?)')
-            ->execute([$player['world_id'], $player['id'], $prompt['id'], $word, $reason, -$penalty, $this->now()]);
+            INSERT INTO misses (world_id, player_id, prompt_id, word, written, reason, points, missed_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)')
+            ->execute([$player['world_id'], $player['id'], $prompt['id'], $word, $written !== $word ? $written : null, $reason, -$penalty, $this->now()]);
         $this->db->prepare('UPDATE players SET score = score - ?, last_active_at = ? WHERE id = ?')
             ->execute([$penalty, $this->now(), $player['id']]);
         // Penalties show on the leaderboards; free misses are private.
         if ($penalty) $this->changed($player['world_id']);
-        return ['ok' => false, 'word' => $this->dictionary->display($word), 'reason' => $reason, 'penalty' => $penalty];
+        // promptId: the prompt it was judged against, which a report of it should be about.
+        return ['ok' => false, 'word' => $this->dictionary->display($word), 'reason' => $reason, 'penalty' => $penalty, 'promptId' => (int) $prompt['id']];
     }
 
     /**
@@ -725,7 +786,7 @@ final class Game
             $stmt->execute([$promptId, $worldId]);
             if ($row = $stmt->fetch()) $prompt = ['spec' => self::specOf($row)] + $row;
         }
-        $prompt ??= $this->currentPrompt($worldId) ?? throw new GameError(410, 'This world has run out of words');
+        $prompt ??= $this->currentPrompt($worldId) ?? throw $this->noPromptError($this->world($worldId));
         $category = $prompt['spec']['cat'] ?? Admin::DICTIONARY_ONLY;
         if ($category === Admin::DICTIONARY_ONLY && $this->dictionary->has($word)) {
             throw new GameError(400, 'That word is already in the dictionary');
@@ -782,7 +843,7 @@ final class Game
     {
         // Report status: the player's report of this word for this prompt, if any.
         $stmt = $this->db->prepare("
-            SELECT m.word, m.reason, m.points, m.missed_at, m.prompt_id, p.spec, p.label, p.type, p.letters,
+            SELECT m.word, m.written, m.reason, m.points, m.missed_at, m.prompt_id, p.spec, p.label, p.type, p.letters,
               m.world_id, r.id AS report_id, r.category AS report_category, r.reviewed_at
             FROM misses m
             JOIN prompts p ON p.id = m.prompt_id
@@ -808,7 +869,8 @@ final class Game
         return array_map(function ($r) use ($saidSince, $playerId) {
             $b = $saidSince[$r['word']] ?? null;
             return [
-                'word' => $this->dictionary->display($r['word']),
+                // As typed for a word our lists don't write ("double decker"); reports send it back joined.
+                'word' => $r['written'] ?? $this->dictionary->display($r['word']),
                 'reason' => $r['reason'],
                 'penalty' => -(int) $r['points'],
                 'prompt' => $r['label'] ?? Prompts::describe(self::specOf($r), $this->dictionary),
@@ -966,7 +1028,7 @@ final class Game
                 'remaining' => (int) $prompt['remaining'],
                 'availableAtStart' => (int) $prompt['available_at_start'],
                 // It ends when this many answers are left, or at endsAt, whichever comes first.
-                'endsWhenLeft' => self::endsWhenLeft((int) $prompt['available_at_start']),
+                'endsWhenLeft' => $this->inLastMinutes($worldId) ? 0 : self::endsWhenLeft((int) $prompt['available_at_start']),
                 'endsAt' => (int) $prompt['ends_at'],
             ] : null,
             'multipliers' => $mult,

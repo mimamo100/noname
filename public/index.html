@@ -43,6 +43,7 @@
     </section>
 
     <section class="prompt-card" aria-live="polite">
+      <div id="results" hidden></div>
       <p class="eyebrow">Current prompt</p>
       <h1 id="prompt-label">Loading…</h1>
       <div class="counter"><span class="muted">At least</span> <span id="remaining">–</span> <span class="muted">words left unsaid</span></div>
@@ -153,15 +154,15 @@
       <ul>
         <li>Type words that fit the current prompt. Some prompts are about meaning (“A bird”), some about letters (“Starts and ends with N”), and some both (“An animal starting with B”).</li>
         <li>Once a word is said, <b>nobody in this world can say it again, ever</b>. Its family goes with it: say <i>cat</i> and <i>cats</i> is gone too.</li>
-        <li>Plurals count as their singular: <i>brothers</i> is judged and scored as <i>brother</i>, so it doesn't fit “8+ letters”.</li>
-        <li><b>Scoring.</b> A word's points are its length minus 2 (at least 1), times up to ×3 for rarer words, times two scarcity multipliers shown under the prompt:
+        <li>Plurals count as their singular: <i>brothers</i> is judged and scored as <i>brother</i>, so it doesn't fit “8+ letters”. Words normally used in the plural (<i>trousers</i>, <i>leggings</i>) count as written.</li>
+        <li><b>Scoring.</b> A word's points are its length minus 2 (at least 1; a two-word answer scores its longest word, plus 1 for each other word), times up to ×3 for rarer words, times two scarcity multipliers shown under the prompt:
           <ul>
             <li><b>World ×</b> rises as this world's dictionary gets used up: ×1.0 when it's new, ×2.0 when half the words are said, ×4.0 at three quarters, up to ×10.</li>
             <li><b>Prompt ×</b> rises gently as the current prompt runs dry: ×1.0 at the start, ×1.5 when half its answers are said, up to ×2. It goes back to ×1.0 with each new prompt. Looser answers that don't bring the count down (the count says “at least”) score without it.</li>
           </ul>
           The two multiply together, so later answers are worth a little more, but knowing rare words matters most.</li>
         <li>You can save a word for later when it's worth more, but someone else might say it first.</li>
-        <li>Careful: a word that doesn't fit, or that someone else has already said, costs 2 points, and the message says why. Repeating your own word is free, and so is a word someone else said in the last minute. Typos are free, and so is a real answer missing from our lists: report it so we can add it. If the prompt changes just as you send a word, it's judged against the prompt you saw.</li>
+        <li>Careful: a word that doesn't fit, or that someone else has already said, costs 2 points, and the message says why. Repeating your own word is free, and so is a word someone else said in the last minute, or that your own team said. Typos are free, and so is a real answer missing from our lists: report it so we can add it. If the prompt changes just as you send a word, it's judged against the prompt you saw.</li>
         <li>Two-word answers can be typed either way: “tea towel”, “tea-towel” and “teatowel” are the same.</li>
         <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
         <li>A prompt ends once <b>80% of its answers</b> are said, or when its time runs out. Whoever says the answer that ends it gets <b>10 bonus points</b> 🏁. Then <b>Last prompt</b> shows what nobody said: the commonest answers left.</li>

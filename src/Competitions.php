@@ -187,6 +187,11 @@ final class Competitions
             $stmt->execute([$player['team_id']]);
             if ($team = $stmt->fetch()) {
                 $out['myTeam'] = ['name' => $team['name'], 'position' => (int) $team['position']];
+                // Moved by the organiser: say so, from which team.
+                if (!empty($player['moved_from']) && $player['moved_from'] !== $team['name']) $out['movedFrom'] = $player['moved_from'];
+                // Opened another team's link: you stay on your own team, and the page says so.
+                $other = $this->teamByInvite($world['id'], $invite);
+                if ($other && (int) $other['id'] !== (int) $player['team_id']) $out['otherTeamLink'] = $other['name'];
             }
         } elseif ($team = $this->teamByInvite($world['id'], $invite)) {
             // Opened a team's link but not joined yet: saying a word joins this team.
@@ -210,6 +215,12 @@ final class Competitions
             throw new GameError(403, 'Only the organiser can change this competition.');
         }
         return $world;
+    }
+
+    /** A word or report sent before the start is refused, without joining a team on the way. */
+    public function checkStarted(array $world): void
+    {
+        if (!$this->started($world)) throw new GameError(409, "The competition hasn't started yet.");
     }
 
     private function started(array $world): bool
@@ -352,9 +363,18 @@ final class Competitions
         $world = $this->ownedCompetition($worldId, $user);
         if ($this->started($world)) throw new GameError(400, 'Players can only change team before the start.');
         $this->ownedTeam($worldId, $teamId);
-        $stmt = $this->db->prepare('UPDATE players SET team_id = ? WHERE world_id = ? AND nickname = ? AND removed = 0');
-        $stmt->execute([$teamId, $worldId, $nickname]);
-        if (!$stmt->rowCount()) throw new GameError(404, 'No player of that name here.');
+        // Note the team they were on, so their page can tell them they've been moved.
+        $stmt = $this->db->prepare('
+            UPDATE players p LEFT JOIN teams t ON t.id = p.team_id
+            SET p.moved_from = COALESCE(p.moved_from, t.name), p.team_id = ?
+            WHERE p.world_id = ? AND p.nickname = ? AND p.removed = 0 AND (p.team_id IS NULL OR p.team_id <> ?)');
+        $stmt->execute([$teamId, $worldId, $nickname, $teamId]);
+        if (!$stmt->rowCount()) {
+            $exists = $this->db->prepare('SELECT 1 FROM players WHERE world_id = ? AND nickname = ? AND removed = 0');
+            $exists->execute([$worldId, $nickname]);
+            if (!$exists->fetchColumn()) throw new GameError(404, 'No player of that name here.');
+            return; // Already on that team.
+        }
         $this->game->changed($worldId);
     }
 

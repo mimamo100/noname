@@ -29,10 +29,26 @@ final class Scoring
         return round(max(1.0, min(self::PROMPT_BONUS_CAP, 1 + $used)), 2);
     }
 
-    /** $rarity: 0 for the most common word, approaching 1 for the rarest. */
+    /**
+     * A word's base points: its length minus 2 (at least 1). A phrase, written with spaces or
+     * hyphens ("paddle steamer"), scores its longest word plus 1 for each other word, so it isn't
+     * worth more than a long single word just for being two words joined up.
+     */
+    public static function base(string $written): int
+    {
+        $letters = fn (string $s) => strlen(preg_replace('/[^a-z]/', '', strtolower($s)));
+        $parts = preg_split('/[\s\-]+/', trim($written), -1, PREG_SPLIT_NO_EMPTY);
+        if (count($parts) <= 1) return max(1, $letters($written) - 2);
+        return max(1, max(array_map($letters, $parts)) - 2) + count($parts) - 1;
+    }
+
+    /**
+     * $word as written ("paddle steamer" or "steamer"; see base()). $rarity: 0 for the most
+     * common word, approaching 1 for the rarest.
+     */
     public static function scoreWord(string $word, float $rarity, float $worldMult, float $promptMult): int
     {
-        $base = max(1, strlen($word) - 2);
+        $base = self::base($word);
         $rarityMult = 1 + 2 * $rarity;
         return max(1, (int) round($base * $rarityMult * $worldMult * $promptMult));
     }

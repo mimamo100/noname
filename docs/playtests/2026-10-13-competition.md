@@ -61,3 +61,13 @@ Result: **Foxes 1,637, Owls 1,106.** Players: Cal 927, Dee 710, Ada 610, Ben 496
 4. Clear messages: joining the other team, being moved, reporting before or after a competition.
 5. Make a team-mate's word free (the owner's decision); when a word is already said under its other spelling, say so in the message.
 6. Don't start a prompt in the last few minutes.
+
+## Changes made after this playtest (14 October)
+
+1. **A proper ending:** a finished competition, room or round shows a results card in place of the prompt: "Foxes win!", the team scores, "Well played Cal, Dee", the top scorer, and "You finished 3rd of 4. Owls came 2nd of 2." with a Share button; the winners get a short shower of confetti (once per device). A word sent after the end says the result is at the top. A shared result now has a title (the email subject) and a line saying what Unsaid is.
+2. **Word lists:** two-word vehicles, alloys, the other gaps, and everyday phrases across the categories (see the commit).
+3. **Phrase scoring:** a phrase scores its longest word plus 1 per other word (*paddle steamer* 6 base points, was 11).
+4. **Messages:** "This is Owls' link, but you're on Foxes"; "The organiser moved you here from Owls"; a word or report before the start is refused without joining a team; reporting before the start or after the end says so.
+5. **A team-mate's word is free.** "Already said" for the other spelling says "“aluminum” is the same answer as “aluminium”, which Dee said at 18:23".
+6. **No prompt starts in the last 5 minutes:** the one before runs on to the end, and doesn't stop at 80%.
+- Words normally used in the plural (*leggings*, *trousers*) are judged as written (`data/plural-words.txt`). Missed phrases show as typed in My misses, and a report is always about the prompt the miss was for.

@@ -41,11 +41,15 @@ language shrinks, players hunt for rarer words, and those words are worth more.
   equal scores), out of how many, score, words and best word. **My games**
   shows these, newest first, with personal bests (games, wins, best finish,
   best score, most words, words said in all, best word). A finished world
-  stays viewable with its final leaderboard. **Sharing:** a Share button (in
+  stays viewable: a **results card** takes the prompt's place ("Foxes win!",
+  the team scores and the winners' names, or the winning player; the top
+  scorer; "You finished 3rd of 4. Owls came 2nd of 2."), with a short shower
+  of confetti for the winners, once per device. **Sharing:** a Share button (in
   My games, on the finished world's page, and by the big world's last round)
   copies a short result to paste anywhere, or opens the share sheet on a
-  phone: the world, place, points, words and best word (masked words as
-  p***s), with a link to watch the world (or to the game, for private worlds
+  phone (titled "Unsaid: my result in …", the subject in an email): the
+  world, place, points, words and best word (masked words as p***s), a line
+  saying what Unsaid is, and a link to watch the world (or to the game, for private worlds
   and competitions, which need an invite). All the detail (who said what)
   is kept too; deleting it after about 30 days is a future housekeeping job.
 - **Private worlds.** For a group of friends. Each world uses up its own
@@ -162,8 +166,12 @@ word-finder site. There are three kinds:
   which prompt, since that may be several prompts ago and out of sight.
 - **A prompt ends once 80% of its answers are said** (`Game::END_SHARE`), or
   when its time runs out, rather than running on with only obscure answers
-  left. The answer that ends it earns a flat 10 points (`Scoring::CLOSING_BONUS`),
+  left. In a world with an end time, no prompt starts in the last 5 minutes
+  (`Game::LAST_PROMPT_MS`): the one before runs on to the end. The answer that ends it earns a flat 10 points (`Scoring::CLOSING_BONUS`),
   marked 🏁 in the feed. The page says "Ends after N more or in 2h".
+- **Phrases score by their words:** a two-word answer scores its longest
+  word's base points plus 1 for each other word (`Scoring::base`), so
+  *paddle steamer* isn't worth more than *battleship* for being joined up.
 - **The prompt bonus is gentle:** ×1 plus the share of the prompt's answers
   already said, so ×1.5 at half and at most ×2 (it was answers at the start ÷
   answers left, up to ×5, and late words swamped early ones: playtest, 13 Oct).
@@ -171,7 +179,9 @@ word-finder site. There are three kinds:
   they don't bring the count down; the count says "At least N words left".
 - **Penalties are only for real mistakes:** the letter rules are checked
   first and the message names the broken rule; "already said" is free when
-  someone else said it in the last minute (`Game::SAID_GRACE_MS`); and for 30
+  someone else said it in the last minute (`Game::SAID_GRACE_MS`), or a
+  team-mate said it in a competition; the other spelling of a word already
+  said is the same answer, and the message says so; and for 30
   seconds after a prompt changes, a word sent for the old prompt is judged
   against it, free if it misses (`Game::PROMPT_GRACE_MS`; the page sends the
   prompt it showed).
@@ -422,9 +432,6 @@ a music quiz.
 
 ## Ideas for later
 
-- **The shared result needs work** (to do next): it has no subject when it's
-  shared by email, and doesn't say what Unsaid is or invite the reader to
-  play. Rethink the wording and pass a title to the share sheet.
 - **Account names:** suggest alternatives when a name is taken ("Ann 7");
   let players change their name; let the admin rename an account or merge an
   old unclaimed player into one (for someone who switched browsers before

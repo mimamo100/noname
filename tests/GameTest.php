@@ -829,3 +829,39 @@ test('masked words are playable, hidden in the feed, free to repeat, and kept ou
     check(in_array('ass', $plain, true) && in_array('tit', $plain, true), 'Without masking they come up');
     same([], array_values(array_intersect(['ass', 'tit'], $allPicks($dictionary))), 'With masking they never do');
 });
+
+test('a phrase scores by its longest word, plus 1 for each other word', function () {
+    same(5, Scoring::base('steamer'));
+    same(6, Scoring::base('paddle steamer'));
+    same(7, Scoring::base('hot air balloon'), 'balloon 5, plus 2');
+    same(1, Scoring::base('cat'));
+});
+
+test('the other spelling of a word already said is the same answer, and the message can say so', function () {
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $world = $game->createWorld('Spell');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'o']));
+    $a = $game->join($world['id'], 'Ann');
+    $b = $game->join($world['id'], 'Ben');
+    check($game->play($world['id'], $a['token'], 'colour')['ok']);
+    $miss = $game->play($world['id'], $b['token'], 'color');
+    same(['already-burned', true, 'colour'], [$miss['reason'], $miss['otherSpelling'], $miss['burned']['playedWord']]);
+});
+
+test('words normally used in the plural are judged as written', function () {
+    $d = new Dictionary(['trouser', 'trousers', 'brother', 'brothers'], [['trouser', 'trousers'], ['brother', 'brothers']], [], [], [], [], [], [], ['trousers']);
+    same('trousers', $d->singular('trousers'));
+    same('brother', $d->singular('brothers'));
+    check(Prompts::matches(spec(null, ['minLen', 8]), $d, 'trousers'), '8 letters as written');
+});
+
+test('a missed phrase is shown as typed in My misses, and a miss says which prompt it was for', function () {
+    $game = makeGame();
+    $world = $game->createWorld('Typed');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $p = $game->join($world['id'], 'Pat');
+    $miss = $game->play($world['id'], $p['token'], 'Double Decker');
+    same([$game->state($world['id'], null)['prompt']['id'], 'double decker'], [$miss['promptId'], $miss['word']]);
+    same('double decker', $game->state($world['id'], $p['token'])['myMisses'][0]['word']);
+});

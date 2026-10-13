@@ -23,6 +23,8 @@ final class Dictionary
     private array $display;
     /** @var array<string, true> playable, but shown masked to other players */
     private array $masked;
+    /** @var array<string, true> words normally used in the plural: not judged as their singular */
+    private array $pluralWords;
     /** @var array{usOnly: string[], ukOnly: string[], partners: array<string, string[]>} */
     private array $spelling;
 
@@ -34,10 +36,12 @@ final class Dictionary
      * @param string[] $masked
      * @param array<string, string> $display joined word => written form
      * @param string[] $allowed blocked words that are playable here (a curated pack's own)
+     * @param string[] $pluralWords words normally used in the plural ("leggings"), judged and scored as written
      */
     public function __construct(array $words, array $families, array $categories = [], array $blocked = [], array $spelling = [], array $masked = [],
-        array $display = [], array $allowed = [])
+        array $display = [], array $allowed = [], array $pluralWords = [])
     {
+        $this->pluralWords = array_fill_keys($pluralWords, true);
         $this->display = $display;
         $this->allowed = array_fill_keys($allowed, true);
         $this->masked = array_fill_keys($masked, true);
@@ -56,7 +60,7 @@ final class Dictionary
     {
         $data = require $path ?? dirname(__DIR__) . '/data/dictionary.php';
         return new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? [], $data['masked'] ?? [],
-            $data['display'] ?? []);
+            $data['display'] ?? [], [], $data['pluralWords'] ?? []);
     }
 
     /**
@@ -121,7 +125,7 @@ final class Dictionary
     {
         return new self($pack['words'], self::keyedFamilies($pack['families']), $pack['categories'],
             array_keys($this->blocked), $this->spelling, array_keys($this->masked),
-            ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? []);
+            ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? [], array_keys($this->pluralWords));
     }
 
     /**
@@ -148,7 +152,7 @@ final class Dictionary
             $families['pack:' . $members[0]] = array_values(array_unique($joined));
         }
         return new self($words, $families, $pack['categories'], array_keys($this->blocked), $this->spelling, array_keys($this->masked),
-            ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? []);
+            ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? [], array_keys($this->pluralWords));
     }
 
     /** @param string[][] $families */
@@ -277,7 +281,7 @@ final class Dictionary
      */
     public function singular(string $word): string
     {
-        if (!str_ends_with($word, 's') || str_ends_with($word, 'ss')) return $word;
+        if (!str_ends_with($word, 's') || str_ends_with($word, 'ss') || isset($this->pluralWords[$word])) return $word;
         $candidates = [substr($word, 0, -1)];
         if (str_ends_with($word, 'es')) $candidates[] = substr($word, 0, -2);
         if (str_ends_with($word, 'ies')) $candidates[] = substr($word, 0, -3) . 'y';
