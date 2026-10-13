@@ -51,6 +51,7 @@ cirque
 clearing
 cleft
 cliff
+cliff face
 cliffs
 clifftop
 coast
@@ -62,6 +63,7 @@ confluence
 coombe
 copse
 coral
+coral reef
 corrie
 cove
 crag
@@ -78,6 +80,7 @@ dell
 delta
 dene
 desert
+desert island
 dingle
 downland
 downs
@@ -132,10 +135,15 @@ hills
 hillside
 hilltop
 hollow
+hot spring
 hummock
 iceberg
 icebergs
 icefield
+ice floe
+ice sheet
+ice shelf
+ice shelves
 inlet
 island
 isle
@@ -171,6 +179,8 @@ morass
 mound
 mount
 mountain
+mountain pass
+mountain range
 mountains
 mountainside
 mountaintop
@@ -183,6 +193,7 @@ oceans
 outback
 outcrop
 oxbow
+oxbow lake
 pampas
 pass
 peak
@@ -214,17 +225,22 @@ ria
 ridge
 ridges
 rift
+rift valley
 rill
 river
 riverbank
 riverbed
+river mouth
 rivers
 riverside
 rivulet
+rock face
 rock pool
+salt flat
 salt marsh
 sandbank
 sandbar
+sand dune
 savanna
 savannah
 scarp
@@ -234,6 +250,7 @@ scrubland
 sea
 seabed
 seaboard
+sea cave
 seas
 seashore
 seaside
@@ -287,6 +304,7 @@ wasteland
 waterfall
 waterfalls
 waterhole
+watering hole
 watershed
 waterway
 waterways
@@ -301,6 +319,7 @@ also:
 alps
 banks
 bar
+barrier reef
 bars
 basins
 bed
@@ -329,7 +348,10 @@ hole
 holes
 hollows
 icecap
+lava flow
+limestone pavement
 lowlands
+mangrove swamp
 mounds
 mounts
 mouths
@@ -344,7 +366,9 @@ ranges
 rapid
 rise
 rises
+river delta
 sands
+sea stack
 shallow
 shelves
 shoals

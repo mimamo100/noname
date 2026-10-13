@@ -21,6 +21,7 @@ architecture
 arithmetic
 armenian
 art
+art history
 astronomy
 astrophysics
 audiology
@@ -35,6 +36,7 @@ botany
 bricklaying
 bulgarian
 business
+business studies
 calculus
 cantonese
 cardiology
@@ -46,13 +48,16 @@ chinese
 chiropody
 citizenship
 civics
+civil engineering
 classics
 climatology
+computer science
 computing
 cookery
 cornish
 cosmetology
 cosmology
+creative writing
 criminology
 croatian
 cryptography
@@ -64,6 +69,7 @@ demography
 dentistry
 dermatology
 design
+design and technology
 dietetics
 drama
 dutch
@@ -71,11 +77,14 @@ ecology
 economics
 education
 egyptology
+electrical engineering
 electronics
 endocrinology
 engineering
 english
+english literature
 entomology
+environmental science
 epidemiology
 epistemology
 esperanto
@@ -83,12 +92,16 @@ ethics
 etymology
 farsi
 finance
+fine art
 finnish
 flemish
+food technology
 forensics
+forensic science
 forestry
 french
 fulani
+further maths
 gaelic
 genetics
 geography
@@ -101,6 +114,7 @@ german
 gerontology
 glaciology
 grammar
+graphic design
 graphics
 greek
 gujarati
@@ -111,6 +125,7 @@ hausa
 hebrew
 hindi
 history
+home economics
 horticulture
 hungarian
 hydrology
@@ -118,6 +133,8 @@ icelandic
 igbo
 immunology
 indonesian
+information technology
+international relations
 irish
 italian
 japanese
@@ -137,12 +154,15 @@ luganda
 malay
 management
 mandarin
+marine biology
 marketing
 math
 mathematics
 maths
+mechanical engineering
 mechanics
 media
+media studies
 medicine
 metallurgy
 metalwork
@@ -151,6 +171,7 @@ meteorology
 microbiology
 midwifery
 mineralogy
+modern languages
 music
 musicology
 mycology
@@ -179,6 +200,7 @@ parapsychology
 pathology
 pedagogy
 pediatrics
+performing arts
 persian
 pharmacology
 pharmacy
@@ -186,6 +208,7 @@ philology
 philosophy
 phonetics
 photography
+physical education
 physics
 physiology
 physiotherapy
@@ -201,6 +224,8 @@ punjabi
 radiography
 radiology
 religion
+religious education
+religious studies
 rhetoric
 robotics
 romanian
@@ -211,6 +236,7 @@ seismology
 semiotics
 serbian
 shona
+sign language
 sociology
 somali
 sotho
@@ -235,6 +261,7 @@ typography
 ukrainian
 urdu
 urology
+veterinary science
 vietnamese
 virology
 volcanology
@@ -250,7 +277,9 @@ zulu
 also:
 acting
 aesthetics
+ancient history
 animation
+art and design
 ballet
 banking
 bookkeeping
@@ -265,8 +294,11 @@ divinity
 drawing
 dressmaking
 dynamics
+english language
 fashion
+fashion design
 film
+film studies
 hairdressing
 hospitality
 humanities
@@ -279,15 +311,19 @@ mythology
 needlework
 painting
 plumbing
+political science
 pottery
 programming
 prosthetics
+quantum physics
 sculpture
 semantics
 sewing
 shorthand
+social science
 sport
 sports
+sports science
 surveying
 teaching
 telecommunications

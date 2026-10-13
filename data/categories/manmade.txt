@@ -7,18 +7,45 @@ label: A man-made landscape feature
 # Roads, paths and railways
 bridge
 bridleway
+burial mound
 bypass
+car park
+coal mine
+country lane
+country park
 crossroads
+cycle path
+dry stone wall
+dual carriageway
+duck pond
 footbridge
 footpath
+golf course
 highway
+hill fort
 junction
 lane
+level crossing
+market square
+mill pond
 motorway
+national park
+nature reserve
 path
+playing field
+power station
 railway
+railway line
 road
+roman road
 roundabout
+slag heap
+standing stone
+stone circle
+stone wall
+suspension bridge
+theme park
+town square
 towpath
 track
 
@@ -45,6 +72,8 @@ seawall
 sluice
 tunnel
 viaduct
+village green
+war memorial
 weir
 wharf
 
@@ -99,6 +128,7 @@ spire
 steeple
 tower
 watermill
+wind farm
 windmill
 
 # Industry and masts
@@ -119,8 +149,16 @@ moat
 park
 racecourse
 rampart
+wind turbine
 
 also:
 barrow
+caravan park
+cattle grid
+football pitch
+gravel pit
+mine shaft
 square
+stepping stone
 well
+zebra crossing

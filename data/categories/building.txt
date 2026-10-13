@@ -17,6 +17,7 @@ aquarium
 arena
 armoury
 arsenal
+art gallery
 asylum
 atrium
 attic
@@ -37,12 +38,17 @@ basilica
 bathhouse
 bathroom
 bathrooms
+beach hut
+bed and breakfast
 bedchamber
 bedroom
 bedrooms
 bedsit
+bingo hall
 bistro
 blockhouse
+block of flats
+blocks of flats
 boardinghouse
 boardroom
 boathouse
@@ -51,6 +57,7 @@ borstal
 bothy
 boudoir
 boutique
+bowling alley
 boxroom
 brasserie
 brewery
@@ -60,6 +67,7 @@ bullring
 bungalow
 bungalows
 bunker
+bus station
 butchery
 byre
 cabin
@@ -70,6 +78,7 @@ cafeteria
 caff
 canteen
 capitol
+care home
 carport
 casino
 casinos
@@ -83,7 +92,9 @@ cellar
 chalet
 chamber
 chancellery
+changing room
 chapel
+charity shop
 chateau
 chippy
 church
@@ -99,7 +110,10 @@ club
 clubhouse
 cockpit
 coffeehouse
+coffee shop
 college
+community centre
+concert hall
 condo
 condominium
 confessional
@@ -107,9 +121,12 @@ conservatory
 consulate
 convent
 coop
+corner shop
 corridor
 cottage
 cottages
+council house
+country house
 courthouse
 courtroom
 cowshed
@@ -125,8 +142,11 @@ dacha
 dairy
 darkroom
 den
+department store
 depot
+detached house
 diner
+dining room
 disco
 discotheque
 dispensary
@@ -138,6 +158,7 @@ dormitories
 dormitory
 dorms
 dovecote
+dressing room
 dungeon
 duplex
 eatery
@@ -149,6 +170,7 @@ extension
 factory
 farmhouse
 farmstead
+fire station
 flat
 fleabag
 flophouse
@@ -164,6 +186,7 @@ galley
 gaol
 garage
 garages
+garden centre
 garret
 gatehouse
 gazebo
@@ -198,6 +221,7 @@ houses
 hovel
 hut
 hypermarket
+ice rink
 igloo
 infirmary
 inn
@@ -205,6 +229,7 @@ inns
 ironworks
 jail
 jailhouse
+job centre
 keep
 kennel
 kiosk
@@ -219,13 +244,16 @@ latrine
 latrines
 launderette
 lavatory
+leisure centre
 libraries
 library
 lido
 lighthouse
+living room
 lobby
 lodge
 loft
+log cabin
 longhouse
 loo
 lounge
@@ -236,6 +264,7 @@ madhouse
 maisonette
 mandir
 manor
+manor house
 manse
 mansion
 mausoleum
@@ -256,10 +285,13 @@ newsroom
 nightclub
 nunnery
 nursery
+nursing home
 nuthouse
 oasthouse
 observatory
 office
+office block
+operating theatre
 orangery
 oratory
 orphanage
@@ -276,6 +308,7 @@ parsonage
 pavilion
 penitentiary
 penthouse
+petrol station
 pharmacy
 pigsty
 pillbox
@@ -283,8 +316,11 @@ pizzeria
 planetarium
 playhouse
 playroom
+police station
 poolroom
 porch
+post office
+power station
 presbytery
 priory
 prison
@@ -292,6 +328,7 @@ privy
 pub
 pumphouse
 pyramid
+railway station
 rectory
 refectory
 refinery
@@ -318,17 +355,21 @@ school
 schoolhouse
 schoolroom
 scullery
+service station
 shack
 shanty
 shed
 sheds
 shop
+shopping centre
+shopping mall
 showroom
 shrine
 shrines
 sickbay
 sickroom
 silo
+sitting room
 skyscraper
 skyscrapers
 slaughterhouse
@@ -337,7 +378,10 @@ smokehouse
 snug
 solarium
 spa
+spare room
 speakeasy
+sports centre
+sports hall
 stable
 stables
 stadium
@@ -360,6 +404,7 @@ sunroom
 supermarket
 superstore
 surgery
+swimming pool
 synagogue
 synagogues
 tabernacle
@@ -379,6 +424,7 @@ tepee
 terminal
 terminus
 terrace
+terraced house
 theater
 theaters
 theatre
@@ -388,16 +434,22 @@ toilets
 tollbooth
 tollhouse
 tower
+tower block
+town hall
 townhouse
+train station
 trattoria
 treehouse
 undercroft
 university
+utility room
 vault
 vestibule
 vestry
 vicarage
 villa
+village hall
+waiting room
 ward
 warehouse
 washhouse
@@ -412,6 +464,7 @@ woodshed
 workhouse
 workroom
 workshop
+youth hostel
 yurt
 ziggurat
 
@@ -422,6 +475,7 @@ baths
 bedlam
 belfry
 belvedere
+betting shop
 booth
 booths
 brownstone
@@ -435,13 +489,18 @@ centre
 centres
 chambers
 chantry
+chip shop
 churches
+church hall
 cinemas
+city hall
 clinics
 closets
 clubs
+coach station
 compartment
 compartments
+control tower
 convenience
 conveniences
 court
@@ -449,15 +508,21 @@ courts
 dens
 diners
 discos
+drawing room
 dungeons
+front room
 galleries
 galleys
+games room
 hacienda
 halls
+health centre
 institution
 institutions
 keeps
 kennels
+lecture theatre
+locker room
 lodges
 loos
 mansions
@@ -468,11 +533,13 @@ ministry
 opera
 operas
 pantheon
+pet shop
 residence
 residences
 ruin
 ruins
 schools
+semi-detached
 spas
 stalls
 studies

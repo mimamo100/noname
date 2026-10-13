@@ -31,6 +31,7 @@ coral
 corals
 cornelian
 crystal
+cubic zirconia
 diamond
 diamonds
 dolerite
@@ -42,6 +43,7 @@ flagstone
 flint
 fluorite
 fluorspar
+fool's gold
 gabbro
 galena
 garnet
@@ -55,6 +57,7 @@ gritstone
 gypsum
 haematite
 halite
+iron ore
 ironstone
 jade
 jadeite
@@ -78,6 +81,7 @@ marcasite
 mica
 moonstone
 morganite
+mother-of-pearl
 mudstone
 obsidian
 olivine
@@ -94,7 +98,9 @@ pyrite
 quartz
 quartzite
 rhyolite
+rock crystal
 rock salt
+rose quartz
 rubies
 ruby
 sandstone
@@ -124,20 +130,26 @@ zircon
 
 also:
 asphalt
+black opal
+blue john
 borax
 cinnabar
 cinnabars
 clay
 cobble
 conglomerate
+fire opal
 jet
 lapis
 meteorite
 ochre
 ochres
+portland stone
+pumice stone
 salt
 serpentine
 shingle
 shingles
+smoky quartz
 spar
 sulphur

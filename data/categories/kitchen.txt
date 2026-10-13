@@ -5,6 +5,7 @@ air fryer
 appliance
 apron
 bakeware
+baking tray
 basin
 baster
 beaker
@@ -12,8 +13,11 @@ beater
 bin
 blender
 blowtorch
+bottle opener
 bowl
 bread bin
+bread knife
+bread knives
 bread maker
 breadboard
 broiler
@@ -21,21 +25,30 @@ burner
 cabinet
 caddy
 cafetiere
+cake tin
 canister
+can opener
 carafe
+carving knife
+carving knives
 casserole
+casserole dish
 cheeseboard
+cheese grater
 china
 chopper
+chopping board
 chopstick
 cleaver
 cling film
 coaster
+coffee machine
 coffeemaker
 colander
 container
 cookbook
 cooker
+cookie cutter
 cooktop
 cookware
 corer
@@ -52,6 +65,7 @@ cups
 cutlery
 cutter
 decanter
+deep fat fryer
 dessertspoon
 dish
 dishcloth
@@ -62,16 +76,21 @@ drawer
 dresser
 eggbeater
 eggcup
+egg timer
 extractor
 flask
 flute
 foil
+food processor
 fork
 forks
 freezer
 fridge
+fridge freezer
 fryer
+frying pan
 funnel
+garlic press
 glass
 glassware
 goblet
@@ -89,9 +108,12 @@ jug
 juicer
 kettle
 kettles
+kitchen roll
+kitchen scales
 kitchenware
 knife
 ladle
+lemon squeezer
 lid
 liquidiser
 liquidizer
@@ -99,11 +121,13 @@ lunchbox
 mandolin
 mandoline
 masher
+measuring jug
 mezzaluna
 microwave
 mincer
 mitt
 mixer
+mixing bowl
 mortar
 mould
 mug
@@ -111,10 +135,12 @@ napkin
 nutcracker
 opener
 oven
+oven glove
 ovens
 pan
 pans
 peeler
+pepper mill
 pepperpot
 percolator
 pestle
@@ -125,8 +151,11 @@ platter
 poacher
 porcelain
 pot
+potato masher
+potato peeler
 potholder
 pots
+pressure cooker
 processor
 rack
 ramekin
@@ -134,6 +163,8 @@ range
 refrigerator
 ricer
 roaster
+roasting tin
+rolling pin
 rotisserie
 saltcellar
 samovar
@@ -156,6 +187,7 @@ skewer
 skillet
 skimmer
 slicer
+slow cooker
 soupspoon
 spatula
 spiraliser
@@ -189,32 +221,53 @@ thermometer
 thermos
 timer
 tin
+tin foil
+tin opener
 toaster
 tongs
 toothpick
 tray
 trivet
+tumble dryer
 tumbler
 tureen
 urn
 utensil
+washing machine
 whisk
 wineglass
 wok
+wooden spoon
 worktop
 zester
 
 also:
+baking paper
 boiler
 boilers
 bowls
 coffeepot
+cooling rack
+deep fryer
 disposal
+draining board
 frypan
+hand blender
+ice cube tray
+kitchen knife
+kitchen knives
 microwaves
+milk jug
 mixers
+pepper grinder
+pizza cutter
 poachers
 ranges
+rice cooker
+salad spinner
+salt shaker
+sandwich toaster
+spice rack
 steamers
 teaspoons
 toasters

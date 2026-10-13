@@ -24,6 +24,7 @@ catamaran
 catamarans
 clipper
 clippers
+container ship
 coracle
 coracles
 corvette
@@ -80,11 +81,14 @@ minesweepers
 motorboat
 narrowboat
 narrowboats
+ocean liner
+oil tanker
 outrigger
 paddle steamer
 paddleboat
 pedalo
 pinnace
+pirate ship
 powerboat
 powerboats
 privateer
@@ -95,6 +99,7 @@ rowboat
 rowing boat
 sailboat
 sailing boat
+sailing ship
 sampan
 sampans
 schooner
@@ -145,7 +150,6 @@ carriers
 coaster
 cog
 collier
-containership
 cutter
 cutters
 dragon boat
@@ -156,11 +160,13 @@ hulks
 inflatable
 launch
 launches
+life raft
 lighter
 lighters
 man o' war
 outboard
 patrol boat
+rubber dinghy
 scull
 shell
 shells

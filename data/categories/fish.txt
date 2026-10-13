@@ -10,14 +10,17 @@ barbel
 barracuda
 barramundi
 basa
+basking shark
 bass
 betta
 blenny
 blowfish
+bluefin tuna
 bonito
 boxfish
 bream
 brill
+brown trout
 bullhead
 burbot
 carp
@@ -33,6 +36,7 @@ coelacanth
 coho
 coley
 conger
+conger eel
 crucian
 dab
 dace
@@ -40,10 +44,13 @@ damselfish
 danio
 dogfish
 dory
+dover sole
 eel
+electric eel
 elver
 flatfish
 flounder
+flying fish
 fugu
 gar
 garfish
@@ -52,6 +59,7 @@ goby
 goldfish
 gourami
 grayling
+great white shark
 grouper
 gudgeon
 guppy
@@ -61,12 +69,16 @@ hagfish
 hake
 halibut
 hammerhead
+hammerhead shark
 herring
 hoki
 huss
+john dory
 koi
+koi carp
 lamprey
 lanternfish
+lemon sole
 ling
 lionfish
 loach
@@ -75,11 +87,13 @@ lungfish
 mackerel
 mako
 manta
+manta ray
 marlin
 megrim
 minnow
 monkfish
 moray
+moray eel
 mudskipper
 mullet
 oarfish
@@ -100,7 +114,10 @@ porgy
 pout
 puffer
 pufferfish
+rainbow trout
 ray
+red mullet
+red snapper
 remora
 roach
 rockfish
@@ -115,9 +132,11 @@ sawfish
 sea bass
 sea bream
 seahorse
+sea trout
 shad
 shark
 sharks
+siamese fighting fish
 skate
 skipjack
 smelt
@@ -140,6 +159,7 @@ tarpon
 tench
 tetra
 tiddler
+tiger shark
 tilapia
 tope
 triggerfish
@@ -150,6 +170,7 @@ turbot
 viperfish
 wahoo
 weever
+whale shark
 whitebait
 whitefish
 whiting
@@ -160,6 +181,7 @@ zebrafish
 
 also:
 anchovies
+bull shark
 chum
 chums
 eels
@@ -168,6 +190,8 @@ grunts
 herrings
 jack
 jacks
+mirror carp
+nurse shark
 pikes
 piranhas
 rays

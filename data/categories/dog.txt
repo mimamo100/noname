@@ -1,6 +1,7 @@
 label: A kind of dog
 
 afghan
+afghan hound
 afghans
 airedale
 airedales
@@ -10,11 +11,16 @@ alsatians
 basenji
 basenjis
 basset
+basset hound
 beagle
 bedlington
+bernese mountain dog
 bichon
+bichon frise
 bloodhound
 bloodhounds
+border collie
+border terrier
 borzoi
 borzois
 boxer
@@ -24,12 +30,14 @@ bulldogs
 bullmastiff
 cairn
 cairns
+cairn terrier
 cavapoo
 chihuahua
 chow
 cockapoo
 cocker
 cockerpoo
+cocker spaniel
 collie
 corgi
 corgis
@@ -44,19 +52,27 @@ dobermans
 elkhound
 foxhound
 foxhounds
+french bulldog
 frenchie
+german shepherd
+golden retriever
 greyhound
 gundog
 hound
 hounds
 huskies
 husky
+irish setter
+irish wolfhound
+jack russell
 kelpie
 kelpies
+king charles spaniel
 labradoodle
 labradoodles
 labrador
 lapdog
+lhasa apso
 lurcher
 malamute
 malamutes
@@ -68,6 +84,7 @@ mutt
 mutts
 newfoundland
 newfoundlands
+old english sheepdog
 papillon
 papillons
 pekinese
@@ -86,7 +103,9 @@ pug
 pup
 puppies
 puppy
+red setter
 retriever
+rhodesian ridgeback
 ridgeback
 rottweiler
 saint bernard
@@ -101,15 +120,19 @@ scottie
 setter
 sheepdog
 sheltie
+siberian husky
 spaniel
 spitz
 springer
+springer spaniel
 staffie
+staffordshire bull terrier
 staffy
 terrier
 vizsla
 weimaraner
 weimaraners
+west highland terrier
 westie
 whelp
 whippet
@@ -117,6 +140,7 @@ whippets
 wolfhound
 wolfhounds
 yorkie
+yorkshire terrier
 
 also:
 bernese
@@ -125,14 +149,19 @@ cavalier
 chowchow
 crossbreed
 dingo
+english bulldog
+fox terrier
 greatdane
 harrier
 harriers
+labrador retriever
 leonberger
 maltese
 pedigree
+scottish terrier
 sharpei
 shihtzu
+toy poodle
 tyke
 watchdog
 watchdogs

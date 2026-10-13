@@ -6,18 +6,22 @@ ants
 aphid
 aphids
 arachnid
+army ant
 bedbug
 bedbugs
 bee
 bees
 beetle
 beetles
+black ant
 blackfly
+black widow
 blowfly
 bluebottle
 botfly
 bumblebee
 butterfly
+cabbage white
 caddis
 caddisfly
 caterpillar
@@ -27,6 +31,7 @@ chigger
 chrysalis
 cicada
 cicadas
+clothes moth
 cockchafer
 cockroach
 cockroaches
@@ -34,18 +39,23 @@ cootie
 crane fly
 cricket
 crickets
+daddy-long-legs
 damselfly
 dragonflies
 dragonfly
 drone
 drones
+dung beetle
+dust mite
 earwig
 emmet
+fire ant
 fireflies
 firefly
 flea
 fleas
 fly
+flying ant
 fritillary
 froghopper
 fruit fly
@@ -64,6 +74,7 @@ hornet
 hornets
 horsefly
 housefly
+house spider
 hoverfly
 ichneumon
 inchworm
@@ -72,6 +83,7 @@ lacewing
 ladybird
 ladybug
 larva
+leafcutter ant
 leafhopper
 leatherjacket
 lice
@@ -89,6 +101,8 @@ millipede
 minibeast
 mite
 monarch
+monarch butterfly
+money spider
 morpho
 mosquito
 mosquitoes
@@ -97,8 +111,13 @@ moth
 moths
 nit
 nymph
+painted lady
 pond skater
+praying mantis
 pupa
+queen bee
+red admiral
+red ant
 roach
 sandfly
 sawfly
@@ -111,6 +130,8 @@ spider
 spiders
 spittlebug
 springtail
+stag beetle
+stick insect
 stonefly
 swallowtail
 tarantula
@@ -118,8 +139,11 @@ termite
 termites
 thrips
 tick
+tiger moth
 tortoiseshell
+trapdoor spider
 tsetse
+tsetse fly
 wasp
 water boatman
 weevil
@@ -127,6 +151,7 @@ whitefly
 wireworm
 woodlouse
 woodworm
+worker bee
 yellowjacket
 
 also:
@@ -141,11 +166,14 @@ coppers
 emperor
 emperors
 flies
+garden spider
 hawkmoth
 hopper
 jigger
+killer bee
 mites
 monarchs
+peacock butterfly
 roaches
 scorpions
 soldier
@@ -154,5 +182,7 @@ stinkbug
 ticks
 viceroy
 wasps
+water beetle
+wolf spider
 worker
 workers

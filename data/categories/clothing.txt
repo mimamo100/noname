@@ -6,6 +6,7 @@ accessories
 accessory
 aftershave
 amulet
+ankle boot
 anklet
 anklets
 anorak
@@ -25,7 +26,9 @@ bandana
 bandeau
 bangle
 bangles
+baseball cap
 basque
+bathing suit
 bathrobe
 beanie
 bearskin
@@ -41,6 +44,7 @@ blouse
 blouses
 boa
 boater
+bobble hat
 bodice
 body warmer
 bodysuit
@@ -52,9 +56,11 @@ boot
 bootie
 booties
 boots
+bowler hat
 bow tie
 bowler
 boxers
+boxer shorts
 bra
 bracelet
 braces
@@ -117,7 +123,10 @@ corset
 costume
 costumes
 coveralls
+cowboy boot
+cowboy hat
 cowl
+crash helmet
 cravat
 crinoline
 crop top
@@ -127,11 +136,13 @@ culottes
 cummerbund
 deerstalker
 denim
+denim jacket
 derby
 dhoti
 diadem
 diaper
 diapers
+dinner jacket
 dirndl
 disguise
 doublet
@@ -141,29 +152,36 @@ dresses
 dressing gown
 drysuit
 duds
+duffel coat
 duffle
 dungarees
 duster
 earmuff
 earring
 earrings
+engagement ring
 ensemble
 espadrille
 eyeliner
+eye shadow
 fascinator
 fatigues
 fedora
 fez
 finery
 flares
+flat cap
 flats
 fleece
 flip-flop
 flipper
 flippers
+football boot
+football shirt
 footwear
 frock
 fur
+fur coat
 gaiter
 galosh
 galoshes
@@ -203,6 +221,7 @@ headpiece
 headscarf
 heels
 helmet
+high heel
 hijab
 homburg
 hood
@@ -228,6 +247,7 @@ jockstrap
 jodhpur
 jodhpurs
 joggers
+jogging bottoms
 jumper
 jumpsuit
 jumpsuits
@@ -245,6 +265,7 @@ knitwear
 kurta
 lab coat
 lanyard
+leather jacket
 lederhosen
 leg warmer
 legging
@@ -253,11 +274,13 @@ leggins
 leotard
 life jacket
 lingerie
+lip gloss
 lipstick
 livery
 loafer
 locket
 loincloth
+long johns
 lungi
 mac
 mack
@@ -286,6 +309,8 @@ mortarboard
 muff
 muffler
 mule
+nail polish
+nail varnish
 nametag
 nappies
 nappy
@@ -336,8 +361,10 @@ plimsoll
 plus fours
 polo
 polo neck
+polo shirt
 poncho
 puffer
+puffer jacket
 pullover
 pump
 puttee
@@ -362,6 +389,7 @@ sarong
 sash
 scarf
 scarves
+school uniform
 scrubs
 scrunchie
 separates
@@ -403,6 +431,7 @@ spacesuit
 spat
 spectacles
 sporran
+sports bra
 sportswear
 stetson
 stiletto
@@ -425,9 +454,13 @@ sweaters
 sweatpants
 sweats
 sweatshirt
+swimming costume
+swimming trunks
 swimsuit
 swimsuits
 swimwear
+top hat
+tracksuit bottoms
 t-shirt
 tabard
 tailcoat
@@ -485,10 +518,14 @@ vests
 visor
 waders
 waistcoat
+walking boot
 watch
 waterproof
+wedding dress
+wedding ring
 wedge
 wellington
+wellington boot
 welly
 wetsuit
 whites
@@ -498,6 +535,7 @@ wimple
 windbreaker
 windcheater
 winklepicker
+woolly hat
 wrap
 wraps
 wristband
@@ -522,6 +560,7 @@ blacks
 blue
 blues
 boilersuit
+bomber jacket
 boob tube
 bowlers
 brace
@@ -541,6 +580,7 @@ clogs
 collar
 collars
 corsets
+court shoe
 crowns
 disguises
 domino
@@ -550,6 +590,8 @@ drag
 drags
 emerald
 emeralds
+evening dress
+fancy dress
 fin
 fins
 flannel
@@ -572,6 +614,7 @@ gumshoe
 habits
 hardhat
 helmets
+hiking boot
 holster
 hoods
 hoses
@@ -582,6 +625,7 @@ jerseys
 jock
 jocks
 jumpers
+kitten heel
 kneepad
 lid
 lids
@@ -600,6 +644,7 @@ napkins
 outfits
 pant
 platforms
+pocket watch
 pumps
 pusher
 pushers
@@ -609,6 +654,7 @@ rigs
 rings
 rubber
 rubbers
+rugby shirt
 sable
 sack
 sacks
@@ -650,6 +696,7 @@ thongs
 threads
 tie clip
 tops
+trouser suit
 turnout
 turtle
 turtles

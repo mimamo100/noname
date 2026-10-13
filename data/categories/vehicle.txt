@@ -10,7 +10,9 @@ airplanes
 airship
 ambulance
 ambulances
+armoured car
 artic
+articulated lorry
 auto
 autogyro
 automobile
@@ -22,7 +24,9 @@ barouche
 bicycle
 bicycles
 bike
+bin lorry
 biplane
+black cab
 blimp
 bobsled
 bobsleigh
@@ -35,8 +39,10 @@ buggies
 buggy
 bulldozer
 bulldozers
+bullet train
 bus
 cab
+cable car
 cabriolet
 camper
 campervan
@@ -48,6 +54,7 @@ carrier
 cars
 cart
 carts
+cement mixer
 charabanc
 chariot
 chariots
@@ -62,16 +69,24 @@ cycle
 digger
 dirigible
 dodgem
+double-decker
 dozer
 dragster
 dray
 drone
 dumper
+dump truck
+dune buggy
 dustcart
+electric car
 engine
 estate
+estate car
 excavator
 fighter
+fighter jet
+fire engine
+fire truck
 flatbed
 floatplane
 forklift
@@ -79,10 +94,11 @@ funicular
 glider
 gliders
 go-kart
+golf cart
 gritter
 gyrocopter
 hackney
-handcart
+hang glider
 hansom
 harvester
 hatchback
@@ -90,9 +106,11 @@ hearse
 helicopter
 helicopters
 horsebox
+hot air balloon
 hoverboard
 hovercraft
 humvee
+ice cream van
 interceptor
 interceptors
 jalopy
@@ -100,8 +118,10 @@ jeep
 jeeps
 jet
 jets
+jet ski
 juggernaut
 jumbo
+jumbo jet
 kart
 landau
 lander
@@ -118,32 +138,39 @@ luge
 maglev
 metro
 microlight
+milk float
 minibus
 minicab
 minivan
+mobility scooter
 monoplane
 monorail
+monster truck
 moped
 motor
 motorbike
 motorcar
 motorcycle
 motorhome
+mountain bike
 omnibus
 panzer
+penny-farthing
+people carrier
 phaeton
 pickup
 pickups
+pickup truck
 plane
 planes
+police car
 pontoon
-pram
 pullman
 pushbike
-pushchair
 quad
 quad bike
 racer
+racing car
 rickshaw
 roadster
 rocket
@@ -151,6 +178,7 @@ rockets
 rover
 runabout
 saloon
+school bus
 scooter
 scooters
 scull
@@ -168,12 +196,15 @@ snowplow
 spacecraft
 spaceship
 spaceships
+space shuttle
+sports car
 stagecoach
 starship
 starships
+steam engine
 steamroller
+steam train
 streetcar
-stroller
 sub
 sulky
 supercar
@@ -184,6 +215,7 @@ taxi
 taxicab
 tipper
 toboggan
+tow truck
 tractor
 tractors
 trailer
@@ -216,10 +248,12 @@ amphibian
 bandwagon
 barrow
 barrows
+beach buggy
 bikes
 boat
 bob
 bobs
+breakdown truck
 buses
 busses
 caboose
@@ -236,17 +270,41 @@ coaches
 compact
 crafts
 cycles
+delivery van
 diner
 diners
+double-decker bus
 drones
+dumper truck
 engines
+fighter plane
 fighters
+flying saucer
+forklift truck
+four-by-four
+freight train
+golf buggy
+goods train
+hackney carriage
 half-track
+handcart
 hotrod
+ice cream truck
+jet plane
 landers
+light aircraft
+mobile home
 motorbikes
 motorcycles
+motor scooter
+patrol car
+police van
+pram
+private jet
+pushchair
+race car
 racers
+removal van
 rig
 rigs
 saloons
@@ -254,13 +312,21 @@ scrambler
 semi
 semis
 ship
+sidecar
 skateboards
+ski lift
 sleeper
 sleepers
+space rocket
+squad car
 stage
 stages
+station wagon
+steam locomotive
+stroller
 surrey
 taxis
+tipper truck
 trailers
 trams
 traps

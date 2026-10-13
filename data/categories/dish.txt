@@ -1,9 +1,13 @@
 label: A dish or meal
 
+afternoon tea
 arancini
 aspic
 balti
+bangers and mash
 banquet
+beans on toast
+beef wellington
 bhaji
 bhuna
 bibimbap
@@ -16,6 +20,7 @@ breakfast
 broth
 brunch
 bruschetta
+bubble and squeak
 buffet
 burger
 burgers
@@ -24,6 +29,7 @@ burritos
 butties
 butty
 cacciatore
+caesar salad
 calzone
 cannelloni
 carbonara
@@ -34,16 +40,23 @@ ceviche
 chateaubriand
 cheeseburger
 cheeseburgers
+cheese on toast
+chicken kiev
+chicken tikka masala
 chili
+chilli con carne
 chimichanga
 chow mein
 chowder
+club sandwich
 colcannon
 coleslaw
 congee
 consomme
 consommes
+cottage pie
 couscous
+cream tea
 croquette
 croquettes
 curry
@@ -53,6 +66,7 @@ dhansak
 dinner
 dolmas
 doner
+doner kebab
 dopiaza
 dumpling
 empanada
@@ -62,12 +76,19 @@ fajita
 falafel
 fattoush
 feast
+fish and chips
 fishcake
+fish pie
 fondue
+french toast
 fricassee
 fricassees
+fried chicken
+fried rice
 frittata
+fruit salad
 fry-up
+full english
 gazpacho
 gnocchi
 goulash
@@ -82,6 +103,8 @@ hamburgers
 hash
 hotpot
 hotpots
+irish stew
+jacket potato
 jalfrezi
 jambalaya
 katsu
@@ -98,6 +121,7 @@ lasagne
 lunch
 luncheon
 macaroni
+macaroni cheese
 meatball
 meatballs
 meatloaf
@@ -113,21 +137,26 @@ omelet
 omelets
 omelette
 omelettes
+packed lunch
 paella
 pakora
 panini
 pasta
 pasty
+peking duck
 pho
 picnic
 pie
+pigs in blankets
 pilaf
 pilau
 pilaus
 pizza
 pizzas
+ploughman's lunch
 polenta
 porridge
+prawn cocktail
 quesadilla
 quiche
 raclette
@@ -143,6 +172,7 @@ risotto
 rissole
 rissoles
 roast
+roast dinner
 roulade
 roulades
 salad
@@ -161,6 +191,7 @@ scouse
 scouses
 shakshuka
 shawarma
+shepherd's pie
 snack
 souffle
 soup
@@ -168,13 +199,16 @@ soups
 souvlaki
 souvlakis
 spaghetti
+spaghetti bolognese
 spanakopita
 spring roll
+steak and kidney pie
 stew
 stir-fry
 stroganoff
 succotash
 sukiyaki
+sunday roast
 supper
 sushi
 tabbouleh
@@ -190,12 +224,15 @@ tapas
 tempura
 terrine
 terrines
+toad in the hole
 toastie
+tomato soup
 tortellini
 tostada
 tostadas
 vichyssoise
 vindaloo
+welsh rarebit
 wonton
 wrap
 wraps
@@ -203,6 +240,7 @@ yakitori
 
 also:
 appetiser
+baked potato
 bao
 barbecue
 barbecues
@@ -213,8 +251,10 @@ cereal
 champ
 chip
 chips
+chop suey
 confit
 crepe
+egg fried rice
 elevenses
 entree
 escalope
@@ -229,6 +269,7 @@ hotdogs
 hummus
 kiev
 kimchi
+mac and cheese
 madras
 masala
 mezze
@@ -249,12 +290,14 @@ starter
 steak
 sub
 subs
+sweet and sour
 tagliatelle
 tandoori
 tartare
 tea
 teriyaki
 tikka
+tikka masala
 timbales
 tortilla
 wedge

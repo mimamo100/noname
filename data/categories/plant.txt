@@ -3,6 +3,7 @@ label: A plant or flower
 acacia
 acer
 aconite
+african violet
 agapanthus
 agave
 alder
@@ -12,6 +13,7 @@ allium
 almond
 almonds
 aloe
+aloe vera
 alstroemeria
 althaea
 althea
@@ -85,6 +87,7 @@ bulrush
 burdock
 bush
 bushes
+busy lizzie
 buttercup
 cacao
 cacti
@@ -147,6 +150,7 @@ cosmos
 cotoneaster
 cotton
 cottonwood
+cow parsley
 cowslip
 crab apple
 cranberries
@@ -169,6 +173,7 @@ damson
 dandelion
 dandelions
 daphne
+deadly nightshade
 deadnettle
 delphinium
 deodar
@@ -176,6 +181,7 @@ dianthus
 digitalis
 dill
 dock
+dog rose
 dogwood
 duckweed
 durian
@@ -214,6 +220,7 @@ gentian
 geranium
 geraniums
 gerbera
+giant hogweed
 ginkgo
 ginseng
 gladiolus
@@ -263,6 +270,7 @@ ironwood
 ivy
 jacaranda
 jalapeno
+japanese knotweed
 jasmine
 jonquil
 juniper
@@ -288,6 +296,7 @@ lilac
 lilacs
 lilies
 lily
+lily of the valley
 linden
 linseed
 liquorice
@@ -329,6 +338,7 @@ mint
 mistletoe
 monstera
 morello
+morning glory
 moss
 mugwort
 mulberry
@@ -351,6 +361,7 @@ osier
 oxeye
 oxlip
 palm
+pampas grass
 pansies
 pansy
 papaya
@@ -358,6 +369,7 @@ papyrus
 parsley
 passionflower
 patchouli
+peace lily
 pelargonium
 peonies
 peony
@@ -376,10 +388,12 @@ pineapples
 pines
 pistachio
 pistachios
+pitcher plant
 plane
 plantain
 plums
 poinsettia
+poison ivy
 polyanthus
 pomegranate
 ponderosa
@@ -401,6 +415,7 @@ ranunculus
 rapeseed
 raspberries
 raspberry
+red hot poker
 redwood
 reed
 reeds
@@ -412,6 +427,7 @@ roses
 rosewood
 rowan
 rubber
+rubber plant
 rue
 rush
 saffron
@@ -446,11 +462,13 @@ sorghum
 sorrel
 soya
 speedwell
+spider plant
 spinach
 spindle
 spruce
 statice
 stevia
+stinging nettle
 stitchwort
 stock
 succulent
@@ -460,6 +478,7 @@ sundew
 sunflower
 sunflowers
 sweet pea
+sweet william
 sycamore
 tamarind
 tamarisk
@@ -484,6 +503,7 @@ turnip
 turnips
 valerian
 vanda
+venus flytrap
 verbena
 veronica
 vervain
@@ -494,6 +514,7 @@ vines
 viola
 violet
 violets
+virginia creeper
 wallflower
 walnut
 wasabi
@@ -507,6 +528,7 @@ wheat
 whitebeam
 wildflower
 wildflowers
+wild garlic
 willow
 willowherb
 willows
@@ -551,11 +573,14 @@ capers
 carrot
 carrots
 cereal
+cheese plant
 cherries
 cherry
 chestnuts
 chickpeas
 chicory
+christmas cacti
+christmas cactus
 chrysanthemums
 cinnamon
 citrus
@@ -638,6 +663,7 @@ plum
 pollard
 potato
 potatoes
+prickly pear
 radish
 radishes
 rhubarb
@@ -667,11 +693,13 @@ tea
 teas
 tomato
 tomatoes
+tree fern
 trumpets
 vanilla
 vegetable
 vegetables
 walnuts
 weeds
+wild rose
 yam
 yams

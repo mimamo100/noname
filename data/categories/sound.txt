@@ -4,15 +4,19 @@ alarm
 applause
 baa
 babble
+background noise
 bam
 bang
 banging
 bark
+battle cry
 bawl
 bedlam
 beep
 belch
 bellow
+belly laugh
+bird call
 blare
 blares
 blaring
@@ -33,6 +37,7 @@ buzzes
 cackle
 cacophony
 call
+car horn
 caterwaul
 caw
 chatter
@@ -48,6 +53,7 @@ chorus
 chuckle
 chuff
 chug
+church bell
 clack
 clamor
 clamour
@@ -63,12 +69,14 @@ clatters
 click
 clicks
 clink
+clip-clop
 clonk
 clop
 cluck
 clucks
 clump
 clunk
+cock-a-doodle-doo
 commotion
 coo
 cough
@@ -87,9 +95,12 @@ crunch
 crunches
 cry
 cuckoo
+dawn chorus
 detonation
+dial tone
 din
 ding
+ding-dong
 dong
 drip
 drone
@@ -100,6 +111,7 @@ explosion
 fanfare
 fart
 feedback
+fire alarm
 fizz
 fizzle
 flutter
@@ -126,6 +138,7 @@ gulp
 gurgle
 hammering
 heartbeat
+hee-haw
 hiccough
 hiccup
 hiss
@@ -181,6 +194,7 @@ patter
 peal
 peep
 ping
+pitter-patter
 plonk
 plop
 plunk
@@ -246,6 +260,7 @@ snore
 snort
 snuffle
 sob
+sonic boom
 spatter
 splash
 splashes
@@ -308,6 +323,7 @@ vroom
 wail
 wallop
 warble
+war cry
 whack
 wham
 wheeze
@@ -322,9 +338,11 @@ whirs
 whisper
 whistle
 whistling
+white noise
 whizz
 whoop
 whoosh
+wolf whistle
 woof
 yap
 yell
@@ -350,10 +368,13 @@ bell
 bells
 blasts
 bleeps
+burglar alarm
 cackles
+car alarm
 caws
 chatters
 chirps
+choo-choo
 clacks
 clanks
 clinks
@@ -369,6 +390,8 @@ cries
 crow
 crows
 crying
+death rattle
+dialling tone
 dings
 dripping
 drips
@@ -384,6 +407,7 @@ howls
 hums
 jangles
 jingles
+knock-knock
 meows
 mews
 miaows

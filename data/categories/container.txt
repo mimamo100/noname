@@ -9,6 +9,7 @@ backpack
 backpacks
 bag
 bags
+ballot box
 barrel
 barrels
 basin
@@ -16,10 +17,12 @@ basins
 basket
 baskets
 beaker
+beer barrel
 bin
 bin bag
 bins
 birdcage
+biscuit tin
 bottle
 bottles
 bowl
@@ -39,6 +42,7 @@ canteens
 carafe
 carafes
 carboy
+cardboard box
 carrier bag
 carton
 cartons
@@ -51,15 +55,18 @@ caskets
 casks
 cauldron
 chalice
+chamber pot
 chest
 chests
 cistern
+coal scuttle
 coffeepot
 coffeepots
 coffer
 coffers
 coffin
 coffins
+cookie jar
 cool box
 cooler
 crate
@@ -72,6 +79,7 @@ cruets
 cup
 decanter
 demijohn
+duffel bag
 dumpster
 dustbin
 eggcup
@@ -86,6 +94,7 @@ flask
 flasks
 flowerpot
 footlocker
+fruit bowl
 goblet
 gravy boat
 hamper
@@ -98,6 +107,7 @@ hogshead
 holdall
 hopper
 humidor
+ice bucket
 inkwell
 jam jar
 jar
@@ -112,31 +122,43 @@ kettle
 kettles
 kitbag
 knapsack
+laundry basket
+litter bin
+lobster pot
 lockbox
 locket
 lunchbox
 mailbox
 mailboxes
 matchbox
+milk bottle
+milk churn
 money box
 mug
 mugs
 oilcan
+oil drum
 packet
+packing case
 pail
 pannier
+paper bag
+pedal bin
 pencil case
 pepperpot
 percolator
 percolators
 phial
+picnic basket
 piggy bank
 pillbox
 pillboxes
+pint glass
 pitcher
 pitchers
 plant pot
 planter
+plastic bag
 portmanteau
 postbox
 pot
@@ -148,6 +170,7 @@ purse
 purses
 ramekin
 receptacle
+recycling bin
 reliquary
 rucksack
 sachet
@@ -163,7 +186,11 @@ sarcophagus
 satchel
 sauceboat
 schoolbag
+shipping container
 shoebox
+shopping bag
+shopping basket
+shot glass
 silo
 snuffbox
 spittoon
@@ -177,17 +204,23 @@ suitcase
 suitcases
 tankard
 tankards
+tea caddy
+tea chest
 teacup
 teapot
 terrarium
 test tube
 thermos
 tin
+tin can
 tinderbox
 tins
 toolbox
+tote bag
+toy box
 tray
 trays
+treasure chest
 trug
 trunk
 trunks
@@ -210,9 +243,14 @@ vials
 vivarium
 wallet
 wallets
+wastepaper basket
+water bottle
+water butt
 watering can
 wheelie bin
 window box
+wine bottle
+wine glass
 wineskin
 
 also:
@@ -234,11 +272,13 @@ capsule
 casserole
 churn
 clutch
+cool bag
 creamer
 cupboard
 cylinder
 dipper
 dish
+doggy bag
 drawer
 drum
 drums
@@ -246,19 +286,23 @@ duffel
 duffle
 egg box
 folder
+gift box
 gladstone
 glass
+goody bag
 gourd
 grip
 grips
 hive
 hives
 holster
+hot water bottle
 letterbox
 locker
 lockers
 luggage
 manger
+mason jar
 mortar
 mortars
 pack
@@ -272,6 +316,7 @@ quiver
 reservoir
 reservoirs
 retort
+rubbish bin
 sandbag
 sandbags
 saucepan
@@ -286,6 +331,8 @@ skip
 sleeve
 sleeves
 soapbox
+sports bag
+storage box
 tackle box
 tank
 tanks

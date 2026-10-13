@@ -15,6 +15,8 @@ asp
 asps
 axolotl
 axolotls
+bearded dragon
+black mamba
 boa
 boomslang
 brachiosaurus
@@ -24,6 +26,7 @@ bullfrog
 bushmaster
 caecilian
 caiman
+cane toad
 cayman
 caymans
 chameleon
@@ -31,6 +34,7 @@ cobra
 cobras
 copperhead
 copperheads
+coral snake
 corn snake
 cottonmouth
 cottonmouths
@@ -47,13 +51,17 @@ frog
 froglet
 froglets
 frogs
+garter snake
 gator
 gators
 gecko
 gharial
 gharials
+giant tortoise
+gila monster
 goanna
 grass snake
+great crested newt
 hawksbill
 hawksbills
 ichthyosaur
@@ -62,8 +70,10 @@ iguana
 iguanas
 iguanodon
 iguanodons
+king cobra
 kingsnake
 komodo
+komodo dragon
 krait
 kraits
 leatherback
@@ -73,12 +83,15 @@ lizards
 mamba
 megalosaurus
 megalosauruses
+monitor lizard
 mosasaur
 natterjack
 natterjacks
 newt
+nile crocodile
 plesiosaur
 plesiosaurs
+poison dart frog
 pteranodon
 pterodactyl
 pterosaur
@@ -89,6 +102,9 @@ rattler
 rattlesnake
 rattlesnakes
 salamander
+saltwater crocodile
+sea snake
+sea turtle
 serpent
 serpents
 sidewinder
@@ -98,6 +114,7 @@ slowworm
 slowworms
 snake
 snakes
+snapping turtle
 spinosaurus
 stegosaurus
 stegosauruses
@@ -128,9 +145,14 @@ basilisk
 basilisks
 dragon
 dragons
+frilled lizard
+galapagos tortoise
+green mamba
 loggerhead
 loggerheads
 moccasin
 monitor
 monitors
 raptor
+sand lizard
+spitting cobra

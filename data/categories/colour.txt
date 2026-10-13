@@ -11,6 +11,8 @@ aubergine
 auburn
 avocado
 azure
+baby blue
+baby pink
 bay
 beetroot
 beige
@@ -18,12 +20,15 @@ biscuit
 black
 blacks
 blonde
+blood red
 blue
 bluebell
 blush
 bone
+bottle green
 brass
 brick
+brick red
 bronze
 brown
 browns
@@ -31,10 +36,13 @@ brunette
 bubblegum
 buff
 burgundy
+burnt orange
+burnt sienna
 buttercup
 butterscotch
 camel
 canary
+canary yellow
 caramel
 cardinal
 carmine
@@ -43,10 +51,13 @@ cerise
 cerulean
 champagne
 charcoal
+charcoal grey
 chartreuse
 cherry
+cherry red
 chestnut
 chocolate
+chocolate brown
 cinnabar
 cinnamon
 citrine
@@ -65,13 +76,19 @@ custard
 cyan
 daffodil
 damson
+dark blue
+dark brown
+dark green
+dark grey
 denim
 drab
 dun
 ebony
 ecru
 eggshell
+electric blue
 emerald
+emerald green
 espresso
 fawn
 fern
@@ -79,6 +96,7 @@ flame
 flamingo
 flax
 fluorescent
+forest green
 fuchsia
 garnet
 ginger
@@ -98,17 +116,25 @@ heather
 heliotrope
 henna
 honey
+hot pink
 hyacinth
 indigo
 ivory
 jade
 jet
+jet black
 khaki
 lapis
 lavender
 lemon
+lemon yellow
+light blue
+light brown
+light green
+light grey
 lilac
 lime
+lime green
 linen
 magenta
 magnolia
@@ -119,7 +145,9 @@ marigold
 maroon
 mauve
 midnight
+midnight blue
 mint
+mint green
 mocha
 moss
 mousey
@@ -128,13 +156,16 @@ mulberry
 mushroom
 mustard
 navy
+navy blue
 neon
 nude
 nutmeg
 oatmeal
 obsidian
 ochre
+off-white
 olive
+olive green
 onyx
 opal
 orange
@@ -155,6 +186,7 @@ pistachio
 platinum
 plum
 porcelain
+powder blue
 primrose
 puce
 pumpkin
@@ -168,6 +200,7 @@ roan
 rose
 rosewood
 rouge
+royal blue
 ruby
 russet
 rust
@@ -175,14 +208,18 @@ sable
 saffron
 sage
 salmon
+salmon pink
 sand
 sandy
 sapphire
 scarlet
+sea green
 sepia
+shocking pink
 sienna
 silver
 sky
+sky blue
 slate
 smoke
 sorrel
@@ -227,6 +264,7 @@ blonds
 blues
 bones
 buffs
+burnt umber
 canaries
 caramels
 cardinals
@@ -234,18 +272,24 @@ chalk
 cherries
 chestnuts
 chocolates
+cobalt blue
 coffees
 coppers
 emeralds
 greens
 lemons
+mustard yellow
 olives
 oranges
+pale blue
 peaches
+pea green
 pearls
+pitch black
 roses
 rubies
 sapphires
+slate grey
 straws
 tangerines
 tans

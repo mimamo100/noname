@@ -1,6 +1,8 @@
 label: A tool
 
 adze
+allen key
+angle grinder
 anvil
 auger
 awl
@@ -22,12 +24,17 @@ burin
 callipers
 chainsaw
 chisel
+circular saw
 clamp
+claw hammer
 cleaver
 clippers
 compass
 corkscrew
+craft knife
+craft knives
 crimper
+crochet hook
 crowbar
 cultivator
 cutter
@@ -35,17 +42,22 @@ dibber
 dibble
 drawknife
 drill
+drill bit
 dustpan
 edger
+electric drill
 file
 flail
 float
 forceps
 fork
 fretsaw
+garden fork
+garden shears
 gauge
 gavel
 gimlet
+glue gun
 gouge
 grater
 graver
@@ -73,6 +85,7 @@ jackknife
 jemmy
 jigsaw
 knife
+knitting needle
 knives
 ladder
 ladle
@@ -83,11 +96,13 @@ leaf blower
 level
 loppers
 machete
+magnifying glass
 mallet
 masher
 mattock
 maul
 micrometer
+monkey wrench
 mop
 mower
 multimeter
@@ -97,6 +112,7 @@ needle
 nutcracker
 opener
 paintbrush
+paint roller
 peeler
 penknife
 pestle
@@ -113,10 +129,13 @@ plough
 ploughs
 plow
 plows
+plumb line
 plunger
 pocketknife
 poker
 polisher
+power drill
+pressure washer
 protractor
 pruner
 punch
@@ -139,6 +158,7 @@ scraper
 screwdriver
 scythe
 secateurs
+set square
 sextant
 sharpener
 shears
@@ -148,21 +168,30 @@ sickle
 sieve
 sledgehammer
 snips
+soldering iron
 spade
 spanner
 spatula
+spirit level
 spokeshave
 squeegee
+stanley knife
+stanley knives
+staple gun
 stapler
 stepladder
 strimmer
 strop
+swiss army knife
+swiss army knives
 switchblade
+tape measure
 tongs
 toothpick
 toothpicks
 trimmer
 trowel
+t-square
 tweezers
 vice
 wedge
@@ -174,14 +203,17 @@ wrench
 zester
 
 also:
+adjustable spanner
 bit
 bits
 blade
 blades
+bolt cutters
 buffer
 buffers
 bur
 burr
+car jack
 chopper
 choppers
 clipper
@@ -196,10 +228,14 @@ floats
 forks
 grapple
 hammers
+hand drill
+hole punch
 jacks
+measuring tape
 openers
 picks
 planes
+pruning shears
 punches
 rakes
 saws
@@ -216,4 +252,6 @@ squares
 tamper
 tap
 taps
+tin snips
+wire cutters
 wrenches

@@ -6,3 +6,45 @@
 leggings
 lodgings
 trousers
+
+# Clothes
+jeans
+pants
+shorts
+tights
+pyjamas
+pajamas
+knickers
+overalls
+dungarees
+jodhpurs
+
+# Tools and things that come in pairs
+scissors
+pliers
+tongs
+tweezers
+binoculars
+spectacles
+goggles
+headphones
+earphones
+
+# Others
+clothes
+belongings
+outskirts
+surroundings
+earnings
+savings
+premises
+riches
+manners
+whereabouts
+thanks
+congratulations
+oats
+measles
+mumps
+dregs
+suds

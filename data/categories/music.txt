@@ -1,6 +1,7 @@
 label: A kind of music or dance
 
 acid
+acid house
 afrobeat
 air
 alternative
@@ -15,12 +16,16 @@ ballade
 ballads
 ballet
 ballroom
+ballroom dancing
 barbershop
 barcarolle
+barn dance
 baroque
 beatboxing
 bebop
+belly dance
 bhangra
+big band
 bluegrass
 blues
 bolero
@@ -40,7 +45,9 @@ canon
 cantata
 carol
 ceilidh
+cha-cha
 chamber
+chamber music
 chanson
 chant
 charleston
@@ -55,6 +62,7 @@ conga
 contemporary
 cotillion
 country
+country and western
 cumbia
 dancehall
 dirge
@@ -63,9 +71,11 @@ ditty
 dixieland
 drill
 drone
+drum and bass
 dub
 dubstep
 duet
+easy listening
 electro
 electronic
 electronica
@@ -89,6 +99,7 @@ gamelan
 garage
 gavotte
 glam
+glam rock
 gospel
 goth
 gothic
@@ -97,6 +108,11 @@ grunge
 habanera
 haka
 hardcore
+hard rock
+heavy metal
+highland fling
+hip hop
+hokey cokey
 hora
 hornpipe
 house
@@ -121,6 +137,8 @@ lament
 lied
 limbo
 lindy
+lindy hop
+line dancing
 lounge
 lullabies
 lullaby
@@ -136,10 +154,13 @@ metal
 minuet
 moonwalk
 morris
+morris dance
 motet
 musical
 muzak
+new wave
 nocturne
+northern soul
 oldie
 oldies
 opera
@@ -166,6 +187,7 @@ progressive
 psalm
 psychedelic
 punk
+punk rock
 quadrille
 quartet
 quickstep
@@ -179,9 +201,11 @@ reggae
 reggaeton
 requiem
 rhapsody
+rhythm and blues
 robot
 rock
 rockabilly
+rock and roll
 rondo
 round
 rumba
@@ -190,6 +214,7 @@ samba
 sarabande
 scat
 scherzo
+sea shanty
 serenade
 shanty
 shimmy
@@ -198,6 +223,7 @@ shuffle
 ska
 skiffle
 soca
+soft rock
 solo
 sonata
 sonatina
@@ -206,8 +232,10 @@ songs
 soul
 soundtrack
 spiritual
+square dance
 stomp
 strathspey
+street dance
 suite
 suites
 swing
@@ -216,6 +244,7 @@ symphony
 synthpop
 tango
 tap
+tap dance
 tarantella
 techno
 thrash
@@ -223,10 +252,12 @@ toccata
 trance
 trap
 trio
+trip hop
 twist
 vaudeville
 vogue
 waltz
+world music
 yodel
 zydeco
 
@@ -236,25 +267,35 @@ canons
 carols
 chants
 choreography
+classical music
 composition
 compositions
+dance music
+death metal
 discos
 doowop
 duets
 duo
+folk dance
+folk music
 gospels
 kpop
 largo
 marches
 masses
+pop music
 pops
 potpourri
+prog rock
 raps
 riff
 riffs
+rock'n'roll
 rounds
 solos
 souls
 swings
+sword dance
+thrash metal
 vocal
 vocals

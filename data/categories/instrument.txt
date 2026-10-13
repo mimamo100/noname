@@ -1,6 +1,7 @@
 label: A musical instrument
 
 accordion
+acoustic guitar
 alphorn
 autoharp
 bagpipe
@@ -9,7 +10,10 @@ balalaika
 banjo
 bansuri
 baritone
+barrel organ
 bass
+bass drum
+bass guitar
 bassoon
 bell
 bodhran
@@ -25,6 +29,7 @@ castanet
 celesta
 cello
 chime
+church organ
 cittern
 clarinet
 clarion
@@ -33,6 +38,7 @@ clavichord
 concertina
 conga
 contrabassoon
+cor anglais
 cornet
 cowbell
 crumhorn
@@ -40,11 +46,13 @@ cymbal
 cymbals
 didgeridoo
 djembe
+double bass
 drum
 drum kit
 drums
 duduk
 dulcimer
+electric guitar
 erhu
 euphonium
 fiddle
@@ -54,8 +62,10 @@ flugelhorn
 flute
 flutes
 fortepiano
+french horn
 glockenspiel
 gong
+grand piano
 guiro
 guitar
 guitars
@@ -68,6 +78,7 @@ harps
 harpsichord
 hi-hat
 horn
+jew's harp
 kalimba
 kazoo
 kettledrum
@@ -84,6 +95,7 @@ marimba
 mbira
 melodeon
 melodica
+mouth organ
 oboe
 ocarina
 ophicleide
@@ -98,6 +110,7 @@ pianos
 piccolo
 pipa
 pipe
+pipe organ
 psaltery
 rattle
 rebec
@@ -114,8 +127,10 @@ shawm
 shofar
 sitar
 snare
+snare drum
 sousaphone
 spinet
+steel drum
 steel pan
 synth
 synthesizer
@@ -132,8 +147,10 @@ triangle
 trombone
 trumpet
 tuba
+tubular bells
 uke
 ukulele
+upright piano
 veena
 vibes
 vibraphone
@@ -150,9 +167,14 @@ xylophone
 zither
 
 also:
+baby grand
 bells
 bombard
 chimes
+classical guitar
+drum machine
+electric organ
+electric piano
 grand
 grands
 horns
@@ -161,6 +183,7 @@ organs
 pipes
 recorders
 serpents
+sleigh bells
 snares
 synthesiser
 tam-tam
@@ -168,3 +191,4 @@ triangles
 trumpets
 upright
 whistles
+wind chimes

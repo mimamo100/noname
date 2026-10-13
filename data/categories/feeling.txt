@@ -89,6 +89,7 @@ curiosity
 cynicism
 daze
 defensiveness
+deja vu
 dejection
 delight
 delights
@@ -280,6 +281,7 @@ paranoia
 passion
 passions
 peace
+peace of mind
 peevishness
 penchant
 penitence
@@ -296,6 +298,7 @@ premonitions
 pressure
 pride
 prides
+puppy love
 puzzlement
 qualms
 queasiness
@@ -325,6 +328,9 @@ satisfaction
 scare
 schadenfreude
 scorn
+self-confidence
+self-doubt
+self-pity
 sensation
 sensuality
 sentiment
@@ -347,6 +353,7 @@ soreness
 sorrow
 sorrows
 spite
+stage fright
 stress
 strop
 suffering
@@ -437,14 +444,17 @@ belongings
 boot
 boots
 bravery
+broken heart
 brooding
 brotherhood
+cabin fever
 care
 cares
 caring
 charge
 charges
 chills
+cold feet
 comforts
 complex
 complexes
@@ -456,6 +466,7 @@ conscience
 consciences
 cruelty
 crushes
+culture shock
 dander
 defeat
 defeats
@@ -549,6 +560,8 @@ scores
 scruples
 securities
 security
+self-esteem
+self-loathing
 sensations
 sensibilities
 sensibility

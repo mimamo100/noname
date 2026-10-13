@@ -4,6 +4,7 @@ abseiling
 acrobatics
 aerobics
 aikido
+american football
 angling
 archery
 athletics
@@ -17,6 +18,7 @@ baseball
 baseballs
 basketball
 battleships
+beach volleyball
 bezique
 biathlon
 billiards
@@ -35,6 +37,7 @@ boxing
 brag
 bridge
 bullfighting
+bungee jumping
 camogie
 canasta
 canoeing
@@ -55,10 +58,12 @@ cockfighting
 conkers
 coursing
 craps
+crazy golf
 crib
 cribbage
 cricket
 croquet
+cross country
 curling
 cycling
 darts
@@ -79,18 +84,21 @@ falconry
 faro
 fell running
 fencing
+figure skating
 fishing
 fives
 foosball
 football
 footballs
 footie
+formula one
 freediving
 freerunning
 frisbee
 futsal
 gin
 gliding
+go-karting
 golf
 gymnastics
 halma
@@ -99,16 +107,22 @@ hang-gliding
 hangman
 hearts
 heptathlon
+hide and seek
+high jump
 hiking
 hillwalking
 hockey
 hopscotch
 horse racing
+horse riding
 horseshoes
 hunting
 hurdles
 hurdling
 hurling
+ice dancing
+ice hockey
+ice skating
 jacks
 javelin
 jogging
@@ -126,7 +140,9 @@ kitesurfing
 knucklebones
 korfball
 lacrosse
+lawn bowls
 leapfrog
+long jump
 lotto
 ludo
 luge
@@ -134,16 +150,21 @@ mahjong
 mancala
 marathon
 marbles
+martial arts
 mastermind
 mini golf
 monopoly
 motocross
 motorcycling
+motor racing
 motorsport
+mountain biking
 mountaineering
+musical chairs
 netball
 newmarket
 nim
+noughts and crosses
 orienteering
 paddleboarding
 padel
@@ -151,6 +172,7 @@ paintball
 parachuting
 paragliding
 parkour
+pass the parcel
 patience
 peekaboo
 pelmanism
@@ -182,6 +204,8 @@ rambling
 relay
 reversi
 riding
+rock climbing
+rock paper scissors
 rodeo
 roller skating
 rollerblading
@@ -189,6 +213,8 @@ roulette
 rounders
 rowing
 rugby
+rugby league
+rugby union
 rummy
 running
 sailing
@@ -196,6 +222,7 @@ sandboarding
 sardines
 scrabble
 scuba
+scuba diving
 sculling
 sevens
 shinty
@@ -215,6 +242,7 @@ skydiving
 slalom
 sledding
 sledging
+snakes and ladders
 snap
 snooker
 snorkelling
@@ -236,16 +264,23 @@ sumo
 surfing
 swimming
 swingball
+synchronised swimming
+table football
+table tennis
 taekwondo
 tag
 tarok
 tennis
+ten-pin bowling
 tiddlywinks
 tig
 tobogganing
 trampolining
 trekking
 triathlon
+triple jump
+truth or dare
+tug of war
 twister
 volleyball
 wakeboarding
@@ -259,22 +294,32 @@ yachting
 yoga
 
 also:
+air hockey
 ball
 ballgame
 balls
 bridges
 casino
 casinos
+clay pigeon shooting
 cribs
 crickets
 dive
 dives
 doubles
+egg and spoon race
+field hockey
 fight
 fights
 fisticuffs
+five-a-side
+fly fishing
 foxhunting
+gaelic football
+gin rummy
 grappling
+greyhound racing
+hammer throw
 hardball
 hoops
 hunt
@@ -282,6 +327,7 @@ hunts
 jiujitsu
 jumping
 kungfu
+laser tag
 lottery
 nap
 naps
@@ -298,6 +344,7 @@ spar
 sparring
 stud
 studs
+sumo wrestling
 swim
 swims
 tags

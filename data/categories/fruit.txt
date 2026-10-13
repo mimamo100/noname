@@ -16,6 +16,7 @@ bilberry
 blackberries
 blackberry
 blackcurrant
+blood orange
 blueberry
 boysenberry
 bramble
@@ -29,6 +30,7 @@ citrus
 clementine
 cloudberry
 coconut
+cooking apple
 crab apple
 cranberry
 currant
@@ -41,14 +43,17 @@ elderberry
 feijoa
 fig
 goji
+goji berry
 gooseberry
 granadilla
+granny smith
 grape
 grapefruit
 grapes
 greengage
 guava
 honeydew
+honeydew melon
 huckleberry
 jackfruit
 jujube
@@ -122,17 +127,26 @@ also:
 apricots
 bananas
 blueberries
+bramley apple
+cape gooseberry
 cherries
 cranberries
+custard apple
 dates
 figs
+golden delicious
 limes
+mandarin orange
 mangoes
 peaches
 pineapples
 plums
 prunes
 raspberries
+seville orange
+sharon fruit
 starfruit
 tangerines
+ugli fruit
 watermelons
+wild strawberry

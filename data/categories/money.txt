@@ -41,6 +41,7 @@ forint
 forints
 franc
 francs
+gold coin
 groat
 groschen
 guilder
@@ -86,8 +87,13 @@ peso
 pesos
 pfennig
 piastre
+piece of eight
+pieces of eight
 pound
+pound coin
+pound note
 pounds
+pound sterling
 pula
 punt
 quarter
@@ -121,10 +127,12 @@ sous
 sovereign
 sterling
 sucre
+swiss franc
 taka
 tala
 thaler
 threepence
+threepenny bit
 tuppence
 won
 yen
@@ -134,8 +142,11 @@ zlotys
 
 also:
 afghani
+american dollar
+australian dollar
 bob
 bobs
+canadian dollar
 colon
 copper
 coppers
@@ -143,7 +154,11 @@ dong
 dongs
 dram
 fiver
+french franc
+half sovereign
 kip
 lei
+silver coin
+silver dollar
 tanner
 tenner

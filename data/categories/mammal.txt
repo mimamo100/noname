@@ -3,6 +3,7 @@ includes: dog
 
 aardvark
 aardwolf
+african elephant
 agouti
 alpaca
 anteater
@@ -10,6 +11,7 @@ antelope
 ape
 apes
 appaloosa
+arctic fox
 armadillo
 ass
 aurochs
@@ -25,16 +27,24 @@ bears
 beaver
 beluga
 bengal
+bengal tiger
 bighorn
 bilby
+billy goat
 bison
+black bear
+black panther
+blue whale
 boar
 boars
 bobcat
 bonobo
+bottlenose dolphin
 bronc
 bronco
 broncos
+brown bear
+brown hare
 buck
 buffalo
 buffaloes
@@ -100,15 +110,20 @@ echidna
 eland
 elephant
 elephants
+elephant seal
 elk
 elks
 ermine
 ewe
+fallow deer
 fawn
 feline
 fennec
 ferret
+field mice
+field mouse
 filly
+flying squirrel
 foal
 fossa
 fox
@@ -121,6 +136,7 @@ gazelles
 gelding
 gemsbok
 gerbil
+giant panda
 gibbon
 giraffe
 giraffes
@@ -130,16 +146,21 @@ goats
 gopher
 gorilla
 gorillas
+grey seal
+grey squirrel
 grizzlies
 grizzly
 groundhog
 guanaco
+guinea pig
 hamster
 hamsters
 hare
 hares
 hart
 hartebeest
+harvest mice
+harvest mouse
 hedgehog
 hedgehogs
 heifer
@@ -149,11 +170,13 @@ hippo
 hippopotamus
 hog
 hogget
+honey badger
 horse
 horses
 human
 humans
 humpback
+humpback whale
 hyena
 hyenas
 hyrax
@@ -171,6 +194,7 @@ joey
 kangaroo
 kangaroos
 kid
+killer whale
 kinkajou
 kitten
 kitty
@@ -224,6 +248,8 @@ monkey
 monkeys
 moose
 mouflon
+mountain goat
+mountain lion
 mouse
 mule
 mules
@@ -232,6 +258,7 @@ muskrat
 mustang
 mustangs
 nag
+nanny goat
 narwhal
 nilgai
 numbat
@@ -256,8 +283,10 @@ pig
 piglet
 pigs
 pika
+pine marten
 pipistrelle
 platypus
+polar bear
 polecat
 ponies
 pony
@@ -266,6 +295,7 @@ porker
 porpoise
 possum
 possums
+prairie dog
 primate
 pronghorn
 puma
@@ -284,6 +314,10 @@ ragdoll
 ram
 rat
 rats
+red deer
+red fox
+red panda
+red squirrel
 reindeer
 rhesus
 rhino
@@ -293,13 +327,17 @@ ringtail
 rodent
 rodents
 roebuck
+roe deer
 sable
 sambar
 seal
+sea otter
 serval
 sheep
 shetland
+shetland pony
 shire
+shire horse
 shrew
 siamang
 siamese
@@ -308,8 +346,11 @@ sika
 silverback
 skunk
 sloth
+snow leopard
 sow
+sperm whale
 sphynx
+spider monkey
 springbok
 squirrel
 squirrels
@@ -325,6 +366,7 @@ takin
 tamarin
 tapir
 tarsier
+tasmanian devil
 thoroughbred
 thylacine
 tiger
@@ -332,6 +374,7 @@ tigress
 tomcat
 tup
 ungulate
+vampire bat
 vervet
 vicuna
 vixen
@@ -341,9 +384,12 @@ walrus
 wapiti
 warthog
 waterbuck
+water buffalo
+water vole
 weasel
 wether
 whale
+wild boar
 wildcat
 wildebeest
 wolf
@@ -351,6 +397,7 @@ wolverine
 wolves
 wombat
 woodchuck
+woolly mammoth
 yak
 yearling
 zebra
@@ -365,15 +412,18 @@ billy
 bongo
 bongos
 bovine
+brown rat
 bucks
 bunnies
 canines
+common seal
 coney
 does
 dolphins
 donkeys
 drill
 drills
+duck-billed platypus
 equine
 ferrets
 fisher
@@ -383,17 +433,24 @@ hackney
 hanuman
 hippos
 hogs
+house mice
+house mouse
+howler monkey
+indian elephant
 jack
 jackasses
 jacks
 jenny
 kids
 kitties
+koala bear
 leopards
 man
 mans
 men
 moles
+musk ox
+musk oxen
 nags
 nannies
 nanny
@@ -405,8 +462,10 @@ pussycats
 raccoons
 racoons
 rams
+sabre-toothed tiger
 saki
 seals
+siberian tiger
 simian
 skunks
 sows

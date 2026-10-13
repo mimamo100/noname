@@ -15,6 +15,7 @@ bronze
 cadmium
 caesium
 calcium
+cast iron
 cerium
 cesium
 chrome
@@ -22,6 +23,7 @@ chromium
 cobalt
 copper
 coppers
+californium
 curium
 einsteinium
 electrum
@@ -63,13 +65,16 @@ quicksilver
 radium
 rhenium
 rhodium
+rose gold
 rubidium
 ruthenium
 scandium
 silver
 sodium
 solder
+stainless steel
 steel
+sterling silver
 strontium
 tantalum
 thallium
@@ -80,7 +85,9 @@ titanium
 tungsten
 uranium
 vanadium
+white gold
 wolfram
+wrought iron
 yttrium
 zinc
 zirconium
@@ -89,7 +96,15 @@ also:
 antimony
 arsenic
 bullion
+carbon steel
+cupronickel
+duralumin
 germanium
+mild steel
+nichrome
+nickel silver
 ormolu
+pig iron
 stainless
 sterling
+yellow gold

@@ -8,6 +8,9 @@ barnacles
 beluga
 bivalve
 bivalves
+blue whale
+bottlenose dolphin
+box jellyfish
 cephalopod
 cephalopods
 cetacean
@@ -29,12 +32,21 @@ dolphins
 dugong
 dugongs
 echinoderm
+elephant seal
 gastropod
 gastropods
+giant clam
+giant squid
+grey seal
 hawksbill
 hawksbills
+hermit crab
+horseshoe crab
 humpback
+humpback whale
 jellyfish
+killer whale
+king crab
 krill
 langoustine
 langoustines
@@ -64,6 +76,7 @@ oysters
 periwinkle
 pinniped
 porpoise
+portuguese man o' war
 prawn
 prawns
 quahog
@@ -72,12 +85,19 @@ sandhopper
 sandhoppers
 scallop
 scallops
+sea anemone
+sea cucumber
 sea lion
 seal
 seals
+sea otter
+sea slug
+sea urchin
 shellfish
 shrimp
 shrimps
+sperm whale
+spider crab
 sponge
 sponges
 squid
@@ -95,6 +115,7 @@ whelks
 winkle
 
 also:
+common seal
 crawfish
 crayfish
 loggerhead
@@ -106,3 +127,5 @@ plankton
 polyp
 polyps
 scampi
+sea snail
+sea sponge

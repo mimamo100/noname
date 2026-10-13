@@ -3,8 +3,11 @@ label: A part of the body
 abdomen
 abdominal
 abs
+achilles tendon
+adam's apple
 adenoid
 adrenal
+adrenal gland
 airway
 alveolus
 amygdala
@@ -38,11 +41,14 @@ belly
 bellybutton
 bicep
 biceps
+big toe
 bladder
 bladders
+blood vessel
 blowhole
 bonce
 bone
+bone marrow
 boob
 booty
 bosom
@@ -66,6 +72,7 @@ buttocks
 caecum
 cakehole
 calf
+calf muscle
 canine
 canines
 capillary
@@ -138,6 +145,7 @@ eyebrow
 eyelash
 eyelid
 eyelids
+eye socket
 eyetooth
 face
 faces
@@ -218,6 +226,7 @@ hypothalamus
 ileum
 incisor
 incisors
+index finger
 innards
 instep
 intestine
@@ -243,6 +252,7 @@ knuckle
 labia
 lap
 laps
+large intestine
 larynx
 lash
 lat
@@ -254,15 +264,19 @@ limb
 limbs
 lip
 lips
+little finger
+little toe
 liver
 livers
 lobe
 lobes
 loin
 loins
+lower back
 lughole
 lung
 lungs
+lymph node
 mandible
 mane
 marrow
@@ -272,7 +286,10 @@ medulla
 membrane
 metacarpal
 metatarsal
+middle finger
 midriff
+milk teeth
+milk tooth
 mitt
 mitts
 molar
@@ -332,6 +349,7 @@ pineal
 pinkie
 pinky
 pituitary
+pituitary gland
 placenta
 plexus
 pore
@@ -350,6 +368,7 @@ rectum
 retina
 rib
 ribcage
+ring finger
 rump
 sacrum
 scale
@@ -376,12 +395,15 @@ skin
 skins
 skull
 skulls
+small intestine
 snoot
 snout
 socket
 sockets
+solar plexus
 sole
 sphincter
+spinal cord
 spine
 spines
 spleen
@@ -391,12 +413,15 @@ sting
 stinger
 stomach
 stomachs
+sweat gland
 tail
 tailbone
 talon
 talons
 tarsal
 tarsus
+taste bud
+tear duct
 teat
 teats
 temple
@@ -448,6 +473,8 @@ udder
 udders
 ulna
 underbelly
+upper arm
+upper lip
 urethra
 uterus
 uvula
@@ -463,6 +490,8 @@ vessel
 vessels
 visage
 vitals
+vocal cord
+voice box
 vulva
 waist
 waistline
@@ -470,6 +499,8 @@ wattle
 whisker
 windpipe
 wing
+wisdom teeth
+wisdom tooth
 wishbone
 withers
 womb
@@ -479,6 +510,7 @@ yap
 
 also:
 abductor
+achilles heel
 airways
 antennae
 antennas
@@ -492,6 +524,8 @@ aster
 atlas
 attic
 axis
+baby teeth
+baby tooth
 bag
 bags
 ball
@@ -577,6 +611,7 @@ dock
 docks
 dome
 domes
+double chin
 dug
 egg
 eggs
@@ -656,6 +691,7 @@ left
 lefts
 legs
 lien
+love handle
 lumen
 mamma
 matrices
@@ -756,6 +792,7 @@ slit
 slits
 snatch
 snatches
+spinal column
 spurs
 stern
 stick
@@ -787,6 +824,7 @@ temples
 tentacles
 thorn
 thorns
+thyroid gland
 toenails
 tool
 tools

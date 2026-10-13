@@ -20,8 +20,10 @@ advisor
 advocate
 agent
 aide
+air hostess
 airman
 airmen
+air traffic controller
 alderman
 ambassador
 ambassadors
@@ -72,8 +74,10 @@ bailiff
 bailiffs
 baker
 ballerina
+ballet dancer
 bandleader
 banker
+bank manager
 barber
 bard
 bargeman
@@ -116,6 +120,7 @@ bosun
 botanist
 bouncer
 boxer
+brain surgeon
 breaker
 breeder
 brewer
@@ -130,6 +135,7 @@ bureaucrat
 bureaucrats
 bursar
 busboy
+bus driver
 businessman
 businesswoman
 busker
@@ -153,6 +159,7 @@ cardiologist
 caregiver
 carer
 caretaker
+care worker
 carpenter
 carpenters
 carter
@@ -182,6 +189,7 @@ chef
 chefs
 chemist
 childminder
+chimney sweep
 chiropodist
 chiropractor
 chocolatier
@@ -189,6 +197,7 @@ choirmaster
 choreographer
 chorister
 cinematographer
+civil servant
 cleaner
 clergyman
 cleric
@@ -288,9 +297,11 @@ detective
 developer
 dietician
 dietitian
+dinner lady
 diplomat
 diplomats
 director
+disc jockey
 dishwasher
 dispatcher
 dispenser
@@ -311,6 +322,7 @@ dresser
 dressmaker
 driller
 driver
+driving instructor
 drover
 druggist
 drummer
@@ -341,19 +353,23 @@ envoy
 envoys
 epidemiologist
 escapologist
+estate agent
 evangelist
 examiner
 executioner
 executive
 extra
 facilitator
+factory worker
 falconer
 farmer
 farmhand
 farrier
+fashion designer
 feds
 ferryman
 fiddler
+film director
 financier
 firefighter
 fireman
@@ -364,6 +380,7 @@ fishmonger
 fitter
 flautist
 fletcher
+flight attendant
 florist
 footballer
 footman
@@ -433,6 +450,7 @@ harpist
 hatter
 haulier
 hawker
+head chef
 headmaster
 headmistress
 headteacher
@@ -462,6 +480,8 @@ huntsmen
 hussars
 hygienist
 hypnotist
+ice cream man
+ice cream men
 illusionist
 illustrator
 imam
@@ -527,6 +547,7 @@ locum
 logger
 loggers
 longshoreman
+lorry driver
 lumberjack
 lumberjacks
 lyricist
@@ -613,10 +634,12 @@ obstetrician
 oceanographer
 officer
 officers
+office worker
 official
 officials
 ombudsman
 oncologist
+opera singer
 operative
 operator
 ophthalmologist
@@ -660,6 +683,7 @@ pediatrician
 pedlar
 percussionist
 performer
+personal trainer
 pharmacist
 pharmacologist
 philosopher
@@ -686,9 +710,11 @@ plumbers
 podiatrist
 poet
 policeman
+police officer
 policewoman
 politician
 pope
+pop star
 porter
 porters
 postman
@@ -706,11 +732,14 @@ presenter
 president
 pressman
 priest
+prime minister
 principal
 printer
 printers
 prior
+prison officer
 private
+private detective
 prizefighter
 proctologist
 producer
@@ -741,6 +770,7 @@ quacks
 quarryman
 quartermaster
 rabbi
+racing driver
 radiographer
 radiologist
 rancher
@@ -754,6 +784,7 @@ recruits
 rector
 referee
 reflexologist
+refuse collector
 registrar
 repairman
 reporter
@@ -767,6 +798,7 @@ rigger
 ringmaster
 riveter
 roadie
+rock star
 roofer
 roper
 roughneck
@@ -798,7 +830,9 @@ sculptor
 seaman
 seamen
 seamstress
+secret agent
 secretary
+security guard
 seismologist
 senator
 sergeant
@@ -817,6 +851,7 @@ sheriff
 sherpa
 shipwright
 shoemaker
+shop assistant
 shopkeeper
 signalman
 silversmith
@@ -828,7 +863,9 @@ sleuth
 smallholder
 smith
 sniper
+social worker
 sociologist
+software engineer
 soldier
 soldiers
 solicitor
@@ -881,9 +918,11 @@ tailor
 tanner
 tattooist
 taxidermist
+taxi driver
 taxman
 teacher
 teachers
+teaching assistant
 teamster
 teamsters
 techie
@@ -904,14 +943,19 @@ tipster
 tobacconist
 toolmaker
 toreador
+tour guide
 tracker
 trackers
 trader
+traffic warden
+train driver
 trainee
 trainer
 translator
 trapper
+travel agent
 treasurer
+tree surgeon
 trooper
 troopers
 troubadour
@@ -966,9 +1010,11 @@ waterman
 weatherman
 weaver
 weavers
+web designer
 welder
 whaler
 wheelwright
+window cleaner
 winemaker
 wingman
 woodcutter
@@ -993,11 +1039,13 @@ angler
 animators
 associate
 associates
+au pair
 bakers
 barbers
 bellringer
 boxers
 breakers
+bus conductor
 butchers
 caretakers
 carrier
@@ -1011,11 +1059,14 @@ coaches
 collector
 collectors
 companions
+computer programmer
 conductors
 counsellors
 counselor
 counselors
 cox
+delivery driver
+dental nurse
 deputies
 domestic
 don
@@ -1028,6 +1079,8 @@ elders
 escort
 escorts
 fed
+fighter pilot
+film star
 firemen
 fixer
 founder
@@ -1036,6 +1089,7 @@ fowler
 freelance
 gaffer
 gardeners
+graphic designer
 grip
 grips
 grooms
@@ -1051,15 +1105,20 @@ herders
 hostesses
 incumbent
 inquisitor
+interior designer
 interns
 jack
 jacks
 judges
 justices
 lancers
+lighthouse keeper
 lineman
 lockkeeper
+lollipop lady
 majors
+make-up artist
+managing director
 mandarin
 marines
 marshall
@@ -1075,15 +1134,20 @@ ministers
 mistress
 mistresses
 models
+movie star
 pages
 painters
 para
+park ranger
 peasant
 peasants
 pickers
 planter
 planters
+police constable
 principals
+prison guard
+private investigator
 procurator
 publishers
 rangers
@@ -1098,8 +1162,10 @@ regulators
 remover
 retainer
 retainers
+sales assistant
 scorer
 scribes
+sea captain
 seal
 seals
 secretaries
@@ -1121,10 +1187,13 @@ stripper
 strippers
 sweeps
 tar
+tattoo artist
 tellers
 tender
 tenders
+ticket inspector
 trimmer
+truck driver
 ushers
 veterinary
 woodman

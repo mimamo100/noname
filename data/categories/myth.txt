@@ -1,5 +1,7 @@
 label: A mythical creature
 
+abominable snowman
+abominable snowmen
 alien
 aliens
 apparition
@@ -37,11 +39,15 @@ dwarf
 dwarfs
 dwarves
 dybbuk
+easter bunny
 elf
 elves
 fairies
 fairy
+fairy godmother
+father christmas
 faun
+frog prince
 genie
 genies
 ghost
@@ -60,8 +66,11 @@ gorgon
 gremlin
 gremlins
 griffin
+grim reaper
 gryphon
 harpy
+headless horseman
+headless horsemen
 hellhound
 hippogriff
 hobgoblin
@@ -69,6 +78,7 @@ hydra
 imp
 incubus
 jackalope
+jack frost
 jinn
 kelpie
 kelpies
@@ -78,6 +88,7 @@ leprechaun
 leprechauns
 leviathan
 lich
+loch ness monster
 lycanthrope
 manticore
 medusa
@@ -105,6 +116,7 @@ poltergeist
 pooka
 revenant
 roc
+santa claus
 sasquatch
 satyr
 sea monster
@@ -118,6 +130,7 @@ sphinx
 sprite
 succubus
 sylph
+tooth fairy
 troll
 trolls
 unicorn
@@ -131,6 +144,8 @@ wendigo
 werewolf
 werewolves
 wight
+will-o'-the-wisp
+winged horse
 witch
 witches
 wraith
@@ -140,6 +155,7 @@ zombie
 zombies
 
 also:
+black dog
 brownie
 brownies
 drake
@@ -150,9 +166,12 @@ faerie
 fiend
 fiends
 firebird
+flying dutchman
 furies
 fury
 gargoyle
+green man
+green men
 griffon
 hag
 hippocampus
@@ -163,6 +182,7 @@ kappa
 mummy
 nix
 pixy
+sea nymph
 serpent
 shade
 sorcerer
@@ -172,4 +192,6 @@ spirits
 spook
 titan
 triton
+water nymph
 wizard
+wood nymph

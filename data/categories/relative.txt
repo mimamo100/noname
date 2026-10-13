@@ -11,13 +11,17 @@ babies
 baby
 bairn
 betrothed
+big brother
+big sister
 brethren
 bride
 bridegroom
 brides
 bro
 brother
+brother-in-law
 brothers
+brothers-in-law
 bruv
 child
 consort
@@ -31,21 +35,29 @@ daddies
 daddy
 dads
 daughter
+daughter-in-law
 daughters
+daughters-in-law
 descendant
 descendent
 descendents
 eldest
 father
+father-in-law
 fathers
+fathers-in-law
 fiance
 fiancee
 firstborn
+first cousin
 folks
 forebear
 forefather
 forefathers
 foremother
+foster child
+foster children
+foster parent
 godchild
 goddaughter
 godfather
@@ -87,7 +99,18 @@ granduncle
 grannie
 grannies
 granny
+great-aunt
+great-grandchild
+great-grandchildren
+great-granddaughter
+great-grandfather
+great-grandmother
+great-grandparent
+great-grandson
+great-uncle
 groom
+half-brother
+half-sister
 heir
 heiress
 hubby
@@ -95,12 +118,15 @@ husband
 husbands
 infant
 infants
+in-law
 kid
 kin
 kinsfolk
 kinsman
 kinsmen
 kinswoman
+little brother
+little sister
 mam
 mama
 mamas
@@ -117,7 +143,9 @@ mommies
 mommy
 moms
 mother
+mother-in-law
 mothers
+mothers-in-law
 mum
 mummies
 mummy
@@ -150,15 +178,20 @@ quadruplet
 quintuplet
 relation
 scion
+second cousin
 sextuplet
 sibling
 siblings
 sire
 sis
 sister
+sister-in-law
 sisters
+sisters-in-law
 son
+son-in-law
 sons
+sons-in-law
 spouse
 spouses
 sprog
@@ -178,6 +211,8 @@ stepsister
 stepson
 triplet
 twin
+twin brother
+twin sister
 uncle
 uncles
 wean
@@ -191,14 +226,23 @@ youngest
 also:
 ascendant
 ascendent
+baby brother
+baby sister
 benedict
 boy
 boys
 children
 cuckold
 descendants
+ex-husband
+ex-wife
+ex-wives
+foster father
+foster mother
 girl
 girls
+great-nephew
+great-niece
 grooms
 heirs
 illegitimate
@@ -209,6 +253,8 @@ juniors
 kids
 mate
 mates
+older brother
+older sister
 pas
 quint
 relations
@@ -220,3 +266,5 @@ successors
 suckling
 triplets
 twins
+younger brother
+younger sister

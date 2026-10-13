@@ -12,6 +12,7 @@ amontillado
 anisette
 aperitif
 applejack
+apple juice
 aquavit
 arak
 armagnac
@@ -27,6 +28,8 @@ beverage
 beverages
 bevvy
 bitter
+black coffee
+bloody mary
 bock
 booze
 bordeaux
@@ -36,6 +39,7 @@ brandies
 brandy
 brew
 bubbly
+buck's fizz
 burgundy
 buttermilk
 cabernet
@@ -80,27 +84,41 @@ darjeeling
 decaf
 digestif
 dram
+earl grey
 eggnog
 elixir
+energy drink
 espresso
 fino
 firewater
 fizz
+fizzy drink
+flat white
 frappe
 frascati
 genever
 gewurztraminer
 gimlet
 gin
+gin and tonic
+ginger ale
+ginger beer
 gluhwein
 grappa
+green tea
 grenache
 grog
+herbal tea
 highball
 hock
 hooch
 horchata
+hot chocolate
+hot toddy
+iced coffee
+iced tea
 infusion
+irish coffee
 java
 juice
 julep
@@ -144,6 +162,7 @@ mild
 milk
 milkshake
 mimosa
+mineral water
 mixer
 mocha
 mocktail
@@ -151,6 +170,7 @@ mojito
 moonshine
 moscato
 moselle
+mulled wine
 muscadet
 muscat
 nectar
@@ -158,10 +178,13 @@ negroni
 nightcap
 oolong
 orangeade
+orange juice
+orange squash
 ouzo
 pastis
 perry
 pilsner
+pina colada
 pinot
 pinotage
 pisco
@@ -176,6 +199,7 @@ prosecco
 punch
 radler
 raki
+red wine
 refreshment
 retsina
 rickey
@@ -186,6 +210,7 @@ rooibos
 rose
 rotgut
 rum
+rum and coke
 rye
 sake
 sambuca
@@ -207,6 +232,7 @@ shiraz
 sidecar
 sling
 slivovitz
+sloe gin
 slush
 slushie
 smoothie
@@ -215,8 +241,11 @@ snifter
 snowball
 soave
 soda
+soda water
+soft drink
 soju
 sour
+sparkling water
 spirits
 spritz
 spritzer
@@ -235,8 +264,10 @@ tipple
 tisane
 toddy
 tokaji
+tomato juice
 tonic
 tonics
+tonic water
 valpolicella
 vermouth
 vino
@@ -249,23 +280,30 @@ whiskey
 whiskeys
 whiskies
 whisky
+white wine
 wine
 wines
 zinfandel
 
 also:
 brews
+chocolate milk
 cokes
 collins
 coolers
+cranberry juice
 grasshopper
 grasshoppers
 mimosas
 mixers
+oat milk
+pale ale
 pops
 porters
 ports
 punches
+real ale
+root beer
 roses
 sakes
 saki
@@ -273,5 +311,6 @@ scotches
 slings
 smoothies
 sodas
+tap water
 zombie
 zombies

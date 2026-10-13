@@ -5,6 +5,7 @@ amp
 ampere
 amps
 angstrom
+astronomical unit
 becquerel
 bushel
 bushels
@@ -20,6 +21,7 @@ centilitre
 centimeter
 centimeters
 coulomb
+cubic metre
 cubit
 cubits
 curie
@@ -38,6 +40,7 @@ fathoms
 feet
 fermi
 firkin
+fluid ounce
 foot
 furlong
 gallon
@@ -75,6 +78,7 @@ kilos
 kiloton
 kilovolt
 kilowatt
+kilowatt hour
 knot
 knots
 league
@@ -101,6 +105,7 @@ micron
 microns
 microsecond
 mile
+miles per hour
 millibar
 milligram
 milligrams
@@ -132,6 +137,10 @@ rood
 second
 seconds
 sievert
+square feet
+square foot
+square metre
+square mile
 stone
 stones
 tael
@@ -143,6 +152,7 @@ ton
 tonne
 tonnes
 torr
+troy ounce
 volt
 volts
 watt
@@ -164,6 +174,7 @@ cables
 century
 chain
 chains
+cubic centimetre
 cup
 cups
 day
@@ -175,7 +186,9 @@ grains
 hand
 hands
 karat
+kilometres per hour
 mach
+metric ton
 millennium
 month
 pace
@@ -194,6 +207,8 @@ rods
 scruple
 span
 spans
+square inch
+square kilometre
 tablespoon
 teaspoon
 tons

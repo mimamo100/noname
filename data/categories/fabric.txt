@@ -36,7 +36,10 @@ deerskin
 delaine
 denim
 doeskin
+egyptian cotton
 elastane
+faux fur
+faux leather
 felt
 flannel
 flannelette
@@ -66,6 +69,7 @@ lycra
 material
 materials
 merino
+merino wool
 microfibre
 mohair
 moleskin
@@ -80,6 +84,7 @@ oilcloth
 oilskin
 organza
 pashmina
+patent leather
 percale
 pigskin
 pique
@@ -127,21 +132,25 @@ bunting
 calf
 calves
 camel hair
+chamois leather
 chino
 chinos
 cord
 cords
 crinoline
 crinolines
+crushed velvet
 drill
 duck
 ducks
 duffel
 duffle
 elastic
+fake fur
 flax
 fur
 gossamer
+harris tweed
 hide
 jean
 jeans
@@ -160,6 +169,7 @@ netting
 paisley
 pleather
 plush
+polar fleece
 sacking
 shammy
 suiting

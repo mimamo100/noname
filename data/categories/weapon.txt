@@ -1,14 +1,18 @@
 label: A weapon
 
 airgun
+air rifle
 arquebus
 arrow
 artillery
+assault rifle
 assegai
+atom bomb
 automatic
 axe
 ballista
 baton
+battering ram
 battleaxe
 bayonet
 bayonets
@@ -24,6 +28,10 @@ bolas
 bomb
 boomerang
 bow
+bow and arrow
+bowie knife
+bowie knives
+bows and arrows
 bren
 broadsword
 buckshot
@@ -34,17 +42,20 @@ cannon
 cannonball
 cannonballs
 carbine
+car bomb
 catapult
 claymore
 club
 colt
 cosh
 crossbow
+cruise missile
 cudgel
 cutlass
 dagger
 daggers
 dart
+depth charge
 derringer
 dirk
 dynamite
@@ -56,22 +67,27 @@ firearms
 firebomb
 flail
 flamethrower
+flick knife
+flick knives
 flintlock
 foil
 garrote
 garrotte
 gat
+gatling gun
 gelignite
 glaive
 grenade
 gun
 guns
 halberd
+hand grenade
 handgun
 handguns
 harpoon
 hatchet
 howitzer
+hydrogen bomb
 javelin
 kalashnikov
 katana
@@ -83,6 +99,7 @@ kukri
 lance
 lances
 landmine
+light sabre
 longbow
 luger
 mace
@@ -96,14 +113,20 @@ mine
 minigun
 missile
 missiles
+molotov cocktail
 mortar
 musket
 muskets
+mustard gas
 napalm
+nerve gas
 nightstick
+nuclear bomb
 nuke
 nunchucks
 pellet
+pepper spray
+petrol bomb
 pike
 pistol
 pistols
@@ -118,8 +141,12 @@ revolvers
 rifle
 rifles
 rocket
+rocket launcher
+rubber bullet
 sabre
+samurai sword
 sarin
+sawn-off shotgun
 scimitar
 semiautomatic
 semtex
@@ -129,43 +156,58 @@ shotgun
 shotguns
 shuriken
 sidearm
+six-shooter
 sling
 slingshot
 slug
 slugs
+sniper rifle
 spear
 spears
 stiletto
 stilettos
 stun gun
+submachine gun
 switchblade
 sword
 swords
 tank
 tanto
 taser
+throwing star
+time bomb
 tomahawk
+tommy gun
 torpedo
 trebuchet
 trident
 truncheon
 uzi
 warhead
+water cannon
+water pistol
 whip
 
 also:
 arm
 arms
 arrows
+atomic bomb
 blades
 bows
+brass knuckles
 cannons
+cap gun
+cluster bomb
 colts
 darts
 flack
 flak
+grenade launcher
+guided missile
 knives
 knuckles
+letter bomb
 morning star
 pellets
 piece
@@ -178,7 +220,9 @@ shot
 shots
 sidewinder
 slings
+spear gun
 stinger
 stingers
+stink bomb
 teargas
 war hammer

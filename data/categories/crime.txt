@@ -4,10 +4,14 @@ abduction
 abductions
 abuse
 affray
+animal cruelty
+anti-social behaviour
+armed robbery
 arson
 assassination
 assault
 banditry
+bank robbery
 battery
 begging
 bigamy
@@ -15,26 +19,36 @@ blackmail
 blasphemy
 bombing
 bootlegging
+breach of the peace
+breaking and entering
 bribery
 burglaries
 burglary
 cannibalism
 carjacking
+car theft
+child abuse
 collusion
 con
 conspiracy
 contempt
+contempt of court
 corruption
 counterfeiting
+criminal damage
 cruelty
 cybercrime
 cyberstalking
+dangerous driving
 dealing
 deception
 defamation
 desecration
 desertion
 dognapping
+drink-driving
+drug dealing
+drug trafficking
 drunkenness
 duelling
 embezzlement
@@ -43,6 +57,7 @@ euthanasia
 evasion
 extortion
 falsification
+fare dodging
 felonies
 felony
 fencing
@@ -55,25 +70,32 @@ frauds
 genocide
 graffiti
 graft
+grievous bodily harm
 grooming
 gunrunning
 hacking
 harassment
+hate crime
 heist
+high treason
 hijack
 hijacking
+hit-and-run
 holdup
 homicide
 hooliganism
 housebreaking
 hustle
+identity theft
 impersonation
 incitement
 indecency
+indecent exposure
 infanticide
 infraction
 infractions
 infringement
+insider trading
 insubordination
 insurrection
 intimidation
@@ -82,6 +104,7 @@ joyriding
 kidnap
 kidnapping
 killing
+knife crime
 larceny
 laundering
 libel
@@ -102,6 +125,7 @@ misdemeanors
 misdemeanour
 misdemeanours
 molestation
+money laundering
 mugging
 murder
 mutiny
@@ -113,6 +137,7 @@ obstruction
 offence
 parricide
 patricide
+people trafficking
 perjury
 phishing
 pickpocketing
@@ -130,6 +155,7 @@ procuring
 prostitution
 racketeering
 raid
+ram raid
 rebellion
 regicide
 riot
@@ -143,6 +169,7 @@ safecracking
 scam
 scrumping
 sedition
+sexual assault
 shakedown
 shooting
 shoplifting
@@ -165,6 +192,7 @@ streaking
 subversion
 swindle
 tampering
+tax evasion
 terrorism
 theft
 thefts
@@ -185,25 +213,36 @@ vigilantism
 violation
 violations
 voyeurism
+war crime
 witchcraft
 wounding
 wrongdoing
 
 also:
+actual bodily harm
 assaults
 attack
 attacks
 batteries
+benefit fraud
 caper
 capers
+careless driving
 cons
+domestic violence
+drunk and disorderly
+drunk driving
 forgeries
 grafts
 heists
+human trafficking
+insurance fraud
 offences
 offense
 offenses
+petty theft
 raids
 scams
+smash and grab
 snatch
 snatches

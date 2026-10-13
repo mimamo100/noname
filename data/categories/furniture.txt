@@ -7,6 +7,8 @@ bassinet
 beanbag
 bed
 beds
+bedside cabinet
+bedside table
 bedstead
 bench
 benches
@@ -25,11 +27,16 @@ carver
 chair
 chairs
 chaise
+chaise longue
 chest
 chesterfield
+chest of drawers
+chests of drawers
 chiffonier
 closet
+clothes horse
 coat stand
+coffee table
 coffer
 commode
 console
@@ -48,14 +55,23 @@ daybed
 deckchair
 desk
 desks
+dining chair
+dining table
+display cabinet
 divan
+double bed
 dresser
+dressing table
+drinks cabinet
 dumbwaiter
 easel
+easy chair
 escritoire
 etagere
+filing cabinet
 footrest
 footstool
+four-poster
 futon
 hallstand
 hammock
@@ -65,25 +81,32 @@ headboard
 highboy
 highchair
 hutch
+kitchen table
 lamp
 lectern
 locker
 lounger
 loveseat
 lowboy
+magazine rack
 mattress
 mirror
 nest
 nightstand
+office chair
 ottoman
+park bench
 pew
 pews
+picnic table
 playpen
 podium
+pool table
 pouffe
 rack
 recliner
 rocker
+rocking chair
 screen
 seat
 secretaire
@@ -91,7 +114,10 @@ settee
 settle
 shelf
 shelving
+shoe rack
 sideboard
+side table
+single bed
 sofa
 sofa bed
 sofas
@@ -100,8 +126,10 @@ stool
 stools
 sunbed
 sunlounger
+swivel chair
 table
 tallboy
+three-piece suite
 throne
 thrones
 trestle
@@ -113,23 +141,33 @@ wardrobe
 washstand
 waterbed
 whatnot
+window seat
 wingback
 workbench
+writing desk
 
 also:
 bar
 bars
 barstool
 bedframe
+blanket box
+breakfast bar
 bunks
+card table
 chests
 closets
 coatrack
 consoles
 convertible
+corner sofa
 cots
 cushion
 drawer
+folding chair
+garden bench
+king-size bed
+kitchen cabinet
 lamps
 lounge
 nests
@@ -137,6 +175,8 @@ ottomans
 rockers
 seats
 settles
+snooker table
 stands
 tables
+umbrella stand
 vanities

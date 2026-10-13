@@ -1,7 +1,10 @@
 label: A kind of weather
 
+acid rain
 anticyclone
+april shower
 balmy
+black ice
 blizzard
 blizzards
 bluster
@@ -21,6 +24,8 @@ cloudburst
 cloudless
 cloudy
 cold
+cold front
+cold snap
 cool
 cyclone
 damp
@@ -34,6 +39,7 @@ drizzle
 drizzly
 drought
 dry
+dry spell
 dull
 dust storm
 easterly
@@ -44,8 +50,10 @@ flood
 flurry
 fog
 foggy
+forked lightning
 freeze
 freezing
+freezing fog
 front
 frost
 frosty
@@ -63,7 +71,9 @@ hailstorm
 haze
 hazy
 heat
+heat haze
 heatwave
+high pressure
 hoarfrost
 hot
 humid
@@ -73,8 +83,10 @@ hurricanes
 ice
 icy
 inclement
+indian summer
 jet stream
 lightning
+low pressure
 lull
 mild
 mist
@@ -88,6 +100,7 @@ nimbus
 nippy
 norther
 northerly
+north wind
 overcast
 parky
 precipitation
@@ -101,6 +114,9 @@ rime
 sandstorm
 scorcher
 scorching
+sea breeze
+sea mist
+sheet lightning
 shower
 showery
 sirocco
@@ -115,6 +131,7 @@ snowdrift
 snowfall
 snowflake
 snows
+snow shower
 snowstorm
 snowy
 southerly
@@ -148,17 +165,21 @@ thundery
 tornado
 tornadoes
 torrent
+trade wind
+tropical storm
 twister
 typhoon
 typhoons
 unsettled
 warm
+warm front
 waterspout
 westerly
 wet
 whirlwind
 whiteout
 wind
+wind chill
 winds
 windstorm
 windy
@@ -169,27 +190,35 @@ also:
 atmosphere
 atmospheres
 aurora
+ball lightning
 blast
 blasts
 calms
 clouds
+cold spell
 condensation
 depressions
 draft
 drafts
+east wind
 freezes
+freezing rain
 fronts
 halo
 high
 highs
+ice storm
 low
 lows
 pea-souper
 showers
+south wind
 sprinkles
 sprinkling
+sunny spell
 sunrise
 sunset
 sunsets
 thawing
 turbulence
+west wind

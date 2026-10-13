@@ -1,20 +1,28 @@
 label: A dessert or sweet
 
 affogato
+apple crumble
+apple pie
 baba
+baked alaska
+bakewell tart
 baklava
+banana split
 battenberg
 beignet
 beignets
+birthday cake
 biscotti
 biscuit
 biscuits
+black forest gateau
 blancmange
 blancmanges
 blondie
 bonbon
 bonbons
 brandy snap
+bread and butter pudding
 brittle
 brownie
 brownies
@@ -24,13 +32,22 @@ cake
 cakes
 candies
 candy
+candy cane
 candyfloss
 candyflosses
 cannoli
 caramel
 caramels
+carrot cake
 cheesecake
+cherry pie
+choc ice
 chocolate
+chocolate bar
+chocolate cake
+chocolate mousse
+christmas cake
+christmas pudding
 churro
 clafoutis
 cobbler
@@ -48,6 +65,8 @@ donuts
 doughnut
 doughnuts
 eclair
+eton mess
+fairy cake
 flan
 flapjack
 flapjacks
@@ -69,11 +88,16 @@ humbug
 ice cream
 ice lolly
 jalebi
+jam roly-poly
+jam tart
 jelly
+jelly baby
 jujube
 jujubes
+knickerbocker glory
 kulfi
 lamington
+lemon meringue pie
 licorice
 liquorice
 lollipop
@@ -87,6 +111,7 @@ marshmallow
 marshmallows
 marzipan
 meringue
+mince pie
 mint
 mints
 mochi
@@ -109,6 +134,8 @@ profiterole
 pud
 pudding
 puddings
+pumpkin pie
+rice pudding
 scone
 semifreddo
 sherbet
@@ -116,12 +143,16 @@ shortbread
 shortcake
 sorbet
 sponge
+sponge cake
+spotted dick
+sticky toffee pudding
 stollen
 strudel
 sugarplum
 sundae
 sundaes
 sweetmeat
+swiss roll
 syllabub
 syllabubs
 taffy
@@ -131,33 +162,42 @@ teacakes
 tiffin
 tiramisu
 toffee
+toffee apple
 torte
+treacle tart
 trifle
 trifles
 truffle
 truffles
+victoria sponge
 wafer
 wafers
+wedding cake
 zabaglione
 zabagliones
 
 also:
 afters
 ambrosia
+arctic roll
+banoffee pie
 bourbon
 bun
 charlotte
 chew
 cremebrulee
+creme caramel
 crepe
 crepes
 danish
+dark chocolate
 digestive
 eccles
 financier
 fool
 fritter
 fritters
+frozen yogurt
 gumball
 gummy
 honeycomb
@@ -166,8 +206,10 @@ ices
 jello
 jellybean
 junket
+key lime pie
 lozenge
 madeira
+milk chocolate
 pancake
 pancakes
 peppermint
@@ -189,3 +231,4 @@ waffle
 waffles
 whip
 whips
+white chocolate

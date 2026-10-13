@@ -33,21 +33,26 @@ cedar
 cedars
 cherry
 chestnut
+christmas tree
 cinnamon
 citrus
 clementine
 cobnut
 coconut
 conifer
+copper beech
 cork
+cork oak
 cornel
 cottonwood
 crab apple
 cypress
 damson
 date
+date palm
 deodar
 dogwood
+douglas fir
 durian
 ebony
 elder
@@ -59,11 +64,13 @@ fig
 filbert
 fir
 frangipani
+giant redwood
 ginkgo
 grapefruit
 greengage
 guava
 gum
+gum tree
 hawthorn
 hazel
 hazelnut
@@ -71,10 +78,13 @@ hemlock
 hickory
 holly
 hornbeam
+horse chestnut
 ironwood
 jacaranda
 jackfruit
+japanese maple
 jarrah
+joshua tree
 juniper
 kapok
 kumquat
@@ -102,6 +112,7 @@ mimosa
 mimosas
 monkey puzzle
 morello
+mountain ash
 mulberry
 myrtle
 nectarine
@@ -113,6 +124,7 @@ orange
 osier
 palm
 palmetto
+palm tree
 papaya
 peach
 pear
@@ -123,11 +135,13 @@ pines
 pistachio
 pistachios
 plane
+plane tree
 plum
 plums
 pomegranate
 ponderosa
 poplar
+pussy willow
 quince
 redwood
 rosewood
@@ -139,11 +153,15 @@ sapling
 saplings
 sassafras
 satsuma
+scots pine
 sequoia
+silver birch
 sloe
 spindle
 spruce
+sugar maple
 sumac
+sweet chestnut
 sycamore
 tamarind
 tamarisk
@@ -152,6 +170,7 @@ tangerines
 teak
 walnut
 wattle
+weeping willow
 whitebeam
 willow
 willows
@@ -162,18 +181,25 @@ apples
 ashes
 avocados
 bays
+bay tree
 blackwood
 cherries
 chestnuts
+coconut palm
 coconuts
+english oak
+field maple
 figs
 firs
+giant sequoia
 gums
+holm oak
 laurels
 lemons
 limes
 locusts
 maples
+norway spruce
 oaks
 olives
 oranges
@@ -182,4 +208,5 @@ peaches
 pears
 pecans
 pollard
+rubber tree
 walnuts
