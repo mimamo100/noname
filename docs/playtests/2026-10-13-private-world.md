@@ -6,11 +6,16 @@ Final scores: Dee 920 (inflated: on the first prompt she played words she'd look
 
 **The test site still has the pre-review Science lists and older code** (no phrase display yet), so word-list findings below were checked against today's reviewed lists in `data/packs/science/`.
 
+## The owner's decisions (13 October)
+
+- **Uncounted (*also*) answers score at the prompt bonus from when the prompt began (×1)**, not the current one. They keep their rarity score, but no longer ride the top bonus while the count stays put.
+- **The unsaid count says "At least X words left".**
+
 ## The owner's notes
 
 - **The private world's page is too much like the front page**: the owner was confused about where they were. Only a small "Claude Testers · Science words" in the header and "Copy invite link" tell them apart. Ideas: the world's name as the page title with "Private world · Science words" under it; a distinct accent colour or band; "Back to the big world"; drop the big world's extras ("Last round", the rooms box).
 - **The unsaid count could say "At least X words left"** (see 2).
-- **Prompt length on creation**: the owner picked 1 hour on the create form, but the world was saved with a day; changing it in settings applied from the next prompt. Every step of the code path looks right (form, script, server, first prompt), so possibly a mis-tap on a phone. **To reproduce**: create a throwaway world with 1 hour and check its settings at once. Either way, make the chosen option more visible on the form.
+- **Prompt length on creation**: the owner's own slip. They retried, and a new world kept its 1-hour setting. Still worth making the chosen option more visible on the form.
 
 ## 1. The score swing is far worse on small prompts (all four)
 
