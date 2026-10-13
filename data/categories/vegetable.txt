@@ -65,6 +65,7 @@ lentils
 lettuce
 maize
 mangetout
+manioc
 marrow
 mooli
 morel

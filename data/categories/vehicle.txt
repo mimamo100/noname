@@ -24,11 +24,13 @@ bicycles
 bike
 biplane
 blimp
+bobsled
 bobsleigh
 bomber
 bombers
 boxcar
 brougham
+buckboard
 buggies
 buggy
 bulldozer
@@ -113,6 +115,7 @@ locomotives
 lorries
 lorry
 luge
+maglev
 metro
 microlight
 minibus

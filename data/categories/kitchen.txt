@@ -179,6 +179,7 @@ tankard
 tap
 tea towel
 teacup
+teakettle
 teapot
 teaspoon
 tenderiser

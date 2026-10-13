@@ -40,6 +40,7 @@ cobnut
 coconut
 conifer
 cork
+cornel
 cottonwood
 crab apple
 cypress
@@ -73,6 +74,7 @@ hornbeam
 ironwood
 jacaranda
 jackfruit
+jarrah
 juniper
 kapok
 kumquat
@@ -95,6 +97,7 @@ mangrove
 mangroves
 maple
 medlar
+mesquite
 mimosa
 mimosas
 monkey puzzle
@@ -109,6 +112,7 @@ olive
 orange
 osier
 palm
+palmetto
 papaya
 peach
 pear
@@ -133,6 +137,7 @@ sallow
 sandalwood
 sapling
 saplings
+sassafras
 satsuma
 sequoia
 sloe

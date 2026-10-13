@@ -2,6 +2,7 @@ label: A sea creature (not a fish)
 
 abalone
 anemone
+argonaut
 barnacle
 barnacles
 beluga
@@ -48,6 +49,7 @@ manatee
 minke
 mollusc
 molluscs
+mollusk
 mussel
 mussels
 narwhal

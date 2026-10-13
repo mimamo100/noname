@@ -68,6 +68,7 @@ pickle
 pickles
 relish
 rosemary
+rosewater
 saffron
 sage
 sages
@@ -76,6 +77,7 @@ salt
 salts
 seasoning
 sorrel
+spearmint
 sriracha
 sumac
 tahini

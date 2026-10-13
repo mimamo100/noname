@@ -43,6 +43,7 @@ bedrooms
 bedsit
 bistro
 blockhouse
+boardinghouse
 boardroom
 boathouse
 bordello
@@ -55,6 +56,7 @@ brasserie
 brewery
 brothel
 brothels
+bullring
 bungalow
 bungalows
 bunker
@@ -65,6 +67,7 @@ cabins
 cafe
 cafes
 cafeteria
+caff
 canteen
 capitol
 carport
@@ -112,6 +115,7 @@ courtroom
 cowshed
 creamery
 crematorium
+crematory
 croft
 crypt
 cubby
@@ -176,6 +180,7 @@ gym
 hall
 hallway
 hangar
+hayloft
 headquarters
 henhouse
 homeroom
@@ -197,6 +202,7 @@ igloo
 infirmary
 inn
 inns
+ironworks
 jail
 jailhouse
 keep
@@ -223,6 +229,8 @@ loft
 longhouse
 loo
 lounge
+lumberyard
+luncheonette
 lunchroom
 madhouse
 maisonette
@@ -232,6 +240,7 @@ manse
 mansion
 mausoleum
 mill
+minaret
 minster
 monasteries
 monastery
@@ -274,6 +283,7 @@ pizzeria
 planetarium
 playhouse
 playroom
+poolroom
 porch
 presbytery
 priory
@@ -293,6 +303,7 @@ restroom
 restrooms
 rink
 roadhouse
+rotunda
 roundhouse
 sacristy
 saleroom
@@ -322,6 +333,7 @@ skyscraper
 skyscrapers
 slaughterhouse
 smithy
+smokehouse
 snug
 solarium
 spa
@@ -334,6 +346,7 @@ stall
 stateroom
 station
 steakhouse
+steelworks
 stockroom
 store
 storehouse
@@ -345,6 +358,7 @@ suite
 summerhouse
 sunroom
 supermarket
+superstore
 surgery
 synagogue
 synagogues
@@ -361,6 +375,7 @@ temple
 temples
 tenement
 tenements
+tepee
 terminal
 terminus
 terrace

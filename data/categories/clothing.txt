@@ -88,6 +88,7 @@ catsuit
 chador
 chain
 chainmail
+chapeau
 chaps
 charm
 chasuble
@@ -182,6 +183,7 @@ goggles
 gown
 gowns
 greatcoat
+guernsey
 gumboot
 gumshield
 habit
@@ -223,6 +225,7 @@ jewellery
 jewelry
 jewels
 jockstrap
+jodhpur
 jodhpurs
 joggers
 jumper
@@ -235,6 +238,7 @@ kilt
 kimono
 kimonos
 kippah
+knickerbocker
 knickerbockers
 knickers
 knitwear
@@ -254,6 +258,7 @@ livery
 loafer
 locket
 loincloth
+lungi
 mac
 mack
 mackintosh
@@ -269,6 +274,7 @@ menswear
 minidress
 miniskirt
 mink
+miter
 mitre
 mitt
 mitten
@@ -314,6 +320,7 @@ panty
 pantyhose
 parka
 pashmina
+patten
 peacoat
 pearl
 pearls
@@ -388,6 +395,7 @@ smock
 sneaker
 sneakers
 snood
+snowshoes
 sock
 socks
 sombrero

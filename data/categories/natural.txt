@@ -5,6 +5,7 @@ label: A natural landscape feature
 abyss
 alp
 anthill
+aquifer
 arch
 archipelago
 arete

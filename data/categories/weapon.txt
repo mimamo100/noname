@@ -19,6 +19,7 @@ blowgun
 blowpipe
 bludgeon
 blunderbuss
+bola
 bolas
 bomb
 boomerang
@@ -28,6 +29,7 @@ broadsword
 buckshot
 bullet
 bullets
+bullwhip
 cannon
 cannonball
 cannonballs
@@ -51,10 +53,12 @@ explosive
 falchion
 firearm
 firearms
+firebomb
 flail
 flamethrower
 flintlock
 foil
+garrote
 garrotte
 gat
 gelignite

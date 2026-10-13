@@ -2,6 +2,7 @@ label: A currency or coin
 
 baht
 balboa
+banknote
 bitcoin
 bolivar
 cedi
@@ -62,6 +63,7 @@ kwanza
 lats
 lek
 lev
+leva
 lira
 liras
 lire
@@ -86,6 +88,7 @@ pfennig
 piastre
 pound
 pounds
+pula
 punt
 quarter
 quarters
@@ -119,6 +122,7 @@ sovereign
 sterling
 sucre
 taka
+tala
 thaler
 threepence
 tuppence

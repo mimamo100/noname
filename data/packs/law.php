@@ -246,3155 +246,3383 @@ return array (
     238 => 'stays',
     239 => 'agents',
     240 => 'trusted',
-    241 => 'article',
-    242 => 'accused',
-    243 => 'roman',
-    244 => 'title',
-    245 => 'punishment',
-    246 => 'flash',
-    247 => 'prisoners',
-    248 => 'rolling',
-    249 => 'cheating',
-    250 => 'warned',
-    251 => 'kills',
-    252 => 'laws',
-    253 => 'civil',
-    254 => 'assault',
-    255 => 'decisions',
-    256 => 'charity',
-    257 => 'kidnapped',
-    258 => 'wounded',
-    259 => 'partners',
-    260 => 'bars',
-    261 => 'conditions',
-    262 => 'term',
-    263 => 'offering',
-    264 => 'reported',
-    265 => 'commissioner',
-    266 => 'crimes',
-    267 => 'costs',
-    268 => 'bust',
-    269 => 'surrender',
-    270 => 'suits',
-    271 => 'tax',
-    272 => 'bills',
-    273 => 'grass',
-    274 => 'cheat',
-    275 => 'burns',
-    276 => 'bond',
-    277 => 'brand',
-    278 => 'torture',
-    279 => 'motion',
-    280 => 'murders',
-    281 => 'charged',
-    282 => 'begging',
-    283 => 'construction',
-    284 => 'confession',
-    285 => 'cells',
-    286 => 'argument',
-    287 => 'principal',
-    288 => 'surveillance',
-    289 => 'deputy',
-    290 => 'bug',
-    291 => 'proceed',
-    292 => 'landing',
-    293 => 'traitor',
-    294 => 'bail',
-    295 => 'sport',
-    296 => 'election',
-    297 => 'banks',
-    298 => 'timing',
-    299 => 'stones',
-    300 => 'actions',
-    301 => 'motive',
-    302 => 'dealer',
-    303 => 'defendant',
-    304 => 'wounds',
-    305 => 'busted',
-    306 => 'landed',
-    307 => 'judgment',
-    308 => 'ward',
-    309 => 'fence',
-    310 => 'policeman',
-    311 => 'lawyers',
-    312 => 'criminals',
-    313 => 'footage',
-    314 => 'patrol',
-    315 => 'signature',
-    316 => 'claims',
-    317 => 'companies',
-    318 => 'passport',
-    319 => 'homicide',
-    320 => 'holds',
-    321 => 'offense',
-    322 => 'hood',
-    323 => 'cheated',
-    324 => 'profile',
-    325 => 'minor',
-    326 => 'terrorist',
-    327 => 'invitation',
-    328 => 'gambling',
-    329 => 'procedure',
-    330 => 'session',
-    331 => 'stretch',
-    332 => 'commercial',
-    333 => 'corpse',
-    334 => 'acts',
-    335 => 'judges',
-    336 => 'shared',
-    337 => 'bombs',
-    338 => 'chamber',
-    339 => 'testify',
-    340 => 'alibi',
-    341 => 'suspects',
-    342 => 'waters',
-    343 => 'thieves',
-    344 => 'objection',
-    345 => 'brief',
-    346 => 'stabbed',
-    347 => 'sharing',
-    348 => 'abuse',
-    349 => 'possession',
-    350 => 'profit',
-    351 => 'hostage',
-    352 => 'appeal',
-    353 => 'testimony',
-    354 => 'commission',
-    355 => 'fraud',
-    356 => 'assignment',
-    357 => 'fingerprints',
-    358 => 'promises',
-    359 => 'battery',
-    360 => 'complaint',
-    361 => 'badge',
-    362 => 'labor',
-    363 => 'privacy',
-    364 => 'searched',
-    365 => 'booked',
-    366 => 'discovery',
-    367 => 'suspected',
-    368 => 'prosecutor',
-    369 => 'damaged',
-    370 => 'acted',
-    371 => 'undercover',
-    372 => 'entertainment',
-    373 => 'permit',
-    374 => 'con',
-    375 => 'kidnapping',
-    376 => 'marshal',
-    377 => 'registered',
-    378 => 'questioning',
-    379 => 'poisoned',
-    380 => 'tag',
-    381 => 'bugs',
-    382 => 'lands',
-    383 => 'conspiracy',
-    384 => 'guardian',
-    385 => 'fee',
-    386 => 'register',
-    387 => 'detectives',
-    388 => 'groom',
-    389 => 'masters',
-    390 => 'stations',
-    391 => 'stab',
-    392 => 'counsel',
-    393 => 'killers',
-    394 => 'deaths',
-    395 => 'oath',
-    396 => 'deposit',
-    397 => 'taxes',
-    398 => 'autopsy',
-    399 => 'terrorists',
-    400 => 'counselor',
-    401 => 'inn',
-    402 => 'reporting',
-    403 => 'theft',
-    404 => 'silk',
-    405 => 'bench',
-    406 => 'defence',
-    407 => 'penalty',
-    408 => 'collar',
-    409 => 'psycho',
-    410 => 'raid',
-    411 => 'corporate',
-    412 => 'claimed',
-    413 => 'gallery',
-    414 => 'certificate',
-    415 => 'martial',
-    416 => 'congress',
-    417 => 'handling',
-    418 => 'blackmail',
-    419 => 'deals',
-    420 => 'tender',
-    421 => 'warden',
-    422 => 'practicing',
-    423 => 'attempted',
-    424 => 'screwing',
-    425 => 'execution',
-    426 => 'clerk',
-    427 => 'parole',
-    428 => 'constable',
-    429 => 'rolls',
-    430 => 'protocol',
-    431 => 'verdict',
-    432 => 'swore',
-    433 => 'defending',
-    434 => 'convicted',
-    435 => 'shares',
-    436 => 'clues',
-    437 => 'hostages',
-    438 => 'receiving',
-    439 => 'tortured',
-    440 => 'associate',
-    441 => 'deed',
-    442 => 'pirate',
-    443 => 'hears',
-    444 => 'mole',
-    445 => 'prosecution',
-    446 => 'copper',
-    447 => 'heir',
-    448 => 'harbor',
-    449 => 'scheduled',
-    450 => 'rented',
-    451 => 'deceased',
-    452 => 'offers',
-    453 => 'hack',
-    454 => 'ransom',
-    455 => 'sworn',
-    456 => 'pervert',
-    457 => 'dock',
-    458 => 'administration',
-    459 => 'instrument',
-    460 => 'convention',
-    461 => 'versus',
-    462 => 'ruled',
-    463 => 'customs',
-    464 => 'rolled',
-    465 => 'begged',
-    466 => 'pirates',
-    467 => 'receipt',
-    468 => 'kidnap',
-    469 => 'chambers',
-    470 => 'complaints',
-    471 => 'villain',
-    472 => 'breach',
-    473 => 'lex',
-    474 => 'assassin',
-    475 => 'witnessed',
-    476 => 'legacy',
-    477 => 'riot',
-    478 => 'mines',
-    479 => 'morgue',
-    480 => 'welfare',
-    481 => 'settlement',
-    482 => 'shoots',
-    483 => 'statements',
-    484 => 'labour',
-    485 => 'murderers',
-    486 => 'questioned',
-    487 => 'landlord',
-    488 => 'distress',
-    489 => 'pimp',
-    490 => 'disorder',
-    491 => 'interrogation',
-    492 => 'poisoning',
-    493 => 'accuse',
-    494 => 'spying',
-    495 => 'parliament',
-    496 => 'plead',
-    497 => 'wig',
-    498 => 'spies',
-    499 => 'bombing',
-    500 => 'senate',
-    501 => 'gangster',
-    502 => 'promising',
-    503 => 'mug',
-    504 => 'sting',
-    505 => 'coroner',
-    506 => 'deeds',
-    507 => 'cooler',
-    508 => 'plea',
-    509 => 'investigator',
-    510 => 'custom',
-    511 => 'pension',
-    512 => 'cans',
-    513 => 'guaranteed',
-    514 => 'pledge',
-    515 => 'pressing',
-    516 => 'interviews',
-    517 => 'rogue',
-    518 => 'superintendent',
-    519 => 'corruption',
-    520 => 'forensics',
-    521 => 'housing',
-    522 => 'hanged',
-    523 => 'profits',
-    524 => 'accusing',
-    525 => 'hangs',
-    526 => 'instruments',
-    527 => 'sentenced',
-    528 => 'scam',
-    529 => 'precinct',
-    530 => 'assembly',
-    531 => 'romans',
-    532 => 'bonds',
-    533 => 'examination',
-    534 => 'batteries',
-    535 => 'tails',
-    536 => 'treason',
-    537 => 'stir',
-    538 => 'conviction',
-    539 => 'courtroom',
-    540 => 'donor',
-    541 => 'mortgage',
-    542 => 'ordering',
-    543 => 'detention',
-    544 => 'dealers',
-    545 => 'gown',
-    546 => 'contracts',
-    547 => 'trusting',
-    548 => 'consideration',
-    549 => 'bandits',
-    550 => 'constitution',
-    551 => 'regulations',
-    552 => 'accomplice',
-    553 => 'pressed',
-    554 => 'asylum',
-    555 => 'duel',
-    556 => 'handcuffs',
-    557 => 'hunch',
-    558 => 'lease',
-    559 => 'hulk',
-    560 => 'directors',
-    561 => 'forensic',
-    562 => 'racket',
-    563 => 'rider',
-    564 => 'shipping',
-    565 => 'abused',
-    566 => 'sustained',
-    567 => 'arresting',
-    568 => 'stalking',
-    569 => 'articles',
-    570 => 'sniper',
-    571 => 'godfather',
-    572 => 'robe',
-    573 => 'exhibit',
-    574 => 'foreman',
-    575 => 'probation',
-    576 => 'pinch',
-    577 => 'bandit',
-    578 => 'corpses',
-    579 => 'banned',
-    580 => 'fees',
-    581 => 'associates',
-    582 => 'exposure',
-    583 => 'partnership',
-    584 => 'treaty',
-    585 => 'lawsuit',
-    586 => 'offence',
-    587 => 'courts',
-    588 => 'crook',
-    589 => 'policemen',
-    590 => 'inheritance',
-    591 => 'claiming',
-    592 => 'fugitive',
-    593 => 'boundaries',
-    594 => 'caution',
-    595 => 'obligation',
-    596 => 'associated',
-    597 => 'inherited',
-    598 => 'arguments',
-    599 => 'trials',
-    600 => 'properties',
-    601 => 'inquiry',
-    602 => 'murdering',
-    603 => 'interviewed',
-    604 => 'employment',
-    605 => 'mule',
-    606 => 'locals',
-    607 => 'premises',
-    608 => 'premisses',
-    609 => 'convict',
-    610 => 'elections',
-    611 => 'rebellion',
-    612 => 'hacked',
-    613 => 'mining',
-    614 => 'void',
-    615 => 'sabotage',
-    616 => 'bomber',
-    617 => 'ruling',
-    618 => 'assaulted',
-    619 => 'assassination',
-    620 => 'summoned',
-    621 => 'massacre',
-    622 => 'transportation',
-    623 => 'crooked',
-    624 => 'immigration',
-    625 => 'culprit',
-    626 => 'magistrate',
-    627 => 'attempts',
-    628 => 'felony',
-    629 => 'quantum',
-    630 => 'utter',
-    631 => 'discharge',
-    632 => 'exile',
-    633 => 'attempting',
-    634 => 'robbers',
-    635 => 'survey',
-    636 => 'skeleton',
-    637 => 'petition',
-    638 => 'traitors',
-    639 => 'summon',
-    640 => 'solitary',
-    641 => 'smuggling',
-    642 => 'chancellor',
-    643 => 'environmental',
-    644 => 'nuisance',
-    645 => 'terrorism',
-    646 => 'robber',
-    647 => 'sessions',
-    648 => 'slavery',
-    649 => 'harassment',
-    650 => 'licence',
-    651 => 'recorder',
-    652 => 'jurisdiction',
-    653 => 'contempt',
-    654 => 'speeding',
-    655 => 'hustle',
-    656 => 'inmates',
-    657 => 'stoned',
-    658 => 'bankrupt',
-    659 => 'lookout',
-    660 => 'steals',
-    661 => 'trusts',
-    662 => 'compensation',
-    663 => 'ban',
-    664 => 'footprints',
-    665 => 'pact',
-    666 => 'juvenile',
-    667 => 'briefing',
-    668 => 'informant',
-    669 => 'stalker',
-    670 => 'negotiations',
-    671 => 'accusations',
-    672 => 'strap',
-    673 => 'rustling',
-    674 => 'translator',
-    675 => 'passports',
-    676 => 'cartel',
-    677 => 'permitted',
-    678 => 'suspension',
-    679 => 'thugs',
-    680 => 'investigations',
-    681 => 'busting',
-    682 => 'admission',
-    683 => 'guarding',
-    684 => 'sentences',
-    685 => 'procedures',
-    686 => 'pupils',
-    687 => 'shipped',
-    688 => 'inherit',
-    689 => 'cuff',
-    690 => 'curfew',
-    691 => 'streak',
-    692 => 'condo',
-    693 => 'judgement',
-    694 => 'cuffs',
-    695 => 'torturing',
-    696 => 'gangsters',
-    697 => 'burglar',
-    698 => 'infant',
-    699 => 'prostitution',
-    700 => 'killings',
-    701 => 'courthouse',
-    702 => 'stocks',
-    703 => 'snitch',
-    704 => 'docks',
-    705 => 'bugging',
-    706 => 'testament',
-    707 => 'noticing',
-    708 => 'releasing',
-    709 => 'guarded',
-    710 => 'broker',
-    711 => 'seizure',
-    712 => 'thug',
-    713 => 'psychopath',
-    714 => 'bind',
-    715 => 'bundle',
-    716 => 'arrests',
-    717 => 'pupil',
-    718 => 'manor',
-    719 => 'contractor',
-    720 => 'partying',
-    721 => 'burglary',
-    722 => 'defended',
-    723 => 'villains',
-    724 => 'amendment',
-    725 => 'agencies',
-    726 => 'motives',
-    727 => 'stabbing',
-    728 => 'screws',
-    729 => 'trafficking',
-    730 => 'loot',
-    731 => 'counseling',
-    732 => 'practiced',
-    733 => 'stretched',
-    734 => 'frustration',
-    735 => 'deception',
-    736 => 'trespassing',
-    737 => 'practise',
-    738 => 'damages',
-    739 => 'advocate',
-    740 => 'inmate',
-    741 => 'harbour',
-    742 => 'declaration',
-    743 => 'testified',
-    744 => 'dungeon',
-    745 => 'royalty',
-    746 => 'collateral',
-    747 => 'banking',
-    748 => 'dowry',
-    749 => 'tenants',
-    750 => 'recess',
-    751 => 'investigators',
-    752 => 'cruelty',
-    753 => 'allegations',
-    754 => 'bombed',
-    755 => 'neglected',
-    756 => 'tenant',
-    757 => 'bailed',
-    758 => 'abduction',
-    759 => 'manslaughter',
-    760 => 'remedy',
-    761 => 'accusation',
-    762 => 'spaces',
-    763 => 'receipts',
-    764 => 'alias',
-    765 => 'eyewitness',
-    766 => 'kidnapper',
-    767 => 'kidnappers',
-    768 => 'fingerprint',
-    769 => 'signatures',
-    770 => 'possessions',
-    771 => 'commercials',
-    772 => 'solicitor',
-    773 => 'arson',
-    774 => 'receiver',
-    775 => 'assassins',
-    776 => 'squat',
-    777 => 'objections',
-    778 => 'lynch',
-    779 => 'policies',
-    780 => 'flashing',
-    781 => 'stationed',
-    782 => 'liability',
-    783 => 'blackmailing',
-    784 => 'hacker',
-    785 => 'sued',
-    786 => 'goons',
-    787 => 'charter',
-    788 => 'litter',
-    789 => 'stirring',
-    790 => 'heist',
-    791 => 'booking',
-    792 => 'interviewing',
-    793 => 'stretching',
-    794 => 'sustain',
-    795 => 'withdrawal',
-    796 => 'revenue',
-    797 => 'witchcraft',
-    798 => 'sporting',
-    799 => 'negotiation',
-    800 => 'fiddle',
-    801 => 'ripper',
-    802 => 'riders',
-    803 => 'hacking',
-    804 => 'adjourned',
-    805 => 'canned',
-    806 => 'ballistics',
-    807 => 'nicked',
-    808 => 'detained',
-    809 => 'prosecute',
-    810 => 'default',
-    811 => 'proceedings',
-    812 => 'transcript',
-    813 => 'appealing',
-    814 => 'imprisonment',
-    815 => 'deliberate',
-    816 => 'bombers',
-    817 => 'offender',
-    818 => 'crooks',
-    819 => 'acceptance',
-    820 => 'conditioning',
-    821 => 'invitations',
-    822 => 'counterfeit',
-    823 => 'surrendered',
-    824 => 'accessory',
-    825 => 'convictions',
-    826 => 'practices',
-    827 => 'bonding',
-    828 => 'equality',
-    829 => 'riots',
-    830 => 'titles',
-    831 => 'patent',
-    832 => 'prisons',
-    833 => 'notices',
-    834 => 'goodwill',
-    835 => 'strapped',
-    836 => 'warrants',
-    837 => 'ownership',
-    838 => 'outlaw',
-    839 => 'robberies',
-    840 => 'pens',
-    841 => 'decree',
-    842 => 'attorneys',
-    843 => 'subpoena',
-    844 => 'renting',
-    845 => 'slay',
-    846 => 'tags',
-    847 => 'attacker',
-    848 => 'extortion',
-    849 => 'guardians',
-    850 => 'usher',
-    851 => 'swearing',
-    852 => 'guarantees',
-    853 => 'fiber',
-    854 => 'clink',
-    855 => 'bankruptcy',
-    856 => 'decoy',
-    857 => 'defender',
-    858 => 'noose',
-    859 => 'discoveries',
-    860 => 'offenders',
-    861 => 'obligations',
-    862 => 'graffiti',
-    863 => 'permits',
-    864 => 'boundary',
-    865 => 'clinking',
-    866 => 'executioner',
-    867 => 'limitations',
-    868 => 'clause',
-    869 => 'assignments',
-    870 => 'deposition',
-    871 => 'neglect',
-    872 => 'patrols',
-    873 => 'protocols',
-    874 => 'posse',
-    875 => 'mutiny',
-    876 => 'receives',
-    877 => 'porridge',
-    878 => 'gavel',
-    879 => 'indictment',
-    880 => 'gallows',
-    881 => 'landlady',
-    882 => 'consumer',
-    883 => 'merger',
-    884 => 'deposits',
-    885 => 'ratio',
-    886 => 'speeds',
-    887 => 'perpetrator',
-    888 => 'goon',
-    889 => 'raided',
-    890 => 'supplier',
-    891 => 'jug',
-    892 => 'defenses',
-    893 => 'fences',
-    894 => 'pinched',
-    895 => 'gunman',
-    896 => 'interpreter',
-    897 => 'regulation',
-    898 => 'uphold',
-    899 => 'confidentiality',
-    900 => 'overruled',
-    901 => 'skeletons',
-    902 => 'beak',
-    903 => 'proceeding',
-    904 => 'flashes',
-    905 => 'baton',
-    906 => 'administrator',
-    907 => 'appeals',
-    908 => 'lineup',
-    909 => 'obstruction',
-    910 => 'monopoly',
-    911 => 'franchise',
-    912 => 'blackmailed',
-    913 => 'penance',
-    914 => 'pleading',
-    915 => 'gaming',
-    916 => 'gases',
-    917 => 'abstract',
-    918 => 'abusing',
-    919 => 'stirred',
-    920 => 'bugged',
-    921 => 'constitutional',
-    922 => 'covenant',
-    923 => 'casing',
-    924 => 'releases',
-    925 => 'forgery',
-    926 => 'informer',
-    927 => 'zones',
-    928 => 'dealings',
-    929 => 'espionage',
-    930 => 'cons',
-    931 => 'counsellor',
-    932 => 'agricultural',
-    933 => 'swears',
-    934 => 'summons',
-    935 => 'tribunal',
-    936 => 'commissioned',
-    937 => 'practising',
-    938 => 'mugged',
-    939 => 'binding',
-    940 => 'damaging',
-    941 => 'vigilante',
-    942 => 'confinement',
-    943 => 'badges',
-    944 => 'triad',
-    945 => 'testifying',
-    946 => 'robes',
-    947 => 'registry',
-    948 => 'administrative',
-    949 => 'cheats',
-    950 => 'fibers',
-    951 => 'costing',
-    952 => 'bailiff',
-    953 => 'plaintiff',
-    954 => 'accord',
-    955 => 'marshals',
-    956 => 'deposited',
-    957 => 'disability',
-    958 => 'defendants',
-    959 => 'bonded',
-    960 => 'mastered',
-    961 => 'distressed',
-    962 => 'slander',
-    963 => 'wills',
-    964 => 'searches',
-    965 => 'stings',
-    966 => 'watering',
-    967 => 'postmortem',
-    968 => 'coppers',
-    969 => 'raids',
-    970 => 'appendix',
-    971 => 'restraint',
-    972 => 'mastermind',
-    973 => 'seizures',
-    974 => 'acquitted',
-    975 => 'mayhem',
-    976 => 'precedent',
-    977 => 'statute',
-    978 => 'penitentiary',
-    979 => 'swab',
-    980 => 'notary',
-    981 => 'perverted',
-    982 => 'snipers',
-    983 => 'retainer',
-    984 => 'inquiries',
-    985 => 'tagged',
-    986 => 'accomplices',
-    987 => 'assailant',
-    988 => 'felon',
-    989 => 'hijacked',
-    990 => 'municipal',
-    991 => 'trooper',
-    992 => 'proctor',
-    993 => 'footprint',
-    994 => 'warnings',
-    995 => 'tampered',
-    996 => 'enquiry',
-    997 => 'begs',
-    998 => 'juror',
-    999 => 'contracted',
-    1000 => 'amnesty',
-    1001 => 'schedules',
-    1002 => 'pathologist',
-    1003 => 'humanitarian',
-    1004 => 'legislation',
-    1005 => 'deputies',
-    1006 => 'thieving',
-    1007 => 'outlaws',
-    1008 => 'vacate',
-    1009 => 'certificates',
-    1010 => 'roadblock',
-    1011 => 'detain',
-    1012 => 'inquisition',
-    1013 => 'discrimination',
-    1014 => 'jurors',
-    1015 => 'stalk',
-    1016 => 'fencing',
-    1017 => 'devised',
-    1018 => 'exiled',
-    1019 => 'donors',
-    1020 => 'perjury',
-    1021 => 'completion',
-    1022 => 'motions',
-    1023 => 'courting',
-    1024 => 'stretches',
-    1025 => 'handcuffed',
-    1026 => 'negligence',
-    1027 => 'sabotaged',
-    1028 => 'prosecuted',
-    1029 => 'briefed',
-    1030 => 'trainee',
-    1031 => 'convicts',
-    1032 => 'vendor',
-    1033 => 'confessions',
-    1034 => 'mugs',
-    1035 => 'laundering',
-    1036 => 'succession',
-    1037 => 'tailing',
-    1038 => 'stakeout',
-    1039 => 'submission',
-    1040 => 'mortuary',
-    1041 => 'beheaded',
-    1042 => 'branded',
-    1043 => 'assaulting',
-    1044 => 'impostor',
-    1045 => 'proceeds',
-    1046 => 'inspectors',
-    1047 => 'takeover',
-    1048 => 'brands',
-    1049 => 'bribery',
-    1050 => 'proxy',
-    1051 => 'timed',
-    1052 => 'docking',
-    1053 => 'cowardice',
-    1054 => 'bailing',
-    1055 => 'trespass',
-    1056 => 'raiders',
-    1057 => 'breached',
-    1058 => 'shareholders',
-    1059 => 'smuggler',
-    1060 => 'lash',
-    1061 => 'guillotine',
-    1062 => 'graft',
-    1063 => 'estates',
-    1064 => 'offerings',
-    1065 => 'sentencing',
-    1066 => 'perverts',
-    1067 => 'prosecutors',
-    1068 => 'barred',
-    1069 => 'dismissal',
-    1070 => 'lowlife',
-    1071 => 'aviation',
-    1072 => 'accessories',
-    1073 => 'wigs',
-    1074 => 'shoplifting',
-    1075 => 'minors',
-    1076 => 'energies',
-    1077 => 'troopers',
-    1078 => 'sociopath',
-    1079 => 'ballistic',
-    1080 => 'trademark',
-    1081 => 'mules',
-    1082 => 'genocide',
-    1083 => 'heirs',
-    1084 => 'casings',
-    1085 => 'poisons',
-    1086 => 'contractors',
-    1087 => 'presses',
-    1088 => 'tampering',
-    1089 => 'directive',
-    1090 => 'pleaded',
-    1091 => 'fugitives',
-    1092 => 'blasphemy',
-    1093 => 'rents',
-    1094 => 'termination',
-    1095 => 'vandalism',
-    1096 => 'holdings',
-    1097 => 'admissions',
-    1098 => 'canon',
-    1099 => 'deserter',
-    1100 => 'hustler',
-    1101 => 'disclosure',
-    1102 => 'inquest',
-    1103 => 'copyright',
-    1104 => 'witnessing',
-    1105 => 'agreements',
-    1106 => 'billing',
-    1107 => 'brig',
-    1108 => 'lockup',
-    1109 => 'hearings',
-    1110 => 'disorders',
-    1111 => 'endorsement',
-    1112 => 'fiat',
-    1113 => 'indicted',
-    1114 => 'copycat',
-    1115 => 'innocents',
-    1116 => 'shootings',
-    1117 => 'mandate',
-    1118 => 'extradition',
-    1119 => 'undertaking',
-    1120 => 'veto',
-    1121 => 'equity',
-    1122 => 'delinquent',
-    1123 => 'looting',
-    1124 => 'grooming',
-    1125 => 'suppliers',
-    1126 => 'homicides',
-    1127 => 'hackers',
-    1128 => 'variation',
-    1129 => 'burglars',
-    1130 => 'undertake',
-    1131 => 'prosecuting',
-    1132 => 'contraband',
-    1133 => 'writ',
-    1134 => 'stalked',
-    1135 => 'jailed',
-    1136 => 'gaoled',
-    1137 => 'suspecting',
-    1138 => 'smugglers',
-    1139 => 'holdup',
-    1140 => 'charities',
-    1141 => 'securities',
-    1142 => 'polygraph',
-    1143 => 'lag',
-    1144 => 'collars',
-    1145 => 'billings',
-    1146 => 'straps',
-    1147 => 'eviction',
-    1148 => 'manhunt',
-    1149 => 'briefs',
-    1150 => 'squads',
-    1151 => 'offenses',
-    1152 => 'lawsuits',
-    1153 => 'alibis',
-    1154 => 'handcuff',
-    1155 => 'fines',
-    1156 => 'affidavit',
-    1157 => 'patrolling',
-    1158 => 'gowns',
-    1159 => 'hearsay',
-    1160 => 'pimps',
-    1161 => 'lashes',
-    1162 => 'flashed',
-    1163 => 'acquisition',
-    1164 => 'profiles',
-    1165 => 'imposter',
-    1166 => 'misconduct',
-    1167 => 'invoice',
-    1168 => 'gunmen',
-    1169 => 'cordon',
-    1170 => 'larceny',
-    1171 => 'tenure',
-    1172 => 'variations',
-    1173 => 'corpus',
-    1174 => 'severance',
-    1175 => 'barrister',
-    1176 => 'counselors',
-    1177 => 'overturned',
-    1178 => 'hoods',
-    1179 => 'eyewitnesses',
-    1180 => 'deduction',
-    1181 => 'bombings',
-    1182 => 'pledges',
-    1183 => 'injunction',
-    1184 => 'competitions',
-    1185 => 'lapse',
-    1186 => 'roadblocks',
-    1187 => 'wards',
-    1188 => 'hooligans',
-    1189 => 'clinks',
-    1190 => 'appealed',
-    1191 => 'intimidation',
-    1192 => 'executions',
-    1193 => 'defenders',
-    1194 => 'remainder',
-    1195 => 'strangulation',
-    1196 => 'strangling',
-    1197 => 'poaching',
-    1198 => 'stocked',
-    1199 => 'blackmailer',
-    1200 => 'heiress',
-    1201 => 'enquiries',
-    1202 => 'restraints',
-    1203 => 'abuses',
-    1204 => 'assaults',
-    1205 => 'docked',
-    1206 => 'conventions',
-    1207 => 'hijack',
-    1208 => 'settlements',
-    1209 => 'hangman',
-    1210 => 'heresy',
-    1211 => 'arraignment',
-    1212 => 'poached',
-    1213 => 'malpractice',
-    1214 => 'beneficiary',
-    1215 => 'openings',
-    1216 => 'youths',
-    1217 => 'transcripts',
-    1218 => 'renewal',
-    1219 => 'proceeded',
-    1220 => 'governors',
-    1221 => 'informants',
-    1222 => 'clerks',
-    1223 => 'felonies',
-    1224 => 'misdemeanor',
-    1225 => 'misdemeanour',
-    1226 => 'commons',
-    1227 => 'mugging',
-    1228 => 'ordinance',
-    1229 => 'spied',
-    1230 => 'dui',
-    1231 => 'consumers',
-    1232 => 'premise',
-    1233 => 'inning',
-    1234 => 'raiding',
-    1235 => 'binds',
-    1236 => 'poachers',
-    1237 => 'pardoned',
-    1238 => 'distressing',
-    1239 => 'busts',
-    1240 => 'evasion',
-    1241 => 'tagging',
-    1242 => 'pinching',
-    1243 => 'allegation',
-    1244 => 'exhibits',
-    1245 => 'toxicology',
-    1246 => 'creditors',
-    1247 => 'composite',
-    1248 => 'rogues',
-    1249 => 'dossier',
-    1250 => 'insubordination',
-    1251 => 'slammer',
-    1252 => 'dungeons',
-    1253 => 'fined',
-    1254 => 'galleries',
-    1255 => 'litigation',
-    1256 => 'arsonist',
-    1257 => 'surrendering',
-    1258 => 'judgments',
-    1259 => 'pusher',
-    1260 => 'proclamation',
-    1261 => 'counselling',
-    1262 => 'moles',
-    1263 => 'penalties',
-    1264 => 'treadmill',
-    1265 => 'proofs',
-    1266 => 'vendors',
-    1267 => 'strangler',
-    1268 => 'defences',
-    1269 => 'swindler',
-    1270 => 'labored',
-    1271 => 'licenses',
-    1272 => 'embezzlement',
-    1273 => 'annex',
-    1274 => 'royalties',
-    1275 => 'mistaking',
-    1276 => 'neglecting',
-    1277 => 'hooded',
-    1278 => 'loitering',
-    1279 => 'looted',
-    1280 => 'hoodlums',
-    1281 => 'maritime',
-    1282 => 'swag',
-    1283 => 'profiling',
-    1284 => 'fiscal',
-    1285 => 'attackers',
-    1286 => 'pickpocket',
-    1287 => 'henchmen',
-    1288 => 'banning',
-    1289 => 'infants',
-    1290 => 'mined',
-    1291 => 'watered',
-    1292 => 'tailed',
-    1293 => 'housed',
-    1294 => 'applicants',
-    1295 => 'abandonment',
-    1296 => 'waiver',
-    1297 => 'hooligan',
-    1298 => 'hijacking',
-    1299 => 'expulsion',
-    1300 => 'reversal',
-    1301 => 'tortures',
-    1302 => 'consignment',
-    1303 => 'swindle',
-    1304 => 'trickster',
-    1305 => 'devise',
-    1306 => 'slasher',
-    1307 => 'perpetrators',
-    1308 => 'thefts',
-    1309 => 'harboring',
-    1310 => 'scams',
-    1311 => 'dab',
-    1312 => 'conditioned',
-    1313 => 'cartels',
-    1314 => 'warranty',
-    1315 => 'jailer',
-    1316 => 'gaoler',
-    1317 => 'branding',
-    1318 => 'defends',
-    1319 => 'practised',
-    1320 => 'trustee',
-    1321 => 'psychopaths',
-    1322 => 'benches',
-    1323 => 'redirect',
-    1324 => 'adjourn',
-    1325 => 'skim',
-    1326 => 'culprits',
-    1327 => 'duress',
-    1328 => 'sabotaging',
-    1329 => 'electoral',
-    1330 => 'compliance',
-    1331 => 'juries',
-    1332 => 'mistrial',
-    1333 => 'remand',
-    1334 => 'jugs',
-    1335 => 'examinations',
-    1336 => 'uttered',
-    1337 => 'trustees',
-    1338 => 'registrar',
-    1339 => 'juniors',
-    1340 => 'trespasses',
-    1341 => 'fibre',
-    1342 => 'sacrilege',
-    1343 => 'charlatan',
-    1344 => 'admiralty',
-    1345 => 'docket',
-    1346 => 'divorces',
-    1347 => 'spaced',
-    1348 => 'stirs',
-    1349 => 'gassed',
-    1350 => 'squatting',
-    1351 => 'stabs',
-    1352 => 'leased',
-    1353 => 'landings',
-    1354 => 'policing',
-    1355 => 'aliases',
-    1356 => 'libel',
-    1357 => 'canning',
-    1358 => 'invoices',
-    1359 => 'decreed',
-    1360 => 'deportation',
-    1361 => 'particulars',
-    1362 => 'inadmissible',
-    1363 => 'delinquents',
-    1364 => 'scheduling',
-    1365 => 'privates',
-    1366 => 'frisk',
-    1367 => 'reprimand',
-    1368 => 'indict',
-    1369 => 'jails',
-    1370 => 'gaols',
-    1371 => 'condos',
-    1372 => 'pimping',
-    1373 => 'burglaries',
-    1374 => 'mortgages',
-    1375 => 'abetting',
-    1376 => 'offences',
-    1377 => 'brokers',
-    1378 => 'policewoman',
-    1379 => 'eyre',
-    1380 => 'bundles',
-    1381 => 'citation',
-    1382 => 'hoodlum',
-    1383 => 'piracy',
-    1384 => 'partition',
-    1385 => 'slaying',
-    1386 => 'skimming',
-    1387 => 'mobster',
-    1388 => 'remedies',
-    1389 => 'partied',
-    1390 => 'subpoenaed',
-    1391 => 'commissions',
-    1392 => 'forger',
-    1393 => 'accuses',
-    1394 => 'deserters',
-    1395 => 'fibres',
-    1396 => 'procure',
-    1397 => 'scaffolding',
-    1398 => 'hacks',
-    1399 => 'incarceration',
-    1400 => 'enforcer',
-    1401 => 'patented',
-    1402 => 'shareholder',
-    1403 => 'remanded',
-    1404 => 'landlords',
-    1405 => 'registering',
-    1406 => 'paroled',
-    1407 => 'armistice',
-    1408 => 'peddler',
-    1409 => 'pedlar',
-    1410 => 'ringleader',
-    1411 => 'registers',
-    1412 => 'pensions',
-    1413 => 'patents',
-    1414 => 'traffickers',
-    1415 => 'outlawed',
-    1416 => 'homestead',
-    1417 => 'poacher',
-    1418 => 'jus',
-    1419 => 'exchanges',
-    1420 => 'escrow',
-    1421 => 'psychos',
-    1422 => 'stinging',
-    1423 => 'admissible',
-    1424 => 'triads',
-    1425 => 'crucifixion',
-    1426 => 'zoning',
-    1427 => 'lien',
-    1428 => 'molester',
-    1429 => 'statutory',
-    1430 => 'cuffed',
-    1431 => 'considerations',
-    1432 => 'summoning',
-    1433 => 'moot',
-    1434 => 'sheriffs',
-    1435 => 'pleas',
-    1436 => 'kingpin',
-    1437 => 'mortgaged',
-    1438 => 'scaffold',
-    1439 => 'tamper',
-    1440 => 'clemency',
-    1441 => 'strapping',
-    1442 => 'evidences',
-    1443 => 'innings',
-    1444 => 'punishments',
-    1445 => 'constables',
-    1446 => 'acquittal',
-    1447 => 'lout',
-    1448 => 'nicks',
-    1449 => 'behead',
-    1450 => 'mutilation',
-    1451 => 'desertion',
-    1452 => 'edict',
-    1453 => 'constabulary',
-    1454 => 'chartered',
-    1455 => 'copped',
-    1456 => 'barring',
-    1457 => 'reprieve',
-    1458 => 'leases',
-    1459 => 'executor',
-    1460 => 'ruffian',
-    1461 => 'littered',
-    1462 => 'amputation',
-    1463 => 'exhibited',
-    1464 => 'lashed',
-    1465 => 'legislature',
-    1466 => 'warns',
-    1467 => 'feudal',
-    1468 => 'interrogations',
-    1469 => 'henchman',
-    1470 => 'launder',
-    1471 => 'stalks',
-    1472 => 'raider',
-    1473 => 'flogged',
-    1474 => 'swabs',
-    1475 => 'rioting',
-    1476 => 'cannibalism',
-    1477 => 'pleads',
-    1478 => 'prowler',
-    1479 => 'soliciting',
-    1480 => 'jailhouse',
-    1481 => 'rackets',
-    1482 => 'willed',
-    1483 => 'felons',
-    1484 => 'frauds',
-    1485 => 'overturn',
-    1486 => 'mediation',
-    1487 => 'flog',
-    1488 => 'mugger',
-    1489 => 'frustrations',
-    1490 => 'beaks',
-    1491 => 'withdrawals',
-    1492 => 'pardons',
-    1493 => 'lashing',
-    1494 => 'sergeants',
-    1495 => 'bequeath',
-    1496 => 'insurrection',
-    1497 => 'cutthroat',
-    1498 => 'assassinations',
-    1499 => 'vandals',
-    1500 => 'mediator',
-    1501 => 'groomed',
-    1502 => 'lodger',
-    1503 => 'flogging',
-    1504 => 'treaties',
-    1505 => 'judiciary',
-    1506 => 'drunkenness',
-    1507 => 'abductions',
-    1508 => 'restitution',
-    1509 => 'vigilantes',
-    1510 => 'continuance',
-    1511 => 'bootleg',
-    1512 => 'applicant',
-    1513 => 'contracting',
-    1514 => 'shakedown',
-    1515 => 'wiretap',
-    1516 => 'squatters',
-    1517 => 'grasses',
-    1518 => 'moll',
-    1519 => 'profiler',
-    1520 => 'trainees',
-    1521 => 'pokey',
-    1522 => 'coercion',
-    1523 => 'solicitation',
-    1524 => 'informers',
-    1525 => 'surveys',
-    1526 => 'vandal',
-    1527 => 'forgeries',
-    1528 => 'saboteur',
-    1529 => 'entrapment',
-    1530 => 'defamation',
-    1531 => 'solicitors',
-    1532 => 'foreclosure',
-    1533 => 'revenues',
-    1534 => 'testifies',
-    1535 => 'landowner',
-    1536 => 'principals',
-    1537 => 'decedent',
-    1538 => 'advocates',
-    1539 => 'petitions',
-    1540 => 'deliberation',
-    1541 => 'bloodstains',
-    1542 => 'hijackers',
-    1543 => 'servitude',
-    1544 => 'poach',
-    1545 => 'courted',
-    1546 => 'streaks',
-    1547 => 'landowners',
-    1548 => 'racketeering',
-    1549 => 'memorandum',
-    1550 => 'translators',
-    1551 => 'impersonation',
-    1552 => 'depositions',
-    1553 => 'massacres',
-    1554 => 'stockade',
-    1555 => 'fixtures',
-    1556 => 'collusion',
-    1557 => 'detainees',
-    1558 => 'lowlifes',
-    1559 => 'entails',
-    1560 => 'magistrates',
-    1561 => 'vacated',
-    1562 => 'exclusion',
-    1563 => 'banishment',
-    1564 => 'rebuttal',
-    1565 => 'conspiracies',
-    1566 => 'autopsies',
-    1567 => 'hunches',
-    1568 => 'breaches',
-    1569 => 'grooms',
-    1570 => 'oaths',
-    1571 => 'exhibiting',
-    1572 => 'partnered',
-    1573 => 'nicking',
-    1574 => 'carjacking',
-    1575 => 'precincts',
-    1576 => 'paralegal',
-    1577 => 'acquit',
-    1578 => 'labors',
-    1579 => 'statutes',
-    1580 => 'surveying',
-    1581 => 'surrenders',
-    1582 => 'billed',
-    1583 => 'ruffians',
-    1584 => 'testimonies',
-    1585 => 'fixture',
-    1586 => 'realty',
-    1587 => 'littering',
-    1588 => 'lynching',
-    1589 => 'collared',
-    1590 => 'joyride',
-    1591 => 'counterfeiting',
-    1592 => 'limitation',
-    1593 => 'murderess',
-    1594 => 'euthanasia',
-    1595 => 'bookings',
-    1596 => 'trafficker',
-    1597 => 'grifter',
-    1598 => 'lynched',
-    1599 => 'licensing',
-    1600 => 'licencing',
-    1601 => 'taxation',
-    1602 => 'obscenity',
-    1603 => 'entail',
-    1604 => 'acquisitions',
-    1605 => 'tenement',
-    1606 => 'matrimonial',
-    1607 => 'silks',
-    1608 => 'reprimanded',
-    1609 => 'pled',
-    1610 => 'disabilities',
-    1611 => 'taxing',
-    1612 => 'snitched',
-    1613 => 'scamming',
-    1614 => 'advocating',
-    1615 => 'dividends',
-    1616 => 'scammed',
-    1617 => 'probate',
-    1618 => 'beheading',
-    1619 => 'abuser',
-    1620 => 'arraigned',
-    1621 => 'endangerment',
-    1622 => 'skimmed',
-    1623 => 'voyeur',
-    1624 => 'procured',
-    1625 => 'assailants',
-    1626 => 'duels',
-    1627 => 'plaintiffs',
-    1628 => 'commissioners',
-    1629 => 'coolers',
-    1630 => 'electrocution',
-    1631 => 'bylaws',
-    1632 => 'mobsters',
-    1633 => 'dueling',
-    1634 => 'duelling',
-    1635 => 'administrators',
-    1636 => 'aggressor',
-    1637 => 'snitches',
-    1638 => 'upheld',
-    1639 => 'sustaining',
-    1640 => 'spacing',
-    1641 => 'indictments',
-    1642 => 'dissolution',
-    1643 => 'permitting',
-    1644 => 'laundered',
-    1645 => 'looters',
-    1646 => 'hustlers',
-    1647 => 'sublet',
-    1648 => 'guarantor',
-    1649 => 'culpa',
-    1650 => 'deductions',
-    1651 => 'recorders',
-    1652 => 'solicit',
-    1653 => 'associating',
-    1654 => 'receivers',
-    1655 => 'trespassers',
-    1656 => 'jailbird',
-    1657 => 'pushers',
-    1658 => 'retrial',
-    1659 => 'stalkers',
-    1660 => 'leasing',
-    1661 => 'summation',
-    1662 => 'stickup',
-    1663 => 'decrees',
-    1664 => 'abductor',
-    1665 => 'endorsements',
-    1666 => 'reformatory',
-    1667 => 'marauder',
-    1668 => 'gulag',
-    1669 => 'executioners',
-    1670 => 'plagiarism',
-    1671 => 'stenographer',
-    1672 => 'inherits',
-    1673 => 'decoys',
-    1674 => 'debtors',
-    1675 => 'taxed',
-    1676 => 'infringement',
-    1677 => 'arbitration',
-    1678 => 'decapitation',
-    1679 => 'molestation',
-    1680 => 'lagging',
-    1681 => 'rustlers',
-    1682 => 'sedition',
-    1683 => 'exiles',
-    1684 => 'reparations',
-    1685 => 'wardens',
-    1686 => 'internment',
-    1687 => 'benched',
-    1688 => 'kidnaps',
-    1689 => 'adjournment',
-    1690 => 'affirmation',
-    1691 => 'polygamy',
-    1692 => 'saboteurs',
-    1693 => 'timings',
-    1694 => 'mastering',
-    1695 => 'bequeathed',
-    1696 => 'clauses',
-    1697 => 'squatter',
-    1698 => 'sustains',
-    1699 => 'juveniles',
-    1700 => 'lawyered',
-    1701 => 'partnerships',
-    1702 => 'directives',
-    1703 => 'deliberations',
-    1704 => 'verbatim',
-    1705 => 'copping',
-    1706 => 'bloodstained',
-    1707 => 'rescind',
-    1708 => 'gangbanger',
-    1709 => 'jailbreak',
-    1710 => 'wounding',
-    1711 => 'buyout',
-    1712 => 'snitching',
-    1713 => 'castration',
-    1714 => 'desecration',
-    1715 => 'affidavits',
-    1716 => 'constructions',
-    1717 => 'subpoenas',
-    1718 => 'deadlock',
-    1719 => 'lapses',
-    1720 => 'liabilities',
-    1721 => 'retainers',
-    1722 => 'quorum',
-    1723 => 'bailiffs',
-    1724 => 'briefings',
-    1725 => 'warranted',
-    1726 => 'guaranteeing',
-    1727 => 'dons',
-    1728 => 'pirated',
-    1729 => 'amendments',
-    1730 => 'thievery',
-    1731 => 'detainee',
-    1732 => 'muggers',
-    1733 => 'indecency',
-    1734 => 'profiled',
-    1735 => 'censure',
-    1736 => 'surveyed',
-    1737 => 'inheriting',
-    1738 => 'capo',
-    1739 => 'penned',
-    1740 => 'excise',
-    1741 => 'citations',
-    1742 => 'regulatory',
-    1743 => 'hunched',
-    1744 => 'bigamy',
-    1745 => 'hulks',
-    1746 => 'plainclothes',
-    1747 => 'arrears',
-    1748 => 'squats',
-    1749 => 'corroboration',
-    1750 => 'condominium',
-    1751 => 'grafts',
-    1752 => 'labours',
-    1753 => 'zoned',
-    1754 => 'harbors',
-    1755 => 'debtor',
-    1756 => 'breaching',
-    1757 => 'brokered',
-    1758 => 'exhumation',
-    1759 => 'prospectus',
-    1760 => 'dragnet',
-    1761 => 'highwayman',
-    1762 => 'charlatans',
-    1763 => 'swabbed',
-    1764 => 'pinches',
-    1765 => 'declarations',
-    1766 => 'inns',
-    1767 => 'shoplifter',
-    1768 => 'profited',
-    1769 => 'complainant',
-    1770 => 'cordoned',
-    1771 => 'petitioned',
-    1772 => 'justices',
-    1773 => 'pickpockets',
-    1774 => 'ushers',
-    1775 => 'brigands',
-    1776 => 'slayed',
-    1777 => 'recuse',
-    1778 => 'precedents',
-    1779 => 'canons',
-    1780 => 'slandered',
-    1781 => 'overrule',
-    1782 => 'jaywalking',
-    1783 => 'rescinded',
-    1784 => 'swindlers',
-    1785 => 'bondsman',
-    1786 => 'poisoner',
-    1787 => 'gangbangers',
-    1788 => 'profiting',
-    1789 => 'redirected',
-    1790 => 'lookouts',
-    1791 => 'ratios',
-    1792 => 'escapee',
-    1793 => 'crier',
-    1794 => 'tenders',
-    1795 => 'ecclesiastical',
-    1796 => 'dividend',
-    1797 => 'indemnity',
-    1798 => 'bloodstain',
-    1799 => 'franchises',
-    1800 => 'detaining',
-    1801 => 'surety',
-    1802 => 'lifer',
-    1803 => 'uttering',
-    1804 => 'liquidation',
-    1805 => 'creditor',
-    1806 => 'sues',
-    1807 => 'marauders',
-    1808 => 'heists',
-    1809 => 'assessor',
-    1810 => 'misdemeanors',
-    1811 => 'misdemeanours',
-    1812 => 'sleuth',
-    1813 => 'streaking',
-    1814 => 'laboured',
-    1815 => 'prosecutions',
-    1816 => 'escapees',
-    1817 => 'subversion',
-    1818 => 'pimped',
-    1819 => 'discharges',
-    1820 => 'wiretaps',
-    1821 => 'bootlegger',
-    1822 => 'gassing',
-    1823 => 'charters',
-    1824 => 'judgements',
-    1825 => 'upholding',
-    1826 => 'hijacker',
-    1827 => 'recesses',
-    1828 => 'obscenities',
-    1829 => 'grassed',
-    1830 => 'masterminded',
-    1831 => 'accords',
-    1832 => 'beneficiaries',
-    1833 => 'posses',
-    1834 => 'loiter',
-    1835 => 'cellblock',
-    1836 => 'mandated',
-    1837 => 'mutilations',
-    1838 => 'rioters',
-    1839 => 'procuring',
-    1840 => 'mercantile',
-    1841 => 'assemblies',
-    1842 => 'patrolled',
-    1843 => 'vagrancy',
-    1844 => 'miscreant',
-    1845 => 'procurator',
-    1846 => 'partnering',
-    1847 => 'submissions',
-    1848 => 'enforcers',
-    1849 => 'sociopaths',
-    1850 => 'mafioso',
-    1851 => 'fingerprinted',
-    1852 => 'bankrupted',
-    1853 => 'molesters',
-    1854 => 'laboring',
-    1855 => 'labouring',
-    1856 => 'bans',
-    1857 => 'termed',
-    1858 => 'impostors',
-    1859 => 'counsellors',
-    1860 => 'truncheon',
-    1861 => 'devising',
-    1862 => 'abusers',
-    1863 => 'verdicts',
-    1864 => 'pursuers',
-    1865 => 'grafted',
-    1866 => 'recognizance',
-    1867 => 'recognisance',
-    1868 => 'banked',
-    1869 => 'cautioned',
-    1870 => 'depositing',
-    1871 => 'advocated',
-    1872 => 'desperado',
-    1873 => 'slandering',
-    1874 => 'harbored',
-    1875 => 'harboured',
-    1876 => 'trespasser',
-    1877 => 'caveat',
-    1878 => 'ushered',
-    1879 => 'hangings',
-    1880 => 'arsonists',
-    1881 => 'hooliganism',
-    1882 => 'exclusivity',
-    1883 => 'deliberating',
-    1884 => 'brigand',
-    1885 => 'malfeasance',
-    1886 => 'mergers',
-    1887 => 'solicited',
-    1888 => 'evildoers',
-    1889 => 'buccaneers',
-    1890 => 'trespassed',
-    1891 => 'counterfeiter',
-    1892 => 'harbouring',
-    1893 => 'whistleblower',
-    1894 => 'batons',
-    1895 => 'roundhouse',
-    1896 => 'addendum',
-    1897 => 'counseled',
-    1898 => 'counselled',
-    1899 => 'bequest',
-    1900 => 'pyromaniac',
-    1901 => 'petitioner',
-    1902 => 'cased',
-    1903 => 'parolee',
-    1904 => 'stakeouts',
-    1905 => 'buccaneer',
-    1906 => 'peddlers',
-    1907 => 'pedlars',
-    1908 => 'warder',
-    1909 => 'lodgers',
-    1910 => 'perverting',
-    1911 => 'cutthroats',
-    1912 => 'aggressors',
-    1913 => 'imposters',
-    1914 => 'barristers',
-    1915 => 'exchequer',
-    1916 => 'flasher',
-    1917 => 'animus',
-    1918 => 'lawmakers',
-    1919 => 'tailings',
-    1920 => 'pathologists',
-    1921 => 'quash',
-    1922 => 'stoning',
-    1923 => 'vetoed',
-    1924 => 'miscreants',
-    1925 => 'nightstick',
-    1926 => 'annexed',
-    1927 => 'shoplift',
-    1928 => 'harbours',
-    1929 => 'legacies',
-    1930 => 'gumshoe',
-    1931 => 'kleptomaniac',
-    1932 => 'bootlegging',
-    1933 => 'licences',
-    1934 => 'lawyering',
-    1935 => 'petitioning',
-    1936 => 'excommunication',
-    1937 => 'embezzler',
-    1938 => 'tort',
-    1939 => 'wiretapping',
-    1940 => 'parolees',
-    1941 => 'speeded',
-    1942 => 'compensations',
-    1943 => 'chancery',
-    1944 => 'reprieved',
-    1945 => 'usury',
-    1946 => 'copyrighted',
-    1947 => 'forfeiture',
-    1948 => 'grafting',
-    1949 => 'respondent',
-    1950 => 'bootleggers',
-    1951 => 'entertainments',
-    1952 => 'louts',
-    1953 => 'convicting',
-    1954 => 'mitigation',
-    1955 => 'joyriding',
-    1956 => 'baddies',
-    1957 => 'locus',
-    1958 => 'rebellions',
-    1959 => 'remedied',
-    1960 => 'tenements',
-    1961 => 'conveyance',
-    1962 => 'slays',
-    1963 => 'renege',
-    1964 => 'accorded',
-    1965 => 'pilfering',
-    1966 => 'recessed',
-    1967 => 'interpreters',
-    1968 => 'jurisprudence',
-    1969 => 'stabbings',
-    1970 => 'expiry',
-    1971 => 'safecracker',
-    1972 => 'frisked',
-    1973 => 'groomer',
-    1974 => 'groomers',
-    1975 => 'borstal',
-    1976 => 'borstals',
-    1977 => 'glasshouse',
-    1978 => 'glasshouses',
-    1979 => 'taser',
-    1980 => 'tasers',
-    1981 => 'garrotte',
-    1982 => 'garrottes',
-    1983 => 'pickpocketing',
-    1984 => 'affray',
-    1985 => 'affrays',
-    1986 => 'cybercrime',
-    1987 => 'cybercrimes',
-    1988 => 'regicide',
-    1989 => 'regicides',
-    1990 => 'infanticide',
-    1991 => 'infanticides',
-    1992 => 'patricide',
-    1993 => 'patricides',
-    1994 => 'matricide',
-    1995 => 'matricides',
-    1996 => 'fratricide',
-    1997 => 'fratricides',
-    1998 => 'scrumping',
-    1999 => 'vigilantism',
-    2000 => 'gunrunning',
-    2001 => 'upskirting',
-    2002 => 'dognapping',
-    2003 => 'cyberstalking',
-    2004 => 'housebreaking',
-    2005 => 'flytipping',
-    2006 => 'phishing',
-    2007 => 'safecracking',
-    2008 => 'voyeurism',
-    2009 => 'filicide',
-    2010 => 'filicides',
-    2011 => 'parricide',
-    2012 => 'parricides',
-    2013 => 'misappropriation',
-    2014 => 'misappropriations',
-    2015 => 'falsification',
-    2016 => 'falsifications',
-    2017 => 'truancy',
-    2018 => 'truancies',
-    2019 => 'incitement',
-    2020 => 'incitements',
-    2021 => 'privateer',
-    2022 => 'privateers',
-    2023 => 'annexes',
-    2024 => 'appendixes',
-    2025 => 'assessors',
-    2026 => 'asylums',
-    2027 => 'bobbies',
-    2028 => 'bombes',
-    2029 => 'brigs',
-    2030 => 'chancellors',
-    2031 => 'condoes',
-    2032 => 'condominiums',
-    2033 => 'coroners',
-    2034 => 'counsels',
-    2035 => 'courthouses',
-    2036 => 'courtrooms',
-    2037 => 'dabs',
-    2038 => 'fiddles',
-    2039 => 'forgers',
-    2040 => 'gaolers',
-    2041 => 'gavels',
-    2042 => 'godfathers',
-    2043 => 'homesteads',
-    2044 => 'infantes',
-    2045 => 'jailers',
-    2046 => 'jailhouses',
-    2047 => 'landladies',
-    2048 => 'manors',
-    2049 => 'morgues',
-    2050 => 'mortuaries',
-    2051 => 'nightsticks',
-    2052 => 'notaries',
-    2053 => 'paralegals',
-    2054 => 'penitentiaries',
-    2055 => 'porridges',
-    2056 => 'registrars',
-    2057 => 'roundhouses',
-    2058 => 'sleuths',
-    2059 => 'stenographers',
-    2060 => 'superintendents',
-    2061 => 'truncheons',
-    2062 => 'warders',
-    2063 => 'abductors',
-    2064 => 'abetter',
-    2065 => 'abetters',
-    2066 => 'abettor',
-    2067 => 'abettors',
-    2068 => 'abh',
-    2069 => 'abinitio',
-    2070 => 'absconder',
-    2071 => 'absconders',
-    2072 => 'absconding',
-    2073 => 'abstracts',
-    2074 => 'acquits',
-    2075 => 'acquittals',
-    2076 => 'actusreus',
-    2077 => 'addenda',
-    2078 => 'addendums',
-    2079 => 'adhoc',
-    2080 => 'adjournments',
-    2081 => 'adjourns',
-    2082 => 'adjudication',
-    2083 => 'adjudications',
-    2084 => 'adjudicator',
-    2085 => 'adjudicators',
-    2086 => 'administratrices',
-    2087 => 'administratrix',
-    2088 => 'administratrixes',
-    2089 => 'admissibility',
-    2090 => 'admonishment',
-    2091 => 'admonishments',
-    2092 => 'adversepossession',
-    2093 => 'affiant',
-    2094 => 'affiants',
-    2095 => 'affirmations',
-    2096 => 'allocution',
-    2097 => 'allocutions',
-    2098 => 'amercement',
-    2099 => 'amici',
-    2100 => 'amicus',
-    2101 => 'amicuscuriae',
-    2102 => 'amnesties',
-    2103 => 'amputations',
-    2104 => 'antitrust',
-    2105 => 'appealcourt',
-    2106 => 'appealcourts',
-    2107 => 'appellant',
-    2108 => 'appellants',
-    2109 => 'appellee',
-    2110 => 'appellees',
-    2111 => 'appendices',
-    2112 => 'approvedschool',
-    2113 => 'approvedschools',
-    2114 => 'appurtenance',
-    2115 => 'appurtenances',
-    2116 => 'arbitrator',
-    2117 => 'arbitrators',
-    2118 => 'armedrobber',
-    2119 => 'armedrobbers',
-    2120 => 'armistices',
-    2121 => 'armsdealer',
-    2122 => 'armsdealers',
-    2123 => 'arraign',
-    2124 => 'arraignments',
-    2125 => 'arraigns',
-    2126 => 'arrestwarrant',
-    2127 => 'arrestwarrants',
-    2128 => 'asbo',
-    2129 => 'asbos',
-    2130 => 'assignee',
-    2131 => 'assignees',
-    2132 => 'assignor',
-    2133 => 'assignors',
-    2134 => 'assize',
-    2135 => 'assizes',
-    2136 => 'assumpsit',
-    2137 => 'attainder',
-    2138 => 'attestation',
-    2139 => 'attestations',
-    2140 => 'attorneygeneral',
-    2141 => 'attorneygenerals',
-    2142 => 'attorneysgeneral',
-    2143 => 'autrefois',
-    2144 => 'axemurderer',
-    2145 => 'axemurderers',
-    2146 => 'axmurderer',
-    2147 => 'axmurderers',
-    2148 => 'baddie',
-    2149 => 'baddy',
-    2150 => 'badguy',
-    2151 => 'badguys',
-    2152 => 'bagsnatcher',
-    2153 => 'bagsnatchers',
-    2154 => 'bailbondsman',
-    2155 => 'bailbondsmen',
-    2156 => 'bailee',
-    2157 => 'bailees',
-    2158 => 'bailment',
-    2159 => 'bailments',
-    2160 => 'bailor',
-    2161 => 'bailors',
-    2162 => 'bankrobber',
-    2163 => 'bankrobbers',
-    2164 => 'bankrupts',
-    2165 => 'barratry',
-    2166 => 'batterer',
-    2167 => 'batterers',
-    2168 => 'beadle',
-    2169 => 'beadles',
-    2170 => 'beheadings',
-    2171 => 'bencher',
-    2172 => 'benchers',
-    2173 => 'benefitcheat',
-    2174 => 'benefitcheats',
-    2175 => 'bequeaths',
-    2176 => 'bequests',
-    2177 => 'bestiality',
-    2178 => 'bigamist',
-    2179 => 'bigamists',
-    2180 => 'billofsale',
-    2181 => 'billsofsale',
-    2182 => 'bindover',
-    2183 => 'birching',
-    2184 => 'blackmailers',
-    2185 => 'bloodspatter',
-    2186 => 'bodysnatcher',
-    2187 => 'bodysnatchers',
-    2188 => 'bodysnatching',
-    2189 => 'bonafide',
-    2190 => 'bonafides',
-    2191 => 'bondsmen',
-    2192 => 'boundover',
-    2193 => 'bountyhunter',
-    2194 => 'bountyhunters',
-    2195 => 'breachesofthepeace',
-    2196 => 'breachofthepeace',
-    2197 => 'breakingandentering',
-    2198 => 'bridewell',
-    2199 => 'bridewells',
-    2200 => 'bushranger',
-    2201 => 'bushrangers',
-    2202 => 'buyouts',
-    2203 => 'byelaw',
-    2204 => 'byelaws',
-    2205 => 'bylaw',
-    2206 => 'calaboose',
-    2207 => 'calabooses',
-    2208 => 'caning',
-    2209 => 'canings',
-    2210 => 'capias',
-    2211 => 'capitalpunishment',
-    2212 => 'capos',
-    2213 => 'cardsharp',
-    2214 => 'cardsharper',
-    2215 => 'cardsharpers',
-    2216 => 'cardsharps',
-    2217 => 'careercriminal',
-    2218 => 'careercriminals',
-    2219 => 'carjacker',
-    2220 => 'carjackers',
-    2221 => 'carjackings',
-    2222 => 'casefile',
-    2223 => 'casefiles',
-    2224 => 'caselaw',
-    2225 => 'cashiering',
-    2226 => 'catburglar',
-    2227 => 'catburglars',
-    2228 => 'cattlerustler',
-    2229 => 'cattlerustlers',
-    2230 => 'causeofdeath',
-    2231 => 'cautions',
-    2232 => 'caveatemptor',
-    2233 => 'caveats',
-    2234 => 'cctv',
-    2235 => 'ceaseanddesist',
-    2236 => 'cellblocks',
-    2237 => 'certiorari',
-    2238 => 'cestuiquetrust',
-    2239 => 'chaingang',
-    2240 => 'chaingangs',
-    2241 => 'chainofcustody',
-    2242 => 'chalkoutline',
-    2243 => 'chalkoutlines',
-    2244 => 'champerty',
-    2245 => 'chanceries',
-    2246 => 'chargesheet',
-    2247 => 'chargesheets',
-    2248 => 'chattel',
-    2249 => 'chattels',
-    2250 => 'chiefjustice',
-    2251 => 'chiefjustices',
-    2252 => 'childmolester',
-    2253 => 'childmolesters',
-    2254 => 'chokey',
-    2255 => 'cid',
-    2256 => 'civilrights',
-    2257 => 'claimant',
-    2258 => 'claimants',
-    2259 => 'codefendant',
-    2260 => 'codefendants',
-    2261 => 'codicil',
-    2262 => 'codicils',
-    2263 => 'coiner',
-    2264 => 'coiners',
-    2265 => 'coldcase',
-    2266 => 'coldcases',
-    2267 => 'commonhold',
-    2268 => 'commonholds',
-    2269 => 'communityorder',
-    2270 => 'communityorders',
-    2271 => 'communityservice',
-    2272 => 'commutation',
-    2273 => 'commutations',
-    2274 => 'complainants',
-    2275 => 'composites',
-    2276 => 'conartist',
-    2277 => 'conartists',
-    2278 => 'conciliation',
-    2279 => 'conciliator',
-    2280 => 'conciliators',
-    2281 => 'concordat',
-    2282 => 'concordats',
-    2283 => 'conditionaldischarge',
-    2284 => 'confidencetrickster',
-    2285 => 'confidencetricksters',
-    2286 => 'confiscation',
-    2287 => 'conman',
-    2288 => 'conmen',
-    2289 => 'consigliere',
-    2290 => 'consiglieri',
-    2291 => 'consignments',
-    2292 => 'consistories',
-    2293 => 'consistory',
-    2294 => 'constabularies',
-    2295 => 'constitutions',
-    2296 => 'continuances',
-    2297 => 'contractkiller',
-    2298 => 'contractkillers',
-    2299 => 'conveyancer',
-    2300 => 'conveyancers',
-    2301 => 'conveyances',
-    2302 => 'conveyancing',
-    2303 => 'copycatkiller',
-    2304 => 'copycatkillers',
-    2305 => 'copycats',
-    2306 => 'copyhold',
-    2307 => 'copyholds',
-    2308 => 'copyrights',
-    2309 => 'corespondent',
-    2310 => 'corespondents',
-    2311 => 'coronerscourt',
-    2312 => 'coronerscourts',
-    2313 => 'corporalpunishment',
-    2314 => 'corpusdelicti',
-    2315 => 'corsair',
-    2316 => 'corsairs',
-    2317 => 'counterclaim',
-    2318 => 'counterclaims',
-    2319 => 'counterfeiters',
-    2320 => 'counteroffer',
-    2321 => 'counteroffers',
-    2322 => 'counterparties',
-    2323 => 'counterparty',
-    2324 => 'countycourt',
-    2325 => 'countycourts',
-    2326 => 'courtmartial',
-    2327 => 'courtofappeal',
-    2328 => 'courtorder',
-    2329 => 'courtorders',
-    2330 => 'courtreporter',
-    2331 => 'courtreporters',
-    2332 => 'courtsmartial',
-    2333 => 'covenants',
-    2334 => 'cracksman',
-    2335 => 'cracksmen',
-    2336 => 'criers',
-    2337 => 'crimescene',
-    2338 => 'crimescenes',
-    2339 => 'criminaldamage',
-    2340 => 'crossclaim',
-    2341 => 'crossclaims',
-    2342 => 'crossexamination',
-    2343 => 'crossexaminations',
-    2344 => 'crossexamine',
-    2345 => 'crossexamined',
-    2346 => 'crossexamines',
-    2347 => 'crowncourt',
-    2348 => 'crowncourts',
-    2349 => 'crownprosecutor',
-    2350 => 'crownprosecutors',
-    2351 => 'crucifixions',
-    2352 => 'csi',
-    2353 => 'curbcrawling',
-    2354 => 'curfews',
-    2355 => 'curtilage',
-    2356 => 'curtilages',
-    2357 => 'custodialsentence',
-    2358 => 'custodialsentences',
-    2359 => 'custodysergeant',
-    2360 => 'custodysergeants',
-    2361 => 'cutpurse',
-    2362 => 'cutpurses',
-    2363 => 'cybercriminal',
-    2364 => 'cybercriminals',
-    2365 => 'cyberlaw',
-    2366 => 'cyberstalker',
-    2367 => 'cyberstalkers',
-    2368 => 'cypres',
-    2369 => 'dangerousdriving',
-    2370 => 'dataprotection',
-    2371 => 'deathpenalty',
-    2372 => 'deathrow',
-    2373 => 'debenture',
-    2374 => 'debentures',
-    2375 => 'decedents',
-    2376 => 'decimation',
-    2377 => 'declarant',
-    2378 => 'declarants',
-    2379 => 'decreenisi',
-    2380 => 'deedpoll',
-    2381 => 'deedpolls',
-    2382 => 'defacto',
-    2383 => 'defalcation',
-    2384 => 'defaulter',
-    2385 => 'defaulters',
-    2386 => 'dejure',
-    2387 => 'deliberated',
-    2388 => 'deliberates',
-    2389 => 'delict',
-    2390 => 'delicts',
-    2391 => 'demesne',
-    2392 => 'demesnes',
-    2393 => 'demurrer',
-    2394 => 'demurrers',
-    2395 => 'deponent',
-    2396 => 'deponents',
-    2397 => 'deportations',
-    2398 => 'desperadoes',
-    2399 => 'desperados',
-    2400 => 'detains',
-    2401 => 'detentioncenter',
-    2402 => 'detentioncenters',
-    2403 => 'detentioncentre',
-    2404 => 'detentioncentres',
-    2405 => 'detentions',
-    2406 => 'deterrence',
-    2407 => 'detinue',
-    2408 => 'devisee',
-    2409 => 'devisees',
-    2410 => 'devises',
-    2411 => 'dicta',
-    2412 => 'dictum',
-    2413 => 'dilapidations',
-    2414 => 'disbarment',
-    2415 => 'disclaimer',
-    2416 => 'disclaimers',
-    2417 => 'discontinuance',
-    2418 => 'discontinuances',
-    2419 => 'dismissals',
-    2420 => 'disqualification',
-    2421 => 'disqualifications',
-    2422 => 'distraint',
-    2423 => 'distraints',
-    2424 => 'districtattorney',
-    2425 => 'districtattorneys',
-    2426 => 'dna',
-    2427 => 'dockets',
-    2428 => 'dognapper',
-    2429 => 'dognappers',
-    2430 => 'doliincapax',
-    2431 => 'dolus',
-    2432 => 'domesticabuse',
-    2433 => 'domesticviolence',
-    2434 => 'donee',
-    2435 => 'donees',
-    2436 => 'dossiers',
-    2437 => 'dower',
-    2438 => 'dowers',
-    2439 => 'dowries',
-    2440 => 'draftdodger',
-    2441 => 'draftdodgers',
-    2442 => 'draftsman',
-    2443 => 'draftsmen',
-    2444 => 'dragnets',
-    2445 => 'drinkdriver',
-    2446 => 'drinkdrivers',
-    2447 => 'drinkdriving',
-    2448 => 'driveby',
-    2449 => 'drivebys',
-    2450 => 'drugbaron',
-    2451 => 'drugbarons',
-    2452 => 'drugdealer',
-    2453 => 'drugdealers',
-    2454 => 'druglord',
-    2455 => 'druglords',
-    2456 => 'drugmule',
-    2457 => 'drugmules',
-    2458 => 'drugsmuggler',
-    2459 => 'drugsmugglers',
-    2460 => 'drugtrafficker',
-    2461 => 'drugtraffickers',
-    2462 => 'drunkdriver',
-    2463 => 'drunkdrivers',
-    2464 => 'drunkdriving',
-    2465 => 'duckingstool',
-    2466 => 'duckingstools',
-    2467 => 'dwi',
-    2468 => 'easement',
-    2469 => 'easements',
-    2470 => 'edicts',
-    2471 => 'efit',
-    2472 => 'efits',
-    2473 => 'ejectment',
-    2474 => 'ejectments',
-    2475 => 'electricchair',
-    2476 => 'electricchairs',
-    2477 => 'embezzlers',
-    2478 => 'embracery',
-    2479 => 'empanel',
-    2480 => 'empaneled',
-    2481 => 'empanelled',
-    2482 => 'empanels',
-    2483 => 'emptor',
-    2484 => 'encroachment',
-    2485 => 'encroachments',
-    2486 => 'encumbrance',
-    2487 => 'encumbrances',
-    2488 => 'enforceable',
-    2489 => 'enfranchisement',
-    2490 => 'escapedconvict',
-    2491 => 'escapedconvicts',
-    2492 => 'escheat',
-    2493 => 'escheats',
-    2494 => 'escrows',
-    2495 => 'estateagent',
-    2496 => 'estateagents',
-    2497 => 'estoppel',
-    2498 => 'etal',
-    2499 => 'evictions',
-    2500 => 'evidencebag',
-    2501 => 'evidencebags',
-    2502 => 'evildoer',
-    2503 => 'exclusionclause',
-    2504 => 'exclusionclauses',
-    2505 => 'excon',
-    2506 => 'excons',
-    2507 => 'executors',
-    2508 => 'executory',
-    2509 => 'executrices',
-    2510 => 'executrix',
-    2511 => 'executrixes',
-    2512 => 'exgratia',
-    2513 => 'exoneration',
-    2514 => 'exonerations',
-    2515 => 'exparte',
-    2516 => 'expostfacto',
-    2517 => 'extortionist',
-    2518 => 'extortionists',
-    2519 => 'eyres',
-    2520 => 'familycourt',
-    2521 => 'familycourts',
-    2522 => 'faredodger',
-    2523 => 'faredodgers',
-    2524 => 'feesimple',
-    2525 => 'feetail',
-    2526 => 'feme',
-    2527 => 'fiats',
-    2528 => 'fiduciaries',
-    2529 => 'fiduciary',
-    2530 => 'fingerprinting',
-    2531 => 'firebombing',
-    2532 => 'firebombings',
-    2533 => 'firebug',
-    2534 => 'firebugs',
-    2535 => 'fireraiser',
-    2536 => 'fireraisers',
-    2537 => 'fireraising',
-    2538 => 'firingsquad',
-    2539 => 'firingsquads',
-    2540 => 'fiscals',
-    2541 => 'flashers',
-    2542 => 'floggings',
-    2543 => 'flytipper',
-    2544 => 'flytippers',
-    2545 => 'footpad',
-    2546 => 'footpads',
-    2547 => 'forcemajeure',
-    2548 => 'foreclosures',
-    2549 => 'foremen',
-    2550 => 'forewoman',
-    2551 => 'forewomen',
-    2552 => 'forfeitures',
-    2553 => 'fraudster',
-    2554 => 'fraudsters',
-    2555 => 'freebooter',
-    2556 => 'freebooters',
-    2557 => 'freehold',
-    2558 => 'freeholder',
-    2559 => 'freeholders',
-    2560 => 'freeholds',
-    2561 => 'frisks',
-    2562 => 'ganglandboss',
-    2563 => 'ganglandbosses',
-    2564 => 'gangmember',
-    2565 => 'gangmembers',
-    2566 => 'gangstersmoll',
-    2567 => 'gangstersmolls',
-    2568 => 'gaolbird',
-    2569 => 'gaolbirds',
-    2570 => 'garnishee',
-    2571 => 'garnishees',
-    2572 => 'garnishment',
-    2573 => 'garotte',
-    2574 => 'garottes',
-    2575 => 'garrote',
-    2576 => 'garrotes',
-    2577 => 'gazump',
-    2578 => 'gazumped',
-    2579 => 'gazumping',
-    2580 => 'gazumps',
-    2581 => 'gazunder',
-    2582 => 'gazundered',
-    2583 => 'gazundering',
-    2584 => 'gazunders',
-    2585 => 'gbh',
-    2586 => 'getawaydriver',
-    2587 => 'getawaydrivers',
-    2588 => 'gibbet',
-    2589 => 'gibbets',
-    2590 => 'glassing',
-    2591 => 'glassings',
-    2592 => 'grantee',
-    2593 => 'grantees',
-    2594 => 'grantor',
-    2595 => 'grantors',
-    2596 => 'graverobber',
-    2597 => 'graverobbers',
-    2598 => 'graverobbing',
-    2599 => 'greenpaper',
-    2600 => 'greenpapers',
-    2601 => 'grifters',
-    2602 => 'groundrent',
-    2603 => 'groundrents',
-    2604 => 'guaranties',
-    2605 => 'guarantors',
-    2606 => 'guaranty',
-    2607 => 'guillotines',
-    2608 => 'gulags',
-    2609 => 'gumshoes',
-    2610 => 'gunrunner',
-    2611 => 'gunrunners',
-    2612 => 'gunshotresidue',
-    2613 => 'habeas',
-    2614 => 'habeascorpus',
-    2615 => 'hangmen',
-    2616 => 'hardlabor',
-    2617 => 'hardlabour',
-    2618 => 'hatecrime',
-    2619 => 'hatecrimes',
-    2620 => 'headsman',
-    2621 => 'headsmen',
-    2622 => 'healthcare',
-    2623 => 'heiresses',
-    2624 => 'hereditament',
-    2625 => 'hereditaments',
-    2626 => 'heresies',
-    2627 => 'highcourt',
-    2628 => 'highcourts',
-    2629 => 'highwaymen',
-    2630 => 'hijackings',
-    2631 => 'hiredgun',
-    2632 => 'hiredguns',
-    2633 => 'hirepurchase',
-    2634 => 'hitandrun',
-    2635 => 'hitandrundriver',
-    2636 => 'hitandrundrivers',
-    2637 => 'hitandruns',
-    2638 => 'hitman',
-    2639 => 'hitmen',
-    2640 => 'holdingcell',
-    2641 => 'holdingcells',
-    2642 => 'holdups',
-    2643 => 'honeytrap',
-    2644 => 'honeytraps',
-    2645 => 'hoosegow',
-    2646 => 'hoosegows',
-    2647 => 'horsethief',
-    2648 => 'horsethieves',
-    2649 => 'hostagetaking',
-    2650 => 'housearrest',
-    2651 => 'housebreaker',
-    2652 => 'housebreakers',
-    2653 => 'humanrights',
-    2654 => 'hungjuries',
-    2655 => 'hungjury',
-    2656 => 'hustles',
-    2657 => 'identikit',
-    2658 => 'identikits',
-    2659 => 'identityfraud',
-    2660 => 'identityparade',
-    2661 => 'identityparades',
-    2662 => 'identitytheft',
-    2663 => 'identitythief',
-    2664 => 'identitythieves',
-    2665 => 'illegality',
-    2666 => 'impalement',
-    2667 => 'impanel',
-    2668 => 'impaneled',
-    2669 => 'impanelled',
-    2670 => 'impanels',
-    2671 => 'impliedterm',
-    2672 => 'impliedterms',
-    2673 => 'inabsentia',
-    2674 => 'incamera',
-    2675 => 'incest',
-    2676 => 'incorporation',
-    2677 => 'incumbrance',
-    2678 => 'incumbrances',
-    2679 => 'indemnified',
-    2680 => 'indemnifies',
-    2681 => 'indemnify',
-    2682 => 'indemnities',
-    2683 => 'indenture',
-    2684 => 'indentures',
-    2685 => 'indicts',
-    2686 => 'infringements',
-    2687 => 'injunctions',
-    2688 => 'injuria',
-    2689 => 'inlocoparentis',
-    2690 => 'inpersonam',
-    2691 => 'inquests',
-    2692 => 'inquisitions',
-    2693 => 'inrem',
-    2694 => 'insiderdealing',
-    2695 => 'insidertrader',
-    2696 => 'insidertraders',
-    2697 => 'insidertrading',
-    2698 => 'insolvency',
-    2699 => 'insolvent',
-    2700 => 'intellectualproperty',
-    2701 => 'interalia',
-    2702 => 'internee',
-    2703 => 'internees',
-    2704 => 'interrogatories',
-    2705 => 'interrogatory',
-    2706 => 'intervener',
-    2707 => 'interveners',
-    2708 => 'intervenor',
-    2709 => 'intervenors',
-    2710 => 'interviewroom',
-    2711 => 'interviewrooms',
-    2712 => 'intervivos',
-    2713 => 'intestacy',
-    2714 => 'intestate',
-    2715 => 'intravires',
-    2716 => 'iou',
-    2717 => 'ious',
-    2718 => 'jailbirds',
-    2719 => 'jailbreaks',
-    2720 => 'jailor',
-    2721 => 'jailors',
-    2722 => 'jewelthief',
-    2723 => 'jewelthieves',
-    2724 => 'joinder',
-    2725 => 'joinders',
-    2726 => 'jointure',
-    2727 => 'jointures',
-    2728 => 'jointventure',
-    2729 => 'jointventures',
-    2730 => 'joyrider',
-    2731 => 'joyriders',
-    2732 => 'judgeadvocate',
-    2733 => 'judgeadvocates',
-    2734 => 'judiciaries',
-    2735 => 'jurisconsult',
-    2736 => 'jurisconsults',
-    2737 => 'jurisdictions',
-    2738 => 'jurist',
-    2739 => 'jurists',
-    2740 => 'jurybox',
-    2741 => 'juryboxes',
-    2742 => 'juryman',
-    2743 => 'jurymen',
-    2744 => 'juryroom',
-    2745 => 'juryrooms',
-    2746 => 'jurytrial',
-    2747 => 'jurytrials',
-    2748 => 'jurywoman',
-    2749 => 'jurywomen',
-    2750 => 'justiciar',
-    2751 => 'justiciars',
-    2752 => 'juveniledelinquent',
-    2753 => 'juveniledelinquents',
-    2754 => 'kangaroocourt',
-    2755 => 'kangaroocourts',
-    2756 => 'keelhauling',
-    2757 => 'kerbcrawling',
-    2758 => 'kidnappings',
-    2759 => 'kingpins',
-    2760 => 'klepto',
-    2761 => 'kleptomaniacs',
-    2762 => 'kleptos',
-    2763 => 'kneecapping',
-    2764 => 'kneecappings',
-    2765 => 'knifeman',
-    2766 => 'knifemen',
-    2767 => 'laches',
-    2768 => 'lags',
-    2769 => 'landholder',
-    2770 => 'landholders',
-    2771 => 'landregistry',
-    2772 => 'lashings',
-    2773 => 'launderer',
-    2774 => 'launderers',
-    2775 => 'lawbreaker',
-    2776 => 'lawbreakers',
-    2777 => 'lawclerk',
-    2778 => 'lawclerks',
-    2779 => 'lawcourt',
-    2780 => 'lawcourts',
-    2781 => 'lawfirm',
-    2782 => 'lawfirms',
-    2783 => 'lawgiver',
-    2784 => 'lawgivers',
-    2785 => 'lawlord',
-    2786 => 'lawlords',
-    2787 => 'lawmaker',
-    2788 => 'leadingquestion',
-    2789 => 'leadingquestions',
-    2790 => 'leasehold',
-    2791 => 'leaseholder',
-    2792 => 'leaseholders',
-    2793 => 'leaseholds',
-    2794 => 'leet',
-    2795 => 'leets',
-    2796 => 'legalexecutive',
-    2797 => 'legalexecutives',
-    2798 => 'legatee',
-    2799 => 'legatees',
-    2800 => 'legislator',
-    2801 => 'legislators',
-    2802 => 'legislatures',
-    2803 => 'lesemajeste',
-    2804 => 'lesemajesty',
-    2805 => 'lessee',
-    2806 => 'lessees',
-    2807 => 'lessor',
-    2808 => 'lessors',
-    2809 => 'lethalinjection',
-    2810 => 'lethalinjections',
-    2811 => 'licensee',
-    2812 => 'licensees',
-    2813 => 'licensor',
-    2814 => 'licensors',
-    2815 => 'liedetector',
-    2816 => 'liedetectors',
-    2817 => 'liens',
-    2818 => 'lifers',
-    2819 => 'lifesentence',
-    2820 => 'lifesentences',
-    2821 => 'lineups',
-    2822 => 'liquidateddamages',
-    2823 => 'liquidator',
-    2824 => 'liquidators',
-    2825 => 'listedbuilding',
-    2826 => 'listedbuildings',
-    2827 => 'litigant',
-    2828 => 'litigants',
-    2829 => 'litigate',
-    2830 => 'litigated',
-    2831 => 'litigates',
-    2832 => 'livingwill',
-    2833 => 'livingwills',
-    2834 => 'llp',
-    2835 => 'llps',
-    2836 => 'loanshark',
-    2837 => 'loansharking',
-    2838 => 'loansharks',
-    2839 => 'lockups',
-    2840 => 'looter',
-    2841 => 'lordchancellor',
-    2842 => 'lordchancellors',
-    2843 => 'lowlives',
-    2844 => 'luminol',
-    2845 => 'lynchings',
-    2846 => 'madams',
-    2847 => 'mademan',
-    2848 => 'mademen',
-    2849 => 'mafiosi',
-    2850 => 'mafiosos',
-    2851 => 'magistracies',
-    2852 => 'magistracy',
-    2853 => 'magistratescourt',
-    2854 => 'magistratescourts',
-    2855 => 'maiming',
-    2856 => 'malefactor',
-    2857 => 'malefactors',
-    2858 => 'mandamus',
-    2859 => 'mandates',
-    2860 => 'manhunts',
-    2861 => 'massmurderer',
-    2862 => 'massmurderers',
-    2863 => 'masterminds',
-    2864 => 'mediators',
-    2865 => 'memoranda',
-    2866 => 'memorandums',
-    2867 => 'menaces',
-    2868 => 'mensrea',
-    2869 => 'mentalhealth',
-    2870 => 'messuage',
-    2871 => 'messuages',
-    2872 => 'mirandarights',
-    2873 => 'misfeasance',
-    2874 => 'misprision',
-    2875 => 'misrepresentation',
-    2876 => 'misrepresentations',
-    2877 => 'missingperson',
-    2878 => 'missingpersons',
-    2879 => 'mistrials',
-    2880 => 'mittimus',
-    2881 => 'modusoperandi',
-    2882 => 'molls',
-    2883 => 'moneylaunderer',
-    2884 => 'moneylaunderers',
-    2885 => 'moneylaundering',
-    2886 => 'monopolies',
-    2887 => 'moonshiner',
-    2888 => 'moonshiners',
-    2889 => 'moonshining',
-    2890 => 'moots',
-    2891 => 'mortgagee',
-    2892 => 'mortgagees',
-    2893 => 'mortgagor',
-    2894 => 'mortgagors',
-    2895 => 'mortmain',
-    2896 => 'muggings',
-    2897 => 'mugshot',
-    2898 => 'mugshots',
-    2899 => 'murderesses',
-    2900 => 'murderweapon',
-    2901 => 'murderweapons',
-    2902 => 'mutineer',
-    2903 => 'mutineers',
-    2904 => 'mutinies',
-    2905 => 'nark',
-    2906 => 'narks',
-    2907 => 'nda',
-    2908 => 'ndas',
-    2909 => 'necrophilia',
-    2910 => 'negativeequity',
-    2911 => 'nextofkin',
-    2912 => 'nisi',
-    2913 => 'nolleprosequi',
-    2914 => 'nolo',
-    2915 => 'nolocontendere',
-    2916 => 'noncompete',
-    2917 => 'nondisclosure',
-    2918 => 'nonfeasance',
-    2919 => 'nonsuit',
-    2920 => 'nonsuits',
-    2921 => 'notguilty',
-    2922 => 'noticetoquit',
-    2923 => 'novation',
-    2924 => 'nuisances',
-    2925 => 'obiter',
-    2926 => 'obiterdicta',
-    2927 => 'obiterdictum',
-    2928 => 'obligee',
-    2929 => 'obligees',
-    2930 => 'obligor',
-    2931 => 'obligors',
-    2932 => 'occupier',
-    2933 => 'occupiers',
-    2934 => 'offeree',
-    2935 => 'offerees',
-    2936 => 'offeror',
-    2937 => 'offerors',
-    2938 => 'oldlag',
-    2939 => 'oldlags',
-    2940 => 'ombudsman',
-    2941 => 'ombudsmen',
-    2942 => 'openprison',
-    2943 => 'openprisons',
-    2944 => 'ordinances',
-    2945 => 'ostracism',
-    2946 => 'outlawry',
-    2947 => 'overrules',
-    2948 => 'overturns',
-    2949 => 'oyez',
-    2950 => 'pacts',
-    2951 => 'paedophile',
-    2952 => 'paedophiles',
-    2953 => 'panopticon',
-    2954 => 'panopticons',
-    2955 => 'parliaments',
-    2956 => 'parol',
-    2957 => 'paroleofficer',
-    2958 => 'paroleofficers',
-    2959 => 'partitions',
-    2960 => 'partnerincrime',
-    2961 => 'partnersincrime',
-    2962 => 'passingoff',
-    2963 => 'patrolcar',
-    2964 => 'patrolcars',
-    2965 => 'peculation',
-    2966 => 'pedophile',
-    2967 => 'pedophiles',
-    2968 => 'peepingtom',
-    2969 => 'peepingtoms',
-    2970 => 'penaltypoints',
-    2971 => 'peoplesmuggler',
-    2972 => 'peoplesmugglers',
-    2973 => 'peopletrafficker',
-    2974 => 'peopletraffickers',
-    2975 => 'perjurer',
-    2976 => 'perjurers',
-    2977 => 'perp',
-    2978 => 'perps',
-    2979 => 'perse',
-    2980 => 'personalinjury',
-    2981 => 'personanongrata',
-    2982 => 'pervertingthecourseofjustice',
-    2983 => 'peterman',
-    2984 => 'petermen',
-    2985 => 'petitioners',
-    2986 => 'phisher',
-    2987 => 'phishers',
-    2988 => 'phonetap',
-    2989 => 'phonetaps',
-    2990 => 'photofit',
-    2991 => 'photofits',
-    2992 => 'pilferer',
-    2993 => 'pilferers',
-    2994 => 'pillories',
-    2995 => 'pillory',
-    2996 => 'planningpermission',
-    2997 => 'plc',
-    2998 => 'plcs',
-    2999 => 'pleabargain',
-    3000 => 'pleabargains',
-    3001 => 'pleadings',
-    3002 => 'plunderer',
-    3003 => 'plunderers',
-    3004 => 'poisoners',
-    3005 => 'poisonings',
-    3006 => 'policecar',
-    3007 => 'policecars',
-    3008 => 'policestation',
-    3009 => 'policestations',
-    3010 => 'policewomen',
-    3011 => 'polygraphs',
-    3012 => 'postmortems',
-    3013 => 'powerofattorney',
-    3014 => 'powersofattorney',
-    3015 => 'prenup',
-    3016 => 'prenups',
-    3017 => 'pricefixing',
-    3018 => 'primafacie',
-    3019 => 'primogeniture',
-    3020 => 'prisoncamp',
-    3021 => 'prisoncamps',
-    3022 => 'privateeye',
-    3023 => 'privateeyes',
-    3024 => 'privateinvestigator',
-    3025 => 'privateinvestigators',
-    3026 => 'privity',
-    3027 => 'probationer',
-    3028 => 'probationers',
-    3029 => 'probationofficer',
-    3030 => 'probationofficers',
-    3031 => 'probono',
-    3032 => 'proclamations',
-    3033 => 'proctors',
-    3034 => 'procuratorfiscal',
-    3035 => 'procuratorfiscals',
-    3036 => 'procurators',
-    3037 => 'procuratorsfiscal',
-    3038 => 'procurer',
-    3039 => 'procurers',
-    3040 => 'profilers',
-    3041 => 'profitaprendre',
-    3042 => 'proforma',
-    3043 => 'promisee',
-    3044 => 'promisees',
-    3045 => 'promisor',
-    3046 => 'promisors',
-    3047 => 'promissorynote',
-    3048 => 'promissorynotes',
-    3049 => 'prorata',
-    3050 => 'prosecutes',
-    3051 => 'prosecutrices',
-    3052 => 'prosecutrix',
-    3053 => 'prosecutrixes',
-    3054 => 'prospectuses',
-    3055 => 'prothonotaries',
-    3056 => 'prothonotary',
-    3057 => 'proviso',
-    3058 => 'provisoes',
-    3059 => 'provisos',
-    3060 => 'prowlers',
-    3061 => 'proxies',
-    3062 => 'publicdefender',
-    3063 => 'publicdefenders',
-    3064 => 'puisne',
-    3065 => 'purchaser',
-    3066 => 'purchasers',
-    3067 => 'purloiner',
-    3068 => 'purloiners',
-    3069 => 'pursesnatcher',
-    3070 => 'pursesnatchers',
-    3071 => 'pursuer',
-    3072 => 'pyromaniacs',
-    3073 => 'quantummeruit',
-    3074 => 'quartering',
-    3075 => 'quashed',
-    3076 => 'quashes',
-    3077 => 'quasi',
-    3078 => 'quidproquo',
-    3079 => 'quitclaim',
-    3080 => 'quitclaims',
-    3081 => 'quorums',
-    3082 => 'racketeer',
-    3083 => 'racketeers',
-    3084 => 'ramraider',
-    3085 => 'ramraiders',
-    3086 => 'ramraiding',
-    3087 => 'ransoms',
-    3088 => 'rape',
-    3089 => 'rapes',
-    3090 => 'rapist',
-    3091 => 'rapists',
-    3092 => 'rapsheet',
-    3093 => 'rapsheets',
-    3094 => 'ratiodecidendi',
-    3095 => 'realestate',
-    3096 => 'rebuttals',
-    3097 => 'receivership',
-    3098 => 'recidivist',
-    3099 => 'recidivists',
-    3100 => 'recognisances',
-    3101 => 'recognizances',
-    3102 => 'rectification',
-    3103 => 'recusal',
-    3104 => 'recusals',
-    3105 => 'recused',
-    3106 => 'recuses',
-    3107 => 'redherring',
-    3108 => 'redherrings',
-    3109 => 'reexamination',
-    3110 => 'reexaminations',
-    3111 => 'reformatories',
-    3112 => 'registries',
-    3113 => 'rejoinder',
-    3114 => 'rejoinders',
-    3115 => 'remainderman',
-    3116 => 'remaindermen',
-    3117 => 'remainders',
-    3118 => 'remandhome',
-    3119 => 'remandhomes',
-    3120 => 'remands',
-    3121 => 'remortgage',
-    3122 => 'remortgaged',
-    3123 => 'remortgages',
-    3124 => 'reneged',
-    3125 => 'reneges',
-    3126 => 'renewals',
-    3127 => 'rentcharge',
-    3128 => 'rentcharges',
-    3129 => 'reoffender',
-    3130 => 'reoffenders',
-    3131 => 'reparation',
-    3132 => 'repeatoffender',
-    3133 => 'repeatoffenders',
-    3134 => 'replevin',
-    3135 => 'repossession',
-    3136 => 'repossessions',
-    3137 => 'reprieves',
-    3138 => 'reprimands',
-    3139 => 'repudiation',
-    3140 => 'rescinds',
-    3141 => 'rescission',
-    3142 => 'residuary',
-    3143 => 'resipsaloquitur',
-    3144 => 'resjudicata',
-    3145 => 'respondents',
-    3146 => 'restrainingorder',
-    3147 => 'restrainingorders',
-    3148 => 'restrictivecovenant',
-    3149 => 'restrictivecovenants',
-    3150 => 'resurrectionist',
-    3151 => 'resurrectionists',
-    3152 => 'retrials',
-    3153 => 'retried',
-    3154 => 'retries',
-    3155 => 'retry',
-    3156 => 'reversals',
-    3157 => 'reversion',
-    3158 => 'reversions',
-    3159 => 'revocation',
-    3160 => 'rightofway',
-    3161 => 'rightsofway',
-    3162 => 'ringleaders',
-    3163 => 'rioter',
-    3164 => 'rippers',
-    3165 => 'rulings',
-    3166 => 'rumrunner',
-    3167 => 'rumrunners',
-    3168 => 'rustler',
-    3169 => 'safebreaker',
-    3170 => 'safebreakers',
-    3171 => 'safecrackers',
-    3172 => 'safehouse',
-    3173 => 'safehouses',
-    3174 => 'scammer',
-    3175 => 'scammers',
-    3176 => 'screwsman',
-    3177 => 'screwsmen',
-    3178 => 'scrivener',
-    3179 => 'scriveners',
-    3180 => 'searchwarrant',
-    3181 => 'searchwarrants',
-    3182 => 'seisin',
-    3183 => 'serialkiller',
-    3184 => 'serialkillers',
-    3185 => 'seriatim',
-    3186 => 'serjeant',
-    3187 => 'serjeants',
-    3188 => 'servicecharge',
-    3189 => 'servicecharges',
-    3190 => 'setoff',
-    3191 => 'settlor',
-    3192 => 'settlors',
-    3193 => 'severability',
-    3194 => 'sexoffender',
-    3195 => 'sexoffenders',
-    3196 => 'sexpest',
-    3197 => 'sexpests',
-    3198 => 'sextortion',
-    3199 => 'shakedowns',
-    3200 => 'sharedownership',
-    3201 => 'sharia',
-    3202 => 'sheepstealer',
-    3203 => 'sheepstealers',
-    3204 => 'sheriffcourt',
-    3205 => 'sheriffcourts',
-    3206 => 'shoplifters',
-    3207 => 'signatories',
-    3208 => 'signatory',
-    3209 => 'sinedie',
-    3210 => 'skyjacker',
-    3211 => 'skyjackers',
-    3212 => 'skyjacking',
-    3213 => 'skyjackings',
-    3214 => 'slammers',
-    3215 => 'slashers',
-    3216 => 'slayings',
-    3217 => 'smallclaimscourt',
-    3218 => 'smallclaimscourts',
-    3219 => 'smokinggun',
-    3220 => 'smokingguns',
-    3221 => 'sneakthief',
-    3222 => 'sneakthieves',
-    3223 => 'soco',
-    3224 => 'socos',
-    3225 => 'sodomy',
-    3226 => 'soletrader',
-    3227 => 'soletraders',
-    3228 => 'solicitorgeneral',
-    3229 => 'solicitorgenerals',
-    3230 => 'solicitorsgeneral',
-    3231 => 'solitaryconfinement',
-    3232 => 'specificperformance',
-    3233 => 'speeder',
-    3234 => 'speeders',
-    3235 => 'spreekiller',
-    3236 => 'spreekillers',
-    3237 => 'squadcar',
-    3238 => 'squadcars',
-    3239 => 'stakeholder',
-    3240 => 'stakeholders',
-    3241 => 'stampduty',
-    3242 => 'starchamber',
-    3243 => 'staredecisis',
-    3244 => 'stationhouse',
-    3245 => 'stationhouses',
-    3246 => 'statusquo',
-    3247 => 'statutoryinstrument',
-    3248 => 'statutoryinstruments',
-    3249 => 'stickups',
-    3250 => 'stipendiaries',
-    3251 => 'stipendiary',
-    3252 => 'stockades',
-    3253 => 'stopandsearch',
-    3254 => 'stranglers',
-    3255 => 'streaker',
-    3256 => 'streakers',
-    3257 => 'subcontract',
-    3258 => 'subcontracted',
-    3259 => 'subcontracts',
-    3260 => 'subjudice',
-    3261 => 'sublease',
-    3262 => 'subleases',
-    3263 => 'sublets',
-    3264 => 'subletting',
-    3265 => 'subrogation',
-    3266 => 'subrosa',
-    3267 => 'suicidebomber',
-    3268 => 'suicidebombers',
-    3269 => 'suijuris',
-    3270 => 'summations',
-    3271 => 'summingsup',
-    3272 => 'summingup',
-    3273 => 'summonses',
-    3274 => 'supergrass',
-    3275 => 'supergrasses',
-    3276 => 'supermax',
-    3277 => 'supermaxes',
-    3278 => 'supremecourt',
-    3279 => 'supremecourts',
-    3280 => 'sureties',
-    3281 => 'suspendedsentence',
-    3282 => 'suspendedsentences',
-    3283 => 'swindles',
-    3284 => 'tagger',
-    3285 => 'taggers',
-    3286 => 'takeovers',
-    3287 => 'taxdodger',
-    3288 => 'taxdodgers',
-    3289 => 'taxevader',
-    3290 => 'taxevaders',
-    3291 => 'taxevasion',
-    3292 => 'telecoms',
-    3293 => 'tenancies',
-    3294 => 'tenancy',
-    3295 => 'tenancyagreement',
-    3296 => 'tenancyagreements',
-    3297 => 'tenures',
-    3298 => 'testaments',
-    3299 => 'testator',
-    3300 => 'testators',
-    3301 => 'testatrices',
-    3302 => 'testatrix',
-    3303 => 'timeofdeath',
-    3304 => 'timeshare',
-    3305 => 'timeshares',
-    3306 => 'tipoff',
-    3307 => 'tipoffs',
-    3308 => 'tipstaff',
-    3309 => 'tipstaffs',
-    3310 => 'tipstaves',
-    3311 => 'tolbooth',
-    3312 => 'tolbooths',
-    3313 => 'torts',
-    3314 => 'trademarks',
-    3315 => 'tradesecret',
-    3316 => 'tradesecrets',
-    3317 => 'transferee',
-    3318 => 'transferees',
-    3319 => 'transferor',
-    3320 => 'transferors',
-    3321 => 'tribunals',
-    3322 => 'tricksters',
-    3323 => 'trustdeed',
-    3324 => 'trustdeeds',
-    3325 => 'turnkey',
-    3326 => 'turnkeys',
-    3327 => 'twocking',
-    3328 => 'ultravires',
-    3329 => 'unconscionability',
-    3330 => 'undertakings',
-    3331 => 'undueinfluence',
-    3332 => 'unenforceable',
-    3333 => 'upholds',
-    3334 => 'usufruct',
-    3335 => 'usufructs',
-    3336 => 'venire',
-    3337 => 'vetoes',
-    3338 => 'videlicet',
-    3339 => 'viz',
-    3340 => 'voidable',
-    3341 => 'voirdire',
-    3342 => 'volenti',
-    3343 => 'voyeurs',
-    3344 => 'waivers',
-    3345 => 'walkingtheplank',
-    3346 => 'walktheplank',
-    3347 => 'warcrime',
-    3348 => 'warcrimes',
-    3349 => 'warcriminal',
-    3350 => 'warcriminals',
-    3351 => 'warrantcard',
-    3352 => 'warrantcards',
-    3353 => 'warranties',
-    3354 => 'wayleave',
-    3355 => 'wayleaves',
-    3356 => 'whistleblowers',
-    3357 => 'whitepaper',
-    3358 => 'whitepapers',
-    3359 => 'whodunit',
-    3360 => 'whodunits',
-    3361 => 'whodunnit',
-    3362 => 'whodunnits',
-    3363 => 'wifebeater',
-    3364 => 'wifebeaters',
-    3365 => 'wiseguy',
-    3366 => 'wiseguys',
-    3367 => 'witnessbox',
-    3368 => 'witnessboxes',
-    3369 => 'witnessstand',
-    3370 => 'witnessstands',
-    3371 => 'woundings',
-    3372 => 'writs',
-    3373 => 'wrongdoer',
-    3374 => 'wrongdoers',
-    3375 => 'yakuza',
-    3376 => 'yardie',
-    3377 => 'yardies',
-    3378 => 'yob',
-    3379 => 'yobbo',
-    3380 => 'yobboes',
-    3381 => 'yobbos',
-    3382 => 'yobs',
-    3383 => 'youngoffender',
-    3384 => 'youngoffenderinstitution',
-    3385 => 'youngoffenderinstitutions',
-    3386 => 'youngoffenders',
-    3387 => 'youngoffendersinstitution',
-    3388 => 'youthcourt',
-    3389 => 'youthcourts',
+    241 => 'quarter',
+    242 => 'article',
+    243 => 'accused',
+    244 => 'roman',
+    245 => 'title',
+    246 => 'punishment',
+    247 => 'flash',
+    248 => 'prisoners',
+    249 => 'rolling',
+    250 => 'cheating',
+    251 => 'warned',
+    252 => 'kills',
+    253 => 'laws',
+    254 => 'civil',
+    255 => 'assault',
+    256 => 'decisions',
+    257 => 'charity',
+    258 => 'kidnapped',
+    259 => 'wounded',
+    260 => 'partners',
+    261 => 'bars',
+    262 => 'conditions',
+    263 => 'term',
+    264 => 'offering',
+    265 => 'reported',
+    266 => 'commissioner',
+    267 => 'crimes',
+    268 => 'costs',
+    269 => 'bust',
+    270 => 'surrender',
+    271 => 'suits',
+    272 => 'tax',
+    273 => 'bills',
+    274 => 'grass',
+    275 => 'cheat',
+    276 => 'burns',
+    277 => 'bond',
+    278 => 'brand',
+    279 => 'torture',
+    280 => 'motion',
+    281 => 'murders',
+    282 => 'charged',
+    283 => 'begging',
+    284 => 'construction',
+    285 => 'confession',
+    286 => 'cells',
+    287 => 'argument',
+    288 => 'principal',
+    289 => 'surveillance',
+    290 => 'deputy',
+    291 => 'bug',
+    292 => 'proceed',
+    293 => 'landing',
+    294 => 'traitor',
+    295 => 'bail',
+    296 => 'sport',
+    297 => 'election',
+    298 => 'banks',
+    299 => 'timing',
+    300 => 'stones',
+    301 => 'actions',
+    302 => 'motive',
+    303 => 'dealer',
+    304 => 'defendant',
+    305 => 'wounds',
+    306 => 'busted',
+    307 => 'landed',
+    308 => 'judgment',
+    309 => 'ward',
+    310 => 'fence',
+    311 => 'policeman',
+    312 => 'lawyers',
+    313 => 'criminals',
+    314 => 'footage',
+    315 => 'patrol',
+    316 => 'signature',
+    317 => 'claims',
+    318 => 'companies',
+    319 => 'passport',
+    320 => 'homicide',
+    321 => 'holds',
+    322 => 'offense',
+    323 => 'hood',
+    324 => 'cheated',
+    325 => 'profile',
+    326 => 'minor',
+    327 => 'terrorist',
+    328 => 'invitation',
+    329 => 'gambling',
+    330 => 'procedure',
+    331 => 'session',
+    332 => 'stretch',
+    333 => 'commercial',
+    334 => 'corpse',
+    335 => 'acts',
+    336 => 'judges',
+    337 => 'shared',
+    338 => 'bombs',
+    339 => 'chamber',
+    340 => 'testify',
+    341 => 'alibi',
+    342 => 'suspects',
+    343 => 'waters',
+    344 => 'thieves',
+    345 => 'objection',
+    346 => 'brief',
+    347 => 'stabbed',
+    348 => 'sharing',
+    349 => 'abuse',
+    350 => 'possession',
+    351 => 'profit',
+    352 => 'hostage',
+    353 => 'appeal',
+    354 => 'testimony',
+    355 => 'commission',
+    356 => 'fraud',
+    357 => 'assignment',
+    358 => 'fingerprints',
+    359 => 'promises',
+    360 => 'battery',
+    361 => 'quarters',
+    362 => 'complaint',
+    363 => 'badge',
+    364 => 'labor',
+    365 => 'privacy',
+    366 => 'searched',
+    367 => 'booked',
+    368 => 'discovery',
+    369 => 'suspected',
+    370 => 'prosecutor',
+    371 => 'damaged',
+    372 => 'acted',
+    373 => 'undercover',
+    374 => 'entertainment',
+    375 => 'permit',
+    376 => 'con',
+    377 => 'kidnapping',
+    378 => 'marshal',
+    379 => 'registered',
+    380 => 'questioning',
+    381 => 'poisoned',
+    382 => 'tag',
+    383 => 'bugs',
+    384 => 'lands',
+    385 => 'conspiracy',
+    386 => 'guardian',
+    387 => 'fee',
+    388 => 'register',
+    389 => 'detectives',
+    390 => 'groom',
+    391 => 'masters',
+    392 => 'stations',
+    393 => 'stab',
+    394 => 'counsel',
+    395 => 'killers',
+    396 => 'deaths',
+    397 => 'oath',
+    398 => 'deposit',
+    399 => 'taxes',
+    400 => 'autopsy',
+    401 => 'terrorists',
+    402 => 'counselor',
+    403 => 'inn',
+    404 => 'reporting',
+    405 => 'theft',
+    406 => 'silk',
+    407 => 'bench',
+    408 => 'defence',
+    409 => 'penalty',
+    410 => 'collar',
+    411 => 'psycho',
+    412 => 'raid',
+    413 => 'corporate',
+    414 => 'claimed',
+    415 => 'gallery',
+    416 => 'certificate',
+    417 => 'martial',
+    418 => 'congress',
+    419 => 'handling',
+    420 => 'blackmail',
+    421 => 'deals',
+    422 => 'tender',
+    423 => 'warden',
+    424 => 'practicing',
+    425 => 'attempted',
+    426 => 'screwing',
+    427 => 'execution',
+    428 => 'clerk',
+    429 => 'parole',
+    430 => 'constable',
+    431 => 'rolls',
+    432 => 'protocol',
+    433 => 'verdict',
+    434 => 'swore',
+    435 => 'defending',
+    436 => 'convicted',
+    437 => 'shares',
+    438 => 'clues',
+    439 => 'hostages',
+    440 => 'receiving',
+    441 => 'tortured',
+    442 => 'associate',
+    443 => 'deed',
+    444 => 'pirate',
+    445 => 'hears',
+    446 => 'mole',
+    447 => 'prosecution',
+    448 => 'copper',
+    449 => 'heir',
+    450 => 'harbor',
+    451 => 'scheduled',
+    452 => 'rented',
+    453 => 'deceased',
+    454 => 'offers',
+    455 => 'hack',
+    456 => 'ransom',
+    457 => 'sworn',
+    458 => 'pervert',
+    459 => 'dock',
+    460 => 'administration',
+    461 => 'instrument',
+    462 => 'convention',
+    463 => 'versus',
+    464 => 'ruled',
+    465 => 'customs',
+    466 => 'rolled',
+    467 => 'begged',
+    468 => 'pirates',
+    469 => 'receipt',
+    470 => 'kidnap',
+    471 => 'chambers',
+    472 => 'complaints',
+    473 => 'villain',
+    474 => 'breach',
+    475 => 'lex',
+    476 => 'assassin',
+    477 => 'witnessed',
+    478 => 'legacy',
+    479 => 'riot',
+    480 => 'mines',
+    481 => 'morgue',
+    482 => 'welfare',
+    483 => 'settlement',
+    484 => 'shoots',
+    485 => 'statements',
+    486 => 'labour',
+    487 => 'murderers',
+    488 => 'questioned',
+    489 => 'landlord',
+    490 => 'distress',
+    491 => 'pimp',
+    492 => 'disorder',
+    493 => 'interrogation',
+    494 => 'poisoning',
+    495 => 'accuse',
+    496 => 'spying',
+    497 => 'parliament',
+    498 => 'plead',
+    499 => 'wig',
+    500 => 'spies',
+    501 => 'bombing',
+    502 => 'senate',
+    503 => 'gangster',
+    504 => 'promising',
+    505 => 'mug',
+    506 => 'sting',
+    507 => 'coroner',
+    508 => 'deeds',
+    509 => 'cooler',
+    510 => 'plea',
+    511 => 'investigator',
+    512 => 'custom',
+    513 => 'pension',
+    514 => 'cans',
+    515 => 'guaranteed',
+    516 => 'pledge',
+    517 => 'pressing',
+    518 => 'interviews',
+    519 => 'rogue',
+    520 => 'superintendent',
+    521 => 'corruption',
+    522 => 'forensics',
+    523 => 'housing',
+    524 => 'hanged',
+    525 => 'profits',
+    526 => 'accusing',
+    527 => 'hangs',
+    528 => 'instruments',
+    529 => 'sentenced',
+    530 => 'scam',
+    531 => 'precinct',
+    532 => 'assembly',
+    533 => 'romans',
+    534 => 'bonds',
+    535 => 'examination',
+    536 => 'batteries',
+    537 => 'tails',
+    538 => 'treason',
+    539 => 'stir',
+    540 => 'conviction',
+    541 => 'courtroom',
+    542 => 'donor',
+    543 => 'mortgage',
+    544 => 'ordering',
+    545 => 'detention',
+    546 => 'dealers',
+    547 => 'gown',
+    548 => 'contracts',
+    549 => 'trusting',
+    550 => 'consideration',
+    551 => 'bandits',
+    552 => 'constitution',
+    553 => 'regulations',
+    554 => 'accomplice',
+    555 => 'pressed',
+    556 => 'asylum',
+    557 => 'duel',
+    558 => 'handcuffs',
+    559 => 'hunch',
+    560 => 'lease',
+    561 => 'hulk',
+    562 => 'cane',
+    563 => 'directors',
+    564 => 'forensic',
+    565 => 'racket',
+    566 => 'rider',
+    567 => 'shipping',
+    568 => 'abused',
+    569 => 'sustained',
+    570 => 'arresting',
+    571 => 'stalking',
+    572 => 'articles',
+    573 => 'sniper',
+    574 => 'godfather',
+    575 => 'robe',
+    576 => 'exhibit',
+    577 => 'foreman',
+    578 => 'probation',
+    579 => 'pinch',
+    580 => 'bandit',
+    581 => 'corpses',
+    582 => 'banned',
+    583 => 'fees',
+    584 => 'associates',
+    585 => 'exposure',
+    586 => 'partnership',
+    587 => 'treaty',
+    588 => 'lawsuit',
+    589 => 'offence',
+    590 => 'courts',
+    591 => 'crook',
+    592 => 'policemen',
+    593 => 'inheritance',
+    594 => 'claiming',
+    595 => 'fugitive',
+    596 => 'boundaries',
+    597 => 'caution',
+    598 => 'obligation',
+    599 => 'associated',
+    600 => 'inherited',
+    601 => 'arguments',
+    602 => 'trials',
+    603 => 'properties',
+    604 => 'inquiry',
+    605 => 'murdering',
+    606 => 'interviewed',
+    607 => 'employment',
+    608 => 'mule',
+    609 => 'locals',
+    610 => 'premises',
+    611 => 'premisses',
+    612 => 'convict',
+    613 => 'elections',
+    614 => 'rebellion',
+    615 => 'hacked',
+    616 => 'mining',
+    617 => 'void',
+    618 => 'sabotage',
+    619 => 'bomber',
+    620 => 'ruling',
+    621 => 'assaulted',
+    622 => 'assassination',
+    623 => 'summoned',
+    624 => 'massacre',
+    625 => 'transportation',
+    626 => 'crooked',
+    627 => 'immigration',
+    628 => 'culprit',
+    629 => 'magistrate',
+    630 => 'attempts',
+    631 => 'felony',
+    632 => 'quantum',
+    633 => 'utter',
+    634 => 'discharge',
+    635 => 'exile',
+    636 => 'attempting',
+    637 => 'robbers',
+    638 => 'survey',
+    639 => 'skeleton',
+    640 => 'petition',
+    641 => 'traitors',
+    642 => 'summon',
+    643 => 'solitary',
+    644 => 'smuggling',
+    645 => 'chancellor',
+    646 => 'environmental',
+    647 => 'nuisance',
+    648 => 'terrorism',
+    649 => 'robber',
+    650 => 'sessions',
+    651 => 'slavery',
+    652 => 'harassment',
+    653 => 'licence',
+    654 => 'recorder',
+    655 => 'jurisdiction',
+    656 => 'contempt',
+    657 => 'speeding',
+    658 => 'hustle',
+    659 => 'inmates',
+    660 => 'stoned',
+    661 => 'bankrupt',
+    662 => 'lookout',
+    663 => 'steals',
+    664 => 'trusts',
+    665 => 'compensation',
+    666 => 'ban',
+    667 => 'footprints',
+    668 => 'pact',
+    669 => 'juvenile',
+    670 => 'briefing',
+    671 => 'informant',
+    672 => 'stalker',
+    673 => 'negotiations',
+    674 => 'accusations',
+    675 => 'strap',
+    676 => 'rustling',
+    677 => 'translator',
+    678 => 'passports',
+    679 => 'cartel',
+    680 => 'permitted',
+    681 => 'suspension',
+    682 => 'thugs',
+    683 => 'investigations',
+    684 => 'busting',
+    685 => 'admission',
+    686 => 'guarding',
+    687 => 'sentences',
+    688 => 'procedures',
+    689 => 'pupils',
+    690 => 'shipped',
+    691 => 'inherit',
+    692 => 'cuff',
+    693 => 'curfew',
+    694 => 'streak',
+    695 => 'condo',
+    696 => 'judgement',
+    697 => 'cuffs',
+    698 => 'torturing',
+    699 => 'gangsters',
+    700 => 'burglar',
+    701 => 'infant',
+    702 => 'prostitution',
+    703 => 'killings',
+    704 => 'courthouse',
+    705 => 'stocks',
+    706 => 'snitch',
+    707 => 'docks',
+    708 => 'bugging',
+    709 => 'testament',
+    710 => 'noticing',
+    711 => 'releasing',
+    712 => 'guarded',
+    713 => 'broker',
+    714 => 'seizure',
+    715 => 'thug',
+    716 => 'psychopath',
+    717 => 'bind',
+    718 => 'bundle',
+    719 => 'arrests',
+    720 => 'pupil',
+    721 => 'manor',
+    722 => 'contractor',
+    723 => 'partying',
+    724 => 'burglary',
+    725 => 'defended',
+    726 => 'villains',
+    727 => 'amendment',
+    728 => 'agencies',
+    729 => 'motives',
+    730 => 'stabbing',
+    731 => 'screws',
+    732 => 'trafficking',
+    733 => 'loot',
+    734 => 'counseling',
+    735 => 'practiced',
+    736 => 'stretched',
+    737 => 'frustration',
+    738 => 'deception',
+    739 => 'trespassing',
+    740 => 'practise',
+    741 => 'damages',
+    742 => 'advocate',
+    743 => 'inmate',
+    744 => 'harbour',
+    745 => 'declaration',
+    746 => 'testified',
+    747 => 'dungeon',
+    748 => 'royalty',
+    749 => 'collateral',
+    750 => 'banking',
+    751 => 'dowry',
+    752 => 'tenants',
+    753 => 'recess',
+    754 => 'investigators',
+    755 => 'cruelty',
+    756 => 'allegations',
+    757 => 'bombed',
+    758 => 'neglected',
+    759 => 'tenant',
+    760 => 'bailed',
+    761 => 'abduction',
+    762 => 'manslaughter',
+    763 => 'remedy',
+    764 => 'accusation',
+    765 => 'spaces',
+    766 => 'receipts',
+    767 => 'alias',
+    768 => 'eyewitness',
+    769 => 'kidnapper',
+    770 => 'kidnappers',
+    771 => 'fingerprint',
+    772 => 'signatures',
+    773 => 'possessions',
+    774 => 'commercials',
+    775 => 'solicitor',
+    776 => 'arson',
+    777 => 'receiver',
+    778 => 'assassins',
+    779 => 'squat',
+    780 => 'objections',
+    781 => 'lynch',
+    782 => 'policies',
+    783 => 'flashing',
+    784 => 'stationed',
+    785 => 'liability',
+    786 => 'blackmailing',
+    787 => 'hacker',
+    788 => 'sued',
+    789 => 'goons',
+    790 => 'charter',
+    791 => 'litter',
+    792 => 'stirring',
+    793 => 'heist',
+    794 => 'booking',
+    795 => 'interviewing',
+    796 => 'stretching',
+    797 => 'sustain',
+    798 => 'withdrawal',
+    799 => 'revenue',
+    800 => 'witchcraft',
+    801 => 'sporting',
+    802 => 'negotiation',
+    803 => 'fiddle',
+    804 => 'ripper',
+    805 => 'riders',
+    806 => 'hacking',
+    807 => 'adjourned',
+    808 => 'canned',
+    809 => 'ballistics',
+    810 => 'nicked',
+    811 => 'detained',
+    812 => 'prosecute',
+    813 => 'default',
+    814 => 'proceedings',
+    815 => 'transcript',
+    816 => 'appealing',
+    817 => 'imprisonment',
+    818 => 'deliberate',
+    819 => 'bombers',
+    820 => 'offender',
+    821 => 'crooks',
+    822 => 'acceptance',
+    823 => 'conditioning',
+    824 => 'invitations',
+    825 => 'counterfeit',
+    826 => 'surrendered',
+    827 => 'accessory',
+    828 => 'convictions',
+    829 => 'practices',
+    830 => 'menace',
+    831 => 'bonding',
+    832 => 'equality',
+    833 => 'riots',
+    834 => 'titles',
+    835 => 'patent',
+    836 => 'prisons',
+    837 => 'notices',
+    838 => 'goodwill',
+    839 => 'strapped',
+    840 => 'warrants',
+    841 => 'ownership',
+    842 => 'outlaw',
+    843 => 'robberies',
+    844 => 'pens',
+    845 => 'decree',
+    846 => 'attorneys',
+    847 => 'subpoena',
+    848 => 'renting',
+    849 => 'slay',
+    850 => 'tags',
+    851 => 'attacker',
+    852 => 'extortion',
+    853 => 'guardians',
+    854 => 'usher',
+    855 => 'swearing',
+    856 => 'guarantees',
+    857 => 'fiber',
+    858 => 'clink',
+    859 => 'bankruptcy',
+    860 => 'decoy',
+    861 => 'defender',
+    862 => 'noose',
+    863 => 'discoveries',
+    864 => 'offenders',
+    865 => 'obligations',
+    866 => 'graffiti',
+    867 => 'permits',
+    868 => 'boundary',
+    869 => 'clinking',
+    870 => 'executioner',
+    871 => 'limitations',
+    872 => 'clause',
+    873 => 'assignments',
+    874 => 'deposition',
+    875 => 'neglect',
+    876 => 'patrols',
+    877 => 'protocols',
+    878 => 'posse',
+    879 => 'mutiny',
+    880 => 'receives',
+    881 => 'porridge',
+    882 => 'gavel',
+    883 => 'indictment',
+    884 => 'gallows',
+    885 => 'landlady',
+    886 => 'consumer',
+    887 => 'merger',
+    888 => 'deposits',
+    889 => 'ratio',
+    890 => 'speeds',
+    891 => 'perpetrator',
+    892 => 'goon',
+    893 => 'raided',
+    894 => 'supplier',
+    895 => 'jug',
+    896 => 'defenses',
+    897 => 'fences',
+    898 => 'pinched',
+    899 => 'gunman',
+    900 => 'interpreter',
+    901 => 'regulation',
+    902 => 'uphold',
+    903 => 'confidentiality',
+    904 => 'overruled',
+    905 => 'skeletons',
+    906 => 'beak',
+    907 => 'proceeding',
+    908 => 'flashes',
+    909 => 'baton',
+    910 => 'administrator',
+    911 => 'appeals',
+    912 => 'lineup',
+    913 => 'obstruction',
+    914 => 'monopoly',
+    915 => 'franchise',
+    916 => 'blackmailed',
+    917 => 'penance',
+    918 => 'pleading',
+    919 => 'gaming',
+    920 => 'gases',
+    921 => 'abstract',
+    922 => 'abusing',
+    923 => 'stirred',
+    924 => 'bugged',
+    925 => 'constitutional',
+    926 => 'covenant',
+    927 => 'casing',
+    928 => 'releases',
+    929 => 'forgery',
+    930 => 'informer',
+    931 => 'zones',
+    932 => 'dealings',
+    933 => 'espionage',
+    934 => 'cons',
+    935 => 'counsellor',
+    936 => 'agricultural',
+    937 => 'swears',
+    938 => 'summons',
+    939 => 'tribunal',
+    940 => 'commissioned',
+    941 => 'practising',
+    942 => 'mugged',
+    943 => 'binding',
+    944 => 'damaging',
+    945 => 'vigilante',
+    946 => 'confinement',
+    947 => 'badges',
+    948 => 'triad',
+    949 => 'testifying',
+    950 => 'robes',
+    951 => 'registry',
+    952 => 'administrative',
+    953 => 'cheats',
+    954 => 'fibers',
+    955 => 'costing',
+    956 => 'bailiff',
+    957 => 'plaintiff',
+    958 => 'accord',
+    959 => 'marshals',
+    960 => 'deposited',
+    961 => 'disability',
+    962 => 'defendants',
+    963 => 'bonded',
+    964 => 'mastered',
+    965 => 'distressed',
+    966 => 'slander',
+    967 => 'wills',
+    968 => 'searches',
+    969 => 'stings',
+    970 => 'watering',
+    971 => 'postmortem',
+    972 => 'coppers',
+    973 => 'raids',
+    974 => 'appendix',
+    975 => 'restraint',
+    976 => 'mastermind',
+    977 => 'seizures',
+    978 => 'acquitted',
+    979 => 'mayhem',
+    980 => 'precedent',
+    981 => 'statute',
+    982 => 'penitentiary',
+    983 => 'swab',
+    984 => 'notary',
+    985 => 'perverted',
+    986 => 'snipers',
+    987 => 'retainer',
+    988 => 'inquiries',
+    989 => 'tagged',
+    990 => 'accomplices',
+    991 => 'assailant',
+    992 => 'felon',
+    993 => 'hijacked',
+    994 => 'municipal',
+    995 => 'trooper',
+    996 => 'proctor',
+    997 => 'footprint',
+    998 => 'warnings',
+    999 => 'tampered',
+    1000 => 'enquiry',
+    1001 => 'begs',
+    1002 => 'juror',
+    1003 => 'contracted',
+    1004 => 'amnesty',
+    1005 => 'schedules',
+    1006 => 'pathologist',
+    1007 => 'humanitarian',
+    1008 => 'legislation',
+    1009 => 'deputies',
+    1010 => 'thieving',
+    1011 => 'outlaws',
+    1012 => 'vacate',
+    1013 => 'certificates',
+    1014 => 'roadblock',
+    1015 => 'detain',
+    1016 => 'inquisition',
+    1017 => 'discrimination',
+    1018 => 'jurors',
+    1019 => 'stalk',
+    1020 => 'fencing',
+    1021 => 'devised',
+    1022 => 'exiled',
+    1023 => 'donors',
+    1024 => 'perjury',
+    1025 => 'completion',
+    1026 => 'motions',
+    1027 => 'courting',
+    1028 => 'stretches',
+    1029 => 'handcuffed',
+    1030 => 'negligence',
+    1031 => 'sabotaged',
+    1032 => 'prosecuted',
+    1033 => 'briefed',
+    1034 => 'trainee',
+    1035 => 'convicts',
+    1036 => 'vendor',
+    1037 => 'confessions',
+    1038 => 'mugs',
+    1039 => 'laundering',
+    1040 => 'succession',
+    1041 => 'tailing',
+    1042 => 'stakeout',
+    1043 => 'submission',
+    1044 => 'mortuary',
+    1045 => 'beheaded',
+    1046 => 'branded',
+    1047 => 'assaulting',
+    1048 => 'impostor',
+    1049 => 'proceeds',
+    1050 => 'inspectors',
+    1051 => 'takeover',
+    1052 => 'brands',
+    1053 => 'bribery',
+    1054 => 'proxy',
+    1055 => 'timed',
+    1056 => 'docking',
+    1057 => 'cowardice',
+    1058 => 'bailing',
+    1059 => 'trespass',
+    1060 => 'raiders',
+    1061 => 'breached',
+    1062 => 'shareholders',
+    1063 => 'smuggler',
+    1064 => 'lash',
+    1065 => 'guillotine',
+    1066 => 'graft',
+    1067 => 'estates',
+    1068 => 'offerings',
+    1069 => 'sentencing',
+    1070 => 'perverts',
+    1071 => 'prosecutors',
+    1072 => 'barred',
+    1073 => 'dismissal',
+    1074 => 'lowlife',
+    1075 => 'aviation',
+    1076 => 'accessories',
+    1077 => 'wigs',
+    1078 => 'shoplifting',
+    1079 => 'minors',
+    1080 => 'energies',
+    1081 => 'troopers',
+    1082 => 'sociopath',
+    1083 => 'ballistic',
+    1084 => 'trademark',
+    1085 => 'mules',
+    1086 => 'genocide',
+    1087 => 'heirs',
+    1088 => 'casings',
+    1089 => 'poisons',
+    1090 => 'contractors',
+    1091 => 'presses',
+    1092 => 'tampering',
+    1093 => 'directive',
+    1094 => 'pleaded',
+    1095 => 'fugitives',
+    1096 => 'blasphemy',
+    1097 => 'rents',
+    1098 => 'termination',
+    1099 => 'vandalism',
+    1100 => 'holdings',
+    1101 => 'admissions',
+    1102 => 'canon',
+    1103 => 'deserter',
+    1104 => 'hustler',
+    1105 => 'disclosure',
+    1106 => 'inquest',
+    1107 => 'copyright',
+    1108 => 'witnessing',
+    1109 => 'agreements',
+    1110 => 'billing',
+    1111 => 'brig',
+    1112 => 'lockup',
+    1113 => 'hearings',
+    1114 => 'disorders',
+    1115 => 'endorsement',
+    1116 => 'fiat',
+    1117 => 'indicted',
+    1118 => 'copycat',
+    1119 => 'innocents',
+    1120 => 'shootings',
+    1121 => 'mandate',
+    1122 => 'extradition',
+    1123 => 'undertaking',
+    1124 => 'veto',
+    1125 => 'equity',
+    1126 => 'delinquent',
+    1127 => 'looting',
+    1128 => 'grooming',
+    1129 => 'suppliers',
+    1130 => 'homicides',
+    1131 => 'hackers',
+    1132 => 'variation',
+    1133 => 'burglars',
+    1134 => 'undertake',
+    1135 => 'prosecuting',
+    1136 => 'contraband',
+    1137 => 'writ',
+    1138 => 'stalked',
+    1139 => 'jailed',
+    1140 => 'gaoled',
+    1141 => 'suspecting',
+    1142 => 'smugglers',
+    1143 => 'holdup',
+    1144 => 'charities',
+    1145 => 'securities',
+    1146 => 'polygraph',
+    1147 => 'lag',
+    1148 => 'collars',
+    1149 => 'billings',
+    1150 => 'straps',
+    1151 => 'eviction',
+    1152 => 'manhunt',
+    1153 => 'briefs',
+    1154 => 'squads',
+    1155 => 'offenses',
+    1156 => 'lawsuits',
+    1157 => 'alibis',
+    1158 => 'handcuff',
+    1159 => 'fines',
+    1160 => 'affidavit',
+    1161 => 'patrolling',
+    1162 => 'gowns',
+    1163 => 'hearsay',
+    1164 => 'pimps',
+    1165 => 'lashes',
+    1166 => 'flashed',
+    1167 => 'acquisition',
+    1168 => 'profiles',
+    1169 => 'imposter',
+    1170 => 'misconduct',
+    1171 => 'invoice',
+    1172 => 'gunmen',
+    1173 => 'cordon',
+    1174 => 'larceny',
+    1175 => 'tenure',
+    1176 => 'variations',
+    1177 => 'corpus',
+    1178 => 'severance',
+    1179 => 'barrister',
+    1180 => 'counselors',
+    1181 => 'overturned',
+    1182 => 'hoods',
+    1183 => 'eyewitnesses',
+    1184 => 'deduction',
+    1185 => 'bombings',
+    1186 => 'pledges',
+    1187 => 'injunction',
+    1188 => 'competitions',
+    1189 => 'lapse',
+    1190 => 'roadblocks',
+    1191 => 'wards',
+    1192 => 'hooligans',
+    1193 => 'clinks',
+    1194 => 'appealed',
+    1195 => 'intimidation',
+    1196 => 'executions',
+    1197 => 'defenders',
+    1198 => 'remainder',
+    1199 => 'strangulation',
+    1200 => 'strangling',
+    1201 => 'poaching',
+    1202 => 'stocked',
+    1203 => 'blackmailer',
+    1204 => 'heiress',
+    1205 => 'enquiries',
+    1206 => 'restraints',
+    1207 => 'abuses',
+    1208 => 'assaults',
+    1209 => 'docked',
+    1210 => 'conventions',
+    1211 => 'hijack',
+    1212 => 'settlements',
+    1213 => 'hangman',
+    1214 => 'heresy',
+    1215 => 'arraignment',
+    1216 => 'poached',
+    1217 => 'malpractice',
+    1218 => 'beneficiary',
+    1219 => 'openings',
+    1220 => 'youths',
+    1221 => 'transcripts',
+    1222 => 'renewal',
+    1223 => 'proceeded',
+    1224 => 'governors',
+    1225 => 'informants',
+    1226 => 'clerks',
+    1227 => 'felonies',
+    1228 => 'misdemeanor',
+    1229 => 'misdemeanour',
+    1230 => 'commons',
+    1231 => 'mugging',
+    1232 => 'ordinance',
+    1233 => 'spied',
+    1234 => 'dui',
+    1235 => 'consumers',
+    1236 => 'premise',
+    1237 => 'inning',
+    1238 => 'raiding',
+    1239 => 'binds',
+    1240 => 'poachers',
+    1241 => 'pardoned',
+    1242 => 'distressing',
+    1243 => 'busts',
+    1244 => 'evasion',
+    1245 => 'tagging',
+    1246 => 'pinching',
+    1247 => 'allegation',
+    1248 => 'exhibits',
+    1249 => 'toxicology',
+    1250 => 'creditors',
+    1251 => 'composite',
+    1252 => 'rogues',
+    1253 => 'dossier',
+    1254 => 'insubordination',
+    1255 => 'slammer',
+    1256 => 'dungeons',
+    1257 => 'fined',
+    1258 => 'galleries',
+    1259 => 'litigation',
+    1260 => 'arsonist',
+    1261 => 'surrendering',
+    1262 => 'judgments',
+    1263 => 'pusher',
+    1264 => 'proclamation',
+    1265 => 'counselling',
+    1266 => 'moles',
+    1267 => 'penalties',
+    1268 => 'treadmill',
+    1269 => 'proofs',
+    1270 => 'vendors',
+    1271 => 'strangler',
+    1272 => 'defences',
+    1273 => 'swindler',
+    1274 => 'labored',
+    1275 => 'licenses',
+    1276 => 'embezzlement',
+    1277 => 'annex',
+    1278 => 'royalties',
+    1279 => 'mistaking',
+    1280 => 'neglecting',
+    1281 => 'hooded',
+    1282 => 'loitering',
+    1283 => 'looted',
+    1284 => 'hoodlums',
+    1285 => 'maritime',
+    1286 => 'swag',
+    1287 => 'profiling',
+    1288 => 'fiscal',
+    1289 => 'attackers',
+    1290 => 'pickpocket',
+    1291 => 'henchmen',
+    1292 => 'banning',
+    1293 => 'infants',
+    1294 => 'mined',
+    1295 => 'watered',
+    1296 => 'tailed',
+    1297 => 'menacing',
+    1298 => 'housed',
+    1299 => 'applicants',
+    1300 => 'abandonment',
+    1301 => 'waiver',
+    1302 => 'hooligan',
+    1303 => 'hijacking',
+    1304 => 'expulsion',
+    1305 => 'reversal',
+    1306 => 'tortures',
+    1307 => 'consignment',
+    1308 => 'swindle',
+    1309 => 'trickster',
+    1310 => 'devise',
+    1311 => 'slasher',
+    1312 => 'perpetrators',
+    1313 => 'thefts',
+    1314 => 'harboring',
+    1315 => 'scams',
+    1316 => 'dab',
+    1317 => 'conditioned',
+    1318 => 'cartels',
+    1319 => 'warranty',
+    1320 => 'jailer',
+    1321 => 'gaoler',
+    1322 => 'branding',
+    1323 => 'defends',
+    1324 => 'practised',
+    1325 => 'trustee',
+    1326 => 'psychopaths',
+    1327 => 'benches',
+    1328 => 'redirect',
+    1329 => 'adjourn',
+    1330 => 'skim',
+    1331 => 'culprits',
+    1332 => 'duress',
+    1333 => 'sabotaging',
+    1334 => 'electoral',
+    1335 => 'compliance',
+    1336 => 'juries',
+    1337 => 'mistrial',
+    1338 => 'remand',
+    1339 => 'jugs',
+    1340 => 'examinations',
+    1341 => 'uttered',
+    1342 => 'trustees',
+    1343 => 'registrar',
+    1344 => 'juniors',
+    1345 => 'trespasses',
+    1346 => 'fibre',
+    1347 => 'sacrilege',
+    1348 => 'charlatan',
+    1349 => 'admiralty',
+    1350 => 'docket',
+    1351 => 'divorces',
+    1352 => 'spaced',
+    1353 => 'stirs',
+    1354 => 'gassed',
+    1355 => 'squatting',
+    1356 => 'stabs',
+    1357 => 'leased',
+    1358 => 'landings',
+    1359 => 'policing',
+    1360 => 'aliases',
+    1361 => 'libel',
+    1362 => 'canning',
+    1363 => 'invoices',
+    1364 => 'decreed',
+    1365 => 'deportation',
+    1366 => 'particulars',
+    1367 => 'inadmissible',
+    1368 => 'delinquents',
+    1369 => 'scheduling',
+    1370 => 'privates',
+    1371 => 'frisk',
+    1372 => 'reprimand',
+    1373 => 'indict',
+    1374 => 'jails',
+    1375 => 'gaols',
+    1376 => 'condos',
+    1377 => 'pimping',
+    1378 => 'burglaries',
+    1379 => 'mortgages',
+    1380 => 'abetting',
+    1381 => 'offences',
+    1382 => 'brokers',
+    1383 => 'policewoman',
+    1384 => 'eyre',
+    1385 => 'bundles',
+    1386 => 'citation',
+    1387 => 'hoodlum',
+    1388 => 'piracy',
+    1389 => 'partition',
+    1390 => 'slaying',
+    1391 => 'skimming',
+    1392 => 'mobster',
+    1393 => 'remedies',
+    1394 => 'partied',
+    1395 => 'subpoenaed',
+    1396 => 'commissions',
+    1397 => 'forger',
+    1398 => 'accuses',
+    1399 => 'deserters',
+    1400 => 'fibres',
+    1401 => 'procure',
+    1402 => 'scaffolding',
+    1403 => 'hacks',
+    1404 => 'incarceration',
+    1405 => 'enforcer',
+    1406 => 'patented',
+    1407 => 'shareholder',
+    1408 => 'remanded',
+    1409 => 'landlords',
+    1410 => 'registering',
+    1411 => 'paroled',
+    1412 => 'armistice',
+    1413 => 'peddler',
+    1414 => 'pedlar',
+    1415 => 'ringleader',
+    1416 => 'registers',
+    1417 => 'pensions',
+    1418 => 'patents',
+    1419 => 'traffickers',
+    1420 => 'outlawed',
+    1421 => 'homestead',
+    1422 => 'poacher',
+    1423 => 'jus',
+    1424 => 'exchanges',
+    1425 => 'escrow',
+    1426 => 'psychos',
+    1427 => 'stinging',
+    1428 => 'admissible',
+    1429 => 'triads',
+    1430 => 'crucifixion',
+    1431 => 'zoning',
+    1432 => 'lien',
+    1433 => 'molester',
+    1434 => 'statutory',
+    1435 => 'cuffed',
+    1436 => 'considerations',
+    1437 => 'summoning',
+    1438 => 'moot',
+    1439 => 'sheriffs',
+    1440 => 'pleas',
+    1441 => 'kingpin',
+    1442 => 'mortgaged',
+    1443 => 'scaffold',
+    1444 => 'tamper',
+    1445 => 'clemency',
+    1446 => 'strapping',
+    1447 => 'evidences',
+    1448 => 'innings',
+    1449 => 'punishments',
+    1450 => 'constables',
+    1451 => 'acquittal',
+    1452 => 'lout',
+    1453 => 'nicks',
+    1454 => 'behead',
+    1455 => 'mutilation',
+    1456 => 'desertion',
+    1457 => 'edict',
+    1458 => 'constabulary',
+    1459 => 'chartered',
+    1460 => 'copped',
+    1461 => 'barring',
+    1462 => 'reprieve',
+    1463 => 'leases',
+    1464 => 'executor',
+    1465 => 'ruffian',
+    1466 => 'littered',
+    1467 => 'amputation',
+    1468 => 'exhibited',
+    1469 => 'lashed',
+    1470 => 'legislature',
+    1471 => 'warns',
+    1472 => 'feudal',
+    1473 => 'interrogations',
+    1474 => 'henchman',
+    1475 => 'launder',
+    1476 => 'stalks',
+    1477 => 'raider',
+    1478 => 'flogged',
+    1479 => 'swabs',
+    1480 => 'rioting',
+    1481 => 'cannibalism',
+    1482 => 'pleads',
+    1483 => 'prowler',
+    1484 => 'soliciting',
+    1485 => 'jailhouse',
+    1486 => 'rackets',
+    1487 => 'willed',
+    1488 => 'felons',
+    1489 => 'frauds',
+    1490 => 'overturn',
+    1491 => 'mediation',
+    1492 => 'flog',
+    1493 => 'mugger',
+    1494 => 'frustrations',
+    1495 => 'beaks',
+    1496 => 'withdrawals',
+    1497 => 'pardons',
+    1498 => 'lashing',
+    1499 => 'sergeants',
+    1500 => 'bequeath',
+    1501 => 'insurrection',
+    1502 => 'cutthroat',
+    1503 => 'assassinations',
+    1504 => 'vandals',
+    1505 => 'mediator',
+    1506 => 'groomed',
+    1507 => 'lodger',
+    1508 => 'flogging',
+    1509 => 'treaties',
+    1510 => 'judiciary',
+    1511 => 'maimed',
+    1512 => 'drunkenness',
+    1513 => 'abductions',
+    1514 => 'restitution',
+    1515 => 'vigilantes',
+    1516 => 'continuance',
+    1517 => 'bootleg',
+    1518 => 'applicant',
+    1519 => 'contracting',
+    1520 => 'shakedown',
+    1521 => 'wiretap',
+    1522 => 'squatters',
+    1523 => 'grasses',
+    1524 => 'moll',
+    1525 => 'profiler',
+    1526 => 'trainees',
+    1527 => 'pokey',
+    1528 => 'coercion',
+    1529 => 'solicitation',
+    1530 => 'informers',
+    1531 => 'surveys',
+    1532 => 'vandal',
+    1533 => 'forgeries',
+    1534 => 'saboteur',
+    1535 => 'entrapment',
+    1536 => 'defamation',
+    1537 => 'solicitors',
+    1538 => 'foreclosure',
+    1539 => 'revenues',
+    1540 => 'testifies',
+    1541 => 'landowner',
+    1542 => 'principals',
+    1543 => 'decedent',
+    1544 => 'advocates',
+    1545 => 'petitions',
+    1546 => 'deliberation',
+    1547 => 'bloodstains',
+    1548 => 'hijackers',
+    1549 => 'servitude',
+    1550 => 'poach',
+    1551 => 'courted',
+    1552 => 'streaks',
+    1553 => 'landowners',
+    1554 => 'racketeering',
+    1555 => 'memorandum',
+    1556 => 'translators',
+    1557 => 'impersonation',
+    1558 => 'depositions',
+    1559 => 'massacres',
+    1560 => 'stockade',
+    1561 => 'fixtures',
+    1562 => 'collusion',
+    1563 => 'detainees',
+    1564 => 'lowlifes',
+    1565 => 'entails',
+    1566 => 'magistrates',
+    1567 => 'vacated',
+    1568 => 'exclusion',
+    1569 => 'banishment',
+    1570 => 'rebuttal',
+    1571 => 'conspiracies',
+    1572 => 'autopsies',
+    1573 => 'hunches',
+    1574 => 'breaches',
+    1575 => 'grooms',
+    1576 => 'oaths',
+    1577 => 'exhibiting',
+    1578 => 'partnered',
+    1579 => 'nicking',
+    1580 => 'carjacking',
+    1581 => 'precincts',
+    1582 => 'paralegal',
+    1583 => 'acquit',
+    1584 => 'labors',
+    1585 => 'statutes',
+    1586 => 'surveying',
+    1587 => 'surrenders',
+    1588 => 'billed',
+    1589 => 'ruffians',
+    1590 => 'testimonies',
+    1591 => 'canes',
+    1592 => 'fixture',
+    1593 => 'realty',
+    1594 => 'littering',
+    1595 => 'lynching',
+    1596 => 'collared',
+    1597 => 'joyride',
+    1598 => 'counterfeiting',
+    1599 => 'limitation',
+    1600 => 'murderess',
+    1601 => 'euthanasia',
+    1602 => 'bookings',
+    1603 => 'trafficker',
+    1604 => 'grifter',
+    1605 => 'lynched',
+    1606 => 'licensing',
+    1607 => 'licencing',
+    1608 => 'taxation',
+    1609 => 'obscenity',
+    1610 => 'entail',
+    1611 => 'acquisitions',
+    1612 => 'tenement',
+    1613 => 'matrimonial',
+    1614 => 'silks',
+    1615 => 'reprimanded',
+    1616 => 'pled',
+    1617 => 'disabilities',
+    1618 => 'taxing',
+    1619 => 'snitched',
+    1620 => 'scamming',
+    1621 => 'advocating',
+    1622 => 'dividends',
+    1623 => 'scammed',
+    1624 => 'probate',
+    1625 => 'beheading',
+    1626 => 'abuser',
+    1627 => 'arraigned',
+    1628 => 'endangerment',
+    1629 => 'skimmed',
+    1630 => 'voyeur',
+    1631 => 'procured',
+    1632 => 'assailants',
+    1633 => 'duels',
+    1634 => 'plaintiffs',
+    1635 => 'commissioners',
+    1636 => 'coolers',
+    1637 => 'electrocution',
+    1638 => 'quartered',
+    1639 => 'bylaws',
+    1640 => 'mobsters',
+    1641 => 'dueling',
+    1642 => 'duelling',
+    1643 => 'administrators',
+    1644 => 'aggressor',
+    1645 => 'snitches',
+    1646 => 'upheld',
+    1647 => 'sustaining',
+    1648 => 'spacing',
+    1649 => 'indictments',
+    1650 => 'dissolution',
+    1651 => 'permitting',
+    1652 => 'laundered',
+    1653 => 'looters',
+    1654 => 'hustlers',
+    1655 => 'sublet',
+    1656 => 'guarantor',
+    1657 => 'culpa',
+    1658 => 'deductions',
+    1659 => 'recorders',
+    1660 => 'solicit',
+    1661 => 'associating',
+    1662 => 'receivers',
+    1663 => 'trespassers',
+    1664 => 'jailbird',
+    1665 => 'pushers',
+    1666 => 'retrial',
+    1667 => 'stalkers',
+    1668 => 'leasing',
+    1669 => 'summation',
+    1670 => 'maim',
+    1671 => 'stickup',
+    1672 => 'decrees',
+    1673 => 'abductor',
+    1674 => 'endorsements',
+    1675 => 'reformatory',
+    1676 => 'marauder',
+    1677 => 'gulag',
+    1678 => 'executioners',
+    1679 => 'plagiarism',
+    1680 => 'stenographer',
+    1681 => 'inherits',
+    1682 => 'decoys',
+    1683 => 'debtors',
+    1684 => 'taxed',
+    1685 => 'infringement',
+    1686 => 'arbitration',
+    1687 => 'decapitation',
+    1688 => 'molestation',
+    1689 => 'lagging',
+    1690 => 'rustlers',
+    1691 => 'sedition',
+    1692 => 'exiles',
+    1693 => 'reparations',
+    1694 => 'wardens',
+    1695 => 'internment',
+    1696 => 'benched',
+    1697 => 'kidnaps',
+    1698 => 'adjournment',
+    1699 => 'affirmation',
+    1700 => 'polygamy',
+    1701 => 'saboteurs',
+    1702 => 'timings',
+    1703 => 'mastering',
+    1704 => 'bequeathed',
+    1705 => 'clauses',
+    1706 => 'squatter',
+    1707 => 'sustains',
+    1708 => 'juveniles',
+    1709 => 'lawyered',
+    1710 => 'partnerships',
+    1711 => 'directives',
+    1712 => 'deliberations',
+    1713 => 'verbatim',
+    1714 => 'copping',
+    1715 => 'bloodstained',
+    1716 => 'rescind',
+    1717 => 'gangbanger',
+    1718 => 'jailbreak',
+    1719 => 'wounding',
+    1720 => 'buyout',
+    1721 => 'snitching',
+    1722 => 'castration',
+    1723 => 'desecration',
+    1724 => 'affidavits',
+    1725 => 'constructions',
+    1726 => 'subpoenas',
+    1727 => 'deadlock',
+    1728 => 'lapses',
+    1729 => 'liabilities',
+    1730 => 'retainers',
+    1731 => 'quorum',
+    1732 => 'bailiffs',
+    1733 => 'briefings',
+    1734 => 'warranted',
+    1735 => 'guaranteeing',
+    1736 => 'dons',
+    1737 => 'pirated',
+    1738 => 'amendments',
+    1739 => 'thievery',
+    1740 => 'detainee',
+    1741 => 'muggers',
+    1742 => 'indecency',
+    1743 => 'profiled',
+    1744 => 'censure',
+    1745 => 'surveyed',
+    1746 => 'inheriting',
+    1747 => 'capo',
+    1748 => 'penned',
+    1749 => 'excise',
+    1750 => 'citations',
+    1751 => 'regulatory',
+    1752 => 'hunched',
+    1753 => 'bigamy',
+    1754 => 'hulks',
+    1755 => 'plainclothes',
+    1756 => 'arrears',
+    1757 => 'squats',
+    1758 => 'corroboration',
+    1759 => 'condominium',
+    1760 => 'grafts',
+    1761 => 'labours',
+    1762 => 'zoned',
+    1763 => 'harbors',
+    1764 => 'debtor',
+    1765 => 'breaching',
+    1766 => 'brokered',
+    1767 => 'exhumation',
+    1768 => 'prospectus',
+    1769 => 'dragnet',
+    1770 => 'highwayman',
+    1771 => 'charlatans',
+    1772 => 'swabbed',
+    1773 => 'pinches',
+    1774 => 'declarations',
+    1775 => 'inns',
+    1776 => 'shoplifter',
+    1777 => 'profited',
+    1778 => 'complainant',
+    1779 => 'cordoned',
+    1780 => 'petitioned',
+    1781 => 'justices',
+    1782 => 'pickpockets',
+    1783 => 'ushers',
+    1784 => 'brigands',
+    1785 => 'slayed',
+    1786 => 'recuse',
+    1787 => 'precedents',
+    1788 => 'canons',
+    1789 => 'slandered',
+    1790 => 'overrule',
+    1791 => 'jaywalking',
+    1792 => 'rescinded',
+    1793 => 'swindlers',
+    1794 => 'bondsman',
+    1795 => 'poisoner',
+    1796 => 'gangbangers',
+    1797 => 'profiting',
+    1798 => 'redirected',
+    1799 => 'lookouts',
+    1800 => 'ratios',
+    1801 => 'escapee',
+    1802 => 'crier',
+    1803 => 'tenders',
+    1804 => 'ecclesiastical',
+    1805 => 'dividend',
+    1806 => 'indemnity',
+    1807 => 'bloodstain',
+    1808 => 'franchises',
+    1809 => 'detaining',
+    1810 => 'surety',
+    1811 => 'lifer',
+    1812 => 'uttering',
+    1813 => 'liquidation',
+    1814 => 'creditor',
+    1815 => 'sues',
+    1816 => 'marauders',
+    1817 => 'heists',
+    1818 => 'assessor',
+    1819 => 'misdemeanors',
+    1820 => 'misdemeanours',
+    1821 => 'sleuth',
+    1822 => 'streaking',
+    1823 => 'laboured',
+    1824 => 'prosecutions',
+    1825 => 'escapees',
+    1826 => 'subversion',
+    1827 => 'pimped',
+    1828 => 'discharges',
+    1829 => 'wiretaps',
+    1830 => 'bootlegger',
+    1831 => 'gassing',
+    1832 => 'charters',
+    1833 => 'judgements',
+    1834 => 'upholding',
+    1835 => 'hijacker',
+    1836 => 'recesses',
+    1837 => 'obscenities',
+    1838 => 'grassed',
+    1839 => 'masterminded',
+    1840 => 'accords',
+    1841 => 'beneficiaries',
+    1842 => 'posses',
+    1843 => 'loiter',
+    1844 => 'cellblock',
+    1845 => 'mandated',
+    1846 => 'mutilations',
+    1847 => 'rioters',
+    1848 => 'procuring',
+    1849 => 'mercantile',
+    1850 => 'assemblies',
+    1851 => 'patrolled',
+    1852 => 'vagrancy',
+    1853 => 'miscreant',
+    1854 => 'procurator',
+    1855 => 'partnering',
+    1856 => 'submissions',
+    1857 => 'enforcers',
+    1858 => 'sociopaths',
+    1859 => 'mafioso',
+    1860 => 'fingerprinted',
+    1861 => 'bankrupted',
+    1862 => 'molesters',
+    1863 => 'laboring',
+    1864 => 'labouring',
+    1865 => 'bans',
+    1866 => 'termed',
+    1867 => 'impostors',
+    1868 => 'counsellors',
+    1869 => 'truncheon',
+    1870 => 'devising',
+    1871 => 'abusers',
+    1872 => 'verdicts',
+    1873 => 'pursuers',
+    1874 => 'grafted',
+    1875 => 'recognizance',
+    1876 => 'recognisance',
+    1877 => 'banked',
+    1878 => 'cautioned',
+    1879 => 'depositing',
+    1880 => 'absconded',
+    1881 => 'advocated',
+    1882 => 'desperado',
+    1883 => 'slandering',
+    1884 => 'harbored',
+    1885 => 'harboured',
+    1886 => 'trespasser',
+    1887 => 'caveat',
+    1888 => 'ushered',
+    1889 => 'hangings',
+    1890 => 'arsonists',
+    1891 => 'hooliganism',
+    1892 => 'exclusivity',
+    1893 => 'deliberating',
+    1894 => 'brigand',
+    1895 => 'malfeasance',
+    1896 => 'mergers',
+    1897 => 'solicited',
+    1898 => 'evildoers',
+    1899 => 'buccaneers',
+    1900 => 'trespassed',
+    1901 => 'counterfeiter',
+    1902 => 'harbouring',
+    1903 => 'whistleblower',
+    1904 => 'batons',
+    1905 => 'roundhouse',
+    1906 => 'addendum',
+    1907 => 'counseled',
+    1908 => 'counselled',
+    1909 => 'bequest',
+    1910 => 'pyromaniac',
+    1911 => 'petitioner',
+    1912 => 'cased',
+    1913 => 'parolee',
+    1914 => 'stakeouts',
+    1915 => 'buccaneer',
+    1916 => 'peddlers',
+    1917 => 'pedlars',
+    1918 => 'warder',
+    1919 => 'lodgers',
+    1920 => 'perverting',
+    1921 => 'cutthroats',
+    1922 => 'aggressors',
+    1923 => 'imposters',
+    1924 => 'barristers',
+    1925 => 'exchequer',
+    1926 => 'flasher',
+    1927 => 'animus',
+    1928 => 'lawmakers',
+    1929 => 'tailings',
+    1930 => 'pathologists',
+    1931 => 'quash',
+    1932 => 'stoning',
+    1933 => 'vetoed',
+    1934 => 'miscreants',
+    1935 => 'nightstick',
+    1936 => 'annexed',
+    1937 => 'shoplift',
+    1938 => 'harbours',
+    1939 => 'legacies',
+    1940 => 'gumshoe',
+    1941 => 'kleptomaniac',
+    1942 => 'bootlegging',
+    1943 => 'licences',
+    1944 => 'lawyering',
+    1945 => 'petitioning',
+    1946 => 'excommunication',
+    1947 => 'embezzler',
+    1948 => 'tort',
+    1949 => 'wiretapping',
+    1950 => 'parolees',
+    1951 => 'speeded',
+    1952 => 'compensations',
+    1953 => 'chancery',
+    1954 => 'reprieved',
+    1955 => 'usury',
+    1956 => 'copyrighted',
+    1957 => 'forfeiture',
+    1958 => 'grafting',
+    1959 => 'respondent',
+    1960 => 'bootleggers',
+    1961 => 'entertainments',
+    1962 => 'louts',
+    1963 => 'convicting',
+    1964 => 'mitigation',
+    1965 => 'joyriding',
+    1966 => 'baddies',
+    1967 => 'locus',
+    1968 => 'rebellions',
+    1969 => 'remedied',
+    1970 => 'tenements',
+    1971 => 'conveyance',
+    1972 => 'slays',
+    1973 => 'renege',
+    1974 => 'accorded',
+    1975 => 'pilfering',
+    1976 => 'recessed',
+    1977 => 'interpreters',
+    1978 => 'jurisprudence',
+    1979 => 'stabbings',
+    1980 => 'expiry',
+    1981 => 'safecracker',
+    1982 => 'frisked',
+    1983 => 'taser',
+    1984 => 'disclaimer',
+    1985 => 'bails',
+    1986 => 'legislators',
+    1987 => 'voids',
+    1988 => 'dossiers',
+    1989 => 'bigamist',
+    1990 => 'proxies',
+    1991 => 'beadle',
+    1992 => 'truancy',
+    1993 => 'oyez',
+    1994 => 'reparation',
+    1995 => 'mutineers',
+    1996 => 'lifers',
+    1997 => 'disqualification',
+    1998 => 'deadlocked',
+    1999 => 'confiscation',
+    2000 => 'sleuthing',
+    2001 => 'utters',
+    2002 => 'obstructions',
+    2003 => 'counterfeiters',
+    2004 => 'disordered',
+    2005 => 'mandates',
+    2006 => 'rulings',
+    2007 => 'ringleaders',
+    2008 => 'tasers',
+    2009 => 'incitement',
+    2010 => 'voided',
+    2011 => 'muggings',
+    2012 => 'shoplifters',
+    2013 => 'grifters',
+    2014 => 'reneged',
+    2015 => 'borstal',
+    2016 => 'waivers',
+    2017 => 'fingerprinting',
+    2018 => 'administrations',
+    2019 => 'legislator',
+    2020 => 'tenured',
+    2021 => 'deceptions',
+    2022 => 'ordinances',
+    2023 => 'counsels',
+    2024 => 'rustler',
+    2025 => 'incorporation',
+    2026 => 'neglects',
+    2027 => 'voyeurism',
+    2028 => 'condominiums',
+    2029 => 'racketeer',
+    2030 => 'bindings',
+    2031 => 'jailor',
+    2032 => 'guillotined',
+    2033 => 'leaded',
+    2034 => 'nondisclosure',
+    2035 => 'maiming',
+    2036 => 'fiddles',
+    2037 => 'counterfeits',
+    2038 => 'shoplifted',
+    2039 => 'brokering',
+    2040 => 'monopolies',
+    2041 => 'dabs',
+    2042 => 'extortionist',
+    2043 => 'fiduciary',
+    2044 => 'blackmailers',
+    2045 => 'abductors',
+    2046 => 'asylums',
+    2047 => 'morgues',
+    2048 => 'tagger',
+    2049 => 'streaked',
+    2050 => 'alibied',
+    2051 => 'copycats',
+    2052 => 'sleuths',
+    2053 => 'highwaymen',
+    2054 => 'ombudsman',
+    2055 => 'wigged',
+    2056 => 'commissioning',
+    2057 => 'suspensions',
+    2058 => 'groomer',
+    2059 => 'infanticide',
+    2060 => 'tenancy',
+    2061 => 'baddie',
+    2062 => 'tricksters',
+    2063 => 'swabbing',
+    2064 => 'courtrooms',
+    2065 => 'forgers',
+    2066 => 'absconding',
+    2067 => 'claimant',
+    2068 => 'chattel',
+    2069 => 'garrote',
+    2070 => 'exposures',
+    2071 => 'occupiers',
+    2072 => 'quashed',
+    2073 => 'lagged',
+    2074 => 'menaces',
+    2075 => 'coroners',
+    2076 => 'retry',
+    2077 => 'deportations',
+    2078 => 'pacts',
+    2079 => 'litters',
+    2080 => 'defaulted',
+    2081 => 'amputations',
+    2082 => 'launderer',
+    2083 => 'disbarment',
+    2084 => 'curfews',
+    2085 => 'donned',
+    2086 => 'impersonations',
+    2087 => 'caned',
+    2088 => 'standings',
+    2089 => 'overturning',
+    2090 => 'tendered',
+    2091 => 'squatted',
+    2092 => 'autopsied',
+    2093 => 'penning',
+    2094 => 'jurisdictions',
+    2095 => 'entailed',
+    2096 => 'firebug',
+    2097 => 'hoosegow',
+    2098 => 'practises',
+    2099 => 'slanders',
+    2100 => 'guaranty',
+    2101 => 'procurer',
+    2102 => 'codicil',
+    2103 => 'prowlers',
+    2104 => 'wigging',
+    2105 => 'subletting',
+    2106 => 'jailers',
+    2107 => 'arbitrator',
+    2108 => 'molls',
+    2109 => 'foreclosures',
+    2110 => 'vacating',
+    2111 => 'godfathers',
+    2112 => 'cruelties',
+    2113 => 'quasi',
+    2114 => 'partitions',
+    2115 => 'abscond',
+    2116 => 'pirating',
+    2117 => 'clued',
+    2118 => 'hulking',
+    2119 => 'foremen',
+    2120 => 'caning',
+    2121 => 'counteroffer',
+    2122 => 'consigliere',
+    2123 => 'naturals',
+    2124 => 'recused',
+    2125 => 'evictions',
+    2126 => 'bobbies',
+    2127 => 'policewomen',
+    2128 => 'censured',
+    2129 => 'writs',
+    2130 => 'redirecting',
+    2131 => 'grassing',
+    2132 => 'misappropriation',
+    2133 => 'privateer',
+    2134 => 'purchaser',
+    2135 => 'pursuer',
+    2136 => 'proclamations',
+    2137 => 'affirmations',
+    2138 => 'arraign',
+    2139 => 'misrepresentation',
+    2140 => 'jailbirds',
+    2141 => 'masterminds',
+    2142 => 'lashings',
+    2143 => 'frisking',
+    2144 => 'blackmails',
+    2145 => 'distresses',
+    2146 => 'pickpocketing',
+    2147 => 'warders',
+    2148 => 'clerking',
+    2149 => 'minored',
+    2150 => 'handcuffing',
+    2151 => 'takeovers',
+    2152 => 'deliberated',
+    2153 => 'madams',
+    2154 => 'excised',
+    2155 => 'defaults',
+    2156 => 'tribunals',
+    2157 => 'profilers',
+    2158 => 'lags',
+    2159 => 'paralegals',
+    2160 => 'policed',
+    2161 => 'edicts',
+    2162 => 'beheadings',
+    2163 => 'ushering',
+    2164 => 'detentions',
+    2165 => 'cuffing',
+    2166 => 'trademarked',
+    2167 => 'bankrupting',
+    2168 => 'robed',
+    2169 => 'internationals',
+    2170 => 'pardoning',
+    2171 => 'composites',
+    2172 => 'affray',
+    2173 => 'lineups',
+    2174 => 'nuisances',
+    2175 => 'ransomed',
+    2176 => 'proofing',
+    2177 => 'privateers',
+    2178 => 'parliaments',
+    2179 => 'ransoms',
+    2180 => 'registries',
+    2181 => 'testaments',
+    2182 => 'donning',
+    2183 => 'guillotines',
+    2184 => 'undertakings',
+    2185 => 'leavings',
+    2186 => 'bankruptcies',
+    2187 => 'costed',
+    2188 => 'warding',
+    2189 => 'closings',
+    2190 => 'voyeurs',
+    2191 => 'franchising',
+    2192 => 'trademarks',
+    2193 => 'hustles',
+    2194 => 'petitioners',
+    2195 => 'kingpins',
+    2196 => 'pleadings',
+    2197 => 'injunctions',
+    2198 => 'arsons',
+    2199 => 'executors',
+    2200 => 'desperados',
+    2201 => 'mutinied',
+    2202 => 'reprimands',
+    2203 => 'benching',
+    2204 => 'torts',
+    2205 => 'warded',
+    2206 => 'disclosures',
+    2207 => 'manors',
+    2208 => 'burnings',
+    2209 => 'leaved',
+    2210 => 'rippers',
+    2211 => 'holdups',
+    2212 => 'masterminding',
+    2213 => 'heresies',
+    2214 => 'polices',
+    2215 => 'reprimanding',
+    2216 => 'copyrights',
+    2217 => 'tendering',
+    2218 => 'mediators',
+    2219 => 'covenants',
+    2220 => 'birding',
+    2221 => 'patricide',
+    2222 => 'fratricide',
+    2223 => 'stranglers',
+    2224 => 'launders',
+    2225 => 'upholds',
+    2226 => 'equities',
+    2227 => 'reversals',
+    2228 => 'reneging',
+    2229 => 'hijackings',
+    2230 => 'fining',
+    2231 => 'educations',
+    2232 => 'footages',
+    2233 => 'mortgaging',
+    2234 => 'treasons',
+    2235 => 'menaced',
+    2236 => 'regicide',
+    2237 => 'prosecutes',
+    2238 => 'polygraphs',
+    2239 => 'indicting',
+    2240 => 'rescinding',
+    2241 => 'cautions',
+    2242 => 'proofed',
+    2243 => 'gunrunning',
+    2244 => 'insurances',
+    2245 => 'dowries',
+    2246 => 'whistleblowers',
+    2247 => 'vigilantism',
+    2248 => 'falsification',
+    2249 => 'truncheons',
+    2250 => 'poisonings',
+    2251 => 'devises',
+    2252 => 'undertakes',
+    2253 => 'mortuaries',
+    2254 => 'evasions',
+    2255 => 'militaries',
+    2256 => 'swindles',
+    2257 => 'constitutions',
+    2258 => 'housebreaking',
+    2259 => 'overturns',
+    2260 => 'vetoes',
+    2261 => 'dabbing',
+    2262 => 'hijacks',
+    2263 => 'defaulting',
+    2264 => 'partitioned',
+    2265 => 'desperadoes',
+    2266 => 'bequests',
+    2267 => 'outlawing',
+    2268 => 'abstracts',
+    2269 => 'quartering',
+    2270 => 'franchisees',
+    2271 => 'blasphemies',
+    2272 => 'mutinies',
+    2273 => 'medias',
+    2274 => 'sabotages',
+    2275 => 'garrotte',
+    2276 => 'muling',
+    2277 => 'acquits',
+    2278 => 'slammers',
+    2279 => 'phishing',
+    2280 => 'nooses',
+    2281 => 'warranties',
+    2282 => 'liens',
+    2283 => 'penitentiaries',
+    2284 => 'dismissals',
+    2285 => 'pensioned',
+    2286 => 'treadmills',
+    2287 => 'lynchings',
+    2288 => 'notaries',
+    2289 => 'motioned',
+    2290 => 'superintendents',
+    2291 => 'postmortems',
+    2292 => 'bootlegs',
+    2293 => 'scaffolds',
+    2294 => 'heiresses',
+    2295 => 'flashers',
+    2296 => 'consignments',
+    2297 => 'marshaling',
+    2298 => 'shakedowns',
+    2299 => 'safecracking',
+    2300 => 'summonses',
+    2301 => 'caveats',
+    2302 => 'jailing',
+    2303 => 'humanitarians',
+    2304 => 'sported',
+    2305 => 'remainders',
+    2306 => 'assessors',
+    2307 => 'recusing',
+    2308 => 'respondents',
+    2309 => 'abstracted',
+    2310 => 'patenting',
+    2311 => 'decapitations',
+    2312 => 'finessing',
+    2313 => 'gamed',
+    2314 => 'clerked',
+    2315 => 'chambered',
+    2316 => 'matricide',
+    2317 => 'skims',
+    2318 => 'acquittals',
+    2319 => 'desertions',
+    2320 => 'genocides',
+    2321 => 'exiling',
+    2322 => 'rioted',
+    2323 => 'wiretapped',
+    2324 => 'heisted',
+    2325 => 'capos',
+    2326 => 'parricide',
+    2327 => 'homesteads',
+    2328 => 'complainants',
+    2329 => 'overruling',
+    2330 => 'deeded',
+    2331 => 'counterfeited',
+    2332 => 'tampers',
+    2333 => 'poisoners',
+    2334 => 'legislatures',
+    2335 => 'acceptances',
+    2336 => 'nightsticks',
+    2337 => 'stenographers',
+    2338 => 'remanding',
+    2339 => 'paroles',
+    2340 => 'summations',
+    2341 => 'kidnaped',
+    2342 => 'terminations',
+    2343 => 'ransoming',
+    2344 => 'chancellors',
+    2345 => 'stickups',
+    2346 => 'slashers',
+    2347 => 'medicals',
+    2348 => 'finessed',
+    2349 => 'embezzlers',
+    2350 => 'probated',
+    2351 => 'corruptions',
+    2352 => 'bequeathing',
+    2353 => 'arraignments',
+    2354 => 'expulsions',
+    2355 => 'cautioning',
+    2356 => 'robing',
+    2357 => 'pyromaniacs',
+    2358 => 'congresses',
+    2359 => 'franchised',
+    2360 => 'collaring',
+    2361 => 'crucifixions',
+    2362 => 'marshaled',
+    2363 => 'bootlegged',
+    2364 => 'voiding',
+    2365 => 'carjackings',
+    2366 => 'renewals',
+    2367 => 'mandating',
+    2368 => 'glasshouse',
+    2369 => 'registrars',
+    2370 => 'indicts',
+    2371 => 'guarantors',
+    2372 => 'inquests',
+    2373 => 'bankrupts',
+    2374 => 'exhumations',
+    2375 => 'cordons',
+    2376 => 'dockets',
+    2377 => 'heisting',
+    2378 => 'chartering',
+    2379 => 'gulags',
+    2380 => 'summonsed',
+    2381 => 'manhunts',
+    2382 => 'solicitations',
+    2383 => 'housings',
+    2384 => 'inheritances',
+    2385 => 'loots',
+    2386 => 'cybercrime',
+    2387 => 'beheads',
+    2388 => 'inquisitions',
+    2389 => 'overrules',
+    2390 => 'insurrections',
+    2391 => 'groomers',
+    2392 => 'immigrations',
+    2393 => 'hunching',
+    2394 => 'acquitting',
+    2395 => 'homesteading',
+    2396 => 'excising',
+    2397 => 'vetoing',
+    2398 => 'dognapping',
+    2399 => 'courthouses',
+    2400 => 'landladies',
+    2401 => 'feeing',
+    2402 => 'rollings',
+    2403 => 'motioning',
+    2404 => 'solicits',
+    2405 => 'floggings',
+    2406 => 'sublets',
+    2407 => 'dabbed',
+    2408 => 'celled',
+    2409 => 'extortions',
+    2410 => 'decedents',
+    2411 => 'redirects',
+    2412 => 'infringements',
+    2413 => 'joyrides',
+    2414 => 'electrocutions',
+    2415 => 'criers',
+    2416 => 'bequeaths',
+    2417 => 'buyouts',
+    2418 => 'subpoenaing',
+    2419 => 'invoiced',
+    2420 => 'jugged',
+    2421 => 'libels',
+    2422 => 'scrumping',
+    2423 => 'poaches',
+    2424 => 'adjourns',
+    2425 => 'continuances',
+    2426 => 'adjourning',
+    2427 => 'legislations',
+    2428 => 'psychoses',
+    2429 => 'dueled',
+    2430 => 'stockades',
+    2431 => 'detains',
+    2432 => 'clinked',
+    2433 => 'litigations',
+    2434 => 'prisoned',
+    2435 => 'publics',
+    2436 => 'cordoning',
+    2437 => 'exclusions',
+    2438 => 'stationing',
+    2439 => 'invoicing',
+    2440 => 'cellblocks',
+    2441 => 'brigs',
+    2442 => 'decoyed',
+    2443 => 'agenting',
+    2444 => 'maims',
+    2445 => 'annexing',
+    2446 => 'appendixes',
+    2447 => 'lockups',
+    2448 => 'homesteaded',
+    2449 => 'licensees',
+    2450 => 'quashing',
+    2451 => 'beaked',
+    2452 => 'indecencies',
+    2453 => 'mooted',
+    2454 => 'premised',
+    2455 => 'reneges',
+    2456 => 'deliberates',
+    2457 => 'cyberstalking',
+    2458 => 'gavels',
+    2459 => 'glasshouses',
+    2460 => 'cybercrimes',
+    2461 => 'falsifications',
+    2462 => 'annexes',
+    2463 => 'gaolers',
+    2464 => 'roundhouses',
+    2465 => 'borstals',
+    2466 => 'incitements',
+    2467 => 'regicides',
+    2468 => 'infantes',
+    2469 => 'porridges',
+    2470 => 'affrays',
+    2471 => 'bombes',
+    2472 => 'garrottes',
+    2473 => 'parricides',
+    2474 => 'misappropriations',
+    2475 => 'truancies',
+    2476 => 'infanticides',
+    2477 => 'fratricides',
+    2478 => 'filicide',
+    2479 => 'jailhouses',
+    2480 => 'patricides',
+    2481 => 'matricides',
+    2482 => 'upskirting',
+    2483 => 'flytipping',
+    2484 => 'filicides',
+    2485 => 'condoes',
+    2486 => 'abetter',
+    2487 => 'abetters',
+    2488 => 'abettor',
+    2489 => 'abettors',
+    2490 => 'abh',
+    2491 => 'abinitio',
+    2492 => 'absconder',
+    2493 => 'absconders',
+    2494 => 'actusreus',
+    2495 => 'addenda',
+    2496 => 'addendums',
+    2497 => 'adhoc',
+    2498 => 'adjournments',
+    2499 => 'adjudication',
+    2500 => 'adjudications',
+    2501 => 'adjudicator',
+    2502 => 'adjudicators',
+    2503 => 'administratrices',
+    2504 => 'administratrix',
+    2505 => 'administratrixes',
+    2506 => 'admissibility',
+    2507 => 'admonishment',
+    2508 => 'admonishments',
+    2509 => 'adversepossession',
+    2510 => 'affiant',
+    2511 => 'affiants',
+    2512 => 'allocution',
+    2513 => 'allocutions',
+    2514 => 'amercement',
+    2515 => 'amici',
+    2516 => 'amicus',
+    2517 => 'amicuscuriae',
+    2518 => 'amnesties',
+    2519 => 'antitrust',
+    2520 => 'appealcourt',
+    2521 => 'appealcourts',
+    2522 => 'appellant',
+    2523 => 'appellants',
+    2524 => 'appellee',
+    2525 => 'appellees',
+    2526 => 'appendices',
+    2527 => 'approvedschool',
+    2528 => 'approvedschools',
+    2529 => 'appurtenance',
+    2530 => 'appurtenances',
+    2531 => 'arbitrators',
+    2532 => 'armedrobber',
+    2533 => 'armedrobbers',
+    2534 => 'armistices',
+    2535 => 'armsdealer',
+    2536 => 'armsdealers',
+    2537 => 'arraigns',
+    2538 => 'arrestwarrant',
+    2539 => 'arrestwarrants',
+    2540 => 'asbo',
+    2541 => 'asbos',
+    2542 => 'assignee',
+    2543 => 'assignees',
+    2544 => 'assignor',
+    2545 => 'assignors',
+    2546 => 'assize',
+    2547 => 'assizes',
+    2548 => 'assumpsit',
+    2549 => 'attainder',
+    2550 => 'attestation',
+    2551 => 'attestations',
+    2552 => 'attorneygeneral',
+    2553 => 'attorneygenerals',
+    2554 => 'attorneysgeneral',
+    2555 => 'autrefois',
+    2556 => 'axemurderer',
+    2557 => 'axemurderers',
+    2558 => 'axmurderer',
+    2559 => 'axmurderers',
+    2560 => 'baddy',
+    2561 => 'badguy',
+    2562 => 'badguys',
+    2563 => 'bagsnatcher',
+    2564 => 'bagsnatchers',
+    2565 => 'bailbondsman',
+    2566 => 'bailbondsmen',
+    2567 => 'bailee',
+    2568 => 'bailees',
+    2569 => 'bailment',
+    2570 => 'bailments',
+    2571 => 'bailor',
+    2572 => 'bailors',
+    2573 => 'bankrobber',
+    2574 => 'bankrobbers',
+    2575 => 'barratry',
+    2576 => 'batterer',
+    2577 => 'batterers',
+    2578 => 'beadles',
+    2579 => 'bencher',
+    2580 => 'benchers',
+    2581 => 'benefitcheat',
+    2582 => 'benefitcheats',
+    2583 => 'bestiality',
+    2584 => 'bigamists',
+    2585 => 'billofsale',
+    2586 => 'billsofsale',
+    2587 => 'bindover',
+    2588 => 'birching',
+    2589 => 'bloodspatter',
+    2590 => 'bodysnatcher',
+    2591 => 'bodysnatchers',
+    2592 => 'bodysnatching',
+    2593 => 'bonafide',
+    2594 => 'bonafides',
+    2595 => 'bondsmen',
+    2596 => 'boundover',
+    2597 => 'bountyhunter',
+    2598 => 'bountyhunters',
+    2599 => 'breachesofthepeace',
+    2600 => 'breachofthepeace',
+    2601 => 'breakingandentering',
+    2602 => 'bridewell',
+    2603 => 'bridewells',
+    2604 => 'bushranger',
+    2605 => 'bushrangers',
+    2606 => 'byelaw',
+    2607 => 'byelaws',
+    2608 => 'bylaw',
+    2609 => 'calaboose',
+    2610 => 'calabooses',
+    2611 => 'canings',
+    2612 => 'capias',
+    2613 => 'capitalpunishment',
+    2614 => 'cardsharp',
+    2615 => 'cardsharper',
+    2616 => 'cardsharpers',
+    2617 => 'cardsharps',
+    2618 => 'careercriminal',
+    2619 => 'careercriminals',
+    2620 => 'carjacker',
+    2621 => 'carjackers',
+    2622 => 'casefile',
+    2623 => 'casefiles',
+    2624 => 'caselaw',
+    2625 => 'cashiering',
+    2626 => 'catburglar',
+    2627 => 'catburglars',
+    2628 => 'cattlerustler',
+    2629 => 'cattlerustlers',
+    2630 => 'causeofdeath',
+    2631 => 'caveatemptor',
+    2632 => 'cctv',
+    2633 => 'ceaseanddesist',
+    2634 => 'certiorari',
+    2635 => 'cestuiquetrust',
+    2636 => 'chaingang',
+    2637 => 'chaingangs',
+    2638 => 'chainofcustody',
+    2639 => 'chalkoutline',
+    2640 => 'chalkoutlines',
+    2641 => 'champerty',
+    2642 => 'chanceries',
+    2643 => 'chargesheet',
+    2644 => 'chargesheets',
+    2645 => 'chattels',
+    2646 => 'chiefjustice',
+    2647 => 'chiefjustices',
+    2648 => 'childmolester',
+    2649 => 'childmolesters',
+    2650 => 'chokey',
+    2651 => 'cid',
+    2652 => 'civilrights',
+    2653 => 'claimants',
+    2654 => 'codefendant',
+    2655 => 'codefendants',
+    2656 => 'codicils',
+    2657 => 'coiner',
+    2658 => 'coiners',
+    2659 => 'coldcase',
+    2660 => 'coldcases',
+    2661 => 'commonhold',
+    2662 => 'commonholds',
+    2663 => 'communityorder',
+    2664 => 'communityorders',
+    2665 => 'communityservice',
+    2666 => 'commutation',
+    2667 => 'commutations',
+    2668 => 'conartist',
+    2669 => 'conartists',
+    2670 => 'conciliation',
+    2671 => 'conciliator',
+    2672 => 'conciliators',
+    2673 => 'concordat',
+    2674 => 'concordats',
+    2675 => 'conditionaldischarge',
+    2676 => 'confidencetrickster',
+    2677 => 'confidencetricksters',
+    2678 => 'conman',
+    2679 => 'conmen',
+    2680 => 'consiglieri',
+    2681 => 'consistories',
+    2682 => 'consistory',
+    2683 => 'constabularies',
+    2684 => 'contractkiller',
+    2685 => 'contractkillers',
+    2686 => 'conveyancer',
+    2687 => 'conveyancers',
+    2688 => 'conveyances',
+    2689 => 'conveyancing',
+    2690 => 'copycatkiller',
+    2691 => 'copycatkillers',
+    2692 => 'copyhold',
+    2693 => 'copyholds',
+    2694 => 'corespondent',
+    2695 => 'corespondents',
+    2696 => 'coronerscourt',
+    2697 => 'coronerscourts',
+    2698 => 'corporalpunishment',
+    2699 => 'corpusdelicti',
+    2700 => 'corsair',
+    2701 => 'corsairs',
+    2702 => 'counterclaim',
+    2703 => 'counterclaims',
+    2704 => 'counteroffers',
+    2705 => 'counterparties',
+    2706 => 'counterparty',
+    2707 => 'countycourt',
+    2708 => 'countycourts',
+    2709 => 'courtmartial',
+    2710 => 'courtofappeal',
+    2711 => 'courtorder',
+    2712 => 'courtorders',
+    2713 => 'courtreporter',
+    2714 => 'courtreporters',
+    2715 => 'courtsmartial',
+    2716 => 'cracksman',
+    2717 => 'cracksmen',
+    2718 => 'crimescene',
+    2719 => 'crimescenes',
+    2720 => 'criminaldamage',
+    2721 => 'crossclaim',
+    2722 => 'crossclaims',
+    2723 => 'crossexamination',
+    2724 => 'crossexaminations',
+    2725 => 'crossexamine',
+    2726 => 'crossexamined',
+    2727 => 'crossexamines',
+    2728 => 'crowncourt',
+    2729 => 'crowncourts',
+    2730 => 'crownprosecutor',
+    2731 => 'crownprosecutors',
+    2732 => 'csi',
+    2733 => 'curbcrawling',
+    2734 => 'curtilage',
+    2735 => 'curtilages',
+    2736 => 'custodialsentence',
+    2737 => 'custodialsentences',
+    2738 => 'custodysergeant',
+    2739 => 'custodysergeants',
+    2740 => 'cutpurse',
+    2741 => 'cutpurses',
+    2742 => 'cybercriminal',
+    2743 => 'cybercriminals',
+    2744 => 'cyberlaw',
+    2745 => 'cyberstalker',
+    2746 => 'cyberstalkers',
+    2747 => 'cypres',
+    2748 => 'dangerousdriving',
+    2749 => 'dataprotection',
+    2750 => 'deathpenalty',
+    2751 => 'deathrow',
+    2752 => 'debenture',
+    2753 => 'debentures',
+    2754 => 'decimation',
+    2755 => 'declarant',
+    2756 => 'declarants',
+    2757 => 'decreenisi',
+    2758 => 'deedpoll',
+    2759 => 'deedpolls',
+    2760 => 'defacto',
+    2761 => 'defalcation',
+    2762 => 'defaulter',
+    2763 => 'defaulters',
+    2764 => 'dejure',
+    2765 => 'delict',
+    2766 => 'delicts',
+    2767 => 'demesne',
+    2768 => 'demesnes',
+    2769 => 'demurrer',
+    2770 => 'demurrers',
+    2771 => 'deponent',
+    2772 => 'deponents',
+    2773 => 'detentioncenter',
+    2774 => 'detentioncenters',
+    2775 => 'detentioncentre',
+    2776 => 'detentioncentres',
+    2777 => 'deterrence',
+    2778 => 'detinue',
+    2779 => 'devisee',
+    2780 => 'devisees',
+    2781 => 'dicta',
+    2782 => 'dictum',
+    2783 => 'dilapidations',
+    2784 => 'disclaimers',
+    2785 => 'discontinuance',
+    2786 => 'discontinuances',
+    2787 => 'disqualifications',
+    2788 => 'distraint',
+    2789 => 'distraints',
+    2790 => 'districtattorney',
+    2791 => 'districtattorneys',
+    2792 => 'dna',
+    2793 => 'dognapper',
+    2794 => 'dognappers',
+    2795 => 'doliincapax',
+    2796 => 'dolus',
+    2797 => 'domesticabuse',
+    2798 => 'domesticviolence',
+    2799 => 'donee',
+    2800 => 'donees',
+    2801 => 'dower',
+    2802 => 'dowers',
+    2803 => 'draftdodger',
+    2804 => 'draftdodgers',
+    2805 => 'draftsman',
+    2806 => 'draftsmen',
+    2807 => 'dragnets',
+    2808 => 'drinkdriver',
+    2809 => 'drinkdrivers',
+    2810 => 'drinkdriving',
+    2811 => 'driveby',
+    2812 => 'drivebys',
+    2813 => 'drugbaron',
+    2814 => 'drugbarons',
+    2815 => 'drugdealer',
+    2816 => 'drugdealers',
+    2817 => 'druglord',
+    2818 => 'druglords',
+    2819 => 'drugmule',
+    2820 => 'drugmules',
+    2821 => 'drugsmuggler',
+    2822 => 'drugsmugglers',
+    2823 => 'drugtrafficker',
+    2824 => 'drugtraffickers',
+    2825 => 'drunkdriver',
+    2826 => 'drunkdrivers',
+    2827 => 'drunkdriving',
+    2828 => 'duckingstool',
+    2829 => 'duckingstools',
+    2830 => 'dwi',
+    2831 => 'easement',
+    2832 => 'easements',
+    2833 => 'efit',
+    2834 => 'efits',
+    2835 => 'ejectment',
+    2836 => 'ejectments',
+    2837 => 'electricchair',
+    2838 => 'electricchairs',
+    2839 => 'embracery',
+    2840 => 'empanel',
+    2841 => 'empaneled',
+    2842 => 'empanelled',
+    2843 => 'empanels',
+    2844 => 'emptor',
+    2845 => 'encroachment',
+    2846 => 'encroachments',
+    2847 => 'encumbrance',
+    2848 => 'encumbrances',
+    2849 => 'enforceable',
+    2850 => 'enfranchisement',
+    2851 => 'escapedconvict',
+    2852 => 'escapedconvicts',
+    2853 => 'escheat',
+    2854 => 'escheats',
+    2855 => 'escrows',
+    2856 => 'estateagent',
+    2857 => 'estateagents',
+    2858 => 'estoppel',
+    2859 => 'etal',
+    2860 => 'evidencebag',
+    2861 => 'evidencebags',
+    2862 => 'evildoer',
+    2863 => 'exclusionclause',
+    2864 => 'exclusionclauses',
+    2865 => 'excon',
+    2866 => 'excons',
+    2867 => 'executory',
+    2868 => 'executrices',
+    2869 => 'executrix',
+    2870 => 'executrixes',
+    2871 => 'exgratia',
+    2872 => 'exoneration',
+    2873 => 'exonerations',
+    2874 => 'exparte',
+    2875 => 'expostfacto',
+    2876 => 'extortionists',
+    2877 => 'eyres',
+    2878 => 'familycourt',
+    2879 => 'familycourts',
+    2880 => 'faredodger',
+    2881 => 'faredodgers',
+    2882 => 'feesimple',
+    2883 => 'feetail',
+    2884 => 'feme',
+    2885 => 'fiats',
+    2886 => 'fiduciaries',
+    2887 => 'firebombing',
+    2888 => 'firebombings',
+    2889 => 'firebugs',
+    2890 => 'fireraiser',
+    2891 => 'fireraisers',
+    2892 => 'fireraising',
+    2893 => 'firingsquad',
+    2894 => 'firingsquads',
+    2895 => 'fiscals',
+    2896 => 'flytipper',
+    2897 => 'flytippers',
+    2898 => 'footpad',
+    2899 => 'footpads',
+    2900 => 'forcemajeure',
+    2901 => 'forewoman',
+    2902 => 'forewomen',
+    2903 => 'forfeitures',
+    2904 => 'fraudster',
+    2905 => 'fraudsters',
+    2906 => 'freebooter',
+    2907 => 'freebooters',
+    2908 => 'freehold',
+    2909 => 'freeholder',
+    2910 => 'freeholders',
+    2911 => 'freeholds',
+    2912 => 'frisks',
+    2913 => 'ganglandboss',
+    2914 => 'ganglandbosses',
+    2915 => 'gangmember',
+    2916 => 'gangmembers',
+    2917 => 'gangstersmoll',
+    2918 => 'gangstersmolls',
+    2919 => 'gaolbird',
+    2920 => 'gaolbirds',
+    2921 => 'garnishee',
+    2922 => 'garnishees',
+    2923 => 'garnishment',
+    2924 => 'garotte',
+    2925 => 'garottes',
+    2926 => 'garrotes',
+    2927 => 'gazump',
+    2928 => 'gazumped',
+    2929 => 'gazumping',
+    2930 => 'gazumps',
+    2931 => 'gazunder',
+    2932 => 'gazundered',
+    2933 => 'gazundering',
+    2934 => 'gazunders',
+    2935 => 'gbh',
+    2936 => 'getawaydriver',
+    2937 => 'getawaydrivers',
+    2938 => 'gibbet',
+    2939 => 'gibbets',
+    2940 => 'glassing',
+    2941 => 'glassings',
+    2942 => 'grantee',
+    2943 => 'grantees',
+    2944 => 'grantor',
+    2945 => 'grantors',
+    2946 => 'graverobber',
+    2947 => 'graverobbers',
+    2948 => 'graverobbing',
+    2949 => 'greenpaper',
+    2950 => 'greenpapers',
+    2951 => 'groundrent',
+    2952 => 'groundrents',
+    2953 => 'guaranties',
+    2954 => 'gumshoes',
+    2955 => 'gunrunner',
+    2956 => 'gunrunners',
+    2957 => 'gunshotresidue',
+    2958 => 'habeas',
+    2959 => 'habeascorpus',
+    2960 => 'hangmen',
+    2961 => 'hardlabor',
+    2962 => 'hardlabour',
+    2963 => 'hatecrime',
+    2964 => 'hatecrimes',
+    2965 => 'headsman',
+    2966 => 'headsmen',
+    2967 => 'healthcare',
+    2968 => 'hereditament',
+    2969 => 'hereditaments',
+    2970 => 'highcourt',
+    2971 => 'highcourts',
+    2972 => 'hiredgun',
+    2973 => 'hiredguns',
+    2974 => 'hirepurchase',
+    2975 => 'hitandrun',
+    2976 => 'hitandrundriver',
+    2977 => 'hitandrundrivers',
+    2978 => 'hitandruns',
+    2979 => 'hitman',
+    2980 => 'hitmen',
+    2981 => 'holdingcell',
+    2982 => 'holdingcells',
+    2983 => 'honeytrap',
+    2984 => 'honeytraps',
+    2985 => 'hoosegows',
+    2986 => 'horsethief',
+    2987 => 'horsethieves',
+    2988 => 'hostagetaking',
+    2989 => 'housearrest',
+    2990 => 'housebreaker',
+    2991 => 'housebreakers',
+    2992 => 'humanrights',
+    2993 => 'hungjuries',
+    2994 => 'hungjury',
+    2995 => 'identikit',
+    2996 => 'identikits',
+    2997 => 'identityfraud',
+    2998 => 'identityparade',
+    2999 => 'identityparades',
+    3000 => 'identitytheft',
+    3001 => 'identitythief',
+    3002 => 'identitythieves',
+    3003 => 'illegality',
+    3004 => 'impalement',
+    3005 => 'impanel',
+    3006 => 'impaneled',
+    3007 => 'impanelled',
+    3008 => 'impanels',
+    3009 => 'impliedterm',
+    3010 => 'impliedterms',
+    3011 => 'inabsentia',
+    3012 => 'incamera',
+    3013 => 'incest',
+    3014 => 'incumbrance',
+    3015 => 'incumbrances',
+    3016 => 'indemnified',
+    3017 => 'indemnifies',
+    3018 => 'indemnify',
+    3019 => 'indemnities',
+    3020 => 'indenture',
+    3021 => 'indentures',
+    3022 => 'injuria',
+    3023 => 'inlocoparentis',
+    3024 => 'inpersonam',
+    3025 => 'inrem',
+    3026 => 'insiderdealing',
+    3027 => 'insidertrader',
+    3028 => 'insidertraders',
+    3029 => 'insidertrading',
+    3030 => 'insolvency',
+    3031 => 'insolvent',
+    3032 => 'intellectualproperty',
+    3033 => 'interalia',
+    3034 => 'internee',
+    3035 => 'internees',
+    3036 => 'interrogatories',
+    3037 => 'interrogatory',
+    3038 => 'intervener',
+    3039 => 'interveners',
+    3040 => 'intervenor',
+    3041 => 'intervenors',
+    3042 => 'interviewroom',
+    3043 => 'interviewrooms',
+    3044 => 'intervivos',
+    3045 => 'intestacy',
+    3046 => 'intestate',
+    3047 => 'intravires',
+    3048 => 'iou',
+    3049 => 'ious',
+    3050 => 'jailbreaks',
+    3051 => 'jailors',
+    3052 => 'jewelthief',
+    3053 => 'jewelthieves',
+    3054 => 'joinder',
+    3055 => 'joinders',
+    3056 => 'jointure',
+    3057 => 'jointures',
+    3058 => 'jointventure',
+    3059 => 'jointventures',
+    3060 => 'joyrider',
+    3061 => 'joyriders',
+    3062 => 'judgeadvocate',
+    3063 => 'judgeadvocates',
+    3064 => 'judiciaries',
+    3065 => 'jurisconsult',
+    3066 => 'jurisconsults',
+    3067 => 'jurist',
+    3068 => 'jurists',
+    3069 => 'jurybox',
+    3070 => 'juryboxes',
+    3071 => 'juryman',
+    3072 => 'jurymen',
+    3073 => 'juryroom',
+    3074 => 'juryrooms',
+    3075 => 'jurytrial',
+    3076 => 'jurytrials',
+    3077 => 'jurywoman',
+    3078 => 'jurywomen',
+    3079 => 'justiciar',
+    3080 => 'justiciars',
+    3081 => 'juveniledelinquent',
+    3082 => 'juveniledelinquents',
+    3083 => 'kangaroocourt',
+    3084 => 'kangaroocourts',
+    3085 => 'keelhauling',
+    3086 => 'kerbcrawling',
+    3087 => 'kidnappings',
+    3088 => 'klepto',
+    3089 => 'kleptomaniacs',
+    3090 => 'kleptos',
+    3091 => 'kneecapping',
+    3092 => 'kneecappings',
+    3093 => 'knifeman',
+    3094 => 'knifemen',
+    3095 => 'laches',
+    3096 => 'landholder',
+    3097 => 'landholders',
+    3098 => 'landregistry',
+    3099 => 'launderers',
+    3100 => 'lawbreaker',
+    3101 => 'lawbreakers',
+    3102 => 'lawclerk',
+    3103 => 'lawclerks',
+    3104 => 'lawcourt',
+    3105 => 'lawcourts',
+    3106 => 'lawfirm',
+    3107 => 'lawfirms',
+    3108 => 'lawgiver',
+    3109 => 'lawgivers',
+    3110 => 'lawlord',
+    3111 => 'lawlords',
+    3112 => 'lawmaker',
+    3113 => 'leadingquestion',
+    3114 => 'leadingquestions',
+    3115 => 'leasehold',
+    3116 => 'leaseholder',
+    3117 => 'leaseholders',
+    3118 => 'leaseholds',
+    3119 => 'leet',
+    3120 => 'leets',
+    3121 => 'legalexecutive',
+    3122 => 'legalexecutives',
+    3123 => 'legatee',
+    3124 => 'legatees',
+    3125 => 'lesemajeste',
+    3126 => 'lesemajesty',
+    3127 => 'lessee',
+    3128 => 'lessees',
+    3129 => 'lessor',
+    3130 => 'lessors',
+    3131 => 'lethalinjection',
+    3132 => 'lethalinjections',
+    3133 => 'licensee',
+    3134 => 'licensor',
+    3135 => 'licensors',
+    3136 => 'liedetector',
+    3137 => 'liedetectors',
+    3138 => 'lifesentence',
+    3139 => 'lifesentences',
+    3140 => 'liquidateddamages',
+    3141 => 'liquidator',
+    3142 => 'liquidators',
+    3143 => 'listedbuilding',
+    3144 => 'listedbuildings',
+    3145 => 'litigant',
+    3146 => 'litigants',
+    3147 => 'litigate',
+    3148 => 'litigated',
+    3149 => 'litigates',
+    3150 => 'livingwill',
+    3151 => 'livingwills',
+    3152 => 'llp',
+    3153 => 'llps',
+    3154 => 'loanshark',
+    3155 => 'loansharking',
+    3156 => 'loansharks',
+    3157 => 'looter',
+    3158 => 'lordchancellor',
+    3159 => 'lordchancellors',
+    3160 => 'lowlives',
+    3161 => 'luminol',
+    3162 => 'mademan',
+    3163 => 'mademen',
+    3164 => 'mafiosi',
+    3165 => 'mafiosos',
+    3166 => 'magistracies',
+    3167 => 'magistracy',
+    3168 => 'magistratescourt',
+    3169 => 'magistratescourts',
+    3170 => 'malefactor',
+    3171 => 'malefactors',
+    3172 => 'mandamus',
+    3173 => 'massmurderer',
+    3174 => 'massmurderers',
+    3175 => 'memoranda',
+    3176 => 'memorandums',
+    3177 => 'mensrea',
+    3178 => 'mentalhealth',
+    3179 => 'messuage',
+    3180 => 'messuages',
+    3181 => 'mirandarights',
+    3182 => 'misfeasance',
+    3183 => 'misprision',
+    3184 => 'misrepresentations',
+    3185 => 'missingperson',
+    3186 => 'missingpersons',
+    3187 => 'mistrials',
+    3188 => 'mittimus',
+    3189 => 'modusoperandi',
+    3190 => 'moneylaunderer',
+    3191 => 'moneylaunderers',
+    3192 => 'moneylaundering',
+    3193 => 'moonshiner',
+    3194 => 'moonshiners',
+    3195 => 'moonshining',
+    3196 => 'moots',
+    3197 => 'mortgagee',
+    3198 => 'mortgagees',
+    3199 => 'mortgagor',
+    3200 => 'mortgagors',
+    3201 => 'mortmain',
+    3202 => 'mugshot',
+    3203 => 'mugshots',
+    3204 => 'murderesses',
+    3205 => 'murderweapon',
+    3206 => 'murderweapons',
+    3207 => 'mutineer',
+    3208 => 'nark',
+    3209 => 'narks',
+    3210 => 'nda',
+    3211 => 'ndas',
+    3212 => 'necrophilia',
+    3213 => 'negativeequity',
+    3214 => 'nextofkin',
+    3215 => 'nisi',
+    3216 => 'nolleprosequi',
+    3217 => 'nolo',
+    3218 => 'nolocontendere',
+    3219 => 'noncompete',
+    3220 => 'nonfeasance',
+    3221 => 'nonsuit',
+    3222 => 'nonsuits',
+    3223 => 'notguilty',
+    3224 => 'noticetoquit',
+    3225 => 'novation',
+    3226 => 'obiter',
+    3227 => 'obiterdicta',
+    3228 => 'obiterdictum',
+    3229 => 'obligee',
+    3230 => 'obligees',
+    3231 => 'obligor',
+    3232 => 'obligors',
+    3233 => 'occupier',
+    3234 => 'offeree',
+    3235 => 'offerees',
+    3236 => 'offeror',
+    3237 => 'offerors',
+    3238 => 'oldlag',
+    3239 => 'oldlags',
+    3240 => 'ombudsmen',
+    3241 => 'openprison',
+    3242 => 'openprisons',
+    3243 => 'ostracism',
+    3244 => 'outlawry',
+    3245 => 'paedophile',
+    3246 => 'paedophiles',
+    3247 => 'panopticon',
+    3248 => 'panopticons',
+    3249 => 'parol',
+    3250 => 'paroleofficer',
+    3251 => 'paroleofficers',
+    3252 => 'partnerincrime',
+    3253 => 'partnersincrime',
+    3254 => 'passingoff',
+    3255 => 'patrolcar',
+    3256 => 'patrolcars',
+    3257 => 'peculation',
+    3258 => 'pedophile',
+    3259 => 'pedophiles',
+    3260 => 'peepingtom',
+    3261 => 'peepingtoms',
+    3262 => 'penaltypoints',
+    3263 => 'peoplesmuggler',
+    3264 => 'peoplesmugglers',
+    3265 => 'peopletrafficker',
+    3266 => 'peopletraffickers',
+    3267 => 'perjurer',
+    3268 => 'perjurers',
+    3269 => 'perp',
+    3270 => 'perps',
+    3271 => 'perse',
+    3272 => 'personalinjury',
+    3273 => 'personanongrata',
+    3274 => 'pervertingthecourseofjustice',
+    3275 => 'peterman',
+    3276 => 'petermen',
+    3277 => 'phisher',
+    3278 => 'phishers',
+    3279 => 'phonetap',
+    3280 => 'phonetaps',
+    3281 => 'photofit',
+    3282 => 'photofits',
+    3283 => 'pilferer',
+    3284 => 'pilferers',
+    3285 => 'pillories',
+    3286 => 'pillory',
+    3287 => 'planningpermission',
+    3288 => 'plc',
+    3289 => 'plcs',
+    3290 => 'pleabargain',
+    3291 => 'pleabargains',
+    3292 => 'plunderer',
+    3293 => 'plunderers',
+    3294 => 'policecar',
+    3295 => 'policecars',
+    3296 => 'policestation',
+    3297 => 'policestations',
+    3298 => 'powerofattorney',
+    3299 => 'powersofattorney',
+    3300 => 'prenup',
+    3301 => 'prenups',
+    3302 => 'pricefixing',
+    3303 => 'primafacie',
+    3304 => 'primogeniture',
+    3305 => 'prisoncamp',
+    3306 => 'prisoncamps',
+    3307 => 'privateeye',
+    3308 => 'privateeyes',
+    3309 => 'privateinvestigator',
+    3310 => 'privateinvestigators',
+    3311 => 'privity',
+    3312 => 'probationer',
+    3313 => 'probationers',
+    3314 => 'probationofficer',
+    3315 => 'probationofficers',
+    3316 => 'probono',
+    3317 => 'proctors',
+    3318 => 'procuratorfiscal',
+    3319 => 'procuratorfiscals',
+    3320 => 'procurators',
+    3321 => 'procuratorsfiscal',
+    3322 => 'procurers',
+    3323 => 'profitaprendre',
+    3324 => 'proforma',
+    3325 => 'promisee',
+    3326 => 'promisees',
+    3327 => 'promisor',
+    3328 => 'promisors',
+    3329 => 'promissorynote',
+    3330 => 'promissorynotes',
+    3331 => 'prorata',
+    3332 => 'prosecutrices',
+    3333 => 'prosecutrix',
+    3334 => 'prosecutrixes',
+    3335 => 'prospectuses',
+    3336 => 'prothonotaries',
+    3337 => 'prothonotary',
+    3338 => 'proviso',
+    3339 => 'provisoes',
+    3340 => 'provisos',
+    3341 => 'publicdefender',
+    3342 => 'publicdefenders',
+    3343 => 'puisne',
+    3344 => 'purchasers',
+    3345 => 'purloiner',
+    3346 => 'purloiners',
+    3347 => 'pursesnatcher',
+    3348 => 'pursesnatchers',
+    3349 => 'quantummeruit',
+    3350 => 'quashes',
+    3351 => 'quidproquo',
+    3352 => 'quitclaim',
+    3353 => 'quitclaims',
+    3354 => 'quorums',
+    3355 => 'racketeers',
+    3356 => 'ramraider',
+    3357 => 'ramraiders',
+    3358 => 'ramraiding',
+    3359 => 'rape',
+    3360 => 'rapes',
+    3361 => 'rapist',
+    3362 => 'rapists',
+    3363 => 'rapsheet',
+    3364 => 'rapsheets',
+    3365 => 'ratiodecidendi',
+    3366 => 'realestate',
+    3367 => 'rebuttals',
+    3368 => 'receivership',
+    3369 => 'recidivist',
+    3370 => 'recidivists',
+    3371 => 'recognisances',
+    3372 => 'recognizances',
+    3373 => 'rectification',
+    3374 => 'recusal',
+    3375 => 'recusals',
+    3376 => 'recuses',
+    3377 => 'redherring',
+    3378 => 'redherrings',
+    3379 => 'reexamination',
+    3380 => 'reexaminations',
+    3381 => 'reformatories',
+    3382 => 'rejoinder',
+    3383 => 'rejoinders',
+    3384 => 'remainderman',
+    3385 => 'remaindermen',
+    3386 => 'remandhome',
+    3387 => 'remandhomes',
+    3388 => 'remands',
+    3389 => 'remortgage',
+    3390 => 'remortgaged',
+    3391 => 'remortgages',
+    3392 => 'rentcharge',
+    3393 => 'rentcharges',
+    3394 => 'reoffender',
+    3395 => 'reoffenders',
+    3396 => 'repeatoffender',
+    3397 => 'repeatoffenders',
+    3398 => 'replevin',
+    3399 => 'repossession',
+    3400 => 'repossessions',
+    3401 => 'reprieves',
+    3402 => 'repudiation',
+    3403 => 'rescinds',
+    3404 => 'rescission',
+    3405 => 'residuary',
+    3406 => 'resipsaloquitur',
+    3407 => 'resjudicata',
+    3408 => 'restrainingorder',
+    3409 => 'restrainingorders',
+    3410 => 'restrictivecovenant',
+    3411 => 'restrictivecovenants',
+    3412 => 'resurrectionist',
+    3413 => 'resurrectionists',
+    3414 => 'retrials',
+    3415 => 'retried',
+    3416 => 'retries',
+    3417 => 'reversion',
+    3418 => 'reversions',
+    3419 => 'revocation',
+    3420 => 'rightofway',
+    3421 => 'rightsofway',
+    3422 => 'rioter',
+    3423 => 'rumrunner',
+    3424 => 'rumrunners',
+    3425 => 'safebreaker',
+    3426 => 'safebreakers',
+    3427 => 'safecrackers',
+    3428 => 'safehouse',
+    3429 => 'safehouses',
+    3430 => 'scammer',
+    3431 => 'scammers',
+    3432 => 'screwsman',
+    3433 => 'screwsmen',
+    3434 => 'scrivener',
+    3435 => 'scriveners',
+    3436 => 'searchwarrant',
+    3437 => 'searchwarrants',
+    3438 => 'seisin',
+    3439 => 'serialkiller',
+    3440 => 'serialkillers',
+    3441 => 'seriatim',
+    3442 => 'serjeant',
+    3443 => 'serjeants',
+    3444 => 'servicecharge',
+    3445 => 'servicecharges',
+    3446 => 'setoff',
+    3447 => 'settlor',
+    3448 => 'settlors',
+    3449 => 'severability',
+    3450 => 'sexoffender',
+    3451 => 'sexoffenders',
+    3452 => 'sexpest',
+    3453 => 'sexpests',
+    3454 => 'sextortion',
+    3455 => 'sharedownership',
+    3456 => 'sharia',
+    3457 => 'sheepstealer',
+    3458 => 'sheepstealers',
+    3459 => 'sheriffcourt',
+    3460 => 'sheriffcourts',
+    3461 => 'signatories',
+    3462 => 'signatory',
+    3463 => 'sinedie',
+    3464 => 'skyjacker',
+    3465 => 'skyjackers',
+    3466 => 'skyjacking',
+    3467 => 'skyjackings',
+    3468 => 'slayings',
+    3469 => 'smallclaimscourt',
+    3470 => 'smallclaimscourts',
+    3471 => 'smokinggun',
+    3472 => 'smokingguns',
+    3473 => 'sneakthief',
+    3474 => 'sneakthieves',
+    3475 => 'soco',
+    3476 => 'socos',
+    3477 => 'sodomy',
+    3478 => 'soletrader',
+    3479 => 'soletraders',
+    3480 => 'solicitorgeneral',
+    3481 => 'solicitorgenerals',
+    3482 => 'solicitorsgeneral',
+    3483 => 'solitaryconfinement',
+    3484 => 'specificperformance',
+    3485 => 'speeder',
+    3486 => 'speeders',
+    3487 => 'spreekiller',
+    3488 => 'spreekillers',
+    3489 => 'squadcar',
+    3490 => 'squadcars',
+    3491 => 'stakeholder',
+    3492 => 'stakeholders',
+    3493 => 'stampduty',
+    3494 => 'starchamber',
+    3495 => 'staredecisis',
+    3496 => 'stationhouse',
+    3497 => 'stationhouses',
+    3498 => 'statusquo',
+    3499 => 'statutoryinstrument',
+    3500 => 'statutoryinstruments',
+    3501 => 'stipendiaries',
+    3502 => 'stipendiary',
+    3503 => 'stopandsearch',
+    3504 => 'streaker',
+    3505 => 'streakers',
+    3506 => 'subcontract',
+    3507 => 'subcontracted',
+    3508 => 'subcontracts',
+    3509 => 'subjudice',
+    3510 => 'sublease',
+    3511 => 'subleases',
+    3512 => 'subrogation',
+    3513 => 'subrosa',
+    3514 => 'suicidebomber',
+    3515 => 'suicidebombers',
+    3516 => 'suijuris',
+    3517 => 'summingsup',
+    3518 => 'summingup',
+    3519 => 'supergrass',
+    3520 => 'supergrasses',
+    3521 => 'supermax',
+    3522 => 'supermaxes',
+    3523 => 'supremecourt',
+    3524 => 'supremecourts',
+    3525 => 'sureties',
+    3526 => 'suspendedsentence',
+    3527 => 'suspendedsentences',
+    3528 => 'taggers',
+    3529 => 'taxdodger',
+    3530 => 'taxdodgers',
+    3531 => 'taxevader',
+    3532 => 'taxevaders',
+    3533 => 'taxevasion',
+    3534 => 'telecoms',
+    3535 => 'tenancies',
+    3536 => 'tenancyagreement',
+    3537 => 'tenancyagreements',
+    3538 => 'tenures',
+    3539 => 'testator',
+    3540 => 'testators',
+    3541 => 'testatrices',
+    3542 => 'testatrix',
+    3543 => 'timeofdeath',
+    3544 => 'timeshare',
+    3545 => 'timeshares',
+    3546 => 'tipoff',
+    3547 => 'tipoffs',
+    3548 => 'tipstaff',
+    3549 => 'tipstaffs',
+    3550 => 'tipstaves',
+    3551 => 'tolbooth',
+    3552 => 'tolbooths',
+    3553 => 'tradesecret',
+    3554 => 'tradesecrets',
+    3555 => 'transferee',
+    3556 => 'transferees',
+    3557 => 'transferor',
+    3558 => 'transferors',
+    3559 => 'trustdeed',
+    3560 => 'trustdeeds',
+    3561 => 'turnkey',
+    3562 => 'turnkeys',
+    3563 => 'twocking',
+    3564 => 'ultravires',
+    3565 => 'unconscionability',
+    3566 => 'undueinfluence',
+    3567 => 'unenforceable',
+    3568 => 'usufruct',
+    3569 => 'usufructs',
+    3570 => 'venire',
+    3571 => 'videlicet',
+    3572 => 'viz',
+    3573 => 'voidable',
+    3574 => 'voirdire',
+    3575 => 'volenti',
+    3576 => 'walkingtheplank',
+    3577 => 'walktheplank',
+    3578 => 'warcrime',
+    3579 => 'warcrimes',
+    3580 => 'warcriminal',
+    3581 => 'warcriminals',
+    3582 => 'warrantcard',
+    3583 => 'warrantcards',
+    3584 => 'wayleave',
+    3585 => 'wayleaves',
+    3586 => 'whitepaper',
+    3587 => 'whitepapers',
+    3588 => 'whodunit',
+    3589 => 'whodunits',
+    3590 => 'whodunnit',
+    3591 => 'whodunnits',
+    3592 => 'wifebeater',
+    3593 => 'wifebeaters',
+    3594 => 'wiseguy',
+    3595 => 'wiseguys',
+    3596 => 'witnessbox',
+    3597 => 'witnessboxes',
+    3598 => 'witnessstand',
+    3599 => 'witnessstands',
+    3600 => 'woundings',
+    3601 => 'wrongdoer',
+    3602 => 'wrongdoers',
+    3603 => 'yakuza',
+    3604 => 'yardie',
+    3605 => 'yardies',
+    3606 => 'yob',
+    3607 => 'yobbo',
+    3608 => 'yobboes',
+    3609 => 'yobbos',
+    3610 => 'yobs',
+    3611 => 'youngoffender',
+    3612 => 'youngoffenderinstitution',
+    3613 => 'youngoffenderinstitutions',
+    3614 => 'youngoffenders',
+    3615 => 'youngoffendersinstitution',
+    3616 => 'youthcourt',
+    3617 => 'youthcourts',
   ),
   'families' => 
   array (
@@ -3412,90 +3640,126 @@ return array (
     ),
     2 => 
     array (
+      0 => 'bankruptcy',
+      1 => 'bankruptcies',
+    ),
+    3 => 
+    array (
       0 => 'canon',
       1 => 'canons',
     ),
-    3 => 
+    4 => 
     array (
       0 => 'charity',
       1 => 'charities',
     ),
-    4 => 
+    5 => 
     array (
       0 => 'commercial',
       1 => 'commercials',
     ),
-    5 => 
+    6 => 
     array (
       0 => 'common',
       1 => 'commons',
     ),
-    6 => 
+    7 => 
     array (
       0 => 'company',
       1 => 'companies',
     ),
-    7 => 
+    8 => 
     array (
       0 => 'competition',
       1 => 'competitions',
     ),
-    8 => 
+    9 => 
     array (
       0 => 'construction',
       1 => 'constructions',
     ),
-    9 => 
+    10 => 
     array (
       0 => 'consumer',
       1 => 'consumers',
     ),
-    10 => 
+    11 => 
     array (
       0 => 'contract',
       1 => 'contracts',
       2 => 'contracted',
       3 => 'contracting',
     ),
-    11 => 
+    12 => 
     array (
       0 => 'copyright',
       1 => 'copyrighted',
       2 => 'copyrights',
     ),
-    12 => 
+    13 => 
     array (
       0 => 'criminal',
       1 => 'criminals',
     ),
-    13 => 
+    14 => 
     array (
       0 => 'divorce',
       1 => 'divorces',
     ),
-    14 => 
+    15 => 
+    array (
+      0 => 'education',
+      1 => 'educations',
+    ),
+    16 => 
     array (
       0 => 'entertainment',
       1 => 'entertainments',
     ),
-    15 => 
+    17 => 
+    array (
+      0 => 'equity',
+      1 => 'equities',
+    ),
+    18 => 
     array (
       0 => 'evidence',
       1 => 'evidences',
     ),
-    16 => 
+    19 => 
     array (
       0 => 'family',
       1 => 'families',
     ),
-    17 => 
+    20 => 
     array (
       0 => 'housing',
       1 => 'house',
       2 => 'houses',
       3 => 'housed',
+      4 => 'housings',
     ),
-    18 => 
+    21 => 
+    array (
+      0 => 'humanitarian',
+      1 => 'humanitarians',
+    ),
+    22 => 
+    array (
+      0 => 'immigration',
+      1 => 'immigrations',
+    ),
+    23 => 
+    array (
+      0 => 'insurance',
+      1 => 'insurances',
+    ),
+    24 => 
+    array (
+      0 => 'international',
+      1 => 'internationals',
+    ),
+    25 => 
     array (
       0 => 'labour',
       1 => 'labor',
@@ -3506,7 +3770,7 @@ return array (
       6 => 'laboring',
       7 => 'labouring',
     ),
-    19 => 
+    26 => 
     array (
       0 => 'land',
       1 => 'landing',
@@ -3514,313 +3778,374 @@ return array (
       3 => 'lands',
       4 => 'landings',
     ),
-    20 => 
+    27 => 
+    array (
+      0 => 'libel',
+      1 => 'libels',
+    ),
+    28 => 
     array (
       0 => 'licensing',
       1 => 'licencing',
     ),
-    21 => 
+    29 => 
+    array (
+      0 => 'media',
+      1 => 'medias',
+    ),
+    30 => 
+    array (
+      0 => 'medical',
+      1 => 'medicals',
+    ),
+    31 => 
+    array (
+      0 => 'military',
+      1 => 'militaries',
+    ),
+    32 => 
     array (
       0 => 'patent',
       1 => 'patents',
       2 => 'patented',
+      3 => 'patenting',
     ),
-    22 => 
+    33 => 
     array (
       0 => 'pensions',
       1 => 'pension',
+      2 => 'pensioned',
     ),
-    23 => 
+    34 => 
     array (
       0 => 'planning',
       1 => 'plan',
       2 => 'plans',
       3 => 'planned',
     ),
-    24 => 
+    35 => 
     array (
       0 => 'private',
       1 => 'privates',
     ),
-    25 => 
+    36 => 
+    array (
+      0 => 'probate',
+      1 => 'probated',
+    ),
+    37 => 
     array (
       0 => 'property',
       1 => 'properties',
     ),
-    26 => 
+    38 => 
+    array (
+      0 => 'public',
+      1 => 'publics',
+    ),
+    39 => 
     array (
       0 => 'roman',
       1 => 'romans',
     ),
-    27 => 
+    40 => 
     array (
       0 => 'securities',
       1 => 'security',
     ),
-    28 => 
+    41 => 
     array (
       0 => 'shipping',
       1 => 'ship',
       2 => 'ships',
       3 => 'shipped',
     ),
-    29 => 
+    42 => 
     array (
       0 => 'sports',
       1 => 'sport',
       2 => 'sporting',
+      3 => 'sported',
     ),
-    30 => 
+    43 => 
     array (
       0 => 'tax',
       1 => 'taxes',
       2 => 'taxing',
       3 => 'taxed',
     ),
-    31 => 
+    44 => 
     array (
       0 => 'tort',
       1 => 'torts',
     ),
-    32 => 
+    45 => 
     array (
       0 => 'trust',
       1 => 'trusts',
       2 => 'trusted',
       3 => 'trusting',
     ),
-    33 => 
+    46 => 
     array (
       0 => 'animal',
       1 => 'animals',
     ),
-    34 => 
+    47 => 
     array (
       0 => 'customs',
       1 => 'custom',
     ),
-    35 => 
+    48 => 
     array (
       0 => 'disability',
       1 => 'disabilities',
     ),
-    36 => 
+    49 => 
     array (
       0 => 'election',
       1 => 'elections',
     ),
-    37 => 
+    50 => 
     array (
       0 => 'energy',
       1 => 'energies',
     ),
-    38 => 
+    51 => 
+    array (
+      0 => 'excise',
+      1 => 'excised',
+      2 => 'excising',
+    ),
+    52 => 
     array (
       0 => 'fiscal',
       1 => 'fiscals',
     ),
-    39 => 
+    53 => 
     array (
       0 => 'gaming',
       1 => 'game',
       2 => 'games',
+      3 => 'gamed',
     ),
-    40 => 
+    54 => 
     array (
       0 => 'juvenile',
       1 => 'juveniles',
     ),
-    41 => 
+    55 => 
     array (
       0 => 'local',
       1 => 'locals',
     ),
-    42 => 
+    56 => 
     array (
       0 => 'mining',
       1 => 'mine',
       2 => 'mines',
       3 => 'mined',
     ),
-    43 => 
+    57 => 
+    array (
+      0 => 'natural',
+      1 => 'naturals',
+    ),
+    58 => 
     array (
       0 => 'procedure',
       1 => 'procedures',
     ),
-    44 => 
+    59 => 
     array (
       0 => 'revenue',
       1 => 'revenues',
     ),
-    45 => 
+    60 => 
     array (
       0 => 'space',
       1 => 'spaces',
       2 => 'spaced',
       3 => 'spacing',
     ),
-    46 => 
+    61 => 
     array (
       0 => 'statute',
       1 => 'statutes',
     ),
-    47 => 
+    62 => 
     array (
       0 => 'water',
       1 => 'waters',
       2 => 'watering',
       3 => 'watered',
     ),
-    48 => 
+    63 => 
     array (
       0 => 'wills',
       1 => 'will',
       2 => 'willing',
       3 => 'willed',
     ),
-    49 => 
+    64 => 
     array (
       0 => 'youth',
       1 => 'youths',
     ),
-    50 => 
+    65 => 
+    array (
+      0 => 'acceptance',
+      1 => 'acceptances',
+    ),
+    66 => 
     array (
       0 => 'acquisition',
       1 => 'acquisitions',
     ),
-    51 => 
+    67 => 
     array (
       0 => 'addendum',
       1 => 'addenda',
       2 => 'addendums',
     ),
-    52 => 
+    68 => 
+    array (
+      0 => 'administration',
+      1 => 'administrations',
+    ),
+    69 => 
     array (
       0 => 'assignment',
       1 => 'assignments',
     ),
-    53 => 
+    70 => 
     array (
       0 => 'bailment',
       1 => 'bailments',
     ),
-    54 => 
+    71 => 
     array (
       0 => 'binding',
       1 => 'bind',
       2 => 'binds',
+      3 => 'bindings',
     ),
-    55 => 
+    72 => 
     array (
       0 => 'breach',
       1 => 'breaches',
       2 => 'breached',
       3 => 'breaching',
     ),
-    56 => 
+    73 => 
     array (
       0 => 'broker',
       1 => 'brokers',
       2 => 'brokered',
+      3 => 'brokering',
     ),
-    57 => 
+    74 => 
     array (
       0 => 'buyout',
       1 => 'buyouts',
     ),
-    58 => 
+    75 => 
     array (
       0 => 'cartel',
       1 => 'cartels',
     ),
-    59 => 
+    76 => 
     array (
       0 => 'clause',
       1 => 'clauses',
     ),
-    60 => 
+    77 => 
     array (
       0 => 'commission',
       1 => 'commissions',
       2 => 'commissioned',
+      3 => 'commissioning',
     ),
-    61 => 
+    78 => 
     array (
       0 => 'compensation',
       1 => 'compensations',
     ),
-    62 => 
+    79 => 
     array (
       0 => 'condition',
       1 => 'conditions',
       2 => 'conditioning',
       3 => 'conditioned',
     ),
-    63 => 
+    80 => 
     array (
       0 => 'consideration',
       1 => 'considerations',
     ),
-    64 => 
+    81 => 
     array (
       0 => 'consignment',
       1 => 'consignments',
     ),
-    65 => 
+    82 => 
     array (
       0 => 'contractor',
       1 => 'contractors',
     ),
-    66 => 
+    83 => 
     array (
       0 => 'counteroffer',
       1 => 'counteroffers',
     ),
-    67 => 
+    84 => 
     array (
       0 => 'damages',
       1 => 'damage',
       2 => 'damaged',
       3 => 'damaging',
     ),
-    68 => 
+    85 => 
     array (
       0 => 'debenture',
       1 => 'debentures',
     ),
-    69 => 
+    86 => 
     array (
       0 => 'deposit',
       1 => 'deposits',
       2 => 'deposited',
       3 => 'depositing',
     ),
-    70 => 
+    87 => 
     array (
       0 => 'director',
       1 => 'directors',
     ),
-    71 => 
+    88 => 
     array (
       0 => 'dividend',
       1 => 'dividends',
     ),
-    72 => 
+    89 => 
     array (
       0 => 'fiduciary',
       1 => 'fiduciaries',
     ),
-    73 => 
+    90 => 
     array (
       0 => 'franchise',
       1 => 'franchises',
+      2 => 'franchising',
+      3 => 'franchisees',
+      4 => 'franchised',
     ),
-    74 => 
+    91 => 
     array (
       0 => 'frustration',
       1 => 'frustrations',
     ),
-    75 => 
+    92 => 
     array (
       0 => 'guarantee',
       1 => 'guarantees',
@@ -3829,65 +4154,69 @@ return array (
       4 => 'guaranteed',
       5 => 'guaranteeing',
     ),
-    76 => 
+    93 => 
     array (
       0 => 'indemnify',
       1 => 'indemnifies',
       2 => 'indemnified',
     ),
-    77 => 
+    94 => 
     array (
       0 => 'indemnity',
       1 => 'indemnities',
     ),
-    78 => 
+    95 => 
     array (
       0 => 'invoice',
       1 => 'invoices',
+      2 => 'invoiced',
+      3 => 'invoicing',
     ),
-    79 => 
+    96 => 
     array (
       0 => 'jointventure',
       1 => 'jointventures',
     ),
-    80 => 
+    97 => 
     array (
       0 => 'liability',
       1 => 'liabilities',
     ),
-    81 => 
+    98 => 
     array (
       0 => 'licence',
       1 => 'licences',
       2 => 'license',
       3 => 'licenses',
+      4 => 'licensees',
+      5 => 'licensee',
     ),
-    82 => 
+    99 => 
     array (
       0 => 'merger',
       1 => 'mergers',
     ),
-    83 => 
+    100 => 
     array (
       0 => 'misrepresentation',
       1 => 'misrepresentations',
     ),
-    84 => 
+    101 => 
     array (
       0 => 'monopoly',
       1 => 'monopolies',
     ),
-    85 => 
+    102 => 
     array (
       0 => 'negotiation',
       1 => 'negotiations',
     ),
-    86 => 
+    103 => 
     array (
       0 => 'obligation',
       1 => 'obligations',
     ),
-    87 => 
+    104 => 
     array (
       0 => 'offer',
       1 => 'offers',
@@ -3895,341 +4224,372 @@ return array (
       3 => 'offering',
       4 => 'offerings',
     ),
-    88 => 
+    105 => 
     array (
       0 => 'partnership',
       1 => 'partnerships',
     ),
-    89 => 
+    106 => 
     array (
       0 => 'penalty',
       1 => 'penalties',
     ),
-    90 => 
+    107 => 
     array (
       0 => 'purchaser',
       1 => 'purchasers',
     ),
-    91 => 
+    108 => 
     array (
       0 => 'remedy',
       1 => 'remedies',
       2 => 'remedied',
     ),
-    92 => 
+    109 => 
     array (
       0 => 'renewal',
       1 => 'renewals',
     ),
-    93 => 
+    110 => 
     array (
       0 => 'rescind',
       1 => 'rescinds',
       2 => 'rescinded',
+      3 => 'rescinding',
     ),
-    94 => 
+    111 => 
     array (
       0 => 'retainer',
       1 => 'retainers',
     ),
-    95 => 
+    112 => 
     array (
       0 => 'royalty',
       1 => 'royalties',
     ),
-    96 => 
+    113 => 
     array (
       0 => 'share',
       1 => 'shares',
       2 => 'shared',
       3 => 'sharing',
     ),
-    97 => 
+    114 => 
     array (
       0 => 'shareholder',
       1 => 'shareholders',
     ),
-    98 => 
+    115 => 
     array (
       0 => 'signatory',
       1 => 'signatories',
     ),
-    99 => 
+    116 => 
     array (
       0 => 'signature',
       1 => 'signatures',
     ),
-    100 => 
+    117 => 
     array (
       0 => 'soletrader',
       1 => 'soletraders',
     ),
-    101 => 
+    118 => 
     array (
       0 => 'stakeholder',
       1 => 'stakeholders',
     ),
-    102 => 
+    119 => 
     array (
       0 => 'subcontract',
       1 => 'subcontracts',
       2 => 'subcontracted',
     ),
-    103 => 
+    120 => 
     array (
       0 => 'supplier',
       1 => 'suppliers',
     ),
-    104 => 
+    121 => 
     array (
       0 => 'takeover',
       1 => 'takeovers',
     ),
-    105 => 
+    122 => 
     array (
       0 => 'tender',
       1 => 'tenders',
+      2 => 'tendered',
+      3 => 'tendering',
     ),
-    106 => 
+    123 => 
     array (
       0 => 'term',
       1 => 'terms',
       2 => 'termed',
     ),
-    107 => 
+    124 => 
+    array (
+      0 => 'termination',
+      1 => 'terminations',
+    ),
+    125 => 
     array (
       0 => 'trademark',
       1 => 'trademarks',
+      2 => 'trademarked',
     ),
-    108 => 
+    126 => 
     array (
       0 => 'tradesecret',
       1 => 'tradesecrets',
     ),
-    109 => 
+    127 => 
     array (
       0 => 'variation',
       1 => 'variations',
     ),
-    110 => 
+    128 => 
     array (
       0 => 'vendor',
       1 => 'vendors',
     ),
-    111 => 
+    129 => 
+    array (
+      0 => 'void',
+      1 => 'voids',
+      2 => 'voided',
+      3 => 'voiding',
+    ),
+    130 => 
     array (
       0 => 'waiver',
       1 => 'waivers',
     ),
-    112 => 
+    131 => 
     array (
       0 => 'warranty',
       1 => 'warranties',
     ),
-    113 => 
+    132 => 
     array (
       0 => 'agency',
       1 => 'agencies',
     ),
-    114 => 
+    133 => 
     array (
       0 => 'articles',
       1 => 'article',
     ),
-    115 => 
+    134 => 
     array (
       0 => 'counterparty',
       1 => 'counterparties',
     ),
-    116 => 
+    135 => 
+    array (
+      0 => 'exclusion',
+      1 => 'exclusions',
+    ),
+    136 => 
     array (
       0 => 'exclusionclause',
       1 => 'exclusionclauses',
     ),
-    117 => 
+    137 => 
     array (
       0 => 'impliedterm',
       1 => 'impliedterms',
     ),
-    118 => 
+    138 => 
     array (
       0 => 'invitation',
       1 => 'invitations',
     ),
-    119 => 
+    139 => 
     array (
       0 => 'lapse',
       1 => 'lapses',
     ),
-    120 => 
+    140 => 
     array (
       0 => 'limitation',
       1 => 'limitations',
     ),
-    121 => 
+    141 => 
     array (
       0 => 'llp',
       1 => 'llps',
     ),
-    122 => 
+    142 => 
     array (
       0 => 'mistake',
       1 => 'mistakes',
       2 => 'mistaking',
     ),
-    123 => 
+    143 => 
     array (
       0 => 'nda',
       1 => 'ndas',
     ),
-    124 => 
+    144 => 
     array (
       0 => 'offeree',
       1 => 'offerees',
     ),
-    125 => 
+    145 => 
     array (
       0 => 'offeror',
       1 => 'offerors',
     ),
-    126 => 
+    146 => 
     array (
       0 => 'plc',
       1 => 'plcs',
     ),
-    127 => 
+    147 => 
     array (
       0 => 'pledge',
       1 => 'pledges',
     ),
-    128 => 
+    148 => 
     array (
       0 => 'promise',
       1 => 'promises',
       2 => 'promised',
       3 => 'promising',
     ),
-    129 => 
+    149 => 
     array (
       0 => 'renege',
       1 => 'reneges',
       2 => 'reneged',
+      3 => 'reneging',
     ),
-    130 => 
+    150 => 
     array (
       0 => 'restraint',
       1 => 'restraints',
     ),
-    131 => 
+    151 => 
     array (
       0 => 'assembly',
       1 => 'assemblies',
     ),
-    132 => 
+    152 => 
     array (
       0 => 'assizes',
       1 => 'assize',
     ),
-    133 => 
+    153 => 
     array (
       0 => 'bench',
       1 => 'benches',
       2 => 'benched',
+      3 => 'benching',
     ),
-    134 => 
+    154 => 
     array (
       0 => 'borstal',
       1 => 'borstals',
     ),
-    135 => 
+    155 => 
     array (
       0 => 'brig',
       1 => 'brigs',
     ),
-    136 => 
+    156 => 
     array (
       0 => 'cell',
       1 => 'cells',
+      2 => 'celled',
     ),
-    137 => 
+    157 => 
     array (
       0 => 'chambers',
       1 => 'chamber',
+      2 => 'chambered',
     ),
-    138 => 
+    158 => 
     array (
       0 => 'chancery',
       1 => 'chanceries',
     ),
-    139 => 
+    159 => 
     array (
       0 => 'clink',
       1 => 'clinking',
       2 => 'clinks',
+      3 => 'clinked',
     ),
-    140 => 
+    160 => 
+    array (
+      0 => 'congress',
+      1 => 'congresses',
+    ),
+    161 => 
     array (
       0 => 'constabulary',
       1 => 'constabularies',
     ),
-    141 => 
+    162 => 
     array (
       0 => 'countycourt',
       1 => 'countycourts',
     ),
-    142 => 
+    163 => 
     array (
       0 => 'court',
       1 => 'courts',
       2 => 'courting',
       3 => 'courted',
     ),
-    143 => 
+    164 => 
     array (
       0 => 'courthouse',
       1 => 'courthouses',
     ),
-    144 => 
+    165 => 
     array (
       0 => 'courtmartial',
       1 => 'courtsmartial',
     ),
-    145 => 
+    166 => 
     array (
       0 => 'courtofappeal',
       1 => 'appealcourt',
       2 => 'appealcourts',
     ),
-    146 => 
+    167 => 
     array (
       0 => 'courtroom',
       1 => 'courtrooms',
     ),
-    147 => 
+    168 => 
     array (
       0 => 'crowncourt',
       1 => 'crowncourts',
     ),
-    148 => 
+    169 => 
     array (
       0 => 'detentioncentre',
       1 => 'detentioncentres',
       2 => 'detentioncenter',
       3 => 'detentioncenters',
     ),
-    149 => 
+    170 => 
     array (
       0 => 'dock',
       1 => 'docks',
       2 => 'docking',
       3 => 'docked',
     ),
-    150 => 
+    171 => 
     array (
       0 => 'dungeon',
       1 => 'dungeons',
     ),
-    151 => 
+    172 => 
     array (
       0 => 'gaol',
       1 => 'gaols',
@@ -4237,287 +4597,293 @@ return array (
       3 => 'jails',
       4 => 'jailed',
       5 => 'gaoled',
+      6 => 'jailing',
     ),
-    152 => 
+    173 => 
     array (
       0 => 'gulag',
       1 => 'gulags',
     ),
-    153 => 
+    174 => 
     array (
       0 => 'highcourt',
       1 => 'highcourts',
     ),
-    154 => 
+    175 => 
     array (
       0 => 'inquisition',
       1 => 'inquisitions',
     ),
-    155 => 
+    176 => 
     array (
       0 => 'jailhouse',
       1 => 'jailhouses',
     ),
-    156 => 
+    177 => 
     array (
       0 => 'judiciary',
       1 => 'judiciaries',
     ),
-    157 => 
+    178 => 
     array (
       0 => 'jurybox',
       1 => 'juryboxes',
     ),
-    158 => 
+    179 => 
     array (
       0 => 'kangaroocourt',
       1 => 'kangaroocourts',
     ),
-    159 => 
+    180 => 
     array (
       0 => 'lawcourt',
       1 => 'lawcourts',
     ),
-    160 => 
+    181 => 
     array (
       0 => 'legislature',
       1 => 'legislatures',
     ),
-    161 => 
+    182 => 
     array (
       0 => 'lockup',
       1 => 'lockups',
     ),
-    162 => 
+    183 => 
     array (
       0 => 'magistratescourt',
       1 => 'magistratescourts',
     ),
-    163 => 
+    184 => 
     array (
       0 => 'moot',
       1 => 'moots',
+      2 => 'mooted',
     ),
-    164 => 
+    185 => 
     array (
       0 => 'morgue',
       1 => 'morgues',
     ),
-    165 => 
+    186 => 
     array (
       0 => 'mortuary',
       1 => 'mortuaries',
     ),
-    166 => 
+    187 => 
     array (
       0 => 'nick',
       1 => 'nicked',
       2 => 'nicks',
       3 => 'nicking',
     ),
-    167 => 
+    188 => 
     array (
       0 => 'parliament',
       1 => 'parliaments',
     ),
-    168 => 
+    189 => 
     array (
       0 => 'penitentiary',
       1 => 'penitentiaries',
     ),
-    169 => 
+    190 => 
     array (
       0 => 'policestation',
       1 => 'policestations',
     ),
-    170 => 
+    191 => 
     array (
       0 => 'precinct',
       1 => 'precincts',
     ),
-    171 => 
+    192 => 
     array (
       0 => 'prison',
       1 => 'prisons',
+      2 => 'prisoned',
     ),
-    172 => 
+    193 => 
     array (
       0 => 'reformatory',
       1 => 'reformatories',
     ),
-    173 => 
+    194 => 
     array (
       0 => 'registry',
       1 => 'registries',
     ),
-    174 => 
+    195 => 
     array (
       0 => 'slammer',
       1 => 'slammers',
     ),
-    175 => 
+    196 => 
     array (
       0 => 'stockade',
       1 => 'stockades',
     ),
-    176 => 
+    197 => 
     array (
       0 => 'supermax',
       1 => 'supermaxes',
     ),
-    177 => 
+    198 => 
     array (
       0 => 'supremecourt',
       1 => 'supremecourts',
     ),
-    178 => 
+    199 => 
     array (
       0 => 'tribunal',
       1 => 'tribunals',
     ),
-    179 => 
+    200 => 
     array (
       0 => 'witnessbox',
       1 => 'witnessboxes',
     ),
-    180 => 
+    201 => 
     array (
       0 => 'witnessstand',
       1 => 'witnessstands',
     ),
-    181 => 
+    202 => 
     array (
       0 => 'approvedschool',
       1 => 'approvedschools',
     ),
-    182 => 
+    203 => 
     array (
       0 => 'bar',
       1 => 'bars',
       2 => 'barred',
       3 => 'barring',
     ),
-    183 => 
+    204 => 
     array (
       0 => 'bridewell',
       1 => 'bridewells',
     ),
-    184 => 
+    205 => 
     array (
       0 => 'calaboose',
       1 => 'calabooses',
     ),
-    185 => 
+    206 => 
     array (
       0 => 'can',
       1 => 'cans',
       2 => 'canned',
       3 => 'canning',
     ),
-    186 => 
+    207 => 
     array (
       0 => 'cellblock',
       1 => 'cellblocks',
     ),
-    187 => 
+    208 => 
     array (
       0 => 'consistory',
       1 => 'consistories',
     ),
-    188 => 
+    209 => 
     array (
       0 => 'cooler',
       1 => 'coolers',
     ),
-    189 => 
+    210 => 
     array (
       0 => 'coronerscourt',
       1 => 'coronerscourts',
     ),
-    190 => 
+    211 => 
     array (
       0 => 'eyre',
       1 => 'eyres',
     ),
-    191 => 
+    212 => 
     array (
       0 => 'familycourt',
       1 => 'familycourts',
     ),
-    192 => 
+    213 => 
     array (
       0 => 'gallery',
       1 => 'galleries',
     ),
-    193 => 
+    214 => 
     array (
       0 => 'glasshouse',
       1 => 'glasshouses',
     ),
-    194 => 
+    215 => 
     array (
       0 => 'holdingcell',
       1 => 'holdingcells',
     ),
-    195 => 
+    216 => 
     array (
       0 => 'hoosegow',
       1 => 'hoosegows',
     ),
-    196 => 
+    217 => 
     array (
       0 => 'hulk',
       1 => 'hulks',
+      2 => 'hulking',
     ),
-    197 => 
+    218 => 
     array (
       0 => 'inn',
       1 => 'inns',
       2 => 'inning',
       3 => 'innings',
     ),
-    198 => 
+    219 => 
     array (
       0 => 'jug',
       1 => 'jugs',
+      2 => 'jugged',
     ),
-    199 => 
+    220 => 
     array (
       0 => 'juryroom',
       1 => 'juryrooms',
     ),
-    200 => 
+    221 => 
     array (
       0 => 'lawfirm',
       1 => 'lawfirms',
     ),
-    201 => 
+    222 => 
     array (
       0 => 'leet',
       1 => 'leets',
     ),
-    202 => 
+    223 => 
     array (
       0 => 'magistracy',
       1 => 'magistracies',
     ),
-    203 => 
+    224 => 
     array (
       0 => 'openprison',
       1 => 'openprisons',
     ),
-    204 => 
+    225 => 
     array (
       0 => 'panopticon',
       1 => 'panopticons',
     ),
-    205 => 
+    226 => 
     array (
       0 => 'pen',
       1 => 'pens',
       2 => 'penned',
+      3 => 'penning',
     ),
-    206 => 
+    227 => 
     array (
       0 => 'practice',
       1 => 'practicing',
@@ -4526,125 +4892,139 @@ return array (
       4 => 'practices',
       5 => 'practising',
       6 => 'practised',
+      7 => 'practises',
     ),
-    207 => 
+    228 => 
     array (
       0 => 'prisoncamp',
       1 => 'prisoncamps',
     ),
-    208 => 
+    229 => 
     array (
       0 => 'remandhome',
       1 => 'remandhomes',
     ),
-    209 => 
+    230 => 
     array (
       0 => 'roundhouse',
       1 => 'roundhouses',
     ),
-    210 => 
+    231 => 
     array (
       0 => 'sessions',
       1 => 'session',
     ),
-    211 => 
+    232 => 
     array (
       0 => 'sheriffcourt',
       1 => 'sheriffcourts',
     ),
-    212 => 
+    233 => 
     array (
       0 => 'smallclaimscourt',
       1 => 'smallclaimscourts',
     ),
-    213 => 
+    234 => 
     array (
       0 => 'stand',
       1 => 'standing',
       2 => 'stands',
+      3 => 'standings',
     ),
-    214 => 
+    235 => 
     array (
       0 => 'station',
       1 => 'stations',
       2 => 'stationed',
+      3 => 'stationing',
     ),
-    215 => 
+    236 => 
     array (
       0 => 'stationhouse',
       1 => 'stationhouses',
     ),
-    216 => 
+    237 => 
     array (
       0 => 'stir',
       1 => 'stirring',
       2 => 'stirred',
       3 => 'stirs',
     ),
-    217 => 
+    238 => 
     array (
       0 => 'tolbooth',
       1 => 'tolbooths',
     ),
-    218 => 
+    239 => 
     array (
       0 => 'youngoffenderinstitution',
       1 => 'youngoffenderinstitutions',
       2 => 'youngoffendersinstitution',
     ),
-    219 => 
+    240 => 
     array (
       0 => 'youthcourt',
       1 => 'youthcourts',
     ),
-    220 => 
+    241 => 
     array (
       0 => 'abduction',
       1 => 'abductions',
     ),
-    221 => 
+    242 => 
     array (
       0 => 'abuse',
       1 => 'abused',
       2 => 'abusing',
       3 => 'abuses',
     ),
-    222 => 
+    243 => 
     array (
       0 => 'affray',
       1 => 'affrays',
     ),
-    223 => 
+    244 => 
+    array (
+      0 => 'arson',
+      1 => 'arsons',
+    ),
+    245 => 
     array (
       0 => 'assassination',
       1 => 'assassinations',
     ),
-    224 => 
+    246 => 
     array (
       0 => 'assault',
       1 => 'assaults',
       2 => 'assaulted',
       3 => 'assaulting',
     ),
-    225 => 
+    247 => 
     array (
       0 => 'battery',
       1 => 'batteries',
     ),
-    226 => 
+    248 => 
     array (
       0 => 'begging',
       1 => 'beg',
       2 => 'begged',
       3 => 'begs',
     ),
-    227 => 
+    249 => 
     array (
       0 => 'blackmail',
       1 => 'blackmailing',
       2 => 'blackmailed',
+      3 => 'blackmails',
     ),
-    228 => 
+    250 => 
+    array (
+      0 => 'blasphemy',
+      1 => 'blasphemies',
+    ),
+    251 => 
     array (
       0 => 'bombing',
       1 => 'bombings',
@@ -4653,112 +5033,148 @@ return array (
       4 => 'bombed',
       5 => 'bombes',
     ),
-    229 => 
+    252 => 
     array (
       0 => 'bootlegging',
       1 => 'bootleg',
+      2 => 'bootlegs',
+      3 => 'bootlegged',
     ),
-    230 => 
+    253 => 
     array (
       0 => 'burglary',
       1 => 'burglaries',
     ),
-    231 => 
+    254 => 
     array (
       0 => 'carjacking',
       1 => 'carjackings',
     ),
-    232 => 
+    255 => 
     array (
       0 => 'conspiracy',
       1 => 'conspiracies',
     ),
-    233 => 
+    256 => 
+    array (
+      0 => 'corruption',
+      1 => 'corruptions',
+    ),
+    257 => 
     array (
       0 => 'counterfeiting',
       1 => 'counterfeit',
+      2 => 'counterfeits',
+      3 => 'counterfeited',
     ),
-    234 => 
+    258 => 
+    array (
+      0 => 'cruelty',
+      1 => 'cruelties',
+    ),
+    259 => 
     array (
       0 => 'cybercrime',
       1 => 'cybercrimes',
     ),
-    235 => 
+    260 => 
+    array (
+      0 => 'deception',
+      1 => 'deceptions',
+    ),
+    261 => 
+    array (
+      0 => 'desertion',
+      1 => 'desertions',
+    ),
+    262 => 
     array (
       0 => 'domesticviolence',
       1 => 'domesticabuse',
     ),
-    236 => 
+    263 => 
     array (
       0 => 'drinkdriving',
       1 => 'drunkdriving',
     ),
-    237 => 
+    264 => 
     array (
       0 => 'duelling',
       1 => 'dueling',
       2 => 'duel',
       3 => 'duels',
+      4 => 'dueled',
     ),
-    238 => 
+    265 => 
     array (
       0 => 'evasion',
       1 => 'taxevasion',
+      2 => 'evasions',
     ),
-    239 => 
+    266 => 
+    array (
+      0 => 'extortion',
+      1 => 'extortions',
+    ),
+    267 => 
     array (
       0 => 'falsification',
       1 => 'falsifications',
     ),
-    240 => 
+    268 => 
     array (
       0 => 'felony',
       1 => 'felonies',
     ),
-    241 => 
+    269 => 
     array (
       0 => 'flashing',
       1 => 'flash',
       2 => 'flashes',
       3 => 'flashed',
     ),
-    242 => 
+    270 => 
     array (
       0 => 'forgery',
       1 => 'forgeries',
     ),
-    243 => 
+    271 => 
     array (
       0 => 'fratricide',
       1 => 'fratricides',
     ),
-    244 => 
+    272 => 
     array (
       0 => 'fraud',
       1 => 'frauds',
     ),
-    245 => 
+    273 => 
+    array (
+      0 => 'genocide',
+      1 => 'genocides',
+    ),
+    274 => 
     array (
       0 => 'graft',
       1 => 'grafts',
       2 => 'grafted',
       3 => 'grafting',
     ),
-    246 => 
+    275 => 
     array (
       0 => 'grooming',
       1 => 'groom',
       2 => 'groomed',
       3 => 'grooms',
     ),
-    247 => 
+    276 => 
     array (
       0 => 'hacking',
       1 => 'hack',
       2 => 'hacked',
       3 => 'hacks',
     ),
-    248 => 
+    277 => 
     array (
       0 => 'harbouring',
       1 => 'harboring',
@@ -4769,82 +5185,102 @@ return array (
       6 => 'harboured',
       7 => 'harbours',
     ),
-    249 => 
+    278 => 
     array (
       0 => 'hatecrime',
       1 => 'hatecrimes',
     ),
-    250 => 
+    279 => 
     array (
       0 => 'heist',
       1 => 'heists',
+      2 => 'heisted',
+      3 => 'heisting',
     ),
-    251 => 
+    280 => 
     array (
       0 => 'heresy',
       1 => 'heresies',
     ),
-    252 => 
+    281 => 
     array (
       0 => 'hijacking',
       1 => 'hijackings',
       2 => 'hijacked',
       3 => 'hijack',
+      4 => 'hijacks',
     ),
-    253 => 
+    282 => 
     array (
       0 => 'hitandrun',
       1 => 'hitandruns',
     ),
-    254 => 
+    283 => 
     array (
       0 => 'holdup',
       1 => 'holdups',
     ),
-    255 => 
+    284 => 
     array (
       0 => 'homicide',
       1 => 'homicides',
     ),
-    256 => 
+    285 => 
     array (
       0 => 'identitytheft',
       1 => 'identityfraud',
     ),
-    257 => 
+    286 => 
+    array (
+      0 => 'impersonation',
+      1 => 'impersonations',
+    ),
+    287 => 
     array (
       0 => 'incitement',
       1 => 'incitements',
     ),
-    258 => 
+    288 => 
+    array (
+      0 => 'indecency',
+      1 => 'indecencies',
+    ),
+    289 => 
     array (
       0 => 'infanticide',
       1 => 'infanticides',
     ),
-    259 => 
+    290 => 
     array (
       0 => 'infringement',
       1 => 'infringements',
     ),
-    260 => 
+    291 => 
     array (
       0 => 'insidertrading',
       1 => 'insiderdealing',
     ),
-    261 => 
+    292 => 
+    array (
+      0 => 'insurrection',
+      1 => 'insurrections',
+    ),
+    293 => 
     array (
       0 => 'joyriding',
       1 => 'joyride',
+      2 => 'joyrides',
     ),
-    262 => 
+    294 => 
     array (
       0 => 'kidnapping',
       1 => 'kidnappings',
       2 => 'kidnap',
       3 => 'kidnaps',
       4 => 'kidnapped',
+      5 => 'kidnaped',
     ),
-    263 => 
+    295 => 
     array (
       0 => 'killing',
       1 => 'killings',
@@ -4852,60 +5288,70 @@ return array (
       3 => 'killed',
       4 => 'kills',
     ),
-    264 => 
+    296 => 
     array (
       0 => 'laundering',
       1 => 'moneylaundering',
       2 => 'launder',
       3 => 'laundered',
+      4 => 'launders',
     ),
-    265 => 
+    297 => 
     array (
       0 => 'littering',
       1 => 'litter',
       2 => 'littered',
+      3 => 'litters',
     ),
-    266 => 
+    298 => 
     array (
       0 => 'loitering',
       1 => 'loiter',
     ),
-    267 => 
+    299 => 
     array (
       0 => 'looting',
       1 => 'loot',
       2 => 'looted',
+      3 => 'loots',
     ),
-    268 => 
+    300 => 
     array (
       0 => 'lynching',
       1 => 'lynchings',
       2 => 'lynch',
       3 => 'lynched',
     ),
-    269 => 
+    301 => 
+    array (
+      0 => 'maiming',
+      1 => 'maimed',
+      2 => 'maim',
+      3 => 'maims',
+    ),
+    302 => 
     array (
       0 => 'massacre',
       1 => 'massacres',
     ),
-    270 => 
+    303 => 
     array (
       0 => 'matricide',
       1 => 'matricides',
     ),
-    271 => 
+    304 => 
     array (
       0 => 'misappropriation',
       1 => 'misappropriations',
     ),
-    272 => 
+    305 => 
     array (
       0 => 'misdemeanour',
       1 => 'misdemeanours',
       2 => 'misdemeanor',
       3 => 'misdemeanors',
     ),
-    273 => 
+    306 => 
     array (
       0 => 'mugging',
       1 => 'muggings',
@@ -4913,47 +5359,55 @@ return array (
       3 => 'mugged',
       4 => 'mugs',
     ),
-    274 => 
+    307 => 
     array (
       0 => 'murder',
       1 => 'murders',
       2 => 'murdered',
       3 => 'murdering',
     ),
-    275 => 
+    308 => 
     array (
       0 => 'mutiny',
       1 => 'mutinies',
+      2 => 'mutinied',
     ),
-    276 => 
+    309 => 
     array (
       0 => 'neglect',
       1 => 'neglected',
       2 => 'neglecting',
+      3 => 'neglects',
     ),
-    277 => 
+    310 => 
     array (
       0 => 'obscenity',
       1 => 'obscenities',
     ),
-    278 => 
+    311 => 
+    array (
+      0 => 'obstruction',
+      1 => 'obstructions',
+    ),
+    312 => 
     array (
       0 => 'patricide',
       1 => 'patricides',
     ),
-    279 => 
+    313 => 
     array (
       0 => 'pickpocketing',
       1 => 'pickpocket',
       2 => 'pickpockets',
     ),
-    280 => 
+    314 => 
     array (
       0 => 'poaching',
       1 => 'poached',
       2 => 'poach',
+      3 => 'poaches',
     ),
-    281 => 
+    315 => 
     array (
       0 => 'poisoning',
       1 => 'poisonings',
@@ -4961,86 +5415,97 @@ return array (
       3 => 'poisoned',
       4 => 'poisons',
     ),
-    282 => 
+    316 => 
     array (
       0 => 'possession',
       1 => 'possessions',
     ),
-    283 => 
+    317 => 
     array (
       0 => 'procuring',
       1 => 'procure',
       2 => 'procured',
     ),
-    284 => 
+    318 => 
+    array (
+      0 => 'racketeering',
+      1 => 'racketeer',
+      2 => 'racketeers',
+    ),
+    319 => 
     array (
       0 => 'rape',
       1 => 'rapes',
     ),
-    285 => 
+    320 => 
     array (
       0 => 'rebellion',
       1 => 'rebellions',
     ),
-    286 => 
+    321 => 
     array (
       0 => 'regicide',
       1 => 'regicides',
     ),
-    287 => 
+    322 => 
     array (
       0 => 'riot',
       1 => 'riots',
       2 => 'rioting',
+      3 => 'rioted',
     ),
-    288 => 
+    323 => 
     array (
       0 => 'robbery',
       1 => 'robberies',
     ),
-    289 => 
+    324 => 
     array (
       0 => 'sabotage',
       1 => 'sabotaged',
       2 => 'sabotaging',
+      3 => 'sabotages',
     ),
-    290 => 
+    325 => 
     array (
       0 => 'scam',
       1 => 'scams',
       2 => 'scamming',
       3 => 'scammed',
     ),
-    291 => 
+    326 => 
     array (
       0 => 'shooting',
       1 => 'shootings',
       2 => 'shoot',
       3 => 'shoots',
     ),
-    292 => 
+    327 => 
     array (
       0 => 'shoplifting',
       1 => 'shoplift',
+      2 => 'shoplifted',
     ),
-    293 => 
+    328 => 
     array (
       0 => 'skimming',
       1 => 'skim',
       2 => 'skimmed',
+      3 => 'skims',
     ),
-    294 => 
+    329 => 
     array (
       0 => 'skyjacking',
       1 => 'skyjackings',
     ),
-    295 => 
+    330 => 
     array (
       0 => 'slander',
       1 => 'slandered',
       2 => 'slandering',
+      3 => 'slanders',
     ),
-    296 => 
+    331 => 
     array (
       0 => 'slaying',
       1 => 'slayings',
@@ -5048,34 +5513,37 @@ return array (
       3 => 'slayed',
       4 => 'slays',
     ),
-    297 => 
+    332 => 
     array (
       0 => 'solicitation',
       1 => 'soliciting',
-      2 => 'solicit',
-      3 => 'solicited',
+      2 => 'solicitations',
+      3 => 'solicit',
+      4 => 'solicited',
+      5 => 'solicits',
     ),
-    298 => 
+    333 => 
     array (
       0 => 'speeding',
       1 => 'speed',
       2 => 'speeds',
       3 => 'speeded',
     ),
-    299 => 
+    334 => 
     array (
       0 => 'spying',
       1 => 'spy',
       2 => 'spies',
       3 => 'spied',
     ),
-    300 => 
+    335 => 
     array (
       0 => 'squatting',
       1 => 'squat',
       2 => 'squats',
+      3 => 'squatted',
     ),
-    301 => 
+    336 => 
     array (
       0 => 'stabbing',
       1 => 'stabbings',
@@ -5083,84 +5551,92 @@ return array (
       3 => 'stab',
       4 => 'stabs',
     ),
-    302 => 
+    337 => 
     array (
       0 => 'stalking',
       1 => 'stalk',
       2 => 'stalked',
       3 => 'stalks',
     ),
-    303 => 
+    338 => 
     array (
       0 => 'stealing',
       1 => 'steal',
       2 => 'steals',
     ),
-    304 => 
+    339 => 
     array (
       0 => 'stickup',
       1 => 'stickups',
     ),
-    305 => 
+    340 => 
     array (
       0 => 'streaking',
       1 => 'streak',
       2 => 'streaks',
+      3 => 'streaked',
     ),
-    306 => 
+    341 => 
     array (
       0 => 'swindle',
       1 => 'swindles',
     ),
-    307 => 
+    342 => 
     array (
       0 => 'tampering',
       1 => 'tampered',
       2 => 'tamper',
+      3 => 'tampers',
     ),
-    308 => 
+    343 => 
     array (
       0 => 'theft',
       1 => 'thefts',
     ),
-    309 => 
+    344 => 
     array (
       0 => 'thievery',
       1 => 'thieving',
     ),
-    310 => 
+    345 => 
     array (
       0 => 'torture',
       1 => 'tortured',
       2 => 'torturing',
       3 => 'tortures',
     ),
-    311 => 
+    346 => 
+    array (
+      0 => 'treason',
+      1 => 'treasons',
+    ),
+    347 => 
     array (
       0 => 'trespass',
       1 => 'trespassing',
       2 => 'trespasses',
       3 => 'trespassed',
     ),
-    312 => 
+    348 => 
     array (
       0 => 'truancy',
       1 => 'truancies',
     ),
-    313 => 
+    349 => 
     array (
       0 => 'warcrime',
       1 => 'warcrimes',
     ),
-    314 => 
+    350 => 
     array (
       0 => 'wiretapping',
       1 => 'wiretap',
       2 => 'wiretaps',
-      3 => 'phonetap',
-      4 => 'phonetaps',
+      3 => 'wiretapped',
+      4 => 'phonetap',
+      5 => 'phonetaps',
     ),
-    315 => 
+    351 => 
     array (
       0 => 'wounding',
       1 => 'woundings',
@@ -5168,110 +5644,129 @@ return array (
       3 => 'wounded',
       4 => 'wounds',
     ),
-    316 => 
+    352 => 
+    array (
+      0 => 'absconding',
+      1 => 'absconded',
+      2 => 'abscond',
+    ),
+    353 => 
     array (
       0 => 'attempt',
       1 => 'attempted',
       2 => 'attempts',
       3 => 'attempting',
     ),
-    317 => 
+    354 => 
     array (
       0 => 'breachofthepeace',
       1 => 'breachesofthepeace',
     ),
-    318 => 
+    355 => 
     array (
       0 => 'cheating',
       1 => 'cheat',
       2 => 'cheated',
       3 => 'cheats',
     ),
-    319 => 
+    356 => 
     array (
       0 => 'con',
       1 => 'cons',
     ),
-    320 => 
+    357 => 
     array (
       0 => 'crime',
       1 => 'crimes',
     ),
-    321 => 
+    358 => 
     array (
       0 => 'dealing',
       1 => 'deal',
       2 => 'deals',
       3 => 'dealings',
     ),
-    322 => 
+    359 => 
     array (
       0 => 'disorder',
       1 => 'disorders',
+      2 => 'disordered',
     ),
-    323 => 
+    360 => 
     array (
       0 => 'driveby',
       1 => 'drivebys',
     ),
-    324 => 
+    361 => 
+    array (
+      0 => 'exposure',
+      1 => 'exposures',
+    ),
+    362 => 
     array (
       0 => 'fiddle',
       1 => 'fiddles',
     ),
-    325 => 
+    363 => 
     array (
       0 => 'filicide',
       1 => 'filicides',
     ),
-    326 => 
+    364 => 
     array (
       0 => 'firebombing',
       1 => 'firebombings',
     ),
-    327 => 
+    365 => 
     array (
       0 => 'glassing',
       1 => 'glassings',
     ),
-    328 => 
+    366 => 
     array (
       0 => 'hustle',
       1 => 'hustles',
     ),
-    329 => 
+    367 => 
     array (
       0 => 'jailbreak',
       1 => 'jailbreaks',
     ),
-    330 => 
+    368 => 
     array (
       0 => 'kerbcrawling',
       1 => 'curbcrawling',
     ),
-    331 => 
+    369 => 
     array (
       0 => 'kneecapping',
       1 => 'kneecappings',
     ),
-    332 => 
+    370 => 
     array (
       0 => 'lesemajesty',
       1 => 'lesemajeste',
     ),
-    333 => 
+    371 => 
+    array (
+      0 => 'menaces',
+      1 => 'menace',
+      2 => 'menacing',
+      3 => 'menaced',
+    ),
+    372 => 
     array (
       0 => 'offence',
       1 => 'offences',
       2 => 'offense',
       3 => 'offenses',
     ),
-    334 => 
+    373 => 
     array (
       0 => 'parricide',
       1 => 'parricides',
     ),
-    335 => 
+    374 => 
     array (
       0 => 'pervertingthecourseofjustice',
       1 => 'perverting',
@@ -5279,836 +5774,836 @@ return array (
       3 => 'perverted',
       4 => 'perverts',
     ),
-    336 => 
+    375 => 
     array (
       0 => 'pinching',
       1 => 'pinch',
       2 => 'pinched',
       3 => 'pinches',
     ),
-    337 => 
+    376 => 
     array (
       0 => 'racket',
       1 => 'rackets',
     ),
-    338 => 
+    377 => 
     array (
       0 => 'receiving',
       1 => 'received',
       2 => 'receive',
       3 => 'receives',
     ),
-    339 => 
+    378 => 
     array (
       0 => 'shakedown',
       1 => 'shakedowns',
     ),
-    340 => 
+    379 => 
     array (
       0 => 'uttering',
       1 => 'utter',
       2 => 'uttered',
+      3 => 'utters',
     ),
-    341 => 
+    380 => 
     array (
       0 => 'abductor',
       1 => 'abductors',
     ),
-    342 => 
+    381 => 
     array (
       0 => 'abuser',
       1 => 'abusers',
     ),
-    343 => 
+    382 => 
     array (
       0 => 'accessory',
       1 => 'accessories',
     ),
-    344 => 
+    383 => 
     array (
       0 => 'accomplice',
       1 => 'accomplices',
     ),
-    345 => 
+    384 => 
     array (
       0 => 'armedrobber',
       1 => 'armedrobbers',
     ),
-    346 => 
+    385 => 
     array (
       0 => 'armsdealer',
       1 => 'armsdealers',
     ),
-    347 => 
+    386 => 
     array (
       0 => 'arsonist',
       1 => 'arsonists',
     ),
-    348 => 
+    387 => 
     array (
       0 => 'assailant',
       1 => 'assailants',
     ),
-    349 => 
+    388 => 
     array (
       0 => 'assassin',
       1 => 'assassins',
     ),
-    350 => 
+    389 => 
     array (
       0 => 'attacker',
       1 => 'attackers',
     ),
-    351 => 
+    390 => 
     array (
       0 => 'axemurderer',
       1 => 'axemurderers',
       2 => 'axmurderer',
       3 => 'axmurderers',
     ),
-    352 => 
+    391 => 
     array (
       0 => 'baddie',
       1 => 'baddies',
       2 => 'baddy',
     ),
-    353 => 
+    392 => 
     array (
       0 => 'badguy',
       1 => 'badguys',
     ),
-    354 => 
+    393 => 
     array (
       0 => 'bandit',
       1 => 'bandits',
     ),
-    355 => 
+    394 => 
     array (
       0 => 'bankrobber',
       1 => 'bankrobbers',
     ),
-    356 => 
+    395 => 
     array (
       0 => 'benefitcheat',
       1 => 'benefitcheats',
     ),
-    357 => 
+    396 => 
     array (
       0 => 'bigamist',
       1 => 'bigamists',
     ),
-    358 => 
+    397 => 
     array (
       0 => 'blackmailer',
       1 => 'blackmailers',
     ),
-    359 => 
+    398 => 
     array (
       0 => 'bomber',
       1 => 'bombers',
     ),
-    360 => 
+    399 => 
     array (
       0 => 'bootlegger',
       1 => 'bootleggers',
     ),
-    361 => 
+    400 => 
     array (
       0 => 'buccaneer',
       1 => 'buccaneers',
     ),
-    362 => 
+    401 => 
     array (
       0 => 'burglar',
       1 => 'burglars',
     ),
-    363 => 
+    402 => 
     array (
       0 => 'careercriminal',
       1 => 'careercriminals',
     ),
-    364 => 
+    403 => 
     array (
       0 => 'carjacker',
       1 => 'carjackers',
     ),
-    365 => 
+    404 => 
     array (
       0 => 'catburglar',
       1 => 'catburglars',
     ),
-    366 => 
+    405 => 
     array (
       0 => 'childmolester',
       1 => 'childmolesters',
     ),
-    367 => 
+    406 => 
     array (
       0 => 'conartist',
       1 => 'conartists',
     ),
-    368 => 
+    407 => 
     array (
       0 => 'conman',
       1 => 'conmen',
     ),
-    369 => 
+    408 => 
     array (
       0 => 'contractkiller',
       1 => 'contractkillers',
     ),
-    370 => 
+    409 => 
     array (
       0 => 'convict',
       1 => 'convicts',
       2 => 'convicted',
       3 => 'convicting',
     ),
-    371 => 
+    410 => 
     array (
       0 => 'counterfeiter',
       1 => 'counterfeiters',
     ),
-    372 => 
+    411 => 
     array (
       0 => 'crook',
       1 => 'crooks',
       2 => 'crooked',
     ),
-    373 => 
+    412 => 
     array (
       0 => 'culprit',
       1 => 'culprits',
     ),
-    374 => 
+    413 => 
     array (
       0 => 'cybercriminal',
       1 => 'cybercriminals',
     ),
-    375 => 
+    414 => 
     array (
       0 => 'dealer',
       1 => 'dealers',
     ),
-    376 => 
+    415 => 
     array (
       0 => 'delinquent',
       1 => 'delinquents',
     ),
-    377 => 
+    416 => 
     array (
       0 => 'deserter',
       1 => 'deserters',
     ),
-    378 => 
+    417 => 
     array (
       0 => 'drinkdriver',
       1 => 'drinkdrivers',
       2 => 'drunkdriver',
       3 => 'drunkdrivers',
     ),
-    379 => 
+    418 => 
     array (
       0 => 'drugbaron',
       1 => 'drugbarons',
     ),
-    380 => 
+    419 => 
     array (
       0 => 'drugdealer',
       1 => 'drugdealers',
     ),
-    381 => 
+    420 => 
     array (
       0 => 'druglord',
       1 => 'druglords',
     ),
-    382 => 
+    421 => 
     array (
       0 => 'drugmule',
       1 => 'drugmules',
     ),
-    383 => 
+    422 => 
     array (
       0 => 'drugsmuggler',
       1 => 'drugsmugglers',
     ),
-    384 => 
+    423 => 
     array (
       0 => 'drugtrafficker',
       1 => 'drugtraffickers',
     ),
-    385 => 
+    424 => 
     array (
       0 => 'embezzler',
       1 => 'embezzlers',
     ),
-    386 => 
+    425 => 
     array (
       0 => 'enforcer',
       1 => 'enforcers',
     ),
-    387 => 
+    426 => 
     array (
       0 => 'escapedconvict',
       1 => 'escapedconvicts',
     ),
-    388 => 
+    427 => 
     array (
       0 => 'escapee',
       1 => 'escapees',
     ),
-    389 => 
+    428 => 
     array (
       0 => 'excon',
       1 => 'excons',
     ),
-    390 => 
+    429 => 
     array (
       0 => 'extortionist',
       1 => 'extortionists',
     ),
-    391 => 
+    430 => 
     array (
       0 => 'faredodger',
       1 => 'faredodgers',
     ),
-    392 => 
+    431 => 
     array (
       0 => 'felon',
       1 => 'felons',
     ),
-    393 => 
+    432 => 
     array (
       0 => 'fence',
       1 => 'fences',
     ),
-    394 => 
+    433 => 
     array (
       0 => 'firebug',
       1 => 'firebugs',
     ),
-    395 => 
+    434 => 
     array (
       0 => 'flasher',
       1 => 'flashers',
     ),
-    396 => 
+    435 => 
     array (
       0 => 'flytipper',
       1 => 'flytippers',
     ),
-    397 => 
+    436 => 
     array (
       0 => 'forger',
       1 => 'forgers',
     ),
-    398 => 
+    437 => 
     array (
       0 => 'fraudster',
       1 => 'fraudsters',
     ),
-    399 => 
+    438 => 
     array (
       0 => 'fugitive',
       1 => 'fugitives',
     ),
-    400 => 
+    439 => 
     array (
       0 => 'gangster',
       1 => 'gangsters',
     ),
-    401 => 
+    440 => 
     array (
       0 => 'getawaydriver',
       1 => 'getawaydrivers',
     ),
-    402 => 
+    441 => 
     array (
       0 => 'godfather',
       1 => 'godfathers',
     ),
-    403 => 
+    442 => 
     array (
       0 => 'goon',
       1 => 'goons',
     ),
-    404 => 
+    443 => 
     array (
       0 => 'graverobber',
       1 => 'graverobbers',
     ),
-    405 => 
+    444 => 
     array (
       0 => 'gunman',
       1 => 'gunmen',
     ),
-    406 => 
+    445 => 
     array (
       0 => 'gunrunner',
       1 => 'gunrunners',
     ),
-    407 => 
+    446 => 
     array (
       0 => 'hacker',
       1 => 'hackers',
     ),
-    408 => 
+    447 => 
     array (
       0 => 'henchman',
       1 => 'henchmen',
     ),
-    409 => 
+    448 => 
     array (
       0 => 'highwayman',
       1 => 'highwaymen',
     ),
-    410 => 
+    449 => 
     array (
       0 => 'hijacker',
       1 => 'hijackers',
     ),
-    411 => 
+    450 => 
     array (
       0 => 'hitman',
       1 => 'hitmen',
     ),
-    412 => 
+    451 => 
     array (
       0 => 'hoodlum',
       1 => 'hoodlums',
     ),
-    413 => 
+    452 => 
     array (
       0 => 'hooligan',
       1 => 'hooligans',
     ),
-    414 => 
+    453 => 
     array (
       0 => 'horsethief',
       1 => 'horsethieves',
     ),
-    415 => 
+    454 => 
     array (
       0 => 'housebreaker',
       1 => 'housebreakers',
     ),
-    416 => 
+    455 => 
     array (
       0 => 'identitythief',
       1 => 'identitythieves',
     ),
-    417 => 
+    456 => 
     array (
       0 => 'jailbird',
       1 => 'jailbirds',
       2 => 'gaolbird',
       3 => 'gaolbirds',
     ),
-    418 => 
+    457 => 
     array (
       0 => 'jewelthief',
       1 => 'jewelthieves',
     ),
-    419 => 
+    458 => 
     array (
       0 => 'joyrider',
       1 => 'joyriders',
     ),
-    420 => 
+    459 => 
     array (
       0 => 'juveniledelinquent',
       1 => 'juveniledelinquents',
     ),
-    421 => 
+    460 => 
     array (
       0 => 'kidnapper',
       1 => 'kidnappers',
     ),
-    422 => 
+    461 => 
     array (
       0 => 'killer',
       1 => 'killers',
     ),
-    423 => 
+    462 => 
     array (
       0 => 'kingpin',
       1 => 'kingpins',
     ),
-    424 => 
+    463 => 
     array (
       0 => 'kleptomaniac',
       1 => 'kleptomaniacs',
     ),
-    425 => 
+    464 => 
     array (
       0 => 'knifeman',
       1 => 'knifemen',
     ),
-    426 => 
+    465 => 
     array (
       0 => 'lag',
       1 => 'lags',
       2 => 'lagging',
+      3 => 'lagged',
     ),
-    427 => 
+    466 => 
     array (
       0 => 'lawbreaker',
       1 => 'lawbreakers',
     ),
-    428 => 
+    467 => 
     array (
       0 => 'lifer',
       1 => 'lifers',
     ),
-    429 => 
+    468 => 
     array (
       0 => 'loanshark',
       1 => 'loansharks',
     ),
-    430 => 
+    469 => 
     array (
       0 => 'looter',
       1 => 'looters',
     ),
-    431 => 
+    470 => 
     array (
       0 => 'lowlife',
       1 => 'lowlifes',
       2 => 'lowlives',
     ),
-    432 => 
+    471 => 
     array (
       0 => 'mafioso',
       1 => 'mafiosi',
       2 => 'mafiosos',
     ),
-    433 => 
+    472 => 
     array (
       0 => 'massmurderer',
       1 => 'massmurderers',
     ),
-    434 => 
+    473 => 
     array (
       0 => 'mastermind',
       1 => 'masterminds',
       2 => 'masterminded',
+      3 => 'masterminding',
     ),
-    435 => 
+    474 => 
     array (
       0 => 'miscreant',
       1 => 'miscreants',
     ),
-    436 => 
+    475 => 
     array (
       0 => 'mobster',
       1 => 'mobsters',
     ),
-    437 => 
+    476 => 
     array (
       0 => 'molester',
       1 => 'molesters',
     ),
-    438 => 
+    477 => 
     array (
       0 => 'moneylaunderer',
       1 => 'moneylaunderers',
     ),
-    439 => 
+    478 => 
     array (
       0 => 'moonshiner',
       1 => 'moonshiners',
     ),
-    440 => 
+    479 => 
     array (
       0 => 'mugger',
       1 => 'muggers',
     ),
-    441 => 
+    480 => 
     array (
       0 => 'murderer',
       1 => 'murderers',
     ),
-    442 => 
+    481 => 
     array (
       0 => 'murderess',
       1 => 'murderesses',
     ),
-    443 => 
+    482 => 
     array (
       0 => 'mutineer',
       1 => 'mutineers',
     ),
-    444 => 
+    483 => 
     array (
       0 => 'offender',
       1 => 'offenders',
     ),
-    445 => 
+    484 => 
     array (
       0 => 'oldlag',
       1 => 'oldlags',
     ),
-    446 => 
+    485 => 
     array (
       0 => 'outlaw',
       1 => 'outlaws',
       2 => 'outlawed',
+      3 => 'outlawing',
     ),
-    447 => 
+    486 => 
     array (
       0 => 'paedophile',
       1 => 'paedophiles',
       2 => 'pedophile',
       3 => 'pedophiles',
     ),
-    448 => 
+    487 => 
     array (
       0 => 'partnerincrime',
       1 => 'partnersincrime',
     ),
-    449 => 
+    488 => 
     array (
       0 => 'peepingtom',
       1 => 'peepingtoms',
     ),
-    450 => 
+    489 => 
     array (
       0 => 'peoplesmuggler',
       1 => 'peoplesmugglers',
     ),
-    451 => 
+    490 => 
     array (
       0 => 'peopletrafficker',
       1 => 'peopletraffickers',
     ),
-    452 => 
+    491 => 
     array (
       0 => 'perjurer',
       1 => 'perjurers',
     ),
-    453 => 
+    492 => 
     array (
       0 => 'perp',
       1 => 'perps',
     ),
-    454 => 
+    493 => 
     array (
       0 => 'perpetrator',
       1 => 'perpetrators',
     ),
-    455 => 
+    494 => 
     array (
       0 => 'pimp',
       1 => 'pimps',
       2 => 'pimping',
       3 => 'pimped',
     ),
-    456 => 
+    495 => 
     array (
       0 => 'pirate',
       1 => 'pirates',
       2 => 'pirated',
+      3 => 'pirating',
     ),
-    457 => 
+    496 => 
     array (
       0 => 'poacher',
       1 => 'poachers',
     ),
-    458 => 
+    497 => 
     array (
       0 => 'poisoner',
       1 => 'poisoners',
     ),
-    459 => 
+    498 => 
     array (
       0 => 'psychopath',
       1 => 'psychopaths',
     ),
-    460 => 
+    499 => 
     array (
       0 => 'pusher',
       1 => 'pushers',
     ),
-    461 => 
+    500 => 
     array (
       0 => 'pyromaniac',
       1 => 'pyromaniacs',
     ),
-    462 => 
-    array (
-      0 => 'racketeer',
-      1 => 'racketeers',
-    ),
-    463 => 
+    501 => 
     array (
       0 => 'ramraider',
       1 => 'ramraiders',
     ),
-    464 => 
+    502 => 
     array (
       0 => 'rapist',
       1 => 'rapists',
     ),
-    465 => 
+    503 => 
     array (
       0 => 'recidivist',
       1 => 'recidivists',
     ),
-    466 => 
+    504 => 
     array (
       0 => 'repeatoffender',
       1 => 'repeatoffenders',
     ),
-    467 => 
+    505 => 
     array (
       0 => 'ringleader',
       1 => 'ringleaders',
     ),
-    468 => 
+    506 => 
     array (
       0 => 'rioter',
       1 => 'rioters',
     ),
-    469 => 
+    507 => 
     array (
       0 => 'robber',
       1 => 'robbers',
     ),
-    470 => 
+    508 => 
     array (
       0 => 'rustler',
       1 => 'rustlers',
       2 => 'cattlerustler',
       3 => 'cattlerustlers',
     ),
-    471 => 
+    509 => 
     array (
       0 => 'saboteur',
       1 => 'saboteurs',
     ),
-    472 => 
+    510 => 
     array (
       0 => 'safecracker',
       1 => 'safecrackers',
       2 => 'safebreaker',
       3 => 'safebreakers',
     ),
-    473 => 
+    511 => 
     array (
       0 => 'scammer',
       1 => 'scammers',
     ),
-    474 => 
+    512 => 
     array (
       0 => 'serialkiller',
       1 => 'serialkillers',
     ),
-    475 => 
+    513 => 
     array (
       0 => 'sexoffender',
       1 => 'sexoffenders',
     ),
-    476 => 
+    514 => 
     array (
       0 => 'shoplifter',
       1 => 'shoplifters',
     ),
-    477 => 
+    515 => 
     array (
       0 => 'smuggler',
       1 => 'smugglers',
     ),
-    478 => 
+    516 => 
     array (
       0 => 'sniper',
       1 => 'snipers',
     ),
-    479 => 
+    517 => 
     array (
       0 => 'sociopath',
       1 => 'sociopaths',
     ),
-    480 => 
+    518 => 
     array (
       0 => 'stalker',
       1 => 'stalkers',
     ),
-    481 => 
+    519 => 
     array (
       0 => 'strangler',
       1 => 'stranglers',
     ),
-    482 => 
+    520 => 
     array (
       0 => 'swindler',
       1 => 'swindlers',
     ),
-    483 => 
+    521 => 
     array (
       0 => 'taxdodger',
       1 => 'taxdodgers',
     ),
-    484 => 
+    522 => 
     array (
       0 => 'taxevader',
       1 => 'taxevaders',
     ),
-    485 => 
+    523 => 
     array (
       0 => 'terrorist',
       1 => 'terrorists',
     ),
-    486 => 
+    524 => 
     array (
       0 => 'thief',
       1 => 'thieves',
     ),
-    487 => 
+    525 => 
     array (
       0 => 'thug',
       1 => 'thugs',
     ),
-    488 => 
+    526 => 
     array (
       0 => 'trafficker',
       1 => 'traffickers',
     ),
-    489 => 
+    527 => 
     array (
       0 => 'traitor',
       1 => 'traitors',
     ),
-    490 => 
+    528 => 
     array (
       0 => 'trespasser',
       1 => 'trespassers',
     ),
-    491 => 
+    529 => 
     array (
       0 => 'vandal',
       1 => 'vandals',
     ),
-    492 => 
+    530 => 
     array (
       0 => 'vigilante',
       1 => 'vigilantes',
     ),
-    493 => 
+    531 => 
     array (
       0 => 'villain',
       1 => 'villains',
     ),
-    494 => 
+    532 => 
     array (
       0 => 'warcriminal',
       1 => 'warcriminals',
     ),
-    495 => 
+    533 => 
     array (
       0 => 'wrongdoer',
       1 => 'wrongdoers',
     ),
-    496 => 
+    534 => 
     array (
       0 => 'yob',
       1 => 'yobs',
@@ -6116,480 +6611,484 @@ return array (
       3 => 'yobbos',
       4 => 'yobboes',
     ),
-    497 => 
+    535 => 
     array (
       0 => 'absconder',
       1 => 'absconders',
     ),
-    498 => 
+    536 => 
     array (
       0 => 'aggressor',
       1 => 'aggressors',
     ),
-    499 => 
+    537 => 
     array (
       0 => 'bagsnatcher',
       1 => 'bagsnatchers',
       2 => 'pursesnatcher',
       3 => 'pursesnatchers',
     ),
-    500 => 
+    538 => 
     array (
       0 => 'batterer',
       1 => 'batterers',
     ),
-    501 => 
+    539 => 
     array (
       0 => 'bodysnatcher',
       1 => 'bodysnatchers',
     ),
-    502 => 
+    540 => 
     array (
       0 => 'brigand',
       1 => 'brigands',
     ),
-    503 => 
+    541 => 
     array (
       0 => 'bushranger',
       1 => 'bushrangers',
     ),
-    504 => 
+    542 => 
     array (
       0 => 'capo',
       1 => 'capos',
     ),
-    505 => 
+    543 => 
     array (
       0 => 'cardsharp',
       1 => 'cardsharps',
       2 => 'cardsharper',
       3 => 'cardsharpers',
     ),
-    506 => 
+    544 => 
     array (
       0 => 'charlatan',
       1 => 'charlatans',
     ),
-    507 => 
+    545 => 
     array (
       0 => 'coiner',
       1 => 'coiners',
     ),
-    508 => 
+    546 => 
     array (
       0 => 'confidencetrickster',
       1 => 'confidencetricksters',
     ),
-    509 => 
+    547 => 
     array (
       0 => 'consigliere',
       1 => 'consiglieri',
     ),
-    510 => 
+    548 => 
     array (
       0 => 'copycat',
       1 => 'copycats',
       2 => 'copycatkiller',
       3 => 'copycatkillers',
     ),
-    511 => 
+    549 => 
     array (
       0 => 'corsair',
       1 => 'corsairs',
     ),
-    512 => 
+    550 => 
     array (
       0 => 'cracksman',
       1 => 'cracksmen',
     ),
-    513 => 
+    551 => 
     array (
       0 => 'cutpurse',
       1 => 'cutpurses',
     ),
-    514 => 
+    552 => 
     array (
       0 => 'cutthroat',
       1 => 'cutthroats',
     ),
-    515 => 
+    553 => 
     array (
       0 => 'cyberstalker',
       1 => 'cyberstalkers',
     ),
-    516 => 
+    554 => 
     array (
       0 => 'desperado',
       1 => 'desperadoes',
       2 => 'desperados',
     ),
-    517 => 
+    555 => 
     array (
       0 => 'dognapper',
       1 => 'dognappers',
     ),
-    518 => 
+    556 => 
     array (
       0 => 'don',
       1 => 'dons',
+      2 => 'donned',
+      3 => 'donning',
     ),
-    519 => 
+    557 => 
     array (
       0 => 'draftdodger',
       1 => 'draftdodgers',
     ),
-    520 => 
+    558 => 
     array (
       0 => 'evildoer',
       1 => 'evildoers',
     ),
-    521 => 
+    559 => 
     array (
       0 => 'fireraiser',
       1 => 'fireraisers',
     ),
-    522 => 
+    560 => 
     array (
       0 => 'footpad',
       1 => 'footpads',
     ),
-    523 => 
+    561 => 
     array (
       0 => 'freebooter',
       1 => 'freebooters',
     ),
-    524 => 
+    562 => 
     array (
       0 => 'gangbanger',
       1 => 'gangbangers',
     ),
-    525 => 
+    563 => 
     array (
       0 => 'ganglandboss',
       1 => 'ganglandbosses',
     ),
-    526 => 
+    564 => 
     array (
       0 => 'gangmember',
       1 => 'gangmembers',
     ),
-    527 => 
+    565 => 
     array (
       0 => 'grifter',
       1 => 'grifters',
     ),
-    528 => 
+    566 => 
     array (
       0 => 'groomer',
       1 => 'groomers',
     ),
-    529 => 
+    567 => 
     array (
       0 => 'hiredgun',
       1 => 'hiredguns',
     ),
-    530 => 
+    568 => 
     array (
       0 => 'hitandrundriver',
       1 => 'hitandrundrivers',
     ),
-    531 => 
+    569 => 
     array (
       0 => 'hood',
       1 => 'hoods',
       2 => 'hooded',
     ),
-    532 => 
+    570 => 
     array (
       0 => 'hustler',
       1 => 'hustlers',
     ),
-    533 => 
+    571 => 
     array (
       0 => 'impostor',
       1 => 'impostors',
       2 => 'imposter',
       3 => 'imposters',
     ),
-    534 => 
+    572 => 
     array (
       0 => 'insidertrader',
       1 => 'insidertraders',
     ),
-    535 => 
+    573 => 
     array (
       0 => 'klepto',
       1 => 'kleptos',
     ),
-    536 => 
+    574 => 
     array (
       0 => 'launderer',
       1 => 'launderers',
     ),
-    537 => 
+    575 => 
     array (
       0 => 'lookout',
       1 => 'lookouts',
     ),
-    538 => 
+    576 => 
     array (
       0 => 'lout',
       1 => 'louts',
     ),
-    539 => 
+    577 => 
     array (
       0 => 'madam',
       1 => 'madams',
     ),
-    540 => 
+    578 => 
     array (
       0 => 'mademan',
       1 => 'mademen',
     ),
-    541 => 
+    579 => 
     array (
       0 => 'malefactor',
       1 => 'malefactors',
     ),
-    542 => 
+    580 => 
     array (
       0 => 'marauder',
       1 => 'marauders',
     ),
-    543 => 
+    581 => 
     array (
       0 => 'moll',
       1 => 'molls',
       2 => 'gangstersmoll',
       3 => 'gangstersmolls',
     ),
-    544 => 
+    582 => 
     array (
       0 => 'mule',
       1 => 'mules',
+      2 => 'muling',
     ),
-    545 => 
+    583 => 
     array (
       0 => 'peddler',
       1 => 'peddlers',
       2 => 'pedlar',
       3 => 'pedlars',
     ),
-    546 => 
+    584 => 
     array (
       0 => 'peterman',
       1 => 'petermen',
     ),
-    547 => 
+    585 => 
     array (
       0 => 'phisher',
       1 => 'phishers',
     ),
-    548 => 
+    586 => 
     array (
       0 => 'pilferer',
       1 => 'pilferers',
     ),
-    549 => 
+    587 => 
     array (
       0 => 'plunderer',
       1 => 'plunderers',
     ),
-    550 => 
+    588 => 
     array (
       0 => 'privateer',
       1 => 'privateers',
     ),
-    551 => 
+    589 => 
     array (
       0 => 'procurer',
       1 => 'procurers',
     ),
-    552 => 
+    590 => 
     array (
       0 => 'prowler',
       1 => 'prowlers',
     ),
-    553 => 
+    591 => 
     array (
       0 => 'psycho',
       1 => 'psychos',
+      2 => 'psychoses',
     ),
-    554 => 
+    592 => 
     array (
       0 => 'purloiner',
       1 => 'purloiners',
     ),
-    555 => 
+    593 => 
     array (
       0 => 'raider',
       1 => 'raiders',
     ),
-    556 => 
+    594 => 
     array (
       0 => 'reoffender',
       1 => 'reoffenders',
     ),
-    557 => 
+    595 => 
     array (
       0 => 'resurrectionist',
       1 => 'resurrectionists',
     ),
-    558 => 
+    596 => 
     array (
       0 => 'ripper',
       1 => 'rippers',
     ),
-    559 => 
+    597 => 
     array (
       0 => 'rogue',
       1 => 'rogues',
     ),
-    560 => 
+    598 => 
     array (
       0 => 'ruffian',
       1 => 'ruffians',
     ),
-    561 => 
+    599 => 
     array (
       0 => 'rumrunner',
       1 => 'rumrunners',
     ),
-    562 => 
+    600 => 
     array (
       0 => 'screwsman',
       1 => 'screwsmen',
     ),
-    563 => 
+    601 => 
     array (
       0 => 'sexpest',
       1 => 'sexpests',
     ),
-    564 => 
+    602 => 
     array (
       0 => 'sheepstealer',
       1 => 'sheepstealers',
     ),
-    565 => 
+    603 => 
     array (
       0 => 'skyjacker',
       1 => 'skyjackers',
     ),
-    566 => 
+    604 => 
     array (
       0 => 'slasher',
       1 => 'slashers',
     ),
-    567 => 
+    605 => 
     array (
       0 => 'sneakthief',
       1 => 'sneakthieves',
     ),
-    568 => 
+    606 => 
     array (
       0 => 'speeder',
       1 => 'speeders',
     ),
-    569 => 
+    607 => 
     array (
       0 => 'spreekiller',
       1 => 'spreekillers',
     ),
-    570 => 
+    608 => 
     array (
       0 => 'squatter',
       1 => 'squatters',
     ),
-    571 => 
+    609 => 
     array (
       0 => 'streaker',
       1 => 'streakers',
     ),
-    572 => 
+    610 => 
     array (
       0 => 'suicidebomber',
       1 => 'suicidebombers',
     ),
-    573 => 
+    611 => 
     array (
       0 => 'tagger',
       1 => 'taggers',
     ),
-    574 => 
+    612 => 
     array (
       0 => 'triad',
       1 => 'triads',
     ),
-    575 => 
+    613 => 
     array (
       0 => 'trickster',
       1 => 'tricksters',
     ),
-    576 => 
+    614 => 
     array (
       0 => 'voyeur',
       1 => 'voyeurs',
     ),
-    577 => 
+    615 => 
     array (
       0 => 'wifebeater',
       1 => 'wifebeaters',
     ),
-    578 => 
+    616 => 
     array (
       0 => 'wiseguy',
       1 => 'wiseguys',
     ),
-    579 => 
+    617 => 
     array (
       0 => 'yardie',
       1 => 'yardies',
     ),
-    580 => 
+    618 => 
     array (
       0 => 'youngoffender',
       1 => 'youngoffenders',
     ),
-    581 => 
+    619 => 
     array (
       0 => 'accord',
       1 => 'accords',
       2 => 'according',
       3 => 'accorded',
     ),
-    582 => 
+    620 => 
     array (
       0 => 'act',
       1 => 'acts',
       2 => 'acting',
       3 => 'acted',
     ),
-    583 => 
+    621 => 
     array (
       0 => 'affidavit',
       1 => 'affidavits',
     ),
-    584 => 
+    622 => 
     array (
       0 => 'agreement',
       1 => 'agreements',
     ),
-    585 => 
+    623 => 
     array (
       0 => 'amendment',
       1 => 'amendments',
     ),
-    586 => 
+    624 => 
     array (
       0 => 'armistice',
       1 => 'armistices',
     ),
-    587 => 
+    625 => 
     array (
       0 => 'arrestwarrant',
       1 => 'arrestwarrants',
     ),
-    588 => 
+    626 => 
     array (
       0 => 'bill',
       1 => 'bills',
@@ -6597,14 +7096,14 @@ return array (
       3 => 'billings',
       4 => 'billed',
     ),
-    589 => 
+    627 => 
     array (
       0 => 'bond',
       1 => 'bonds',
       2 => 'bonding',
       3 => 'bonded',
     ),
-    590 => 
+    628 => 
     array (
       0 => 'brief',
       1 => 'briefs',
@@ -6612,203 +7111,211 @@ return array (
       3 => 'briefed',
       4 => 'briefings',
     ),
-    591 => 
+    629 => 
     array (
       0 => 'bylaw',
       1 => 'bylaws',
       2 => 'byelaw',
       3 => 'byelaws',
     ),
-    592 => 
+    630 => 
     array (
       0 => 'casefile',
       1 => 'casefiles',
     ),
-    593 => 
+    631 => 
     array (
       0 => 'certificate',
       1 => 'certificates',
     ),
-    594 => 
+    632 => 
     array (
       0 => 'chargesheet',
       1 => 'chargesheets',
     ),
-    595 => 
+    633 => 
     array (
       0 => 'charter',
       1 => 'charters',
       2 => 'chartered',
+      3 => 'chartering',
     ),
-    596 => 
+    634 => 
     array (
       0 => 'citation',
       1 => 'citations',
     ),
-    597 => 
+    635 => 
     array (
       0 => 'codicil',
       1 => 'codicils',
     ),
-    598 => 
+    636 => 
     array (
       0 => 'complaint',
       1 => 'complaints',
     ),
-    599 => 
+    637 => 
     array (
       0 => 'constitution',
       1 => 'constitutions',
     ),
-    600 => 
+    638 => 
     array (
       0 => 'convention',
       1 => 'conventions',
     ),
-    601 => 
+    639 => 
     array (
       0 => 'conveyance',
       1 => 'conveyances',
     ),
-    602 => 
+    640 => 
     array (
       0 => 'courtorder',
       1 => 'courtorders',
     ),
-    603 => 
+    641 => 
     array (
       0 => 'covenant',
       1 => 'covenants',
     ),
-    604 => 
+    642 => 
     array (
       0 => 'declaration',
       1 => 'declarations',
     ),
-    605 => 
+    643 => 
     array (
       0 => 'decree',
       1 => 'decrees',
       2 => 'decreed',
     ),
-    606 => 
+    644 => 
     array (
       0 => 'deed',
       1 => 'deeds',
+      2 => 'deeded',
     ),
-    607 => 
+    645 => 
     array (
       0 => 'deedpoll',
       1 => 'deedpolls',
     ),
-    608 => 
+    646 => 
     array (
       0 => 'deposition',
       1 => 'depositions',
     ),
-    609 => 
+    647 => 
     array (
       0 => 'directive',
       1 => 'directives',
     ),
-    610 => 
+    648 => 
     array (
       0 => 'disclaimer',
       1 => 'disclaimers',
     ),
-    611 => 
+    649 => 
     array (
       0 => 'docket',
       1 => 'dockets',
     ),
-    612 => 
+    650 => 
     array (
       0 => 'edict',
       1 => 'edicts',
     ),
-    613 => 
+    651 => 
     array (
       0 => 'greenpaper',
       1 => 'greenpapers',
     ),
-    614 => 
+    652 => 
     array (
       0 => 'indenture',
       1 => 'indentures',
     ),
-    615 => 
+    653 => 
     array (
       0 => 'indictment',
       1 => 'indictments',
     ),
-    616 => 
+    654 => 
     array (
       0 => 'injunction',
       1 => 'injunctions',
     ),
-    617 => 
+    655 => 
     array (
       0 => 'lease',
       1 => 'leases',
       2 => 'leased',
       3 => 'leasing',
     ),
-    618 => 
+    656 => 
+    array (
+      0 => 'legislation',
+      1 => 'legislations',
+    ),
+    657 => 
     array (
       0 => 'livingwill',
       1 => 'livingwills',
     ),
-    619 => 
+    658 => 
     array (
       0 => 'memorandum',
       1 => 'memoranda',
       2 => 'memorandums',
     ),
-    620 => 
+    659 => 
     array (
       0 => 'mortgage',
       1 => 'mortgages',
       2 => 'mortgaged',
+      3 => 'mortgaging',
     ),
-    621 => 
+    660 => 
     array (
       0 => 'notice',
       1 => 'notices',
       2 => 'noticed',
       3 => 'noticing',
     ),
-    622 => 
+    661 => 
     array (
       0 => 'order',
       1 => 'orders',
       2 => 'ordered',
       3 => 'ordering',
     ),
-    623 => 
+    662 => 
     array (
       0 => 'ordinance',
       1 => 'ordinances',
     ),
-    624 => 
+    663 => 
     array (
       0 => 'pact',
       1 => 'pacts',
     ),
-    625 => 
+    664 => 
     array (
       0 => 'permit',
       1 => 'permits',
       2 => 'permitted',
       3 => 'permitting',
     ),
-    626 => 
+    665 => 
     array (
       0 => 'petition',
       1 => 'petitions',
       2 => 'petitioned',
       3 => 'petitioning',
     ),
-    627 => 
+    666 => 
     array (
       0 => 'pleading',
       1 => 'pleadings',
@@ -6817,255 +7324,261 @@ return array (
       4 => 'pleads',
       5 => 'pled',
     ),
-    628 => 
+    667 => 
     array (
       0 => 'policy',
       1 => 'policies',
     ),
-    629 => 
+    668 => 
     array (
       0 => 'powerofattorney',
       1 => 'powersofattorney',
     ),
-    630 => 
+    669 => 
     array (
       0 => 'prenup',
       1 => 'prenups',
     ),
-    631 => 
+    670 => 
     array (
       0 => 'proclamation',
       1 => 'proclamations',
     ),
-    632 => 
+    671 => 
     array (
       0 => 'protocol',
       1 => 'protocols',
     ),
-    633 => 
+    672 => 
     array (
       0 => 'rapsheet',
       1 => 'rapsheets',
     ),
-    634 => 
+    673 => 
     array (
       0 => 'regulation',
       1 => 'regulations',
     ),
-    635 => 
+    674 => 
     array (
       0 => 'restrainingorder',
       1 => 'restrainingorders',
     ),
-    636 => 
+    675 => 
     array (
       0 => 'searchwarrant',
       1 => 'searchwarrants',
     ),
-    637 => 
+    676 => 
     array (
       0 => 'statement',
       1 => 'statements',
     ),
-    638 => 
+    677 => 
     array (
       0 => 'subpoena',
       1 => 'subpoenas',
       2 => 'subpoenaed',
+      3 => 'subpoenaing',
     ),
-    639 => 
+    678 => 
     array (
       0 => 'summons',
       1 => 'summonses',
       2 => 'summoned',
       3 => 'summon',
       4 => 'summoning',
+      5 => 'summonsed',
     ),
-    640 => 
+    679 => 
     array (
       0 => 'tenancyagreement',
       1 => 'tenancyagreements',
     ),
-    641 => 
+    680 => 
     array (
       0 => 'testament',
       1 => 'testaments',
     ),
-    642 => 
+    681 => 
     array (
       0 => 'transcript',
       1 => 'transcripts',
     ),
-    643 => 
+    682 => 
     array (
       0 => 'treaty',
       1 => 'treaties',
     ),
-    644 => 
+    683 => 
     array (
       0 => 'warrant',
       1 => 'warrants',
       2 => 'warranted',
     ),
-    645 => 
+    684 => 
     array (
       0 => 'whitepaper',
       1 => 'whitepapers',
     ),
-    646 => 
+    685 => 
     array (
       0 => 'writ',
       1 => 'writs',
     ),
-    647 => 
+    686 => 
     array (
       0 => 'abstract',
       1 => 'abstracts',
+      2 => 'abstracted',
     ),
-    648 => 
+    687 => 
     array (
       0 => 'annex',
       1 => 'annexes',
       2 => 'annexed',
+      3 => 'annexing',
     ),
-    649 => 
+    688 => 
     array (
       0 => 'appendix',
       1 => 'appendices',
       2 => 'appendixes',
     ),
-    650 => 
+    689 => 
     array (
       0 => 'asbo',
       1 => 'asbos',
     ),
-    651 => 
+    690 => 
     array (
       0 => 'attestation',
       1 => 'attestations',
     ),
-    652 => 
+    691 => 
     array (
       0 => 'billofsale',
       1 => 'billsofsale',
     ),
-    653 => 
+    692 => 
     array (
       0 => 'bundle',
       1 => 'bundles',
     ),
-    654 => 
+    693 => 
     array (
       0 => 'claim',
       1 => 'claims',
       2 => 'claimed',
       3 => 'claiming',
     ),
-    655 => 
+    694 => 
     array (
       0 => 'concordat',
       1 => 'concordats',
     ),
-    656 => 
+    695 => 
     array (
       0 => 'dossier',
       1 => 'dossiers',
     ),
-    657 => 
+    696 => 
     array (
       0 => 'instrument',
       1 => 'instruments',
     ),
-    658 => 
+    697 => 
     array (
       0 => 'interrogatory',
       1 => 'interrogatories',
     ),
-    659 => 
+    698 => 
     array (
       0 => 'iou',
       1 => 'ious',
     ),
-    660 => 
+    699 => 
     array (
       0 => 'law',
       1 => 'laws',
     ),
-    661 => 
+    700 => 
     array (
       0 => 'mandate',
       1 => 'mandates',
       2 => 'mandated',
+      3 => 'mandating',
     ),
-    662 => 
+    701 => 
     array (
       0 => 'minute',
       1 => 'minutes',
     ),
-    663 => 
+    702 => 
     array (
       0 => 'particulars',
       1 => 'particular',
     ),
-    664 => 
+    703 => 
     array (
       0 => 'passport',
       1 => 'passports',
     ),
-    665 => 
+    704 => 
     array (
       0 => 'promissorynote',
       1 => 'promissorynotes',
     ),
-    666 => 
+    705 => 
     array (
       0 => 'prospectus',
       1 => 'prospectuses',
     ),
-    667 => 
+    706 => 
     array (
       0 => 'proxy',
       1 => 'proxies',
     ),
-    668 => 
+    707 => 
     array (
       0 => 'receipt',
       1 => 'receipts',
     ),
-    669 => 
+    708 => 
     array (
       0 => 'register',
       1 => 'registers',
       2 => 'registered',
       3 => 'registering',
     ),
-    670 => 
+    709 => 
     array (
       0 => 'release',
       1 => 'releases',
       2 => 'released',
       3 => 'releasing',
     ),
-    671 => 
+    710 => 
     array (
       0 => 'report',
       1 => 'reports',
       2 => 'reported',
       3 => 'reporting',
     ),
-    672 => 
+    711 => 
     array (
       0 => 'rider',
       1 => 'riders',
     ),
-    673 => 
+    712 => 
     array (
       0 => 'roll',
       1 => 'rolls',
       2 => 'rolling',
       3 => 'rolled',
+      4 => 'rollings',
     ),
-    674 => 
+    713 => 
     array (
       0 => 'rule',
       1 => 'rules',
@@ -7073,73 +7586,76 @@ return array (
       3 => 'ruling',
       4 => 'rulings',
     ),
-    675 => 
+    714 => 
     array (
       0 => 'schedule',
       1 => 'schedules',
       2 => 'scheduled',
       3 => 'scheduling',
     ),
-    676 => 
+    715 => 
     array (
       0 => 'skeleton',
       1 => 'skeletons',
     ),
-    677 => 
+    716 => 
     array (
       0 => 'statutoryinstrument',
       1 => 'statutoryinstruments',
     ),
-    678 => 
+    717 => 
     array (
       0 => 'trustdeed',
       1 => 'trustdeeds',
     ),
-    679 => 
+    718 => 
     array (
       0 => 'undertaking',
       1 => 'undertakings',
       2 => 'undertake',
+      3 => 'undertakes',
     ),
-    680 => 
+    719 => 
     array (
       0 => 'alibi',
       1 => 'alibis',
+      2 => 'alibied',
     ),
-    681 => 
+    720 => 
     array (
       0 => 'arrest',
       1 => 'arrests',
       2 => 'arrested',
       3 => 'arresting',
     ),
-    682 => 
+    721 => 
     array (
       0 => 'autopsy',
       1 => 'autopsies',
+      2 => 'autopsied',
     ),
-    683 => 
+    722 => 
     array (
       0 => 'badge',
       1 => 'badges',
     ),
-    684 => 
+    723 => 
     array (
       0 => 'ballistics',
       1 => 'ballistic',
     ),
-    685 => 
+    724 => 
     array (
       0 => 'bloodstain',
       1 => 'bloodstains',
       2 => 'bloodstained',
     ),
-    686 => 
+    725 => 
     array (
       0 => 'bobby',
       1 => 'bobbies',
     ),
-    687 => 
+    726 => 
     array (
       0 => 'booking',
       1 => 'book',
@@ -7147,367 +7663,390 @@ return array (
       3 => 'booked',
       4 => 'bookings',
     ),
-    688 => 
+    727 => 
     array (
       0 => 'bugging',
       1 => 'bug',
       2 => 'bugs',
       3 => 'bugged',
     ),
-    689 => 
+    728 => 
     array (
       0 => 'bust',
       1 => 'busts',
       2 => 'busted',
       3 => 'busting',
     ),
-    690 => 
+    729 => 
     array (
       0 => 'caution',
       1 => 'cautions',
       2 => 'cautioned',
+      3 => 'cautioning',
     ),
-    691 => 
+    730 => 
     array (
       0 => 'charge',
       1 => 'charges',
       2 => 'charged',
     ),
-    692 => 
+    731 => 
     array (
       0 => 'clue',
       1 => 'clues',
+      2 => 'clued',
     ),
-    693 => 
+    732 => 
     array (
       0 => 'coldcase',
       1 => 'coldcases',
     ),
-    694 => 
+    733 => 
     array (
       0 => 'confession',
       1 => 'confessions',
     ),
-    695 => 
+    734 => 
     array (
       0 => 'constable',
       1 => 'constables',
     ),
-    696 => 
+    735 => 
     array (
       0 => 'cop',
       1 => 'cops',
       2 => 'copped',
       3 => 'copping',
     ),
-    697 => 
+    736 => 
     array (
       0 => 'copper',
       1 => 'coppers',
     ),
-    698 => 
+    737 => 
     array (
       0 => 'cordon',
       1 => 'cordoned',
+      2 => 'cordons',
+      3 => 'cordoning',
     ),
-    699 => 
+    738 => 
     array (
       0 => 'corpse',
       1 => 'corpses',
     ),
-    700 => 
+    739 => 
     array (
       0 => 'crimescene',
       1 => 'crimescenes',
     ),
-    701 => 
+    740 => 
     array (
       0 => 'decoy',
       1 => 'decoys',
+      2 => 'decoyed',
     ),
-    702 => 
+    741 => 
     array (
       0 => 'deduction',
       1 => 'deductions',
     ),
-    703 => 
+    742 => 
     array (
       0 => 'detective',
       1 => 'detectives',
     ),
-    704 => 
+    743 => 
     array (
       0 => 'dragnet',
       1 => 'dragnets',
     ),
-    705 => 
+    744 => 
     array (
       0 => 'exhibit',
       1 => 'exhibits',
       2 => 'exhibited',
       3 => 'exhibiting',
     ),
-    706 => 
+    745 => 
+    array (
+      0 => 'exhumation',
+      1 => 'exhumations',
+    ),
+    746 => 
     array (
       0 => 'fibre',
       1 => 'fibres',
       2 => 'fiber',
       3 => 'fibers',
     ),
-    707 => 
+    747 => 
     array (
       0 => 'fingerprint',
       1 => 'fingerprints',
       2 => 'fingerprinting',
       3 => 'fingerprinted',
     ),
-    708 => 
+    748 => 
     array (
       0 => 'footprint',
       1 => 'footprints',
     ),
-    709 => 
+    749 => 
     array (
       0 => 'forensics',
       1 => 'forensic',
     ),
-    710 => 
+    750 => 
     array (
       0 => 'frisk',
       1 => 'frisks',
       2 => 'frisked',
+      3 => 'frisking',
     ),
-    711 => 
+    751 => 
     array (
       0 => 'grass',
       1 => 'grasses',
       2 => 'grassed',
+      3 => 'grassing',
     ),
-    712 => 
+    752 => 
     array (
       0 => 'handcuffs',
       1 => 'handcuff',
       2 => 'cuffs',
       3 => 'handcuffed',
-      4 => 'cuff',
-      5 => 'cuffed',
+      4 => 'handcuffing',
+      5 => 'cuff',
+      6 => 'cuffed',
+      7 => 'cuffing',
     ),
-    713 => 
+    753 => 
     array (
       0 => 'hunch',
       1 => 'hunches',
       2 => 'hunched',
+      3 => 'hunching',
     ),
-    714 => 
+    754 => 
     array (
       0 => 'identikit',
       1 => 'identikits',
     ),
-    715 => 
+    755 => 
     array (
       0 => 'informant',
       1 => 'informants',
     ),
-    716 => 
+    756 => 
     array (
       0 => 'inspector',
       1 => 'inspectors',
     ),
-    717 => 
+    757 => 
     array (
       0 => 'interrogation',
       1 => 'interrogations',
     ),
-    718 => 
+    758 => 
     array (
       0 => 'interview',
       1 => 'interviews',
       2 => 'interviewed',
       3 => 'interviewing',
     ),
-    719 => 
+    759 => 
     array (
       0 => 'investigation',
       1 => 'investigations',
     ),
-    720 => 
+    760 => 
     array (
       0 => 'investigator',
       1 => 'investigators',
     ),
-    721 => 
+    761 => 
     array (
       0 => 'lead',
       1 => 'leads',
       2 => 'leading',
+      3 => 'leaded',
     ),
-    722 => 
+    762 => 
     array (
       0 => 'lineup',
       1 => 'lineups',
       2 => 'identityparade',
       3 => 'identityparades',
     ),
-    723 => 
+    763 => 
     array (
       0 => 'manhunt',
       1 => 'manhunts',
     ),
-    724 => 
+    764 => 
     array (
       0 => 'motive',
       1 => 'motives',
     ),
-    725 => 
+    765 => 
     array (
       0 => 'mugshot',
       1 => 'mugshots',
     ),
-    726 => 
+    766 => 
     array (
       0 => 'murderweapon',
       1 => 'murderweapons',
     ),
-    727 => 
+    767 => 
     array (
       0 => 'officer',
       1 => 'officers',
     ),
-    728 => 
+    768 => 
     array (
       0 => 'pathologist',
       1 => 'pathologists',
     ),
-    729 => 
+    769 => 
     array (
       0 => 'patrol',
       1 => 'patrols',
       2 => 'patrolling',
       3 => 'patrolled',
     ),
-    730 => 
+    770 => 
     array (
       0 => 'photofit',
       1 => 'photofits',
     ),
-    731 => 
+    771 => 
     array (
       0 => 'police',
       1 => 'policing',
+      2 => 'policed',
+      3 => 'polices',
     ),
-    732 => 
+    772 => 
     array (
       0 => 'policeman',
       1 => 'policemen',
     ),
-    733 => 
+    773 => 
     array (
       0 => 'policewoman',
       1 => 'policewomen',
     ),
-    734 => 
+    774 => 
     array (
       0 => 'polygraph',
       1 => 'polygraphs',
       2 => 'liedetector',
       3 => 'liedetectors',
     ),
-    735 => 
+    775 => 
     array (
       0 => 'postmortem',
       1 => 'postmortems',
     ),
-    736 => 
+    776 => 
     array (
       0 => 'privateeye',
       1 => 'privateeyes',
     ),
-    737 => 
+    777 => 
     array (
       0 => 'profiler',
       1 => 'profilers',
     ),
-    738 => 
+    778 => 
     array (
       0 => 'proof',
       1 => 'proofs',
+      2 => 'proofing',
+      3 => 'proofed',
     ),
-    739 => 
+    779 => 
     array (
       0 => 'questioning',
       1 => 'question',
       2 => 'questions',
       3 => 'questioned',
     ),
-    740 => 
+    780 => 
     array (
       0 => 'raid',
       1 => 'raids',
       2 => 'raided',
       3 => 'raiding',
     ),
-    741 => 
+    781 => 
     array (
       0 => 'ransom',
       1 => 'ransoms',
+      2 => 'ransomed',
+      3 => 'ransoming',
     ),
-    742 => 
+    782 => 
     array (
       0 => 'redherring',
       1 => 'redherrings',
     ),
-    743 => 
+    783 => 
     array (
       0 => 'roadblock',
       1 => 'roadblocks',
     ),
-    744 => 
+    784 => 
     array (
       0 => 'safehouse',
       1 => 'safehouses',
     ),
-    745 => 
+    785 => 
     array (
       0 => 'search',
       1 => 'searches',
       2 => 'searching',
       3 => 'searched',
     ),
-    746 => 
+    786 => 
     array (
       0 => 'seizure',
       1 => 'seizures',
     ),
-    747 => 
+    787 => 
     array (
       0 => 'sergeant',
       1 => 'sergeants',
       2 => 'serjeant',
       3 => 'serjeants',
     ),
-    748 => 
+    788 => 
     array (
       0 => 'sleuth',
       1 => 'sleuths',
+      2 => 'sleuthing',
     ),
-    749 => 
+    789 => 
     array (
       0 => 'smokinggun',
       1 => 'smokingguns',
     ),
-    750 => 
+    790 => 
     array (
       0 => 'snitch',
       1 => 'snitched',
       2 => 'snitches',
       3 => 'snitching',
     ),
-    751 => 
+    791 => 
     array (
       0 => 'squad',
       1 => 'squads',
     ),
-    752 => 
+    792 => 
     array (
       0 => 'squadcar',
       1 => 'squadcars',
@@ -7516,41 +8055,42 @@ return array (
       4 => 'patrolcar',
       5 => 'patrolcars',
     ),
-    753 => 
+    793 => 
     array (
       0 => 'stakeout',
       1 => 'stakeouts',
     ),
-    754 => 
+    794 => 
     array (
       0 => 'sting',
       1 => 'stings',
       2 => 'stinging',
     ),
-    755 => 
+    795 => 
     array (
       0 => 'supergrass',
       1 => 'supergrasses',
     ),
-    756 => 
+    796 => 
     array (
       0 => 'superintendent',
       1 => 'superintendents',
     ),
-    757 => 
+    797 => 
     array (
       0 => 'suspect',
       1 => 'suspects',
       2 => 'suspected',
       3 => 'suspecting',
     ),
-    758 => 
+    798 => 
     array (
       0 => 'swab',
       1 => 'swabs',
       2 => 'swabbed',
+      3 => 'swabbing',
     ),
-    759 => 
+    799 => 
     array (
       0 => 'tail',
       1 => 'tails',
@@ -7558,219 +8098,229 @@ return array (
       3 => 'tailed',
       4 => 'tailings',
     ),
-    760 => 
+    800 => 
     array (
       0 => 'taser',
       1 => 'tasers',
     ),
-    761 => 
+    801 => 
     array (
       0 => 'tipoff',
       1 => 'tipoffs',
     ),
-    762 => 
+    802 => 
     array (
       0 => 'truncheon',
       1 => 'truncheons',
     ),
-    763 => 
+    803 => 
     array (
       0 => 'witness',
       1 => 'witnesses',
       2 => 'witnessed',
       3 => 'witnessing',
     ),
-    764 => 
+    804 => 
     array (
       0 => 'admission',
       1 => 'admissions',
     ),
-    765 => 
+    805 => 
     array (
       0 => 'baton',
       1 => 'batons',
     ),
-    766 => 
+    806 => 
     array (
       0 => 'chalkoutline',
       1 => 'chalkoutlines',
     ),
-    767 => 
+    807 => 
     array (
       0 => 'collar',
       1 => 'collars',
       2 => 'collared',
+      3 => 'collaring',
     ),
-    768 => 
+    808 => 
     array (
       0 => 'composite',
       1 => 'composites',
     ),
-    769 => 
+    809 => 
     array (
       0 => 'custodysergeant',
       1 => 'custodysergeants',
     ),
-    770 => 
+    810 => 
     array (
       0 => 'dabs',
       1 => 'dab',
+      2 => 'dabbing',
+      3 => 'dabbed',
     ),
-    771 => 
+    811 => 
     array (
       0 => 'detain',
       1 => 'detains',
       2 => 'detained',
       3 => 'detaining',
     ),
-    772 => 
+    812 => 
     array (
       0 => 'efit',
       1 => 'efits',
     ),
-    773 => 
+    813 => 
     array (
       0 => 'evidencebag',
       1 => 'evidencebags',
     ),
-    774 => 
+    814 => 
+    array (
+      0 => 'footage',
+      1 => 'footages',
+    ),
+    815 => 
     array (
       0 => 'gumshoe',
       1 => 'gumshoes',
     ),
-    775 => 
+    816 => 
     array (
       0 => 'honeytrap',
       1 => 'honeytraps',
     ),
-    776 => 
+    817 => 
     array (
       0 => 'interviewroom',
       1 => 'interviewrooms',
     ),
-    777 => 
+    818 => 
     array (
       0 => 'missingperson',
       1 => 'missingpersons',
     ),
-    778 => 
+    819 => 
     array (
       0 => 'mole',
       1 => 'moles',
     ),
-    779 => 
+    820 => 
     array (
       0 => 'nark',
       1 => 'narks',
     ),
-    780 => 
+    821 => 
     array (
       0 => 'nightstick',
       1 => 'nightsticks',
     ),
-    781 => 
+    822 => 
     array (
       0 => 'profiling',
       1 => 'profile',
       2 => 'profiles',
       3 => 'profiled',
     ),
-    782 => 
+    823 => 
     array (
       0 => 'soco',
       1 => 'socos',
     ),
-    783 => 
+    824 => 
     array (
       0 => 'warrantcard',
       1 => 'warrantcards',
     ),
-    784 => 
+    825 => 
     array (
       0 => 'weapon',
       1 => 'weapons',
     ),
-    785 => 
+    826 => 
     array (
       0 => 'whodunnit',
       1 => 'whodunnits',
       2 => 'whodunit',
       3 => 'whodunits',
     ),
-    786 => 
+    827 => 
     array (
       0 => 'adjudicator',
       1 => 'adjudicators',
     ),
-    787 => 
+    828 => 
     array (
       0 => 'advocate',
       1 => 'advocates',
       2 => 'advocating',
       3 => 'advocated',
     ),
-    788 => 
+    829 => 
     array (
       0 => 'arbitrator',
       1 => 'arbitrators',
     ),
-    789 => 
+    830 => 
     array (
       0 => 'attorney',
       1 => 'attorneys',
     ),
-    790 => 
+    831 => 
     array (
       0 => 'attorneygeneral',
       1 => 'attorneysgeneral',
       2 => 'attorneygenerals',
     ),
-    791 => 
+    832 => 
     array (
       0 => 'bailiff',
       1 => 'bailiffs',
     ),
-    792 => 
+    833 => 
     array (
       0 => 'barrister',
       1 => 'barristers',
     ),
-    793 => 
+    834 => 
     array (
       0 => 'bondsman',
       1 => 'bondsmen',
     ),
-    794 => 
+    835 => 
     array (
       0 => 'bountyhunter',
       1 => 'bountyhunters',
     ),
-    795 => 
+    836 => 
     array (
       0 => 'chiefjustice',
       1 => 'chiefjustices',
     ),
-    796 => 
+    837 => 
     array (
       0 => 'clerk',
       1 => 'clerks',
+      2 => 'clerking',
+      3 => 'clerked',
     ),
-    797 => 
+    838 => 
     array (
       0 => 'conciliator',
       1 => 'conciliators',
     ),
-    798 => 
+    839 => 
     array (
       0 => 'conveyancer',
       1 => 'conveyancers',
     ),
-    799 => 
+    840 => 
     array (
       0 => 'coroner',
       1 => 'coroners',
     ),
-    800 => 
+    841 => 
     array (
       0 => 'counsel',
       1 => 'counseling',
@@ -7779,37 +8329,37 @@ return array (
       4 => 'counselled',
       5 => 'counsels',
     ),
-    801 => 
+    842 => 
     array (
       0 => 'courtreporter',
       1 => 'courtreporters',
     ),
-    802 => 
+    843 => 
     array (
       0 => 'crownprosecutor',
       1 => 'crownprosecutors',
     ),
-    803 => 
+    844 => 
     array (
       0 => 'defender',
       1 => 'defenders',
     ),
-    804 => 
+    845 => 
     array (
       0 => 'deputy',
       1 => 'deputies',
     ),
-    805 => 
+    846 => 
     array (
       0 => 'districtattorney',
       1 => 'districtattorneys',
     ),
-    806 => 
+    847 => 
     array (
       0 => 'executioner',
       1 => 'executioners',
     ),
-    807 => 
+    848 => 
     array (
       0 => 'gaoler',
       1 => 'gaolers',
@@ -7818,926 +8368,932 @@ return array (
       4 => 'jailor',
       5 => 'jailors',
     ),
-    808 => 
+    849 => 
     array (
       0 => 'governor',
       1 => 'governors',
     ),
-    809 => 
+    850 => 
     array (
       0 => 'guard',
       1 => 'guards',
       2 => 'guarding',
       3 => 'guarded',
     ),
-    810 => 
+    851 => 
     array (
       0 => 'hangman',
       1 => 'hangmen',
     ),
-    811 => 
+    852 => 
     array (
       0 => 'headsman',
       1 => 'headsmen',
     ),
-    812 => 
+    853 => 
     array (
       0 => 'judge',
       1 => 'judges',
     ),
-    813 => 
+    854 => 
     array (
       0 => 'jurist',
       1 => 'jurists',
     ),
-    814 => 
+    855 => 
     array (
       0 => 'justice',
       1 => 'justices',
     ),
-    815 => 
+    856 => 
     array (
       0 => 'lawgiver',
       1 => 'lawgivers',
     ),
-    816 => 
+    857 => 
     array (
       0 => 'lawmaker',
       1 => 'lawmakers',
     ),
-    817 => 
+    858 => 
     array (
       0 => 'lawyer',
       1 => 'lawyers',
       2 => 'lawyered',
       3 => 'lawyering',
     ),
-    818 => 
+    859 => 
     array (
       0 => 'legislator',
       1 => 'legislators',
     ),
-    819 => 
+    860 => 
     array (
       0 => 'liquidator',
       1 => 'liquidators',
     ),
-    820 => 
+    861 => 
     array (
       0 => 'lordchancellor',
       1 => 'lordchancellors',
     ),
-    821 => 
+    862 => 
     array (
       0 => 'magistrate',
       1 => 'magistrates',
     ),
-    822 => 
+    863 => 
     array (
       0 => 'marshal',
       1 => 'marshals',
+      2 => 'marshaling',
+      3 => 'marshaled',
     ),
-    823 => 
+    864 => 
     array (
       0 => 'mediator',
       1 => 'mediators',
     ),
-    824 => 
+    865 => 
     array (
       0 => 'notary',
       1 => 'notaries',
     ),
-    825 => 
+    866 => 
     array (
       0 => 'ombudsman',
       1 => 'ombudsmen',
     ),
-    826 => 
+    867 => 
     array (
       0 => 'paralegal',
       1 => 'paralegals',
     ),
-    827 => 
+    868 => 
     array (
       0 => 'paroleofficer',
       1 => 'paroleofficers',
     ),
-    828 => 
+    869 => 
     array (
       0 => 'privateinvestigator',
       1 => 'privateinvestigators',
     ),
-    829 => 
+    870 => 
     array (
       0 => 'probationofficer',
       1 => 'probationofficers',
     ),
-    830 => 
+    871 => 
     array (
       0 => 'prosecutor',
       1 => 'prosecutors',
     ),
-    831 => 
+    872 => 
     array (
       0 => 'publicdefender',
       1 => 'publicdefenders',
     ),
-    832 => 
+    873 => 
     array (
       0 => 'recorder',
       1 => 'recorders',
     ),
-    833 => 
+    874 => 
     array (
       0 => 'registrar',
       1 => 'registrars',
     ),
-    834 => 
+    875 => 
     array (
       0 => 'sheriff',
       1 => 'sheriffs',
     ),
-    835 => 
+    876 => 
     array (
       0 => 'silk',
       1 => 'silks',
     ),
-    836 => 
+    877 => 
     array (
       0 => 'solicitor',
       1 => 'solicitors',
     ),
-    837 => 
+    878 => 
     array (
       0 => 'solicitorgeneral',
       1 => 'solicitorsgeneral',
       2 => 'solicitorgenerals',
     ),
-    838 => 
+    879 => 
     array (
       0 => 'stenographer',
       1 => 'stenographers',
     ),
-    839 => 
+    880 => 
     array (
       0 => 'translator',
       1 => 'translators',
     ),
-    840 => 
+    881 => 
     array (
       0 => 'trooper',
       1 => 'troopers',
     ),
-    841 => 
+    882 => 
     array (
       0 => 'usher',
       1 => 'ushers',
       2 => 'ushered',
+      3 => 'ushering',
     ),
-    842 => 
+    883 => 
     array (
       0 => 'warden',
       1 => 'wardens',
     ),
-    843 => 
+    884 => 
     array (
       0 => 'warder',
       1 => 'warders',
     ),
-    844 => 
+    885 => 
     array (
       0 => 'administrator',
       1 => 'administrators',
     ),
-    845 => 
+    886 => 
     array (
       0 => 'assessor',
       1 => 'assessors',
     ),
-    846 => 
+    887 => 
     array (
       0 => 'associate',
       1 => 'associates',
       2 => 'associated',
       3 => 'associating',
     ),
-    847 => 
+    888 => 
     array (
       0 => 'bailbondsman',
       1 => 'bailbondsmen',
     ),
-    848 => 
+    889 => 
     array (
       0 => 'beadle',
       1 => 'beadles',
     ),
-    849 => 
+    890 => 
     array (
       0 => 'beak',
       1 => 'beaks',
+      2 => 'beaked',
     ),
-    850 => 
+    891 => 
     array (
       0 => 'bencher',
       1 => 'benchers',
     ),
-    851 => 
+    892 => 
     array (
       0 => 'chancellor',
       1 => 'chancellors',
     ),
-    852 => 
+    893 => 
     array (
       0 => 'commissioner',
       1 => 'commissioners',
     ),
-    853 => 
+    894 => 
     array (
       0 => 'counsellor',
       1 => 'counsellors',
       2 => 'counselor',
       3 => 'counselors',
     ),
-    854 => 
+    895 => 
     array (
       0 => 'crier',
       1 => 'criers',
     ),
-    855 => 
+    896 => 
     array (
       0 => 'draftsman',
       1 => 'draftsmen',
     ),
-    856 => 
+    897 => 
     array (
       0 => 'interpreter',
       1 => 'interpreters',
     ),
-    857 => 
+    898 => 
     array (
       0 => 'judgeadvocate',
       1 => 'judgeadvocates',
     ),
-    858 => 
+    899 => 
     array (
       0 => 'junior',
       1 => 'juniors',
     ),
-    859 => 
+    900 => 
     array (
       0 => 'jurisconsult',
       1 => 'jurisconsults',
     ),
-    860 => 
+    901 => 
     array (
       0 => 'justiciar',
       1 => 'justiciars',
     ),
-    861 => 
+    902 => 
     array (
       0 => 'lawclerk',
       1 => 'lawclerks',
     ),
-    862 => 
+    903 => 
     array (
       0 => 'lawlord',
       1 => 'lawlords',
     ),
-    863 => 
+    904 => 
     array (
       0 => 'legalexecutive',
       1 => 'legalexecutives',
     ),
-    864 => 
+    905 => 
     array (
       0 => 'master',
       1 => 'masters',
       2 => 'mastered',
       3 => 'mastering',
     ),
-    865 => 
+    906 => 
     array (
       0 => 'partner',
       1 => 'partners',
       2 => 'partnered',
       3 => 'partnering',
     ),
-    866 => 
+    907 => 
     array (
       0 => 'proctor',
       1 => 'proctors',
     ),
-    867 => 
+    908 => 
     array (
       0 => 'procurator',
       1 => 'procurators',
     ),
-    868 => 
+    909 => 
     array (
       0 => 'procuratorfiscal',
       1 => 'procuratorsfiscal',
       2 => 'procuratorfiscals',
     ),
-    869 => 
+    910 => 
     array (
       0 => 'prothonotary',
       1 => 'prothonotaries',
     ),
-    870 => 
+    911 => 
     array (
       0 => 'pupil',
       1 => 'pupils',
     ),
-    871 => 
+    912 => 
     array (
       0 => 'receiver',
       1 => 'receivers',
     ),
-    872 => 
+    913 => 
     array (
       0 => 'screw',
       1 => 'screws',
       2 => 'screwed',
       3 => 'screwing',
     ),
-    873 => 
+    914 => 
     array (
       0 => 'scrivener',
       1 => 'scriveners',
     ),
-    874 => 
+    915 => 
     array (
       0 => 'stipendiary',
       1 => 'stipendiaries',
     ),
-    875 => 
+    916 => 
     array (
       0 => 'tipstaff',
       1 => 'tipstaffs',
       2 => 'tipstaves',
     ),
-    876 => 
+    917 => 
     array (
       0 => 'trainee',
       1 => 'trainees',
     ),
-    877 => 
+    918 => 
     array (
       0 => 'turnkey',
       1 => 'turnkeys',
     ),
-    878 => 
+    919 => 
     array (
       0 => 'alias',
       1 => 'aliases',
     ),
-    879 => 
+    920 => 
     array (
       0 => 'amicus',
       1 => 'amici',
     ),
-    880 => 
+    921 => 
     array (
       0 => 'bonafide',
       1 => 'bonafides',
     ),
-    881 => 
+    922 => 
     array (
       0 => 'caveat',
       1 => 'caveats',
     ),
-    882 => 
+    923 => 
     array (
       0 => 'dictum',
       1 => 'dicta',
     ),
-    883 => 
+    924 => 
     array (
       0 => 'fiat',
       1 => 'fiats',
     ),
-    884 => 
+    925 => 
     array (
       0 => 'lien',
       1 => 'liens',
     ),
-    885 => 
+    926 => 
     array (
       0 => 'proviso',
       1 => 'provisos',
       2 => 'provisoes',
     ),
-    886 => 
+    927 => 
     array (
       0 => 'quorum',
       1 => 'quorums',
     ),
-    887 => 
+    928 => 
     array (
       0 => 'veto',
       1 => 'vetoes',
       2 => 'vetoed',
+      3 => 'vetoing',
     ),
-    888 => 
+    929 => 
     array (
       0 => 'delict',
       1 => 'delicts',
     ),
-    889 => 
+    930 => 
     array (
       0 => 'demesne',
       1 => 'demesnes',
     ),
-    890 => 
+    931 => 
     array (
       0 => 'escheat',
       1 => 'escheats',
     ),
-    891 => 
+    932 => 
     array (
       0 => 'obiterdictum',
       1 => 'obiterdicta',
     ),
-    892 => 
+    933 => 
     array (
       0 => 'posse',
       1 => 'posses',
     ),
-    893 => 
+    934 => 
     array (
       0 => 'ratio',
       1 => 'ratios',
     ),
-    894 => 
+    935 => 
     array (
       0 => 'viz',
       1 => 'videlicet',
     ),
-    895 => 
+    936 => 
     array (
       0 => 'accused',
       1 => 'accuse',
       2 => 'accusing',
       3 => 'accuses',
     ),
-    896 => 
+    937 => 
     array (
       0 => 'appellant',
       1 => 'appellants',
     ),
-    897 => 
+    938 => 
     array (
       0 => 'applicant',
       1 => 'applicants',
     ),
-    898 => 
+    939 => 
     array (
       0 => 'assignee',
       1 => 'assignees',
     ),
-    899 => 
+    940 => 
     array (
       0 => 'bankrupt',
       1 => 'bankrupts',
       2 => 'bankrupted',
+      3 => 'bankrupting',
     ),
-    900 => 
+    941 => 
     array (
       0 => 'beneficiary',
       1 => 'beneficiaries',
     ),
-    901 => 
+    942 => 
     array (
       0 => 'claimant',
       1 => 'claimants',
     ),
-    902 => 
+    943 => 
     array (
       0 => 'client',
       1 => 'clients',
     ),
-    903 => 
+    944 => 
     array (
       0 => 'codefendant',
       1 => 'codefendants',
     ),
-    904 => 
+    945 => 
     array (
       0 => 'complainant',
       1 => 'complainants',
     ),
-    905 => 
+    946 => 
     array (
       0 => 'creditor',
       1 => 'creditors',
     ),
-    906 => 
+    947 => 
     array (
       0 => 'debtor',
       1 => 'debtors',
     ),
-    907 => 
+    948 => 
     array (
       0 => 'decedent',
       1 => 'decedents',
     ),
-    908 => 
+    949 => 
     array (
       0 => 'defendant',
       1 => 'defendants',
     ),
-    909 => 
+    950 => 
     array (
       0 => 'detainee',
       1 => 'detainees',
     ),
-    910 => 
+    951 => 
     array (
       0 => 'devisee',
       1 => 'devisees',
     ),
-    911 => 
+    952 => 
     array (
       0 => 'executor',
       1 => 'executors',
     ),
-    912 => 
+    953 => 
     array (
       0 => 'eyewitness',
       1 => 'eyewitnesses',
     ),
-    913 => 
+    954 => 
     array (
       0 => 'foreman',
       1 => 'foremen',
     ),
-    914 => 
+    955 => 
     array (
       0 => 'grantee',
       1 => 'grantees',
     ),
-    915 => 
+    956 => 
     array (
       0 => 'grantor',
       1 => 'grantors',
     ),
-    916 => 
+    957 => 
     array (
       0 => 'guarantor',
       1 => 'guarantors',
     ),
-    917 => 
+    958 => 
     array (
       0 => 'guardian',
       1 => 'guardians',
     ),
-    918 => 
+    959 => 
     array (
       0 => 'heir',
       1 => 'heirs',
     ),
-    919 => 
+    960 => 
     array (
       0 => 'heiress',
       1 => 'heiresses',
     ),
-    920 => 
+    961 => 
     array (
       0 => 'hostage',
       1 => 'hostages',
     ),
-    921 => 
+    962 => 
     array (
       0 => 'informer',
       1 => 'informers',
     ),
-    922 => 
+    963 => 
     array (
       0 => 'inmate',
       1 => 'inmates',
     ),
-    923 => 
+    964 => 
     array (
       0 => 'juror',
       1 => 'jurors',
     ),
-    924 => 
+    965 => 
     array (
       0 => 'jury',
       1 => 'juries',
     ),
-    925 => 
+    966 => 
     array (
       0 => 'juryman',
       1 => 'jurymen',
     ),
-    926 => 
+    967 => 
     array (
       0 => 'jurywoman',
       1 => 'jurywomen',
     ),
-    927 => 
+    968 => 
     array (
       0 => 'legatee',
       1 => 'legatees',
     ),
-    928 => 
+    969 => 
     array (
       0 => 'lessee',
       1 => 'lessees',
     ),
-    929 => 
+    970 => 
     array (
       0 => 'lessor',
       1 => 'lessors',
     ),
-    930 => 
-    array (
-      0 => 'licensee',
-      1 => 'licensees',
-    ),
-    931 => 
+    971 => 
     array (
       0 => 'licensor',
       1 => 'licensors',
     ),
-    932 => 
+    972 => 
     array (
       0 => 'litigant',
       1 => 'litigants',
     ),
-    933 => 
+    973 => 
     array (
       0 => 'minor',
       1 => 'minors',
+      2 => 'minored',
     ),
-    934 => 
+    974 => 
     array (
       0 => 'mortgagee',
       1 => 'mortgagees',
     ),
-    935 => 
+    975 => 
     array (
       0 => 'mortgagor',
       1 => 'mortgagors',
     ),
-    936 => 
+    976 => 
     array (
       0 => 'parolee',
       1 => 'parolees',
     ),
-    937 => 
+    977 => 
     array (
       0 => 'petitioner',
       1 => 'petitioners',
     ),
-    938 => 
+    978 => 
     array (
       0 => 'plaintiff',
       1 => 'plaintiffs',
     ),
-    939 => 
+    979 => 
     array (
       0 => 'prisoner',
       1 => 'prisoners',
     ),
-    940 => 
+    980 => 
     array (
       0 => 'probationer',
       1 => 'probationers',
     ),
-    941 => 
+    981 => 
     array (
       0 => 'respondent',
       1 => 'respondents',
     ),
-    942 => 
+    982 => 
     array (
       0 => 'surety',
       1 => 'sureties',
     ),
-    943 => 
+    983 => 
     array (
       0 => 'testator',
       1 => 'testators',
     ),
-    944 => 
+    984 => 
     array (
       0 => 'trustee',
       1 => 'trustees',
     ),
-    945 => 
+    985 => 
     array (
       0 => 'victim',
       1 => 'victims',
     ),
-    946 => 
+    986 => 
     array (
       0 => 'ward',
       1 => 'wards',
+      2 => 'warding',
+      3 => 'warded',
     ),
-    947 => 
+    987 => 
     array (
       0 => 'whistleblower',
       1 => 'whistleblowers',
     ),
-    948 => 
+    988 => 
     array (
       0 => 'abettor',
       1 => 'abettors',
       2 => 'abetter',
       3 => 'abetters',
     ),
-    949 => 
+    989 => 
     array (
       0 => 'administratrix',
       1 => 'administratrices',
       2 => 'administratrixes',
     ),
-    950 => 
+    990 => 
     array (
       0 => 'affiant',
       1 => 'affiants',
     ),
-    951 => 
+    991 => 
     array (
       0 => 'agent',
       1 => 'agents',
+      2 => 'agenting',
     ),
-    952 => 
+    992 => 
     array (
       0 => 'appellee',
       1 => 'appellees',
     ),
-    953 => 
+    993 => 
     array (
       0 => 'assignor',
       1 => 'assignors',
     ),
-    954 => 
+    994 => 
     array (
       0 => 'bailee',
       1 => 'bailees',
     ),
-    955 => 
+    995 => 
     array (
       0 => 'bailor',
       1 => 'bailors',
     ),
-    956 => 
+    996 => 
     array (
       0 => 'corespondent',
       1 => 'corespondents',
     ),
-    957 => 
+    997 => 
     array (
       0 => 'declarant',
       1 => 'declarants',
     ),
-    958 => 
+    998 => 
     array (
       0 => 'defaulter',
       1 => 'defaulters',
     ),
-    959 => 
+    999 => 
     array (
       0 => 'deponent',
       1 => 'deponents',
     ),
-    960 => 
+    1000 => 
     array (
       0 => 'donee',
       1 => 'donees',
     ),
-    961 => 
+    1001 => 
     array (
       0 => 'donor',
       1 => 'donors',
     ),
-    962 => 
+    1002 => 
     array (
       0 => 'executrix',
       1 => 'executrices',
       2 => 'executrixes',
     ),
-    963 => 
+    1003 => 
     array (
       0 => 'forewoman',
       1 => 'forewomen',
     ),
-    964 => 
+    1004 => 
     array (
       0 => 'garnishee',
       1 => 'garnishees',
     ),
-    965 => 
+    1005 => 
     array (
       0 => 'infant',
       1 => 'infants',
       2 => 'infantes',
     ),
-    966 => 
+    1006 => 
     array (
       0 => 'internee',
       1 => 'internees',
     ),
-    967 => 
+    1007 => 
     array (
       0 => 'intervener',
       1 => 'interveners',
       2 => 'intervenor',
       3 => 'intervenors',
     ),
-    968 => 
+    1008 => 
     array (
       0 => 'obligee',
       1 => 'obligees',
     ),
-    969 => 
+    1009 => 
     array (
       0 => 'obligor',
       1 => 'obligors',
     ),
-    970 => 
+    1010 => 
     array (
       0 => 'party',
       1 => 'parties',
       2 => 'partying',
       3 => 'partied',
     ),
-    971 => 
+    1011 => 
     array (
       0 => 'principal',
       1 => 'principals',
     ),
-    972 => 
+    1012 => 
     array (
       0 => 'promisee',
       1 => 'promisees',
     ),
-    973 => 
+    1013 => 
     array (
       0 => 'promisor',
       1 => 'promisors',
     ),
-    974 => 
+    1014 => 
     array (
       0 => 'prosecutrix',
       1 => 'prosecutrices',
       2 => 'prosecutrixes',
     ),
-    975 => 
+    1015 => 
     array (
       0 => 'pursuer',
       1 => 'pursuers',
     ),
-    976 => 
+    1016 => 
     array (
       0 => 'settlor',
       1 => 'settlors',
     ),
-    977 => 
+    1017 => 
     array (
       0 => 'testatrix',
       1 => 'testatrices',
     ),
-    978 => 
+    1018 => 
     array (
       0 => 'transferee',
       1 => 'transferees',
     ),
-    979 => 
+    1019 => 
     array (
       0 => 'transferor',
       1 => 'transferors',
     ),
-    980 => 
+    1020 => 
     array (
       0 => 'bequeath',
       1 => 'bequeaths',
       2 => 'bequeathed',
+      3 => 'bequeathing',
     ),
-    981 => 
+    1021 => 
     array (
       0 => 'bequest',
       1 => 'bequests',
     ),
-    982 => 
+    1022 => 
     array (
       0 => 'boundary',
       1 => 'boundaries',
     ),
-    983 => 
+    1023 => 
     array (
       0 => 'chattel',
       1 => 'chattels',
     ),
-    984 => 
+    1024 => 
     array (
       0 => 'commonhold',
       1 => 'commonholds',
     ),
-    985 => 
+    1025 => 
     array (
       0 => 'condominium',
       1 => 'condominiums',
@@ -8745,515 +9301,552 @@ return array (
       3 => 'condos',
       4 => 'condoes',
     ),
-    986 => 
+    1026 => 
     array (
       0 => 'devise',
       1 => 'devises',
       2 => 'devised',
       3 => 'devising',
     ),
-    987 => 
+    1027 => 
     array (
       0 => 'dower',
       1 => 'dowers',
     ),
-    988 => 
+    1028 => 
     array (
       0 => 'easement',
       1 => 'easements',
     ),
-    989 => 
+    1029 => 
     array (
       0 => 'encumbrance',
       1 => 'encumbrances',
       2 => 'incumbrance',
       3 => 'incumbrances',
     ),
-    990 => 
+    1030 => 
     array (
       0 => 'entail',
       1 => 'entails',
+      2 => 'entailed',
     ),
-    991 => 
+    1031 => 
     array (
       0 => 'escrow',
       1 => 'escrows',
     ),
-    992 => 
+    1032 => 
     array (
       0 => 'estate',
       1 => 'estates',
     ),
-    993 => 
+    1033 => 
     array (
       0 => 'estateagent',
       1 => 'estateagents',
     ),
-    994 => 
+    1034 => 
     array (
       0 => 'eviction',
       1 => 'evictions',
     ),
-    995 => 
+    1035 => 
     array (
       0 => 'exchange',
       1 => 'exchanges',
     ),
-    996 => 
+    1036 => 
     array (
       0 => 'fixture',
       1 => 'fixtures',
     ),
-    997 => 
+    1037 => 
     array (
       0 => 'foreclosure',
       1 => 'foreclosures',
     ),
-    998 => 
+    1038 => 
     array (
       0 => 'freehold',
       1 => 'freeholds',
     ),
-    999 => 
+    1039 => 
     array (
       0 => 'freeholder',
       1 => 'freeholders',
     ),
-    1000 => 
+    1040 => 
     array (
       0 => 'gazump',
       1 => 'gazumps',
       2 => 'gazumped',
       3 => 'gazumping',
     ),
-    1001 => 
+    1041 => 
     array (
       0 => 'groundrent',
       1 => 'groundrents',
     ),
-    1002 => 
+    1042 => 
     array (
       0 => 'inherit',
       1 => 'inherits',
       2 => 'inherited',
       3 => 'inheriting',
     ),
-    1003 => 
+    1043 => 
+    array (
+      0 => 'inheritance',
+      1 => 'inheritances',
+    ),
+    1044 => 
     array (
       0 => 'landlady',
       1 => 'landladies',
     ),
-    1004 => 
+    1045 => 
     array (
       0 => 'landlord',
       1 => 'landlords',
     ),
-    1005 => 
+    1046 => 
     array (
       0 => 'landowner',
       1 => 'landowners',
     ),
-    1006 => 
+    1047 => 
     array (
       0 => 'leasehold',
       1 => 'leaseholds',
     ),
-    1007 => 
+    1048 => 
     array (
       0 => 'leaseholder',
       1 => 'leaseholders',
     ),
-    1008 => 
+    1049 => 
     array (
       0 => 'legacy',
       1 => 'legacies',
     ),
-    1009 => 
+    1050 => 
     array (
       0 => 'listedbuilding',
       1 => 'listedbuildings',
     ),
-    1010 => 
+    1051 => 
     array (
       0 => 'nuisance',
       1 => 'nuisances',
     ),
-    1011 => 
+    1052 => 
     array (
       0 => 'premises',
       1 => 'premisses',
       2 => 'premise',
+      3 => 'premised',
     ),
-    1012 => 
+    1053 => 
     array (
       0 => 'remortgage',
       1 => 'remortgages',
       2 => 'remortgaged',
     ),
-    1013 => 
+    1054 => 
     array (
       0 => 'rent',
       1 => 'rents',
       2 => 'rented',
       3 => 'renting',
     ),
-    1014 => 
+    1055 => 
     array (
       0 => 'repossession',
       1 => 'repossessions',
     ),
-    1015 => 
+    1056 => 
     array (
       0 => 'reversion',
       1 => 'reversions',
     ),
-    1016 => 
+    1057 => 
     array (
       0 => 'rightofway',
       1 => 'rightsofway',
     ),
-    1017 => 
+    1058 => 
     array (
       0 => 'servicecharge',
       1 => 'servicecharges',
     ),
-    1018 => 
+    1059 => 
     array (
       0 => 'sublease',
       1 => 'subleases',
     ),
-    1019 => 
+    1060 => 
     array (
       0 => 'sublet',
       1 => 'sublets',
       2 => 'subletting',
     ),
-    1020 => 
+    1061 => 
     array (
       0 => 'survey',
       1 => 'surveys',
       2 => 'surveying',
       3 => 'surveyed',
     ),
-    1021 => 
+    1062 => 
     array (
       0 => 'tenancy',
       1 => 'tenancies',
     ),
-    1022 => 
+    1063 => 
     array (
       0 => 'tenant',
       1 => 'tenants',
     ),
-    1023 => 
+    1064 => 
     array (
       0 => 'tenure',
       1 => 'tenures',
+      2 => 'tenured',
     ),
-    1024 => 
+    1065 => 
     array (
       0 => 'timeshare',
       1 => 'timeshares',
     ),
-    1025 => 
+    1066 => 
     array (
       0 => 'title',
       1 => 'titles',
     ),
-    1026 => 
+    1067 => 
     array (
       0 => 'wayleave',
       1 => 'wayleaves',
     ),
-    1027 => 
+    1068 => 
     array (
       0 => 'zoning',
       1 => 'zone',
       2 => 'zones',
       3 => 'zoned',
     ),
-    1028 => 
+    1069 => 
     array (
       0 => 'appurtenance',
       1 => 'appurtenances',
     ),
-    1029 => 
+    1070 => 
     array (
       0 => 'copyhold',
       1 => 'copyholds',
     ),
-    1030 => 
+    1071 => 
     array (
       0 => 'curtilage',
       1 => 'curtilages',
     ),
-    1031 => 
+    1072 => 
     array (
       0 => 'distraint',
       1 => 'distraints',
     ),
-    1032 => 
+    1073 => 
     array (
       0 => 'distress',
       1 => 'distressed',
       2 => 'distressing',
+      3 => 'distresses',
     ),
-    1033 => 
+    1074 => 
     array (
       0 => 'dowry',
       1 => 'dowries',
     ),
-    1034 => 
+    1075 => 
     array (
       0 => 'ejectment',
       1 => 'ejectments',
     ),
-    1035 => 
+    1076 => 
     array (
       0 => 'encroachment',
       1 => 'encroachments',
     ),
-    1036 => 
+    1077 => 
     array (
       0 => 'fee',
       1 => 'fees',
+      2 => 'feeing',
     ),
-    1037 => 
+    1078 => 
     array (
       0 => 'gazunder',
       1 => 'gazunders',
       2 => 'gazundered',
       3 => 'gazundering',
     ),
-    1038 => 
+    1079 => 
     array (
       0 => 'hereditament',
       1 => 'hereditaments',
     ),
-    1039 => 
+    1080 => 
     array (
       0 => 'holding',
       1 => 'holdings',
       2 => 'hold',
       3 => 'holds',
     ),
-    1040 => 
+    1081 => 
     array (
       0 => 'homestead',
       1 => 'homesteads',
+      2 => 'homesteading',
+      3 => 'homesteaded',
     ),
-    1041 => 
+    1082 => 
     array (
       0 => 'jointure',
       1 => 'jointures',
     ),
-    1042 => 
+    1083 => 
     array (
       0 => 'landholder',
       1 => 'landholders',
     ),
-    1043 => 
+    1084 => 
     array (
       0 => 'lodger',
       1 => 'lodgers',
     ),
-    1044 => 
+    1085 => 
     array (
       0 => 'manor',
       1 => 'manors',
     ),
-    1045 => 
+    1086 => 
     array (
       0 => 'messuage',
       1 => 'messuages',
     ),
-    1046 => 
+    1087 => 
     array (
       0 => 'occupier',
       1 => 'occupiers',
     ),
-    1047 => 
+    1088 => 
     array (
       0 => 'partition',
       1 => 'partitions',
+      2 => 'partitioned',
     ),
-    1048 => 
+    1089 => 
     array (
       0 => 'profit',
       1 => 'profits',
       2 => 'profited',
       3 => 'profiting',
     ),
-    1049 => 
+    1090 => 
     array (
       0 => 'quitclaim',
       1 => 'quitclaims',
     ),
-    1050 => 
+    1091 => 
     array (
       0 => 'remainder',
       1 => 'remainders',
     ),
-    1051 => 
+    1092 => 
     array (
       0 => 'remainderman',
       1 => 'remaindermen',
     ),
-    1052 => 
+    1093 => 
     array (
       0 => 'rentcharge',
       1 => 'rentcharges',
     ),
-    1053 => 
+    1094 => 
     array (
       0 => 'restrictivecovenant',
       1 => 'restrictivecovenants',
     ),
-    1054 => 
+    1095 => 
     array (
       0 => 'surrender',
       1 => 'surrendered',
       2 => 'surrendering',
       3 => 'surrenders',
     ),
-    1055 => 
+    1096 => 
     array (
       0 => 'tenement',
       1 => 'tenements',
     ),
-    1056 => 
+    1097 => 
     array (
       0 => 'usufruct',
       1 => 'usufructs',
     ),
-    1057 => 
+    1098 => 
     array (
       0 => 'admonishment',
       1 => 'admonishments',
     ),
-    1058 => 
+    1099 => 
     array (
       0 => 'amputation',
       1 => 'amputations',
     ),
-    1059 => 
+    1100 => 
     array (
       0 => 'ban',
       1 => 'bans',
       2 => 'banned',
       3 => 'banning',
     ),
-    1060 => 
+    1101 => 
     array (
       0 => 'beheading',
       1 => 'beheadings',
       2 => 'beheaded',
       3 => 'behead',
+      4 => 'beheads',
     ),
-    1061 => 
+    1102 => 
     array (
       0 => 'branding',
       1 => 'brand',
       2 => 'branded',
       3 => 'brands',
     ),
-    1062 => 
+    1103 => 
     array (
       0 => 'burning',
       1 => 'burn',
       2 => 'burned',
       3 => 'burns',
+      4 => 'burnings',
     ),
-    1063 => 
+    1104 => 
     array (
       0 => 'caning',
       1 => 'canings',
+      2 => 'cane',
+      3 => 'canes',
+      4 => 'caned',
     ),
-    1064 => 
+    1105 => 
+    array (
+      0 => 'censure',
+      1 => 'censured',
+    ),
+    1106 => 
     array (
       0 => 'chaingang',
       1 => 'chaingangs',
     ),
-    1065 => 
+    1107 => 
     array (
       0 => 'crucifixion',
       1 => 'crucifixions',
     ),
-    1066 => 
+    1108 => 
     array (
       0 => 'curfew',
       1 => 'curfews',
     ),
-    1067 => 
+    1109 => 
     array (
       0 => 'deathpenalty',
       1 => 'capitalpunishment',
     ),
-    1068 => 
+    1110 => 
+    array (
+      0 => 'decapitation',
+      1 => 'decapitations',
+    ),
+    1111 => 
     array (
       0 => 'deportation',
       1 => 'deportations',
     ),
-    1069 => 
+    1112 => 
     array (
       0 => 'detention',
       1 => 'detentions',
     ),
-    1070 => 
+    1113 => 
     array (
       0 => 'disqualification',
       1 => 'disqualifications',
     ),
-    1071 => 
+    1114 => 
     array (
       0 => 'duckingstool',
       1 => 'duckingstools',
     ),
-    1072 => 
+    1115 => 
     array (
       0 => 'electricchair',
       1 => 'electricchairs',
     ),
-    1073 => 
+    1116 => 
+    array (
+      0 => 'electrocution',
+      1 => 'electrocutions',
+    ),
+    1117 => 
     array (
       0 => 'endorsement',
       1 => 'endorsements',
     ),
-    1074 => 
+    1118 => 
     array (
       0 => 'execution',
       1 => 'executions',
     ),
-    1075 => 
+    1119 => 
     array (
       0 => 'exile',
       1 => 'exiled',
       2 => 'exiles',
+      3 => 'exiling',
     ),
-    1076 => 
+    1120 => 
     array (
       0 => 'fine',
       1 => 'fines',
       2 => 'fined',
+      3 => 'fining',
+      4 => 'finessing',
+      5 => 'finessed',
     ),
-    1077 => 
+    1121 => 
     array (
       0 => 'firingsquad',
       1 => 'firingsquads',
     ),
-    1078 => 
+    1122 => 
     array (
       0 => 'flogging',
       1 => 'floggings',
       2 => 'flogged',
       3 => 'flog',
     ),
-    1079 => 
+    1123 => 
     array (
       0 => 'forfeiture',
       1 => 'forfeitures',
     ),
-    1080 => 
+    1124 => 
     array (
       0 => 'garrotte',
       1 => 'garotte',
@@ -9262,24 +9855,25 @@ return array (
       4 => 'garottes',
       5 => 'garrotes',
     ),
-    1081 => 
+    1125 => 
     array (
       0 => 'gassing',
       1 => 'gas',
       2 => 'gases',
       3 => 'gassed',
     ),
-    1082 => 
+    1126 => 
     array (
       0 => 'gibbet',
       1 => 'gibbets',
     ),
-    1083 => 
+    1127 => 
     array (
       0 => 'guillotine',
       1 => 'guillotines',
+      2 => 'guillotined',
     ),
-    1084 => 
+    1128 => 
     array (
       0 => 'hanging',
       1 => 'hangings',
@@ -9287,12 +9881,12 @@ return array (
       3 => 'hanged',
       4 => 'hangs',
     ),
-    1085 => 
+    1129 => 
     array (
       0 => 'hardlabour',
       1 => 'hardlabor',
     ),
-    1086 => 
+    1130 => 
     array (
       0 => 'lashing',
       1 => 'lashings',
@@ -9300,146 +9894,172 @@ return array (
       3 => 'lashes',
       4 => 'lashed',
     ),
-    1087 => 
+    1131 => 
     array (
       0 => 'lethalinjection',
       1 => 'lethalinjections',
     ),
-    1088 => 
+    1132 => 
     array (
       0 => 'lifesentence',
       1 => 'lifesentences',
     ),
-    1089 => 
+    1133 => 
     array (
       0 => 'parole',
       1 => 'paroled',
+      2 => 'paroles',
     ),
-    1090 => 
+    1134 => 
     array (
       0 => 'pillory',
       1 => 'pillories',
     ),
-    1091 => 
+    1135 => 
     array (
       0 => 'reparation',
       1 => 'reparations',
     ),
-    1092 => 
+    1136 => 
     array (
       0 => 'reprimand',
       1 => 'reprimands',
       2 => 'reprimanded',
+      3 => 'reprimanding',
     ),
-    1093 => 
+    1137 => 
     array (
       0 => 'solitary',
       1 => 'solitaryconfinement',
     ),
-    1094 => 
+    1138 => 
     array (
       0 => 'stocks',
       1 => 'stock',
       2 => 'stocked',
     ),
-    1095 => 
+    1139 => 
     array (
       0 => 'stoning',
       1 => 'stone',
       2 => 'stones',
       3 => 'stoned',
     ),
-    1096 => 
+    1140 => 
     array (
       0 => 'suspendedsentence',
       1 => 'suspendedsentences',
     ),
-    1097 => 
+    1141 => 
+    array (
+      0 => 'suspension',
+      1 => 'suspensions',
+    ),
+    1142 => 
     array (
       0 => 'tagging',
       1 => 'tag',
       2 => 'tags',
       3 => 'tagged',
     ),
-    1098 => 
+    1143 => 
     array (
       0 => 'bindover',
       1 => 'boundover',
     ),
-    1099 => 
+    1144 => 
     array (
       0 => 'bird',
       1 => 'birds',
+      2 => 'birding',
     ),
-    1100 => 
+    1145 => 
     array (
       0 => 'communityorder',
       1 => 'communityorders',
     ),
-    1101 => 
+    1146 => 
     array (
       0 => 'custodialsentence',
       1 => 'custodialsentences',
     ),
-    1102 => 
+    1147 => 
     array (
       0 => 'death',
       1 => 'deaths',
     ),
-    1103 => 
+    1148 => 
     array (
       0 => 'discharge',
       1 => 'conditionaldischarge',
       2 => 'discharges',
     ),
-    1104 => 
+    1149 => 
+    array (
+      0 => 'expulsion',
+      1 => 'expulsions',
+    ),
+    1150 => 
     array (
       0 => 'mutilation',
       1 => 'mutilations',
     ),
-    1105 => 
+    1151 => 
+    array (
+      0 => 'noose',
+      1 => 'nooses',
+    ),
+    1152 => 
     array (
       0 => 'porridge',
       1 => 'porridges',
     ),
-    1106 => 
+    1153 => 
     array (
       0 => 'pressing',
       1 => 'press',
       2 => 'pressed',
       3 => 'presses',
     ),
-    1107 => 
+    1154 => 
     array (
       0 => 'punishment',
       1 => 'punishments',
     ),
-    1108 => 
+    1155 => 
+    array (
+      0 => 'quartering',
+      1 => 'quarter',
+      2 => 'quarters',
+      3 => 'quartered',
+    ),
+    1156 => 
     array (
       0 => 'scaffold',
       1 => 'scaffolding',
+      2 => 'scaffolds',
     ),
-    1109 => 
+    1157 => 
     array (
       0 => 'sentence',
       1 => 'sentences',
       2 => 'sentenced',
     ),
-    1110 => 
+    1158 => 
     array (
       0 => 'strap',
       1 => 'strapped',
       2 => 'straps',
       3 => 'strapping',
     ),
-    1111 => 
+    1159 => 
     array (
       0 => 'stretch',
       1 => 'stretched',
       2 => 'stretching',
       3 => 'stretches',
     ),
-    1112 => 
+    1160 => 
     array (
       0 => 'time',
       1 => 'times',
@@ -9447,12 +10067,17 @@ return array (
       3 => 'timed',
       4 => 'timings',
     ),
-    1113 => 
+    1161 => 
+    array (
+      0 => 'treadmill',
+      1 => 'treadmills',
+    ),
+    1162 => 
     array (
       0 => 'walkingtheplank',
       1 => 'walktheplank',
     ),
-    1114 => 
+    1163 => 
     array (
       0 => 'warning',
       1 => 'warnings',
@@ -9460,73 +10085,76 @@ return array (
       3 => 'warned',
       4 => 'warns',
     ),
-    1115 => 
+    1164 => 
     array (
       0 => 'acquit',
       1 => 'acquits',
       2 => 'acquitted',
+      3 => 'acquitting',
     ),
-    1116 => 
+    1165 => 
     array (
       0 => 'acquittal',
       1 => 'acquittals',
     ),
-    1117 => 
+    1166 => 
     array (
       0 => 'adjourn',
       1 => 'adjourns',
       2 => 'adjourned',
+      3 => 'adjourning',
     ),
-    1118 => 
+    1167 => 
     array (
       0 => 'adjournment',
       1 => 'adjournments',
     ),
-    1119 => 
+    1168 => 
     array (
       0 => 'adjudication',
       1 => 'adjudications',
     ),
-    1120 => 
+    1169 => 
     array (
       0 => 'affirmation',
       1 => 'affirmations',
     ),
-    1121 => 
+    1170 => 
     array (
       0 => 'allegation',
       1 => 'allegations',
     ),
-    1122 => 
+    1171 => 
     array (
       0 => 'amnesty',
       1 => 'amnesties',
     ),
-    1123 => 
+    1172 => 
     array (
       0 => 'appeal',
       1 => 'appeals',
       2 => 'appealed',
       3 => 'appealing',
     ),
-    1124 => 
+    1173 => 
     array (
       0 => 'arraign',
       1 => 'arraigns',
       2 => 'arraigned',
     ),
-    1125 => 
+    1174 => 
     array (
       0 => 'arraignment',
       1 => 'arraignments',
     ),
-    1126 => 
+    1175 => 
     array (
       0 => 'bail',
       1 => 'bailed',
       2 => 'bailing',
+      3 => 'bails',
     ),
-    1127 => 
+    1176 => 
     array (
       0 => 'case',
       1 => 'cases',
@@ -9534,69 +10162,74 @@ return array (
       3 => 'casings',
       4 => 'cased',
     ),
-    1128 => 
+    1177 => 
     array (
       0 => 'commutation',
       1 => 'commutations',
     ),
-    1129 => 
+    1178 => 
     array (
       0 => 'continuance',
       1 => 'continuances',
     ),
-    1130 => 
+    1179 => 
     array (
       0 => 'conviction',
       1 => 'convictions',
     ),
-    1131 => 
+    1180 => 
     array (
       0 => 'counterclaim',
       1 => 'counterclaims',
     ),
-    1132 => 
+    1181 => 
     array (
       0 => 'crossexamination',
       1 => 'crossexaminations',
     ),
-    1133 => 
+    1182 => 
     array (
       0 => 'crossexamine',
       1 => 'crossexamines',
       2 => 'crossexamined',
     ),
-    1134 => 
+    1183 => 
     array (
       0 => 'defence',
       1 => 'defences',
       2 => 'defense',
       3 => 'defenses',
     ),
-    1135 => 
+    1184 => 
     array (
       0 => 'defend',
       1 => 'defends',
       2 => 'defended',
       3 => 'defending',
     ),
-    1136 => 
+    1185 => 
     array (
       0 => 'deliberate',
       1 => 'deliberates',
       2 => 'deliberated',
       3 => 'deliberating',
     ),
-    1137 => 
+    1186 => 
     array (
       0 => 'deliberation',
       1 => 'deliberations',
     ),
-    1138 => 
+    1187 => 
+    array (
+      0 => 'disclosure',
+      1 => 'disclosures',
+    ),
+    1188 => 
     array (
       0 => 'dismissal',
       1 => 'dismissals',
     ),
-    1139 => 
+    1189 => 
     array (
       0 => 'empanel',
       1 => 'empanels',
@@ -9607,125 +10240,136 @@ return array (
       6 => 'impanelled',
       7 => 'impaneled',
     ),
-    1140 => 
+    1190 => 
     array (
       0 => 'exoneration',
       1 => 'exonerations',
     ),
-    1141 => 
+    1191 => 
     array (
       0 => 'gavel',
       1 => 'gavels',
     ),
-    1142 => 
+    1192 => 
     array (
       0 => 'hearing',
       1 => 'hearings',
       2 => 'hear',
       3 => 'hears',
     ),
-    1143 => 
+    1193 => 
     array (
       0 => 'hungjury',
       1 => 'hungjuries',
     ),
-    1144 => 
+    1194 => 
     array (
       0 => 'indict',
       1 => 'indicts',
       2 => 'indicted',
+      3 => 'indicting',
     ),
-    1145 => 
+    1195 => 
     array (
       0 => 'innocent',
       1 => 'innocents',
     ),
-    1146 => 
+    1196 => 
     array (
       0 => 'inquest',
       1 => 'inquests',
     ),
-    1147 => 
+    1197 => 
     array (
       0 => 'judgment',
       1 => 'judgments',
       2 => 'judgement',
       3 => 'judgements',
     ),
-    1148 => 
+    1198 => 
     array (
       0 => 'jurisdiction',
       1 => 'jurisdictions',
     ),
-    1149 => 
+    1199 => 
     array (
       0 => 'jurytrial',
       1 => 'jurytrials',
     ),
-    1150 => 
+    1200 => 
     array (
       0 => 'lawsuit',
       1 => 'lawsuits',
     ),
-    1151 => 
+    1201 => 
     array (
       0 => 'leadingquestion',
       1 => 'leadingquestions',
     ),
-    1152 => 
+    1202 => 
+    array (
+      0 => 'litigation',
+      1 => 'litigations',
+    ),
+    1203 => 
     array (
       0 => 'mistrial',
       1 => 'mistrials',
     ),
-    1153 => 
+    1204 => 
     array (
       0 => 'motion',
       1 => 'motions',
+      2 => 'motioned',
+      3 => 'motioning',
     ),
-    1154 => 
+    1205 => 
     array (
       0 => 'oath',
       1 => 'oaths',
     ),
-    1155 => 
+    1206 => 
     array (
       0 => 'objection',
       1 => 'objections',
     ),
-    1156 => 
+    1207 => 
     array (
       0 => 'overrule',
       1 => 'overrules',
       2 => 'overruled',
+      3 => 'overruling',
     ),
-    1157 => 
+    1208 => 
     array (
       0 => 'overturn',
       1 => 'overturns',
       2 => 'overturned',
+      3 => 'overturning',
     ),
-    1158 => 
+    1209 => 
     array (
       0 => 'pardon',
       1 => 'pardons',
       2 => 'pardoned',
+      3 => 'pardoning',
     ),
-    1159 => 
+    1210 => 
     array (
       0 => 'plea',
       1 => 'pleas',
     ),
-    1160 => 
+    1211 => 
     array (
       0 => 'pleabargain',
       1 => 'pleabargains',
     ),
-    1161 => 
+    1212 => 
     array (
       0 => 'precedent',
       1 => 'precedents',
     ),
-    1162 => 
+    1213 => 
     array (
       0 => 'proceeding',
       1 => 'proceedings',
@@ -9733,99 +10377,101 @@ return array (
       3 => 'proceeds',
       4 => 'proceeded',
     ),
-    1163 => 
+    1214 => 
     array (
       0 => 'prosecute',
       1 => 'prosecutes',
       2 => 'prosecuted',
       3 => 'prosecuting',
     ),
-    1164 => 
+    1215 => 
     array (
       0 => 'prosecution',
       1 => 'prosecutions',
     ),
-    1165 => 
+    1216 => 
     array (
       0 => 'quash',
       1 => 'quashes',
       2 => 'quashed',
+      3 => 'quashing',
     ),
-    1166 => 
+    1217 => 
     array (
       0 => 'rebuttal',
       1 => 'rebuttals',
     ),
-    1167 => 
+    1218 => 
     array (
       0 => 'recess',
       1 => 'recesses',
       2 => 'recessed',
     ),
-    1168 => 
+    1219 => 
     array (
       0 => 'recognizance',
       1 => 'recognizances',
       2 => 'recognisance',
       3 => 'recognisances',
     ),
-    1169 => 
+    1220 => 
     array (
       0 => 'recusal',
       1 => 'recusals',
     ),
-    1170 => 
+    1221 => 
     array (
       0 => 'remand',
       1 => 'remands',
       2 => 'remanded',
+      3 => 'remanding',
     ),
-    1171 => 
+    1222 => 
     array (
       0 => 'reprieve',
       1 => 'reprieves',
       2 => 'reprieved',
     ),
-    1172 => 
+    1223 => 
     array (
       0 => 'retrial',
       1 => 'retrials',
     ),
-    1173 => 
+    1224 => 
     array (
       0 => 'retry',
       1 => 'retries',
       2 => 'retried',
     ),
-    1174 => 
+    1225 => 
     array (
       0 => 'settlement',
       1 => 'settlements',
     ),
-    1175 => 
+    1226 => 
     array (
       0 => 'sue',
       1 => 'sues',
       2 => 'sued',
     ),
-    1176 => 
+    1227 => 
     array (
       0 => 'summation',
       1 => 'summations',
     ),
-    1177 => 
+    1228 => 
     array (
       0 => 'summingup',
       1 => 'summingsup',
     ),
-    1178 => 
+    1229 => 
     array (
       0 => 'sustain',
       1 => 'sustains',
       2 => 'sustained',
       3 => 'sustaining',
     ),
-    1179 => 
+    1230 => 
     array (
       0 => 'swear',
       1 => 'swears',
@@ -9833,133 +10479,149 @@ return array (
       3 => 'sworn',
       4 => 'swearing',
     ),
-    1180 => 
+    1231 => 
     array (
       0 => 'testify',
       1 => 'testifies',
       2 => 'testified',
       3 => 'testifying',
     ),
-    1181 => 
+    1232 => 
     array (
       0 => 'testimony',
       1 => 'testimonies',
     ),
-    1182 => 
+    1233 => 
     array (
       0 => 'trial',
       1 => 'trials',
     ),
-    1183 => 
+    1234 => 
     array (
       0 => 'uphold',
       1 => 'upholds',
       2 => 'upheld',
       3 => 'upholding',
     ),
-    1184 => 
+    1235 => 
     array (
       0 => 'verdict',
       1 => 'verdicts',
     ),
-    1185 => 
+    1236 => 
     array (
       0 => 'accusation',
       1 => 'accusations',
     ),
-    1186 => 
+    1237 => 
     array (
       0 => 'action',
       1 => 'actions',
     ),
-    1187 => 
+    1238 => 
     array (
       0 => 'allocution',
       1 => 'allocutions',
     ),
-    1188 => 
+    1239 => 
     array (
       0 => 'argument',
       1 => 'arguments',
     ),
-    1189 => 
+    1240 => 
     array (
       0 => 'closing',
       1 => 'close',
       2 => 'closed',
       3 => 'closes',
+      4 => 'closings',
     ),
-    1190 => 
+    1241 => 
     array (
       0 => 'costs',
       1 => 'cost',
       2 => 'costing',
+      3 => 'costed',
     ),
-    1191 => 
+    1242 => 
     array (
       0 => 'crossclaim',
       1 => 'crossclaims',
     ),
-    1192 => 
+    1243 => 
+    array (
+      0 => 'deadlock',
+      1 => 'deadlocked',
+    ),
+    1244 => 
     array (
       0 => 'decision',
       1 => 'decisions',
     ),
-    1193 => 
+    1245 => 
+    array (
+      0 => 'default',
+      1 => 'defaulted',
+      2 => 'defaults',
+      3 => 'defaulting',
+    ),
+    1246 => 
     array (
       0 => 'demurrer',
       1 => 'demurrers',
     ),
-    1194 => 
+    1247 => 
     array (
       0 => 'discontinuance',
       1 => 'discontinuances',
     ),
-    1195 => 
+    1248 => 
     array (
       0 => 'discovery',
       1 => 'discoveries',
     ),
-    1196 => 
+    1249 => 
     array (
       0 => 'examination',
       1 => 'examinations',
     ),
-    1197 => 
+    1250 => 
     array (
       0 => 'gown',
       1 => 'gowns',
     ),
-    1198 => 
+    1251 => 
     array (
       0 => 'inquiry',
       1 => 'inquiries',
       2 => 'enquiry',
       3 => 'enquiries',
     ),
-    1199 => 
+    1252 => 
     array (
       0 => 'joinder',
       1 => 'joinders',
     ),
-    1200 => 
+    1253 => 
     array (
       0 => 'leave',
       1 => 'leaving',
       2 => 'leaves',
+      3 => 'leavings',
+      4 => 'leaved',
     ),
-    1201 => 
+    1254 => 
     array (
       0 => 'litigate',
       1 => 'litigates',
       2 => 'litigated',
     ),
-    1202 => 
+    1255 => 
     array (
       0 => 'nonsuit',
       1 => 'nonsuits',
     ),
-    1203 => 
+    1256 => 
     array (
       0 => 'opening',
       1 => 'open',
@@ -9967,65 +10629,73 @@ return array (
       3 => 'opens',
       4 => 'openings',
     ),
-    1204 => 
+    1257 => 
     array (
       0 => 'recuse',
       1 => 'recuses',
       2 => 'recused',
+      3 => 'recusing',
     ),
-    1205 => 
+    1258 => 
     array (
       0 => 'redirect',
       1 => 'redirected',
+      2 => 'redirecting',
+      3 => 'redirects',
     ),
-    1206 => 
+    1259 => 
     array (
       0 => 'reexamination',
       1 => 'reexaminations',
     ),
-    1207 => 
+    1260 => 
     array (
       0 => 'rejoinder',
       1 => 'rejoinders',
     ),
-    1208 => 
+    1261 => 
     array (
       0 => 'reversal',
       1 => 'reversals',
     ),
-    1209 => 
+    1262 => 
     array (
       0 => 'robe',
       1 => 'robes',
+      2 => 'robed',
+      3 => 'robing',
     ),
-    1210 => 
+    1263 => 
     array (
       0 => 'stay',
       1 => 'stays',
       2 => 'staying',
       3 => 'stayed',
     ),
-    1211 => 
+    1264 => 
     array (
       0 => 'submission',
       1 => 'submissions',
     ),
-    1212 => 
+    1265 => 
     array (
       0 => 'suit',
       1 => 'suits',
     ),
-    1213 => 
+    1266 => 
     array (
       0 => 'vacate',
       1 => 'vacated',
+      2 => 'vacating',
     ),
-    1214 => 
+    1267 => 
     array (
       0 => 'wig',
       1 => 'wigs',
+      2 => 'wigged',
+      3 => 'wigging',
     ),
-    1215 => 
+    1268 => 
     array (
       0 => 'withdrawal',
       1 => 'withdrawals',
@@ -13713,9 +14383,10 @@ return array (
     2 => 'rape',
     3 => 'rapes',
     4 => 'sodomy',
-    5 => 'pedophile',
-    6 => 'pedophiles',
-    7 => 'rapist',
-    8 => 'rapists',
+    5 => 'necrophilia',
+    6 => 'pedophile',
+    7 => 'pedophiles',
+    8 => 'rapist',
+    9 => 'rapists',
   ),
 );

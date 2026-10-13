@@ -9,6 +9,7 @@ ale
 amaretto
 americano
 amontillado
+anisette
 aperitif
 applejack
 aquavit
@@ -83,6 +84,7 @@ eggnog
 elixir
 espresso
 fino
+firewater
 fizz
 frappe
 frascati
@@ -102,6 +104,7 @@ infusion
 java
 juice
 julep
+kava
 kefir
 kir
 kirsch
@@ -135,6 +138,7 @@ martinis
 matcha
 mead
 merlot
+mescal
 mezcal
 mild
 milk
@@ -180,6 +184,7 @@ rioja
 ristretto
 rooibos
 rose
+rotgut
 rum
 rye
 sake
@@ -220,6 +225,7 @@ stinger
 stingers
 stout
 sundowner
+swizzle
 syrah
 tea
 teas

@@ -9,10 +9,13 @@ ague
 aids
 ailment
 alcoholism
+alexia
 allergy
+alopecia
 alzheimers
 anaemia
 anaphylaxis
+aneurism
 aneurysm
 angina
 anorexia
@@ -45,6 +48,7 @@ bursitis
 campylobacter
 cancer
 cancers
+candida
 canker
 carbuncle
 carcinoma
@@ -105,6 +109,7 @@ elephantiasis
 embolism
 emphysema
 encephalitis
+endocarditis
 endometriosis
 epilepsy
 fever
@@ -120,6 +125,7 @@ giardia
 gingivitis
 glaucoma
 glioma
+goiter
 goitre
 gonorrhea
 gonorrhoea
@@ -156,6 +162,7 @@ influenza
 insomnia
 jaundice
 jet lag
+kuru
 kwashiorkor
 laryngitis
 legionnaires
@@ -195,6 +202,7 @@ narcolepsy
 nausea
 nephritis
 neuralgia
+neuropathy
 neurosis
 norovirus
 obesity
@@ -217,6 +225,7 @@ plague
 pleurisy
 pneumonia
 polio
+porphyria
 pox
 prolapse
 psittacosis

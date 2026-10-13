@@ -182,6 +182,7 @@ gizzard
 gland
 glands
 glute
+gluteus
 gnasher
 gob
 gonads
@@ -315,10 +316,13 @@ paw
 paws
 pec
 pecs
+pectoral
 peeper
 pelvis
 penis
 pericardium
+peritoneum
+phalanges
 phalanx
 phallus
 pharynx
@@ -438,6 +442,7 @@ trunk
 tum
 tummy
 tush
+tushie
 tusk
 udder
 udders

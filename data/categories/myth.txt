@@ -24,6 +24,7 @@ chupacabra
 cockatrice
 cupid
 cyclops
+demigod
 demon
 demons
 devil
@@ -76,6 +77,7 @@ kraken
 leprechaun
 leprechauns
 leviathan
+lich
 lycanthrope
 manticore
 medusa

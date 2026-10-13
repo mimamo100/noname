@@ -42,6 +42,7 @@ canyoning
 capoeira
 cards
 carrom
+cassino
 caving
 charades
 cheat
@@ -83,6 +84,7 @@ fives
 foosball
 football
 footballs
+footie
 freediving
 freerunning
 frisbee
@@ -236,6 +238,7 @@ swimming
 swingball
 taekwondo
 tag
+tarok
 tennis
 tiddlywinks
 tig

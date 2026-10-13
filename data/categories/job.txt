@@ -2,7 +2,9 @@ label: A job
 
 abbess
 abbot
+accompanist
 accountant
+acolyte
 acrobat
 actor
 actress
@@ -12,6 +14,7 @@ adjutant
 administrator
 admiral
 admirals
+advertiser
 adviser
 advisor
 advocate
@@ -34,6 +37,7 @@ anthropologist
 apothecary
 appraiser
 apprentice
+arbitrator
 archaeologist
 archbishop
 architect
@@ -68,6 +72,7 @@ bailiff
 bailiffs
 baker
 ballerina
+bandleader
 banker
 barber
 bard
@@ -82,6 +87,7 @@ barristers
 bartender
 bartenders
 bassist
+beadle
 beater
 beautician
 beekeeper
@@ -99,6 +105,7 @@ boatbuilder
 boatman
 boatswain
 bobby
+bodybuilder
 bodyguard
 boilermaker
 bombardier
@@ -131,6 +138,7 @@ butler
 butlers
 cabbie
 cabby
+cabdriver
 cabinetmaker
 caddie
 cadet
@@ -245,6 +253,7 @@ courtiers
 cowboy
 cowboys
 cowgirl
+cowhand
 cowherd
 coxswain
 craftsman
@@ -292,6 +301,7 @@ dockers
 docs
 doctor
 doctors
+dogcatcher
 doorman
 dramatist
 draper
@@ -299,7 +309,9 @@ draughtsman
 drayman
 dresser
 dressmaker
+driller
 driver
+drover
 druggist
 drummer
 dustman
@@ -360,10 +372,12 @@ forester
 forger
 freelancer
 friar
+frogman
 fuller
 furrier
 gamekeeper
 gaoler
+garbageman
 gardener
 gasman
 gaucho
@@ -375,11 +389,13 @@ geneticist
 geographer
 geologist
 ghillie
+gillie
 gillies
 glassblower
 glazier
 glover
 goatherd
+gofer
 goldsmith
 golfer
 gondolier
@@ -388,12 +404,14 @@ governor
 gravedigger
 greengrocer
 greenkeeper
+greeter
 grocer
 groom
 groomer
 groundskeeper
 groundsman
 guard
+guardsman
 guardsmen
 guide
 guides
@@ -406,6 +424,7 @@ gynecologist
 haberdasher
 hairdresser
 hairdressers
+hairstylist
 handler
 handyman
 hangman
@@ -450,12 +469,14 @@ immunologist
 impersonator
 impressionist
 industrialist
+infantryman
 influencer
 innkeeper
 inspector
 instructor
 instructors
 intern
+internist
 interpreter
 inventor
 investigator
@@ -467,10 +488,12 @@ jeweller
 jockey
 joiner
 journalist
+journeyman
 judge
 juggler
 justice
 keeper
+knacker
 knight
 laborer
 laborers
@@ -480,12 +503,14 @@ lancer
 landlady
 landlord
 landscaper
+launderer
 laundress
 lawyer
 lawyers
 lecturer
 legionnaire
 legionnaires
+legislator
 lexicographer
 librarian
 librarians
@@ -501,6 +526,7 @@ locksmith
 locum
 logger
 loggers
+longshoreman
 lumberjack
 lumberjacks
 lyricist
@@ -510,6 +536,7 @@ magistrate
 magistrates
 maid
 maids
+maidservant
 mailman
 major
 manager
@@ -558,6 +585,7 @@ monk
 mortician
 mover
 movers
+muezzin
 musician
 musketeer
 musketeers
@@ -571,6 +599,7 @@ neurosurgeon
 newsagent
 newscaster
 newsreader
+newswoman
 notary
 novelist
 novice
@@ -586,6 +615,7 @@ officer
 officers
 official
 officials
+ombudsman
 oncologist
 operative
 operator
@@ -609,6 +639,7 @@ page
 pageboy
 painter
 palaeontologist
+paleontologist
 paparazzo
 paperboy
 paralegal
@@ -621,6 +652,7 @@ pastor
 pathologist
 pathologists
 pawnbroker
+paymaster
 peacekeeper
 peacekeepers
 peddler
@@ -633,6 +665,7 @@ pharmacologist
 philosopher
 phlebotomist
 photographer
+photojournalist
 physician
 physicians
 physicist
@@ -668,6 +701,7 @@ poulterer
 practitioner
 practitioners
 preacher
+prelate
 presenter
 president
 pressman
@@ -677,6 +711,7 @@ printer
 printers
 prior
 private
+prizefighter
 proctologist
 producer
 prof
@@ -686,6 +721,7 @@ programmer
 projectionist
 prompter
 proofreader
+proprietress
 prosecutor
 prosecutors
 prospector
@@ -709,7 +745,9 @@ radiographer
 radiologist
 rancher
 ranger
+rebbe
 receptionist
+recordist
 recruit
 recruiter
 recruits
@@ -720,14 +758,18 @@ registrar
 repairman
 reporter
 researcher
+restaurateur
 retailer
 reverend
 reviewer
+rifleman
+rigger
 ringmaster
 riveter
 roadie
 roofer
 roper
+roughneck
 saddler
 sailor
 sailors
@@ -738,6 +780,7 @@ salesperson
 saleswoman
 salter
 sapper
+sawbones
 sawyer
 saxophonist
 scaffolder
@@ -746,6 +789,7 @@ schoolmaster
 schoolmistress
 schoolteacher
 scientist
+scoutmaster
 screenwriter
 scribe
 scriptwriter
@@ -763,8 +807,10 @@ servant
 servants
 server
 servers
+serviceman
 servicemen
 sexton
+shearer
 shepherd
 shepherdess
 sheriff
@@ -793,6 +839,7 @@ soprano
 spinner
 sportsman
 sportswoman
+sportswriter
 spotter
 spotters
 spy
@@ -805,6 +852,7 @@ stallholder
 stationer
 statistician
 steeplejack
+steno
 stenographer
 stevedore
 steward
@@ -817,6 +865,7 @@ stonemason
 stuntman
 stuntwoman
 stylist
+subcontractor
 superintendent
 supermodel
 supermodels
@@ -835,9 +884,12 @@ taxidermist
 taxman
 teacher
 teachers
+teamster
 teamsters
+techie
 technician
 technicians
+telemarketer
 teller
 temp
 temps
@@ -848,8 +900,10 @@ theologian
 therapist
 tiler
 tinker
+tipster
 tobacconist
 toolmaker
+toreador
 tracker
 trackers
 trader
@@ -870,6 +924,7 @@ tutors
 typesetter
 typist
 umpire
+underboss
 understudy
 undertaker
 undertakers
@@ -888,6 +943,7 @@ vet
 veterinarian
 vets
 vicar
+videographer
 vintner
 violinist
 virologist
@@ -904,6 +960,7 @@ waitress
 waitresses
 warden
 warder
+washerwoman
 watchmaker
 waterman
 weatherman
@@ -917,6 +974,7 @@ wingman
 woodcutter
 woodsman
 woodworker
+wordsmith
 worker
 workers
 workman

@@ -30,6 +30,7 @@ cicadas
 cockchafer
 cockroach
 cockroaches
+cootie
 crane fly
 cricket
 crickets
@@ -88,6 +89,7 @@ millipede
 minibeast
 mite
 monarch
+morpho
 mosquito
 mosquitoes
 mosquitos

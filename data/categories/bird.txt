@@ -104,6 +104,7 @@ galah
 gander
 gannet
 geese
+gobbler
 godwit
 goldcrest
 golden eagle
@@ -172,6 +173,7 @@ little owl
 long-tailed tit
 loon
 lorikeet
+lory
 lovebird
 lovebirds
 lyrebird
@@ -199,6 +201,7 @@ nighthawk
 nightingale
 nightingales
 nightjar
+noddy
 nutcracker
 nuthatch
 oriole
@@ -275,6 +278,7 @@ sedge warbler
 serin
 shag
 shearwater
+sheldrake
 shelduck
 shoebill
 shoveler
@@ -285,6 +289,7 @@ skylark
 smew
 snipe
 snowy owl
+solan
 song thrush
 sparrow
 sparrowhawk
@@ -326,6 +331,7 @@ weaver
 wheatear
 whimbrel
 whinchat
+whippoorwill
 whitethroat
 wigeon
 willow warbler

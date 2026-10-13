@@ -98,6 +98,7 @@ hogshead
 holdall
 hopper
 humidor
+inkwell
 jam jar
 jar
 jars
@@ -152,6 +153,7 @@ rucksack
 sachet
 sack
 sacks
+saddlebag
 saddlebags
 safe
 safes
@@ -160,9 +162,11 @@ samovar
 sarcophagus
 satchel
 sauceboat
+schoolbag
 shoebox
 silo
 snuffbox
+spittoon
 sporran
 sporrans
 stein

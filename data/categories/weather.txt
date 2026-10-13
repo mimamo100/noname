@@ -86,6 +86,7 @@ muggy
 murky
 nimbus
 nippy
+norther
 northerly
 overcast
 parky
@@ -98,6 +99,7 @@ rainstorm
 rainy
 rime
 sandstorm
+scorcher
 scorching
 shower
 showery
@@ -139,6 +141,7 @@ thunder
 thunderbolt
 thunderbolts
 thunderclap
+thunderhead
 thunderstorm
 thunderstorms
 thundery
@@ -157,6 +160,7 @@ whirlwind
 whiteout
 wind
 winds
+windstorm
 windy
 wintry
 zephyr

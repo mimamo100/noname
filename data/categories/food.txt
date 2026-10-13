@@ -130,6 +130,7 @@ chillies
 chip
 chipolata
 chips
+chitlins
 chive
 chocolates
 chop
@@ -164,6 +165,7 @@ corn
 cornbread
 cornflakes
 cornichon
+cornmeal
 coulis
 courgette
 crab
@@ -229,6 +231,7 @@ escalope
 escargot
 fare
 farfalle
+farina
 feijoa
 fennel
 feta
@@ -336,6 +339,7 @@ keema
 ketchup
 kibble
 kidney
+kielbasa
 kimchi
 kipper
 kippers
@@ -449,6 +453,7 @@ oyster
 pakchoi
 pancake
 pancakes
+pancetta
 paneer
 papaya
 paprika
@@ -730,6 +735,7 @@ yogurt
 yolk
 yolks
 yuzu
+ziti
 zucchini
 
 also:

@@ -110,6 +110,7 @@ fennec
 ferret
 filly
 foal
+fossa
 fox
 foxes
 fruit bat
@@ -284,9 +285,11 @@ ram
 rat
 rats
 reindeer
+rhesus
 rhino
 rhinoceros
 rhinos
+ringtail
 rodent
 rodents
 roebuck
@@ -302,6 +305,7 @@ siamang
 siamese
 sifaka
 sika
+silverback
 skunk
 sloth
 sow

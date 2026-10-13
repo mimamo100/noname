@@ -24,9 +24,10 @@ php -d memory_limit=1G scripts/find-missing-words.php [limit] [output file]
 
 - **New words** (16,162 seen 20 or more times; the file lists the first 3,000):
   words of their own, such as *opulence*, *disclaimer*, *thicken*.
-- **Forms of words we have** (plurals, -ed, -ing): usually not needed, because the
-  game's word families bring them along. Add one only when it's an answer in its own
-  right, such as a missing plural of a listed bird.
+- **Forms of words we have** (plurals, -ed, -ing): these are needed. A form that isn't in
+  the dictionary can't be played at all (*limped* is "not a word"); word families only
+  decide what gets used up together. They're regular forms ENABLE confirms, so they can be
+  added in bulk after a quick skim.
 - Words already in the dictionary or the blocklist are left out, so after adding a
   batch, regenerating the list shows the next ones.
 
@@ -56,10 +57,23 @@ The same rules as the dictionary review (PROPOSALS.md):
 3. Rebuild: `php scripts/build-dictionary.php`. It warns about anything it can't use.
 4. Upload `data/dictionary.php`.
 
-## Something to decide
+## How added words score
 
-Extra words go at the end of the dictionary's frequency order, so the game scores
-them as its rarest words (up to ×3). That suits genuinely rare words, but a large
-batch of fairly common words (*thicken*, *mismatch*) would then score more than they
-deserve. If many are added, the build could place them by their subtitle frequency
-instead; that's a small change to `scripts/build-dictionary.php`.
+Hand-added words go after the main word list, ordered by how often they appear in film
+subtitles, so a fairly common one (*thicken*) doesn't score as one of the rarest. The counts
+are in `data/extra-word-counts.txt`; after adding words, run
+`php -d memory_limit=1G scripts/count-extra-words.php`, then rebuild. Words with no count
+(most category words, such as *capybara*) come last, as before.
+
+## Done: the first review, 13 October 2026
+
+- The first 3,000 new words were reviewed: **2,854 added**, with 204 also placed in their
+  meaning category (*whippoorwill* in bird, *longshoreman* in job). Left out: 57 names, 31
+  fragments or misspellings, 29 foreign words, 5 abbreviations, 4 brands.
+- **All 6,600 forms** of words already in the dictionary were added (only *filles* left out).
+- **Blocked:** slurs and sexual crimes (*redskin*, *paleface*, *kaffir*, *yid*, *necrophilia*,
+  *cunnilingus* to match *fellatio*). **Masked:** crude words (*gangbang*, *bunghole*,
+  *knackers*), and *shit* with its family, moved from the blocklist by the owner. Pejoratives
+  that aren't crude are ordinary words (*papist*, *shiksa*).
+- The dictionary went from 39,720 to 49,410 words. About 13,000 further new words appear 20
+  or more times in the subtitles; regenerate the list to review the next batch.

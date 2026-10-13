@@ -52,11 +52,6 @@ midget
 fuck
 fucker
 motherfucker
-shit
-bullshit
-horseshit
-chickenshit
-shithead
 asshole
 cunt
 twat
@@ -74,3 +69,25 @@ rape
 rapist
 poon
 humping
+
+# Missing-words review, 13 October 2026
+pedophilia
+redskin
+paleface
+greaseball
+necrophilia
+abo
+sambo
+sodomite
+sodomites
+kaffir
+spick
+cunnilingus
+peckerwood
+lez
+coolies
+yid
+wogs
+squaws
+wetbacks
+necrophiliac

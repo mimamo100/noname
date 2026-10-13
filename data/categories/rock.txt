@@ -15,6 +15,7 @@ bauxite
 beryl
 birthstone
 bloodstone
+bluestone
 boulder
 breccia
 calcite

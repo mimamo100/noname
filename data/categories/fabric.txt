@@ -1,9 +1,11 @@
 label: A fabric
 
+acetate
 acrylic
 alpaca
 angora
 baize
+batiste
 broadcloth
 brocade
 buckskin
@@ -18,6 +20,7 @@ chambray
 chamois
 cheesecloth
 chenille
+cheviot
 chiffon
 chintz
 cloth
@@ -30,6 +33,7 @@ crepe
 crepes
 damask
 deerskin
+delaine
 denim
 doeskin
 elastane
@@ -66,6 +70,7 @@ microfibre
 mohair
 moleskin
 moquette
+mouton
 muslin
 neoprene
 nubuck

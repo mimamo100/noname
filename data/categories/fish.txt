@@ -30,6 +30,7 @@ clownfish
 cod
 codfish
 coelacanth
+coho
 coley
 conger
 crucian
@@ -126,9 +127,11 @@ snook
 sockeye
 sole
 sprat
+steelhead
 stickleback
 stingray
 stonefish
+striper
 sturgeon
 sunfish
 surgeonfish
@@ -148,8 +151,10 @@ viperfish
 wahoo
 weever
 whitebait
+whitefish
 whiting
 wrasse
+yellowtail
 zander
 zebrafish
 

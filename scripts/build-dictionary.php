@@ -45,15 +45,28 @@ if (in_array('--fetch', $argv, true)) {
 
 $words = array_values(array_filter(array_map('trim', file("$dataDir/words.txt"))));
 
-// Hand-added words go at the end, so they count as rare.
+// Hand-added words go after the word list, ordered by how often they appear in film subtitles
+// (data/extra-word-counts.txt, from scripts/count-extra-words.php), so a fairly common one
+// (thicken) isn't scored as one of the rarest. Words without a count come last, as written.
+$counts = [];
+if (is_file("$dataDir/extra-word-counts.txt")) {
+    foreach (readList("$dataDir/extra-word-counts.txt") as $line) {
+        [$word, $count] = explode(' ', $line) + [null, 0];
+        $counts[$word] = (int) $count;
+    }
+}
+$listed = array_flip($words);
+$extra = [];
 foreach (readList("$dataDir/extra-words.txt") as $word) {
     $word = strtolower($word);
     if (!preg_match('/^[a-z]{3,}$/', $word)) {
         fwrite(STDERR, "extra-words.txt: \"$word\" must be 3+ lowercase letters\n");
         exit(1);
     }
-    if (!in_array($word, $words, true)) $words[] = $word;
+    if (!isset($listed[$word])) $extra[$word] ??= count($extra);
 }
+uksort($extra, fn ($a, $b) => [-($counts[$a] ?? -1), $extra[$a]] <=> [-($counts[$b] ?? -1), $extra[$b]]);
+array_push($words, ...array_keys($extra));
 
 // Words the family rules would join to an unrelated word: "bunting" (the bird) isn't formed
 // from "bunt". Each starts its own family, which its plural still joins ("buntings").

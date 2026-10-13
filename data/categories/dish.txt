@@ -1,6 +1,7 @@
 label: A dish or meal
 
 arancini
+aspic
 balti
 banquet
 bhaji
@@ -22,6 +23,7 @@ burrito
 burritos
 butties
 butty
+cacciatore
 calzone
 cannelloni
 carbonara
@@ -29,6 +31,7 @@ carvery
 casserole
 cassoulet
 ceviche
+chateaubriand
 cheeseburger
 cheeseburgers
 chili
@@ -88,6 +91,7 @@ kedgeree
 kedgerees
 kofta
 korma
+kugel
 laksa
 lasagna
 lasagne
@@ -169,6 +173,7 @@ spring roll
 stew
 stir-fry
 stroganoff
+succotash
 sukiyaki
 supper
 sushi
@@ -178,6 +183,7 @@ taco
 tacos
 tagine
 takeaway
+tamal
 tamale
 tamales
 tapas

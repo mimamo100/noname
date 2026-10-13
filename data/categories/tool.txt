@@ -58,6 +58,7 @@ harrow
 hatchet
 hayfork
 hedge trimmer
+hemostat
 hod
 hoe
 hoes
@@ -68,6 +69,7 @@ hosepipe
 ice pick
 jack
 jackhammer
+jackknife
 jemmy
 jigsaw
 knife
@@ -112,6 +114,7 @@ ploughs
 plow
 plows
 plunger
+pocketknife
 poker
 polisher
 protractor
@@ -136,6 +139,7 @@ scraper
 screwdriver
 scythe
 secateurs
+sextant
 sharpener
 shears
 shovel

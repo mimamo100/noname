@@ -36,6 +36,7 @@ farad
 fathom
 fathoms
 feet
+fermi
 firkin
 foot
 furlong
@@ -133,6 +134,7 @@ seconds
 sievert
 stone
 stones
+tael
 terabyte
 tesla
 therm
