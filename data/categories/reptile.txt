@@ -33,6 +33,7 @@ cobra
 cobras
 copperhead
 copperheads
+corn snake
 cottonmouth
 cottonmouths
 crocodile
@@ -54,6 +55,7 @@ gecko
 gharial
 gharials
 goanna
+grass snake
 hawksbill
 hawksbills
 ichthyosaur
@@ -112,6 +114,7 @@ toad
 toads
 tortoise
 tortoises
+tree frog
 triceratops
 tuatara
 tuataras
@@ -127,14 +130,11 @@ vipers
 also:
 basilisk
 basilisks
-cornsnake
 dragon
 dragons
-grasssnake
 loggerhead
 loggerheads
 moccasin
 monitor
 monitors
 raptor
-treefrog

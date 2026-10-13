@@ -70,6 +70,7 @@ sandhopper
 sandhoppers
 scallop
 scallops
+sea lion
 seal
 seals
 shellfish
@@ -103,4 +104,3 @@ plankton
 polyp
 polyps
 scampi
-sealion

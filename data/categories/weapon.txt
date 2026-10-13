@@ -84,6 +84,7 @@ luger
 mace
 machete
 machetes
+machine gun
 magnum
 mangonel
 matchlock
@@ -107,6 +108,7 @@ projectile
 projectiles
 quarterstaff
 rapier
+ray gun
 revolver
 revolvers
 rifle
@@ -131,6 +133,7 @@ spear
 spears
 stiletto
 stilettos
+stun gun
 switchblade
 sword
 swords
@@ -161,13 +164,11 @@ flack
 flak
 knives
 knuckles
-machinegun
-morningstar
+morning star
 pellets
 piece
 pieces
 pikes
-raygun
 saber
 sabers
 sabres
@@ -177,6 +178,5 @@ sidewinder
 slings
 stinger
 stingers
-stungun
 teargas
-warhammer
+war hammer

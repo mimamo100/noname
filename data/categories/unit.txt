@@ -78,6 +78,7 @@ knot
 knots
 league
 leagues
+light year
 liter
 liters
 litre
@@ -110,6 +111,7 @@ minute
 minutes
 nanometre
 nanosecond
+nautical mile
 newton
 ohm
 ounce
@@ -171,11 +173,9 @@ grains
 hand
 hands
 karat
-lightyear
 mach
 millennium
 month
-nauticalmile
 pace
 paces
 peck

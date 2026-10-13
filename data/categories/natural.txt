@@ -1,5 +1,4 @@
 label: A natural landscape feature
-
 # Hills, water, coasts, woods, wild ground. "A landscape feature" includes this
 # category, together with manmade.txt, and adds managed land (field, orchard).
 
@@ -186,6 +185,7 @@ oxbow
 pampas
 pass
 peak
+peat bog
 peninsula
 pinnacle
 pit
@@ -220,6 +220,8 @@ riverbed
 rivers
 riverside
 rivulet
+rock pool
+salt marsh
 sandbank
 sandbar
 savanna
@@ -332,7 +334,6 @@ mounts
 mouths
 mull
 narrow
-peatbog
 piedmont
 points
 pool
@@ -342,8 +343,6 @@ ranges
 rapid
 rise
 rises
-rockpool
-saltmarsh
 sands
 shallow
 shelves

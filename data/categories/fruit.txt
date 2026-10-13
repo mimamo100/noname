@@ -29,11 +29,13 @@ citrus
 clementine
 cloudberry
 coconut
+crab apple
 cranberry
 currant
 damson
 date
 dewberry
+dragon fruit
 durian
 elderberry
 feijoa
@@ -75,6 +77,7 @@ nectarine
 orange
 oranges
 papaya
+passion fruit
 pawpaw
 peach
 pear
@@ -120,14 +123,11 @@ apricots
 bananas
 blueberries
 cherries
-crabapple
 cranberries
 dates
-dragonfruit
 figs
 limes
 mangoes
-passionfruit
 peaches
 pineapples
 plums

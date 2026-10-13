@@ -123,7 +123,7 @@ boucle
 bunting
 calf
 calves
-camelhair
+camel hair
 chino
 chinos
 cord
@@ -162,7 +162,7 @@ shammy
 suiting
 tapestries
 tapestry
-terrycloth
+terry cloth
 ticking
 vicuna
 vicunas

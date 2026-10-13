@@ -17,6 +17,7 @@ basket
 baskets
 beaker
 bin
+bin bag
 bins
 birdcage
 bottle
@@ -24,7 +25,7 @@ bottles
 bowl
 box
 boxes
-breadbin
+bread bin
 briefcase
 briefcases
 bucket
@@ -38,6 +39,7 @@ canteens
 carafe
 carafes
 carboy
+carrier bag
 carton
 cartons
 case
@@ -59,6 +61,7 @@ coffers
 coffin
 coffins
 container
+cool box
 cooler
 crate
 crates
@@ -77,6 +80,7 @@ envelope
 envelopes
 ewer
 firkin
+fish tank
 fishbowl
 flagon
 flask
@@ -84,18 +88,22 @@ flasks
 flowerpot
 footlocker
 goblet
+gravy boat
 hamper
 handbag
 haversack
+hip flask
 hod
 hods
 hogshead
 holdall
 hopper
 humidor
+jam jar
 jar
 jars
 jerrycan
+jewellery box
 jug
 jugs
 keg
@@ -110,20 +118,24 @@ lunchbox
 mailbox
 mailboxes
 matchbox
+money box
 mug
 mugs
 oilcan
 packet
 pail
 pannier
+pencil case
 pepperpot
 percolator
 percolators
 phial
+piggy bank
 pillbox
 pillboxes
 pitcher
 pitchers
+plant pot
 planter
 portmanteau
 postbox
@@ -165,6 +177,7 @@ tankards
 teacup
 teapot
 terrarium
+test tube
 thermos
 tin
 tinderbox
@@ -194,6 +207,9 @@ vials
 vivarium
 wallet
 wallets
+watering can
+wheelie bin
+window box
 wineskin
 
 also:
@@ -201,7 +217,6 @@ attache
 attaches
 baggage
 beehive
-binbag
 bladder
 bladders
 bowls
@@ -213,11 +228,9 @@ cabinet
 caddy
 cage
 capsule
-carrierbag
 casserole
 churn
 clutch
-coolbox
 creamer
 cupboard
 cylinder
@@ -228,35 +241,26 @@ drum
 drums
 duffel
 duffle
-eggbox
-fishtank
+egg box
 folder
 gladstone
 glass
 gourd
-gravyboat
 grip
 grips
-hipflask
 hive
 hives
 holster
-jamjar
-jewellerybox
 letterbox
 locker
 lockers
 luggage
 manger
-moneybox
 mortar
 mortars
 pack
 package
 parcel
-pencilcase
-piggybank
-plantpot
 pocket
 pocketbook
 pockets
@@ -279,18 +283,14 @@ skip
 sleeve
 sleeves
 soapbox
-tacklebox
+tackle box
 tank
 tanks
 terrine
-testtube
 till
-toolbag
+tool bag
 tote
 totes
 trough
 tube
 tumbler
-wateringcan
-wheeliebin
-windowbox

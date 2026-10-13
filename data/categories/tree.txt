@@ -41,6 +41,7 @@ coconut
 conifer
 cork
 cottonwood
+crab apple
 cypress
 damson
 date
@@ -96,6 +97,7 @@ maple
 medlar
 mimosa
 mimosas
+monkey puzzle
 morello
 mulberry
 myrtle
@@ -161,7 +163,6 @@ blackwood
 cherries
 chestnuts
 coconuts
-crabapple
 figs
 firs
 gums
@@ -170,7 +171,6 @@ lemons
 limes
 locusts
 maples
-monkeypuzzle
 oaks
 olives
 oranges

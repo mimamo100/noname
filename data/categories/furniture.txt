@@ -16,9 +16,11 @@ booth
 booths
 buffet
 bunk
+bunk bed
 bureau
 cabinet
 cabinets
+camp bed
 carver
 chair
 chairs
@@ -27,6 +29,7 @@ chest
 chesterfield
 chiffonier
 closet
+coat stand
 coffer
 commode
 console
@@ -91,6 +94,7 @@ shelf
 shelving
 sideboard
 sofa
+sofa bed
 sofas
 stand
 stool
@@ -118,13 +122,10 @@ bar
 bars
 barstool
 bedframe
-bunkbed
 bunks
-campbed
 chests
 closets
 coatrack
-coatstand
 consoles
 convertible
 cots
@@ -137,7 +138,6 @@ ottomans
 rockers
 seats
 settles
-sofabed
 stands
 tables
 vanities

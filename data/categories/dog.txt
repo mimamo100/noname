@@ -79,6 +79,7 @@ pekinese
 pekingese
 pinscher
 pinschers
+pit bull
 pointer
 pointers
 pomeranian
@@ -93,10 +94,12 @@ puppy
 retriever
 ridgeback
 rottweiler
+saint bernard
 saluki
 salukis
 samoyed
 samoyeds
+sausage dog
 schnauzer
 schnauzers
 scottie
@@ -133,9 +136,6 @@ harriers
 leonberger
 maltese
 pedigree
-pitbull
-saintbernard
-sausagedog
 sharpei
 shihtzu
 tyke

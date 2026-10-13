@@ -48,6 +48,7 @@ guilder
 guilders
 guinea
 guineas
+half crown
 halfpenny
 hao
 jiao
@@ -140,7 +141,6 @@ dong
 dongs
 dram
 fiver
-halfcrown
 kip
 lei
 tanner

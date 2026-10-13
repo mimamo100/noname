@@ -32,6 +32,7 @@ cicadas
 cockchafer
 cockroach
 cockroaches
+crane fly
 cricket
 crickets
 damselfly
@@ -48,6 +49,7 @@ fleas
 fly
 fritillary
 froghopper
+fruit fly
 gadfly
 glowworm
 gnat
@@ -97,12 +99,14 @@ moth
 moths
 nit
 nymph
+pond skater
 pupa
 roach
 sandfly
 sawfly
 scarab
 scorpion
+shield bug
 silkworm
 silverfish
 spider
@@ -119,6 +123,7 @@ tick
 tortoiseshell
 tsetse
 wasp
+water boatman
 weevil
 whitefly
 wireworm
@@ -135,26 +140,21 @@ butterflies
 comma
 copper
 coppers
-cranefly
 emperor
 emperors
 flies
-fruitfly
 hawkmoth
 hopper
 jigger
 mites
 monarchs
-pondskater
 roaches
 scorpions
-shieldbug
 soldier
 soldiers
 stinkbug
 ticks
 viceroy
 wasps
-waterboatman
 worker
 workers

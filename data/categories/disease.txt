@@ -131,6 +131,7 @@ haemophilia
 haemorrhoids
 halitosis
 hangover
+hay fever
 headache
 heartburn
 heatstroke
@@ -158,6 +159,7 @@ infirmity
 influenza
 insomnia
 jaundice
+jet lag
 kwashiorkor
 laryngitis
 legionnaires
@@ -312,9 +314,7 @@ flare
 flares
 gall
 growth
-hayfever
 incompetence
-jetlag
 leak
 leaks
 madness

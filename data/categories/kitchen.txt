@@ -1,6 +1,7 @@
 label: A piece of kitchen equipment
 
 aga
+air fryer
 appliance
 apron
 bakeware
@@ -12,6 +13,8 @@ bin
 blender
 blowtorch
 bowl
+bread bin
+bread maker
 breadboard
 broiler
 burner
@@ -26,6 +29,7 @@ china
 chopper
 chopstick
 cleaver
+cling film
 coaster
 coffeemaker
 colander
@@ -173,6 +177,7 @@ tableware
 tagine
 tankard
 tap
+tea towel
 teacup
 teapot
 teaspoon
@@ -199,13 +204,9 @@ worktop
 zester
 
 also:
-airfryer
 boiler
 boilers
 bowls
-breadbin
-breadmaker
-clingfilm
 coffeepot
 disposal
 frypan
@@ -215,6 +216,5 @@ poachers
 ranges
 steamers
 teaspoons
-teatowel
 toasters
 urns

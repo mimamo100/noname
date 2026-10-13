@@ -41,6 +41,7 @@ cymbals
 didgeridoo
 djembe
 drum
+drum kit
 drums
 duduk
 dulcimer
@@ -65,6 +66,7 @@ harmonium
 harp
 harps
 harpsichord
+hi-hat
 horn
 kalimba
 kazoo
@@ -114,6 +116,7 @@ sitar
 snare
 sousaphone
 spinet
+steel pan
 synth
 synthesizer
 tabla
@@ -123,6 +126,8 @@ theorbo
 theremin
 timbales
 timpani
+tin whistle
+tom-tom
 triangle
 trombone
 trumpet
@@ -148,10 +153,8 @@ also:
 bells
 bombard
 chimes
-drumkit
 grand
 grands
-hihat
 horns
 hurdygurdy
 instrument
@@ -161,11 +164,8 @@ pipes
 recorders
 serpents
 snares
-steelpan
 synthesiser
-tamtam
-tinwhistle
-tomtom
+tam-tam
 triangles
 trumpets
 upright

@@ -105,6 +105,7 @@ greylag
 grouse
 guan
 guillemot
+guinea fowl
 gull
 harrier
 hawfinch
@@ -275,6 +276,7 @@ whimbrel
 whinchat
 whitethroat
 wigeon
+wood pigeon
 woodcock
 woodpecker
 wren
@@ -301,7 +303,6 @@ ducklings
 flicker
 flickers
 guinea
-guineafowl
 guineas
 gulls
 harpy
@@ -337,4 +338,3 @@ trumpeter
 turtledove
 warblers
 weavers
-woodpigeon

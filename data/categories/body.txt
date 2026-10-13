@@ -50,6 +50,7 @@ bottom
 botty
 bowel
 brain
+brain stem
 brains
 breast
 breastbone
@@ -172,6 +173,7 @@ foreleg
 forelimb
 forelock
 foreskin
+funny bone
 gallbladder
 genitalia
 genitals
@@ -196,6 +198,7 @@ head
 heads
 heart
 heel
+hind leg
 hindquarters
 hip
 hipbone
@@ -359,6 +362,7 @@ shin
 shinbone
 shins
 shoulder
+shoulder blade
 shoulders
 sideburn
 sinus
@@ -506,7 +510,6 @@ bones
 bosoms
 bottoms
 bowels
-brainstem
 bridge
 bridges
 bristles
@@ -601,7 +604,6 @@ fold
 folds
 frame
 frames
-funnybone
 germ
 germs
 gills
@@ -625,7 +627,6 @@ haw
 hearts
 heels
 hemisphere
-hindleg
 hole
 holes
 hood
@@ -744,7 +745,6 @@ seats
 shaft
 shafts
 shanks
-shoulderblade
 side
 sides
 siphon

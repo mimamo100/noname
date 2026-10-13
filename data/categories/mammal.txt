@@ -111,6 +111,7 @@ filly
 foal
 fox
 foxes
+fruit bat
 galago
 gaur
 gazelle
@@ -373,7 +374,6 @@ drills
 equine
 ferrets
 fisher
-fruitbat
 gibbons
 gophers
 hackney

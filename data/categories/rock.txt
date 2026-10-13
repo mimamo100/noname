@@ -64,6 +64,7 @@ jewel
 jewels
 kaolin
 labradorite
+lapis lazuli
 lava
 lignite
 limestone
@@ -97,6 +98,7 @@ quartz
 quartzite
 rhyolite
 rock
+rock salt
 rocks
 rubies
 ruby
@@ -117,6 +119,7 @@ stones
 sunstone
 talc
 tanzanite
+tiger's eye
 topaz
 tourmaline
 travertine
@@ -134,15 +137,12 @@ cobble
 conglomerate
 jet
 lapis
-lapislazuli
 meteorite
 ochre
 ochres
-rocksalt
 salt
 serpentine
 shingle
 shingles
 spar
 sulphur
-tigerseye

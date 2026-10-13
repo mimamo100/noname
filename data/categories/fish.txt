@@ -110,8 +110,11 @@ ruffe
 sailfish
 saithe
 salmon
+sand eel
 sardine
 sawfish
+sea bass
+sea bream
 seahorse
 shad
 shark
@@ -166,10 +169,7 @@ pikes
 piranhas
 rays
 roaches
-sandeel
 sardines
-seabass
-seabream
 shiner
 skates
 stargazer

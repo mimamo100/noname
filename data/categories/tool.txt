@@ -57,6 +57,7 @@ handsaw
 harrow
 hatchet
 hayfork
+hedge trimmer
 hod
 hoe
 hoes
@@ -64,6 +65,7 @@ hoist
 hone
 hose
 hosepipe
+ice pick
 jack
 jackhammer
 jemmy
@@ -75,6 +77,7 @@ ladle
 lancet
 lathe
 lawnmower
+leaf blower
 level
 loppers
 machete
@@ -87,6 +90,7 @@ mop
 mower
 multimeter
 multitool
+nail gun
 needle
 nutcracker
 opener
@@ -190,11 +194,7 @@ floats
 forks
 grapple
 hammers
-hedgetrimmer
-icepick
 jacks
-leafblower
-nailgun
 openers
 picks
 planes

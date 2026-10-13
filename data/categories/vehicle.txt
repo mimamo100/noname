@@ -76,6 +76,7 @@ forklift
 funicular
 glider
 gliders
+go-kart
 gritter
 gyrocopter
 hackney
@@ -138,6 +139,7 @@ pullman
 pushbike
 pushchair
 quad
+quad bike
 racer
 rickshaw
 roadster
@@ -237,13 +239,11 @@ diners
 drones
 engines
 fighters
-gokart
-halftrack
+half-track
 hotrod
 landers
 motorbikes
 motorcycles
-quadbike
 racers
 rig
 rigs

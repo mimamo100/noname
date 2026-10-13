@@ -76,6 +76,7 @@ euchre
 eventing
 falconry
 faro
+fell running
 fencing
 fishing
 fives
@@ -94,6 +95,7 @@ golf
 gymnastics
 halma
 handball
+hang-gliding
 hangman
 hearts
 heptathlon
@@ -101,6 +103,7 @@ hiking
 hillwalking
 hockey
 hopscotch
+horse racing
 horseshoes
 hunting
 hurdles
@@ -132,6 +135,7 @@ mancala
 marathon
 marbles
 mastermind
+mini golf
 monopoly
 motocross
 motorcycling
@@ -156,9 +160,11 @@ petanque
 pickleball
 pilates
 pinball
+ping-pong
 pinochle
 piquet
 poker
+pole vault
 polo
 pontoon
 pool
@@ -177,6 +183,7 @@ relay
 reversi
 riding
 rodeo
+roller skating
 rollerblading
 roulette
 rounders
@@ -193,11 +200,14 @@ sculling
 sevens
 shinty
 shooting
+shot put
+show jumping
 shuffleboard
 skateboarding
 skating
 skeet
 skeleton
+ski jumping
 skiing
 skipping
 skittles
@@ -215,6 +225,7 @@ softball
 solitaire
 spades
 spearfishing
+speed skating
 speedway
 spillikins
 sport
@@ -240,6 +251,7 @@ twister
 volleyball
 wakeboarding
 walking
+water polo
 weightlifting
 whist
 windsurfing
@@ -259,43 +271,32 @@ crickets
 dive
 dives
 doubles
-fellrunning
 fight
 fights
 fisticuffs
 foxhunting
 grappling
-hanggliding
 hardball
 hoops
-horseracing
 hunt
 hunts
 jiujitsu
 jumping
 kungfu
 lottery
-minigolf
 nap
 naps
-pingpong
-polevault
 pools
 racewalking
 raffle
-rollerskating
 round
 rounds
 row
 rows
-shotput
-showjumping
 singles
-skijumping
 snorkeling
 spar
 sparring
-speedskating
 stud
 studs
 swim
@@ -303,5 +304,4 @@ swims
 tags
 track
 tracks
-waterpolo
 waterskiing

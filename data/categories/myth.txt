@@ -105,6 +105,8 @@ revenant
 roc
 sasquatch
 satyr
+sea monster
+sea serpent
 selkie
 shapeshifter
 siren
@@ -159,8 +161,6 @@ kappa
 mummy
 nix
 pixy
-seamonster
-seaserpent
 serpent
 shade
 sorcerer

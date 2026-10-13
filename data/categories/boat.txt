@@ -1,5 +1,6 @@
 label: A boat or ship
 
+aircraft carrier
 ark
 barge
 barges
@@ -15,9 +16,11 @@ boats
 brig
 brigantine
 brigantines
+canal boat
 canoe
 canoes
 caravel
+cargo ship
 carrack
 catamaran
 catamarans
@@ -26,6 +29,7 @@ clippers
 coracle
 coracles
 corvette
+cruise ship
 cruiser
 cruisers
 currach
@@ -44,6 +48,7 @@ feluccas
 ferries
 ferry
 ferryboat
+fishing boat
 flagship
 freighter
 freighters
@@ -78,6 +83,7 @@ motorboat
 narrowboat
 narrowboats
 outrigger
+paddle steamer
 paddleboat
 pedalo
 pinnace
@@ -88,7 +94,9 @@ punt
 raft
 riverboat
 rowboat
+rowing boat
 sailboat
+sailing boat
 sampan
 sampans
 schooner
@@ -107,6 +115,7 @@ submarines
 submersible
 supertanker
 superyacht
+tall ship
 tanker
 tankers
 trawler
@@ -118,6 +127,7 @@ troopship
 tug
 tugboat
 tugs
+u-boat
 warship
 warships
 whaler
@@ -130,24 +140,19 @@ yawl
 yawls
 
 also:
-aircraftcarrier
 bark
 barks
-cabincruiser
-canalboat
-cargoship
+cabin cruiser
 carrier
 carriers
 coaster
 cog
 collier
 containership
-cruiseship
 cutter
 cutters
-dragonboat
+dragon boat
 drifter
-fishingboat
 hovercraft
 hulk
 hulks
@@ -156,12 +161,9 @@ launch
 launches
 lighter
 lighters
-manowar
+man o' war
 outboard
-paddlesteamer
-patrolboat
-rowingboat
-sailingboat
+patrol boat
 scull
 shell
 shells
@@ -169,12 +171,10 @@ smack
 smacks
 sub
 subs
-tallship
 tender
 tenders
-torpedoboat
+torpedo boat
 tramp
 tramps
-uboat
 vessel
 vessels

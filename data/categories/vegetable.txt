@@ -5,6 +5,7 @@ arugula
 asparagus
 aubergine
 bean
+bean sprout
 beans
 beet
 beetroot
@@ -12,6 +13,7 @@ borlotti
 brassica
 broccoli
 broccolini
+butter bean
 butternut
 cabbage
 cabbages
@@ -107,6 +109,7 @@ spinach
 sprout
 spud
 squash
+sugar snap
 swede
 sweetcorn
 taro
@@ -128,9 +131,7 @@ zucchini
 
 also:
 artichokes
-beansprout
 beets
-butterbean
 carrots
 chile
 cucumbers
@@ -144,7 +145,6 @@ pumpkins
 soybeans
 sprouts
 spuds
-sugarsnap
 swedes
 truffles
 turnips

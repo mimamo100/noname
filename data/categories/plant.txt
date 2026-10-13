@@ -147,6 +147,7 @@ cotoneaster
 cotton
 cottonwood
 cowslip
+crab apple
 cranberries
 cranberry
 creeper
@@ -198,6 +199,7 @@ flax
 flower
 flowers
 flytrap
+forget-me-not
 forsythia
 foxglove
 frangipani
@@ -454,6 +456,7 @@ sumac
 sundew
 sunflower
 sunflowers
+sweet pea
 sycamore
 tamarind
 tamarisk
@@ -490,6 +493,7 @@ violets
 wallflower
 walnut
 wasabi
+water lily
 watercress
 watermelon
 watermelons
@@ -557,7 +561,6 @@ coconut
 coconuts
 coffee
 coffees
-crabapple
 crop
 crops
 docks
@@ -568,7 +571,6 @@ fig
 figs
 firs
 flora
-forgetmenot
 ginger
 gourd
 grain
@@ -657,7 +659,6 @@ strawberries
 strawberry
 swede
 swedes
-sweetpea
 tangerine
 taro
 tea
@@ -669,7 +670,6 @@ vanilla
 vegetable
 vegetables
 walnuts
-waterlily
 weeds
 yam
 yams

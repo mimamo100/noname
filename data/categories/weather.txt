@@ -35,6 +35,7 @@ drizzly
 drought
 dry
 dull
+dust storm
 easterly
 fair
 fine
@@ -72,6 +73,7 @@ hurricanes
 ice
 icy
 inclement
+jet stream
 lightning
 lull
 mild
@@ -173,16 +175,14 @@ condensation
 depressions
 draft
 drafts
-duststorm
 freezes
 fronts
 halo
 high
 highs
-jetstream
 low
 lows
-peasouper
+pea-souper
 showers
 sprinkles
 sprinkling

@@ -33,6 +33,7 @@ cheeseburger
 cheeseburgers
 chili
 chimichanga
+chow mein
 chowder
 colcannon
 coleslaw
@@ -65,6 +66,7 @@ fondue
 fricassee
 fricassees
 frittata
+fry-up
 gazpacho
 gnocchi
 goulash
@@ -166,7 +168,9 @@ souvlaki
 souvlakis
 spaghetti
 spanakopita
+spring roll
 stew
+stir-fry
 stroganoff
 sukiyaki
 supper
@@ -206,14 +210,12 @@ cereal
 champ
 chip
 chips
-chowmein
 confit
 crepe
 elevenses
 entree
 escalope
 fritter
-fryup
 galette
 goujon
 granola
@@ -240,10 +242,8 @@ raita
 saag
 slaw
 spareribs
-springroll
 starter
 steak
-stirfry
 sub
 subs
 tagliatelle

@@ -391,6 +391,7 @@ warehouse
 washhouse
 washroom
 watermill
+wet room
 wheelhouse
 wigwam
 windmill
@@ -465,7 +466,6 @@ spas
 stalls
 studies
 surgeries
-tackroom
+tack room
 vaults
 villas
-wetroom
