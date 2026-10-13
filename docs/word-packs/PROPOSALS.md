@@ -1,6 +1,15 @@
 # Word packs: review proposals
 
-Review of the drafts in [REVIEW.md](REVIEW.md), 13 October 2026. **Nothing has been changed yet.** Reply with anything to leave out, change or add, or "approved", plus your answers to the decisions below.
+Review of the drafts in [REVIEW.md](REVIEW.md), 13 October 2026. **Approved by the owner and applied the same day.**
+
+## Applied
+
+- **All 38 categories updated** as proposed, with the six decisions below, and three new ones: law "A criminal" (159 answers), science "A rock or mineral" (107) and "A weather term" (144), split out of earth science.
+- **Sizes now:** Science 1,609 answers in 14 categories (was 931), Law 1,165 in 13 (was 662), Music 1,297 in 14 (was 935).
+- **Phrases** are written as people write them (`habeas corpus`, `black hole, black holes`) and shown that way in the game; pack files separate an answer's forms with commas. Well-known phrases count. The everyday categories' phrases were rewritten the same way (*tea towel*, *t-shirt*, *forget-me-not*), with well-known ones moved to main.
+- **Blocked words in curated packs:** the law pack lists *rape*, *incest*, *sodomy*, *bestiality*, *rapist* and *paedophile*, playable only in its worlds.
+- **Corrections made while applying:** *mellotron*, *dobro* and *motown* left out (brand names); *plaintiff* left out of the Latin category; *ASBO* in also; *sol* moved to also with the other sol-fa syllables; pairs that counted one thing twice merged (*kidnap*/*kidnapping*, *lash*/*lashing*, *squad car*/*police car*).
+- Reviewers added a few well-known phrases beyond the proposals where players would obviously give them (*hung jury*, *red herring*, *periodic table*, *mosh pit*).
 
 ## Summary
 

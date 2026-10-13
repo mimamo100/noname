@@ -1,0 +1,218 @@
+label: A rock or mineral
+
+agate, agates
+alabaster
+amber
+amethyst, amethysts
+andesite
+anthracite
+aquamarine, aquamarines
+asbestos
+azurite
+basalt, basalts
+bauxite
+beryl, beryls
+birthstone, birthstones
+bloodstone, bloodstones
+borax
+breccia, breccias
+calcite
+carnelian, cornelian, carnelians, cornelians
+chalcedony
+chalk, chalks
+chert
+cinnabar
+citrine, citrines
+clay
+coal
+conglomerate, conglomerates
+corundum
+crystal
+diamond
+dolerite
+dolomite
+emerald, emeralds
+feldspar, felspar, feldspars, felspars
+flint
+fluorite, fluorspar
+fool's gold
+gabbro
+galena
+garnet, garnets
+gem
+gemstone
+gneiss
+granite, granites
+graphite
+gritstone
+gypsum
+haematite, hematite
+halite
+hornblende
+igneous rock, igneous rocks
+iron ore
+ironstone
+jade
+jasper, jaspers
+jet
+kaolin, kaolinite, china clay
+lapis lazuli
+lignite
+limestone, limestones
+lodestone, loadstone, lodestones, loadstones
+magnetite
+malachite
+marble, marbles
+metamorphic rock, metamorphic rocks
+mica, micas
+mineral, minerals
+moonstone, moonstones
+mudstone, mudstones
+obsidian
+olivine
+onyx
+opal, opals
+ore
+pearl
+peat
+peridot, peridots
+pitchblende
+precious stone, precious stones
+pumice
+pyrite, pyrites, iron pyrites
+quartz
+quartzite
+rhyolite
+rock crystal
+rock salt
+rock, rocks
+rose quartz
+ruby
+sandstone, sandstones
+sapphire, sapphires
+schist, schists
+sedimentary rock, sedimentary rocks
+semi-precious stone, semi-precious stones
+serpentine
+shale, shales
+siltstone, siltstones
+slate, slates
+soapstone
+sulphur, sulfur
+talc
+tanzanite
+tiger's eye, tiger eye
+topaz, topazes
+tourmaline, tourmalines
+tuff
+turquoise
+zircon, zircons
+
+also:
+actinolite
+albite
+alexandrite, alexandrites
+amazonite
+amphibole, amphiboles
+amphibolite
+andalusite
+anhydrite
+apatite
+aragonite
+arkose
+augite
+aventurine
+barite, baryte
+biotite
+bornite
+carbonate, carbonates
+cassiterite
+cat's eye
+celestine, celestite
+chalcopyrite
+chlorite
+chromite
+chrysoberyl
+chrysoprase
+copper
+coquina
+cryolite
+cuprite
+dacite
+diatomite
+diorite
+dunite
+eclogite
+epidote
+evaporite, evaporites
+fuller's earth
+goethite
+gold
+greenstone
+greywacke, graywacke
+heliotrope
+hornfels
+ignimbrite
+ilmenite
+iolite
+jadeite
+kimberlite
+komatiite
+kunzite
+kyanite
+labradorite
+lazurite
+lepidolite
+leucite
+limonite
+marcasite
+marl
+migmatite
+millstone grit
+molybdenite
+montmorillonite
+morganite
+muscovite
+natron
+nepheline
+nephrite
+oolite
+orpiment
+orthoclase
+pegmatite
+peridotite
+phonolite
+phyllite
+plagioclase
+porphyry, porphyries
+pyroxene, pyroxenes
+realgar
+rhodochrosite
+rhodonite
+rutile
+scheelite
+scoria
+serpentinite
+siderite
+silicate, silicates
+sillimanite
+silver
+sodalite
+spessartine
+sphalerite
+spinel, spinels
+spodumene
+staurolite
+stibnite
+sunstone
+syenite
+sylvite
+trachyte
+travertine
+tremolite
+tufa
+uraninite
+vermiculite
+wolframite
+wollastonite
+zeolite, zeolites

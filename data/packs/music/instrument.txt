@@ -1,171 +1,228 @@
 label: A musical instrument
 
-guitar, guitars
-bass, basses
-drum, drums
-piano, pianos
-keyboard, keyboards
-violin, violins
-cello, cellos
-viola, violas
-fiddle, fiddles
-harp, harps
-flute, flutes
-trumpet, trumpets
-saxophone, saxophones
-sax, saxes
-clarinet, clarinets
-trombone, trombones
-tuba, tubas
-oboe, oboes
-bassoon, bassoons
-contrabassoon, contrabassoons
-piccolo, piccolos
-recorder, recorders
-organ, organs
-synthesiser, synthesisers, synthesizer, synthesizers
-synth, synths
-keytar, keytars
-theremin, theremins
-sampler, samplers
-harmonica, harmonicas
-ukulele, ukuleles
-uke, ukes
+accordion, accordions
+alphorn, alphorns
+alto sax, alto saxes
+autoharp, autoharps
+bagpipe, bagpipes
+balalaika, balalaikas
+bandoneon, bandoneons
 banjo, banjos
 banjolele, banjoleles
-mandolin, mandolins
-mandola, mandolas
-accordion, accordions
-concertina, concertinas
-melodeon, melodeons
-bandoneon, bandoneons
-melodica, melodicas
-harmonium, harmoniums
-harpsichord, harpsichords
-clavichord, clavichords
-spinet, spinets
-virginal, virginals
-pianoforte, pianofortes
-fortepiano, fortepianos
-pianola, pianolas
-celesta, celestas
-glockenspiel, glockenspiels
-xylophone, xylophones
-marimba, marimbas
-vibraphone, vibraphones
-vibes
-timpani
-kettledrum, kettledrums
-snare, snares
-tom, toms
-cymbal, cymbals
-gong, gongs
-cowbell, cowbells
-tambourine, tambourines
-triangle, triangles
-woodblock, woodblocks
-castanet, castanets
-clave, claves
-guiro, guiros
-cabasa, cabasas
-shaker, shakers
-rainstick, rainsticks
-maraca, maracas
-bongo, bongos
-conga, congas
-timbales
-cajon, cajons
-djembe, djembes
-tabla, tablas
-washboard, washboards
+barrel organ, barrel organs
+bass drum, bass drums
+bass guitar, bass guitars
+bass, basses
+bassoon, bassoons
 bell, bells
-chime, chimes
-carillon, carillons
-cornet, cornets
-bugle, bugles
-flugelhorn, flugelhorns
-horn, horns
-euphonium, euphoniums
-sousaphone, sousaphones
-saxhorn, saxhorns
-mellophone, mellophones
-sackbut, sackbuts
-ophicleide, ophicleides
-serpent, serpents
-alphorn, alphorns
-fife, fifes
-pennywhistle, pennywhistles
-ocarina, ocarinas
-panpipe, panpipes
-bagpipe, bagpipes
-shawm, shawms
-crumhorn, crumhorns
-kazoo, kazoos
-didgeridoo, didgeridoos
-vuvuzela, vuvuzelas
-shofar, shofars
-duduk, duduks
-bansuri, bansuris
-shakuhachi, shakuhachis
-lute, lutes
-theorbo, theorbos
-cittern, citterns
-oud, ouds
-saz, sazes
-bouzouki, bouzoukis
-balalaika, balalaikas
-sitar, sitars
-sarod, sarods
-veena, veenas
-santoor, santoors
-tanpura, tanpuras
-shehnai, shehnais
-erhu, erhus
-pipa, pipas
-guzheng, guzhengs
-koto, kotos
-shamisen, shamisens
-kora, koras
-kalimba, kalimbas
-mbira, mbiras
-balafon, balafons
-kantele, kanteles
-nyckelharpa, nyckelharpas
 bodhran, bodhrans
-dulcimer, dulcimers
-cimbalom, cimbaloms
-zither, zithers
-autoharp, autoharps
-psaltery, psalteries
-lyre, lyres
-viol, viols
-rebec, rebecs
-violoncello, violoncellos
-contrabass, contrabasses
-tabor, tabors
-handpan, handpans
+bongo, bongos
+bouzouki, bouzoukis
+bugle, bugles
+cajon, cajons
 calliope, calliopes
+carillon, carillons
+castanet, castanets
+celesta, celestas
+cello, cellos, celli
+charango, charangos
+chime, chimes
+cimbalom, cimbaloms
+clarinet, clarinets
+clave, claves
+clavichord, clavichords
+concertina, concertinas
+conch
+conga, congas
+contrabass, contrabasses
+contrabassoon, contrabassoons
+cor anglais, cors anglais
+cornet, cornets
+cowbell, cowbells
+crumhorn, crumhorns, krummhorn, krummhorns
+cymbal, cymbals
+didgeridoo, didgeridoos, didjeridu, didjeridus
+djembe, djembes
+double bass, double basses
+drum machine, drum machines
+drum, drums
+dulcimer, dulcimers
+electric guitar, electric guitars
+erhu, erhus
+euphonium, euphoniums
+fiddle, fiddles
+fife, fifes
+flageolet
+flugelhorn, flugelhorns
+flute, flutes
+fortepiano, fortepianos
+french horn, french horns
+glockenspiel, glockenspiels
+gong, gongs
+guitar, guitars
+handbell, handbells
+handpan, handpans
+harmonica, harmonicas
+harmonium, harmoniums
+harp, harps
+harpsichord, harpsichords
+hi-hat, hi-hats
+horn, horns
+hurdy-gurdy, hurdy-gurdies
+jew's harp, jew's harps, jaw harp, jaw harps
+kalimba, kalimbas
+kazoo, kazoos
+kettledrum, kettledrums
+keyboard, keyboards
+keytar, keytars
+kick drum, kick drums
+kora, koras
+koto, kotos
+lute, lutes
+lyre, lyres
+mandolin, mandolins
+maraca, maracas
+marimba, marimbas
+mbira, mbiras
+melodeon, melodeons
+melodica, melodicas
+mouth organ, mouth organs
+music box, music boxes
+oboe, oboes
+ocarina, ocarinas
+organ, organs
+oud, ouds
+pan flute, pan flutes
+panpipe, panpipes
+penny whistle, penny whistles
+piano, pianos
+pianoforte, pianofortes
+pianola, pianolas
+piccolo, piccolos
+psaltery, psalteries
+rainstick, rainsticks
+rattle
+recorder, recorders
+sackbut, sackbuts
+sampler, samplers
+sax, saxes
+saxophone, saxophones
+saz, sazes
+serpent, serpents
+shaker, shakers
+shakuhachi, shakuhachis
+shamisen, shamisens
+shofar, shofars
+sitar, sitars
+sleigh bell, sleigh bells
+snare, snares
+sousaphone, sousaphones
+spinet, spinets
+squeezebox, squeezeboxes
+steel drum, steel drums
+steelpan, steelpans
+synth, synths
+synthesiser, synthesisers, synthesizer, synthesizers
+tabla, tablas
+taiko, taikos
+tambourine, tambourines
+tenor sax, tenor saxes
+theremin, theremins
+timbales, timbale
+timpani, tympani
+tin whistle, tin whistles
+tom, toms
+tom-tom, tom-toms
+triangle, triangles
+trombone, trombones
+trumpet, trumpets
+tuba, tubas
+tubular bells
+uke, ukes
+ukulele, ukuleles, ukelele, ukeleles
+vibes
+vibraphone, vibraphones
+viol, viols
+viola, violas
+violin, violins
+violoncello, violoncellos
+virginal, virginals
+vuvuzela, vuvuzelas
+washboard, washboards
+woodblock, woodblocks
+xylophone, xylophones
+zither, zithers
 
 also:
-electric, electrics
 acoustic, acoustics
-hihat, hihats
-kick, kicks
-tomtom, tomtoms
-bassdrum, bassdrums
-kickdrum, kickdrums
-doublebass, doublebasses
-upright, uprights
+agogo, agogos
+anvil
+balafon, balafons
+bansuri, bansuris
+baritone, baritones
+bass clarinet, bass clarinets
+berimbau, berimbaus
+bones
+cabasa, cabasas
+cittern, citterns
+clavinet, clavinets
+cornett, cornetts
+cuica, cuicas
+darbuka, darbukas, doumbek, doumbeks
+dhol, dhols
+dholak, dholaks
+drum kit, drum kits
+duduk, duduks
+electric, electrics
+english horn, english horns
+gittern, gitterns
+glass harmonica, glass harmonicas
 grand, grands
-steelpan, steelpans
-steeldrum, steeldrums
-tinwhistle, tinwhistles
-mouthorgan, mouthorgans
-hurdygurdy, hurdygurdies
-coranglais
-tamtam, tamtams
-drummachine, drummachines
+guiro, guiros
+guzheng, guzhengs
+heckelphone, heckelphones
 jug, jugs
-spoons
-whistle, whistles
+kantele, kanteles
+kick, kicks
+lap steel, lap steels
+mandola, mandolas
+mellophone, mellophones
+mridangam, mridangams
+musical saw, musical saws
+nyckelharpa, nyckelharpas
+ophicleide, ophicleides
+pandeiro, pandeiros
+pedal steel, pedal steels
+pipa, pipas
 pipe, pipes
+post horn, post horns
+ratchet
+rebec, rebecs
+resonator, resonators
+santoor, santoors, santur, santurs
+sarangi, sarangis
+sarod, sarods
+saxhorn, saxhorns
+shawm, shawms
+shehnai, shehnais
+slide whistle, slide whistles
+spoons
+steel guitar, steel guitars
+surdo, surdos
+swanee whistle, swanee whistles, swanee, swanees
+syrinx, syrinxes
+tabor, tabors
+tam-tam, tam-tams
+tanpura, tanpuras, tambura, tamburas, tamboura, tambouras
+tea chest, tea chests
+tenor horn, tenor horns
+theorbo, theorbos
+thumb piano, thumb pianos
+timbal, timbals
+uilleann pipes
+upright, uprights
+veena, veenas, vina, vinas
+vihuela, vihuelas
+washtub, washtubs
+whip
+whistle, whistles

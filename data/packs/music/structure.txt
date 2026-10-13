@@ -1,76 +1,103 @@
 label: Part of a song, or how it's played
 
-verse, verses
-chorus, choruses
-bridge, bridges
-riff, riffs
-hook, hooks
-intro, intros
-outro, outros
-solo, solos
-lick, licks
-refrain, refrains
-coda, codas
-cadenza, cadenzas
-movement, movements
-interlude, interludes
-finale, finales
-reprise, reprises
-recapitulation, recapitulations
-breakdown, breakdowns
-lyric, lyrics
-vocal, vocals
 accompaniment, accompaniments
-descant, descants
-ostinato, ostinatos
-motif, motifs
-leitmotif, leitmotifs
+ad lib, ad libs
 backbeat, backbeats
-groove, grooves
+backing
+bassline, basslines
 beat, beats
-drumroll, drumrolls
-rimshot, rimshots
-paradiddle, paradiddles
-handclap, handclaps
-strum, strums, strumming, strummed
-pluck, plucks, plucking, plucked
-shred, shreds, shredding, shredded
-fingerpicking
-vibrato, vibratos
-tremolo, tremolos
-glissando, glissandos, glissandi
-portamento
-melisma, melismas
-scat, scats, scatting, scatted
-yodel, yodels, yodelling, yodelled, yodeling, yodeled
-croon, croons, crooning, crooned
-growl, growls
 beatbox, beatboxes, beatboxing, beatboxed
-vamp, vamps, vamping, vamped
-improvisation, improvisations
-adlib, adlibs
+bend, bends
+break
+breakdown, breakdowns
+bridge, bridges
+build-up, build-ups
+cadenza, cadenzas
+chorus, choruses
+coda, codas
+count-in, count-ins
+croon, croons, crooning, crooned
+descant, descants
+development, developments
+drop, drops
+drumbeat, drumbeats
+drumroll, drumrolls
+exposition, expositions
+fade, fades
+fade-out, fade-outs
 feedback
+fill, fills
+finale, finales
+fingerpicking
+glissando, glissandos, glissandi
+groove, grooves
+growl, growls
+handclap, handclaps
+harmony
+hook, hooks
+hum
+improv
+improvisation, improvisations
+interlude, interludes
+intro, intros
+introduction, introductions
+key change, key changes
+leitmotif, leitmotifs
+lick, licks
+lyric, lyrics
+melisma, melismas
+middle eight, middle eights
+motif, motifs
+movement, movements
+ostinato, ostinatos
+outro, outros
+paradiddle, paradiddles
+picking
+pluck, plucks, plucking, plucked
+portamento
+power chord, power chords
+pre-chorus, pre-choruses
+rap
+recapitulation, recapitulations
+refrain, refrains
+reprise, reprises
+riff, riffs
+rimshot, rimshots
+roll
+scat, scats, scatting, scatted
+segue, segues
+shred, shreds, shredding, shredded
+slap
+solo, solos
+stanza, stanzas
+strum, strums, strumming, strummed
+swing
+tapping
+theme, themes
+tremolo, tremolos
+turnaround
+vamp, vamps, vamping, vamped
+verse, verses
+vibrato, vibratos
+vocal, vocals
+whistle
+yodel, yodels, yodelling, yodelled, yodeling, yodeled
 
 also:
-theme, themes
-introduction, introductions
-exposition, expositions
-development, developments
-buildup, buildups
-drop, drops
-fade, fades
-fadeout, fadeouts
-prechorus, prechoruses
-middleeight, middleeights
-countin, countins
-backing
-tapping
-picking
-bend, bends
-hammeron, hammerons
-pulloff, pulloffs
-powerchord, powerchords
-fill, fills
-blastbeat, blastbeats
-hookline, hooklines
-improv
+belt
+blast beat, blast beats
+call and response
+continuo, continuos
+countermelody, countermelodies
+fingerstyle
+flam, flams
+hammer-on, hammer-ons
+hook line, hook lines
+noodle
+obbligato, obbligatos
+palm mute, palm muting
+post-chorus, post-choruses
+pull-off, pull-offs
+sweep
+tag
+vocalise, vocalises

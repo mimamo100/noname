@@ -1,76 +1,118 @@
 label: A musician
 
-musician, musicians
-instrumentalist, instrumentalists
-guitarist, guitarists
-bassist, bassists
-drummer, drummers
-percussionist, percussionists
-keyboardist, keyboardists
-pianist, pianists
-organist, organists
-harpsichordist, harpsichordists
-violinist, violinists
-fiddler, fiddlers
-violist, violists
-cellist, cellists
-harpist, harpists
-flautist, flautists, flutist, flutists
-clarinettist, clarinettists, clarinetist, clarinetists
-oboist, oboists
-bassoonist, bassoonists
-saxophonist, saxophonists
-trumpeter, trumpeters
-trombonist, trombonists
-bugler, buglers
-piper, pipers
-fifer, fifers
+accompanist, accompanists
 accordionist, accordionists
-banjoist, banjoists
-lutenist, lutenists
-sitarist, sitarists
-timpanist, timpanists
-campanologist, campanologists
-bellringer, bellringers
-turntablist, turntablists
-deejay, deejays
-composer, composers
-songwriter, songwriters
-lyricist, lyricists
-librettist, librettists
 arranger, arrangers
-orchestrator, orchestrators
-conductor, conductors
-maestro, maestros, maestri
+axeman, axemen, axman, axmen
+bagpiper, bagpipers
 bandleader, bandleaders
 bandmaster, bandmasters
+bandmate, bandmates
+banjoist, banjoists
+bass player, bass players
+bassist, bassists
+bassoonist, bassoonists
+bellringer, bellringers
+bluesman, bluesmen
+bugler, buglers
+busker, buskers
+campanologist, campanologists
+cellist, cellists
 choirmaster, choirmasters
+clarinettist, clarinettists, clarinetist, clarinetists
+composer, composers
 concertmaster, concertmasters
-accompanist, accompanists
-soloist, soloists
-virtuoso, virtuosos, virtuosi
+conductor, conductors
+deejay, deejays
+drummer, drummers
+fiddler, fiddlers
+fifer, fifers
+flautist, flautists, flutist, flutists
 frontman, frontmen
 frontwoman, frontwomen
-sideman, sidemen
-bandmate, bandmates
-axeman, axemen, axman, axmen
-shredder, shredders
-sticksman, sticksmen
-jazzman, jazzmen
-bluesman, bluesmen
-busker, buskers
-minstrel, minstrels
-troubadour, troubadours
+guitarist, guitarists
+harpist, harpists
+harpsichordist, harpsichordists
 idol, idols
-heartthrob, heartthrobs
+instrumentalist, instrumentalists
+jazzman, jazzmen
+keyboardist, keyboardists
+lead guitarist, lead guitarists
+librettist, librettists
+lutenist, lutenists, lutanist, lutanists, lutist, lutists
+lyricist, lyricists
+maestro, maestros, maestri
+minstrel, minstrels
+multi-instrumentalist, multi-instrumentalists
+musician, musicians
+oboist, oboists
+one-hit wonder, one-hit wonders
+orchestrator, orchestrators
+organist, organists
+percussionist, percussionists
+pianist, pianists
+piper, pipers
+pop star, pop stars
+rapper, rappers
+rock star, rock stars
+rocker
+saxophonist, saxophonists
+session musician, session musicians
+shredder, shredders
+sideman, sidemen
+singer, singers
+singer-songwriter, singer-songwriters
+sitarist, sitarists
+soloist, soloists
+songwriter, songwriters
+sticksman, sticksmen
+timpanist, timpanists, tympanist, tympanists
+trombonist, trombonists
+troubadour, troubadours
+trumpeter, trumpeters
+turntablist, turntablists
+violinist, violinists
+violist, violists
+virtuoso, virtuosos, virtuosi
+vocalist, vocalists
 
 also:
-player, players
-leader, leaders
+bandsman, bandsmen
 bard, bards
+carillonneur, carillonneurs
+chansonnier, chansonniers
+chorus master, chorus masters
+contrabassist, contrabassists
+cornetist, cornetists, cornettist, cornettists
+drum major, drum majors
+duettist, duettists
+folkie, folkies
+griot, griots
+harmonicist, harmonicists
+harper, harpers
+hornist, hornists
+improviser, improvisers, improvisor, improvisors
+jongleur, jongleurs
+kapellmeister, kapellmeisters
+leader, leaders
+mandolinist, mandolinists
+marimbist, marimbists
+melodist, melodists
+organ grinder, organ grinders
+player, players
 prodigy, prodigies
+repetiteur, repetiteurs
+selector, selectors
+session man, session men
+skald, skalds
+songsmith, songsmiths
 star, stars
-popstar, popstars
-rockstar, rockstars
-multiinstrumentalist, multiinstrumentalists
-singersongwriter, singersongwriters
+symphonist, symphonists
+synthesist, synthesists
+trouvere, trouveres
+tubist, tubists, tubaist, tubaists
+tunesmith, tunesmiths
+ukulelist, ukulelists
+vibraphonist, vibraphonists
+violoncellist, violoncellists
+xylophonist, xylophonists

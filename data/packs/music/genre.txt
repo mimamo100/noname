@@ -1,183 +1,270 @@
 label: A musical genre or style
 
-rock
-pop
-punk
-metal
-grunge
-britpop
-glam
-disco
-soul
-funk
-reggae
-ska
-indie
-emo
-shoegaze, shoegazing
-goth
-blues
-jazz
-folk
-country
-bluegrass
-gospel
-rockabilly
-psychobilly
-skiffle
-psychedelia
-prog
-merseybeat
-freakbeat
-madchester
-krautrock
-alternative
-americana
-grime
-garage
-house
-techno
-trance
-dubstep
-dub
-rap
-drill
-trap
-crunk
-electro
-electronica
-electropop
-electroclash
-synthpop
-technopop
-synthwave
-vaporwave
-chillwave
-darkwave
-hyperpop
-chiptune
-folktronica
-indietronica
-eurodance
-europop
-eurobeat
-cantopop
-mandopop
-schlager
-bubblegum
-popera
-hardcore
-thrash
-grindcore
-deathcore
-metalcore
-mathcore
-djent
-screamo
-slowcore
-sadcore
-deathrock
-cowpunk
-rapcore
-industrial
-ambient
-chillout
-jungle
-breakbeat
-gabba, gabber
-rave
-dancehall
-ragga
-rocksteady
-reggaeton
+a cappella
+acid house
 afrobeat
 afrobeats
-highlife
-calypso
-soca
-cumbia
-zouk
-bhangra
-qawwali
-fado
-klezmer
-zydeco
-cajun
-tejano
-bebop
-swing
-ragtime
-dixieland
-fusion
-classical
+alternative
+amapiano
+ambient
+americana
+avant-garde
+bachata
+barbershop
 baroque
-romanticism
-minimalism
-impressionism
-expressionism
-serialism
-modernism
-neoclassicism
-choral
-orchestral
+bebop
+bhangra
+bluegrass
+blues
+bolero
+boogie-woogie
+bossa nova, bossa
+breakbeat
+britpop
+bubblegum
 cabaret
-vaudeville
+cajun
+calypso
+cantopop
+celtic
+chillout
+chillwave
+chiptune
+choral
+classical
+country
+crunk
+cumbia
+dancehall
+darkwave
+death metal
+deathcore
+disco
+dixieland
+djent
+doo-wop
+downtempo
+drill
+drum and bass, drum 'n' bass, dnb
+dub
+dubstep
+easy listening
+electro
+electronic
+electronica
+electropop
+emo
+eurobeat
+eurodance
+europop
 exotica
+experimental
+expressionism
+fado
+flamenco
+folk
+folk rock
+folktronica
+funk
+fusion
+gabba, gabber
+garage
+glam
+glam rock
+gospel
+goth, gothic
+grime
+grindcore
+grunge
+hard rock
+hardcore
+hardstyle
+heavy metal
+highlife
+hip hop
+house
+hyperpop
+impressionism
+indie
+industrial
+jazz
+jungle
+k-pop
+klezmer
+krautrock
+latin
+lo-fi
+lounge
+madchester
+mambo
+mandopop
+mariachi
+medieval
+merengue
+merseybeat
+metal
+metalcore
+minimalism
+modernism
+music hall
+neoclassicism
+new age
+new wave
+northern soul
+opera
+orchestral
+polka
+pop
+pop punk
+post-punk
+prog, progressive
+psychedelia, psych
+psychedelic
+psychobilly
+punk
+punk rock
+qawwali
+r and b, rnb
+ragga
+ragtime
+rap
+rave
+reggae
+reggaeton
+renaissance
+rock
+rock and roll, rock 'n' roll
+rockabilly
+rocksteady
+romanticism
+rumba
+salsa
+samba
+schlager
+screamo
+serialism
+shoegaze, shoegazing
+show tunes
+ska
+skiffle
+slowcore
+smooth jazz
+soca
+soft rock
+soul
+surf
+swing
+synthpop
+synthwave
+tango
+techno
+tejano
+thrash
+trance
+trap
+trip hop
+vaporwave
+vaudeville
+zouk
+zydeco
 
 also:
-bop
-hardbop
-stride
-trad
-celtic
-world
-romantic
-neoclassical
-renaissance
-avantgarde
-chamber
-musichall
-showtunes
-easylistening
-lounge
-jazzrock
-acidjazz
-freejazz
-honkytonk
-doowop
-rnb
-neosoul
-hiphop
-triphop
-bigbeat
-drumandbass
-acidhouse
-newwave
-postpunk
-postrock
-nowave
-powerpop
-softrock
-hardrock
-glamrock
-heavymetal
-numetal
-blackmetal
-deathmetal
-doom
-sludge
-stoner
-noise
-lofi
-surf
 acid
-twotone
-northernsoul
-poppunk
-kpop
-jpop
+acid jazz
+afroswing
+baggy
+bassline
+big beat
+black metal
+blues rock
+bollywood
+boom bap
+bop
+bounce
+carnatic
+chamber
+contemporary
+cool jazz
+corrido
+cowpunk
 crossover
-pubrock
-yachtrock
-bossanova
-boogiewoogie
+dance
+deathrock
+deep house
+doom
+dream pop
+edm
+electroclash
+enka
+filmi
+folk punk
+forro
+freakbeat
+free jazz
+gangsta
+garage rock
+glitch
+go-go
+gregorian
+hair metal
+happy hardcore
+hard bop
+hillbilly
+hindustani
+honky-tonk
+indietronica
+italo disco
+j-pop
+jazz rock
+juju
+kizomba
+kompa
+kwaito
+lovers rock
+mathcore
+mento
+modal
+muzak
+neo soul
+neoclassical
+new romantic
+no wave
+noise
+novelty
+nu metal
+nu-disco
+outlaw
+phonk
+popera
+post-hardcore
+post-rock
+power metal
+power pop
+proto-punk
+psytrance
+pub rock
+rai
+ranchera
+rapcore
+rebetiko, rembetiko
+romantic
+roots
+sacred
+sadcore
+ska punk
+sludge
+soukous
+speed metal
+stoner
+stride
+symphonic
+technopop
+trad
+tropicalia
+twee
+two tone
+uk garage
+western
+world
+worship
+yacht rock

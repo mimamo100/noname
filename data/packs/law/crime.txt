@@ -1,195 +1,236 @@
 label: A crime or offence
 
-murder, murders
-manslaughter
-homicide, homicides
-theft, thefts
-fraud, frauds
-burglary, burglaries
-robbery, robberies
+abandonment
+abduction, abductions
+abetting
+abuse
+affray
+arson
+assassination, assassinations
 assault, assaults
 battery
-arson
-blackmail
-bribery
-kidnapping, kidnappings
-kidnap, kidnaps
-abduction, abductions
-extortion
-embezzlement
-forgery, forgeries
-counterfeiting
-perjury
-treason
-sedition
-terrorism
-espionage
-smuggling
-trafficking
-racketeering
-laundering
-larceny
-shoplifting
-affray
-riot, riots
-rioting
-harassment
-stalking
-trespass
-vandalism
-libel
-slander
-defamation
+begging
+bestiality
 bigamy
-polygamy
+blackmail
 blasphemy
+bombing, bombings
 bootlegging
-moonshining
+breaking and entering
+bribery
+burglary, burglaries
 carjacking, carjackings
+coercion
+collusion
 conspiracy, conspiracies
 contempt
 corruption
+counterfeiting
+criminal damage
+cruelty
 cybercrime, cybercrimes
 cyberstalking
 deception
+defamation
+desecration
 desertion
+dognapping
+domestic violence, domestic abuse
+drink driving, drunk driving
 drunkenness
-genocide
-hijacking, hijackings
-skyjacking, skyjackings
-hooliganism
-housebreaking
-impersonation
-incitement
-indecency
-obscenity
-infanticide
-infringement, infringements
-joyriding
-looting
-malfeasance
-misconduct
-malpractice
-misdemeanour, misdemeanours, misdemeanor, misdemeanors
+duelling, dueling
+embezzlement
+endangerment
+espionage
+evasion, tax evasion
+extortion
+falsification
 felony, felonies
-mugging, muggings
-obstruction
-piracy
-poaching
-rustling
-sabotage
-solicitation
-soliciting
-procuring
-pimping
-prostitution
-speeding
-tampering
-voyeurism
-upskirting
-grooming
-molestation
-wounding, woundings
-maiming
-mutiny, mutinies
-poisoning, poisonings
-pickpocketing
-safecracking
-pilfering
-stealing
-thieving
-thievery
-misappropriation
-skimming
-possession
-intimidation
-harbouring, harboring
-abetting
-assassination, assassinations
-regicide
-patricide
-matricide
+fencing
+flashing
+fly-tipping
+forgery, forgeries
 fratricide
-parricide
-filicide
-lynching, lynchings
-vigilantism
-torture
-slavery
-insurrection
-rebellion
-subversion
+fraud, frauds
+genocide
+graffiti
+graft
+grooming
 gunrunning
 hacking
-phishing
-loansharking
-evasion
-graft
-collusion
-coercion
-cruelty
-abuse
-neglect
-endangerment
-strangulation
-mayhem
-squatting
-truancy
-vagrancy
-begging
-loitering
-littering
-jaywalking
-desecration
-sacrilege
-duelling, dueling
-usury
+handling
+harassment
+harbouring, harboring
+hate crime, hate crimes
 heist, heists
+heresy, heresies
+hijacking, hijackings
+hit and run, hit and runs
+holdup, holdups
+homicide, homicides
+hooliganism
+housebreaking
+identity theft, identity fraud
+impersonation
+incest
+incitement
+indecency
+infanticide
+infringement, infringements
+insider trading, insider dealing
+insurrection
+intimidation
+jaywalking
+joyriding
+kidnapping, kidnappings, kidnap, kidnaps
+killing, killings
+larceny
+laundering, money laundering
+libel
+littering
+loansharking
+loitering
+looting
+lynching, lynchings
+maiming
+malpractice
+manslaughter
+massacre, massacres
+matricide
+mayhem
+misappropriation
+misconduct
+misdemeanour, misdemeanours, misdemeanor, misdemeanors
+molestation
+moonshining
+mugging, muggings
+murder, murders
+mutiny, mutinies
+neglect
+obscenity
+obstruction
+patricide
+phishing
+pickpocketing
+pilfering
+piracy
+poaching
+poisoning, poisonings
+polygamy
+possession
+procuring
+prostitution
+racketeering
+rape, rapes
+rebellion
+regicide
+riot, riots, rioting
+robbery, robberies
+rustling
+sabotage
+sacrilege
+safecracking
+scam, scams
 scrumping
+sedition
+shooting, shootings
+shoplifting
+skimming
+skyjacking, skyjackings
+slander
+slavery
+slaying, slayings
+smuggling
+sodomy
+solicitation, soliciting
+speeding
+spying
+squatting
+stabbing, stabbings
+stalking
+stealing
+stickup, stickups
+strangling
+strangulation
 streaking
-insubordination
+subversion
+swindle, swindles
+tampering
+terrorism
+theft, thefts
+thievery, thieving
+torture
+trafficking
+treason
+trespass
+truancy
+upskirting
+usury
+vagrancy
+vandalism
+vigilantism
+voyeurism
+war crime, war crimes
+wiretapping
+wounding, woundings
 
 also:
-crime, crimes
-offence, offences, offense, offenses
-dealing
-fencing
-nicking
-pinching
-holdup, holdups
-stickup, stickups
-shakedown, shakedowns
-scam, scams
-swindle, swindles
-con, cons
-hustle
-cheating
+abh
+absconding
 attempt
-stabbing, stabbings
-shooting, shootings
-exposure
-plagiarism
-witchcraft
-cannibalism
-euthanasia
-gambling
-wiretapping
-massacre, massacres
-flytipping
-drinkdriving
-insidertrading
-insiderdealing
-identitytheft
-hostagetaking
-ramraiding
-lesemajesty
-warcrime, warcrimes
-embracery
-misprision
 barratry
+bodysnatching
+breach of the peace, breaches of the peace
+cannibalism
 champerty
-peculation
+cheating
+con, cons
+cowardice
+crime, crimes
+dangerous driving
+dealing
 defalcation
-uttering
+disorder
+drive-by, drive-bys
+dui
+dwi
+embracery
+euthanasia
+exposure
+fiddle, fiddles
+filicide
+firebombing, firebombings
+fire raising
+gambling
+gbh
+glassing, glassings
+graverobbing
+hostage taking
+hustle, hustles
+insubordination
+jailbreak, jailbreaks
+kerb crawling, curb crawling
+kneecapping, kneecappings
+lese majesty, lese majeste
+malfeasance
+menaces
 misfeasance
+misprision
+necrophilia
+nicking
 nonfeasance
+offence, offences, offense, offenses
+parricide
+peculation
+perverting the course of justice, perverting
+pinching
+plagiarism
+price fixing
+racket, rackets
+ram raiding
+receiving
+sextortion
+shakedown, shakedowns
+twocking
+uttering
+witchcraft

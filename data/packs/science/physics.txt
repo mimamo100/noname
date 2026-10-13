@@ -3,104 +3,172 @@ label: A physics term
 absorption
 acceleration, accelerations
 amplitude, amplitudes
+antinode, antinodes
+atom
 attraction
+battery
 buoyancy
 capacitance
 capacitor, capacitors
+centre of mass, center of mass
+centrifugal
+centripetal
+chain reaction, chain reactions
 charge, charges
 circuit, circuits
+compression
+conductance
 conduction
+conductivity
 conductor, conductors
 convection
 crest, crests
 current, currents
+dark energy
+dark matter
 decay
 density, densities
 diffraction
 diode, diodes
 dispersion
+displacement
+distance
 drag
 echo, echoes
 efficiency, efficiencies
 elasticity
 electricity
 electromagnet, electromagnets
+electrostatics
 emission, emissions
 energy, energies
 entropy
+equilibrium
+expansion
 field, fields
 fission
+fluid
+fluorescence
 flux
+focus
 force, forces
 frequency, frequencies
 friction
+fulcrum
+fuse
 fusion
+gamma ray, gamma rays
+gas
 gravitation
 gravity
+half-life, half-lives
 harmonic, harmonics
 heat
+hologram
 impulse, impulses
 inductance
+induction
+inductor, inductors
 inertia
 infrared
 insulator, insulators
 interference
+isotope
+kinetic energy
+lever
 lift
+light
+liquid
+longitudinal
 luminosity
+magnet
+magnetic field, magnetic fields
 magnetism
+magnification
 mass, masses
 microwave, microwaves
 moment, moments
 momentum, momenta
 motion
+node
+nucleus
+orbit
 oscillation, oscillations
+particle
 pendulum, pendulums
 period, periods
+phase
+pitch
+plasma
 polarisation, polarization
 potential
+potential energy
 power
 pressure, pressures
 projectile, projectiles
 quantum, quanta
 radiation
+radio wave, radio waves
 radioactivity
+rarefaction, rarefactions
+redshift
 reflection, reflections
 refraction
 relativity
 repulsion
 resistance, resistances
+resistivity
 resistor, resistors
 resonance, resonances
+reverberation
+scattering
 semiconductor, semiconductors
 shockwave, shockwaves
+solenoid, solenoids
+solid
+sound
+spacetime
 spectrum, spectra
 speed, speeds
 spin
+static
+strain
+stress
 superconductor, superconductors
 superposition
+switch
 temperature, temperatures
 tension
+terminal velocity
 thrust
 torque, torques
 transformer, transformers
 transistor, transistors
+transverse
 trough, troughs
+turbulence
 ultrasound
 ultraviolet
 upthrust
 vacuum, vacuums, vacua
 vector, vectors
 velocity, velocities
+viscosity
 voltage, voltages
 wave, waves
 wavelength, wavelengths
 weight, weights
 work
+x-ray, x-rays
 
 also:
-gammaray, gammarays
-halflife, halflives
-kineticenergy
-potentialenergy
-radiowave, radiowaves
-xray, xrays
+black body, black bodies
+blueshift
+coherence
+focal length, focal lengths
+hysteresis
+opacity
+phosphorescence
+photoelectric
+piezoelectric
+wavefront, wavefronts

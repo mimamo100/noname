@@ -1,74 +1,104 @@
 label: A legal job or title
 
-barrister, barristers
-solicitor, solicitors
-judge, judges
-magistrate, magistrates
-attorney, attorneys
-lawyer, lawyers
-advocate, advocates
-counsel
-prosecutor, prosecutors
-registrar, registrars
-bailiff, bailiffs
-coroner, coroners
-notary, notaries
-paralegal, paralegals
-conveyancer, conveyancers
-arbitrator, arbitrators
-mediator, mediators
-conciliator, conciliators
 adjudicator, adjudicators
-ombudsman, ombudsmen
-jurist, jurists
-jurisconsult, jurisconsults
-litigator, litigators
-sheriff, sheriffs
-marshal, marshals
-tipstaff, tipstaffs, tipstaves
-serjeant, serjeants
-bencher, benchers
-scrivener, scriveners
-procurator, procurators
-prothonotary, prothonotaries
-executioner, executioners
-hangman, hangmen
-gaoler, gaolers, jailer, jailers, jailor, jailors
-warder, warders
-legislator, legislators
-lawmaker, lawmakers
-lawgiver, lawgivers
+advocate, advocates
+arbitrator, arbitrators
+attorney, attorneys
+attorney general, attorneys general, attorney generals
+bailiff, bailiffs
+barrister, barristers
 bondsman, bondsmen
+bounty hunter, bounty hunters
+chief justice, chief justices
+clerk, clerks
+conciliator, conciliators
+constable, constables
+conveyancer, conveyancers
+coroner, coroners
+counsel
+court reporter, court reporters
+crown prosecutor, crown prosecutors
+defender, defenders
+deputy, deputies
+detective, detectives
+district attorney, district attorneys
+executioner, executioners
+gaoler, gaolers, jailer, jailers, jailor, jailors
+governor, governors
+guard, guards
+hangman, hangmen
+headsman, headsmen
+inspector, inspectors
+judge, judges
+jurist, jurists
+justice, justices
+lawgiver, lawgivers
+lawmaker, lawmakers
+lawyer, lawyers
+legislator, legislators
 liquidator, liquidators
+lord chancellor, lord chancellors
+magistrate, magistrates
+marshal, marshals
+mediator, mediators
+notary, notaries
+officer, officers
+ombudsman, ombudsmen
+paralegal, paralegals
+parole officer, parole officers
+policeman, policemen
+policewoman, policewomen
+private investigator, private investigators
+probation officer, probation officers
+prosecutor, prosecutors
+public defender, public defenders
+recorder, recorders
+registrar, registrars
+sergeant, sergeants, serjeant, serjeants
+sheriff, sheriffs
+silk, silks
+solicitor, solicitors
+solicitor general, solicitors general, solicitor generals
 stenographer, stenographers
+translator, translators
+trooper, troopers
+usher, ushers
+warden, wardens
+warder, warders
 
 also:
-justice, justices
-recorder, recorders
-clerk, clerks
-usher, ushers
-silk, silks
-pupil, pupils
-trainee, trainees
-chancellor, chancellors
-master, masters
-crier, criers
-beadle, beadles
-draftsman, draftsmen
-assessor, assessors
-commissioner, commissioners
-fiscal, fiscals
-proctor, proctors
-counsellor, counsellors, counselor, counselors
-defender, defenders
-warden, wardens
-governor, governors
-turnkey, turnkeys
-receiver, receivers
 administrator, administrators
-interpreter, interpreters
+assessor, assessors
 associate, associates
+bail bondsman, bail bondsmen
+beadle, beadles
+beak, beaks
+bencher, benchers
+chancellor, chancellors
+commissioner, commissioners
+counsellor, counsellors, counselor, counselors
+crier, criers
+draftsman, draftsmen
+fiscal, fiscals
+interpreter, interpreters
+judge advocate, judge advocates
+junior, juniors
+jurisconsult, jurisconsults
+justiciar, justiciars
+law clerk, law clerks
+law lord, law lords
+legal executive, legal executives
+master, masters
 partner, partners
-bountyhunter, bountyhunters
-attorneygeneral
-solicitorgeneral
+proctor, proctors
+procurator, procurators
+procurator fiscal, procurators fiscal, procurator fiscals
+prothonotary, prothonotaries
+pupil, pupils
+receiver, receivers
+screw, screws
+scrivener, scriveners
+stipendiary, stipendiaries
+tipstaff, tipstaffs, tipstaves
+trainee, trainees
+turnkey, turnkeys

@@ -1,52 +1,96 @@
 label: Someone in the music business or scene
 
-producer, producers
-engineer, engineers
-roadie, roadies
-manager, managers
-promoter, promoters
 agent, agents
-publicist, publicists
-plugger, pluggers
-publisher, publishers
-impresario, impresarios
-svengali, svengalis
-booker, bookers
-remixer, remixers
+audiophile, audiophiles
 beatmaker, beatmakers
+beatnik, beatniks
+booker, bookers
+bootlegger, bootleggers
+clubber, clubbers
+collector, collectors
+compere, comperes
+concertgoer, concertgoers
+crew
+critic, critics
+emo, emos
+engineer, engineers
+ethnomusicologist, ethnomusicologists
+executive, executives
+fan, fans
+fanboy, fanboys
+fangirl, fangirls
+festivalgoer, festivalgoers
+folkie, folkies
+goth, goths
+groupie, groupies
+headbanger, headbangers
+hippie, hippies, hippy
+hipster, hipsters
 hitmaker, hitmakers
+impresario, impresarios
+journalist, journalists
+luthier, luthiers
+manager, managers
+metalhead, metalheads
+mod, mods
+mogul, moguls
+mosher, moshers
+musicologist, musicologists
+new romantic, new romantics
+patron, patrons
+piano tuner, piano tuners
+plugger, pluggers
+presenter, presenters
+producer, producers
+promenader, promenaders
+promoter, promoters
+publicist, publicists
+publisher, publishers
+punk, punks
+raver, ravers
+remixer, remixers
+reviewer, reviewers
+roadie, roadies
+rocker, rockers
+scalper, scalpers
+scout, scouts
+skinhead, skinheads
+sound engineer, sound engineers
 soundman, soundmen
 stagehand, stagehands
-luthier, luthiers
-critic, critics
-musicologist, musicologists
-ethnomusicologist, ethnomusicologists
-groupie, groupies
-fan, fans
-superfan, superfans
+stage manager, stage managers
 stan, stans
-concertgoer, concertgoers
-promenader, promenaders
-raver, ravers
-clubber, clubbers
-headbanger, headbangers
-metalhead, metalheads
-mosher, moshers
-mod, mods
-rocker, rockers
-hippie, hippies, hippy
+superfan, superfans
+svengali, svengalis
+talent scout, talent scouts
+technician, technicians
+teddy boy, teddy boys
 teenybopper, teenyboppers
-wannabe, wannabes
-bootlegger, bootleggers
+tour manager, tour managers
 tout, touts
-scalper, scalpers
+wannabe, wannabes
 
 also:
+blogger
+bouncer, bouncers
+broadcaster
+choreographer
+copyist, copyists
+crate digger, crate diggers
+exec, execs
+gig-goer, gig-goers
+jazzer, jazzers
+metaller, metallers
+operagoer, operagoers
+pirate
+repetiteur, repetiteurs
+rigger, riggers
+road manager, road managers
+rude boy, rude boys
+selector, selectors
+soul boy, soul boys
+sponsor
+steward
 tech, techs
 techie, techies
-mogul, moguls
-scout, scouts
-talentscout, talentscouts
-bouncer, bouncers
-reviewer, reviewers
-onehitwonder, onehitwonders
+ted, teds

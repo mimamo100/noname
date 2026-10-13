@@ -1,75 +1,113 @@
 label: Gigs, concerts and festivals
 
-gig, gigs, gigging, gigged
-concert, concerts
-recital, recitals
-tour, tours, touring, toured
-festival, festivals
-fest, fests
-encore, encores
-soundcheck, soundchecks
-rehearsal, rehearsals
-audition, auditions
-residency, residencies
-headliner, headliners
-setlist, setlists
-stage, stages
-backstage
-venue, venues
-arena, arenas
-stadium, stadiums, stadia
-auditorium, auditoriums, auditoria
-bandstand, bandstands
+act, acts
+afterparty, afterparties
 amphitheatre, amphitheatres, amphitheater, amphitheaters
-nightclub, nightclubs
-crowd, crowds
+applause
+arena, arenas
 audience, audiences
-ticket, tickets
-wristband, wristbands
-merch
-merchandise
+audition, auditions
+auditorium, auditoriums, auditoria
+autograph
+backstage
+bandstand, bandstands
+barrier
+benefit, benefits
+bill
+box office, box offices
 busk, busks, busking, busked
-jam, jams, jamming, jammed
-showcase, showcases
-matinee, matinees
-premiere, premieres
+carnival
+ceilidh, ceilidhs
+cheer
+club, clubs
 comeback, comebacks
-hiatus, hiatuses
+concert, concerts
+concert hall, concert halls
+crowd, crowds
+crowd-surf, crowd-surfing
+date
+disco
+dressing room, dressing rooms
+eisteddfod, eisteddfods, eisteddfodau
+encore, encores
+fest, fests
+festival, festivals
+flyer
+gala, galas
+gig, gigs, gigging, gigged
+green room, green rooms
+guestlist, guestlists
+headline
+headliner, headliners
 heckle, heckles, heckling, heckled
 heckler, hecklers
-ovation, ovations
-applause
-guestlist, guestlists
-pyrotechnics
-pyro
-sellout, sellouts
-eisteddfod, eisteddfods, eisteddfodau
-ceilidh, ceilidhs
 hootenanny, hootenannies
-singsong, singsongs
+jam, jams, jamming, jammed
+jam session, jam sessions
 karaoke
+line-up, line-ups
 livestream, livestreams
+main stage, main stages
+marquee
+matinee, matinees
+meet and greet, meet and greets
+merch
+merchandise
+mosh pit, mosh pits
+nightclub, nightclubs
+opener, openers
+open mic, open mics
+opera house, opera houses
+ovation, ovations
+performance, performances
+poster
+premiere, premieres
+prom, proms
+pyro
+pyrotechnics
+rave, raves
+recital, recitals
+rehearsal, rehearsals
+residency, residencies
+reunion, reunions
+rider, riders
+sellout, sellouts
+set, sets
+setlist, setlists
+show, shows
+showcase, showcases
+singsong, singsongs
+soiree, soirees
+sold out
+soundcheck, soundchecks
+stadium, stadiums, stadia
+stage, stages
+stage dive, stage dives, stage diving
+stage fright
+support
+talent show, talent shows
+theatre, theater, theatres, theaters
+ticket, tickets
+tour, tours, touring, toured
+tour bus, tour buses
+tribute act, tribute acts
+unplugged
+venue, venues
+wristband, wristbands
 
 also:
-jamsession, jamsessions
-reunion, reunions
-moshpit, moshpits
-pit, pits
-stagedive, stagedives, stagediving
-crowdsurf, crowdsurfing
-greenroom, greenrooms
 aftershow, aftershows
-afterparty, afterparties
-openmic, openmics
-support
-opener, openers
-rider, riders
-tourbus, tourbuses
+club night, club nights
+confetti
 curfew, curfews
-soldout
-unplugged
-prom, proms
-benefit, benefits
-operahouse, operahouses
-concerthall, concerthalls
-set, sets
+dry ice
+feis, feiseanna
+fleadh, fleadhs
+jamboree
+laminate
+leg
+light show, light shows
+masterclass, masterclasses
+pit, pits
+stage door, stage doors
+warm-up, warm-ups

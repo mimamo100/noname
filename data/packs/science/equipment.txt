@@ -1,103 +1,175 @@
-label: A piece of laboratory equipment
+label: A piece of lab or scientific equipment
 
 alembic, alembics
 ammeter, ammeters
+ampoule
 anemometer, anemometers
+apron
 autoclave, autoclaves
 balance, balances
 barometer, barometers
+battery
 beaker, beakers
+bell jar, bell jars
 bioreactor, bioreactors
+bung
+bunsen burner, bunsen burners
+bunsen, bunsens
 burette, buret, burettes, burets
 burner, burners
+calliper, caliper, callipers, calipers
 calorimeter, calorimeters
 centrifuge, centrifuges
 clamp, clamps
 colorimeter, colorimeters
+compass
 condenser, condensers
+conical flask, conical flasks
+cork
+coverslip, coverslips
 crucible, crucibles
 cuvette, cuvettes
 cylinder, cylinders
 desiccator, desiccators
+dosimeter, dosimeters
 dropper, droppers
 dynamometer, dynamometers
 electrode, electrodes
 electroscope, electroscopes
 eyewash, eyewashes
 fermenter, fermenters
+filter
 flask, flasks
 forceps
+fume cupboard, fume cupboards
 funnel, funnels
+furnace
 galvanometer, galvanometers
 gauze, gauzes
+gloves
 goggles
 hotplate, hotplates
 hydrometer, hydrometers
 hygrometer, hygrometers
 incubator, incubators
 joulemeter, joulemeters
+lab coat, lab coats
 laser, lasers
 lens, lenses
 loupe, loupes
 magnet, magnets
 magnifier, magnifiers
+magnifying glass, magnifying glasses
 manometer, manometers
+measuring cylinder, measuring cylinders
+micrometer
+micropipette, micropipettes
 microscope, microscopes
 microtome, microtomes
+mirror
 mortar, mortars
 multimeter, multimeters
+needle
+newton meter, newton meters
 ohmmeter, ohmmeters
 oscilloscope, oscilloscopes
+oven
 pestle, pestles
+petri dish, petri dishes
 pipette, pipet, pipettes, pipets
 pooter, pooters
+potentiometer, potentiometers
 potometer, potometers
 prism, prisms
+probe
 protractor, protractors
 pulley, pulleys
 quadrat, quadrats
+rain gauge, rain gauges
 respirometer, respirometers
+retort stand, retort stands
 retort, retorts
 rheostat, rheostats
+ruler
+scale
 scalpel, scalpels
+scissors
 seismometer, seismometers
+sensor
 sieve, sieves
+slide
 spatula, spatulas
 spectrometer, spectrometers
+spectrophotometer, spectrophotometers
 spectroscope, spectroscopes
 spirometer, spirometers
 stirrer, stirrers
 stopclock, stopclocks
 stopper, stoppers
 stopwatch, stopwatches
+swab
 syringe, syringes
 telescope, telescopes
+test tube, test tubes
 thermocouple, thermocouples
 thermometer, thermometers
+thermostat
 timer, timers
 tongs
 tripod, tripods
+tube
+tubing
+tuning fork, tuning forks
 tweezers
+vacuum pump, vacuum pumps
+vial
 voltmeter, voltmeters
+water bath, water baths
 
 also:
-bunsenburner, bunsenburners
-conicalflask, conicalflasks
-datalogger, dataloggers
-evaporatingbasin, evaporatingbasins
-evaporatingdish, evaporatingdishes
-fumecupboard, fumecupboards
-gasjar, gasjars
+accelerator
+boiling tube, boiling tubes
+collider
+crocodile clip, crocodile clips
+cryostat, cryostats
+cyclotron, cyclotrons
+data logger, data loggers
+deflagrating spoon, deflagrating spoons
+dewar
+eudiometer, eudiometers
+evaporating basin, evaporating basins
+evaporating dish, evaporating dishes
+evaporator, evaporators
+forcemeter, forcemeters
+fume hood, fume hoods
+gas jar, gas jars
+geiger, geigers, geiger counter, geiger counters
 glassware
-labcoat, labcoats
-measuringcylinder, measuringcylinders
-newtonmeter, newtonmeters
-petridish, petridishes
-retortstand, retortstands
-scales
-spottingtile, spottingtiles
-testtube, testtubes
-tile, tiles
-washbottle, washbottles
-watchglass, watchglasses
-wireloop, wireloops
+glovebox, gloveboxes
+haemocytometer, hemocytometer, haemocytometers, hemocytometers
+hand lens, hand lenses
+heatproof mat, heatproof mats
+interferometer, interferometers
+light gate, light gates
+photometer, photometers
+polarimeter, polarimeters
+power pack, power packs
+pycnometer, pycnometers
+pyrometer, pyrometers
+ray box, ray boxes
+refractometer, refractometers
+separating funnel, separating funnels
+sequencer, sequencers
+sonicator, sonicators
+sonometer, sonometers
+spotting tile, spotting tiles
+synchrotron, synchrotrons
+thermocycler, thermocyclers
+ticker timer, ticker timers
+tile
+ultracentrifuge, ultracentrifuges
+vernier, verniers
+viscometer, viscometers
+wash bottle, wash bottles
+watch glass, watch glasses
+wire loop, wire loops

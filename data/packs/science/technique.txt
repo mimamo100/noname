@@ -5,62 +5,129 @@ amplification
 annealing
 assay, assays
 autoclaving
+autopsy
+biopsy
+blind test, blind tests
 blotting
+boiling
 calibration, calibrations
 calorimetry
-centrifugation
+carbon dating
+centrifugation, centrifuging
 chromatography
 cloning
 colorimetry
 condensing
+control
+control group, control groups
+cooling
 crystallisation, crystallization
-culture, cultures
-decanting
+cultivation
+culture, cultures, culturing
+dating
+decanting, decantation
+desiccation
 dialysis
 dilution, dilutions
+disinfection
 dissection, dissections
-distillation
+dissolving
+distillation, distilling
+drying
+electrolysis
 electrophoresis
-electroporation
 evaporation
 experiment, experiments
 extraction, extractions
-filtration
+fair test, fair tests
+fermentation
+filtration, filtering
+fingerprinting
+fixation
+flame test, flame tests
 fractionation
+freeze-drying, freeze drying
 freezing
 grinding
 heating
-hypothesis, hypotheses
+homogenisation, homogenization
+hydrolysis
 imaging
 incubation
 inoculation
+irradiation
+labelling, labeling
+lysis
+magnification
 measurement, measurements
+melting
 microscopy
+mixing
+modelling, modeling
+neutralisation, neutralization
 observation, observations
+paper chromatography
 pasteurisation, pasteurization
 pipetting
 plating
+precipitation
 purification
 radiography
 recrystallisation, recrystallization
 reflux
+refrigeration
+rinsing
 sampling
 sedimentation
 separation
 sequencing
+shaking
 sieving
-sonication
+simulation
+smear
+spectrometry
 spectrophotometry
+spectroscopy
 staining
 sterilisation, sterilization
 stirring
-titration, titrations
-transfection
+streaking
+sublimation
+swabbing
+synthesis
+titration, titrations, titrating
+tomography
+transformation
+vivisection
+washing
 weighing
 
 also:
-blindtest
-controlgroup
-fairtest
-gelelectrophoresis
-paperchromatography
+autoradiography
+cryopreservation
+cytometry
+electroplating
+electroporation
+elisa
+gel electrophoresis
+genotyping
+hybridisation, hybridization
+immunoassay, immunoassays
+leaching
+ligation
+lyophilisation, lyophilization
+microinjection
+mutagenesis
+pcr
+quantification
+randomisation, randomization
+sectioning
+serial dilution, serial dilutions
+sonication
+standardisation, standardization
+subculturing
+transduction
+transfection
+trituration
+vortexing
+western blot, western blots, western blotting

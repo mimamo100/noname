@@ -1,69 +1,133 @@
-label: A tempo or dynamics marking
+label: A tempo, dynamics or expression marking
 
-allegro
-adagio, adagios
-andante, andantes
-largo, largos
-lento
-presto
-vivace
-moderato
-allegretto
-andantino
-larghetto
-prestissimo
-grave
-rubato
-ritardando
-rallentando
 accelerando
-ritenuto
+accent, accents
+adagietto
+adagio, adagios
+affettuoso
+agitato
+allargando
+allegretto
+allegro
+amoroso
+andante, andantes
+andantino
+animato
+appassionato
+arco
+a tempo
+brillante
+calando
+cantabile
+crescendo, crescendos, crescendi
+da capo
+deciso
+decrescendo, decrescendos
+delicato
+diminuendo, diminuendos
+dolce
+dolente
+energico
+espressivo
+fermata, fermatas, fermate
 forte
 fortissimo
-piano
-pianissimo
-sforzando
-crescendo, crescendos, crescendi
-diminuendo, diminuendos
-decrescendo, decrescendos
-staccato
-legato
-pizzicato
-arco
-tenuto
-marcato
-fermata, fermatas
-dolce
-cantabile
-espressivo
-agitato
-maestoso
-grandioso
+fortississimo
 giocoso
-scherzando
-sostenuto
+grandioso
+grave
+grazioso
+larghetto
+larghissimo
+largo, largos
+legato
+leggiero, leggero
+lento
+maestoso
+marcato
+marziale
+mezzo forte
+mezzo piano
+misterioso
+moderato
 morendo
-smorzando
-tutti
-segno
-tacet
-animato
-tranquillo
-appassionato
 pesante
-leggiero
+pianissimo
+pianississimo
+piano
+pizzicato
+prestissimo
+presto
+rallentando
+rinforzando
+risoluto
+ritardando
+ritenuto
+rubato
+scherzando
+segno
+semplice
+sforzando
+sonoro
+sostenuto
+spiccato
+spiritoso
+staccato
+stringendo
+tacet
+tenuto
+tranquillo
+tutti
+vigoroso
+vivace
+vivacissimo
+vivo
 
 also:
-molto
-poco
+alla breve
+ancora
 assai
-sempre
-subito
-simile
-atempo
-mezzoforte
-mezzopiano
-dacapo
-dalsegno
+attacca
+col legno
+comodo
+con brio
+con moto
+con sordino
+dal segno
+doloroso
 fine
-accent, accents
+fortepiano
+furioso
+lacrimoso
+lamentoso
+largamente
+loco
+lunga
+lusingando
+meno
+mesto
+molto
+mosso
+niente
+nobilmente
+ottava
+perdendosi
+piacevole
+piangevole
+piu
+poco
+ponticello, sul ponticello
+portato
+sempre
+sforzato
+simile
+slentando
+smorzando
+sordino, sordini
+sotto voce
+subito
+tempestoso
+tempo primo
+teneramente
+troppo
+volante

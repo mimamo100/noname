@@ -120,7 +120,19 @@ zinc
 zirconium
 
 also:
+argentum
+aurum
+azote
+brimstone
+cuprum
 deuterium
+ferrum
+hydrargyrum
+kalium
+natrium
+plumbum
 quicksilver
+stannum
+stibium
 tritium
 wolfram

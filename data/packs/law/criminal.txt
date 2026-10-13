@@ -1,0 +1,250 @@
+label: A criminal
+
+abductor, abductors
+abuser, abusers
+accessory, accessories
+accomplice, accomplices
+armed robber, armed robbers
+arms dealer, arms dealers
+arsonist, arsonists
+assailant, assailants
+assassin, assassins
+attacker, attackers
+axe murderer, axe murderers, ax murderer, ax murderers
+baddie, baddies, baddy
+bad guy, bad guys
+bandit, bandits
+bank robber, bank robbers
+benefit cheat, benefit cheats
+bigamist, bigamists
+blackmailer, blackmailers
+bomber, bombers
+bootlegger, bootleggers
+buccaneer, buccaneers
+burglar, burglars
+career criminal, career criminals
+carjacker, carjackers
+cat burglar, cat burglars
+child molester, child molesters
+con artist, con artists
+conman, conmen, con man, con men
+contract killer, contract killers
+convict, convicts
+counterfeiter, counterfeiters
+criminal, criminals
+crook, crooks
+culprit, culprits
+cybercriminal, cybercriminals
+dealer, dealers
+delinquent, delinquents
+deserter, deserters
+drink driver, drink drivers, drunk driver, drunk drivers
+drug baron, drug barons
+drug dealer, drug dealers
+drug lord, drug lords
+drug mule, drug mules
+drug smuggler, drug smugglers
+drug trafficker, drug traffickers
+embezzler, embezzlers
+enforcer, enforcers
+escaped convict, escaped convicts
+escapee, escapees
+ex-con, ex-cons, excon, excons
+extortionist, extortionists
+fare dodger, fare dodgers
+felon, felons
+fence, fences
+firebug, firebugs
+flasher, flashers
+fly-tipper, fly-tippers, flytipper, flytippers
+forger, forgers
+fraudster, fraudsters
+fugitive, fugitives
+gangster, gangsters
+getaway driver, getaway drivers
+godfather, godfathers
+goon, goons
+grave robber, grave robbers
+gunman, gunmen
+gunrunner, gunrunners
+hacker, hackers
+henchman, henchmen
+highwayman, highwaymen
+hijacker, hijackers
+hitman, hitmen, hit man, hit men
+hoodlum, hoodlums
+hooligan, hooligans
+horse thief, horse thieves
+housebreaker, housebreakers
+identity thief, identity thieves
+jailbird, jailbirds, gaolbird, gaolbirds
+jewel thief, jewel thieves
+joyrider, joyriders
+juvenile delinquent, juvenile delinquents
+kidnapper, kidnappers
+killer, killers
+kingpin, kingpins
+kleptomaniac, kleptomaniacs
+knifeman, knifemen
+lag, lags
+lawbreaker, lawbreakers
+lifer, lifers
+loan shark, loan sharks
+looter, looters
+lowlife, lowlifes, lowlives
+mafioso, mafiosi, mafiosos
+mass murderer, mass murderers
+mastermind, masterminds
+miscreant, miscreants
+mobster, mobsters
+molester, molesters
+money launderer, money launderers
+moonshiner, moonshiners
+mugger, muggers
+murderer, murderers
+murderess, murderesses
+mutineer, mutineers
+offender, offenders
+old lag, old lags
+outlaw, outlaws
+paedophile, paedophiles, pedophile, pedophiles
+partner in crime, partners in crime
+peeping tom, peeping toms
+people smuggler, people smugglers
+people trafficker, people traffickers
+perjurer, perjurers
+perp, perps
+perpetrator, perpetrators
+pickpocket, pickpockets
+pimp, pimps
+pirate, pirates
+poacher, poachers
+poisoner, poisoners
+psychopath, psychopaths
+pusher, pushers
+pyromaniac, pyromaniacs
+racketeer, racketeers
+ram raider, ram raiders
+rapist, rapists
+recidivist, recidivists
+repeat offender, repeat offenders
+ringleader, ringleaders
+rioter, rioters
+robber, robbers
+rustler, rustlers, cattle rustler, cattle rustlers
+saboteur, saboteurs
+safecracker, safecrackers, safebreaker, safebreakers
+scammer, scammers
+serial killer, serial killers
+sex offender, sex offenders
+shoplifter, shoplifters
+smuggler, smugglers
+sniper, snipers
+sociopath, sociopaths
+spy, spies
+stalker, stalkers
+strangler, stranglers
+swindler, swindlers
+tax dodger, tax dodgers
+tax evader, tax evaders
+terrorist, terrorists
+thief, thieves
+thug, thugs
+trafficker, traffickers
+traitor, traitors
+trespasser, trespassers
+vandal, vandals
+vigilante, vigilantes
+villain, villains
+war criminal, war criminals
+wrongdoer, wrongdoers
+yob, yobs, yobbo, yobbos, yobboes
+
+also:
+absconder, absconders
+aggressor, aggressors
+bag snatcher, bag snatchers, purse snatcher, purse snatchers
+batterer, batterers
+bodysnatcher, bodysnatchers, body snatcher, body snatchers
+brigand, brigands
+bushranger, bushrangers
+capo, capos
+card sharp, card sharps, cardsharp, cardsharps, card sharper, card sharpers
+charlatan, charlatans
+cheat, cheats
+coiner, coiners
+confidence trickster, confidence tricksters
+consigliere, consiglieri
+copycat, copycats, copycat killer, copycat killers
+corsair, corsairs
+cracksman, cracksmen
+cutpurse, cutpurses
+cutthroat, cutthroats, cut-throat, cut-throats
+cyberstalker, cyberstalkers
+desperado, desperadoes, desperados
+dognapper, dognappers
+don, dons
+draft dodger, draft dodgers
+evildoer, evildoers
+fire raiser, fire raisers
+footpad, footpads
+fraud, frauds
+freebooter, freebooters
+gangbanger, gangbangers
+gangland boss, gangland bosses
+gang member, gang members
+grifter, grifters
+groomer, groomers
+hired gun, hired guns
+hit-and-run driver, hit-and-run drivers
+hood, hoods
+hustler, hustlers
+impostor, impostors, imposter, imposters
+insider trader, insider traders
+klepto, kleptos
+launderer, launderers
+lookout, lookouts
+lout, louts
+madam, madams
+made man, made men
+malefactor, malefactors
+marauder, marauders
+moll, molls, gangster's moll, gangster's molls
+mule, mules
+peddler, peddlers, pedlar, pedlars
+peterman, petermen
+phisher, phishers
+pilferer, pilferers
+plunderer, plunderers
+privateer, privateers
+procurer, procurers
+prowler, prowlers
+psycho, psychos
+purloiner, purloiners
+raider, raiders
+reoffender, reoffenders
+resurrectionist, resurrectionists
+ripper, rippers
+rogue, rogues
+ruffian, ruffians
+rum runner, rum runners, rumrunner, rumrunners
+screwsman, screwsmen
+sex pest, sex pests
+sheep stealer, sheep stealers
+skyjacker, skyjackers
+slasher, slashers
+sneak thief, sneak thieves
+speeder, speeders
+spree killer, spree killers
+squatter, squatters
+streaker, streakers
+suicide bomber, suicide bombers
+tagger, taggers
+triad, triads
+trickster, tricksters
+voyeur, voyeurs
+wife beater, wife beaters
+wiseguy, wiseguys
+yakuza
+yardie, yardies
+young offender, young offenders

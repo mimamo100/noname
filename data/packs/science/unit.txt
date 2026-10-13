@@ -1,20 +1,23 @@
 label: A unit of measurement used in science
 
-ampere, amperes
+ampere, amp, amperes, amps
 angstrom, angstroms
+astronomical unit, astronomical units
 atmosphere, atmospheres
 bar, bars
-barn, barns
 becquerel, becquerels
 calorie, calories
 candela, candelas
-celsius
+celsius, centigrade
+centilitre, centiliter, centilitres, centiliters
 centimetre, centimeter, centimetres, centimeters
 coulomb, coulombs
+cubic centimetre, cubic centimeter, cubic centimetres, cubic centimeters
 curie, curies
 dalton, daltons
 day, days
 decibel, decibels
+decilitre, deciliter, decilitres, deciliters
 degree, degrees
 dioptre, diopter, dioptres, diopters
 dyne, dynes
@@ -24,39 +27,53 @@ fahrenheit
 farad, farads
 gauss
 gigahertz
+gigawatt, gigawatts
 gram, gramme, grams, grammes
 gray, grays
 hectare, hectares
+hectopascal, hectopascals
 henry, henrys, henries
 hertz
+horsepower
 hour, hours
 joule, joules
-katal, katals
 kelvin, kelvins
-kilogram, kilogramme, kilograms, kilogrammes
+kilocalorie, kilocalories
+kilogram, kilogramme, kilo, kilograms, kilogrammes, kilos
 kilohertz
 kilojoule, kilojoules
 kilometre, kilometer, kilometres, kilometers
+kilonewton, kilonewtons
 kilopascal, kilopascals
+kiloton, kilotonne, kilotons, kilotonnes
+kilovolt, kilovolts
+kilowatt hour, kilowatt hours
 kilowatt, kilowatts
+light year, light years
 litre, liter, litres, liters
 lumen, lumens
 lux
 megahertz
+megajoule, megajoules
+megaton, megatonne, megatons, megatonnes
 megawatt, megawatts
 metre, meter, metres, meters
-mho, mhos
 microgram, micrograms
+microlitre, microliter, microlitres, microliters
 micrometre, micrometer, micrometres, micrometers
 micron, microns
 microsecond, microseconds
+milliampere, milliamp, milliamperes, milliamps
 millibar, millibars
 milligram, milligrams
 millilitre, milliliter, millilitres, milliliters
 millimetre, millimeter, millimetres, millimeters
 millisecond, milliseconds
+millisievert, millisieverts
+millivolt, millivolts
 minute, minutes
 mole, moles
+nanogram, nanograms
 nanometre, nanometer, nanometres, nanometers
 nanosecond, nanoseconds
 newton, newtons
@@ -64,14 +81,14 @@ ohm, ohms
 parsec, parsecs
 pascal, pascals
 picometre, picometer, picometres, picometers
+picosecond, picoseconds
 radian, radians
-rankine
 roentgen, roentgens
-rutherford, rutherfords
 second, seconds
 siemens
 sievert, sieverts
 steradian, steradians
+terawatt, terawatts
 tesla, teslas
 tonne, tonnes
 torr
@@ -81,8 +98,40 @@ weber, webers
 year, years
 
 also:
-astronomicalunit, astronomicalunits
-cubiccentimetre, cubiccentimeter, cubiccentimetres, cubiccentimeters
-kilowatthour, kilowatthours
-lightsecond, lightseconds
-lightyear, lightyears
+arcminute, arcminutes
+arcsecond, arcseconds
+attosecond, attoseconds
+barn, barns
+baud
+btu, btus
+debye, debyes
+femtometre, femtometer, femtometres, femtometers
+femtosecond, femtoseconds
+fermi, fermis
+gigaelectronvolt, gigaelectronvolts
+gilbert, gilberts
+jansky, janskys
+katal, katals
+kilobar, kilobars
+kilohm, kilohms
+kiloparsec, kiloparsecs
+langley, langleys
+light second, light seconds
+mach
+maxwell, maxwells
+megaparsec, megaparsecs
+megohm, megohms
+mho, mhos
+microfarad, microfarads
+micromole, micromoles
+microsievert, microsieverts
+millimole, millimoles
+oersted, oersteds
+picofarad, picofarads
+poise
+rad, rads
+rankine
+rem, rems
+rutherford, rutherfords
+stokes
+therm, therms

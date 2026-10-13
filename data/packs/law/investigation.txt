@@ -1,74 +1,142 @@
 label: A police or evidence term
 
+alibi
 arrest, arrests, arrested
-interrogation, interrogations
-lineup, lineups
-mugshot, mugshots
-fingerprint, fingerprints
-forensics
+autopsy, autopsies
+badge
+ballistics
+bloodstain, bloodstains
+bobby, bobbies
+booking
+bugging
+bust, busts, busted
+caution, cautions
+charge, charges, charged
+clue, clues
+cold case, cold cases
+confession, confessions
+constable, constables
+constabulary
+contraband
+cop, cops
+copper, coppers
+cordon
+corpse
+corroboration
+crime scene, crime scenes
+decoy
+deduction
+detective, detectives
+dna
+dragnet, dragnets
+entrapment
 evidence
 exhibit, exhibits
+exhumation
+fibre, fibres, fiber, fibers
+fingerprint, fingerprints, fingerprinting
+footprint, footprints
+forensics, forensic
+frisk, frisks
+grass
+handcuffs, handcuff, cuffs
 hearsay
-proof, proofs
-confession, confessions
-motive, motives
-clue, clues
-seizure, seizures
-raid, raids
-stakeout, stakeouts
-surveillance
-wiretap, wiretaps
-detective, detectives
-constable, constables
-investigator, investigators
+hunch
+identikit, identikits
+informant
+inspector, inspectors
+interrogation, interrogations
+interview, interviews
 investigation, investigations
+investigator, investigators
+lead, leads
+lineup, lineups, identity parade, identity parades
+manhunt, manhunts
+motive, motives
+mugshot, mugshots
+murder weapon, murder weapons
+officer, officers
+pathologist, pathologists
+patrol
+photofit, photofits
+plain clothes
 police
 policeman, policemen
 policewoman, policewomen
-autopsy, autopsies
-pathologist, pathologists
-ballistics
-toxicology
-handcuffs, handcuff
-truncheon, truncheons
-entrapment
-breathalyser, breathalysers, breathalyzer, breathalyzers
-manhunt, manhunts
-dragnet, dragnets
-roadblock, roadblocks
+polygraph, polygraphs, lie detector, lie detectors
+postmortem, postmortems
+private eye, private eyes
 profiler, profilers
-corroboration
-bloodstain, bloodstains
+proof, proofs
+questioning
+raid, raids
 ransom, ransoms
-contraband
+red herring, red herrings
+roadblock, roadblocks
+safe house, safe houses
+search, searches
+search warrant, search warrants
+seizure, seizures
+sergeant, sergeants
+sleuth, sleuths
+smoking gun, smoking guns
+snitch
+squad
+squad car, squad cars, police car, police cars, patrol car, patrol cars
+stakeout, stakeouts
+statement
+sting, stings
+stop and search
+supergrass, supergrasses
+superintendent, superintendents
+surveillance
+suspect
+swab, swabs
+tail
+taser, tasers
+tip-off, tip-offs
+toxicology
+truncheon, truncheons
+undercover
+warrant
+wiretap, wiretaps, phone tap, phone taps
+witness
 
 also:
-caution, cautions
-charge, charges, charged
-interview, interviews
-search, searches
-sergeant, sergeants
-inspector, inspectors
-superintendent, superintendents
-officer, officers
-cop, cops
-copper, coppers
-bobby, bobbies
-postmortem, postmortems
-cuffs
-baton, batons
-lead, leads
-tipoff, tipoffs
-sting, stings
-undercover
-frisk, frisks
-detain, detains, detained
-fingerprinting
-profiling
-forensic
 admission, admissions
-weapon, weapons
-loot
-swag
+baton, batons
+blood spatter
+cause of death
+cctv
+chain of custody
+chalk outline, chalk outlines
+cid
+collar
+composite, composites
+csi
+custody sergeant, custody sergeants
+dabs
+detain, detains, detained
+e-fit, e-fits
+evidence bag, evidence bags
 footage
-sleuth, sleuths
+gumshoe, gumshoes
+gunshot residue
+honey trap, honey traps
+interview room, interview rooms
+loot
+luminol
+miranda rights
+missing person, missing persons
+mole
+nark, narks
+nicked
+nightstick, nightsticks
+pinch
+profiling
+soco, socos
+swag
+time of death
+warrant card, warrant cards
+weapon, weapons
+whodunnit, whodunnits, whodunit, whodunits

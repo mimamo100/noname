@@ -1,81 +1,103 @@
 label: A punishment or sentence
 
+admonishment, admonishments
+amputation, amputations
+ban, bans
+banishment
+beheading, beheadings
+birching
+branding
+burning
+caning, canings
+censure
+chain gang, chain gangs
+community service
+compensation
+confinement
+confiscation
+corporal punishment
+crucifixion, crucifixions
+curfew, curfews
+death penalty, capital punishment
+decapitation
+deportation, deportations
+detention, detentions
+disbarment
+disqualification, disqualifications
+ducking stool, ducking stools
+electric chair, electric chairs
+electrocution
+endorsement, endorsements
+excommunication
+execution, executions
+exile
 fine, fines
-probation
-parole
-custody
+firing squad, firing squads
+flogging, floggings
+forfeiture, forfeitures
+gallows
+garrotte, garotte, garrote, garrottes, garottes, garrotes
+gassing
+gibbet, gibbets
+guillotine, guillotines
+hanging, hangings
+hard labour, hard labor
+house arrest
 imprisonment
 incarceration
-detention, detentions
-curfew, curfews
-tagging
-execution, executions
-hanging, hangings
-beheading, beheadings
-decapitation
-guillotine, guillotines
-gallows
-crucifixion, crucifixions
-flogging, floggings
-whipping, whippings
-caning, canings
-birching
-pillory, pillories
-transportation
-banishment
-exile
-deportation, deportations
-outlawry
-attainder
-forfeiture, forfeitures
-confiscation
-penalty, penalties
-restitution
-reparation, reparations
-disqualification
-reprimand, reprimands
-admonishment
-censure
-disbarment
-servitude
-confinement
 internment
+lashing, lashings, lash, lashes
+lethal injection, lethal injections
+life sentence, life sentences
+parole
+penalty, penalties
+pillory, pillories
+probation
+reparation, reparations
+reprimand, reprimands
+restitution
+solitary, solitary confinement
+stocks
 stoning
-branding
-gibbet, gibbets
-retribution
-rehabilitation
+suspended sentence, suspended sentences
+suspension
+tagging, tag, tags
+transportation
 
 also:
 amercement
-punishment, punishments
-sentence, sentences, sentenced
-compensation
-ban, bans
-suspension
-warning, warnings
-expulsion
-electrocution
-stocks
-duckingstool
-lashes
-lifer
-life
-death
-time
-porridge
-stretch
-solitary
-hardlabour
-chaingang
-bindover
-discharge
-scaffold
-noose
-penance
-deterrence
-mutilation
+asbo, asbos
+attainder
+bind over, bound over
+bird
+cashiering
 castration
-garrotte
+community order, community orders
+custodial sentence, custodial sentences
+death
+decimation
+deterrence
+discharge, conditional discharge
+expulsion
+impalement
 keelhauling
-communityservice
+life
+mutilation
+noose
+ostracism
+outlawry
+penalty points
+penance
+porridge
+pressing
+punishment, punishments
+quartering
+scaffold
+sentence, sentences, sentenced
+servitude
+strap
+stretch
+time
+treadmill
+walking the plank, walk the plank
+warning, warnings

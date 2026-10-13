@@ -1,11 +1,14 @@
 label: A subatomic particle
 
+alpha, alphas
 antineutrino, antineutrinos
 antineutron, antineutrons
+antiparticle, antiparticles
 antiproton, antiprotons
 antiquark, antiquarks
 axion, axions
 baryon, baryons
+beta, betas
 boson, bosons
 deuteron, deuterons
 electron, electrons
@@ -13,7 +16,7 @@ fermion, fermions
 gluon, gluons
 graviton, gravitons
 hadron, hadrons
-hyperon, hyperons
+higgs boson, higgs bosons
 kaon, kaons
 lepton, leptons
 meson, mesons
@@ -21,7 +24,6 @@ muon, muons
 neutrino, neutrinos
 neutron, neutrons
 nucleon, nucleons
-phonon, phonons
 photon, photons
 pion, pions
 positron, positrons
@@ -29,19 +31,44 @@ proton, protons
 quark, quarks
 tachyon, tachyons
 tau, taus
-upsilon, upsilons
 
 also:
-alpha, alphas
+alpha particle, alpha particles
 antielectron, antielectrons
 antimatter
-beta, betas
+antimuon, antimuons
+anyon, anyons
+beta particle, beta particles
+diquark, diquarks
+elementary particle, elementary particles
 eta, etas
+exciton, excitons
 gamma, gammas
+glueball, glueballs
 gluino, gluinos
-higgsboson
+gravitino, gravitinos
+hyperon, hyperons
+lambda, lambdas
+magnon, magnons
+monopole, monopoles
 neutralino, neutralinos
+omega, omegas
+parton, partons
+pentaquark, pentaquarks
+phonon, phonons
 photino, photinos
+plasmon, plasmons
 pomeron, pomerons
+preon, preons
 quasiparticle, quasiparticles
+selectron, selectrons
+sigma, sigmas
+sneutrino, sneutrinos
+sparticle, sparticles
 squark, squarks
+tetraquark, tetraquarks
+triton, tritons
+upsilon, upsilons
+w boson, w bosons
+wimp, wimps
+z boson, z bosons

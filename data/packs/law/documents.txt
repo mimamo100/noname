@@ -1,69 +1,113 @@
 label: A legal document
 
+accord, accords
+act, acts
+addendum, addenda, addendums
+affidavit, affidavits
+agreement, agreements
+amendment, amendments
+armistice, armistices
+arrest warrant, arrest warrants
+bill, bills
+bond, bonds
+brief, briefs
+bylaw, bylaws, byelaw, byelaws
+case file, case files
+cease and desist
+certificate, certificates
+charge sheet, charge sheets
+charter, charters
+citation, citations
+codicil, codicils
+complaint, complaints
+constitution, constitutions
+contract, contracts
+convention, conventions
+conveyance, conveyances
+court order, court orders
+covenant, covenants
+declaration, declarations
+decree, decrees
 deed, deeds
+deed poll, deed polls
+deposition, depositions
+directive, directives
+disclaimer, disclaimers
+docket, dockets
+edict, edicts
+green paper, green papers
+indenture, indentures
+indictment, indictments
+injunction, injunctions
+lease, leases
+legislation
+licence, licences, license, licenses
+living will, living wills
+memorandum, memoranda, memorandums
+mortgage, mortgages
+notice, notices
+order, orders
+ordinance, ordinances
+pact, pacts
+permit, permits
+petition, petitions
+pleading, pleadings
+policy, policies
+power of attorney, powers of attorney
+prenup, prenups
+proclamation, proclamations
+protocol, protocols
+rap sheet, rap sheets
+regulation, regulations
+restraining order, restraining orders
+search warrant, search warrants
+statement, statements
+statute, statutes
+subpoena, subpoenas
+summons, summonses
+tenancy agreement, tenancy agreements
+testament, testaments
+transcript, transcripts
+treaty, treaties
+waiver, waivers
+warrant, warrants
+white paper, white papers
 will, wills
 writ, writs
-warrant, warrants
-summons, summonses
-injunction, injunctions
-contract, contracts
-codicil, codicils
-testament, testaments
-indictment, indictments
-charter, charters
-statute, statutes
-legislation
-bylaw, bylaws, byelaw, byelaws
-ordinance, ordinances
-regulation, regulations
-decree, decrees
-edict, edicts
-directive, directives
-treaty, treaties
-constitution, constitutions
-amendment, amendments
-declaration, declarations
-deposition, depositions
-transcript, transcripts
-pleading, pleadings
-brief, briefs
-memorandum, memoranda, memorandums
-docket, dockets
-indenture, indentures
-certificate, certificates
-permit, permits
-agreement, agreements
-prenup, prenups
-petition, petitions
-disclaimer, disclaimers
-interrogatory, interrogatories
 
 also:
-bill, bills
-act, acts
-law, laws
-rule, rules
-order, orders
-notice, notices
-claim, claims
-complaint, complaints
-citation, citations
-statement, statements
-bond, bonds
-undertaking, undertakings
-proxy, proxies
-mandate, mandates
-instrument, instruments
 abstract, abstracts
+annex, annexes
+appendix, appendices, appendixes
+asbo, asbos
 attestation, attestations
-register, registers
-roll, rolls
-minute, minutes
-dossier, dossiers
+bill of sale, bills of sale
 bundle, bundles
-skeleton, skeletons
+claim, claims
+concordat, concordats
+dossier, dossiers
+instrument, instruments
+interrogatory, interrogatories
+iou, ious
+law, laws
+mandate, mandates
+minute, minutes
+nda, ndas
 particulars
+passport, passports
+probate
+promissory note, promissory notes
+prospectus, prospectuses
+proxy, proxies
+receipt, receipts
+register, registers
 release, releases
 report, reports
-powerofattorney
-ceaseanddesist
+rider, riders
+roll, rolls
+rule, rules
+schedule, schedules
+skeleton, skeletons
+statutory instrument, statutory instruments
+trust deed, trust deeds
+undertaking, undertakings

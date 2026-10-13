@@ -1,95 +1,160 @@
 label: An earth science term
 
-anticline, anticlines
+abrasion
+aftershock, aftershocks
+ammonite, ammonites
 aquifer, aquifers
-asthenosphere
+arete, aretes
+ash
+atoll, atolls
+attrition
 avalanche, avalanches
-basalt, basalts
+basin
 bedrock
+boulder
+butte, buttes
 caldera, calderas
-chalk, chalks
-cirrus
-climate, climates
-cloud, clouds
+cambrian
+canyon
+catchment, catchments
+cave
+cavern
+cirque, cirques
 continent, continents
+continental drift
 core, cores
+corrie, corries
 crater, craters
+cretaceous
 crust, crusts
-cumulonimbus
-cumulus, cumuli
-cyclone, cyclones
 delta, deltas
 deposition
-drought, droughts
 dune, dunes
 earthquake, earthquakes
+eon, aeon, eons, aeons
 epicentre, epicenter, epicentres, epicenters
+epoch
+equator
+era
 erosion
+eruption
+esker, eskers
 estuary, estuaries
+fault line, fault lines
 fault, faults
-feldspar, feldspars
+fjord, fiord, fjords, fiords
+floodplain, floodplains
 fold, folds
 fossil, fossils
-front, fronts
+geothermal
 geyser, geysers
+glaciation, glaciations
 glacier, glaciers
-gneiss
-granite, granites
+gorge
+gravel
 groundwater
-hail
-humidity
-hurricane, hurricanes
+hemisphere
+hot spring, hot springs
+humus
+ice age, ice ages
+ice cap, ice caps
+iceberg
 igneous
-ionosphere
-isobar, isobars
+interglacial, interglacials
+jurassic
+karst
+lagoon
+latitude
 lava, lavas
-limestone, limestones
+levee
 lithosphere
+loam
+longitude
 magma, magmas
+magnitude
 mantle, mantles
-marble, marbles
 meander, meanders
-mesosphere
+mesa, mesas
 metamorphic
-mica, micas
-mineral, minerals
-monsoon, monsoons
 moraine, moraines
-obsidian
+outcrop
+oxbow lake, oxbow, oxbow lakes, oxbows
+period
 permafrost
+plate tectonics
 plate, plates
-precipitation
-pumice
-quartz
-rain
-sandstone, sandstones
-schist, schists
+plateau
+precambrian
+reef
+ridge
+rift
+rift valley, rift valleys
+runoff
+salinity
+sand
+scree
 sediment, sediments
 sedimentary
+seismic
 seismograph, seismographs
-shale, shales
-slate, slates
+silt
+sinkhole
+soil
+spit
+spring
 stalactite, stalactites
 stalagmite, stalagmites
-stratosphere
 stratum, strata
-stratus
 subduction
-syncline, synclines
+tectonic plate, tectonic plates
 tectonics
-thermosphere
-thunderstorm, thunderstorms
-tornado, tornadoes, tornados
+tide
+topsoil
+tremor
+trench
+triassic
 tributary, tributaries
-troposphere
+trilobite, trilobites
 tsunami, tsunamis
-typhoon, typhoons
+tundra
+uplift
+valley
+vent
 volcano, volcanoes, volcanos
+water table, water tables
+waterfall
+watershed
 weathering
-gypsum
 
 also:
-jetstream, jetstreams
-platetectonics
-tectonicplate, tectonicplates
-watercycle
+anthropocene
+anticline, anticlines
+asthenosphere
+carboniferous
+cenozoic
+devonian
+fumarole, fumaroles
+geomagnetic
+gondwana, gondwanaland
+holocene
+hydrothermal
+infiltration
+lahar, lahars
+lode
+loess
+mesozoic
+ordovician
+orogeny, orogenies
+palaeozoic, paleozoic
+pangaea, pangea
+permian
+pleistocene
+quaternary
+seamount, seamounts
+silurian
+stratigraphy
+subsoil
+syncline, synclines
+talus
+tephra
+unconformity, unconformities

@@ -1,85 +1,118 @@
 label: An area of law
 
-tort, torts
-criminal
-civil
-family
-employment
-labour, labor
-commercial
-corporate
-constitutional
 administrative
-environmental
-immigration
-asylum
-extradition
-maritime
 admiralty
-shipping
-aviation
-competition
 antitrust
+asylum
+aviation
 banking
+bankruptcy
+canon
+case law
+charity
+civil
+civil rights
+commercial
+common
+company
+competition
+compliance
+constitutional
+construction
+consumer
+contract, contracts
+conveyancing
+copyright
+corporate
+criminal
+data protection
+defamation
+discrimination
+divorce
+ecclesiastical
+education
+electoral
+employment
+entertainment
+environmental
+equity
+evidence
+extradition
+family
+housing
+humanitarian
+human rights
+immigration
+insolvency
 insurance
+intellectual property
+international
+jurisprudence
+labour, labor
+land
+libel
+licensing
+maritime
+martial
+matrimonial
+media
+medical
+mental health
+military
+municipal
+negligence
+patent, patents
+pensions
+personal injury
+planning
+privacy
+private
+probate
+property
+public
+real estate
+regulatory
+roman
+securities
+sharia
+shipping
+sports
+succession
 tax
 taxation
-probate
-conveyancing
-planning
-housing
-matrimonial
-international
-public
-private
-equity
-succession
-insolvency
-bankruptcy
-negligence
-privacy
-medical
-pensions
-construction
-humanitarian
-canon
-ecclesiastical
-sharia
-jurisprudence
-regulatory
-compliance
-securities
-consumer
-municipal
+tort, torts
+trust, trusts
+welfare
 
 also:
-property
-land
-divorce
-media
-sports
-entertainment
-education
+agricultural
+animal
+children
+customs
+cyberlaw
+disability
+election
+energy
+equality
+excise
+feudal
+fiscal
+gambling
+gaming
 health
 healthcare
-welfare
-charity
-agricultural
-energy
-telecoms
-military
-roman
-common
-caselaw
-criminology
-penology
 juvenile
-youth
 local
-customs
-excise
-cyberlaw
-realestate
-dataprotection
-humanrights
-personalinjury
+mercantile
+mining
+natural
+procedure
+restitution
+revenue
+space
+statute
+statutory
+telecoms
+water
+wills
+youth

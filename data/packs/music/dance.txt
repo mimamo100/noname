@@ -1,99 +1,154 @@
 label: A dance or dance move
 
-waltz, waltzes
-tango, tangos
-foxtrot, foxtrots
-quickstep, quicksteps
-rumba, rumbas
-samba, sambas
-salsa, salsas
-mambo, mambos
-merengue, merengues
+arabesque, arabesques
 bachata, bachatas
-lambada, lambadas
-pasodoble, pasodobles
+ballet, ballets
+barn dance, barn dances
+belly dance, belly dances, belly dancing
+bhangra
 bolero, boleros
-fandango, fandangos
-flamenco
-tarantella, tarantellas
-polka, polkas
-mazurka, mazurkas
-polonaise, polonaises
-minuet, minuets
-gavotte, gavottes
-sarabande, sarabandes
-gigue, gigues
-galliard, galliards
-pavane, pavanes
-allemande, allemandes
-courante, courantes
-bourree, bourrees
-quadrille, quadrilles
-cotillion, cotillions
-reel, reels
-jig, jigs
-hornpipe, hornpipes
-strathspey, strathspeys
-morris
-clogging
-hora, horas
-haka, hakas
-hula, hulas
-limbo, limbos
-conga, congas
-charleston, charlestons
-jitterbug, jitterbugs
-lindy
-jive, jives, jiving, jived
-twist, twists
-shimmy, shimmies
-hustle, hustles
-bump, bumps
+boogaloo, boogaloos
 boogie, boogies, boogieing, boogied
 bop, bops, bopping, bopped
-pogo, pogos, pogoing, pogoed
-mosh, moshes, moshing, moshed
-headbang, headbangs, headbanging, headbanged
-skank, skanks, skanking, skanked
-stomp, stomps
-strut, struts
-watusi
-frug
-madison
-boogaloo, boogaloos
+bourree, bourrees
 breakdance, breakdances, breakdancing, breakdanced
-popping
-krump, krumping
-vogue, voguing, vogueing
-moonwalk, moonwalks
-twerk, twerks, twerking, twerked
-shuffle, shuffles
+breaking
+bump, bumps
 cakewalk, cakewalks
 cancan, cancans
-ballet, ballets
+capoeira
+cha-cha, cha-chas, cha-cha-cha
+charleston, charlestons
+clogging
+conga, congas
+fandango, fandangos
+flamenco
+foxtrot, foxtrots
+galliard, galliards
+gavotte, gavottes
+gigue, gigues
+habanera
+haka, hakas
+headbang, headbangs, headbanging, headbanged
+highland fling, highland flings
+hokey cokey, hokey pokey
+hora, horas
+hornpipe, hornpipes
+hula, hulas
+hustle, hustles
+jete, jetes
+jig, jigs
+jitterbug, jitterbugs
+jive, jives, jiving, jived
+krump, krumping
+lambada, lambadas
+limbo, limbos
+lindy
+lindy hop
+line dance, line dances, line dancing
+madison
+mambo, mambos
+mazurka, mazurkas
+merengue, merengues
+minuet, minuets, menuet, menuets
+moonwalk, moonwalks
+morris
+mosh, moshes, moshing, moshed
+pavane, pavanes, pavan, pavans
+pirouette
+plie, plies
+pogo, pogos, pogoing, pogoed
+polka, polkas
+polonaise, polonaises
+popping
+quadrille, quadrilles
+quickstep, quicksteps
+reel, reels
+robot
+rumba, rumbas
+salsa, salsas
+samba, sambas
+sarabande, sarabandes, saraband, sarabands
+shimmy, shimmies
+shuffle, shuffles
+skank, skanks, skanking, skanked
+slow dance, slow dances
+splits
+square dance, square dances
+stomp, stomps
+strathspey, strathspeys
+strut, struts
+swing
+tango, tangos
+tap, tap dance, tap dancing
+tarantella, tarantellas, tarantelle, tarantelles
+twerk, twerks, twerking, twerked
+twirl
+twist, twists
+two-step, two-steps
+vogue, voguing, vogueing
+waltz, waltzes
+worm
 
 also:
-chacha, chachas
-fling, flings
-stroll
-pony
-swim
-jerk
-mashedpotato
-locomotion
-locking
-robot
-worm
-floss, flossing
+air guitar
+allemande, allemandes
+battement, battements
+beguine, beguines
+branle, branles
+bunny hop, bunny hops
+chasse, chasses
+contemporary
+cotillion, cotillions
+courante, courantes
+czardas, csardas
 dab, dabs
-tap, tapdance
-squaredance, squaredances
-barndance, barndances
-hokeycokey
-airguitar
-handjive
-slowdance, slowdances
+dip
+duck walk
+entrechat, entrechats
+farandole, farandoles
+fling, flings
+floss, flossing
+fouette, fouettes
+freestyle
+frug
+glissade, glissades
+hand jive
+high kick, high kicks
+hopak, hopaks
+jerk
+jota, jotas
+kathak, kathaks
+kazachok, kazachoks
+kizomba, kizombas
+kolo, kolos
+landler, landlers
+locking
+locomotion
+mashed potato
+maypole, maypoles
+milonga, milongas
+pas de deux
+paso doble, paso dobles
+passepied, passepieds
+pony
+promenade
+releve, releves
+rigadoon, rigadoons, rigaudon, rigaudons
+saltarello, saltarellos
+sardana, sardanas
+schottische, schottisches
+sevillanas
+sirtaki, sirtakis
+sissonne, sissonnes
+slam dance, slam dances, slam dancing
 smooch, smooches
-duckwalk
+step dance, step dances, step dancing
+stroll
+swim
+sword dance, sword dances
+tutting
+volta, voltas, la volta
+waacking
+watusi
 windmill, windmills
-lindyhop

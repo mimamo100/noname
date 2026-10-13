@@ -1,5 +1,7 @@
 # Word packs: drafts for review
 
+> **Reviewed and changed on 13 October 2026**: see [PROPOSALS.md](PROPOSALS.md). The lists below are the drafts as they were before that review; the current lists are in `data/packs/`.
+
 Drafted by Claude; nothing here is final until you approve it. Each pack is a folder in `data/packs/` with one file per category, holding the full lists. Below: each category, its number of answers (each with its plural or other forms), and the first 30 alphabetically. No names of people or of stars, moons and constellations (see data/packs/README.md).
 
 ## Science: 931 answers

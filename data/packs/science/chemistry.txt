@@ -1,29 +1,50 @@
 label: A chemistry term
 
+acetate, acetates
+acetone
 acid, acids
+acidity
+activation energy
 alcohol, alcohols
 aldehyde, aldehydes
+alkali metal, alkali metals
 alkali, alkalis, alkalies
+alkaline
+alkalinity
 alkane, alkanes
 alkene, alkenes
 alkyne, alkynes
 allotrope, allotropes
 alloy, alloys
 amine, amines
+amino acid, amino acids
 ammonia
+ammonium
+anhydrous
 anion, anions
 anode, anodes
 aqueous
 aromatic
 atom, atoms
+atomic mass, atomic masses
+atomic number, atomic numbers
 base, bases
 benzene
+bicarbonate
 bond, bonds
+brine
+bromide
 buffer, buffers
+butane
+carbide
+carbon dioxide
+carbon monoxide
 carbonate, carbonates
+catalysis
 catalyst, catalysts
 cathode, cathodes
 cation, cations
+chemical
 chloride, chlorides
 colloid, colloids
 combustion
@@ -32,62 +53,108 @@ concentration, concentrations
 condensation
 corrosion
 covalent
+covalent bond, covalent bonds
+cracking
 crystal, crystals
+cyanide
 decomposition
+dehydration
+diatomic
 dilute
 displacement
 dissolve, dissolves, dissolved
+ductile
+effervescence
 electrolysis
 electrolyte, electrolytes
 electronegativity
+electroplating
+element
 emulsion, emulsions
 endothermic
+enthalpy
 equilibrium, equilibria
 ester, esters
+ethane
 ethanol
+ethene
 ether, ethers
+ethylene
 exothermic
 fermentation
+fluoride
 formula, formulae, formulas
+gas
 halide, halides
 halogen, halogens
+hydrate
 hydrocarbon, hydrocarbons
+hydrogen bond, hydrogen bonds
+hydrolysis
+hydrophilic
+hydrophobic
 hydroxide, hydroxides
 indicator, indicators
 inert
+inorganic
 insoluble
+iodide, iodides
 ion, ions
 ionic
+ionic bond, ionic bonds
+ionisation, ionization
 isomer, isomers
+isomerism
 isotope, isotopes
 ketone, ketones
 lattice, lattices
+liquid
 litmus
+malleable
 metal, metals
 metalloid, metalloids
 methane
 mixture, mixtures
+molar
 molarity
+mole
 molecule, molecules
 monomer, monomers
+neutral
 neutralisation, neutralization
 nitrate, nitrates
+nitrite, nitrites
+noble gas, noble gases
 nonmetal, nonmetals
+octane
+octet, octets
+orbital
+organic
 oxidation
 oxide, oxides
+oxidise, oxidize, oxidises, oxidizes, oxidised, oxidized
 ozone
+periodic table, periodic tables
+peroxide
 phenol, phenols
+phosphate
 polymer, polymers
+polymerisation, polymerization
 precipitate, precipitates
 product, products
 propane
+radical
 reactant, reactants
 reaction, reactions
 reactivity
+reagent, reagents
 redox
 reduction
+rust
 salt, salts
 saturated
+silicate, silicates
+solid
 solubility
 soluble
 solute, solutes
@@ -97,20 +164,41 @@ stoichiometry
 sublimation
 substrate, substrates
 sulphate, sulfate, sulphates, sulfates
+sulphide, sulfide, sulphides, sulfides
 suspension, suspensions
+synthesis
+titration
+transition metal, transition metals
 unsaturated
-valency, valence, valencies
+valency, valence, valencies, valences
 volatile
+yield
 
 also:
-activationenergy
-alkalimetal, alkalimetals
-atomicmass
-atomicnumber
-carbondioxide
-carbonmonoxide
-covalentbond, covalentbonds
-ionicbond, ionicbonds
-noblegas, noblegases
-periodictable
-transitionmetal, transitionmetals
+amide, amides
+amphoteric
+anhydride, anhydrides
+carbonyl, carbonyls
+carboxyl, carboxyls
+chelate, chelates
+chirality
+chlorate, chlorates
+distillate, distillates
+electrophile, electrophiles
+emulsifier, emulsifiers
+enantiomer, enantiomers
+esterification
+functional group, functional groups
+glycerol
+hydride, hydrides
+hydrogenation
+hydroxyl, hydroxyls
+kinetics
+ligand, ligands
+nitride, nitrides
+nucleophile, nucleophiles
+oxidant, oxidants
+permanganate, permanganates
+reductant, reductants
+sulphite, sulfite, sulphites, sulfites
+titre, titer, titres, titers

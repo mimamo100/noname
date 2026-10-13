@@ -1,115 +1,178 @@
 label: A music theory or notation term
 
-note, notes
-chord, chords
-scale, scales
-key, keys
-clef, clefs
-stave, staves
-octave, octaves
-interval, intervals
-cadence, cadences
-arpeggio, arpeggios
-harmony, harmonies
-melody, melodies
-rhythm, rhythms
-tempo, tempos, tempi
-tone, tones
-semitone, semitones
-pitch, pitches
-tonic, tonics
-dominant, dominants
-subdominant, subdominants
-mediant, mediants
-submediant, submediants
-supertonic, supertonics
-triad, triads
-unison, unisons
-dissonance, dissonances
-consonance, consonances
-discord, discords
-chromaticism
-sharp, sharps
-flat, flats
-natural, naturals
+acciaccatura, acciaccaturas
 accidental, accidentals
-crotchet, crotchets
-quaver, quavers
-semiquaver, semiquavers
-demisemiquaver, demisemiquavers
-hemidemisemiquaver, hemidemisemiquavers
-minim, minims
-semibreve, semibreves
-breve, breves
-rest, rests
-slur, slurs
+anacrusis, anacruses
+appoggiatura, appoggiaturas
+arpeggio, arpeggios
+atonality
+augmented
 bar, bars
-measure, measures
 barline, barlines
+beat
+breve, breves
+cadence, cadences
+chord, chords
+chromatic
+chromaticism
+clef, clefs
+consonance, consonances
+countermelody, countermelodies
+counterpoint
+crotchet, crotchets
+demisemiquaver, demisemiquavers
+diatonic
+diminished
+discord, discords
+dissonance, dissonances
+dominant, dominants
+dot
+dotted
+downbeat, downbeats
+dynamics
+enharmonic
+fifth, fifths
+fingering, fingerings
+flat, flats
+fourth, fourths
+grace note, grace notes
+harmonic, harmonics
+harmony, harmonies
+hemidemisemiquaver, hemidemisemiquavers
+homophony
+imperfect
+interval, intervals
+inversion, inversions
+key, keys
+key signature, key signatures
+major
+measure, measures
+mediant, mediants
+melody, melodies
+metre, metres, meter, meters
+microtone, microtones
+minim, minims
+minor
+modal
 mode, modes
 modulation, modulations
-transposition, transpositions
-counterpoint
-polyphony
 monophony
-homophony
-syncopation
-triplet, triplets
-metre, metres, meter, meters
-downbeat, downbeats
-upbeat, upbeats
-offbeat, offbeats
-anacrusis
-ornament, ornaments
-trill, trills
 mordent, mordents
-appoggiatura, appoggiaturas
-acciaccatura, acciaccaturas
-harmonic, harmonics
-overtone, overtones
-timbre, timbres
-dynamics
-tuning, tunings
-atonality
-tonality, tonalities
-inversion, inversions
-phrase, phrases
-solfege
+natural, naturals
+ninth, ninths
 notation
+note, notes
+octave, octaves
+offbeat, offbeats
+ornament, ornaments
+overtone, overtones
+pentatonic
+perfect
+perfect pitch
+phrase, phrases
+pitch, pitches
+polyphony
+polyrhythm, polyrhythms
+progression
+pulse
+quaver, quavers
+repeat, repeats
+resolution
+rest, rests
+rhythm, rhythms
+root
+scale, scales
 score, scores
-fingering, fingerings
+second, seconds
+semibreve, semibreves
+semiquaver, semiquavers
+semitone, semitones
+sequence, sequences
+seventh, sevenths
+sharp, sharps
+sixth, sixths
+slur, slurs
+solfege, solfeggio
+staff, staffs
+stave, staves
+subdominant, subdominants
+submediant, submediants
+supertonic, supertonics
+suspension, suspensions
+syncopation, syncopations
+tab, tabs
+tablature, tablatures
+tempo, tempos, tempi
+texture
+third, thirds
+tie, ties
+timbre, timbres
+time signature, time signatures
+tonality, tonalities
+tone, tones
+tonic, tonics
+transposition, transpositions
+triad, triads
+trill, trills
+triplet, triplets
+tritone, tritones
+tuning, tunings
+unison, unisons
+upbeat, upbeats
 
 also:
-staff, staffs
-halftone, halftones
-major
-minor
-third, thirds
-fourth, fourths
-fifth, fifths
-seventh, sevenths
-tie, ties
+aeolian
+augmentation
 beam, beams
-ledger
-timesignature, timesignatures
-keysignature, keysignatures
-signature, signatures
-turn, turns
-gracenote, gracenotes
-temperament
-pentatonic
-resolution
-suspension, suspensions
-sequence, sequences
-repeat, repeats
-solfa
+bitonality
+blue note, blue notes
+cluster
+concert pitch
+diminution
+dodecaphony
 doh
-ray
+dorian
+double flat, double flats
+double sharp, double sharps
+duplet, duplets
 fah
-soh
+flag, flags
+fundamental
+halftone, halftones
+hemiola, hemiolas
+interrupted
+intonation
+ionian
 lah
-tab, tabs
-tablature
-sheet
+leading tone, leading tones, leading note, leading notes
+ledger, ledger line, ledger lines
+locrian
+lydian
 manuscript
+mixolydian
+notehead, noteheads
+partial
+phrygian
+plagal
+polytonality
+quarter tone, quarter tones
+quintuplet, quintuplets
+ray
+retrograde
+sheet
+signature, signatures
+sixteenth, sixteenths
+soh
+sol
+solfa, tonic sol-fa
+solmization, solmisation
+stem, stems
+subtonic, subtonics
+temperament
 transcription, transcriptions
+tuplet, tuplets
+turn, turns
+twelve-bar
+twelve-tone
+voicing, voicings
+whole tone

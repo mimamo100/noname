@@ -1,40 +1,65 @@
 label: A singing voice or singer
 
-singer, singers
-vocalist, vocalists
-soprano, sopranos
-mezzo, mezzos
-contralto, contraltos
 alto, altos
-countertenor, countertenors
-tenor, tenors
+backing singer, backing singers
+balladeer, balladeers
 baritone, baritones
 bass, basses
 basso, bassos
-treble, trebles
-falsetto, falsettos
+beatboxer, beatboxers
+belter, belters
+cantor, cantors
+caroller, carollers, caroler, carolers
 castrato, castrati
-coloratura, coloraturas
-soubrette, soubrettes
-chorister, choristers
+chanteuse, chanteuses
 choirboy, choirboys
 choirgirl, choirgirls
-caroller, carollers, caroler, carolers
-cantor, cantors
+chorister, choristers
+coloratura, coloraturas
+contralto, contraltos
+countertenor, countertenors
 crooner, crooners
 diva, divas
-chanteuse, chanteuses
-songstress, songstresses
-balladeer, balladeers
-belter, belters
-yodeller, yodellers, yodeler, yodelers
-rapper, rappers
 emcee, emcees
-beatboxer, beatboxers
+falsetto, falsettos
+frontman, frontmen
+frontwoman, frontwomen
+lead singer, lead singers
+mezzo, mezzos
+mezzo-soprano, mezzo-sopranos
+minstrel, minstrels
+opera singer, opera singers
+prima donna, prima donnas
+rapper, rappers
+singer, singers
+songstress, songstresses
+soprano, sopranos
+soubrette, soubrettes
+tenor, tenors
+treble, trebles
+troubadour, troubadours
+vocalist, vocalists
+yodeller, yodellers, yodeler, yodelers
 
 also:
+backing vocalist, backing vocalists
+bard, bards
+bass-baritone, bass-baritones
+boy soprano, boy sopranos
+cantatrice, cantatrices
+chest voice
+growler, growlers
+head voice
+heldentenor, heldentenors
+muezzin, muezzins
+pop star, pop stars
+precentor, precentors
+screamer
+serenader, serenaders
 songbird, songbirds
+sopranist, sopranists
+spinto, spintos
+toaster
+torch singer, torch singers
 warbler, warblers
-primadonna, primadonnas
-mezzosoprano, mezzosopranos
-backingsinger, backingsingers
+wassailer, wassailers

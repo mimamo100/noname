@@ -1,65 +1,100 @@
-label: A court, legal body or place
+label: A court, prison or legal body
 
-court, courts
-courtroom, courtrooms
-courthouse, courthouses
-lawcourt, lawcourts
-tribunal, tribunals
-chancery, chanceries
-chambers, chamber
+assembly, assemblies
 assizes, assize
-consistory, consistories
-moot, moots
-judiciary, judiciaries
-magistracy, magistracies
-parliament, parliaments
-legislature, legislatures
-registry, registries
-prison, prisons
-gaol, gaols, jail, jails
-jailhouse, jailhouses
-penitentiary, penitentiaries
+bench, benches
 borstal, borstals
-reformatory, reformatories
-bridewell, bridewells
+brig, brigs
+cell, cells
+chambers, chamber
+chancery, chanceries
+clink
+congress
+constabulary, constabularies
+county court, county courts
+court, courts
+courthouse, courthouses
+court martial, courts martial
+court of appeal, appeal court, appeal courts
+courtroom, courtrooms
+crown court, crown courts
+death row
+detention centre, detention centres, detention center, detention centers
+dock, docks
+dungeon, dungeons
+gaol, gaols, jail, jails
+gulag, gulags
+high court, high courts
+inquisition, inquisitions
+jailhouse, jailhouses
+judiciary, judiciaries
+jury box, jury boxes
+kangaroo court, kangaroo courts
+law court, law courts
+legislature, legislatures
 lockup, lockups
+magistrates' court, magistrates' courts
+moot, moots
+morgue, morgues
+mortuary, mortuaries
+nick
+parliament, parliaments
+penitentiary, penitentiaries
+pokey
+police station, police stations
+precinct, precincts
+prison, prisons
+reformatory, reformatories
+registry, registries
+senate
+slammer, slammers
 stockade, stockades
 supermax, supermaxes
-gulag, gulags
-slammer, slammers
-precinct, precincts
+supreme court, supreme courts
+tribunal, tribunals
+witness box, witness boxes
+witness stand, witness stands
 
 also:
-eyre, eyres
-leet, leets
-inn, inns
-dock, docks
-bench, benches
+approved school, approved schools
 bar, bars
-gallery, galleries
-witnessbox
-jurybox
-sessions
-crowncourt
-exchequer
-cell, cells
-cellblock, cellblocks
-brig, brigs
-hulk, hulks
-glasshouse
-clink
-nick
-stir
-cooler
-pen
-jug
-can
-chokey
-dungeon, dungeons
-deathrow
-senate
-station
-lawfirm, lawfirms
-practice
+bridewell, bridewells
 calaboose, calabooses
+can
+cellblock, cellblocks
+chokey
+consistory, consistories
+cooler
+coroner's court, coroner's courts
+exchequer
+eyre, eyres
+family court, family courts
+gallery, galleries
+glasshouse
+holding cell, holding cells
 hoosegow, hoosegows
+hulk, hulks
+inn, inns
+jug
+jury room, jury rooms
+law firm, law firms
+leet, leets
+magistracy, magistracies
+open prison, open prisons
+panopticon, panopticons
+pen
+practice
+prison camp, prison camps
+remand home, remand homes
+roundhouse, roundhouses
+sessions
+sheriff court, sheriff courts
+small claims court, small claims courts
+stand
+star chamber
+station
+station house, station houses
+stir
+tolbooth, tolbooths
+young offender institution, young offender institutions, young offenders institution
+youth court, youth courts

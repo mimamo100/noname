@@ -1,106 +1,140 @@
 label: A courtroom or trial term
 
-trial, trials
-verdict, verdicts
-appeal, appeals, appealed
-hearing, hearings
-plea, pleas
-plead, pleads, pleaded, pled
-bail
-remand, remands, remanded
-conviction, convictions
-acquittal, acquittals
+accused
 acquit, acquits, acquitted
-sentencing
-mistrial, mistrials
-retrial, retrials
-testimony, testimonies
-testify, testifies, testified
-deliberation, deliberations
-adjournment, adjournments
+acquittal, acquittals
 adjourn, adjourns, adjourned
+adjournment, adjournments
+adjudication, adjudications
+admissibility
+admissible
+affirmation, affirmations
+allegation, allegations
+amnesty, amnesties
+appeal, appeals, appealed
+arbitration
+arraign, arraigns, arraigned
+arraignment, arraignments
+bail
+case, cases
+charge, charges
+clemency
+commutation, commutations
+conciliation
+continuance, continuances
+conviction, convictions
+counterclaim, counterclaims
+cross-examination, cross-examinations
+cross-examine, cross-examines, cross-examined
+defence, defences, defense, defenses
+defend, defends, defended
+deliberate, deliberates, deliberated
+deliberation, deliberations
+disclosure
+dismissal, dismissals
+dock
+empanel, empanels, empanelled, empaneled, impanel, impanels, impanelled, impaneled
+evidence
+exhibit, exhibits
+exoneration, exonerations
+gavel, gavels
+guilty
+hearing, hearings
+hearsay
+hung jury, hung juries
+inadmissible
+indict, indicts, indicted
+innocent
+inquest, inquests
+judge, judges
+judgment, judgments, judgement, judgements
+jurisdiction, jurisdictions
+juror, jurors
+jury, juries
+jury trial, jury trials
+lawsuit, lawsuits
+leading question, leading questions
+litigation
+mediation
+mistrial, mistrials
+mitigation
+motion, motions
+not guilty
+oath, oaths
 objection, objections
 overrule, overrules, overruled
-dismissal, dismissals
-prosecution, prosecutions
-defence, defences, defense, defenses
-litigation
-lawsuit, lawsuits
-sue, sues, sued
-proceeding, proceedings
-judgment, judgments, judgement, judgements
-ruling, rulings
-precedent, precedents
-jurisdiction, jurisdictions
-settlement, settlements
-oath, oaths
-affirmation, affirmations
-disclosure
-arraignment, arraignments
-indict, indicts, indicted
-exoneration, exonerations
+overturn, overturns, overturned
 pardon, pardons, pardoned
-reprieve, reprieves
-commutation, commutations
-clemency
-amnesty, amnesties
+perjury
+plea, pleas
+plea bargain, plea bargains
+plead, pleads, pleaded, pled
+precedent, precedents
+proceeding, proceedings
+prosecute, prosecutes, prosecuted
+prosecution, prosecutions
 quash, quashes, quashed
-summation, summations
-adjudication, adjudications
-arbitration
-mediation
-conciliation
-inquest, inquests
-empanel, empanels, empanelled, empaneled, impanel, impanels, impanelled, impaneled
-recusal, recusals
-continuance, continuances
-nonsuit, nonsuits
-discontinuance, discontinuances
-joinder, joinders
-counterclaim, counterclaims
-rejoinder, rejoinders
 rebuttal, rebuttals
-demurrer, demurrers
-admissibility
+recess, recesses
 recognizance, recognizances, recognisance, recognisances
-gavel, gavels
+recusal, recusals
+remand, remands, remanded
+reprieve, reprieves
+retrial, retrials
+retry, retries, retried
+ruling, rulings
+sentence, sentences
+sentencing
+settlement, settlements
+sue, sues, sued
+summation, summations
+summing-up, summings-up
+sustain, sustains, sustained
+swear, swears, swore, sworn
+testify, testifies, testified
+testimony, testimonies
+trial, trials
+uphold, upholds, upheld
+verdict, verdicts
+witness, witnesses
+witness box, witness boxes
 
 also:
-sustain, sustains, sustained
-prosecute, prosecutes, prosecuted
-litigate, litigates, litigated
-arraign, arraigns, arraigned
-recuse, recuses, recused
-crossexamination
-examination
-summingup
-recess, recesses
-suit, suits
-case, cases
+accusation, accusations
 action, actions
-decision, decisions
-costs
-discovery
-leave
-overturn, overturns, overturned
-uphold, upholds, upheld
-reversal, reversals
-vacate
-hung
-deadlock
-opening
-closing
-submission, submissions
+allocution, allocutions
 argument, arguments
-motion, motions
-inquiry, inquiries, enquiry, enquiries
-stay, stays
+bench
+closing
+costs
+cross-claim, cross-claims
+deadlock
+decision, decisions
 default
-severance
-withdrawal
-crossclaim, crossclaims
-pleabargain
-voirdire
-wig, wigs
+demurrer, demurrers
+discontinuance, discontinuances
+discovery
+examination
 gown, gowns
+hung
+inquiry, inquiries, enquiry, enquiries
+joinder, joinders
+leave
+litigate, litigates, litigated
+nolo contendere
+nonsuit, nonsuits
+opening
+recuse, recuses, recused
+redirect
+re-examination, re-examinations
+rejoinder, rejoinders
+reversal, reversals
 robe, robes
+severance
+stay, stays
+submission, submissions
+suit, suits
+vacate
+voir dire
+wig, wigs
+withdrawal

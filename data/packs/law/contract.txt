@@ -1,81 +1,132 @@
 label: A contract or business law term
 
-offer, offers
 acceptance
-consideration
-breach, breaches
-warranty, warranties
-indemnity, indemnities
-clause, clauses
-condition, conditions
-termination
-rescission
-misrepresentation, misrepresentations
-frustration
-repudiation
-novation
+acquisition, acquisitions
+addendum, addenda, addendums
+administration
 assignment, assignments
-waiver, waivers
-damages
-remedy, remedies
-liability, liabilities
-guarantee, guarantees, guaranty, guaranties
-collateral
-licence, licences, license, licenses
-royalty, royalties
-copyright, copyrights
-trademark, trademarks
-patent, patents
-franchise, franchises
-partnership, partnerships
-incorporation
-merger, mergers
-takeover, takeovers
-liquidation
-receivership
-dissolution
-shareholder, shareholders
-fiduciary, fiduciaries
-subrogation
-garnishment
-retainer, retainers
-duress
-privity
-rectification
-severability
-counteroffer, counteroffers
-revocation
-obligation, obligations
-debenture, debentures
 bailment, bailments
+bankruptcy
+binding
+breach, breaches
+broker, brokers
+buyout, buyouts
+cartel, cartels
+clause, clauses
+collateral
+commission, commissions
+company, companies
+compensation
+condition, conditions
+confidentiality
+consideration
 consignment, consignments
-voidable
+contractor, contractors
+copyright, copyrights
+counteroffer, counteroffers
+damages
+debenture, debentures
+deposit, deposits
+director, directors
+dissolution
+dividend, dividends
+duress
+enforceable
+exclusivity
+expiry
+fiduciary, fiduciaries
+force majeure
+franchise, franchises
+frustration
+goodwill
+guarantee, guarantees, guaranty, guaranties
+hire purchase
+incorporation
+indemnify, indemnifies, indemnified
+indemnity, indemnities
+insolvency
+intellectual property
+invoice, invoices
+joint venture, joint ventures
+liability, liabilities
+licence, licences, license, licenses
+liquidation
+merger, mergers
+misrepresentation, misrepresentations
+monopoly, monopolies
+negotiation, negotiations
+non-disclosure
+novation
+obligation, obligations
+offer, offers
+partnership, partnerships
+patent, patents
+penalty, penalties
+privity
+purchaser, purchasers
+receivership
+remedy, remedies
+renewal, renewals
+repudiation
+rescind, rescinds, rescinded
+rescission
+retainer, retainers
+revocation
+royalty, royalties
+share, shares
+shareholder, shareholders
+signatory, signatories
+signature, signatures
+sole trader, sole traders
+stakeholder, stakeholders
+subcontract, subcontracts, subcontracted
+supplier, suppliers
+takeover, takeovers
+tender, tenders
+term, terms
+termination
+trademark, trademarks
+trade secret, trade secrets
 unenforceable
-unconscionability
+variation, variations
+vendor, vendors
+void
+voidable
+waiver, waivers
+warranty, warranties
 
 also:
-term, terms
-company, companies
-acquisition, acquisitions
-administration
-director, directors
 agency
-setoff
-tender
-mistake
-illegality
-quantummeruit
-forcemajeure
-exclusion
-limitation
-lapse
-invitation
-promise, promises
-security
-pledge, pledges
-hirepurchase
 articles
-void
-rescind
-renege
-passingoff
+counterparty, counterparties
+exclusion
+exclusion clause, exclusion clauses
+executory
+garnishment
+illegality
+implied term, implied terms
+invitation
+lapse
+limitation
+liquidated damages
+llp, llps
+mistake
+nda, ndas
+non-compete
+offeree, offerees
+offeror, offerors
+passing off
+plc, plcs
+pledge, pledges
+promise, promises
+quantum meruit
+rectification
+renege, reneges, reneged
+restraint
+security
+set-off
+severability
+specific performance
+subrogation
+unconscionability
+undue influence

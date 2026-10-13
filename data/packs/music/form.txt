@@ -1,89 +1,133 @@
 label: A kind of piece or song
 
-song, songs
-tune, tunes
-symphony, symphonies
-sonata, sonatas
-sonatina, sonatinas
-concerto, concertos, concerti
-fugue, fugues
-oratorio, oratorios
-cantata, cantatas
-opera, operas
-operetta, operettas
-musical, musicals
-overture, overtures
-prelude, preludes
-etude, etudes
-nocturne, nocturnes
-rhapsody, rhapsodies
-serenade, serenades
-suite, suites
-partita, partitas
-toccata, toccatas
-fantasia, fantasias
-impromptu, impromptus
-intermezzo, intermezzos, intermezzi
-scherzo, scherzos, scherzi
-rondo, rondos
-requiem, requiems
-mass, masses
-motet, motets
-madrigal, madrigals
+air, airs
 anthem, anthems
-hymn, hymns
-carol, carols
-chant, chants
-plainsong
-plainchant
-psalm, psalms
-canticle, canticles
-chorale, chorales
-magnificat, magnificats
-lied, lieder
-chanson, chansons
 aria, arias
-recitative, recitatives
+bagatelle, bagatelles
 ballad, ballads
 ballade, ballades
-lullaby, lullabies
-lament, laments
-elegy, elegies
-dirge, dirges
-threnody, threnodies
-march, marches
-fanfare, fanfares
-shanty, shanties
-ditty, ditties
-jingle, jingles
-canon, canons
+ballet
 barcarolle, barcarolles
-bagatelle, bagatelles
-divertimento, divertimentos, divertimenti
-sinfonia, sinfonias
-pastorale, pastorales
+bolero
+canon, canons
+cantata, cantatas
+canticle, canticles
 capriccio, capriccios
 caprice, caprices
-humoresque, humoresques
-passacaglia, passacaglias
+carol, carols
 chaconne, chaconnes
+chanson, chansons
+chant, chants
+chorale, chorales
+concerto, concertos, concerti
+dirge, dirges
+ditty, ditties
+divertimento, divertimentos, divertimenti
+drinking song, drinking songs
+elegy, elegies
+etude, etudes
+fanfare, fanfares
+fantasia, fantasias
+fantasy
+folk song, folk songs
+fugue, fugues
+gavotte
+humoresque, humoresques
+hymn, hymns
+impromptu, impromptus
+intermezzo, intermezzos, intermezzi
+invention, inventions
+jingle, jingles
+lament, laments
+lied, lieder
+love song, love songs
+lullaby, lullabies
+madrigal, madrigals
+march, marches
+mass, masses
+mazurka
+minuet
+motet, motets
+musical, musicals
+nocturne, nocturnes
+nursery rhyme, nursery rhymes
+ode, odes
+opera, operas
+operetta, operettas
+oratorio, oratorios
+overture, overtures
+partita, partitas
+passacaglia, passacaglias
+pastorale, pastorales
+plainchant
+plainsong
+polka
+polonaise
+postlude, postludes
+power ballad, power ballads
+prelude, preludes
+psalm, psalms
 raga, ragas
+recitative, recitatives
+requiem, requiems
+rhapsody, rhapsodies
+rock opera, rock operas
+romance
+rondo, rondos
+round, rounds
+scherzo, scherzos, scherzi
+serenade, serenades
+shanty, shanties
+show tune, show tunes
+sinfonia, sinfonias
+sonata, sonatas
+sonatina, sonatinas
+song, songs
 spiritual, spirituals
-zarzuela, zarzuelas
-masque, masques
-singspiel, singspiels
+study
+suite, suites
+symphony, symphonies
+tarantella
+toccata, toccatas
+tune, tunes
+variation, variations
+voluntary
+waltz
 
 also:
-air, airs
-round, rounds
+arietta, ariettas
+arioso, ariosos
+art song, art songs
+aubade, aubades
+berceuse, berceuses
+cabaletta, cabalettas
+catch
+cavatina, cavatinas
+concertino, concertinos
+concerto grosso, concerti grossi
+entr'acte, entr'actes
+fughetta, fughettas
 glee, glees
-invention, inventions
-variation, variations
-passion, passions
 gloria, glorias
+habanera, habaneras
+kyrie, kyries
+magnificat, magnificats
+masque, masques
+noel, noels
+number
+paean, paeans
+part-song, part-songs
+passion, passions
 potpourri
-tonepoem, tonepoems
-lovesong, lovesongs
-torchsong, torchsongs
-powerballad, powerballads
-nurseryrhyme, nurseryrhymes
+quodlibet, quodlibets
+ricercar, ricercars, ricercare
+singspiel, singspiels
+song cycle, song cycles
+symphonic poem, symphonic poems
+te deum, te deums
+threnody, threnodies
+tone poem, tone poems
+torch song, torch songs
+wassail
+work song, work songs
+zarzuela, zarzuelas

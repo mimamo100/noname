@@ -1,47 +1,73 @@
 label: A group of musicians
 
+backing band, backing bands
 band, bands
-orchestra, orchestras
+big band, big bands
+boy band, boy bands
+brass
+brass band, brass bands
+chamber orchestra, chamber orchestras
 choir, choirs
+chorale, chorales
+chorus
+combo, combos
+consort, consorts
+cover band, cover bands, covers band, covers bands
+duet, duets
+duo, duos
+ensemble, ensembles
+gamelan, gamelans
+girl band, girl bands
+girl group, girl groups
+glee club, glee clubs
+group, groups
+house band, house bands
+jazz band, jazz bands
+marching band, marching bands
+mariachi, mariachis
+military band, military bands
+nonet, nonets
+octet, octets
+one-man band, one-man bands
+orchestra, orchestras
+outfit, outfits
+percussion
+philharmonic, philharmonics
+pipe band, pipe bands
 quartet, quartets
 quintet, quintets
-sextet, sextets
 septet, septets
-octet, octets
-nonet, nonets
-trio, trios
-duo, duos
-duet, duets
-ensemble, ensembles
-combo, combos
-philharmonic, philharmonics
-sinfonietta, sinfoniettas
-consort, consorts
-supergroup, supergroups
-gamelan, gamelans
-mariachi, mariachis
-steelband, steelbands
+sextet, sextets
 showband, showbands
+sinfonia, sinfonias
+sinfonietta, sinfoniettas
+steel band, steel bands
+supergroup, supergroups
+symphony
+tribute band, tribute bands
+trio, trios
 troupe, troupes
 woodwind, woodwinds
-percussion
-brass
 
 also:
-group, groups
-outfit, outfits
-lineup, lineups
-section, sections
-boyband, boybands
-girlband, girlbands
-girlgroup, girlgroups
-bigband, bigbands
-brassband, brassbands
-jazzband, jazzbands
-jugband, jugbands
-pipeband, pipebands
-marchingband, marchingbands
-coverband, coverbands
-houseband, housebands
-rhythmsection, rhythmsections
+act
+banda, bandas
+camerata, cameratas
+charanga, charangas
 collective, collectives
+concertino, concertinos
+conjunto, conjuntos
+crew
+dance band, dance bands
+dectet, dectets
+horns
+jug band, jug bands
+line-up, line-ups
+posse
+rhythm section, rhythm sections
+ripieno
+schola, scholas
+section, sections
+silver band, silver bands
+strings
+tentet, tentets

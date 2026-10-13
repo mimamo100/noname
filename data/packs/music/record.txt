@@ -1,96 +1,126 @@
 label: Records, recording and the charts
 
-single, singles
+a cappella, acapella
+airplay
 album, albums
+anthology, anthologies
+artwork
+banger, bangers
+bootleg, bootlegs
+box set, box sets
+b-side, b-sides
+cassette, cassettes
+cassingle, cassingles
+catalogue, catalogues, catalog, catalogs
+chart, charts
+chart-topper, chart-toppers
+classic, classics
+compact disc, compact discs
+compilation, compilations
+concept album, concept albums
+countdown
+cover, covers
+crossover
+debut, debuts
 demo, demos
-remix, remixes
+disc, discs, disk, disks
+discography, discographies
+double album, double albums
+download, downloads
+earworm, earworms
+edit, edits
+flop, flops
+gatefold, gatefolds
+gold
+greatest hits
+hit, hits
+instrumental, instrumentals
+label, labels
+leak
+live album, live albums
+longplayer, longplayers
+loop, loops
+mashup, mashups
+master, masters
+medley, medleys
+megamix, megamixes
+minidisc, minidiscs
 mix, mixes
-track, tracks
+mixdown, mixdowns
+mixtape, mixtapes
+number one, number ones
+oldie, oldies
+outtake, outtakes
+overdub, overdubs
+platinum
+playback, playbacks
+playlist, playlists
+pressing, pressings
+promo, promos
+radio
 record, records
 recording, recordings
-vinyl, vinyls
-cassette, cassettes
-tape, tapes
-cassingle, cassingles
-minidisc, minidiscs
-disc, discs, disk, disks
-longplayer, longplayers
-chart, charts
-hit, hits
-flop, flops
-smash, smashes
-banger, bangers
-earworm, earworms
-release, releases
-debut, debuts
-compilation, compilations
-anthology, anthologies
-bootleg, bootlegs
-mixtape, mixtapes
-playlist, playlists
-download, downloads
-stream, streams
 reissue, reissues
+release, releases
 remaster, remasters
-master, masters
-mixdown, mixdowns
-overdub, overdubs
-take, takes
-session, sessions
-studio, studios
-sample, samples
-loop, loops
-playback, playbacks
-pressing, pressings
-sleeve, sleeves
-gatefold, gatefolds
-artwork
-tracklist, tracklists
-label, labels
+remix, remixes
 royalty, royalties
-airplay
-promo, promos
-video, videos
-soundtrack, soundtracks
-cover, covers
-medley, medleys
-mashup, mashups
-megamix, megamixes
+sample, samples
+score
+session, sessions
 singalong, singalongs
-instrumental, instrumentals
-oldie, oldies
-discography, discographies
-catalogue, catalogues, catalog, catalogs
+single, singles
+sleeve, sleeves
+smash, smashes
+soundtrack, soundtracks
+standard, standards
+stream, streams
+studio, studios
+take, takes
+tape, tapes
+top forty
+top ten, top tens
+track, tracks
+tracklist, tracklists
+version, versions
+video, videos
+vinyl, vinyls
 
 also:
-version, versions
-acapella
-platinum
-gold
-silver
-numberone, numberones
-charttopper, charttoppers
-topten
-bside, bsides
-aside, asides
-boxset, boxsets
-linernotes
-sleevenotes
-whitelabel, whitelabels
-seveninch
-twelveinch
-eighttrack
-multitrack, multitracks
-reeltoreel
-edit, edits
-bonus
-deluxe
-rerelease, rereleases
-stem, stems
 acetate, acetates
-shellac
-classic, classics
-evergreen, evergreens
-standard, standards
-backcatalogue
+a-side, a-sides
+back catalogue, back catalog
+best-of
+bestseller
+bonus
+booth
 contract, contracts
+cut
+deep cut, deep cuts
+deluxe
+dubplate, dubplates
+eight-track, eight-tracks
+evergreen, evergreens
+flexi disc, flexi discs
+follow-up, follow-ups
+forty-five, forty-fives
+hit parade, hit parades
+imprint
+liner notes
+multitrack, multitracks
+picture disc, picture discs
+platter
+rarity, rarities
+reel-to-reel, reel-to-reels
+re-record, re-records
+re-release, re-releases
+seven-inch, seven-inches
+seventy-eight, seventy-eights
+shellac
+silver
+sleeve notes
+stem, stems
+sync
+twelve-inch, twelve-inches
+wax
+white label, white labels

@@ -33,7 +33,12 @@ The format is like `data/categories/` (see its README), with these differences:
 - **Phrases are written the way people write them**: `black hole, black
   holes`, and a phrase on its own is just `habeas corpus`. Each form may hold
   spaces, hyphens and apostrophes; it's played joined (*blackhole*, 3–30
-  letters a to z) and shown to players as written.
+  letters a to z) and shown to players as written. Well-known phrases go in
+  main like any other answer (*habeas corpus*, *black hole*, *hip hop*);
+  obscure ones under `also:`.
+- **Well-known abbreviations are allowed** (3 letters or more), unlike in the
+  everyday dictionary: *dna* in main; *rna*, *gbh*, *asbo*, *cctv* and the
+  like under `also:`.
 - **Blocked words may be listed** when the pack needs them (the law pack's
   crimes: *rape*, *incest*, *sodomy*, *bestiality*). The build notes them and
   says so; they're playable in this pack's worlds only, never anywhere else,

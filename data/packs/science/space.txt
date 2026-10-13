@@ -1,69 +1,107 @@
 label: Something in space
 
-asterism, asterisms
+antimatter
 asteroid, asteroids
+asteroid belt, asteroid belts
+astronaut
 aurora, auroras, aurorae
 binary, binaries
+black hole, black holes
 blazar, blazars
-bolide, bolides
-centaur, centaurs
+brown dwarf, brown dwarfs
+ceres
+chromosphere, chromospheres
 cluster, clusters
+coma
 comet, comets
 constellation, constellations
 corona, coronas, coronae
+cosmonaut
 cosmos
+dark matter
+debris
+dust
 dwarf, dwarfs, dwarves
 earth
 eclipse, eclipses
-exomoon, exomoons
 exoplanet, exoplanets
 fireball, fireballs
 flare, flares
 galaxy, galaxies
-heliosphere, heliospheres
-hypernova, hypernovae, hypernovas
+gas
+giant
+halo
 jupiter
 magnetar, magnetars
 magnetosphere, magnetospheres
 mars
+mercury
 meteor, meteors
 meteorite, meteorites
 meteoroid, meteoroids
+meteor shower, meteor showers
+milky way
 moon, moons
-moonlet, moonlets
 nebula, nebulae, nebulas
 neptune
+neutron star, neutron stars
 nova, novae, novas
+photosphere, photospheres
 planet, planets
-planetesimal, planetesimals
 planetoid, planetoids
+plasma
 pluto
+probe
+prominence
+protoplanet, protoplanets
 protostar, protostars
 pulsar, pulsars
 quasar, quasars
+radiation
+red giant, red giants
+ring
+rocket
 satellite, satellites
 saturn
+shuttle
 singularity, singularities
+solar system, solar systems
+solar wind
+spacecraft
+spaceship
+space station, space stations
 star, stars
+star cluster, star clusters
+stardust
+station
 sun, suns
 sunspot, sunspots
 supercluster, superclusters
 supergiant, supergiants
 supernova, supernovae, supernovas
+tail
+telescope
 universe, universes
 uranus
+vacuum
 venus
 void, voids
+white dwarf, white dwarfs
 wormhole, wormholes
-mercury
 
 also:
-asteroidbelt, asteroidbelts
-blackhole, blackholes
-browndwarf, browndwarfs
-meteorshower, meteorshowers
-milkyway
-neutronstar, neutronstars
-redgiant, redgiants
-solarwind
-whitedwarf, whitedwarfs
+asterism, asterisms
+bolide, bolides
+centaur, centaurs
+eris
+exomoon, exomoons
+haumea
+heliosphere, heliospheres
+hypergiant, hypergiants
+hypernova, hypernovae, hypernovas
+kilonova, kilonovae, kilonovas
+makemake
+moonlet, moonlets
+planetesimal, planetesimals
+quark star, quark stars
+trojan, trojans

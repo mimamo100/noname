@@ -1,67 +1,101 @@
 label: A part of a cell
 
-amyloplast, amyloplasts
 axon, axons
 capsule, capsules
+cell membrane, cell membranes
+cell wall, cell walls
 centriole, centrioles
 centromere, centromeres
 centrosome, centrosomes
+chlorophyll
 chloroplast, chloroplasts
 chromatid, chromatids
 chromatin
-chromoplast, chromoplasts
 chromosome, chromosomes
 cilium, cilia
+cortex, cortices
 crista, cristae
 cytoplasm, cytoplasms
 cytoskeleton, cytoskeletons
 cytosol
 dendrite, dendrites
-desmosome, desmosomes
-endosome, endosomes
+dna
+endoplasmic reticulum
+envelope
 flagellum, flagella
-glycocalyx
-glyoxysome, glyoxysomes
+gene, genes
+golgi
+golgi apparatus
+golgi body, golgi bodies
 granum, grana
-leucoplast, leucoplasts
 lysosome, lysosomes
+matrix, matrices
 membrane, membranes
 microfilament, microfilaments
 microtubule, microtubules
 microvillus, microvilli
 mitochondrion, mitochondria
+myelin
+nuclear membrane, nuclear membranes
 nucleoid, nucleoids
 nucleolus, nucleoli
-nucleoplasm
 nucleus, nuclei
 organelle, organelles
-pellicle, pellicles
 peroxisome, peroxisomes
 pilus, pili
 plasmid, plasmids
 plasmodesma, plasmodesmata
 plastid, plastids
-proteasome, proteasomes
+pore, pores
 pseudopod, pseudopods, pseudopodium, pseudopodia
+receptor, receptors
+reticulum, reticula
 ribosome, ribosomes
-sarcomere, sarcomeres
+soma, somata, somas
+spindle, spindles
+starch
 stroma
 thylakoid, thylakoids
-tonoplast, tonoplasts
 vacuole, vacuoles
 vesicle, vesicles
 wall, walls
 
 also:
-cellmembrane, cellmembranes
-cellwall, cellwalls
-endoplasmicreticulum
-golgiapparatus
-golgibody, golgibodies
-nuclearenvelope, nuclearenvelopes
-nuclearmembrane, nuclearmembranes
-nuclearpore, nuclearpores
-plasmamembrane, plasmamembranes
-reticulum, reticula
-roughendoplasmicreticulum
-smoothendoplasmicreticulum
+acrosome, acrosomes
+actin
+amyloplast, amyloplasts
+basal body, basal bodies
+cell plate, cell plates
+chromoplast, chromoplasts
+cisterna, cisternae
+contractile vacuole, contractile vacuoles
+desmosome, desmosomes
+dictyosome, dictyosomes
+endosome, endosomes
+eyespot, eyespots
+fimbria, fimbriae
+glycocalyx
+glyoxysome, glyoxysomes
+histone, histones
+kinetochore, kinetochores
+lamella, lamellae
+leucoplast, leucoplasts
+lumen, lumina, lumens
+mesosome, mesosomes
+myosin
+nuclear envelope, nuclear envelopes
+nuclear pore, nuclear pores
+nucleoplasm
+nucleosome, nucleosomes
+pellicle, pellicles
+phagosome, phagosomes
+plasmalemma, plasmalemmas
+plasma membrane, plasma membranes
+polysome, polysomes
+proteasome, proteasomes
+pyrenoid, pyrenoids
+rough endoplasmic reticulum
+sarcomere, sarcomeres
+smooth endoplasmic reticulum
+tonoplast, tonoplasts
+tubulin

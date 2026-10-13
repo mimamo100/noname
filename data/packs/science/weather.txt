@@ -1,0 +1,225 @@
+label: A weather term
+
+acid rain
+air mass, air masses
+air pressure
+altocumulus
+altostratus
+anemometer, anemometers
+anticyclone, anticyclones
+atmosphere
+barometer
+black ice
+blizzard
+breeze
+calm
+cirrocumulus
+cirrostratus
+cirrus
+climate change
+climate, climates
+cloud, clouds
+cloudburst
+cloudy
+cold front, cold fronts
+condensation
+convection
+cumulonimbus, cumulonimbi
+cumulus, cumuli
+cyclone, cyclones
+deluge
+depression
+dew
+dew point, dew points
+doldrums
+downpour
+drizzle
+drought, droughts
+dust storm, dust storms
+el nino
+evaporation
+exosphere
+flash flood, flash floods
+flood
+flurry
+fog
+foggy
+forecast
+freeze
+freezing rain
+front, fronts
+frost
+frosty
+funnel cloud, funnel clouds
+gale
+global warming
+greenhouse effect
+greenhouse gas, greenhouse gases
+gust
+hail
+hailstone
+hailstorm
+haze
+heatwave, heatwaves
+high
+humid
+humidity
+hurricane, hurricanes
+ice
+icicle
+icy
+indian summer
+ionosphere
+isobar, isobars
+isotherm, isotherms
+jet stream, jet streams
+la nina
+lightning
+low
+mesosphere
+meteorologist
+meteorology
+microclimate, microclimates
+mist
+misty
+monsoon, monsoons
+muggy
+nimbostratus
+nimbus
+overcast
+ozone
+ozone layer
+precipitation
+pressure
+rain
+rainbow
+rainfall
+rainstorm
+rainy
+sandstorm
+sea breeze, sea breezes
+shower
+sleet
+smog
+snow
+snowdrift
+snowfall
+snowflake
+snowstorm
+snowy
+squall
+storm
+storm surge, storm surges
+stormy
+stratocumulus
+stratosphere
+stratus
+sunny
+sunshine
+temperature
+tempest
+thaw
+thermal
+thermometer
+thermosphere
+thunder
+thunderstorm, thunderstorms
+tornado, tornadoes, tornados
+trade wind, trade winds
+tropical storm, tropical storms
+troposphere
+trough
+twister
+typhoon, typhoons
+updraft, updraught, updrafts, updraughts
+visibility
+warm front, warm fronts
+water cycle
+waterspout
+weather
+weather forecast, weather forecasts
+weathervane, weathervanes
+whirlwind
+whiteout
+wind
+wind chill
+windy
+
+also:
+adiabatic
+air frost
+anabatic
+anvil cloud, anvil clouds
+arcus
+aurora, auroras, aurorae
+blustery
+bora
+chinook, chinooks
+climatology
+contrail, contrails
+convectional rainfall
+derecho, derechos
+downburst, downbursts
+downdraft, downdraught, downdrafts, downdraughts
+drizzly
+dust devil, dust devils
+easterlies
+eyewall, eyewalls
+foehn, fohn
+fog bank, fog banks
+fogbow, fogbows
+frontal rainfall
+graupel
+ground frost
+haar
+haboob, haboobs
+harmattan
+heat index
+hoarfrost
+hygrometer, hygrometers
+ice storm, ice storms
+inversion, inversions
+isohyet, isohyets
+katabatic
+khamsin
+lapse rate, lapse rates
+lenticular
+mackerel sky, mackerel skies
+mammatus
+mesocyclone, mesocyclones
+microburst, microbursts
+mistral
+moonbow, moonbows
+noctilucent
+nor'easter, nor'easters
+occluded front, occluded fronts
+occlusion, occlusions
+orographic
+pea souper, pea soupers
+petrichor
+pileus
+polar front
+polar vortex, polar vortices
+rain gauge, rain gauges
+relative humidity
+relief rainfall
+rime
+sea fret
+shelf cloud, shelf clouds
+showery
+simoom
+sirocco, siroccos
+sun dog, sun dogs
+supercell, supercells
+synoptic chart, synoptic charts
+temperature inversion, temperature inversions
+thunderhead, thunderheads
+transpiration
+tropical cyclone, tropical cyclones
+tropopause
+virga
+wall cloud, wall clouds
+weather balloon, weather balloons
+westerlies, westerly
+wind shear
+zephyr, zephyrs

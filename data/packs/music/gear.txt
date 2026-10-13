@@ -2,124 +2,158 @@ label: A piece of music gear or part of an instrument
 
 amp, amps
 amplifier, amplifiers
-speaker, speakers
-loudspeaker, loudspeakers
-subwoofer, subwoofers
-woofer, woofers
-tweeter, tweeters
-monitor, monitors
-microphone, microphones
-mic, mics, mike, mikes
-pedal, pedals
-pedalboard, pedalboards
-stompbox, stompboxes
-fuzzbox, fuzzboxes
-distortion
-overdrive, overdrives
-wah, wahs
-reverb, reverbs
-flanger, flangers
-phaser, phasers
-compressor, compressors
-looper, loopers
-vocoder, vocoders
-sequencer, sequencers
-mixer, mixers
-fader, faders
-crossfader, crossfaders
-equaliser, equalisers, equalizer, equalizers
-preamp, preamps
-headphone, headphones
-earplug, earplugs
-turntable, turntables
-stylus, styli, styluses
-jukebox, jukeboxes
-gramophone, gramophones
-phonograph, phonographs
-stereo, stereos
-megaphone, megaphones
-plectrum, plectrums, plectra
-capo, capos
-slide, slides
+baton, batons
+beater, beaters
+bellows
+boombox, boomboxes
 bottleneck, bottlenecks
+bow, bows
+bridge
+brush, brushes
+cabinet, cabinets
+cable, cables
+capo, capos
+cartridge
+case, cases
+chanter, chanters
+chinrest, chinrests
+compressor, compressors
+controller
+crossfader, crossfaders
+delay, delays
+distortion
+drum kit, drum kits
+drumhead, drumheads
+drumstick, drumsticks
+earbud, earbuds
+earplug, earplugs
+echo, echoes
+equaliser, equalisers, equalizer, equalizers
+fader, faders
+fingerboard, fingerboards
+flanger, flangers
 fret, frets
 fretboard, fretboards
-fingerboard, fingerboards
+fuzzbox, fuzzboxes
+ghetto blaster, ghetto blasters
+gramophone, gramophones
+hammer, hammers
+headphone, headphones
+headset
 headstock, headstocks
-pickup, pickups
+hi-fi, hi-fis
 humbucker, humbuckers
-string, strings
-tuner, tuners
-valve, valves
-reed, reeds
-mouthpiece, mouthpieces
+jukebox, jukeboxes
+key, keys
+lead, leads
 ligature, ligatures
+looper, loopers
+loudspeaker, loudspeakers
+mallet, mallets
+metronome, metronomes
+mic, mics, mike, mikes
+microphone, microphones
+mixer, mixers
+monitor, monitors
+mouthpiece, mouthpieces
+music stand, music stands
 mute, mutes
-bow, bows
+neck, necks
+nut
+overdrive, overdrives
+pedal, pedals
+pedalboard, pedalboards
+peg, pegs
+phaser, phasers
+phonograph, phonographs
+pick, picks
+pickup, pickups
+plectrum, plectrums, plectra
+preamp, preamps
+record player, record players
+reed, reeds
+reverb, reverbs
+rig, rigs
+riser, risers
 rosin
-chinrest, chinrests
+saddle
+sequencer, sequencers
+slide, slides
+sound system, sound systems
 soundboard, soundboards
 soundhole, soundholes
-chanter, chanters
-drumstick, drumsticks
-mallet, mallets
-beater, beaters
-drumhead, drumheads
-metronome, metronomes
-baton, batons
-flightcase, flightcases
-gigbag, gigbags
-riser, risers
-backline
-rig, rigs
+speaker, speakers
 spotlight, spotlights
+stand
+stereo, stereos
+stick, sticks
+stompbox, stompboxes
+strap, straps
+string, strings
 strobe, strobes
+stylus, styli, styluses
+subwoofer, subwoofers
+tuner, tuners
+tuning fork, tuning forks
+turntable, turntables
+tweeter, tweeters
+valve, valves
+vocoder, vocoders
+wah, wahs
+wah-wah, wah-wahs
+woofer, woofers
 
 also:
-fuzz
-delay, delays
-echo, echoes
-stack, stacks
-cabinet, cabinets
+auto-tune
+backline
+body
+boom
 cab, cabs
-wedge, wedges
-desk, desks
-console, consoles
-knob, knobs
 cans
-decks
-needle, needles
-pick, picks
-neck, necks
-peg, pegs
-whammy
-brush, brushes
-stick, sticks
-skin, skins
-throne, thrones
-drumkit, drumkits
-kit, kits
-hammer, hammers
+click track, click tracks
+console, consoles
+crook
 damper, dampers
-stop, stops
-manual, manuals
-bellows
+deck, decks
+desk, desks
 drone, drones
-case, cases
-strap, straps
-cable, cables
-lead, leads
-jack, jacks
-truss, trusses
-musicstand, musicstands
-tuningfork, tuningforks
-pitchpipe, pitchpipes
-wahwah, wahwahs
-talkbox, talkboxes
-popshield, popshields
-clicktrack, clicktracks
-recordplayer, recordplayers
-hifi, hifis
-soundsystem, soundsystems
-tube, tubes
 effect, effects
+endpin, endpins
+fingerpick, fingerpicks
+flight case, flight cases
+footswitch, footswitches
+fuzz
+gig bag, gig bags
+head
+interface
+jack, jacks
+kit, kits
+knob, knobs
+laser
+limiter, limiters
+manual, manuals
+needle, needles
+noise gate, noise gates
+pickguard, pickguards
+pitch pipe, pitch pipes
+podium
+pop filter, pop filters
+pop shield, pop shields
+rostrum, rostrums, rostra
+scratchplate, scratchplates
+scroll
+shoulder rest, shoulder rests
+skin, skins
+slipmat, slipmats
+soundpost, soundposts
+stack, stacks
+stop, stops
+tailpiece, tailpieces
+talk box, talk boxes
+throne, thrones
+thumbpick, thumbpicks
+truss, trusses
+tube, tubes
+wedge, wedges
+whammy
+whammy bar, whammy bars

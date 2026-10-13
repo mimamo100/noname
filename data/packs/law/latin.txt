@@ -1,68 +1,110 @@
 label: A Latin or Law French legal term
 
+actus reus
+ad hoc
 affidavit, affidavits
-subpoena, subpoenas, subpoenaed
-alibi, alibis
 alias, aliases
-quorum, quorums
-versus
-mandamus
-certiorari
-obiter
-dictum, dicta
+alibi, alibis
 amicus, amici
-proviso, provisos, provisoes
+bona fide, bona fides
 caveat, caveats
-fiat, fiats
-nisi
-capias
-mittimus
-replevin
-detinue
+caveat emptor
+certiorari
+decree nisi
+de facto
+de jure
+dictum, dicta
 estoppel
-oyez
-autrefois
-feme
-mortmain
+et al
+ex gratia
+ex parte
+fiat, fiats
+habeas corpus
+in absentia
+in camera
+in loco parentis
+inter alia
 laches
-venire
 lex
-jus
-delict, delicts
+lien, liens
+mens rea
+modus operandi
+nisi
+obiter
+oyez
+per se
+persona non grata
+prima facie
+pro bono
+pro forma
+pro rata
+proviso, provisos, provisoes
+quid pro quo
+quorum, quorums
+status quo
+sub judice
+subpoena, subpoenas, subpoenaed
+tort, torts
+ultra vires
+versus
 veto, vetoes
 
 also:
-puisne
-assumpsit
-habeascorpus
-bonafide
-probono
-mensrea
-actusreus
-ultravires
-intravires
-subjudice
-primafacie
-dejure
-defacto
-exparte
-incamera
-ratio
-quantum
-locus
-corpus
-nolo
-injuria
-culpa
-dolus
+ab initio
+amicus curiae
 animus
-verbatim
-quasi
+assumpsit
+autrefois
+capias
+cestui que trust
+corpus
+corpus delicti
+culpa
+cy-pres
+delict, delicts
+demesne
+detinue
+doli incapax
+dolus
 emptor
-caveatemptor
-quidproquo
-modusoperandi
-statusquo
-proforma
-resjudicata
-staredecisis
+escheat
+ex post facto
+fee simple
+feme
+habeas
+injuria
+in personam
+in rem
+inter vivos
+intra vires
+jus
+locus
+mandamus
+mittimus
+mortmain
+nolle prosequi
+nolo
+nolo contendere
+obiter dictum, obiter dicta
+parol
+posse
+profit a prendre
+puisne
+quantum
+quasi
+ratio
+ratio decidendi
+replevin
+res ipsa loquitur
+res judicata
+seisin
+seriatim
+sine die
+stare decisis
+sub rosa
+sui juris
+venire
+verbatim
+viz, videlicet
+voir dire
+volenti
