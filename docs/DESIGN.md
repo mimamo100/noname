@@ -391,6 +391,9 @@ a music quiz.
 
 ## Ideas for later
 
+- **The shared result needs work** (to do next): it has no subject when it's
+  shared by email, and doesn't say what Unsaid is or invite the reader to
+  play. Rethink the wording and pass a title to the share sheet.
 - **Account names:** suggest alternatives when a name is taken ("Ann 7");
   let players change their name; let the admin rename an account or merge an
   old unclaimed player into one (for someone who switched browsers before
