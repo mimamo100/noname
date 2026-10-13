@@ -45,8 +45,14 @@ final class Packs
      * @param array<string, array{label: string, words: string[][], also?: string[][]}> $groups
      *   category id => label and lines (each line an array of forms, as written)
      */
-    public static function build(array $groups, Dictionary $everyday, string $prefix, bool $curated = false): array
+    /**
+     * @param string[] $leaveOut everyday forms not to bring along ("gassing" with "gas"), from a
+     *   curated pack's "leave out:" line; a form the pack lists itself is kept
+     */
+    public static function build(array $groups, Dictionary $everyday, string $prefix, bool $curated = false, array $leaveOut = []): array
     {
+        $leaveOut = array_fill_keys(array_map([Dictionary::class, 'joined'], $leaveOut), true);
+        $leftOut = [];
         $problems = [];
         $families = [];   // Groups of words that are one answer.
         $categories = [];
@@ -76,7 +82,12 @@ final class Packs
                     }
                     if (!$kept) continue;
                     $family = $kept;
-                    foreach ($kept as $form) array_push($family, ...$everyday->family($form));
+                    foreach ($kept as $form) {
+                        foreach ($everyday->family($form) as $w) {
+                            if (isset($leaveOut[$w]) && !in_array($w, $kept, true)) $leftOut[$w] = true;
+                            else $family[] = $w;
+                        }
+                    }
                     $families[] = array_values(array_unique($family));
                     foreach ($kept as $form) $category[$list][$form] = true;
                     if ($list === 'words') $category['answers']++; // One answer, however many forms it's listed with.
@@ -86,6 +97,8 @@ final class Packs
             $category['also'] = array_values(array_diff(array_keys($category['also']), $category['words']));
             $categories["$prefix.$id"] = $category;
         }
+
+        foreach (array_diff_key($leaveOut, $leftOut) as $w => $_) $problems[] = "“{$w}” (leave out) isn't an everyday form of any of the pack's words";
 
         // Join families that share a word.
         $root = [];

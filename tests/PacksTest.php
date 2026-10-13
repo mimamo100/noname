@@ -93,3 +93,11 @@ function makeGameOn(PDO $db, Dictionary $dictionary): Game
 {
     return new Game($db, $dictionary, fn () => 1_000, promptMin: 1, promptMax: 1000);
 }
+
+test('a curated pack can leave out everyday forms its words would bring along', function () {
+    $everyday = Dictionary::fromWords(['gas', 'gases', 'gassing', 'gust', 'gusts', 'gusting', 'acid', 'acids']);
+    $groups = ['c' => ['label' => 'A chemistry term', 'words' => [['gas'], ['gust'], ['acid']], 'also' => []]];
+    $built = Packs::build($groups, $everyday, 'sci', curated: true, leaveOut: ['gassing', 'gusting', 'nothing']);
+    same(['acid', 'acids', 'gas', 'gases', 'gust', 'gusts'], sorted($built['words']));
+    same(['“nothing” (leave out) isn\'t an everyday form of any of the pack\'s words'], $built['problems']);
+});

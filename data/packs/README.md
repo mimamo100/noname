@@ -30,6 +30,9 @@ The format is like `data/categories/` (see its README), with these differences:
   Forms not listed aren't accepted (except that a word in the everyday
   dictionary brings its everyday forms along: *acid* brings *acids*). The
   forms count as one answer.
+- **Unwanted everyday forms** are left out with a line in `pack.txt`:
+  `leave out: gassing, gusting` (*gas* would otherwise bring *gassing*). The
+  build warns about a word there that nothing brings along.
 - **Phrases are written the way people write them**: `black hole, black
   holes`, and a phrase on its own is just `habeas corpus`. Each form may hold
   spaces, hyphens and apostrophes; it's played joined (*blackhole*, 3–30

@@ -7,11 +7,12 @@ final class WordFamilies
 {
     /**
      * @param string[] $words
+     * @param string[] $standalone words that look formed from another but aren't (data/family-breaks.txt)
      * @return array<string, string[]> root => members, only for families of 2+ words
      */
-    public static function build(array $words): array
+    public static function build(array $words, array $standalone = []): array
     {
-        $parent = self::parents($words);
+        $parent = self::parents($words, $standalone);
         $members = [];
         foreach ($words as $word) {
             $root = $word;
@@ -25,14 +26,17 @@ final class WordFamilies
      * Each word's parent: the word it's formed from ("boxes" -> "box"), or itself.
      *
      * @param string[] $words
+     * @param string[] $standalone words that start their own family ("bunting" isn't formed from "bunt")
      * @return array<string, string>
      */
-    public static function parents(array $words): array
+    public static function parents(array $words, array $standalone = []): array
     {
         $known = array_flip($words);
+        $alone = array_flip($standalone);
         $parent = [];
         foreach ($words as $word) {
             $parent[$word] = $word;
+            if (isset($alone[$word])) continue;
             foreach (self::rootCandidates($word) as $candidate) {
                 if ($candidate !== $word && isset($known[$candidate])) {
                     $parent[$word] = $candidate;

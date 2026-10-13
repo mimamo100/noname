@@ -40283,9 +40283,7 @@ return array (
     'even' => 
     array (
       0 => 'even',
-      1 => 'evening',
-      2 => 'evenings',
-      3 => 'evens',
+      1 => 'evens',
     ),
     'doing' => 
     array (
@@ -41996,6 +41994,11 @@ return array (
       0 => 'lie',
       1 => 'lies',
     ),
+    'evening' => 
+    array (
+      0 => 'evening',
+      1 => 'evenings',
+    ),
     'master' => 
     array (
       0 => 'master',
@@ -42732,8 +42735,7 @@ return array (
     array (
       0 => 'box',
       1 => 'boxes',
-      2 => 'boxing',
-      3 => 'boxed',
+      2 => 'boxed',
     ),
     'group' => 
     array (
@@ -44592,12 +44594,6 @@ return array (
       0 => 'lay',
       1 => 'laying',
       2 => 'lays',
-    ),
-    'pant' => 
-    array (
-      0 => 'pants',
-      1 => 'panting',
-      2 => 'pant',
     ),
     'sweetheart' => 
     array (
@@ -46787,6 +46783,11 @@ return array (
       2 => 'shocking',
       3 => 'shocks',
     ),
+    'pant' => 
+    array (
+      0 => 'panting',
+      1 => 'pant',
+    ),
     'pizza' => 
     array (
       0 => 'pizza',
@@ -48217,9 +48218,7 @@ return array (
     array (
       0 => 'stock',
       1 => 'stocks',
-      2 => 'stockings',
-      3 => 'stocking',
-      4 => 'stocked',
+      2 => 'stocked',
     ),
     'tail' => 
     array (
@@ -48964,9 +48963,8 @@ return array (
     'bowl' => 
     array (
       0 => 'bowl',
-      1 => 'bowling',
-      2 => 'bowls',
-      3 => 'bowled',
+      1 => 'bowls',
+      2 => 'bowled',
     ),
     'supply' => 
     array (
@@ -57009,7 +57007,6 @@ return array (
     array (
       0 => 'crow',
       1 => 'crows',
-      2 => 'crowing',
     ),
     'fountain' => 
     array (
@@ -59674,8 +59671,6 @@ return array (
     array (
       0 => 'rail',
       1 => 'rails',
-      2 => 'railing',
-      3 => 'railings',
     ),
     'rooster' => 
     array (
@@ -63702,6 +63697,11 @@ return array (
       0 => 'inclined',
       1 => 'incline',
     ),
+    'stocking' => 
+    array (
+      0 => 'stockings',
+      1 => 'stocking',
+    ),
     'jockey' => 
     array (
       0 => 'jockey',
@@ -66961,11 +66961,10 @@ return array (
       2 => 'caressing',
       3 => 'caressed',
     ),
-    'shill' => 
+    'shilling' => 
     array (
       0 => 'shillings',
       1 => 'shilling',
-      2 => 'shill',
     ),
     'hedge' => 
     array (
@@ -73575,6 +73574,11 @@ return array (
     array (
       0 => 'gloat',
       1 => 'gloating',
+    ),
+    'railing' => 
+    array (
+      0 => 'railing',
+      1 => 'railings',
     ),
     'bowler' => 
     array (
@@ -81493,11 +81497,10 @@ return array (
       0 => 'sashimi',
       1 => 'sashimis',
     ),
-    'bunt' => 
+    'bunting' => 
     array (
       0 => 'bunting',
-      1 => 'bunt',
-      2 => 'buntings',
+      1 => 'buntings',
     ),
     'minstrel' => 
     array (

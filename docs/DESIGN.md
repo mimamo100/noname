@@ -109,6 +109,9 @@ day of early play. The caps above are the first lever to adjust.
 A word's family is found with simple suffix rules: plurals (*-s*, *-es*,
 *-ies*), *-ed*, *-d* and *-ing*, including doubled consonants (*running* →
 *run*). A family is only formed when the root is also in the dictionary.
+Words the rules would join to an unrelated word (*bunting* the bird isn't
+formed from *bunt*) are listed in `data/family-breaks.txt` and start their own
+family.
 The rules are approximate. Some odd pairs will be grouped together and some
 real pairs missed. That's acceptable for the prototype.
 

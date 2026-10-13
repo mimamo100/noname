@@ -1,0 +1,16 @@
+# Words the family rules would join to an unrelated word. Saying a word uses up its whole
+# family (its plurals, -ed and -ing forms), so "bunting" (the bird) would use up "bunt", and
+# "bunt" would use up the bird. Each word here starts its own family instead; its own
+# plural still joins it ("buntings"). One lowercase word per line.
+# Rebuild after editing: php scripts/build-dictionary.php
+
+# Not formed from the word they look formed from
+bunting
+railing
+crowing
+evening
+stocking
+shilling
+boxing
+bowling
+pants

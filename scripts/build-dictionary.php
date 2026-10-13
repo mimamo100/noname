@@ -55,11 +55,15 @@ foreach (readList("$dataDir/extra-words.txt") as $word) {
     if (!in_array($word, $words, true)) $words[] = $word;
 }
 
+// Words the family rules would join to an unrelated word: "bunting" (the bird) isn't formed
+// from "bunt". Each starts its own family, which its plural still joins ("buntings").
+$standalone = readList("$dataDir/family-breaks.txt");
+
 // Remove blocked words, together with the words formed from them ("cocks", "cocked").
 // Never the word a blocked one seems to be formed from: "pubes" doesn't block "pub".
 $listed = array_flip(readList("$dataDir/blocklist.txt"));
 $blocked = $listed;
-$parent = WordFamilies::parents(array_merge($words, array_keys($listed)));
+$parent = WordFamilies::parents(array_merge($words, array_keys($listed)), $standalone);
 foreach ($words as $word) {
     for ($w = $word; ; $w = $parent[$w]) {
         if (isset($listed[$w])) {
@@ -76,7 +80,7 @@ $words = array_values(array_filter($words, fn ($w) => !isset($blocked[$w])));
 $maskLines = readList("$dataDir/masked.txt");
 $maskListed = array_flip(array_filter($maskLines, fn ($l) => $l[0] !== '!'));
 $unmasked = array_flip(array_map(fn ($l) => substr($l, 1), array_filter($maskLines, fn ($l) => $l[0] === '!')));
-$parent = WordFamilies::parents(array_merge($words, array_keys($maskListed)));
+$parent = WordFamilies::parents(array_merge($words, array_keys($maskListed)), $standalone);
 $masked = [];
 foreach ($words as $word) {
     if (isset($unmasked[$word])) continue;
@@ -125,7 +129,10 @@ foreach ($words as $word) {
     }
 }
 $words = $withSpellings;
-$families = WordFamilies::build($words);
+$families = WordFamilies::build($words, $standalone);
+foreach ($standalone as $word) {
+    if (!in_array($word, $words, true)) fwrite(STDERR, "family-breaks.txt: \"$word\" isn't in the dictionary\n");
+}
 
 // Merge the families of linked spellings: "colour" and "color" (with "colours", "colored"...).
 $familyOf = [];
@@ -283,7 +290,7 @@ foreach (glob("$dataDir/packs/*/pack.txt") ?: [] as $packFile) {
     $packId = basename($packDir);
     $meta = [];
     foreach (readList($packFile) as $line) {
-        if (preg_match('/^(name|description):\s*(.*)$/', $line, $m)) $meta[$m[1]] = $m[2];
+        if (preg_match('/^(name|description|leave out):\s*(.*)$/', $line, $m)) $meta[$m[1]] = $m[2];
     }
     $groups = [];
     foreach (glob("$packDir/*.txt") as $path) {
@@ -297,7 +304,9 @@ foreach (glob("$dataDir/packs/*/pack.txt") ?: [] as $packFile) {
         $groups[$id] = $group;
     }
     // Curated, so blocked words it lists (the law pack's crimes) are kept, and playable only in its worlds.
-    $built = Packs::build($groups, $everyday, $packId, curated: true);
+    // "leave out:" names everyday forms the pack's words would otherwise bring along ("gassing").
+    $leaveOut = Packs::forms($meta['leave out'] ?? '', curated: true);
+    $built = Packs::build($groups, $everyday, $packId, curated: true, leaveOut: $leaveOut);
     foreach ($built['problems'] as $problem) fwrite(STDERR, "packs/$packId: $problem\n");
     unset($built['problems']);
     ksort($built['display']);

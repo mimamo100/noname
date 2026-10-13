@@ -1,2 +1,3 @@
 name: Science
 description: Elements, particles, lab kit, cells, space and more for keen scientists.
+leave out: gassing, gusting

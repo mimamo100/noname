@@ -68,6 +68,15 @@ function spec(?string $cat, array ...$rules): array
     return ['cat' => $cat, 'rules' => $rules];
 }
 
+test('a word listed as standalone starts its own family', function () {
+    $words = ['bunt', 'bunting', 'buntings', 'rail', 'railing', 'rails'];
+    same(['bunt', 'bunting', 'buntings'], sorted(WordFamilies::build($words)['bunt']), 'By the rules, bunting is formed from bunt');
+    $families = WordFamilies::build($words, ['bunting']);
+    same(['bunting', 'buntings'], sorted($families['bunting']), 'The bird keeps its plural');
+    check(!isset($families['bunt']), 'bunt is on its own');
+    same(['rail', 'railing', 'rails'], sorted($families['rail']));
+});
+
 test('word families group plurals and inflections', function () {
     $d = Dictionary::fromWords(WORDS);
     same(['cat', 'cats'], sorted($d->family('cats')));
