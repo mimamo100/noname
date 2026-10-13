@@ -36,7 +36,7 @@ Result: **Foxes 1,637, Owls 1,106.** Players: Cal 927, Dee 710, Ada 610, Ben 496
 
 ### Scoring
 - **Two-word answers outscored everything**: *paddle steamer* 48, *fishing boat* 40, *sailing boat* 38, against 15 to 18 for single words like *battleship*, *houseboat*. Base points come from length, and a phrase counts all its letters joined; most phrases are also hand-added, so they rank as rare. Foxes pulled away on the vehicle prompt. Consider basing a phrase's points on its longest word, or capping it.
-- **"Already said" for the other spelling** (*aluminum* after *aluminium*) cost 2 points. Correct (they're one answer), but harsh when both spellings are accepted; consider making it free.
+- **"Already said" for the other spelling** (*aluminum* after *aluminium*) cost 2 points. That's correct and consistent (they're one answer, like any repeat of someone else's word), but the player didn't realise: *aluminum* never appeared in the feed. The message should say so: "*aluminum* is the same answer as *aluminium*, which Dee said at 18:23".
 - **Words normally used in the plural are judged by their singular's length**: *leggings*, *lodgings*, *nuggets* fined 2 points on 7+ and 8+ letter prompts. They can't be reported either ("already in the dictionary").
 
 ### Word lists
@@ -59,5 +59,5 @@ Result: **Foxes 1,637, Owls 1,106.** Players: Cal 927, Dee 710, Ada 610, Ben 496
 2. Phrases in the vehicle category (and alloys in metal); check other categories for missing everyday phrases.
 3. Phrase scoring: base points not from the full joined length.
 4. Clear messages: joining the other team, being moved, reporting before or after a competition.
-5. Make a team-mate's word free (the owner's decision); consider a free repeat for the other spelling.
+5. Make a team-mate's word free (the owner's decision); when a word is already said under its other spelling, say so in the message.
 6. Don't start a prompt in the last few minutes.
