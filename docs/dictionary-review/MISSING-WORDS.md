@@ -28,7 +28,8 @@ php -d memory_limit=1G scripts/find-missing-words.php [limit] [output file]
   the dictionary can't be played at all (*limped* is "not a word"); word families only
   decide what gets used up together. They're regular forms ENABLE confirms, so they can be
   added in bulk after a quick skim.
-- Words already in the dictionary or the blocklist are left out, so after adding a
+- Words already in the dictionary or the blocklist, and words already reviewed and left out
+  (`docs/dictionary-review/rejected-words.txt`: add each batch's left-outs there), are left out, so after adding a
   batch, regenerating the list shows the next ones.
 
 ## What to add

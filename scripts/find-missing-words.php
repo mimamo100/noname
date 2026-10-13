@@ -29,6 +29,12 @@ $out = $argv[2] ?? "$root/docs/dictionary-review/missing-words.txt";
 $dictionary = require "$root/data/dictionary.php";
 $known = array_flip($dictionary['words']);
 $blocked = array_flip($dictionary['blocked']);
+// Words already reviewed and left out (names, foreign words...), so they aren't listed again.
+$rejected = [];
+foreach (file("$root/docs/dictionary-review/rejected-words.txt", FILE_IGNORE_NEW_LINES) ?: [] as $line) {
+    $word = trim(preg_replace('/#.*/', '', $line));
+    if ($word !== '') $rejected[$word] = true;
+}
 $enable = array_flip(array_map('trim', explode("\n", fetch(ENABLE_URL))));
 
 // Candidates: in ENABLE, not in the dictionary or the blocklist, seen often enough.
@@ -39,7 +45,7 @@ foreach (explode("\n", fetch(FULL_FREQ_URL)) as $line) {
     $word = strtolower((string) $word);
     if ((int) $count < MIN_COUNT) break; // The list is sorted by count.
     if (strlen($word) < 3 || !preg_match('/^[a-z]+$/', $word) || !isset($enable[$word])) continue;
-    if (isset($known[$word]) || isset($blocked[$word])) continue;
+    if (isset($known[$word]) || isset($blocked[$word]) || isset($rejected[$word])) continue;
     $base = null;
     foreach (WordFamilies::rootCandidates($word) as $candidate) {
         if ($candidate !== $word && isset($known[$candidate])) { $base = $candidate; break; }
