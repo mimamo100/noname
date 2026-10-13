@@ -73,7 +73,11 @@ function el(tag, attrs = {}, ...children) {
 }
 
 function renderClock(state) {
-  if (state.prompt) $('ends-in').textContent = timeLeft(state.prompt.endsAt - state.now);
+  if (state.prompt) {
+    // A prompt ends when enough of its answers are said, or when its time runs out.
+    const more = state.prompt.remaining - state.prompt.endsWhenLeft;
+    $('ends-text').replaceChildren('Ends after ', el('b', { textContent: `${more} more` }), ' or in ', el('b', { id: 'ends-in', textContent: timeLeft(state.prompt.endsAt - state.now) }));
+  }
   if (state.world.kind === 'competition') renderCompetitionClock(state);
   if (state.world.kind === 'public' && state.world.endsAt) {
     $('round-info').textContent = `Everyone signed in plays here, and it starts afresh every round. This round ends in ${timeLeft(state.world.endsAt - state.now)}.`;
@@ -460,15 +464,33 @@ async function joinRoom() {
 }
 $('room-button').addEventListener('click', joinRoom);
 
+// Anything but the big world gets a banner saying where you are, and its own colour.
+function renderBanner(state) {
+  const kind = state.world.kind;
+  document.body.dataset.kind = kind;
+  $('world-banner').hidden = kind === 'public';
+  if (kind === 'public') return;
+  const pack = state.pack;
+  const words = !pack ? 'Everyday words' : pack.mode === 'only' ? `${pack.name} words only` : `Everyday and ${pack.name} words`;
+  const spelling = { uk: 'UK spelling', us: 'US spelling' }[state.world.spelling];
+  $('banner-name').textContent = state.world.name;
+  $('banner-about').textContent = [{ private: 'Private world', room: 'Room', competition: 'Competition' }[kind] ?? 'World', words, spelling].filter(Boolean).join(' · ');
+}
+
 function render(state) {
   document.title = `${state.world.name} · Unsaid`;
+  renderBanner(state);
   const spellingNote = { uk: ' · UK spelling', us: ' · US spelling' }[state.world.spelling] ?? '';
   const packNote = state.pack ? ` · ${state.pack.name} words` : '';
   $('world-name').textContent = state.world.name + packNote + spellingNote;
   $('dict-size').textContent = state.dictionary.size.toLocaleString();
   $('dict-burned').textContent = state.dictionary.burned.toLocaleString();
   $('world-mult').textContent = state.multipliers.world.toFixed(1);
-  $('prompt-mult').textContent = state.multipliers.prompt.toFixed(1);
+  $('prompt-mult').textContent = state.multipliers.prompt.toFixed(2).replace(/0$/, '');
+  // The player's own place, without scrolling down to the leaderboard.
+  const me = state.myStanding;
+  $('my-standing').hidden = !me;
+  if (me) $('my-standing').replaceChildren('You: ', el('b', { textContent: `${ordinal(me.place)} of ${me.of}` }), ` · ${me.score} ${Math.abs(me.score) === 1 ? 'point' : 'points'}`);
 
   // A competition before its start has no prompt yet: just say so, without empty counters.
   const waiting = state.world.kind === 'competition' && !state.world.ended && state.now < state.world.startsAt;
@@ -476,13 +498,15 @@ function render(state) {
   if (state.prompt) {
     $('prompt-label').textContent = state.prompt.label;
     $('remaining').textContent = state.prompt.remaining;
-    const used = 1 - state.prompt.remaining / state.prompt.availableAtStart;
+    // The meter fills towards the prompt's end, which comes before every answer is said.
+    const toSay = Math.max(1, state.prompt.availableAtStart - state.prompt.endsWhenLeft);
+    const used = Math.min(1, (state.prompt.availableAtStart - state.prompt.remaining) / toSay);
     $('meter-fill').style.width = `${Math.round(used * 100)}%`;
     renderClock(state);
   } else {
     $('prompt-label').textContent = state.world.ended ? 'Finished' : waiting ? 'The first prompt appears at the start' : 'This world has run out of words';
     $('remaining').textContent = '0';
-    $('ends-in').textContent = '–';
+    $('ends-text').replaceChildren('Ends in ', el('b', { id: 'ends-in', textContent: '–' }));
   }
   const competition = state.world.kind === 'competition';
   $('copy-link').hidden = !state.invite;
@@ -567,11 +591,11 @@ function saidWord(r) {
   return span;
 }
 
-// cleared: the prompt ran out of answers, so its newest word was the last one (double points).
-function saidList(words, emptyText, cleared = false) {
-  return el('ol', { className: 'recent' }, ...(words.length ? words.map((r, i) => el('li', {},
+// closingWord: the answer that finished the prompt (it earned the closing bonus).
+function saidList(words, emptyText, closingWord = null) {
+  return el('ol', { className: 'recent' }, ...(words.length ? words.map((r) => el('li', {},
     saidWord(r),
-    ...(cleared && i === 0 ? [el('span', { className: 'last-answer', title: 'The last answer: double points', textContent: '🏁' })] : []),
+    ...(closingWord && r.word === closingWord ? [el('span', { className: 'last-answer', title: 'Finished the prompt: 10 bonus points', textContent: '🏁' })] : []),
     el('span', { className: 'muted' }, ' by ', ...teamDot(r.team), `${r.by}${r.familyCount ? ` (+${r.familyCount} family)` : ''}`),
     el('span', { className: 'points', textContent: `+${r.points}` }),
   )) : [el('li', { className: 'muted', textContent: emptyText })]));
@@ -594,27 +618,45 @@ function renderLastUnsaid(groups, currentPromptId) {
     el('p', { className: 'eyebrow', textContent: 'Last prompt' }),
     el('p', {}, el('b', { textContent: last.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(last.words.length)}` })),
     el('p', {}, last.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(last.unsaid),
-      ...(!last.unsaid.count && last.words.length ? [` 🏁 ${last.words[0].by} said the last one, for double points.`] : [])),
+    ),
+    ...(last.closingWord ? [el('p', { className: 'small' }, `🏁 ${last.words.find((w) => w.word === last.closingWord)?.by ?? 'Someone'} finished it with “${last.closingWord}”, for 10 bonus points.`)] : []),
   );
 }
 
 // The current prompt's words in full, with earlier prompts collapsed underneath.
+// Just said shows this many of the current prompt's words until "Show all" is pressed, so the
+// leaderboard isn't pushed far down the page on a phone.
+const SAID_SHOWN = 10;
+let showAllSaid = false;
+
 function renderSaid(groups, currentPromptId) {
   const parts = [];
+  const unplayed = [];
   for (const group of groups) {
     if (group.promptId === currentPromptId) {
       parts.push(el('p', { className: 'group-title', textContent: `This prompt · ${countText(group.words.length)}` }));
-      parts.push(saidList(group.words, 'Nothing said yet. Be the first.'));
+      const hidden = showAllSaid ? 0 : group.words.length - SAID_SHOWN;
+      parts.push(saidList(hidden > 0 ? group.words.slice(0, SAID_SHOWN) : group.words, 'Nothing said yet. Be the first.'));
+      if (hidden > 0 || (showAllSaid && group.words.length > SAID_SHOWN)) {
+        const more = el('button', { type: 'button', className: 'link small', textContent: showAllSaid ? 'Show fewer' : `Show all ${group.words.length}` });
+        more.addEventListener('click', () => { showAllSaid = !showAllSaid; renderSaid(groups, currentPromptId); });
+        parts.push(more);
+      }
+    } else if (!group.words.length) {
+      unplayed.push(group.prompt); // Folded into one line below.
     } else {
       const details = el('details', { className: 'earlier', open: openPrompts.has(group.promptId) },
         el('summary', {}, el('span', { textContent: group.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(group.words.length)}` })),
         ...(group.unsaid ? [el('p', { className: 'small unsaid-line' }, group.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(group.unsaid))] : []),
-        saidList(group.words, 'Nothing was said.', group.unsaid?.count === 0));
+        saidList(group.words, 'Nothing was said.', group.closingWord));
       details.addEventListener('toggle', () => (details.open ? openPrompts.add(group.promptId) : openPrompts.delete(group.promptId)));
       parts.push(details);
     }
   }
-  const firstEarlier = parts.findIndex((part) => part.tagName === 'DETAILS');
+  if (unplayed.length) {
+    parts.push(el('p', { className: 'muted small unplayed', textContent: `Nobody played: ${unplayed.map((p) => `“${p}”`).join(', ')}` }));
+  }
+  const firstEarlier = parts.findIndex((part) => part.tagName === 'DETAILS' || part.classList?.contains('unplayed'));
   if (firstEarlier >= 0) parts.splice(firstEarlier, 0, el('p', { className: 'group-title earlier-title', textContent: 'Earlier prompts' }));
   $('recent').replaceChildren(...parts);
 }
@@ -661,12 +703,12 @@ function renderMisses(misses, currentPromptId) {
       el('span', { className: 'muted', textContent: ` ${MISS_REASONS[m.reason] ?? m.reason}` }),
       el('span', { className: m.penalty ? 'points penalty' : 'points free', textContent: m.penalty ? `−${m.penalty}` : 'free' }),
     ));
-    // Reports are for the current prompt, so only offer them while it's still running.
+    // A report is about the prompt the miss was for, earlier ones included.
     const status = m.reportStatus ?? (reported.has(m.word) ? 'reported' : null);
     if (status) {
       rows.at(-1).append(el('span', { className: 'muted small-note', textContent: reportStatusText(status, m, currentPromptId) }));
-    } else if (isReportable(m) && m.promptId === currentPromptId) {
-      rows.at(-1).append(reportButton(m.word, m.reason));
+    } else if (isReportable(m)) {
+      rows.at(-1).append(reportButton(m.word, m.reason, m.promptId));
     }
   }
   $('misses-list').replaceChildren(...rows);
@@ -737,19 +779,30 @@ function feedback(text, kind) {
   $('feedback').className = `feedback ${kind}`;
 }
 
+// One way of writing when something happened: "at 14:05" today, "on 13 Oct, 14:05" before.
+function saidAt(ms) {
+  const d = new Date(ms);
+  const time = d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+  return d.toDateString() === new Date().toDateString() ? `at ${time}` : `on ${d.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })}, ${time}`;
+}
 const shortDate = (ms) => new Date(ms).toLocaleString(undefined, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
 
 const penaltyText = (r) => (r.penalty ? ` −${r.penalty} ${r.penalty === 1 ? 'point' : 'points'}.` : '');
 
+// A pack-only world knows only its pack's words: say so, or everyday words look like a fault.
+const notAWord = (w) => (lastState?.pack?.mode === 'only'
+  ? `“${w}” isn't in this world's ${lastState.pack.name} words. No penalty.`
+  : `We don't know “${w}”. No penalty.`);
+
 const REASONS = {
-  'not-a-word': (w) => `“${w}” isn't in the dictionary.`,
-  'doesnt-fit': (w, r) => `“${w}” doesn't fit the prompt.${penaltyText(r)}`,
+  'not-a-word': (w) => notAWord(w),
+  'doesnt-fit': (w, r) => `“${w}” doesn't fit${r.why ? `: ${r.why}` : ' the prompt'}.${r.penalty ? penaltyText(r) : ' No penalty.'}`,
   'not-in-category': (w, r) => `“${w}” isn't on our list for “${r.category}”. No penalty.`,
   'wrong-spelling': (w, r) => `This world uses ${r.spelling === 'uk' ? 'UK' : 'US'} spelling${r.suggestions?.length ? `: try “${r.suggestions[0]}”` : ''}. No penalty.`,
   'already-burned': (w, r) => r.burned
     ? (r.byYou
-      ? `You already said “${r.burned.playedWord}”${r.burned.playedWord !== w ? ` (which uses up “${w}”)` : ''} on ${shortDate(r.burned.at)}, for “${r.burned.prompt}”. No penalty.`
-      : `“${w}” has already been said — by ${r.burned.by}${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''} on ${shortDate(r.burned.at)}, for “${r.burned.prompt}”.${r.penalty ? penaltyText(r) : ' No penalty, as it was hidden.'}`)
+      ? `You already said “${r.burned.playedWord}”${r.burned.playedWord !== w ? ` (which uses up “${w}”)` : ''} ${saidAt(r.burned.at)}, for “${r.burned.prompt}”. No penalty.`
+      : `${r.burned.by} already said “${w}”${r.burned.playedWord !== w ? ` (with “${r.burned.playedWord}”)` : ''} ${saidAt(r.burned.at)}, for “${r.burned.prompt}”.${r.penalty ? penaltyText(r) : r.justNow ? ' No penalty, as it was moments ago.' : ' No penalty, as it was hidden.'}`)
     : `“${w}” has already been said.${penaltyText(r)}`,
 };
 
@@ -761,7 +814,8 @@ $('play-form').addEventListener('submit', async (e) => {
   try {
     let result;
     try {
-      result = await api(`/${encodeURIComponent(worldId)}/words`, { method: 'POST', body: { word } });
+      // The prompt on screen: if it changed a moment ago, the word still counts for it.
+      result = await api(`/${encodeURIComponent(worldId)}/words`, { method: 'POST', body: { word, promptId: lastState?.prompt?.id } });
     } catch (err) {
       if (err.status === 401) { setSession(null); refresh(); } // Signed out elsewhere: show the sign-in box.
       throw err;
@@ -769,12 +823,15 @@ $('play-form').addEventListener('submit', async (e) => {
     if (result.ok) {
       const family = result.alsoBurned.length ? ` Gone with it: ${result.alsoBurned.join(', ')}.` : '';
       const streak = result.streak > 1 ? ` That's ${result.streak} days in a row!` : '';
-      const last = result.lastAnswer ? ' That was the last answer, so it scores double!' : '';
-      feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}.${last} Nobody can say it again.${family}${streak}`, 'good');
+      const closing = result.closing ? ' That finished the prompt: 10 bonus points!' : '';
+      const loose = result.uncounted ? " It's a looser answer, so it doesn't bring the count down or get the prompt bonus." : '';
+      const forOld = result.previousPrompt ? ` It counted for the last prompt, “${result.previousPrompt}”.` : '';
+      feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}.${forOld}${closing}${loose} Nobody can say it again.${family}${streak}`, 'good');
       input.value = '';
     } else {
-      feedback(REASONS[result.reason](result.word, result), 'bad');
-      if (isReportable(result)) $('feedback').append(' ', reportButton(result.word, result.reason));
+      const forOld = result.previousPrompt ? ` (Judged against the last prompt, “${result.previousPrompt}”, as it had only just changed.)` : '';
+      feedback(REASONS[result.reason](result.word, result) + forOld, 'bad');
+      if (isReportable(result)) $('feedback').append(' ', reportButton(result.word, result.reason, lastState?.prompt?.id));
       input.select();
     }
     refresh();
@@ -785,14 +842,15 @@ $('play-form').addEventListener('submit', async (e) => {
 
 // Players can tell us about real answers missing from a meaning list, or real words missing
 // from the dictionary. The admin page (/admin) reviews the reports.
-const isReportable = (r) => r.reason === 'not-in-category' || (r.reason === 'not-a-word' && /^[a-z]{3,30}$/.test(r.word));
+const isReportable = (r) => r.reason === 'not-in-category' || (r.reason === 'not-a-word' && /^[a-z]{3,30}$/.test(r.word.replace(/[\s'’-]/g, '')));
 
-function reportButton(word, reason) {
-  const text = reason === 'not-a-word' ? "Report it — it's a real word" : 'Report it — it should count';
+// promptId: the prompt the miss was for, so the report is about the right meaning.
+function reportButton(word, reason, promptId) {
+  const text = reason === 'not-a-word' ? "Report it: it's a real word" : 'Report it: it should count';
   const button = el('button', { type: 'button', className: 'link', textContent: text });
   button.addEventListener('click', async () => {
     try {
-      await api(`/${encodeURIComponent(worldId)}/reports`, { method: 'POST', body: { word } });
+      await api(`/${encodeURIComponent(worldId)}/reports`, { method: 'POST', body: { word, promptId } });
       reported.add(word);
       button.replaceWith('Thanks, reported. My misses will show what happens to it.');
     } catch (err) {
@@ -1054,8 +1112,8 @@ $('lookup-form').addEventListener('submit', async (e) => {
   if (!word) return;
   try {
     const r = await api(`/${encodeURIComponent(worldId)}/words/${encodeURIComponent(word)}`);
-    $('lookup-result').textContent = !r.inDictionary ? `“${r.word}” isn't in the dictionary.`
-      : r.burned ? `“${r.word}” was said by ${r.burned.by} on ${new Date(r.burned.at).toLocaleString()}${r.burned.playedWord !== r.word ? ` (with “${r.burned.playedWord}”)` : ''}.`
+    $('lookup-result').textContent = !r.inDictionary ? (lastState?.pack?.mode === 'only' ? `“${r.word}” isn't in this world's ${lastState.pack.name} words.` : `We don't know “${r.word}”.`)
+      : r.burned ? `${r.burned.by} said “${r.word}” ${saidAt(r.burned.at)}${r.burned.playedWord !== r.word ? ` (with “${r.burned.playedWord}”)` : ''}, for “${r.burned.prompt}”.`
       : `“${r.word}” is still unsaid.`;
   } catch (err) {
     $('lookup-result').textContent = err.message;

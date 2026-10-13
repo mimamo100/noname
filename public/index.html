@@ -34,17 +34,27 @@
   </header>
 
   <main>
+    <section id="world-banner" class="world-banner" hidden>
+      <div>
+        <h2 id="banner-name"></h2>
+        <p id="banner-about" class="muted small"></p>
+      </div>
+      <a href="/" class="back-link">Back to the big world</a>
+    </section>
+
     <section class="prompt-card" aria-live="polite">
       <p class="eyebrow">Current prompt</p>
       <h1 id="prompt-label">Loading…</h1>
-      <div class="counter"><span id="remaining">–</span> <span class="muted">words left unsaid</span></div>
+      <div class="counter"><span class="muted">At least</span> <span id="remaining">–</span> <span class="muted">words left unsaid</span></div>
       <div class="meter"><div id="meter-fill"></div></div>
       <div class="stats">
         <span title="Rises as more of the dictionary is said">World ×<b id="world-mult">1.0</b></span>
         <span title="Rises as this prompt runs dry">Prompt ×<b id="prompt-mult">1.0</b></span>
-        <span>Ends in <b id="ends-in">–</b></span>
+        <span id="ends-text">Ends in <b id="ends-in">–</b></span>
       </div>
     </section>
+
+    <p id="my-standing" class="standing" hidden></p>
 
     <section id="ended" class="notice" hidden>
       <p id="ended-message"></p>
@@ -128,6 +138,7 @@
           </table>
           <p id="prompt-board-empty" class="muted" hidden>Nobody has tried this prompt yet. First in leads.</p>
         </div>
+        <p class="muted small">Scores include 2 points off for each wrong guess, so they can go down.</p>
         <h2>Who said it?</h2>
         <form id="lookup-form" class="lookup" autocomplete="off">
           <input id="lookup" placeholder="Look up any word" maxlength="30" autocapitalize="off" spellcheck="false" required>
@@ -146,15 +157,14 @@
         <li><b>Scoring.</b> A word's points are its length minus 2 (at least 1), times up to ×3 for rarer words, times two scarcity multipliers shown under the prompt:
           <ul>
             <li><b>World ×</b> rises as this world's dictionary gets used up: ×1.0 when it's new, ×2.0 when half the words are said, ×4.0 at three quarters, up to ×10.</li>
-            <li><b>Prompt ×</b> rises as the current prompt runs dry: the answers it started with divided by those left. A prompt that began with 40 answers and has 20 left gives ×2.0, up to ×5. It goes back to ×1.0 with each new prompt.</li>
+            <li><b>Prompt ×</b> rises gently as the current prompt runs dry: ×1.0 at the start, ×1.5 when half its answers are said, up to ×2. It goes back to ×1.0 with each new prompt. Looser answers that don't bring the count down (the count says “at least”) score without it.</li>
           </ul>
-          The two multiply together, so the last answers to a prompt late in a world's life are worth the most. That's how late arrivals can catch up.</li>
+          The two multiply together, so later answers are worth a little more, but knowing rare words matters most.</li>
         <li>You can save a word for later when it's worth more, but someone else might say it first.</li>
-        <li>Careful: a word that doesn't fit, or that someone else has already said, costs 2 points. Repeating your own word is free. Typos are free, and so is a real answer missing from our lists: report it so we can add it.</li>
+        <li>Careful: a word that doesn't fit, or that someone else has already said, costs 2 points, and the message says why. Repeating your own word is free, and so is a word someone else said in the last minute. Typos are free, and so is a real answer missing from our lists: report it so we can add it. If the prompt changes just as you send a word, it's judged against the prompt you saw.</li>
         <li>Two-word answers can be typed either way: “tea towel”, “tea-towel” and “teatowel” are the same.</li>
         <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
-        <li><b>The last answer</b> of a prompt scores double: whoever empties a prompt gets a bonus 🏁.</li>
-        <li>The prompt changes when nothing fits any more, or when its time runs out. Then <b>Last prompt</b> shows what nobody said: the commonest answers left.</li>
+        <li>A prompt ends once <b>80% of its answers</b> are said, or when its time runs out. Whoever says the answer that ends it gets <b>10 bonus points</b> 🏁. Then <b>Last prompt</b> shows what nobody said: the commonest answers left.</li>
         <li><b>Where to play.</b> The big world is open to everyone signed in and starts afresh every day, with quick prompts. <b>Rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private worlds</b> are for you and the friends you invite: anyone can join one with its invite link, and creating one needs the Host plan. Private worlds and competitions can use a <b>word pack</b> (Science, Law, Music…) instead of everyday words. <b>Competitions</b> pit teams against each other between a start and an end time: open your team's link to join it, and every point you score counts for your team. Running one needs the Organiser plan.</li>
         <li><b>My worlds</b> (under your name, top right) lists the rooms and private worlds you're in. <b>My games</b> shows how you finished in past rounds and rooms, your personal bests, and your <b>streak</b>: the days in a row you've said a word. <b>Daily email</b>, in the same menu, reminds you each morning if you haven't played yet.</li>
       </ul>

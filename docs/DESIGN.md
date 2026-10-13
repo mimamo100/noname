@@ -90,7 +90,7 @@ points = base × rarity × world multiplier × prompt bonus
 | Base | word length − 2 | 1 for a 3-letter word, 8 for a 10-letter word |
 | Rarity | 1 + 2 × (frequency rank ÷ dictionary size) | ×1 for the most common words, ×3 for the rarest |
 | World multiplier | 1 ÷ (1 − share of the dictionary said) | ×1 at the start, ×2 at half said, ×5 at 80% said (capped at ×10) |
-| Prompt bonus | words that fit when the prompt began ÷ words that fit now | ×1 when the prompt starts, rising as it runs dry (capped at ×5) |
+| Prompt bonus | 1 + the share of the prompt's answers already said | ×1 when the prompt starts, ×1.5 at half said, capped at ×2; *also* answers score at ×1 |
 
 Points are rounded to whole numbers, with a minimum of 1.
 
@@ -157,10 +157,21 @@ word-finder site. There are three kinds:
 - **Repeating your own word is free.** "Already said" is checked before the
   meaning and letters, and the message says when the word was said and for
   which prompt, since that may be several prompts ago and out of sight.
-- **The last answer scores double:** whoever says a prompt's last answer (so
-  it runs dry) gets double points, marked 🏁 in the feed. The prompt
-  multiplier already rises as a prompt runs dry; this gives the end of a small
-  prompt a clear finish. Big world prompts mostly time out first.
+- **A prompt ends once 80% of its answers are said** (`Game::END_SHARE`), or
+  when its time runs out, rather than running on with only obscure answers
+  left. The answer that ends it earns a flat 10 points (`Scoring::CLOSING_BONUS`),
+  marked 🏁 in the feed. The page says "Ends after N more or in 2h".
+- **The prompt bonus is gentle:** ×1 plus the share of the prompt's answers
+  already said, so ×1.5 at half and at most ×2 (it was answers at the start ÷
+  answers left, up to ×5, and late words swamped early ones: playtest, 13 Oct).
+  Answers a category accepts without counting (*also* words) score at ×1, as
+  they don't bring the count down; the count says "At least N words left".
+- **Penalties are only for real mistakes:** the letter rules are checked
+  first and the message names the broken rule; "already said" is free when
+  someone else said it in the last minute (`Game::SAID_GRACE_MS`); and for 30
+  seconds after a prompt changes, a word sent for the old prompt is judged
+  against it, free if it misses (`Game::PROMPT_GRACE_MS`; the page sends the
+  prompt it showed).
 - **Spaces, hyphens and apostrophes are dropped** from what players type, so
   "tea towel" and "T-shirt" play as *teatowel* and *tshirt*. The word files
   list phrases the way people write them ("tea towel", "t-shirt", "habeas

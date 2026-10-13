@@ -191,3 +191,25 @@ button.link.nudge { color: var(--ember); font-size: 14px; }
 .reveal .eyebrow { margin-bottom: 4px; }
 .unsaid-line { margin: 4px 0 8px; }
 .share { margin-top: 6px; }
+
+/* The player's own place, under the prompt card. */
+.standing { margin: 12px 0 0; text-align: center; }
+.unplayed { margin-top: 8px; }
+/* On a phone, the leaderboard comes before the long list of words said. */
+@media (max-width: 700px) { .columns > section:last-child { order: -1; } }
+
+/* Where you are: a banner and an accent colour for private worlds, rooms and competitions. */
+body[data-kind="private"] { --ember-dim: #0e4a52; --band: #3cc2cf; }
+body[data-kind="competition"] { --ember-dim: #3d2a6e; --band: #a58bff; }
+body[data-kind="room"] { --band: var(--ember); }
+.world-banner {
+  display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  margin-top: 8px; padding: 10px 14px; background: var(--surface);
+  border: 1px solid var(--border); border-left: 4px solid var(--band, var(--ember)); border-radius: 10px;
+}
+.world-banner h2 { margin: 0; font-size: 20px; text-transform: none; letter-spacing: 0; color: var(--text); }
+.world-banner p { margin: 0; }
+.back-link { color: var(--muted); font-size: 14px; }
+/* Choices in the create forms: the picked one stands out, so a setting isn't missed. */
+fieldset.field label { padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
+fieldset.field label:has(input:checked) { border-color: var(--ember); background: rgb(255 122 41 / 0.1); font-weight: 600; }

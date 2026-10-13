@@ -63,3 +63,13 @@ Final scores: Dee 920 (inflated: on the first prompt she played words she'd look
 5. Make the pack and the private world obvious: say "not in this world's Science words", and give private worlds their own look.
 6. Science lists: organs in biology, overlaps in physics, the other gaps above.
 7. Hide 0-point rows on the prompt leaderboard; round the multiplier in the API.
+
+## Changes made after this playtest (14 October)
+
+- **Scoring:** see the big world report; *also* answers score at ×1, and *alpha particle*/*alpha* (and beta) are one answer.
+- **"At least X words left"** on the prompt card.
+- **A grace period:** for 30 seconds after a prompt changes, a word sent for the old prompt (the page sends the prompt it showed) is judged against it, and a miss then is free.
+- **Messages:** the reason a word doesn't fit, including plurals judged by their singular's length; in a pack-only world, "isn't in this world's Science words"; reports from My misses are about the prompt the miss was for (earlier prompts too).
+- **Private worlds look different:** a banner with the world's name, "Private world · Science words only" and "Back to the big world", and a teal accent (purple for competitions). A wrong invite link says the link doesn't work any more. The chosen options on the new-world form are highlighted.
+- **Science lists:** organs in biology, the obvious overlaps in physics (quark, kelvin, black hole...), the other gaps listed above; *switch*, *drying*, *stormy*, *frosty* moved to *also*. *Gassing* and *gusting* still come along with *gas* and *gust* as their everyday forms.
+- The prompt leaderboard leaves out players with only free misses; the world multiplier is rounded.

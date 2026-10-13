@@ -98,6 +98,9 @@ final class PrivateWorlds
         $player = $user ? $this->game->playerForUser($world['id'], (int) $user['id']) : null;
         if ($player && $player['removed']) throw new GameError(403, "You've been removed from this world.");
         if ($player || $this->validInvite($world, $invite)) return;
+        if ($invite !== null && $invite !== '') {
+            throw new GameError(403, "This invite link doesn't work any more: the world's owner may have made a new one. Ask one of its players for the latest link.");
+        }
         throw new GameError(403, 'This is a private world. You need an invite link from one of its players.');
     }
 

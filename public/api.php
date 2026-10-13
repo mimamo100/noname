@@ -286,7 +286,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
 
 try {
     $configPath = getenv('UNSAID_CONFIG') ?: "$root/config.php";
-    if (!is_file($configPath)) respond(500, ['error' => 'Missing config.php — copy config.example.php and fill in your database details. Visit /check.php for help.']);
+    if (!is_file($configPath)) respond(500, ['error' => 'Missing config.php: copy config.example.php and fill in your database details. Visit /check.php for help.']);
     $config = require $configPath;
     $db = new PDO(
         "mysql:host={$config['db_host']};dbname={$config['db_name']};charset=utf8mb4",

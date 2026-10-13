@@ -868,19 +868,38 @@ final class Game
 
         $me = null;
         $myMisses = [];
+        $myStanding = null;
         if ($token) {
             $stmt = $this->db->prepare('SELECT id, nickname FROM players WHERE world_id = ? AND token = ? AND removed = 0');
             $stmt->execute([$worldId, $token]);
             if ($player = $stmt->fetch()) {
                 $me = $player['nickname'];
                 $myMisses = $this->missesOf((int) $player['id']);
+                $myStanding = $this->standing($worldId, (int) $player['id']);
             }
         }
         return [
             'me' => $me,
+            // Where the player stands overall, for the top of the page; null until they've played.
+            'myStanding' => $myStanding,
             // Only the player's own misses: other players never see them.
             'myMisses' => $myMisses,
         ] + $shared + ['now' => $this->now()];
+    }
+
+    /** A player's place on the overall leaderboard (shared on equal scores), out of everyone who has played. */
+    private function standing(string $worldId, int $playerId): ?array
+    {
+        $stmt = $this->db->prepare('SELECT score, words FROM players WHERE id = ?');
+        $stmt->execute([$playerId]);
+        $mine = $stmt->fetch();
+        if (!$mine || ((int) $mine['words'] === 0 && (int) $mine['score'] === 0)) return null;
+        $stmt = $this->db->prepare('
+            SELECT COUNT(*), COALESCE(SUM(score > ?), 0) FROM players
+            WHERE world_id = ? AND removed = 0 AND (words > 0 OR score <> 0)');
+        $stmt->execute([(int) $mine['score'], $worldId]);
+        [$of, $ahead] = $stmt->fetch(PDO::FETCH_NUM);
+        return ['place' => (int) $ahead + 1, 'of' => (int) $of, 'score' => (int) $mine['score']];
     }
 
     /** The part of a world's state that's the same for everyone watching it. */
