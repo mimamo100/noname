@@ -25,7 +25,12 @@ final class Lobby
     /** @var callable(): int */
     private $clock;
 
-    public function __construct(private readonly PDO $db, private readonly Game $game, array $config = [], ?callable $clock = null)
+    /**
+     * @param ?Packs $packs for showing a pack world's best words as written ("habeas corpus");
+     *   without it they're shown as the everyday dictionary writes them
+     */
+    public function __construct(private readonly PDO $db, private readonly Game $game, array $config = [], ?callable $clock = null,
+        private readonly ?Packs $packs = null)
     {
         $big = $config['big_world'] ?? [];
         $hours = (int) ($big['round_hours'] ?? 24);
@@ -199,10 +204,22 @@ final class Lobby
     // --- My games ---
 
     private const RESULTS_SQL = '
-        SELECT r.world_id, w.name, w.kind, r.place, r.players, r.score, r.words, r.best_word, r.best_points, r.ended_at,
+        SELECT r.world_id, w.name, w.kind, w.pack, r.place, r.players, r.score, r.words, r.best_word, r.best_points, r.ended_at,
           r.team_name, tr.place AS team_place, tr.teams
         FROM results r JOIN worlds w ON w.id = r.world_id
         LEFT JOIN team_results tr ON tr.world_id = r.world_id AND tr.name = r.team_name';
+
+    /** A word said in a world, as it's shown: written as its pack or the everyday words write it ("black hole"). */
+    private function shown(?string $word, ?string $pack): ?string
+    {
+        if ($word === null) return null;
+        $everyday = $this->game->dictionary();
+        if ($pack && $this->packs && !$everyday->isMasked($word)) {
+            $written = $this->packs->displayMap($pack, $everyday)[$word] ?? null;
+            if ($written !== null) return $written;
+        }
+        return $everyday->display($word);
+    }
 
     private function resultRow(array $r): array
     {
@@ -210,7 +227,7 @@ final class Lobby
             'worldId' => $r['world_id'], 'name' => $r['name'], 'kind' => $r['kind'],
             'place' => (int) $r['place'], 'players' => (int) $r['players'],
             'score' => (int) $r['score'], 'words' => (int) $r['words'],
-            'bestWord' => $r['best_word'], 'bestPoints' => $r['best_points'] === null ? null : (int) $r['best_points'],
+            'bestWord' => $this->shown($r['best_word'], $r['pack'] ?? null), 'bestPoints' => $r['best_points'] === null ? null : (int) $r['best_points'],
             // A masked best word is shown as p***s when shared.
             'bestMasked' => $r['best_word'] !== null && $this->game->dictionary()->isMasked($r['best_word']),
             'endedAt' => (int) $r['ended_at'],
@@ -245,8 +262,9 @@ final class Lobby
         $stmt = $this->db->prepare('SELECT COALESCE(SUM(words), 0) FROM players WHERE user_id = ?');
         $stmt->execute([$userId]);
         $best = $this->db->prepare('
-            SELECT best_word, best_points FROM results WHERE user_id = ? AND best_word IS NOT NULL
-            ORDER BY best_points DESC, ended_at LIMIT 1');
+            SELECT r.best_word, r.best_points, w.pack FROM results r JOIN worlds w ON w.id = r.world_id
+            WHERE r.user_id = ? AND r.best_word IS NOT NULL
+            ORDER BY r.best_points DESC, r.ended_at LIMIT 1');
         $best->execute([$userId]);
         $bestWord = $best->fetch() ?: null;
         return [
@@ -257,7 +275,7 @@ final class Lobby
                 'bestScore' => $b['best_score'] === null ? null : (int) $b['best_score'],
                 'mostWords' => $b['most_words'] === null ? null : (int) $b['most_words'],
                 'wordsSaid' => (int) $stmt->fetchColumn(),
-                'bestWord' => $bestWord ? ['word' => $bestWord['best_word'], 'points' => (int) $bestWord['best_points']] : null,
+                'bestWord' => $bestWord ? ['word' => $this->shown($bestWord['best_word'], $bestWord['pack']), 'points' => (int) $bestWord['best_points']] : null,
             ],
             'games' => $games,
         ];

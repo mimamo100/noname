@@ -1,116 +1,116 @@
 label: A chemistry term
 
-acid acids
-alcohol alcohols
-aldehyde aldehydes
-alkali alkalis alkalies
-alkane alkanes
-alkene alkenes
-alkyne alkynes
-allotrope allotropes
-alloy alloys
-amine amines
+acid, acids
+alcohol, alcohols
+aldehyde, aldehydes
+alkali, alkalis, alkalies
+alkane, alkanes
+alkene, alkenes
+alkyne, alkynes
+allotrope, allotropes
+alloy, alloys
+amine, amines
 ammonia
-anion anions
-anode anodes
+anion, anions
+anode, anodes
 aqueous
 aromatic
-atom atoms
-base bases
+atom, atoms
+base, bases
 benzene
-bond bonds
-buffer buffers
-carbonate carbonates
-catalyst catalysts
-cathode cathodes
-cation cations
-chloride chlorides
-colloid colloids
+bond, bonds
+buffer, buffers
+carbonate, carbonates
+catalyst, catalysts
+cathode, cathodes
+cation, cations
+chloride, chlorides
+colloid, colloids
 combustion
-compound compounds
-concentration concentrations
+compound, compounds
+concentration, concentrations
 condensation
 corrosion
 covalent
-crystal crystals
+crystal, crystals
 decomposition
 dilute
 displacement
-dissolve dissolves dissolved
+dissolve, dissolves, dissolved
 electrolysis
-electrolyte electrolytes
+electrolyte, electrolytes
 electronegativity
-emulsion emulsions
+emulsion, emulsions
 endothermic
-equilibrium equilibria
-ester esters
+equilibrium, equilibria
+ester, esters
 ethanol
-ether ethers
+ether, ethers
 exothermic
 fermentation
-formula formulae formulas
-halide halides
-halogen halogens
-hydrocarbon hydrocarbons
-hydroxide hydroxides
-indicator indicators
+formula, formulae, formulas
+halide, halides
+halogen, halogens
+hydrocarbon, hydrocarbons
+hydroxide, hydroxides
+indicator, indicators
 inert
 insoluble
-ion ions
+ion, ions
 ionic
-isomer isomers
-isotope isotopes
-ketone ketones
-lattice lattices
+isomer, isomers
+isotope, isotopes
+ketone, ketones
+lattice, lattices
 litmus
-metal metals
-metalloid metalloids
+metal, metals
+metalloid, metalloids
 methane
-mixture mixtures
+mixture, mixtures
 molarity
-molecule molecules
-monomer monomers
-neutralisation neutralization
-nitrate nitrates
-nonmetal nonmetals
+molecule, molecules
+monomer, monomers
+neutralisation, neutralization
+nitrate, nitrates
+nonmetal, nonmetals
 oxidation
-oxide oxides
+oxide, oxides
 ozone
-phenol phenols
-polymer polymers
-precipitate precipitates
-product products
+phenol, phenols
+polymer, polymers
+precipitate, precipitates
+product, products
 propane
-reactant reactants
-reaction reactions
+reactant, reactants
+reaction, reactions
 reactivity
 redox
 reduction
-salt salts
+salt, salts
 saturated
 solubility
 soluble
-solute solutes
-solution solutions
-solvent solvents
+solute, solutes
+solution, solutions
+solvent, solvents
 stoichiometry
 sublimation
-substrate substrates
-sulphate sulfate sulphates sulfates
-suspension suspensions
+substrate, substrates
+sulphate, sulfate, sulphates, sulfates
+suspension, suspensions
 unsaturated
-valency valence valencies
+valency, valence, valencies
 volatile
 
 also:
 activationenergy
-alkalimetal alkalimetals
+alkalimetal, alkalimetals
 atomicmass
 atomicnumber
 carbondioxide
 carbonmonoxide
-covalentbond covalentbonds
-ionicbond ionicbonds
-noblegas noblegases
+covalentbond, covalentbonds
+ionicbond, ionicbonds
+noblegas, noblegases
 periodictable
-transitionmetal transitionmetals
+transitionmetal, transitionmetals

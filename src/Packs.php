@@ -5,8 +5,9 @@ declare(strict_types=1);
  * Word packs: themed vocabularies (Science, Law, Music...) for private worlds and competitions.
  *
  * - Curated packs are kept by hand in data/packs/<id>/ (pack.txt and one file per category,
- *   in the same format as data/categories/) and built into data/packs/<id>.php by
- *   scripts/build-dictionary.php. Hosts and organisers can use them.
+ *   much like data/categories/, with an answer's forms separated by commas) and built into
+ *   data/packs/<id>.php by scripts/build-dictionary.php. Hosts and organisers can use them.
+ *   They may list blocked words they need, playable only in their worlds.
  * - Custom packs are written by organisers on the site, kept in the packs table, and built
  *   when used (cached in the cache folder). Only their owner can use them.
  *
@@ -32,31 +33,46 @@ final class Packs
 
     /**
      * Builds a pack from its categories. Each line is one answer, listed with any other forms
-     * of it ("nucleus nuclei"); forms of words the everyday dictionary knows come along too
-     * ("acid" brings "acids"). Returns the words (everyday ones first, most common first, then
-     * the rest), the families, the categories, and any problems found.
+     * of it ("nucleus, nuclei"); forms of words the everyday dictionary knows come along too
+     * ("acid" brings "acids"). A form can be a phrase ("black hole"): it's played joined
+     * ("blackhole") and shown as written. Returns the words (everyday ones first, most common
+     * first, then the rest), the families, the categories, how phrases are written (joined word
+     * => written form), the blocked words the pack lists, and any problems found.
+     *
+     * Blocked words are refused, except in curated packs: the law pack needs its crimes, and
+     * they're playable only in its worlds (see Dictionary::onlyPack and withPack).
      *
      * @param array<string, array{label: string, words: string[][], also?: string[][]}> $groups
-     *   category id => label and lines (each line an array of forms)
+     *   category id => label and lines (each line an array of forms, as written)
      */
-    public static function build(array $groups, Dictionary $everyday, string $prefix): array
+    public static function build(array $groups, Dictionary $everyday, string $prefix, bool $curated = false): array
     {
         $problems = [];
         $families = [];   // Groups of words that are one answer.
         $categories = [];
+        $display = [];
+        $blocked = [];
         foreach ($groups as $id => $group) {
             $category = ['label' => $group['label'], 'words' => [], 'also' => [], 'answers' => 0];
             foreach (['words', 'also'] as $list) {
                 foreach ($group[$list] ?? [] as $forms) {
                     $kept = [];
-                    foreach ($forms as $form) {
-                        if (!preg_match('/^[a-z]{3,30}$/', $form)) {
-                            $problems[] = "“{$form}” isn't a word of 3–30 letters a to z";
-                        } elseif ($everyday->isBlocked($form)) {
-                            $problems[] = "“{$form}” is on the blocklist";
-                        } else {
-                            $kept[] = $form;
+                    foreach ($forms as $written) {
+                        $entry = Dictionary::entry($written);
+                        if ($entry === null) {
+                            $problems[] = "“{$written}” isn't a word of 3–30 letters a to z";
+                            continue;
                         }
+                        [$form, $written] = $entry;
+                        if ($everyday->isBlocked($form)) {
+                            if (!$curated) {
+                                $problems[] = "“{$written}” is on the blocklist";
+                                continue;
+                            }
+                            $blocked[$form] = true;
+                        }
+                        $kept[] = $form;
+                        if ($written !== $form) $display[$form] ??= $written;
                     }
                     if (!$kept) continue;
                     $family = $kept;
@@ -93,13 +109,49 @@ final class Packs
             'words' => $words,
             'families' => array_values(array_filter($grouped, fn ($f) => count($f) > 1)),
             'categories' => $categories,
+            'display' => $display,
+            'blocked' => array_keys($blocked),
             'problems' => array_values(array_unique($problems)),
         ];
     }
 
     /**
+     * An answer's forms from one line of a word list, as written. Separated by commas
+     * ("black hole, black holes"); without a comma, a custom pack's line is split on spaces
+     * instead ("quark quarks"), as custom packs were first written, but a curated pack's line
+     * is one form ("habeas corpus").
+     *
+     * @return string[]
+     */
+    public static function forms(string $line, bool $curated = false): array
+    {
+        $line = mb_strtolower($line);
+        $parts = $curated || str_contains($line, ',') ? explode(',', $line) : preg_split('/\s+/', $line);
+        return array_values(array_filter(array_map('trim', $parts), 'strlen'));
+    }
+
+    /**
+     * Reads one of a curated pack's category files (data/packs/<pack>/<id>.txt): its label, and
+     * its lines of forms before and after "also:".
+     *
+     * @param string[] $lines non-empty lines, comments removed
+     * @return array{label: ?string, words: string[][], also: string[][]}
+     */
+    public static function readCuratedFile(array $lines): array
+    {
+        $group = ['label' => null, 'words' => [], 'also' => []];
+        $list = 'words';
+        foreach ($lines as $line) {
+            if (str_starts_with($line, 'label:')) $group['label'] = trim(substr($line, 6));
+            elseif ($line === 'also:') $list = 'also';
+            elseif ($forms = self::forms($line, curated: true)) $group[$list][] = $forms;
+        }
+        return $group;
+    }
+
+    /**
      * Reads a custom pack's text: groups separated by blank lines, each a label line ("A planet")
-     * then one answer per line, with any other forms of it on the same line.
+     * then one answer per line, with any other forms of it on the same line (see forms()).
      *
      * @return array<string, array{label: string, words: string[][]}>
      */
@@ -113,7 +165,7 @@ final class Packs
             $label = mb_substr(array_shift($lines), 0, 60);
             $groups['c' . ++$n] = [
                 'label' => $label,
-                'words' => array_map(fn ($l) => preg_split('/[\s,]+/', mb_strtolower($l), -1, PREG_SPLIT_NO_EMPTY), $lines),
+                'words' => array_values(array_filter(array_map(fn ($l) => self::forms($l), $lines))),
             ];
         }
         return $groups;
@@ -279,8 +331,9 @@ final class Packs
         $stmt->execute([$id]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!$row) return null;
-        // Built once per change and kept in the cache folder, as building takes a moment.
-        $file = $this->cacheDir ? "{$this->cacheDir}/pack-$id-{$row['updated_at']}.json" : null;
+        // Built once per change and kept in the cache folder, as building takes a moment. (v2:
+        // built packs carry how phrases are written, and lines with commas split on them.)
+        $file = $this->cacheDir ? "{$this->cacheDir}/pack-$id-{$row['updated_at']}-v2.json" : null;
         $cached = $file ? json_decode((string) @file_get_contents($file), true) : null;
         if (!is_array($cached)) {
             $cached = ['name' => $row['name'], 'description' => $row['description']]
@@ -301,5 +354,11 @@ final class Packs
     public function name(string $id, Dictionary $everyday): ?string
     {
         return $this->load($id, $everyday)['name'] ?? null;
+    }
+
+    /** How the pack's phrases are written (joined word => written form), for showing its words. */
+    public function displayMap(string $id, Dictionary $everyday): array
+    {
+        return $this->load($id, $everyday)['display'] ?? [];
     }
 }

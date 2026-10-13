@@ -1,19 +1,19 @@
 label: A Latin or Law French legal term
 
-affidavit affidavits
-subpoena subpoenas subpoenaed
-alibi alibis
-alias aliases
-quorum quorums
+affidavit, affidavits
+subpoena, subpoenas, subpoenaed
+alibi, alibis
+alias, aliases
+quorum, quorums
 versus
 mandamus
 certiorari
 obiter
-dictum dicta
-amicus amici
-proviso provisos provisoes
-caveat caveats
-fiat fiats
+dictum, dicta
+amicus, amici
+proviso, provisos, provisoes
+caveat, caveats
+fiat, fiats
 nisi
 capias
 mittimus
@@ -28,8 +28,8 @@ laches
 venire
 lex
 jus
-delict delicts
-veto vetoes
+delict, delicts
+veto, vetoes
 
 also:
 puisne

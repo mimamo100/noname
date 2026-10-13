@@ -1,74 +1,74 @@
 label: A police or evidence term
 
-arrest arrests arrested
-interrogation interrogations
-lineup lineups
-mugshot mugshots
-fingerprint fingerprints
+arrest, arrests, arrested
+interrogation, interrogations
+lineup, lineups
+mugshot, mugshots
+fingerprint, fingerprints
 forensics
 evidence
-exhibit exhibits
+exhibit, exhibits
 hearsay
-proof proofs
-confession confessions
-motive motives
-clue clues
-seizure seizures
-raid raids
-stakeout stakeouts
+proof, proofs
+confession, confessions
+motive, motives
+clue, clues
+seizure, seizures
+raid, raids
+stakeout, stakeouts
 surveillance
-wiretap wiretaps
-detective detectives
-constable constables
-investigator investigators
-investigation investigations
+wiretap, wiretaps
+detective, detectives
+constable, constables
+investigator, investigators
+investigation, investigations
 police
-policeman policemen
-policewoman policewomen
-autopsy autopsies
-pathologist pathologists
+policeman, policemen
+policewoman, policewomen
+autopsy, autopsies
+pathologist, pathologists
 ballistics
 toxicology
-handcuffs handcuff
-truncheon truncheons
+handcuffs, handcuff
+truncheon, truncheons
 entrapment
-breathalyser breathalysers breathalyzer breathalyzers
-manhunt manhunts
-dragnet dragnets
-roadblock roadblocks
-profiler profilers
+breathalyser, breathalysers, breathalyzer, breathalyzers
+manhunt, manhunts
+dragnet, dragnets
+roadblock, roadblocks
+profiler, profilers
 corroboration
-bloodstain bloodstains
-ransom ransoms
+bloodstain, bloodstains
+ransom, ransoms
 contraband
 
 also:
-caution cautions
-charge charges charged
-interview interviews
-search searches
-sergeant sergeants
-inspector inspectors
-superintendent superintendents
-officer officers
-cop cops
-copper coppers
-bobby bobbies
-postmortem postmortems
+caution, cautions
+charge, charges, charged
+interview, interviews
+search, searches
+sergeant, sergeants
+inspector, inspectors
+superintendent, superintendents
+officer, officers
+cop, cops
+copper, coppers
+bobby, bobbies
+postmortem, postmortems
 cuffs
-baton batons
-lead leads
-tipoff tipoffs
-sting stings
+baton, batons
+lead, leads
+tipoff, tipoffs
+sting, stings
 undercover
-frisk frisks
-detain detains detained
+frisk, frisks
+detain, detains, detained
 fingerprinting
 profiling
 forensic
-admission admissions
-weapon weapons
+admission, admissions
+weapon, weapons
 loot
 swag
 footage
-sleuth sleuths
+sleuth, sleuths

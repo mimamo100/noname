@@ -1,7 +1,7 @@
 label: A chemical element
 
 actinium
-aluminium aluminum
+aluminium, aluminum
 americium
 antimony
 argon
@@ -15,7 +15,7 @@ bohrium
 boron
 bromine
 cadmium
-caesium cesium
+caesium, cesium
 calcium
 californium
 carbon
@@ -99,7 +99,7 @@ silicon
 silver
 sodium
 strontium
-sulphur sulfur
+sulphur, sulfur
 tantalum
 technetium
 tellurium

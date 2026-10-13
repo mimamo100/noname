@@ -1,80 +1,80 @@
 label: A dance or dance move
 
-waltz waltzes
-tango tangos
-foxtrot foxtrots
-quickstep quicksteps
-rumba rumbas
-samba sambas
-salsa salsas
-mambo mambos
-merengue merengues
-bachata bachatas
-lambada lambadas
-pasodoble pasodobles
-bolero boleros
-fandango fandangos
+waltz, waltzes
+tango, tangos
+foxtrot, foxtrots
+quickstep, quicksteps
+rumba, rumbas
+samba, sambas
+salsa, salsas
+mambo, mambos
+merengue, merengues
+bachata, bachatas
+lambada, lambadas
+pasodoble, pasodobles
+bolero, boleros
+fandango, fandangos
 flamenco
-tarantella tarantellas
-polka polkas
-mazurka mazurkas
-polonaise polonaises
-minuet minuets
-gavotte gavottes
-sarabande sarabandes
-gigue gigues
-galliard galliards
-pavane pavanes
-allemande allemandes
-courante courantes
-bourree bourrees
-quadrille quadrilles
-cotillion cotillions
-reel reels
-jig jigs
-hornpipe hornpipes
-strathspey strathspeys
+tarantella, tarantellas
+polka, polkas
+mazurka, mazurkas
+polonaise, polonaises
+minuet, minuets
+gavotte, gavottes
+sarabande, sarabandes
+gigue, gigues
+galliard, galliards
+pavane, pavanes
+allemande, allemandes
+courante, courantes
+bourree, bourrees
+quadrille, quadrilles
+cotillion, cotillions
+reel, reels
+jig, jigs
+hornpipe, hornpipes
+strathspey, strathspeys
 morris
 clogging
-hora horas
-haka hakas
-hula hulas
-limbo limbos
-conga congas
-charleston charlestons
-jitterbug jitterbugs
+hora, horas
+haka, hakas
+hula, hulas
+limbo, limbos
+conga, congas
+charleston, charlestons
+jitterbug, jitterbugs
 lindy
-jive jives jiving jived
-twist twists
-shimmy shimmies
-hustle hustles
-bump bumps
-boogie boogies boogieing boogied
-bop bops bopping bopped
-pogo pogos pogoing pogoed
-mosh moshes moshing moshed
-headbang headbangs headbanging headbanged
-skank skanks skanking skanked
-stomp stomps
-strut struts
+jive, jives, jiving, jived
+twist, twists
+shimmy, shimmies
+hustle, hustles
+bump, bumps
+boogie, boogies, boogieing, boogied
+bop, bops, bopping, bopped
+pogo, pogos, pogoing, pogoed
+mosh, moshes, moshing, moshed
+headbang, headbangs, headbanging, headbanged
+skank, skanks, skanking, skanked
+stomp, stomps
+strut, struts
 watusi
 frug
 madison
-boogaloo boogaloos
-breakdance breakdances breakdancing breakdanced
+boogaloo, boogaloos
+breakdance, breakdances, breakdancing, breakdanced
 popping
-krump krumping
-vogue voguing vogueing
-moonwalk moonwalks
-twerk twerks twerking twerked
-shuffle shuffles
-cakewalk cakewalks
-cancan cancans
-ballet ballets
+krump, krumping
+vogue, voguing, vogueing
+moonwalk, moonwalks
+twerk, twerks, twerking, twerked
+shuffle, shuffles
+cakewalk, cakewalks
+cancan, cancans
+ballet, ballets
 
 also:
-chacha chachas
-fling flings
+chacha, chachas
+fling, flings
 stroll
 pony
 swim
@@ -84,16 +84,16 @@ locomotion
 locking
 robot
 worm
-floss flossing
-dab dabs
-tap tapdance
-squaredance squaredances
-barndance barndances
+floss, flossing
+dab, dabs
+tap, tapdance
+squaredance, squaredances
+barndance, barndances
 hokeycokey
 airguitar
 handjive
-slowdance slowdances
-smooch smooches
+slowdance, slowdances
+smooch, smooches
 duckwalk
-windmill windmills
+windmill, windmills
 lindyhop

@@ -162,8 +162,16 @@ word-finder site. There are three kinds:
   multiplier already rises as a prompt runs dry; this gives the end of a small
   prompt a clear finish. Big world prompts mostly time out first.
 - **Spaces, hyphens and apostrophes are dropped** from what players type, so
-  "tea towel" and "T-shirt" play as *teatowel* and *tshirt* (the joined forms
-  are in categories' *also* lists where they fit).
+  "tea towel" and "T-shirt" play as *teatowel* and *tshirt*. The word files
+  list phrases the way people write them ("tea towel", "t-shirt", "habeas
+  corpus", "rock and roll"); the game stores and compares the joined form,
+  but **shows the written form** wherever a word reaches players: the feed,
+  Just said, Nobody said, Who said it?, My misses, the messages after a
+  guess, and best words in My games and shared results. The build keeps a
+  map from joined to written form (`display` in `data/dictionary.php` and
+  each `data/packs/<id>.php`; custom packs build their own), and
+  `Dictionary::display()` looks words up in it. Masking is decided on the
+  joined word, and a masked word is still shown masked.
 - **Typos are free**: a word that isn't in the dictionary costs nothing.
 - **Gaps in our lists are free too.** The game can't tell a real answer
   missing from its list from a wrong one, so it gives the benefit of the
@@ -245,7 +253,11 @@ Two lists, both hand-kept:
 - **Blocked** (`data/blocklist.txt`): slurs, strong swearing, sexual crimes
   and the most explicit acts. Blocked words, and the words formed from them
   (*fucking*), are removed from the dictionary, so they can never be played,
-  appear in a prompt or show in the feed.
+  appear in a prompt or show in the feed. One exception: a **curated pack**
+  may list blocked words it needs (the law pack's crimes, such as *rape* and
+  *incest*). They're playable in that pack's worlds only, and nowhere else.
+  Organisers' own packs can't list them, and no world lets one into a
+  nickname.
 - **Masked** (`data/masked.txt`): milder rude words, body and sex terms and
   sex work (*arse*, *bitch*, *penis*, *nipple*, *porn*, *whore*). They're
   ordinary answers: playable, scoring as usual, counted in "words left
@@ -368,10 +380,15 @@ a music quiz.
 
 - **Curated packs** (Science, Law, Music) are kept by hand in `data/packs/`
   (see its README), drafted by Claude and approved by the owner. Hosts and
-  organisers can use them.
+  organisers can use them. Each line is one answer, its forms separated by
+  commas ("black hole, black holes"); a form may be a phrase, shown as
+  written. They may list blocked words they need (see "Offensive words").
 - **Organisers' own packs** are written on the site (menu: My word packs): lists
   separated by blank lines, each a prompt line ("A planet") then one word per
-  line, with other forms of a word on the same line. At least 30 answers, at
+  line, with other forms of a word on the same line. A line with a comma is
+  split on commas, so it can hold phrases ("black hole, black holes"); a line
+  without one is split on spaces ("quark quarks"), as packs were first
+  written. Blocked words are refused. At least 30 answers, at
   most 5,000. Only their owner can use them. Words players report in a custom
   pack's worlds are shown to its owner in the pack editor, not to the admin;
   the admin page lists custom packs and can remove one (its worlds then play

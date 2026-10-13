@@ -297,7 +297,7 @@ try {
     $gameWith = fn (Dictionary $d) => new Game($db, $d, stateCache: $stateCache, awayAfterMs: $awayAfterMs, streaks: $streaks);
     $game = $gameWith($dictionary);
     $packs = new Packs($db, $cacheDir ?: null);
-    $lobby = new Lobby($db, $game, $config);
+    $lobby = new Lobby($db, $game, $config, packs: $packs);
     $private = new PrivateWorlds($db, $game);
     $competitions = new Competitions($db, $game);
     $auth = new Auth($db, new Mailer($config['mail'] ?? []), $dictionary);

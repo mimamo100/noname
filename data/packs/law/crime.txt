@@ -1,23 +1,23 @@
 label: A crime or offence
 
-murder murders
+murder, murders
 manslaughter
-homicide homicides
-theft thefts
-fraud frauds
-burglary burglaries
-robbery robberies
-assault assaults
+homicide, homicides
+theft, thefts
+fraud, frauds
+burglary, burglaries
+robbery, robberies
+assault, assaults
 battery
 arson
 blackmail
 bribery
-kidnapping kidnappings
-kidnap kidnaps
-abduction abductions
+kidnapping, kidnappings
+kidnap, kidnaps
+abduction, abductions
 extortion
 embezzlement
-forgery forgeries
+forgery, forgeries
 counterfeiting
 perjury
 treason
@@ -31,7 +31,7 @@ laundering
 larceny
 shoplifting
 affray
-riot riots
+riot, riots
 rioting
 harassment
 stalking
@@ -45,18 +45,18 @@ polygamy
 blasphemy
 bootlegging
 moonshining
-carjacking carjackings
-conspiracy conspiracies
+carjacking, carjackings
+conspiracy, conspiracies
 contempt
 corruption
-cybercrime cybercrimes
+cybercrime, cybercrimes
 cyberstalking
 deception
 desertion
 drunkenness
 genocide
-hijacking hijackings
-skyjacking skyjackings
+hijacking, hijackings
+skyjacking, skyjackings
 hooliganism
 housebreaking
 impersonation
@@ -64,15 +64,15 @@ incitement
 indecency
 obscenity
 infanticide
-infringement infringements
+infringement, infringements
 joyriding
 looting
 malfeasance
 misconduct
 malpractice
-misdemeanour misdemeanours misdemeanor misdemeanors
-felony felonies
-mugging muggings
+misdemeanour, misdemeanours, misdemeanor, misdemeanors
+felony, felonies
+mugging, muggings
 obstruction
 piracy
 poaching
@@ -89,10 +89,10 @@ voyeurism
 upskirting
 grooming
 molestation
-wounding woundings
+wounding, woundings
 maiming
-mutiny mutinies
-poisoning poisonings
+mutiny, mutinies
+poisoning, poisonings
 pickpocketing
 safecracking
 pilfering
@@ -103,16 +103,16 @@ misappropriation
 skimming
 possession
 intimidation
-harbouring harboring
+harbouring, harboring
 abetting
-assassination assassinations
+assassination, assassinations
 regicide
 patricide
 matricide
 fratricide
 parricide
 filicide
-lynching lynchings
+lynching, lynchings
 vigilantism
 torture
 slavery
@@ -142,31 +142,31 @@ littering
 jaywalking
 desecration
 sacrilege
-duelling dueling
+duelling, dueling
 usury
-heist heists
+heist, heists
 scrumping
 streaking
 insubordination
 
 also:
-crime crimes
-offence offences offense offenses
+crime, crimes
+offence, offences, offense, offenses
 dealing
 fencing
 nicking
 pinching
-holdup holdups
-stickup stickups
-shakedown shakedowns
-scam scams
-swindle swindles
-con cons
+holdup, holdups
+stickup, stickups
+shakedown, shakedowns
+scam, scams
+swindle, swindles
+con, cons
 hustle
 cheating
 attempt
-stabbing stabbings
-shooting shootings
+stabbing, stabbings
+shooting, shootings
 exposure
 plagiarism
 witchcraft
@@ -174,7 +174,7 @@ cannibalism
 euthanasia
 gambling
 wiretapping
-massacre massacres
+massacre, massacres
 flytipping
 drinkdriving
 insidertrading
@@ -183,7 +183,7 @@ identitytheft
 hostagetaking
 ramraiding
 lesemajesty
-warcrime warcrimes
+warcrime, warcrimes
 embracery
 misprision
 barratry

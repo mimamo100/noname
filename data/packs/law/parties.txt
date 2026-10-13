@@ -1,95 +1,95 @@
 label: A party or role in law
 
-defendant defendants
-claimant claimants
-plaintiff plaintiffs
-appellant appellants
-respondent respondents
-petitioner petitioners
-litigant litigants
+defendant, defendants
+claimant, claimants
+plaintiff, plaintiffs
+appellant, appellants
+respondent, respondents
+petitioner, petitioners
+litigant, litigants
 accused
-suspect suspects
-witness witnesses
-eyewitness eyewitnesses
-juror jurors
-jury juries
-juryman jurymen
-victim victims
-complainant complainants
-convict convicts convicted
-offender offenders
-criminal criminals
-felon felons
-culprit culprits
-perpetrator perpetrators
-accomplice accomplices
-accessory accessories
-abettor abettors abetter abetters
-informant informants
-informer informers
-whistleblower whistleblowers
-detainee detainees
-prisoner prisoners
-inmate inmates
-parolee parolees
-probationer probationers
-fugitive fugitives
-outlaw outlaws
-intervener interveners intervenor intervenors
-testator testators
-testatrix testatrices
-executor executors
-executrix executrices executrixes
-beneficiary beneficiaries
-legatee legatees
-devisee devisees
-heir heirs
-heiress heiresses
-trustee trustees
-settlor settlors
-grantor grantors
-grantee grantees
-guarantor guarantors
-surety sureties
-creditor creditors
-debtor debtors
-bankrupt bankrupts
-guardian guardians
-signatory signatories
-deponent deponents
-affiant affiants
-decedent decedents
-garnishee garnishees
-promisor promisors
-promisee promisees
-obligor obligors
-obligee obligees
-assignor assignors
-assignee assignees
-licensor licensors
-licensee licensees
-bailor bailors
-bailee bailees
-lessor lessors
-lessee lessees
-mortgagor mortgagors
-mortgagee mortgagees
+suspect, suspects
+witness, witnesses
+eyewitness, eyewitnesses
+juror, jurors
+jury, juries
+juryman, jurymen
+victim, victims
+complainant, complainants
+convict, convicts, convicted
+offender, offenders
+criminal, criminals
+felon, felons
+culprit, culprits
+perpetrator, perpetrators
+accomplice, accomplices
+accessory, accessories
+abettor, abettors, abetter, abetters
+informant, informants
+informer, informers
+whistleblower, whistleblowers
+detainee, detainees
+prisoner, prisoners
+inmate, inmates
+parolee, parolees
+probationer, probationers
+fugitive, fugitives
+outlaw, outlaws
+intervener, interveners, intervenor, intervenors
+testator, testators
+testatrix, testatrices
+executor, executors
+executrix, executrices, executrixes
+beneficiary, beneficiaries
+legatee, legatees
+devisee, devisees
+heir, heirs
+heiress, heiresses
+trustee, trustees
+settlor, settlors
+grantor, grantors
+grantee, grantees
+guarantor, guarantors
+surety, sureties
+creditor, creditors
+debtor, debtors
+bankrupt, bankrupts
+guardian, guardians
+signatory, signatories
+deponent, deponents
+affiant, affiants
+decedent, decedents
+garnishee, garnishees
+promisor, promisors
+promisee, promisees
+obligor, obligors
+obligee, obligees
+assignor, assignors
+assignee, assignees
+licensor, licensors
+licensee, licensees
+bailor, bailors
+bailee, bailees
+lessor, lessors
+lessee, lessees
+mortgagor, mortgagors
+mortgagee, mortgagees
 
 also:
-foreman foremen
-forewoman forewomen
-codefendant codefendants
-applicant applicants
-ward wards
-minor minors
-infant infants
-donor donors
-donee donees
-principal principals
-agent agents
+foreman, foremen
+forewoman, forewomen
+codefendant, codefendants
+applicant, applicants
+ward, wards
+minor, minors
+infant, infants
+donor, donors
+donee, donees
+principal, principals
+agent, agents
 intestate
 deceased
 insolvent
-transferor transferors
-transferee transferees
+transferor, transferors
+transferee, transferees
 nextofkin

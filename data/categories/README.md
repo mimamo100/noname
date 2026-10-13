@@ -19,11 +19,18 @@ sole
 - **Words before `also:`** are clear answers. They size prompts and are
   counted as "words left unsaid".
 - **Words after `also:`** are accepted but not counted: words that fit
-  through another meaning ("squash" as a sport), and two-word or hyphenated
-  phrases run together ("teatowel").
-- One lowercase word per line, in any order. Lines starting with `#` are
-  comments. Words must be in the dictionary (`data/words.txt` or
+  through another meaning ("squash" as a sport).
+- One lowercase word or phrase per line, in any order. Lines starting with
+  `#` are comments. Words must be in the dictionary (`data/words.txt` or
   `data/extra-words.txt`); others are ignored.
+- **Write phrases the way people write them**: `tea towel`, `t-shirt`,
+  `rock'n'roll`. A line may hold lowercase letters, spaces, hyphens and
+  apostrophes. The game drops the spaces, hyphens and apostrophes, as it does
+  from what players type, so the word played is the joined form (*teatowel*,
+  which must be 3 or more letters a to z, and is what goes in
+  `extra-words.txt`). Players see it as written, in the feed, the unsaid list
+  and everywhere else. If two files write the same phrase differently, the
+  build warns and uses the first.
 - **Plurals** count when their singular is listed, so add singulars. When
   removing a word, remove any plural listed too.
 - **UK and US spellings** are one answer: either spelling covers both.

@@ -1,67 +1,67 @@
 label: A part of a cell
 
-amyloplast amyloplasts
-axon axons
-capsule capsules
-centriole centrioles
-centromere centromeres
-centrosome centrosomes
-chloroplast chloroplasts
-chromatid chromatids
+amyloplast, amyloplasts
+axon, axons
+capsule, capsules
+centriole, centrioles
+centromere, centromeres
+centrosome, centrosomes
+chloroplast, chloroplasts
+chromatid, chromatids
 chromatin
-chromoplast chromoplasts
-chromosome chromosomes
-cilium cilia
-crista cristae
-cytoplasm cytoplasms
-cytoskeleton cytoskeletons
+chromoplast, chromoplasts
+chromosome, chromosomes
+cilium, cilia
+crista, cristae
+cytoplasm, cytoplasms
+cytoskeleton, cytoskeletons
 cytosol
-dendrite dendrites
-desmosome desmosomes
-endosome endosomes
-flagellum flagella
+dendrite, dendrites
+desmosome, desmosomes
+endosome, endosomes
+flagellum, flagella
 glycocalyx
-glyoxysome glyoxysomes
-granum grana
-leucoplast leucoplasts
-lysosome lysosomes
-membrane membranes
-microfilament microfilaments
-microtubule microtubules
-microvillus microvilli
-mitochondrion mitochondria
-nucleoid nucleoids
-nucleolus nucleoli
+glyoxysome, glyoxysomes
+granum, grana
+leucoplast, leucoplasts
+lysosome, lysosomes
+membrane, membranes
+microfilament, microfilaments
+microtubule, microtubules
+microvillus, microvilli
+mitochondrion, mitochondria
+nucleoid, nucleoids
+nucleolus, nucleoli
 nucleoplasm
-nucleus nuclei
-organelle organelles
-pellicle pellicles
-peroxisome peroxisomes
-pilus pili
-plasmid plasmids
-plasmodesma plasmodesmata
-plastid plastids
-proteasome proteasomes
-pseudopod pseudopods pseudopodium pseudopodia
-ribosome ribosomes
-sarcomere sarcomeres
+nucleus, nuclei
+organelle, organelles
+pellicle, pellicles
+peroxisome, peroxisomes
+pilus, pili
+plasmid, plasmids
+plasmodesma, plasmodesmata
+plastid, plastids
+proteasome, proteasomes
+pseudopod, pseudopods, pseudopodium, pseudopodia
+ribosome, ribosomes
+sarcomere, sarcomeres
 stroma
-thylakoid thylakoids
-tonoplast tonoplasts
-vacuole vacuoles
-vesicle vesicles
-wall walls
+thylakoid, thylakoids
+tonoplast, tonoplasts
+vacuole, vacuoles
+vesicle, vesicles
+wall, walls
 
 also:
-cellmembrane cellmembranes
-cellwall cellwalls
+cellmembrane, cellmembranes
+cellwall, cellwalls
 endoplasmicreticulum
 golgiapparatus
-golgibody golgibodies
-nuclearenvelope nuclearenvelopes
-nuclearmembrane nuclearmembranes
-nuclearpore nuclearpores
-plasmamembrane plasmamembranes
-reticulum reticula
+golgibody, golgibodies
+nuclearenvelope, nuclearenvelopes
+nuclearmembrane, nuclearmembranes
+nuclearpore, nuclearpores
+plasmamembrane, plasmamembranes
+reticulum, reticula
 roughendoplasmicreticulum
 smoothendoplasmicreticulum

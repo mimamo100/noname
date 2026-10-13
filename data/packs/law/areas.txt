@@ -1,11 +1,11 @@
 label: An area of law
 
-tort torts
+tort, torts
 criminal
 civil
 family
 employment
-labour labor
+labour, labor
 commercial
 corporate
 constitutional

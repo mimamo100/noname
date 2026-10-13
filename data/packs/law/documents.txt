@@ -1,69 +1,69 @@
 label: A legal document
 
-deed deeds
-will wills
-writ writs
-warrant warrants
-summons summonses
-injunction injunctions
-contract contracts
-codicil codicils
-testament testaments
-indictment indictments
-charter charters
-statute statutes
+deed, deeds
+will, wills
+writ, writs
+warrant, warrants
+summons, summonses
+injunction, injunctions
+contract, contracts
+codicil, codicils
+testament, testaments
+indictment, indictments
+charter, charters
+statute, statutes
 legislation
-bylaw bylaws byelaw byelaws
-ordinance ordinances
-regulation regulations
-decree decrees
-edict edicts
-directive directives
-treaty treaties
-constitution constitutions
-amendment amendments
-declaration declarations
-deposition depositions
-transcript transcripts
-pleading pleadings
-brief briefs
-memorandum memoranda memorandums
-docket dockets
-indenture indentures
-certificate certificates
-permit permits
-agreement agreements
-prenup prenups
-petition petitions
-disclaimer disclaimers
-interrogatory interrogatories
+bylaw, bylaws, byelaw, byelaws
+ordinance, ordinances
+regulation, regulations
+decree, decrees
+edict, edicts
+directive, directives
+treaty, treaties
+constitution, constitutions
+amendment, amendments
+declaration, declarations
+deposition, depositions
+transcript, transcripts
+pleading, pleadings
+brief, briefs
+memorandum, memoranda, memorandums
+docket, dockets
+indenture, indentures
+certificate, certificates
+permit, permits
+agreement, agreements
+prenup, prenups
+petition, petitions
+disclaimer, disclaimers
+interrogatory, interrogatories
 
 also:
-bill bills
-act acts
-law laws
-rule rules
-order orders
-notice notices
-claim claims
-complaint complaints
-citation citations
-statement statements
-bond bonds
-undertaking undertakings
-proxy proxies
-mandate mandates
-instrument instruments
-abstract abstracts
-attestation attestations
-register registers
-roll rolls
-minute minutes
-dossier dossiers
-bundle bundles
-skeleton skeletons
+bill, bills
+act, acts
+law, laws
+rule, rules
+order, orders
+notice, notices
+claim, claims
+complaint, complaints
+citation, citations
+statement, statements
+bond, bonds
+undertaking, undertakings
+proxy, proxies
+mandate, mandates
+instrument, instruments
+abstract, abstracts
+attestation, attestations
+register, registers
+roll, rolls
+minute, minutes
+dossier, dossiers
+bundle, bundles
+skeleton, skeletons
 particulars
-release releases
-report reports
+release, releases
+report, reports
 powerofattorney
 ceaseanddesist

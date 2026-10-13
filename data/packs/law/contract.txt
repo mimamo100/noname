@@ -1,64 +1,64 @@
 label: A contract or business law term
 
-offer offers
+offer, offers
 acceptance
 consideration
-breach breaches
-warranty warranties
-indemnity indemnities
-clause clauses
-condition conditions
+breach, breaches
+warranty, warranties
+indemnity, indemnities
+clause, clauses
+condition, conditions
 termination
 rescission
-misrepresentation misrepresentations
+misrepresentation, misrepresentations
 frustration
 repudiation
 novation
-assignment assignments
-waiver waivers
+assignment, assignments
+waiver, waivers
 damages
-remedy remedies
-liability liabilities
-guarantee guarantees guaranty guaranties
+remedy, remedies
+liability, liabilities
+guarantee, guarantees, guaranty, guaranties
 collateral
-licence licences license licenses
-royalty royalties
-copyright copyrights
-trademark trademarks
-patent patents
-franchise franchises
-partnership partnerships
+licence, licences, license, licenses
+royalty, royalties
+copyright, copyrights
+trademark, trademarks
+patent, patents
+franchise, franchises
+partnership, partnerships
 incorporation
-merger mergers
-takeover takeovers
+merger, mergers
+takeover, takeovers
 liquidation
 receivership
 dissolution
-shareholder shareholders
-fiduciary fiduciaries
+shareholder, shareholders
+fiduciary, fiduciaries
 subrogation
 garnishment
-retainer retainers
+retainer, retainers
 duress
 privity
 rectification
 severability
-counteroffer counteroffers
+counteroffer, counteroffers
 revocation
-obligation obligations
-debenture debentures
-bailment bailments
-consignment consignments
+obligation, obligations
+debenture, debentures
+bailment, bailments
+consignment, consignments
 voidable
 unenforceable
 unconscionability
 
 also:
-term terms
-company companies
-acquisition acquisitions
+term, terms
+company, companies
+acquisition, acquisitions
 administration
-director directors
+director, directors
 agency
 setoff
 tender
@@ -70,9 +70,9 @@ exclusion
 limitation
 lapse
 invitation
-promise promises
+promise, promises
 security
-pledge pledges
+pledge, pledges
 hirepurchase
 articles
 void

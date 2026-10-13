@@ -1,9 +1,9 @@
 label: A tempo or dynamics marking
 
 allegro
-adagio adagios
-andante andantes
-largo largos
+adagio, adagios
+andante, andantes
+largo, largos
 lento
 presto
 vivace
@@ -23,16 +23,16 @@ fortissimo
 piano
 pianissimo
 sforzando
-crescendo crescendos crescendi
-diminuendo diminuendos
-decrescendo decrescendos
+crescendo, crescendos, crescendi
+diminuendo, diminuendos
+decrescendo, decrescendos
 staccato
 legato
 pizzicato
 arco
 tenuto
 marcato
-fermata fermatas
+fermata, fermatas
 dolce
 cantabile
 espressivo
@@ -66,4 +66,4 @@ mezzopiano
 dacapo
 dalsegno
 fine
-accent accents
+accent, accents

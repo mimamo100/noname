@@ -1,39 +1,39 @@
 label: A punishment or sentence
 
-fine fines
+fine, fines
 probation
 parole
 custody
 imprisonment
 incarceration
-detention detentions
-curfew curfews
+detention, detentions
+curfew, curfews
 tagging
-execution executions
-hanging hangings
-beheading beheadings
+execution, executions
+hanging, hangings
+beheading, beheadings
 decapitation
-guillotine guillotines
+guillotine, guillotines
 gallows
-crucifixion crucifixions
-flogging floggings
-whipping whippings
-caning canings
+crucifixion, crucifixions
+flogging, floggings
+whipping, whippings
+caning, canings
 birching
-pillory pillories
+pillory, pillories
 transportation
 banishment
 exile
-deportation deportations
+deportation, deportations
 outlawry
 attainder
-forfeiture forfeitures
+forfeiture, forfeitures
 confiscation
-penalty penalties
+penalty, penalties
 restitution
-reparation reparations
+reparation, reparations
 disqualification
-reprimand reprimands
+reprimand, reprimands
 admonishment
 censure
 disbarment
@@ -42,18 +42,18 @@ confinement
 internment
 stoning
 branding
-gibbet gibbets
+gibbet, gibbets
 retribution
 rehabilitation
 
 also:
 amercement
-punishment punishments
-sentence sentences sentenced
+punishment, punishments
+sentence, sentences, sentenced
 compensation
-ban bans
+ban, bans
 suspension
-warning warnings
+warning, warnings
 expulsion
 electrocution
 stocks

@@ -1,112 +1,112 @@
 label: A biology or genetics term
 
-adaptation adaptations
-allele alleles
-amoeba amoebae amoebas
-antibody antibodies
-antigen antigens
-artery arteries
-bacterium bacteria
+adaptation, adaptations
+allele, alleles
+amoeba, amoebae, amoebas
+antibody, antibodies
+antigen, antigens
+artery, arteries
+bacterium, bacteria
 biodiversity
-biome biomes
+biome, biomes
 camouflage
-capillary capillaries
-carbohydrate carbohydrates
-carnivore carnivores
-cell cells
+capillary, capillaries
+carbohydrate, carbohydrates
+carnivore, carnivores
+cell, cells
 chlorophyll
-clone clones
-codon codons
-consumer consumers
-decomposer decomposers
+clone, clones
+codon, codons
+consumer, consumers
+decomposer, decomposers
 diffusion
 digestion
 diploid
 dominant
-ecosystem ecosystems
-egg eggs
-embryo embryos
-enzyme enzymes
+ecosystem, ecosystems
+egg, eggs
+embryo, embryos
+enzyme, enzymes
 evolution
 excretion
-extinction extinctions
-fertilisation fertilization
-foetus fetus foetuses fetuses
-fungus fungi funguses
-gamete gametes
-gene genes
-genome genomes
-genotype genotypes
+extinction, extinctions
+fertilisation, fertilization
+foetus, fetus, foetuses, fetuses
+fungus, fungi, funguses
+gamete, gametes
+gene, genes
+genome, genomes
+genotype, genotypes
 germination
-gland glands
+gland, glands
 glucose
-habitat habitats
+habitat, habitats
 haploid
-herbivore herbivores
+herbivore, herbivores
 heredity
 homeostasis
-hormone hormones
-host hosts
+hormone, hormones
+host, hosts
 inheritance
 insulin
-invertebrate invertebrates
-larva larvae
+invertebrate, invertebrates
+larva, larvae
 meiosis
 metabolism
 metamorphosis
-microbe microbes
-microorganism microorganisms
+microbe, microbes
+microorganism, microorganisms
 mitosis
-mutation mutations
+mutation, mutations
 mutualism
-neuron neurons neurone neurones
-nucleotide nucleotides
-nutrient nutrients
-omnivore omnivores
-organ organs
-organism organisms
+neuron, neurons, neurone, neurones
+nucleotide, nucleotides
+nutrient, nutrients
+omnivore, omnivores
+organ, organs
+organism, organisms
 osmosis
-parasite parasites
-pathogen pathogens
-phenotype phenotypes
+parasite, parasites
+pathogen, pathogens
+phenotype, phenotypes
 photosynthesis
 pollen
 pollination
-population populations
-predator predators
+population, populations
+predator, predators
 prey
-producer producers
-protein proteins
-protist protists
+producer, producers
+protein, proteins
+protist, protists
 recessive
 replication
 reproduction
 respiration
 saliva
 species
-sperm sperms
-spore spores
-stamen stamens
-stoma stomata
+sperm, sperms
+spore, spores
+stamen, stamens
+stoma, stomata
 symbiosis
-synapse synapses
-tissue tissues
+synapse, synapses
+tissue, tissues
 transcription
 translation
 transpiration
-vaccine vaccines
-vein veins
-vertebrate vertebrates
-virus viruses
-zygote zygotes
+vaccine, vaccines
+vein, veins
+vertebrate, vertebrates
+virus, viruses
+zygote, zygotes
 heterozygous
 homozygous
 
 also:
 deoxyribonucleicacid
 doublehelix
-foodchain foodchains
-foodweb foodwebs
+foodchain, foodchains
+foodweb, foodwebs
 naturalselection
 ribonucleicacid
-stemcell stemcells
+stemcell, stemcells

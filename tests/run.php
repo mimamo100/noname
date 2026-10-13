@@ -81,6 +81,7 @@ require __DIR__ . '/HousekeepingTest.php';
 require __DIR__ . '/PrivateWorldsTest.php';
 require __DIR__ . '/CompetitionsTest.php';
 require __DIR__ . '/PacksTest.php';
+require __DIR__ . '/PhrasesTest.php';
 require __DIR__ . '/AuthTest.php';
 require __DIR__ . '/StreaksTest.php';
 require __DIR__ . '/ApiTest.php';

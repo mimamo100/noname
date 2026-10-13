@@ -1,106 +1,106 @@
 label: A courtroom or trial term
 
-trial trials
-verdict verdicts
-appeal appeals appealed
-hearing hearings
-plea pleas
-plead pleads pleaded pled
+trial, trials
+verdict, verdicts
+appeal, appeals, appealed
+hearing, hearings
+plea, pleas
+plead, pleads, pleaded, pled
 bail
-remand remands remanded
-conviction convictions
-acquittal acquittals
-acquit acquits acquitted
+remand, remands, remanded
+conviction, convictions
+acquittal, acquittals
+acquit, acquits, acquitted
 sentencing
-mistrial mistrials
-retrial retrials
-testimony testimonies
-testify testifies testified
-deliberation deliberations
-adjournment adjournments
-adjourn adjourns adjourned
-objection objections
-overrule overrules overruled
-dismissal dismissals
-prosecution prosecutions
-defence defences defense defenses
+mistrial, mistrials
+retrial, retrials
+testimony, testimonies
+testify, testifies, testified
+deliberation, deliberations
+adjournment, adjournments
+adjourn, adjourns, adjourned
+objection, objections
+overrule, overrules, overruled
+dismissal, dismissals
+prosecution, prosecutions
+defence, defences, defense, defenses
 litigation
-lawsuit lawsuits
-sue sues sued
-proceeding proceedings
-judgment judgments judgement judgements
-ruling rulings
-precedent precedents
-jurisdiction jurisdictions
-settlement settlements
-oath oaths
-affirmation affirmations
+lawsuit, lawsuits
+sue, sues, sued
+proceeding, proceedings
+judgment, judgments, judgement, judgements
+ruling, rulings
+precedent, precedents
+jurisdiction, jurisdictions
+settlement, settlements
+oath, oaths
+affirmation, affirmations
 disclosure
-arraignment arraignments
-indict indicts indicted
-exoneration exonerations
-pardon pardons pardoned
-reprieve reprieves
-commutation commutations
+arraignment, arraignments
+indict, indicts, indicted
+exoneration, exonerations
+pardon, pardons, pardoned
+reprieve, reprieves
+commutation, commutations
 clemency
-amnesty amnesties
-quash quashes quashed
-summation summations
-adjudication adjudications
+amnesty, amnesties
+quash, quashes, quashed
+summation, summations
+adjudication, adjudications
 arbitration
 mediation
 conciliation
-inquest inquests
-empanel empanels empanelled empaneled impanel impanels impanelled impaneled
-recusal recusals
-continuance continuances
-nonsuit nonsuits
-discontinuance discontinuances
-joinder joinders
-counterclaim counterclaims
-rejoinder rejoinders
-rebuttal rebuttals
-demurrer demurrers
+inquest, inquests
+empanel, empanels, empanelled, empaneled, impanel, impanels, impanelled, impaneled
+recusal, recusals
+continuance, continuances
+nonsuit, nonsuits
+discontinuance, discontinuances
+joinder, joinders
+counterclaim, counterclaims
+rejoinder, rejoinders
+rebuttal, rebuttals
+demurrer, demurrers
 admissibility
-recognizance recognizances recognisance recognisances
-gavel gavels
+recognizance, recognizances, recognisance, recognisances
+gavel, gavels
 
 also:
-sustain sustains sustained
-prosecute prosecutes prosecuted
-litigate litigates litigated
-arraign arraigns arraigned
-recuse recuses recused
+sustain, sustains, sustained
+prosecute, prosecutes, prosecuted
+litigate, litigates, litigated
+arraign, arraigns, arraigned
+recuse, recuses, recused
 crossexamination
 examination
 summingup
-recess recesses
-suit suits
-case cases
-action actions
-decision decisions
+recess, recesses
+suit, suits
+case, cases
+action, actions
+decision, decisions
 costs
 discovery
 leave
-overturn overturns overturned
-uphold upholds upheld
-reversal reversals
+overturn, overturns, overturned
+uphold, upholds, upheld
+reversal, reversals
 vacate
 hung
 deadlock
 opening
 closing
-submission submissions
-argument arguments
-motion motions
-inquiry inquiries enquiry enquiries
-stay stays
+submission, submissions
+argument, arguments
+motion, motions
+inquiry, inquiries, enquiry, enquiries
+stay, stays
 default
 severance
 withdrawal
-crossclaim crossclaims
+crossclaim, crossclaims
 pleabargain
 voirdire
-wig wigs
-gown gowns
-robe robes
+wig, wigs
+gown, gowns
+robe, robes

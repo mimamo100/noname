@@ -14,7 +14,7 @@ reggae
 ska
 indie
 emo
-shoegaze shoegazing
+shoegaze, shoegazing
 goth
 blues
 jazz
@@ -84,7 +84,7 @@ ambient
 chillout
 jungle
 breakbeat
-gabba gabber
+gabba, gabber
 rave
 dancehall
 ragga

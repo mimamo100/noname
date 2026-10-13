@@ -1,75 +1,75 @@
 label: Gigs, concerts and festivals
 
-gig gigs gigging gigged
-concert concerts
-recital recitals
-tour tours touring toured
-festival festivals
-fest fests
-encore encores
-soundcheck soundchecks
-rehearsal rehearsals
-audition auditions
-residency residencies
-headliner headliners
-setlist setlists
-stage stages
+gig, gigs, gigging, gigged
+concert, concerts
+recital, recitals
+tour, tours, touring, toured
+festival, festivals
+fest, fests
+encore, encores
+soundcheck, soundchecks
+rehearsal, rehearsals
+audition, auditions
+residency, residencies
+headliner, headliners
+setlist, setlists
+stage, stages
 backstage
-venue venues
-arena arenas
-stadium stadiums stadia
-auditorium auditoriums auditoria
-bandstand bandstands
-amphitheatre amphitheatres amphitheater amphitheaters
-nightclub nightclubs
-crowd crowds
-audience audiences
-ticket tickets
-wristband wristbands
+venue, venues
+arena, arenas
+stadium, stadiums, stadia
+auditorium, auditoriums, auditoria
+bandstand, bandstands
+amphitheatre, amphitheatres, amphitheater, amphitheaters
+nightclub, nightclubs
+crowd, crowds
+audience, audiences
+ticket, tickets
+wristband, wristbands
 merch
 merchandise
-busk busks busking busked
-jam jams jamming jammed
-showcase showcases
-matinee matinees
-premiere premieres
-comeback comebacks
-hiatus hiatuses
-heckle heckles heckling heckled
-heckler hecklers
-ovation ovations
+busk, busks, busking, busked
+jam, jams, jamming, jammed
+showcase, showcases
+matinee, matinees
+premiere, premieres
+comeback, comebacks
+hiatus, hiatuses
+heckle, heckles, heckling, heckled
+heckler, hecklers
+ovation, ovations
 applause
-guestlist guestlists
+guestlist, guestlists
 pyrotechnics
 pyro
-sellout sellouts
-eisteddfod eisteddfods eisteddfodau
-ceilidh ceilidhs
-hootenanny hootenannies
-singsong singsongs
+sellout, sellouts
+eisteddfod, eisteddfods, eisteddfodau
+ceilidh, ceilidhs
+hootenanny, hootenannies
+singsong, singsongs
 karaoke
-livestream livestreams
+livestream, livestreams
 
 also:
-jamsession jamsessions
-reunion reunions
-moshpit moshpits
-pit pits
-stagedive stagedives stagediving
-crowdsurf crowdsurfing
-greenroom greenrooms
-aftershow aftershows
-afterparty afterparties
-openmic openmics
+jamsession, jamsessions
+reunion, reunions
+moshpit, moshpits
+pit, pits
+stagedive, stagedives, stagediving
+crowdsurf, crowdsurfing
+greenroom, greenrooms
+aftershow, aftershows
+afterparty, afterparties
+openmic, openmics
 support
-opener openers
-rider riders
-tourbus tourbuses
-curfew curfews
+opener, openers
+rider, riders
+tourbus, tourbuses
+curfew, curfews
 soldout
 unplugged
-prom proms
-benefit benefits
-operahouse operahouses
-concerthall concerthalls
-set sets
+prom, proms
+benefit, benefits
+operahouse, operahouses
+concerthall, concerthalls
+set, sets

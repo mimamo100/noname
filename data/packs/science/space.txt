@@ -1,69 +1,69 @@
 label: Something in space
 
-asterism asterisms
-asteroid asteroids
-aurora auroras aurorae
-binary binaries
-blazar blazars
-bolide bolides
-centaur centaurs
-cluster clusters
-comet comets
-constellation constellations
-corona coronas coronae
+asterism, asterisms
+asteroid, asteroids
+aurora, auroras, aurorae
+binary, binaries
+blazar, blazars
+bolide, bolides
+centaur, centaurs
+cluster, clusters
+comet, comets
+constellation, constellations
+corona, coronas, coronae
 cosmos
-dwarf dwarfs dwarves
+dwarf, dwarfs, dwarves
 earth
-eclipse eclipses
-exomoon exomoons
-exoplanet exoplanets
-fireball fireballs
-flare flares
-galaxy galaxies
-heliosphere heliospheres
-hypernova hypernovae hypernovas
+eclipse, eclipses
+exomoon, exomoons
+exoplanet, exoplanets
+fireball, fireballs
+flare, flares
+galaxy, galaxies
+heliosphere, heliospheres
+hypernova, hypernovae, hypernovas
 jupiter
-magnetar magnetars
-magnetosphere magnetospheres
+magnetar, magnetars
+magnetosphere, magnetospheres
 mars
-meteor meteors
-meteorite meteorites
-meteoroid meteoroids
-moon moons
-moonlet moonlets
-nebula nebulae nebulas
+meteor, meteors
+meteorite, meteorites
+meteoroid, meteoroids
+moon, moons
+moonlet, moonlets
+nebula, nebulae, nebulas
 neptune
-nova novae novas
-planet planets
-planetesimal planetesimals
-planetoid planetoids
+nova, novae, novas
+planet, planets
+planetesimal, planetesimals
+planetoid, planetoids
 pluto
-protostar protostars
-pulsar pulsars
-quasar quasars
-satellite satellites
+protostar, protostars
+pulsar, pulsars
+quasar, quasars
+satellite, satellites
 saturn
-singularity singularities
-star stars
-sun suns
-sunspot sunspots
-supercluster superclusters
-supergiant supergiants
-supernova supernovae supernovas
-universe universes
+singularity, singularities
+star, stars
+sun, suns
+sunspot, sunspots
+supercluster, superclusters
+supergiant, supergiants
+supernova, supernovae, supernovas
+universe, universes
 uranus
 venus
-void voids
-wormhole wormholes
+void, voids
+wormhole, wormholes
 mercury
 
 also:
-asteroidbelt asteroidbelts
-blackhole blackholes
-browndwarf browndwarfs
-meteorshower meteorshowers
+asteroidbelt, asteroidbelts
+blackhole, blackholes
+browndwarf, browndwarfs
+meteorshower, meteorshowers
 milkyway
-neutronstar neutronstars
-redgiant redgiants
+neutronstar, neutronstars
+redgiant, redgiants
 solarwind
-whitedwarf whitedwarfs
+whitedwarf, whitedwarfs

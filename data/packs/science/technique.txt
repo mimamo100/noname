@@ -1,48 +1,48 @@
 label: A laboratory technique or process
 
-aliquot aliquots
+aliquot, aliquots
 amplification
 annealing
-assay assays
+assay, assays
 autoclaving
 blotting
-calibration calibrations
+calibration, calibrations
 calorimetry
 centrifugation
 chromatography
 cloning
 colorimetry
 condensing
-crystallisation crystallization
-culture cultures
+crystallisation, crystallization
+culture, cultures
 decanting
 dialysis
-dilution dilutions
-dissection dissections
+dilution, dilutions
+dissection, dissections
 distillation
 electrophoresis
 electroporation
 evaporation
-experiment experiments
-extraction extractions
+experiment, experiments
+extraction, extractions
 filtration
 fractionation
 freezing
 grinding
 heating
-hypothesis hypotheses
+hypothesis, hypotheses
 imaging
 incubation
 inoculation
-measurement measurements
+measurement, measurements
 microscopy
-observation observations
-pasteurisation pasteurization
+observation, observations
+pasteurisation, pasteurization
 pipetting
 plating
 purification
 radiography
-recrystallisation recrystallization
+recrystallisation, recrystallization
 reflux
 sampling
 sedimentation
@@ -52,9 +52,9 @@ sieving
 sonication
 spectrophotometry
 staining
-sterilisation sterilization
+sterilisation, sterilization
 stirring
-titration titrations
+titration, titrations
 transfection
 weighing
 

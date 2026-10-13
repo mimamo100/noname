@@ -15,8 +15,12 @@ final class Dictionary
     private array $categories;
     /** @var array<string, array<string, true>> category id => every accepted word */
     private array $categorySets = [];
-    /** @var array<string, true> */
+    /** @var array<string, true> every blocked word (nicknames are checked against all of them) */
     private array $blocked;
+    /** @var array<string, true> blocked words a curated pack lists, playable in its worlds */
+    private array $allowed;
+    /** @var array<string, string> joined word => how it's written, for words written differently ("teatowel" => "tea towel") */
+    private array $display;
     /** @var array<string, true> playable, but shown masked to other players */
     private array $masked;
     /** @var array{usOnly: string[], ukOnly: string[], partners: array<string, string[]>} */
@@ -28,9 +32,14 @@ final class Dictionary
      * @param array<string, array{label: string, words: string[]}> $categories
      * @param string[] $blocked
      * @param string[] $masked
+     * @param array<string, string> $display joined word => written form
+     * @param string[] $allowed blocked words that are playable here (a curated pack's own)
      */
-    public function __construct(array $words, array $families, array $categories = [], array $blocked = [], array $spelling = [], array $masked = [])
+    public function __construct(array $words, array $families, array $categories = [], array $blocked = [], array $spelling = [], array $masked = [],
+        array $display = [], array $allowed = [])
     {
+        $this->display = $display;
+        $this->allowed = array_fill_keys($allowed, true);
         $this->masked = array_fill_keys($masked, true);
         $this->spelling = $spelling + ['usOnly' => [], 'ukOnly' => [], 'partners' => []];
         $this->words = $words;
@@ -46,17 +55,73 @@ final class Dictionary
     public static function load(?string $path = null): self
     {
         $data = require $path ?? dirname(__DIR__) . '/data/dictionary.php';
-        return new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? [], $data['masked'] ?? []);
+        return new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? [], $data['masked'] ?? [],
+            $data['display'] ?? []);
+    }
+
+    /**
+     * A word as it's played: lower case, with spaces, hyphens and apostrophes (straight or
+     * curly) dropped, so "tea towel" and "T-shirt" are teatowel and tshirt.
+     */
+    public static function joined(string $written): string
+    {
+        return strtolower(preg_replace("/[\\s\\-'\u{2018}\u{2019}]+/u", '', $written) ?? '');
+    }
+
+    /**
+     * An entry in a word file, as written ("tea towel", "t-shirt", "rock'n'roll"): the joined
+     * word and the written form tidied (lower case, single spaces), or null if the joined word
+     * isn't 3–30 letters a to z.
+     *
+     * @return array{0: string, 1: string}|null
+     */
+    public static function entry(string $written): ?array
+    {
+        $written = preg_replace('/\s+/u', ' ', mb_strtolower(trim($written)));
+        $joined = self::joined($written);
+        return preg_match('/^[a-z]{3,30}$/', $joined) ? [$joined, $written] : null;
+    }
+
+    /**
+     * Reads a meaning category file (see data/categories/README.md): its label, the categories
+     * it includes, its words and "also" words (keyed by the joined word), and how the phrases
+     * among them are written. Throws with the reason if a line can't be read.
+     *
+     * @param string[] $lines non-empty lines, comments removed
+     * @return array{label: ?string, includes: string[], words: array<string, true>, also: array<string, true>, display: array<string, string>}
+     */
+    public static function readCategory(array $lines): array
+    {
+        $category = ['label' => null, 'words' => [], 'also' => [], 'includes' => [], 'display' => []];
+        $list = 'words';
+        foreach ($lines as $line) {
+            if (str_starts_with($line, 'label:')) {
+                $category['label'] = trim(substr($line, 6));
+            } elseif (str_starts_with($line, 'includes:')) {
+                $category['includes'] = preg_split('/\s+/', trim(substr($line, 9)), -1, PREG_SPLIT_NO_EMPTY);
+            } elseif ($line === 'also:') {
+                $list = 'also';
+            } elseif (preg_match("/^[a-z][a-z \\-'\u{2018}\u{2019}]*$/u", $line) && ($entry = self::entry($line))) {
+                [$joined, $written] = $entry;
+                $category[$list][$joined] = true;
+                if ($written !== $joined) $category['display'][$joined] ??= $written;
+            } else {
+                throw new InvalidArgumentException("\"$line\" must be one lowercase word or phrase: letters, with any spaces, hyphens or apostrophes, and 3 or more letters");
+            }
+        }
+        return $category;
     }
 
     /**
      * A dictionary of just a word pack's words (see Packs), with its categories. The blocklist,
-     * masking and UK/US spellings stay as they are.
+     * masking and UK/US spellings stay as they are, except that blocked words a curated pack
+     * lists (the law pack's crimes) are playable in its worlds.
      */
     public function onlyPack(array $pack): self
     {
         return new self($pack['words'], self::keyedFamilies($pack['families']), $pack['categories'],
-            array_keys($this->blocked), $this->spelling, array_keys($this->masked));
+            array_keys($this->blocked), $this->spelling, array_keys($this->masked),
+            ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? []);
     }
 
     /**
@@ -82,7 +147,8 @@ final class Dictionary
             }
             $families['pack:' . $members[0]] = array_values(array_unique($joined));
         }
-        return new self($words, $families, $pack['categories'], array_keys($this->blocked), $this->spelling, array_keys($this->masked));
+        return new self($words, $families, $pack['categories'], array_keys($this->blocked), $this->spelling, array_keys($this->masked),
+            ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? []);
     }
 
     /** @param string[][] $families */
@@ -94,7 +160,7 @@ final class Dictionary
     }
 
     /** Builds a dictionary directly from a word list (used by tests). */
-    public static function fromWords(array $words, array $categories = [], array $blocked = [], array $spelling = [], array $masked = []): self
+    public static function fromWords(array $words, array $categories = [], array $blocked = [], array $spelling = [], array $masked = [], array $display = []): self
     {
         $families = WordFamilies::build($words);
         // Linked spellings join one family, as the build script does.
@@ -107,7 +173,7 @@ final class Dictionary
                 unset($families[$b]);
             }
         }
-        return new self($words, $families, $categories, $blocked, $spelling, $masked);
+        return new self($words, $families, $categories, $blocked, $spelling, $masked, $display);
     }
 
     private static function findFamily(array $families, string $word): string
@@ -147,9 +213,10 @@ final class Dictionary
         return isset($this->rank[$word]);
     }
 
+    /** Whether a word can't be played here. A curated pack's own blocked words can be, in its worlds. */
     public function isBlocked(string $word): bool
     {
-        return isset($this->blocked[$word]);
+        return isset($this->blocked[$word]) && !isset($this->allowed[$word]);
     }
 
     /** A word players can say, but that's shown masked to others (p***s). */
@@ -158,14 +225,34 @@ final class Dictionary
         return isset($this->masked[$word]);
     }
 
-    /** Whether any word in a name, or the whole name squashed together, is blocked or masked. */
+    /**
+     * How a word is shown to players: the way people write it ("tea towel", "t-shirt"), or the
+     * word itself. Masked words are left as they are, so they show masked (p***s) as before.
+     */
+    public function display(string $word): string
+    {
+        if (isset($this->masked[$word])) return $word;
+        if (isset($this->display[$word])) return $this->display[$word];
+        // A plural of a written phrase is written the same way: "teatowels" is "tea towels".
+        $singular = $this->singular($word);
+        if ($singular === $word || !isset($this->display[$singular])) return $word;
+        $written = $this->display[$singular];
+        return str_ends_with($word, 'ies') && str_ends_with($singular, 'y')
+            ? substr($written, 0, -1) . 'ies'
+            : $written . substr($word, strlen($singular));
+    }
+
+    /**
+     * Whether any word in a name, or the whole name squashed together, is blocked or masked.
+     * Every blocked word counts, even in a world whose pack makes some of them playable.
+     */
     public function isOffensiveName(string $name): bool
     {
         $lower = mb_strtolower($name);
         $parts = preg_split('/[^a-z]+/', $lower, -1, PREG_SPLIT_NO_EMPTY);
         $parts[] = preg_replace('/[^a-z]/', '', $lower);
         foreach ($parts as $part) {
-            if ($this->isBlocked($part) || $this->isMasked($part)) return true;
+            if (isset($this->blocked[$part]) || $this->isMasked($part)) return true;
         }
         return false;
     }

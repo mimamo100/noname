@@ -1,95 +1,95 @@
 label: An earth science term
 
-anticline anticlines
-aquifer aquifers
+anticline, anticlines
+aquifer, aquifers
 asthenosphere
-avalanche avalanches
-basalt basalts
+avalanche, avalanches
+basalt, basalts
 bedrock
-caldera calderas
-chalk chalks
+caldera, calderas
+chalk, chalks
 cirrus
-climate climates
-cloud clouds
-continent continents
-core cores
-crater craters
-crust crusts
+climate, climates
+cloud, clouds
+continent, continents
+core, cores
+crater, craters
+crust, crusts
 cumulonimbus
-cumulus cumuli
-cyclone cyclones
-delta deltas
+cumulus, cumuli
+cyclone, cyclones
+delta, deltas
 deposition
-drought droughts
-dune dunes
-earthquake earthquakes
-epicentre epicenter epicentres epicenters
+drought, droughts
+dune, dunes
+earthquake, earthquakes
+epicentre, epicenter, epicentres, epicenters
 erosion
-estuary estuaries
-fault faults
-feldspar feldspars
-fold folds
-fossil fossils
-front fronts
-geyser geysers
-glacier glaciers
+estuary, estuaries
+fault, faults
+feldspar, feldspars
+fold, folds
+fossil, fossils
+front, fronts
+geyser, geysers
+glacier, glaciers
 gneiss
-granite granites
+granite, granites
 groundwater
 hail
 humidity
-hurricane hurricanes
+hurricane, hurricanes
 igneous
 ionosphere
-isobar isobars
-lava lavas
-limestone limestones
+isobar, isobars
+lava, lavas
+limestone, limestones
 lithosphere
-magma magmas
-mantle mantles
-marble marbles
-meander meanders
+magma, magmas
+mantle, mantles
+marble, marbles
+meander, meanders
 mesosphere
 metamorphic
-mica micas
-mineral minerals
-monsoon monsoons
-moraine moraines
+mica, micas
+mineral, minerals
+monsoon, monsoons
+moraine, moraines
 obsidian
 permafrost
-plate plates
+plate, plates
 precipitation
 pumice
 quartz
 rain
-sandstone sandstones
-schist schists
-sediment sediments
+sandstone, sandstones
+schist, schists
+sediment, sediments
 sedimentary
-seismograph seismographs
-shale shales
-slate slates
-stalactite stalactites
-stalagmite stalagmites
+seismograph, seismographs
+shale, shales
+slate, slates
+stalactite, stalactites
+stalagmite, stalagmites
 stratosphere
-stratum strata
+stratum, strata
 stratus
 subduction
-syncline synclines
+syncline, synclines
 tectonics
 thermosphere
-thunderstorm thunderstorms
-tornado tornadoes tornados
-tributary tributaries
+thunderstorm, thunderstorms
+tornado, tornadoes, tornados
+tributary, tributaries
 troposphere
-tsunami tsunamis
-typhoon typhoons
-volcano volcanoes volcanos
+tsunami, tsunamis
+typhoon, typhoons
+volcano, volcanoes, volcanos
 weathering
 gypsum
 
 also:
-jetstream jetstreams
+jetstream, jetstreams
 platetectonics
-tectonicplate tectonicplates
+tectonicplate, tectonicplates
 watercycle

@@ -1,106 +1,106 @@
 label: A physics term
 
 absorption
-acceleration accelerations
-amplitude amplitudes
+acceleration, accelerations
+amplitude, amplitudes
 attraction
 buoyancy
 capacitance
-capacitor capacitors
-charge charges
-circuit circuits
+capacitor, capacitors
+charge, charges
+circuit, circuits
 conduction
-conductor conductors
+conductor, conductors
 convection
-crest crests
-current currents
+crest, crests
+current, currents
 decay
-density densities
+density, densities
 diffraction
-diode diodes
+diode, diodes
 dispersion
 drag
-echo echoes
-efficiency efficiencies
+echo, echoes
+efficiency, efficiencies
 elasticity
 electricity
-electromagnet electromagnets
-emission emissions
-energy energies
+electromagnet, electromagnets
+emission, emissions
+energy, energies
 entropy
-field fields
+field, fields
 fission
 flux
-force forces
-frequency frequencies
+force, forces
+frequency, frequencies
 friction
 fusion
 gravitation
 gravity
-harmonic harmonics
+harmonic, harmonics
 heat
-impulse impulses
+impulse, impulses
 inductance
 inertia
 infrared
-insulator insulators
+insulator, insulators
 interference
 lift
 luminosity
 magnetism
-mass masses
-microwave microwaves
-moment moments
-momentum momenta
+mass, masses
+microwave, microwaves
+moment, moments
+momentum, momenta
 motion
-oscillation oscillations
-pendulum pendulums
-period periods
-polarisation polarization
+oscillation, oscillations
+pendulum, pendulums
+period, periods
+polarisation, polarization
 potential
 power
-pressure pressures
-projectile projectiles
-quantum quanta
+pressure, pressures
+projectile, projectiles
+quantum, quanta
 radiation
 radioactivity
-reflection reflections
+reflection, reflections
 refraction
 relativity
 repulsion
-resistance resistances
-resistor resistors
-resonance resonances
-semiconductor semiconductors
-shockwave shockwaves
-spectrum spectra
-speed speeds
+resistance, resistances
+resistor, resistors
+resonance, resonances
+semiconductor, semiconductors
+shockwave, shockwaves
+spectrum, spectra
+speed, speeds
 spin
-superconductor superconductors
+superconductor, superconductors
 superposition
-temperature temperatures
+temperature, temperatures
 tension
 thrust
-torque torques
-transformer transformers
-transistor transistors
-trough troughs
+torque, torques
+transformer, transformers
+transistor, transistors
+trough, troughs
 ultrasound
 ultraviolet
 upthrust
-vacuum vacuums vacua
-vector vectors
-velocity velocities
-voltage voltages
-wave waves
-wavelength wavelengths
-weight weights
+vacuum, vacuums, vacua
+vector, vectors
+velocity, velocities
+voltage, voltages
+wave, waves
+wavelength, wavelengths
+weight, weights
 work
 
 also:
-gammaray gammarays
-halflife halflives
+gammaray, gammarays
+halflife, halflives
 kineticenergy
 potentialenergy
-radiowave radiowaves
-xray xrays
+radiowave, radiowaves
+xray, xrays

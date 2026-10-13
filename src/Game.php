@@ -339,7 +339,7 @@ final class Game
      */
     public static function typed(string $rawWord): string
     {
-        return strtolower(preg_replace("/[\\s\\-'\u{2018}\u{2019}]+/u", '', $rawWord) ?? '');
+        return Dictionary::joined($rawWord);
     }
 
     public function lookup(string $worldId, string $rawWord): array
@@ -353,13 +353,13 @@ final class Game
         $stmt->execute([$worldId, $word]);
         $row = $stmt->fetch();
         return [
-            'word' => $word,
+            'word' => $this->dictionary->display($word),
             'inDictionary' => $this->dictionary->has($word),
             'burned' => $row ? [
                 'by' => $row['nickname'],
                 'playerId' => (int) $row['player_id'],
                 'at' => (int) $row['burned_at'],
-                'playedWord' => $row['played_word'],
+                'playedWord' => $this->dictionary->display($row['played_word']),
                 'prompt' => $row['label'] ?? Prompts::describe(self::specOf($row), $this->dictionary),
             ] : null,
         ];
@@ -554,7 +554,8 @@ final class Game
             if (isset($wrong[$word])) {
                 return $this->miss($player, $prompt, $word, 'wrong-spelling', 0) + [
                     'spelling' => $this->world($worldId)['spelling'],
-                    'suggestions' => array_values(array_filter($this->dictionary->otherSpellings($word), fn ($w) => !isset($wrong[$w]))),
+                    'suggestions' => array_map([$this->dictionary, 'display'],
+                        array_values(array_filter($this->dictionary->otherSpellings($word), fn ($w) => !isset($wrong[$w])))),
                 ];
             }
             // Already said comes before checking the prompt, so nobody is told to report a word
@@ -564,7 +565,7 @@ final class Game
             if (isset($burned[$word])) {
                 $said = $this->lookup($worldId, $word)['burned'];
                 $mine = $said && $said['playerId'] === (int) $player['id'];
-                $masked = $said && $this->dictionary->isMasked($said['playedWord']);
+                $masked = $said && $this->dictionary->isMasked(self::typed($said['playedWord']));
                 return $this->miss($player, $prompt, $word, 'already-burned', $mine || $masked ? 0 : self::PENALTY)
                     + ['burned' => $said, 'byYou' => $mine];
             }
@@ -602,9 +603,9 @@ final class Game
             $streak = $player['user_id'] !== null ? $this->streaks?->played((int) $player['user_id']) : null;
             return [
                 'ok' => true,
-                'word' => $word,
+                'word' => $this->dictionary->display($word),
                 'points' => $points,
-                'alsoBurned' => array_values(array_filter($family, fn ($w) => $w !== $word)),
+                'alsoBurned' => array_map([$this->dictionary, 'display'], array_values(array_filter($family, fn ($w) => $w !== $word))),
                 'multipliers' => $mult,
             ] + ($lastAnswer ? ['lastAnswer' => true] : []) + ($streak !== null ? ['streak' => $streak] : []);
         });
@@ -639,7 +640,7 @@ final class Game
             ->execute([$penalty, $this->now(), $player['id']]);
         // Penalties show on the leaderboards; free misses are private.
         if ($penalty) $this->changed($player['world_id']);
-        return ['ok' => false, 'word' => $word, 'reason' => $reason, 'penalty' => $penalty];
+        return ['ok' => false, 'word' => $this->dictionary->display($word), 'reason' => $reason, 'penalty' => $penalty];
     }
 
     /**
@@ -679,7 +680,8 @@ final class Game
                 'words' => [],
             ] + ($row['unsaid_count'] === null ? [] : [
                 // An ended prompt: what nobody said.
-                'unsaid' => ['count' => (int) $row['unsaid_count'], 'words' => json_decode((string) $row['unsaid_words'], true) ?: []],
+                'unsaid' => ['count' => (int) $row['unsaid_count'],
+                    'words' => array_map([$this->dictionary, 'display'], json_decode((string) $row['unsaid_words'], true) ?: [])],
             ]);
         }
         if (!$groups) return [];
@@ -693,7 +695,8 @@ final class Game
         $stmt->execute([$worldId]);
         foreach ($stmt->fetchAll() as $r) {
             $groups[(int) $r['prompt_id']]['words'][] = [
-                'word' => $r['word'], 'points' => (int) $r['points'], 'by' => $r['nickname'],
+                // Shown as written ("tea towel"); a masked word is kept as it is, for the page to mask.
+                'word' => $this->dictionary->display($r['word']), 'points' => (int) $r['points'], 'by' => $r['nickname'],
                 'at' => (int) $r['burned_at'], 'familyCount' => (int) $r['family_count'],
             ] + ($this->dictionary->isMasked($r['word']) ? ['masked' => true] : [])
               + (isset($teamOf[$r['team_id']]) ? ['team' => $teamOf[$r['team_id']]] : []);
@@ -732,7 +735,7 @@ final class Game
         return array_map(function ($r) use ($saidSince, $playerId) {
             $b = $saidSince[$r['word']] ?? null;
             return [
-                'word' => $r['word'],
+                'word' => $this->dictionary->display($r['word']),
                 'reason' => $r['reason'],
                 'penalty' => -(int) $r['points'],
                 'prompt' => $r['label'] ?? Prompts::describe(self::specOf($r), $this->dictionary),
