@@ -148377,6 +148377,12 @@ return array (
     102 => 'nymphos',
     103 => 'putzes',
   ),
+  'pluralWords' => 
+  array (
+    0 => 'leggings',
+    1 => 'lodgings',
+    2 => 'trousers',
+  ),
   'spelling' => 
   array (
     'usOnly' => 

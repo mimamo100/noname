@@ -1,0 +1,8 @@
+# Words normally used in the plural ("leggings", "trousers"). Plurals are usually judged and
+# scored as their singular, so adding an S can't stretch "brother" into an 8-letter answer;
+# these words are judged as written instead, so "leggings" is 8 letters. One lowercase word per
+# line. Rebuild after editing: php scripts/build-dictionary.php
+
+leggings
+lodgings
+trousers
