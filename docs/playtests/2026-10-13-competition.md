@@ -10,9 +10,9 @@ Result: **Foxes 1,637, Owls 1,106.** Players: Cal 927, Dee 710, Ada 610, Ben 496
 - **Not much celebration for the winners.** At the end the prompt card says "Finished" with leftovers ("At least 0 words left unsaid", "World ×1.0, Prompt ×1.0", "Ends in –"), the box says "This competition has finished." and "Go to the big world", and the result is only in the team table lower down. Players who send a word get "This competition has finished." with no result. Ideas: a results card in place of the prompt card ("Foxes win! 1,637 to 1,106", the winners' names, the best player), a short celebration for the winners, "You finished 3rd; Owls came 2nd" for each player, and a "Share the results" link.
 - The owner moved players between teams before the start, to test the organiser's controls.
 
-## A decision for the owner
+## The owner's decision
 
-- **Should a team-mate's word be free?** At the moment a word your own team said more than a minute ago costs 2 points, the same as an opponent's. In a team game it's easy to repeat a partner's word without knowing. Making it free (or showing "your team already has it") would suit team play.
+- **A word your own team already said is free**, like repeating your own word (which is already free). Only an opponent's word, said more than a minute before, costs 2 points.
 
 ## What worked
 
@@ -59,5 +59,5 @@ Result: **Foxes 1,637, Owls 1,106.** Players: Cal 927, Dee 710, Ada 610, Ben 496
 2. Phrases in the vehicle category (and alloys in metal); check other categories for missing everyday phrases.
 3. Phrase scoring: base points not from the full joined length.
 4. Clear messages: joining the other team, being moved, reporting before or after a competition.
-5. The owner's decision on team-mates' words; consider a free repeat for the other spelling.
+5. Make a team-mate's word free (the owner's decision); consider a free repeat for the other spelling.
 6. Don't start a prompt in the last few minutes.
