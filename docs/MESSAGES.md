@@ -268,7 +268,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Prompts can last 5, 15 or 60 minutes, 4 hours or a day | Competitions.php · pace |
 | Teams can have up to {n} players | Competitions.php · teamSize |
 | Every team needs a name / Two teams have the same name / There's already a team called {team} | Competitions.php · teamNames, insertTeam, renameTeam |
-| A competition needs at least {n} teams / A competition can have up to {n} teams | Competitions.php · teamNames, addTeam, removeTeam |
+| A competition needs 2–20 teams *(when creating)* / A competition can have up to {n} teams / A competition needs at least {n} teams | Competitions.php · teamNames, addTeam, removeTeam |
 | This is a private competition. You need your team's invite link. | Competitions.php · checkCanView |
 | To play, open your team's invite link. Ask the organiser for it. | Competitions.php · playerFor |
 | {team} is full. | Competitions.php · playerFor |
