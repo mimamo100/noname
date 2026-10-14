@@ -63,6 +63,13 @@ Result: **Forks 902, Spoons 194.** Players: Dee 598, Cal 304, Ben 203, Ada −9.
 - Sending a word after the end gets "This competition has finished." with no result; it could name the winners and the player's place. (In the API, `teams[].position` is the join order, not the rank, and there's no winner field.)
 - The last prompt showed 306 s left when it began, just over the 5-minute maximum.
 
+### Your account (looked at after the round, wide and at phone width)
+- All four tabs work and read well at 390 px: Worlds (cards in each kind's colour), Games (streak, bests, past games), Word packs, Settings (name, daily email, plan, sign out, delete). Nothing was changed or deleted.
+- **An ended competition's card shows no result**: Kitchen Cup sits under "Ended: yours to keep or delete" with "Ended. Open it to delete it." It could say "Forks won, 902 to 194".
+- **A competition you ran but didn't play in isn't under Past games**, so the organiser's history of events lives only on the Worlds tab until deleted. Perhaps a "You ran" line in Past games.
+- **The tab row's scrollbar arrow** (the owner's Chrome finding) also shows at phone width, where it takes space the four tabs nearly fill; on a narrower phone the tabs would scroll.
+- Settings, Plan: no way to change plan yet (expected until payments).
+
 ### Word lists (the pack's, not the game's)
 Kitchen words the players expected and Eve's lists lacked: *dish*, *tray*, *saucepan*, *pan*, *colander*, *sieve*, *spatula*, *tureen*, *dinner plate*, *salad bowl*, *mixing bowl*, *cake fork*, *fish knife*, *butter dish*; jobs *mix*, *cook*, *wash*, *rinse*, *drain*, *wipe*, *pour*, *measure*, *carve*, *whip*, *fillet*, *washing up*; ways of cooking *griddle*, *slow cook*, *pan fry*. That's down to Eve's lists, but a kitchen pack made by a real organiser will have the same gaps: the reports feature (above) is how they'd find them. Also, *grilling* was refused for "A way of cooking" (only listed forms and plurals count for a list); for lists of verbs, the -ing form is a natural answer.
 
@@ -79,4 +86,4 @@ Kitchen words the players expected and Eve's lists lacked: *dish*, *tray*, *sauc
 6. **Wording the owner asked for**: the "Starts..." line, "Live", the long prompt on one line.
 7. **Competition form**: 10- and 30-minute prompts, "about N prompts", what a pack is good for.
 8. **The end**: drop the old "finished" box under the card; leaderboard on Teams; the result in the reply to a late word.
-9. Smaller: the Chrome scrollbar arrow on Your account; the New pack button jumping; -ing forms for verb lists.
+9. Smaller: the Chrome scrollbar arrow on Your account; the result on an ended competition's card; the New pack button jumping; -ing forms for verb lists.
