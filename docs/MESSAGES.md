@@ -233,6 +233,8 @@ Shown under the word box; they fade after a few seconds (see section 13).
 |---|---|
 | Starts **{time}** · Ends **{time}** *(with the day, “Thu 15 Oct, 20:00”, when it isn't today)* | app.js · drawCompetitionClock |
 | Starts in **{m:ss}** / LIVE **{m:ss}** left *(a countdown, ticking every second; “3 days” when far off)* | app.js · drawCompetitionClock |
+| Every word stays said for the rest of this world, so a word from an earlier prompt can't be said again. Not sure? Try it in Who said it? first: it's free. *(under the word box, in pack-only worlds)* | index.html |
+| The organiser has moved you to {team}. | app.js · render |
 | You're in {team}. Every point you score will count for your team. *(before the start; “counts” after)* | app.js · renderCompetition |
 | The organiser moved you here from {team}. | app.js · renderCompetition |
 | This link is for {team}, but you're on {team}: players can't change team. Ask the organiser if you should. | app.js · renderCompetition |

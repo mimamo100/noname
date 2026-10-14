@@ -619,9 +619,15 @@ function renderBanner(state) {
   $('banner-about').textContent = [{ private: 'Private world', room: 'Room', competition: 'Competition' }[kind] ?? 'World', words, spelling].filter(Boolean).join(' · ');
 }
 
+// The team this page last showed the player on, to tell them if the organiser moves them.
+let shownTeam = null;
+
 function render(state) {
   document.title = `${state.world.name} · Unsaid`;
   renderBanner(state);
+  const team = state.myTeam?.name ?? null;
+  if (shownTeam && team && team !== shownTeam) feedback(`The organiser has moved you to ${team}.`, 'good');
+  shownTeam = team;
   $('dict-size').textContent = state.dictionary.size.toLocaleString();
   $('dict-burned').textContent = state.dictionary.burned.toLocaleString();
   // Pack-only worlds have no world multiplier.
@@ -666,6 +672,8 @@ function render(state) {
   // In a competition, only team members (or someone who opened a team's link) can play.
   const watching = state.world.kind === 'competition' && !state.myTeam && !state.joiningTeam;
   $('play-form').hidden = !signedIn || !state.prompt || (state.world.kind === 'room' && !joined) || watching;
+  // In a world playing only a word pack, words soon run short: a reminder that they stay said.
+  $('pack-reminder').hidden = state.pack?.mode !== 'only' || !state.prompt || $('play-form').hidden;
   $('signin').hidden = signedIn;
 
   renderSaid(state.said ?? [], state.prompt?.id);
