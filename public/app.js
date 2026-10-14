@@ -543,7 +543,8 @@ function renderBanner(state) {
   const pack = state.pack;
   const words = !pack ? 'Everyday words' : pack.mode === 'only' ? `${pack.name} words only` : `Everyday and ${pack.name} words`;
   const spelling = { uk: 'UK spelling', us: 'US spelling' }[state.world.spelling];
-  $('banner-name').textContent = state.world.name;
+  // A word pack's name as a tag by the world's name, so a Science world is obvious at a glance.
+  $('banner-name').replaceChildren(state.world.name, ...(pack ? [' ', el('span', { className: 'pack-tag', textContent: pack.name })] : []));
   $('banner-about').textContent = [{ private: 'Private world', room: 'Room', competition: 'Competition' }[kind] ?? 'World', words, spelling].filter(Boolean).join(' · ');
 }
 

@@ -208,7 +208,7 @@ button.link.nudge { color: var(--ember); font-size: 14px; }
 /* Where you are: a banner and an accent colour for private worlds, rooms and competitions. */
 body[data-kind="private"] { --ember-dim: #0e4a52; --band: #3cc2cf; }
 body[data-kind="competition"] { --ember-dim: #3d2a6e; --band: #a58bff; }
-body[data-kind="room"] { --band: var(--ember); }
+body[data-kind="room"] { --ember-dim: #1d4d2a; --band: #6fcf7f; }
 .world-banner {
   display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap;
   margin-top: 8px; padding: 10px 14px; background: var(--surface);
@@ -239,3 +239,10 @@ fieldset.field label:has(input:checked) { border-color: var(--ember); background
 }
 .info:hover, .info[aria-expanded="true"] { border-color: var(--ember); color: var(--ember); filter: none; }
 #round-about { margin: 0 0 6px; }
+
+/* A world's word pack, as a tag by its name in the banner. */
+.pack-tag {
+  display: inline-block; margin-left: 4px; padding: 1px 8px; border-radius: 999px; vertical-align: 3px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--bg); background: var(--band, var(--ember));
+}
