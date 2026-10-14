@@ -1343,6 +1343,14 @@ function showAccountTab() {
 // A big figure with a small label under it, as on the world cards and bests.
 const figure = (value, label) => el('div', {}, el('b', { textContent: value }), el('span', { textContent: label }));
 
+// A competition's final result in a line: "Forks won, 902 to 194" or "Owls won with 512".
+function teamsResult(teams) {
+  const [first, second] = teams;
+  if (second && second.place === first.place) return `A draw, ${first.score.toLocaleString()} each`;
+  return second && teams.length === 2 ? `${first.name} won, ${first.score.toLocaleString()} to ${second.score.toLocaleString()}`
+    : `${first.name} won with ${first.score.toLocaleString()}`;
+}
+
 function worldCard(w) {
   const competition = w.kind === 'competition';
   const now = Date.now();
@@ -1352,7 +1360,7 @@ function worldCard(w) {
     played ? figure(w.score.toLocaleString(), 'your points') : figure(w.players.toLocaleString(), w.players === 1 ? 'player' : 'players'),
     figure(`${Math.round(w.left * 100)}%`, 'words left'),
   ];
-  const when = w.ended ? 'Ended. Open it to delete it.'
+  const when = w.ended ? `${w.teams?.length ? `${teamsResult(w.teams)}. ` : ''}Ended. Open it to delete it.`
     : competition && w.startsAt > now ? `Starts ${whenText(w.startsAt)}`
     : competition ? `Ends in ${longTimeLeft(w.endsAt - now)} · ${plural(w.players, 'player')}`
     // When anyone last said a word there, not just this player.
@@ -1405,7 +1413,7 @@ async function renderMyGames() {
   const box = $('acct-games');
   if (!box.childElementCount) box.replaceChildren(el('p', { className: 'muted', textContent: 'Loading…' }));
   try {
-    const { bests, games } = await rootApi('/me/history');
+    const { bests, games, ran } = await rootApi('/me/history');
     const streakNote = bests.streak === 0 ? `Say a word today to start a new run.${bests.bestStreak ? ` Your best is ${plural(bests.bestStreak, 'day')}.` : ''}`
       : bests.playedToday ? `You've played today. Your best is ${plural(bests.bestStreak, 'day')}.`
       : `Say a word today to make it ${bests.streak + 1}. Your best is ${plural(bests.bestStreak, 'day')}.`;
@@ -1422,7 +1430,14 @@ async function renderMyGames() {
         weekDots(bests.streak, bests.playedToday)),
       ...(tiles.length ? [el('h2', { className: 'section-title', textContent: 'Your bests' }), el('div', { className: 'tiles' }, ...tiles)] : []),
       el('h2', { className: 'section-title', textContent: 'Past games' }),
-      games.length ? el('ul', { className: 'games' }, ...games.map((g) => el('li', {},
+      games.length || ran.length ? el('ul', { className: 'games' }, ...[...games, ...ran.map((r) => ({ ...r, ran: true }))]
+        .sort((a, b) => b.endedAt - a.endedAt).map((g) => g.ran ? el('li', {},
+        el('span', { className: 'place', textContent: 'Ran' }),
+        el('a', { href: `/w/${encodeURIComponent(g.worldId)}`, textContent: g.name }),
+        el('span', { className: 'score' }),
+        el('span', { className: 'meta' }, el('span', { className: 'dot competition' }),
+          [`You ran this competition`, ...(g.teams.length ? [teamsResult(g.teams)] : []), `ended ${dayMonth(g.endedAt)}`].join(' · ')),
+      ) : el('li', {},
         MEDALS[g.place] ? el('span', { className: 'medal', textContent: MEDALS[g.place] }) : el('span', { className: 'place', textContent: ordinal(g.place) }),
         el('a', { href: `/w/${encodeURIComponent(g.worldId)}`, textContent: g.name }),
         el('span', { className: 'score' }, el('b', { textContent: g.score.toLocaleString() }), el('span', { textContent: Math.abs(g.score) === 1 ? 'point' : 'points' })),

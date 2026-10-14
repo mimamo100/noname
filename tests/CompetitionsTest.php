@@ -187,3 +187,14 @@ test('no prompt starts in the last few minutes of a competition', function () {
     $clock += 14 * 60_000;
     same(0, $game->state($made['id'], null)['prompt']['endsWhenLeft'], 'In the last minutes it runs on rather than ending at 80%');
 });
+
+test("an ended competition shows its result on the organiser's card, and is in their history even unplayed", function () {
+    $clock = 1_000 * HOUR_MS;
+    [$db, $game, $comps, $org] = makeCompetitions($clock);
+    $made = $comps->create($org, ['name' => 'Quiz', 'startsAt' => $clock + HOUR_MS, 'endsAt' => $clock + 2 * HOUR_MS, 'promptMinutes' => 5, 'teams' => ['Owls', 'Foxes']]);
+    $game->finishWorld($made['id']);
+    $card = array_column((new PrivateWorlds($db, $game))->myWorlds($org), null, 'id')[$made['id']];
+    same(2, count($card['teams']), 'Both teams, in order');
+    $ran = (new Lobby($db, $game))->history((int) $org['id'])['ran'];
+    same([$made['id']], array_column($ran, 'worldId'));
+});

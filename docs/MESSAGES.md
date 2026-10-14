@@ -330,6 +330,8 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | {world} Yours · Room / Private world / Competition · {pack} *(a card)* | app.js · worldCard |
 | {place} of {n} / Team {team} / – not played yet · {n} your points / {n} players · {n}% words left | app.js · worldCard |
 | Last word {time} ago / No words yet / Starts {when} / Ends in {time} · {n} players / Ended. Open it to delete it. · Open | app.js · worldCard |
+| {team} won, {n} to {n} / {team} won with {n} / A draw, {n} each *(an ended competition's result, on its card and in Past games)* | app.js · teamsResult |
+| Ran · You ran this competition · {result} · ended {date} *(Past games, for a competition you ran without playing)* | app.js · renderMyGames |
 | You're not in any rooms, private worlds or competitions yet. Rooms are worlds of 60 players that last for weeks; private worlds and competitions need an invite link from whoever runs them. · Play the Big World | app.js · renderMyWorlds |
 | **Games:** {n} days in a row / day in a row | app.js · renderMyGames |
 | Say a word today to start a new run. Your best is {n} days. / You've played today. Your best is {n} days. / Say a word today to make it {n}. Your best is {n} days. | app.js · renderMyGames |

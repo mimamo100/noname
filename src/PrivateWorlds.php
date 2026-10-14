@@ -275,6 +275,7 @@ final class PrivateWorlds
         $burned = $this->db->prepare('SELECT COUNT(*) FROM burns WHERE world_id = ?');
         // The account's place among those who've played, as on the leaderboard (shared on equal scores).
         $ahead = $this->db->prepare('SELECT COUNT(*) FROM players WHERE world_id = ? AND removed = 0 AND (words > 0 OR score <> 0) AND score > ?');
+        $teamResults = $this->db->prepare('SELECT name, place, score FROM team_results WHERE world_id = ? ORDER BY place, name LIMIT 3');
         $out = [];
         foreach ($worlds as $w) {
             $players->execute([$w['id']]);
@@ -288,6 +289,10 @@ final class PrivateWorlds
                 'place' => $w['score'] === null || ((int) $w['words'] === 0 && (int) $w['score'] === 0) ? null
                     : ($ahead->execute([$w['id'], (int) $w['score']]) ? (int) $ahead->fetchColumn() + 1 : null),
                 'team' => $w['team_name'] ?? null,
+                // An ended competition's final team standings (the top three), for its card.
+                'teams' => $w['kind'] === 'competition' && $w['ended_at'] !== null && $teamResults->execute([$w['id']])
+                    ? array_map(fn ($t) => ['name' => $t['name'], 'place' => (int) $t['place'], 'score' => (int) $t['score']], $teamResults->fetchAll(PDO::FETCH_ASSOC))
+                    : null,
                 'words' => $w['words'] === null ? null : (int) $w['words'],
                 'players' => (int) $count,
                 'lastPlayed' => (int) $lastPlayed ?: null,

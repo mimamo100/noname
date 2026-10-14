@@ -280,7 +280,21 @@ final class Lobby
             ORDER BY r.best_points DESC, r.ended_at LIMIT 1');
         $best->execute([$userId]);
         $bestWord = $best->fetch() ?: null;
+        // Competitions the account ran without playing in: they belong in its history too.
+        $ran = $this->db->prepare("
+            SELECT w.id, w.name, w.ended_at FROM worlds w
+            WHERE w.owner_user_id = ? AND w.kind = 'competition' AND w.ended_at IS NOT NULL
+              AND NOT EXISTS (SELECT 1 FROM results r WHERE r.world_id = w.id AND r.user_id = ?)
+            ORDER BY w.ended_at DESC LIMIT 50");
+        $ran->execute([$userId, $userId]);
+        $teamResults = $this->db->prepare('SELECT name, place, score FROM team_results WHERE world_id = ? ORDER BY place, name LIMIT 3');
+        $ranRows = array_map(function ($w) use ($teamResults) {
+            $teamResults->execute([$w['id']]);
+            return ['worldId' => $w['id'], 'name' => $w['name'], 'endedAt' => (int) $w['ended_at'],
+                'teams' => array_map(fn ($t) => ['name' => $t['name'], 'place' => (int) $t['place'], 'score' => (int) $t['score']], $teamResults->fetchAll())];
+        }, $ran->fetchAll());
         return [
+            'ran' => $ranRows,
             'bests' => [
                 'games' => (int) $b['games'],
                 'wins' => (int) $b['wins'],
