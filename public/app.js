@@ -543,7 +543,9 @@ function renderBanner(state) {
   $('back-link').hidden = big;
   if (big) {
     const hours = state.roundHours ?? 24;
-    $('banner-name').textContent = 'The Big World';
+    // The round's name is "The Big World, 14 Oct": the date goes in grey after the title.
+    const [title, when] = state.world.name.split(/, (.+)/);
+    $('banner-name').replaceChildren(title, ...(when ? [el('span', { className: 'banner-when', textContent: ` · ${when}` })] : []));
     $('banner-about').textContent = `Everyone signed in plays here, and it starts afresh ${hours === 24 ? 'every day' : `every ${hours} ${hours === 1 ? 'hour' : 'hours'}`}.`;
     $('banner-about').hidden = !roundAboutOpen;
     return;
@@ -560,17 +562,10 @@ function renderBanner(state) {
 function render(state) {
   document.title = `${state.world.name} · Unsaid`;
   renderBanner(state);
-  const spellingNote = { uk: ' · UK spelling', us: ' · US spelling' }[state.world.spelling] ?? '';
-  const packNote = state.pack ? ` · ${state.pack.name} words` : '';
-  $('world-name').textContent = state.world.name + packNote + spellingNote;
   $('dict-size').textContent = state.dictionary.size.toLocaleString();
   $('dict-burned').textContent = state.dictionary.burned.toLocaleString();
   $('world-mult').textContent = state.multipliers.world.toFixed(1);
   $('prompt-mult').textContent = state.multipliers.prompt.toFixed(2).replace(/0$/, '');
-  // The player's own place, without scrolling down to the leaderboard.
-  const me = state.myStanding;
-  $('my-standing').hidden = !me || state.world.ended; // A finished world's results card says it.
-  if (me) $('my-standing').replaceChildren('You: ', el('b', { textContent: `${ordinal(me.place)} of ${me.of}` }), ` · ${me.score} ${Math.abs(me.score) === 1 ? 'point' : 'points'}`);
 
   // A competition before its start has no prompt yet: just say so, without empty counters.
   const waiting = state.world.kind === 'competition' && !state.world.ended && state.now < state.world.startsAt;
@@ -616,7 +611,7 @@ function render(state) {
   $('tab-misses').hidden = !joined;
   renderMisses(state.myMisses ?? [], state.prompt?.id);
 
-  $('leaderboard').replaceChildren(...boardRows(state.leaderboard, 'total', state.me));
+  $('leaderboard').replaceChildren(...boardRows(state.leaderboard, 'total', state.me, state.myStanding));
   const promptBoard = state.promptBoard ?? [];
   $('prompt-board').replaceChildren(...boardRows(promptBoard, 'points', state.me));
   $('prompt-board-empty').hidden = promptBoard.length > 0;
@@ -639,17 +634,30 @@ function render(state) {
 const teamDot = (position) => (position === undefined || position === null ? [] : [el('span', { className: `team-dot team-${position % 10}` })]);
 
 // Leaderboard rows with positions; players on the same score share a position.
-function boardRows(players, scoreKey, me) {
+// A board shows its top ten. A player further down sees a gap, then their own row: from the
+// list if they're in it, or from their standing (overall only) if they're beyond it.
+const BOARD_TOP = 10;
+
+function boardRows(players, scoreKey, me, standing = null) {
   let rank = 0;
-  return players.map((p, i) => {
+  const row = (p, place) => el('tr', { className: p.nickname === me ? 'me' : '' },
+    el('td', { className: 'rank', textContent: place }),
+    el('td', {}, ...teamDot(p.team), p.nickname, ...(p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
+    el('td', { textContent: p.words }),
+    el('td', { textContent: p[scoreKey] }),
+  );
+  const ranked = players.map((p, i) => {
     if (i === 0 || p[scoreKey] !== players[i - 1][scoreKey]) rank = i + 1;
-    return el('tr', { className: p.nickname === me ? 'me' : '' },
-      el('td', { className: 'rank', textContent: rank }),
-      el('td', {}, ...teamDot(p.team), p.nickname, ...(p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
-      el('td', { textContent: p.words }),
-      el('td', { textContent: p[scoreKey] }),
-    );
+    return [p, rank];
   });
+  const rows = ranked.slice(0, BOARD_TOP).map(([p, place]) => row(p, place));
+  const mine = ranked.findIndex(([p]) => p.nickname === me);
+  const gap = () => el('tr', { className: 'gap' }, el('td', { colSpan: 4, textContent: '⋯' }));
+  if (mine >= BOARD_TOP) rows.push(gap(), row(...ranked[mine]));
+  else if (mine === -1 && standing) {
+    rows.push(gap(), row({ nickname: me, words: standing.words, [scoreKey]: standing.score }, standing.place));
+  }
+  return rows;
 }
 
 let lastStateLoaded = false;

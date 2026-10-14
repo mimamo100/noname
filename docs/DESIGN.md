@@ -217,7 +217,8 @@ word-finder site. There are three kinds:
 - The leaderboard has two tabs: **Overall** ranks everyone by total score,
   and **This prompt** ranks only the current prompt, so everyone starts level
   on each new prompt and a late arrival can still come top. Penalties count
-  in both.
+  in both. Each shows its top ten; a player further down sees a ⋯ and then
+  their own row, with their place.
 - **Just said** lists every word said in the current prompt, newest first,
   with the three prompts before it collapsed underneath. Any older word can be
   found with **Who said it?**.

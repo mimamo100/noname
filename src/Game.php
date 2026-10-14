@@ -967,7 +967,7 @@ final class Game
         }
         return [
             'me' => $me,
-            // Where the player stands overall, for the top of the page; null until they've played.
+            // Where the player stands overall, for a player beyond the leaderboard's list; null until they've played.
             'myStanding' => $myStanding,
             // Only the player's own misses: other players never see them.
             'myMisses' => $myMisses,
@@ -986,7 +986,7 @@ final class Game
             WHERE world_id = ? AND removed = 0 AND (words > 0 OR score <> 0)');
         $stmt->execute([(int) $mine['score'], $worldId]);
         [$of, $ahead] = $stmt->fetch(PDO::FETCH_NUM);
-        return ['place' => (int) $ahead + 1, 'of' => (int) $of, 'score' => (int) $mine['score']];
+        return ['place' => (int) $ahead + 1, 'of' => (int) $of, 'score' => (int) $mine['score'], 'words' => (int) $mine['words']];
     }
 
     /** The part of a world's state that's the same for everyone watching it. */

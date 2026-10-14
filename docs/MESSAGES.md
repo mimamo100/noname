@@ -98,7 +98,6 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | At least {n} words left unsaid | index.html |
 | World ×{n} · Prompt ×{n} | index.html |
 | Ends after {n} more or in {time} | app.js · renderClock |
-| You: {place} of {n} · {points} points *(under the card)* | app.js · render |
 | The first prompt appears at the start *(a competition before it starts)* | app.js · render |
 | This world has run out of words | app.js · render |
 | Recent prompt *(box: the latest earlier prompt someone played; “Recent prompt · last round” early in a new round)* · {prompt} · {n} said | app.js · renderLastUnsaid |
@@ -162,7 +161,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 
 | Message | Where |
 |---|---|
-| The Big World, {date} *(the round's name)* | Lobby.php · currentRound |
+| The Big World, {date} *(the round's name; the banner shows it as “The Big World · {date}”)* | Lobby.php · currentRound, app.js · renderBanner |
 | The Big World *(the banner's title)* | app.js · renderBanner |
 | Everyone signed in plays here, and it starts afresh every day. *(or every {n} hours; shown with the (i) by the title)* | app.js · renderBanner |
 | This round ends in {time} *(in the banner)* | index.html, app.js · renderClock |
