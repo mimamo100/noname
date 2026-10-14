@@ -898,8 +898,10 @@ final class Game
         // Whether each word has been used up since (by anyone, for any prompt). Looked up
         // separately: joining misses to burns can't use the index, as their word columns differ.
         $saidSince = [];
-        if ($rows) {
-            $words = array_values(array_unique(array_column($rows, 'word')));
+        // Only words of a to z can have been said: burns.word is ASCII, and the database refuses to
+        // compare it with anything else (an emoji, say).
+        $words = array_values(array_unique(array_filter(array_column($rows, 'word'), fn ($w) => preg_match('/^[a-z]+$/', $w))));
+        if ($words) {
             $stmt = $this->db->prepare('
                 SELECT b.word, b.player_id AS said_by_id, b.prompt_id AS said_prompt_id, bp.nickname AS said_by,
                   bpr.spec AS said_spec, bpr.label AS said_label, bpr.type AS said_type, bpr.letters AS said_letters

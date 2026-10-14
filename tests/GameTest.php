@@ -913,3 +913,15 @@ test('recent prompts are the latest finished ones someone played, newest first',
     same(['Contains EE', 'Contains OO'], array_column($game->recentPrompts($world['id'], 3), 'prompt'));
     same(['Contains EE'], array_column($game->recentPrompts($world['id'], 1), 'prompt'));
 });
+
+test('accented letters count as plain ones, and odd characters in a miss never break the player\'s view', function () {
+    $game = makeGame();
+    $world = $game->createWorld('Accents');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $p = $game->join($world['id'], 'Pat');
+    same('moon', $game->play($world['id'], $p['token'], 'MÖÖN')['word'] ?? null, 'Ö is O');
+    $game->play($world['id'], $p['token'], 'sauté');
+    $game->play($world['id'], $p['token'], '😀😀😀');
+    $misses = $game->state($world['id'], $p['token'])['myMisses'];
+    check(count($misses) >= 1, 'The page still loads, misses and all');
+});

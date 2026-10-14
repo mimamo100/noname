@@ -69,8 +69,18 @@ final class Dictionary
      */
     public static function joined(string $written): string
     {
-        return strtolower(preg_replace("/[\\s\\-'\u{2018}\u{2019}]+/u", '', $written) ?? '');
+        // Accented letters count as plain ones: "sauté" is "saute", "café" is "cafe".
+        $plain = strtr(mb_strtolower($written), self::PLAIN_LETTERS);
+        return preg_replace("/[\\s\\-'\u{2018}\u{2019}]+/u", '', $plain) ?? '';
     }
+
+    private const PLAIN_LETTERS = [
+        'à' => 'a', 'á' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a', 'å' => 'a', 'ā' => 'a', 'æ' => 'ae',
+        'ç' => 'c', 'è' => 'e', 'é' => 'e', 'ê' => 'e', 'ë' => 'e', 'ē' => 'e', 'ì' => 'i', 'í' => 'i',
+        'î' => 'i', 'ï' => 'i', 'ī' => 'i', 'ñ' => 'n', 'ò' => 'o', 'ó' => 'o', 'ô' => 'o', 'õ' => 'o',
+        'ö' => 'o', 'ø' => 'o', 'ō' => 'o', 'œ' => 'oe', 'ß' => 'ss', 'ù' => 'u', 'ú' => 'u', 'û' => 'u',
+        'ü' => 'u', 'ū' => 'u', 'ý' => 'y', 'ÿ' => 'y',
+    ];
 
     /**
      * An entry in a word file, as written ("tea towel", "t-shirt", "rock'n'roll"): the joined
