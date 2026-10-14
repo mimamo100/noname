@@ -601,13 +601,15 @@ final class Game
     }
 
     /**
-     * The world multiplier rises as a world's words are used up, which suits worlds that last
-     * for weeks. In a small pack it soared within minutes, so a word's points depended on when
-     * it was said more than on the word (Kitchen Cup playtest): pack-only worlds go without.
+     * The world multiplier rises as a world's words are used up, which suits rooms and private
+     * worlds, played over weeks. In timed games (the big world's daily round, competitions) it
+     * could climb fast on a busy day, so the clock would decide more than the words; in a small
+     * pack it soared within minutes (Kitchen Cup playtest). Those go without.
      */
     public static function usesWorldMultiplier(array $world): bool
     {
-        return !(!empty($world['pack']) && ($world['pack_mode'] ?? 'only') === 'only');
+        $packOnly = !empty($world['pack']) && ($world['pack_mode'] ?? 'only') === 'only';
+        return in_array($world['kind'] ?? 'private', ['room', 'private'], true) && !$packOnly;
     }
 
     /** The world multiplier (null where it isn't used) and the prompt's. */

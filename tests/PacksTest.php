@@ -122,7 +122,9 @@ test('pack-only worlds: no world multiplier, and words as rare as they are in ev
     $only = $everyday->onlyPack($pack);
     same($everyday->rarity('moon'), $only->rarity('moon'), 'An everyday word keeps its everyday rarity');
     same(Dictionary::PACK_WORD_RARITY, $only->rarity('quasar'), "A word that isn't everyday is fairly rare, not the rarest");
-    same(false, Game::usesWorldMultiplier(['pack' => 'sci', 'pack_mode' => 'only']));
-    same(true, Game::usesWorldMultiplier(['pack' => 'sci', 'pack_mode' => 'mixed']));
-    same(true, Game::usesWorldMultiplier(['pack' => null]));
+    same(false, Game::usesWorldMultiplier(['kind' => 'private', 'pack' => 'sci', 'pack_mode' => 'only']));
+    same(true, Game::usesWorldMultiplier(['kind' => 'private', 'pack' => 'sci', 'pack_mode' => 'mixed']));
+    same(true, Game::usesWorldMultiplier(['kind' => 'room', 'pack' => null]));
+    same(false, Game::usesWorldMultiplier(['kind' => 'public', 'pack' => null]), 'Not the big world');
+    same(false, Game::usesWorldMultiplier(['kind' => 'competition', 'pack' => null]), 'Nor competitions');
 });
