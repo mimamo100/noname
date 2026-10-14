@@ -75,6 +75,12 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .stats b { color: var(--text); }
 
 .play, .join, .lookup { display: flex; gap: 8px; margin-top: 16px; }
+/* The word box, with the big world's round time beside it (under it on a phone). */
+.play-row { display: flex; gap: 8px 20px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+.play-row .play { flex: 1 1 320px; min-width: 0; margin-top: 0; }
+.round-clock { margin: 0; color: var(--muted); white-space: nowrap; }
+.round-clock b { color: var(--text); }
+@media (max-width: 700px) { .round-clock { flex-basis: 100%; text-align: right; font-size: 14px; } }
 .play input, .join input, .lookup input { flex: 1; }
 .play input { font-size: 20px; }
 .join { flex-wrap: wrap; align-items: center; }
@@ -86,8 +92,22 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .bad { color: var(--bad); }
 .muted { color: var(--muted); }
 
-.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
-@media (max-width: 700px) { .columns { grid-template-columns: 1fr; } }
+/* Two columns: the big world's boxes, Recent prompt and Just said on the left, the leaderboard
+   on the right. On a phone, one column, with the leaderboard before the long list of words. */
+.columns {
+  display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; margin-top: 16px; align-items: start;
+  grid-template-areas: "big board" "recent board" "rooms board" "said board"; grid-template-rows: auto auto auto 1fr;
+}
+.columns > .notice { margin: 0 0 16px; }
+.columns > .board { grid-area: board; }
+.columns > .said { grid-area: said; }
+.columns > #lobby-big { grid-area: big; }
+.columns > #last-unsaid { grid-area: recent; }
+.columns > #lobby-rooms { grid-area: rooms; }
+@media (max-width: 700px) {
+  .columns { grid-template-columns: 1fr; grid-template-areas: "big" "recent" "rooms" "board" "said"; grid-template-rows: none; }
+  .columns > .board { margin-bottom: 24px; }
+}
 .tabs { display: flex; gap: 16px; margin-bottom: 8px; border-bottom: 1px solid var(--border); }
 .tab {
   background: none; color: var(--muted); border-radius: 0; padding: 0 0 6px; font-size: 14px;
@@ -142,11 +162,10 @@ dialog h2 { margin-top: 0; }
 .notice p { margin: 0 0 8px; }
 /* The big world's page: a box about the big world, and one for rooms. */
 .box-title { margin: 0 0 6px; font-size: 18px; text-transform: none; letter-spacing: 0; color: var(--text); }
-.lobby-big .round-ends { margin: 4px 0 0; }
 .last-round { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
 .last-round h3 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .winners { list-style: none; margin: 0 0 6px; padding: 0; }
-.winners li { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; }
+.winners li { display: flex; gap: 12px; padding: 2px 0; }
 .lobby-rooms { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
 .lobby-rooms p { margin: 0; flex: 1 1 200px; font-weight: 600; }
 .leaderboard .away { color: var(--muted); font-weight: 400; font-size: 13px; }
@@ -203,8 +222,6 @@ button.link.nudge { color: var(--ember); font-size: 14px; }
 
 /* The player's own place, under the prompt card. */
 .standing { margin: 12px 0 0; text-align: center; }
-/* On a phone, the leaderboard comes before the long list of words said. */
-@media (max-width: 700px) { .columns > section:last-child { order: -1; } }
 
 /* Where you are: a banner and an accent colour for private worlds, rooms and competitions. */
 body[data-kind="private"] { --ember-dim: #0e4a52; --band: #3cc2cf; }

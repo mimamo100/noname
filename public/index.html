@@ -64,13 +64,14 @@
 
     <section id="competition" class="notice" hidden></section>
 
-    <form id="play-form" class="play" autocomplete="off" hidden>
-      <input id="word" name="word" placeholder="Type a word…" maxlength="30" autocapitalize="off" spellcheck="false" required>
-      <button type="submit">Say it</button>
-    </form>
+    <div class="play-row">
+      <form id="play-form" class="play" autocomplete="off" hidden>
+        <input id="word" name="word" placeholder="Type a word…" maxlength="30" autocapitalize="off" spellcheck="false" required>
+        <button type="submit">Say it</button>
+      </form>
+      <p class="round-clock" id="round-clock" hidden>This round ends in <b id="round-ends">–</b></p>
+    </div>
     <p id="feedback" class="feedback" role="status"></p>
-
-    <section id="last-unsaid" class="notice reveal" hidden></section>
 
     <section id="signin" class="signin" hidden>
       <form id="signin-email" class="join">
@@ -91,23 +92,20 @@
       </form>
     </section>
 
-    <section id="lobby" hidden>
-      <div class="notice lobby-big">
+    <div class="columns">
+      <section class="notice lobby-big" id="lobby-big" hidden>
         <h2 class="box-title">The Big World
           <button type="button" class="info" id="round-info-button" aria-expanded="false" aria-controls="round-about" aria-label="About the Big World" title="About the Big World">i</button>
         </h2>
         <p class="muted small" id="round-about" hidden>Everyone signed in plays here, and it starts afresh every day.</p>
-        <p class="round-ends">This round ends in <b id="round-ends">–</b></p>
         <div id="last-round" class="last-round" hidden></div>
-      </div>
-      <div class="notice lobby-rooms">
+      </section>
+      <section id="last-unsaid" class="notice reveal" hidden></section>
+      <section class="notice lobby-rooms" id="lobby-rooms" hidden>
         <p>Play with 60 others in a separate world</p>
         <button type="button" id="room-button">Join a room</button>
-      </div>
-    </section>
-
-    <div class="columns">
-      <section>
+      </section>
+      <section class="said">
         <div class="tabs" role="tablist">
           <button type="button" role="tab" class="tab" id="tab-recent" aria-selected="true" aria-controls="recent">Just said</button>
           <button type="button" role="tab" class="tab" id="tab-misses" aria-selected="false" aria-controls="misses" hidden>My misses</button>
@@ -118,7 +116,7 @@
           <ol id="misses-list" class="recent"></ol>
         </div>
       </section>
-      <section>
+      <section class="board">
         <h2>Leaderboard</h2>
         <div class="tabs" role="tablist">
           <button type="button" role="tab" class="tab" id="tab-teams" aria-selected="false" aria-controls="board-teams" hidden>Teams</button>

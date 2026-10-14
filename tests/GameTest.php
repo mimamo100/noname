@@ -894,3 +894,22 @@ test('earlier prompts in the feed are the latest ones that had words, past any n
     same($game->state($world['id'], null)['prompt']['id'], $said[0]['promptId'], 'The current prompt first');
     same(['Contains OO'], array_column(array_slice($said, 1), 'prompt'), 'Then the played one, not the empty ones');
 });
+
+test('recent prompts are the latest finished ones someone played, newest first', function () {
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $world = $game->createWorld('Recent', null, 60_000);
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $p = $game->join($world['id'], 'Pat');
+    $game->play($world['id'], $p['token'], 'moon');
+    $clock += 61_000; // Contains OO ends; nobody plays the next one.
+    $game->state($world['id'], null);
+    $clock += 61_000;
+    $game->state($world['id'], null);
+    setPrompt($game, $world['id'], spec(null, ['contains', 'ee']));
+    $game->play($world['id'], $p['token'], 'seed');
+    $clock += 61_000;
+    $game->state($world['id'], null);
+    same(['Contains EE', 'Contains OO'], array_column($game->recentPrompts($world['id'], 3), 'prompt'));
+    same(['Contains EE'], array_column($game->recentPrompts($world['id'], 1), 'prompt'));
+});

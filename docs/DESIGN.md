@@ -225,7 +225,8 @@ word-finder site. There are three kinds:
   counted but not shown), so players see the "oh, of course!" words they
   missed. It's noted on the prompt as it ends (later prompts use words up
   too) and shown under **Recent prompt** (the latest one someone played) and with each earlier prompt in the
-  feed.
+  feed. The feed shows three earlier prompts that had words; early in the big world's new round
+  it makes them up with the last round's, marked "last round".
 - **My misses** lists a player's own wrong guesses (with the prompt, the
   reason and any penalty, plus what happened to any report: waiting,
   accepted or dismissed. An accepted word that has since been used up, for

@@ -803,11 +803,11 @@ final class Game
      * The words said in the world's latest prompts (the current one first), each with all
      * its words, newest first. Older prompts' words can still be found with lookup().
      */
-    private function saidByPrompt(string $worldId, int $prompts = 4, array $teamOf = [], ?int $onlyPromptId = null): array
+    private function saidByPrompt(string $worldId, int $prompts = 4, array $teamOf = [], ?array $onlyPromptIds = null): array
     {
         // The current prompt and the latest ones that had words: prompts nobody played aren't
         // shown, so they mustn't crowd out the ones that were.
-        $only = $onlyPromptId !== null ? ' AND p.id = ' . (int) $onlyPromptId
+        $only = $onlyPromptIds !== null ? ' AND p.id IN (' . implode(',', array_map('intval', $onlyPromptIds ?: [0])) . ')'
             : ' AND (p.ended_at IS NULL OR EXISTS (SELECT 1 FROM burns b WHERE b.prompt_id = p.id))';
         $stmt = $this->db->prepare("SELECT p.id, p.spec, p.label, p.type, p.letters, p.unsaid_count, p.unsaid_words, p.closing_word
             FROM prompts p WHERE p.world_id = ?$only ORDER BY p.id DESC LIMIT $prompts");
@@ -847,14 +847,20 @@ final class Game
     /** The latest ended prompt with at least one word said, with its words and what was left unsaid. */
     public function recentPrompt(string $worldId, array $teamOf = []): ?array
     {
+        return $this->recentPrompts($worldId, 1, $teamOf)[0] ?? null;
+    }
+
+    /** The latest ended prompts with at least one word said, newest first, as recentPrompt() gives them. */
+    public function recentPrompts(string $worldId, int $count, array $teamOf = []): array
+    {
         $stmt = $this->db->prepare('
             SELECT p.id FROM prompts p
             WHERE p.world_id = ? AND p.ended_at IS NOT NULL AND p.unsaid_count IS NOT NULL
               AND EXISTS (SELECT 1 FROM burns b WHERE b.prompt_id = p.id)
-            ORDER BY p.id DESC LIMIT 1');
+            ORDER BY p.id DESC LIMIT ' . max(1, $count));
         $stmt->execute([$worldId]);
-        $id = $stmt->fetchColumn();
-        return $id === false ? null : ($this->saidByPrompt($worldId, 1, $teamOf, (int) $id)[0] ?? null);
+        $ids = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        return $ids ? $this->saidByPrompt($worldId, count($ids), $teamOf, $ids) : [];
     }
 
     /** A player's most recent wrong guesses, newest first, with the prompt each was for. */

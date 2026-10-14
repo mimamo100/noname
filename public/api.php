@@ -260,10 +260,13 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         if ($user && !empty($state['world']['ended'])) $state['myResult'] = $lobby->result($world['id'], (int) $user['id']);
         if ($isBigWorld) {
             $state['roundHours'] = $lobby->roundHours();
-            // Early in a new round, Recent prompt shows the last round's last played prompt.
-            if (empty($state['recentPrompt']) && ($previous = $lobby->previousRoundId())) {
-                $recent = $game->recentPrompt($previous);
-                if ($recent) $state['recentPrompt'] = $recent + ['lastRound' => true];
+            // Early in a new round, Recent prompt shows the last round's last played prompt, and
+            // Earlier prompts are made up to three with the last round's.
+            $earlier = count(array_filter($state['said'] ?? [], fn ($g) => $g['promptId'] !== ($state['prompt']['id'] ?? null)));
+            if ((empty($state['recentPrompt']) || $earlier < 3) && ($previous = $lobby->previousRoundId())) {
+                $fromLast = array_map(fn ($g) => $g + ['lastRound' => true], $game->recentPrompts($previous, 3));
+                if (empty($state['recentPrompt']) && $fromLast) $state['recentPrompt'] = $fromLast[0];
+                $state['said'] = array_merge($state['said'] ?? [], array_slice($fromLast, 0, max(0, 3 - $earlier)));
             }
             $state['lastRound'] = $lobby->lastRound();
             if ($user && $state['lastRound']) $state['lastRound']['mine'] = $lobby->result($state['lastRound']['id'], (int) $user['id']);

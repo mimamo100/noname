@@ -140,7 +140,7 @@ const resultLine = (g) => `${MEDALS[g.place] ? `${MEDALS[g.place]} ` : ''}${ordi
 
 function renderLobby(state) {
   const big = state.world.kind === 'public';
-  $('lobby').hidden = !big;
+  for (const id of ['lobby-big', 'lobby-rooms', 'round-clock']) $(id).hidden = !big;
   if (big) {
     const hours = state.roundHours ?? 24;
     $('round-about').textContent = `Everyone signed in plays here, and it starts afresh ${hours === 24 ? 'every day' : `every ${hours} ${hours === 1 ? 'hour' : 'hours'}`}.`;
@@ -718,7 +718,7 @@ function renderSaid(groups, currentPromptId) {
       continue; // Prompts nobody played aren't listed: they'd only make the page look quiet.
     } else {
       const details = el('details', { className: 'earlier', open: openPrompts.has(group.promptId) },
-        el('summary', {}, el('span', { textContent: group.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(group.words.length)}` })),
+        el('summary', {}, el('span', { textContent: group.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(group.words.length)}${group.lastRound ? ' · last round' : ''}` })),
         ...(group.unsaid ? [el('p', { className: 'small unsaid-line' }, group.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(group.unsaid))] : []),
         saidList(group.words, 'Nothing was said.', group.closingWord));
       details.addEventListener('toggle', () => (details.open ? openPrompts.add(group.promptId) : openPrompts.delete(group.promptId)));

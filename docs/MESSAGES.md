@@ -108,7 +108,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | This prompt · {n} said | app.js · renderSaid |
 | Nothing said yet. Be the first. | app.js · renderSaid |
 | Show all {n} / Show fewer | app.js · renderSaid |
-| Earlier prompts | app.js · renderSaid |
+| Earlier prompts *(three that had words; early in a new round, made up from the last round's)* · {prompt} · {n} said · last round | app.js · renderSaid |
 | Nothing was said. | app.js · renderSaid |
 | {name} (+{n} family) *(in the feed)* | app.js · saidList |
 | Tap to show the word *(a masked word, p\*\*\*s)* | app.js · saidWord |
