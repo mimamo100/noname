@@ -101,3 +101,17 @@ test('a curated pack can leave out everyday forms its words would bring along', 
     same(['acid', 'acids', 'gas', 'gases', 'gust', 'gusts'], sorted($built['words']));
     same(['“nothing” (leave out) isn\'t an everyday form of any of the pack\'s words'], $built['problems']);
 });
+
+test('a pack-only competition gets pack-sized prompts, whatever its pace', function () {
+    $clock = 1_000 * HOUR_MS;
+    [$db, , $comps, $org] = makeCompetitions($clock);
+    $made = (new Packs($db))->create($org, 'Space', '', PLANETS, testDictionary());
+    $sizes = function (array $input) use ($db, $comps, $org, $clock): array {
+        $world = $comps->create($org, $input + ['name' => 'Space quiz', 'startsAt' => $clock + HOUR_MS, 'endsAt' => $clock + 2 * HOUR_MS, 'teams' => ['Owls', 'Foxes']]);
+        $row = $db->query("SELECT prompt_min, prompt_max FROM worlds WHERE id = '{$world['id']}'")->fetch(PDO::FETCH_NUM);
+        return [(int) $row[0], (int) $row[1]];
+    };
+    same([5, 40], $sizes(['promptMinutes' => 5, 'pack' => $made['id'], 'packMode' => 'only']), 'Short prompts');
+    same([5, 40], $sizes(['promptMinutes' => 60, 'pack' => $made['id'], 'packMode' => 'only']), 'Long prompts');
+    same([30, 200], $sizes(['promptMinutes' => 15, 'pack' => $made['id'], 'packMode' => 'mixed']), 'A mixed pack keeps the live-event sizes');
+});
