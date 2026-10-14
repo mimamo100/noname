@@ -123,11 +123,17 @@ final class Auth
         return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
     }
 
-    private function createUser(string $email, string $rawName): array
+    private function checkName(string $rawName): string
     {
         $name = trim($rawName);
         if (!preg_match(self::NAME_PATTERN, $name)) throw new GameError(400, 'Names are 1–20 letters, numbers, spaces, - or _');
         if ($this->dictionary->isOffensiveName($name)) throw new GameError(400, 'Please choose a different name');
+        return $name;
+    }
+
+    private function createUser(string $email, string $rawName): array
+    {
+        $name = $this->checkName($rawName);
         try {
             $this->db->prepare('INSERT INTO users (email, name, created_at, last_seen_at) VALUES (?, ?, ?, ?)')
                 ->execute([$email, $name, $this->now(), $this->now()]);
@@ -136,6 +142,56 @@ final class Auth
             throw $e;
         }
         return $this->userByEmail($email);
+    }
+
+    /**
+     * Changes the account's name. Its players in unfinished worlds take the new name (with a
+     * number if someone there already has it); finished worlds keep the name they finished with.
+     */
+    public function rename(array $user, string $rawName, Game $game): array
+    {
+        $name = $this->checkName($rawName);
+        try {
+            $this->db->prepare('UPDATE users SET name = ? WHERE id = ?')->execute([$name, $user['id']]);
+        } catch (PDOException $e) {
+            if ($e->getCode() === '23000') throw new GameError(409, 'That name is taken. Please choose another.');
+            throw $e;
+        }
+        $stmt = $this->db->prepare('
+            SELECT p.id, p.world_id FROM players p JOIN worlds w ON w.id = p.world_id
+            WHERE p.user_id = ? AND w.ended_at IS NULL');
+        $stmt->execute([$user['id']]);
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $p) $game->renamePlayer($p['world_id'], (int) $p['id'], $name);
+        return ['name' => $name] + $user;
+    }
+
+    /**
+     * Deletes the account. Its words stay said and its scores stay on the leaderboards, under
+     * "Former player". Private worlds and competitions it runs are ended (their players get
+     * their final standings), and its word packs are deleted. The email and name are gone.
+     */
+    public function deleteAccount(array $user, Game $game): void
+    {
+        $userId = (int) $user['id'];
+        $stmt = $this->db->prepare("SELECT id FROM worlds WHERE owner_user_id = ? AND ended_at IS NULL AND kind IN ('private', 'competition')");
+        $stmt->execute([$userId]);
+        foreach ($stmt->fetchAll(PDO::FETCH_COLUMN) as $worldId) $game->finishWorld($worldId);
+
+        $stmt = $this->db->prepare('SELECT id, world_id FROM players WHERE user_id = ?');
+        $stmt->execute([$userId]);
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $p) {
+            $name = $game->renamePlayer($p['world_id'], (int) $p['id'], 'Former player');
+            $this->db->prepare('UPDATE results SET nickname = ?, user_id = NULL WHERE world_id = ? AND user_id = ?')
+                ->execute([$name, $p['world_id'], $userId]);
+            // A new token too, so nothing saved on a device can play as this player again.
+            $this->db->prepare('UPDATE players SET user_id = NULL, token = ? WHERE id = ?')->execute([bin2hex(random_bytes(24)), $p['id']]);
+        }
+        $this->db->prepare('UPDATE results SET user_id = NULL WHERE user_id = ?')->execute([$userId]);
+        $this->db->prepare('UPDATE worlds SET owner_user_id = NULL WHERE owner_user_id = ?')->execute([$userId]);
+        $this->db->prepare('DELETE FROM packs WHERE owner_user_id = ?')->execute([$userId]);
+        $this->db->prepare('DELETE FROM sessions WHERE user_id = ?')->execute([$userId]);
+        $this->db->prepare('DELETE FROM login_codes WHERE email = ?')->execute([$user['email']]);
+        $this->db->prepare('DELETE FROM users WHERE id = ?')->execute([$userId]);
     }
 
     private static function publicUser(array $user): array

@@ -106,6 +106,15 @@ test('HTTP API: sign in, create, play, look up', function () {
         same(401, $call('POST', '/api/rooms')['status']);
         same([], $call('GET', '/api/me/history', null, $session)['body']['games']);
 
+        // Your account: your place in each world, and a new name.
+        $mine = array_column($call('GET', '/api/me/worlds', null, $session)['body']['worlds'], null, 'id');
+        same(1, $mine[$id]['place'], 'First in the world just played');
+        same(null, $mine[$room['id']]['place'], 'No place before a word');
+        same(401, $call('POST', '/api/me/name', ['name' => 'Kimberley'])['status'], 'Renaming needs an account');
+        same('Kimberley', $call('POST', '/api/me/name', ['name' => 'Kimberley'], $session)['body']['user']['name']);
+        same('Kimberley', $call('GET', "/api/worlds/$id", null, $session)['body']['me'], 'The new name shows in the world');
+        check(str_contains($call('GET', '/me')['raw'], 'Your account'), 'The account page serves index.html');
+
         same(200, $call('POST', '/api/auth/logout', null, $session)['status']);
         same(401, $call('POST', "/api/worlds/$id/words?invite={$created['body']['invite']}", ['word' => $word], $session)['status'], 'Signed out');
 
@@ -114,6 +123,14 @@ test('HTTP API: sign in, create, play, look up', function () {
         check(str_starts_with($big['world']['name'], 'The Big World, '), 'The big world');
         same(['public', null, null], [$big['world']['kind'], $big['lastRound'], $big['myRoom']]);
         check(str_contains($call('GET', "/w/$id")['raw'], 'Unsaid'), 'World page should serve index.html');
+
+        // Deleting the account: it needs confirming, then the email can sign up afresh.
+        $call('POST', '/api/auth/start', ['email' => 'kim@example.com']);
+        $session = $call('POST', '/api/auth/verify', ['email' => 'kim@example.com', 'code' => $lastCode()])['body']['token'];
+        same(400, $call('POST', '/api/me/delete', [], $session)['status']);
+        same(200, $call('POST', '/api/me/delete', ['confirm' => true], $session)['status']);
+        same(null, $call('GET', '/api/auth/me', null, $session)['body']['user']);
+        same('Former player', $call('GET', "/api/worlds/$id?invite={$created['body']['invite']}")['body']['leaderboard'][0]['nickname']);
     } finally {
         proc_terminate($server);
         unlink($config);

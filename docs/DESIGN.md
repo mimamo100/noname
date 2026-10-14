@@ -36,16 +36,17 @@ language shrinks, players hunt for rarer words, and those words are worth more.
   there's still a seat, they carry on; if not, they're offered a new room. A
   room finishes when it runs out of words, and its players move on to new
   rooms. Rooms can only be joined this way, not by link.
-- **Finished worlds and My games.** When a round or room finishes, every
+- **Finished worlds and Games.** When a round or room finishes, every
   player who said a word or lost points gets a results row: place (shared on
-  equal scores), out of how many, score, words and best word. **My games**
-  shows these, newest first, with personal bests (games, wins, best finish,
-  best score, most words, words said in all, best word). A finished world
+  equal scores), out of how many, score, words and best word. The **Games**
+  tab of Your account shows these, newest first, under the streak and a few
+  personal bests (best finish and wins, best score, best word, words said in
+  all; any still at nothing are left out). A finished world
   stays viewable: a **results card** takes the prompt's place ("Foxes win!",
   the team scores and the winners' names, or the winning player; the top
   scorer; "You finished 3rd of 4. Owls came 2nd of 2."), with a short shower
-  of confetti for the winners, once per device. **Sharing:** a Share button (in
-  My games, on the finished world's page, and by the big world's last round)
+  of confetti for the winners, once per device. **Sharing:** a Share button (on
+  the finished world's page, and by the big world's last round)
   copies a short result to paste anywhere, or opens the share sheet on a
   phone (titled "Unsaid: my result in …", the subject in an email): the
   world, place, points, words and best word (masked words as p***s), a line
@@ -197,7 +198,7 @@ word-finder site. There are three kinds:
   corpus", "rock and roll"); the game stores and compares the joined form,
   but **shows the written form** wherever a word reaches players: the feed,
   Just said, Nobody said, Who said it?, My misses, the messages after a
-  guess, and best words in My games and shared results. The build keeps a
+  guess, and best words in Games and shared results. The build keeps a
   map from joined to written form (`display` in `data/dictionary.php` and
   each `data/packs/<id>.php`; custom packs build their own), and
   `Dictionary::display()` looks words up in it. Masking is decided on the
@@ -241,8 +242,9 @@ word-finder site. There are three kinds:
 - **Streaks:** the days in a row an account has said a word, anywhere (UK
   days, matching the big world's rounds), and its best run. Kept on the
   account, as words are tidied away a month after a world finishes. The day's
-  first word says "That's 5 days in a row!", and My games shows both.
-- **Daily email** (off unless a player turns it on, in the account menu):
+  first word says "That's 5 days in a row!", and the Games tab shows both,
+  with dots for the last week.
+- **Daily email** (off unless a player turns it on, in Your account's settings):
   sent in hourly batches from 7am (an hourly cron job, keeping under the
   host's hourly email limit), to those who haven't played yet that day, with their streak and how they did in
   the last round. Each email has a link that turns it off without signing in.
@@ -351,16 +353,34 @@ can see or join it. Its players can copy the link to invite others.
   unravel everyone else's scores), but they drop off the leaderboards, and
   can't see the world or rejoin it
 - **end the world**: it finishes like a room, with final standings and
-  entries in My games
+  entries in everyone's Games
 - **delete**: only once it has ended, or if nobody else has played.
 
 **Limits:** a Host can own 3 open private worlds at once (ended ones don't
 count). A private world with no guesses for 60 days ends automatically
 (housekeeping). Worlds created before plans existed keep working.
 
-**My worlds** (next to the player's name) lists every world they're in: the
-big world, their room, and their private worlds, with their score, the
-number of players, how much is left and when someone last played.
+**Your account** (`/me`, from the menu under the player's name) is a page
+with four tabs:
+
+- **Worlds:** a card for each room, private world and competition they're in
+  or run, in that kind of world's colour: their place (or team), points and
+  how much is left, when the last word was said (or when a competition ends),
+  and Open. Their own worlds come first, marked Yours; ended worlds they own
+  are underneath, to open and delete.
+- **Games:** the streak, personal bests and past games (see "Finished worlds
+  and Games").
+- **Word packs** (Organiser plan): their own packs, each opening the editor.
+- **Settings:** their name (changeable: the new name shows in the worlds
+  they're playing now, with a number if someone there has it; finished games
+  keep the old one), the daily email as an on/off switch, their plan, sign
+  out, and **delete account**. Deleting needs "delete" typed to confirm. The
+  email and name go, and so do sign-ins and word packs. Words stay said and
+  scores stay on leaderboards, as "Former player". Private worlds and
+  competitions they run end at once, so their players get final standings.
+
+The menu under the name holds Your account, New private world, New
+competition (Organiser plan) and Sign out.
 
 ## Competitions
 
@@ -379,7 +399,7 @@ an office contest.
   its players' scores. Leaderboards for teams and for individuals (each with
   "this prompt" and overall), with each player's team shown, in team colours,
   and who said each word visible to all.
-- **At the end**, final team and individual standings, in My games too
+- **At the end**, final team and individual standings, in Games too
   ("Team Owls, 2nd of 6"). A competition nobody looks at after its end is
   finished by the nightly housekeeping, so its results are still recorded.
 
@@ -415,7 +435,7 @@ a music quiz.
   organisers can use them. Each line is one answer, its forms separated by
   commas ("black hole, black holes"); a form may be a phrase, shown as
   written. They may list blocked words they need (see "Offensive words").
-- **Organisers' own packs** are written on the site (menu: My word packs): lists
+- **Organisers' own packs** are written on the site (Your account, Word packs): lists
   separated by blank lines, each a prompt line ("A planet") then one word per
   line, with other forms of a word on the same line. A line with a comma is
   split on commas, so it can hold phrases ("black hole, black holes"); a line

@@ -116,7 +116,7 @@ any promotion.
 Accounts mean you store email addresses, so the game needs:
 - a short **privacy notice**: what's stored (email, name, games played),
   why, and for how long
-- a way to **delete an account** (on request at first, a button later)
+- a way to **delete an account** (done: Your account, Settings)
 - the housekeeping above, so codes and addresses aren't kept longer than needed
 - backups that are kept safe, since they contain emails.
 

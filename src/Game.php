@@ -326,6 +326,23 @@ final class Game
         throw new GameError(409, 'Could not join this world');
     }
 
+    /** Gives a player a new name, with a number if someone in the world already has it. Returns the name given. */
+    public function renamePlayer(string $worldId, int $playerId, string $name): string
+    {
+        for ($n = 1; $n <= 500; $n++) {
+            $suffix = $n === 1 ? '' : " $n";
+            $candidate = mb_substr($name, 0, 20 - mb_strlen($suffix)) . $suffix;
+            try {
+                $this->db->prepare('UPDATE players SET nickname = ? WHERE id = ?')->execute([$candidate, $playerId]);
+                $this->changed($worldId);
+                return $candidate;
+            } catch (PDOException $e) {
+                if ($e->getCode() !== '23000') throw $e;
+            }
+        }
+        throw new GameError(409, 'Could not rename the player');
+    }
+
     private function playerByToken(string $worldId, ?string $token): array
     {
         $stmt = $this->db->prepare('SELECT * FROM players WHERE world_id = ? AND token = ?');

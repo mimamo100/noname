@@ -199,7 +199,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Invite link copied. | app.js · settings-copy |
 | Make a new invite link? The old one will stop working. | app.js · settings-new-invite |
 | New invite link made. Send it to anyone still to join. | app.js · settings-new-invite |
-| End this world for everyone? Final standings go into everyone's My games. This can't be undone. | app.js · settings-end |
+| End this world for everyone? Final standings go into everyone's Games, under Your account. This can't be undone. | app.js · settings-end |
 | The world has ended. | app.js · settings-end |
 | Remove {name}? Their words stay used up, but they leave the leaderboard and can't come back. | app.js · loadSettings |
 | {name} has been removed. | app.js · loadSettings |
@@ -288,7 +288,8 @@ Shown under the word box; they fade after a few seconds (see section 13).
 |---|---|
 | Everyday words / Word packs / Your packs *(the Words menu)* | app.js · loadPackChoices |
 | {pack} ({n} words) | app.js · loadPackChoices |
-| No packs yet. Make one with New pack. | app.js · showPacks |
+| No packs yet. Make one with New pack: a few lists of words on a theme, and it's ready to use in a private world or competition. | app.js · renderPacks |
+| New word pack / Edit “{pack}” *(the editor's title)* | app.js · editPack |
 | Players suggested: {words}. Add any that should count to a list above. Mark as seen | app.js · editPack |
 | Saved “{pack}”: {n} words in {n} lists. | app.js · pack-form |
 | Making your own word packs needs the Organiser plan. | Packs.php · create |
@@ -302,7 +303,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | A world that is still running uses this pack. End it first. | Packs.php · delete |
 | No such pack of yours | Packs.php · owned |
 
-## 11. Signing in, the account menu, My worlds and My games
+## 11. Signing in, and Your account
 
 | Message | Where |
 |---|---|
@@ -312,21 +313,37 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | That code has expired. Please ask for a new one. | Auth.php · verify |
 | Too many wrong tries. Please ask for a new code. | Auth.php · verify |
 | That code isn't right. Check the email and try again. | Auth.php · verify |
-| Names are 1–20 letters, numbers, spaces, - or _ / Please choose a different name / That name is taken. Please choose another. | Auth.php · createUser |
+| Names are 1–20 letters, numbers, spaces, - or _ / Please choose a different name / That name is taken. Please choose another. | Auth.php · checkName, createUser, rename |
 | Welcome, {name}! Start saying words. | app.js · verify |
 | Please sign in to play | api.php · route |
 | Signed out. | app.js · menu-signout |
-| Daily email: on / off *(menu item)* | app.js · renderAccount |
-| Daily email on: each morning, when the big world starts afresh, we'll email you unless you've already played. Turn it off here, or from the link in any email. | app.js · menu-reminders |
-| Daily email off. | app.js · menu-reminders |
+| Your account / New private world / New competition / Sign out *(the menu under your name)* | index.html |
 | Done: we won't send you the daily email any more. *(from the email's link)* | app.js · (on opening the page) |
 | That link has expired. *(an old stop-email link)* | api.php · route |
-| My worlds: The Big World · Everyone signed in, afresh every round | app.js · showWorlds |
-| My worlds: · yours · {pack} words · {n}% left · you: {n} points · Ended. Open it to delete it, or see it in My games. | app.js · showWorlds |
-| No rooms or private worlds yet. Join a room from the big world, or open an invite link. | app.js · showWorlds |
-| My games: No finished games yet. Big world rounds finish at the end of each round, and rooms when their words run out. So far you've said {n} words. | app.js · showHistory |
-| My games tiles: days in a row (: play today to keep it) · best run of days · games · wins · best finish · best score · most words in a game · words said in all · best word (+{n}) | app.js · showHistory |
-| {place} of {n} · {n} points · {n} words · best: {word} (+{n}) / Team {team}: {place} of {n} teams | app.js · showHistory |
+| ← Back to the big world · Your account · {email} · {Plan} plan · Worlds / Games / Word packs / Settings | index.html, app.js · renderSettings |
+| **Worlds:** Playing now · Ended: yours to keep or delete | app.js · renderMyWorlds |
+| {world} Yours · Room / Private world / Competition · {pack} *(a card)* | app.js · worldCard |
+| {place} of {n} / Team {team} / – not played yet · {n} your points / {n} players · {n}% words left | app.js · worldCard |
+| Last word {time} ago / No words yet / Starts {when} / Ends in {time} · {n} players / Ended. Open it to delete it. · Open | app.js · worldCard |
+| You're not in any rooms, private worlds or competitions yet. Rooms are worlds of 60 players that last for weeks; private worlds and competitions need an invite link from whoever runs them. · Play the Big World | app.js · renderMyWorlds |
+| **Games:** {n} days in a row / day in a row | app.js · renderMyGames |
+| Say a word today to start a new run. Your best is {n} days. / You've played today. Your best is {n} days. / Say a word today to make it {n}. Your best is {n} days. | app.js · renderMyGames |
+| Your bests: {medal} {place} best finish · {n} wins / {n} best score / {word} best word (+{n}) / {n} words said in all | app.js · renderMyGames |
+| Past games: {name} · {place} of {n} · Team {team} ({place} of {n}) · {n} words · best: {word} (+{n}) · ended {date} · {n} points | app.js · renderMyGames |
+| No finished games yet. Big world rounds finish at the end of each round, and rooms when their words run out. So far you've said {n} words. | app.js · renderMyGames |
+| **Word packs:** Your own themed words for your private worlds and competitions: a topic you teach, your company's products, a quiz theme. · {pack} · {n} words · Players suggested {n} words · Edit · New pack | index.html, app.js · renderPacks |
+| **Settings:** Name · {name} · what other players see · Change | index.html |
+| Daily email · Each morning, when the big world starts afresh, a reminder if you haven't played yet *(an on/off switch)* | index.html |
+| Daily email on: each morning we'll email you unless you've already played. Turn it off here, or from the link in any email. / Daily email off. | app.js · acct-reminders |
+| Plan · Free: the big world, rooms, and worlds you're invited to / Host: also your own private worlds / Organiser: also competitions with teams, and your own word packs | app.js · PLAN_NAMES |
+| Sign out · On this device | index.html |
+| Delete account · Your email and name are removed. Your words stay said, as a former player. · Delete… | index.html |
+| Change your name · It changes in the worlds you're playing now. Finished games keep the name you finished with. · Save name | index.html |
+| Your name is now {name}. | app.js · name-form |
+| Delete your account? · Your email address and name are removed, and you're signed out everywhere. · Words you said stay said, and your scores stay on leaderboards as “Former player”. · Private worlds and competitions you run end now, and your word packs are deleted. *(paid plans)* · This can't be undone. You can sign up again with the same email, as a new player. · Type delete to confirm · Delete my account | index.html |
+| Confirm that you want to delete your account | api.php · route |
+| Your account has been deleted. Thanks for playing. | app.js · (after deleting) |
+| Former player *(a deleted account's name in worlds, with a number if needed)* | Auth.php · deleteAccount |
 
 ## 12. Emails
 

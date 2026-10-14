@@ -148,8 +148,16 @@ dialog {
   background: var(--surface); color: var(--text); border: 1px solid var(--border);
   border-radius: 16px; padding: 24px; width: min(420px, calc(100vw - 32px));
 }
-dialog::backdrop { background: rgb(0 0 0 / 0.6); }
-dialog h2 { margin-top: 0; }
+dialog::backdrop { background: rgb(0 0 0 / 0.75); }
+/* A dialog's title, with room for the × that closes it. */
+dialog h2 { margin: 0 36px 16px 0; font-size: 20px; text-transform: none; letter-spacing: 0; color: var(--text); }
+dialog { position: relative; }
+.dialog-x {
+  position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; padding: 0; border-radius: 50%;
+  background: none; color: var(--muted); font-size: 22px; line-height: 1; font-weight: 400;
+}
+.dialog-x:hover { background: var(--bg); color: var(--text); filter: none; }
+input[type="radio"], input[type="checkbox"] { accent-color: var(--ember); }
 .field { display: flex; flex-direction: column; gap: 6px; margin: 0 0 16px; border: 0; padding: 0; }
 .field legend { padding: 0; margin-bottom: 6px; }
 .field label { display: flex; gap: 8px; align-items: center; }
@@ -165,18 +173,13 @@ dialog h2 { margin-top: 0; }
 .lobby-rooms { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
 .lobby-rooms p { margin: 0; flex: 1 1 200px; font-weight: 600; }
 .leaderboard .away { color: var(--muted); font-weight: 400; font-size: 13px; }
-.bests { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px 16px; margin: 0 0 16px; }
-.bests div { display: flex; flex-direction: column; }
-.bests b { font-size: 20px; }
-.bests span { color: var(--muted); font-size: 13px; }
 .history-list { list-style: none; padding: 0; margin: 0; }
 .history-list li { padding: 8px 0; border-bottom: 1px solid var(--border); }
 .history-list a { color: var(--text); font-weight: 700; }
 .history-list .when { color: var(--muted); font-size: 13px; }
-#history-dialog { width: min(560px, calc(100vw - 32px)); }
 
-/* My worlds and world settings */
-#worlds-dialog, #settings-dialog { width: min(560px, calc(100vw - 32px)); }
+/* World settings */
+#settings-dialog { width: min(560px, calc(100vw - 32px)); }
 #settings-dialog h3 { margin: 20px 0 6px; font-size: 15px; }
 #settings-dialog code { word-break: break-all; }
 .check { display: flex; gap: 8px; align-items: center; margin: 8px 0; }
@@ -257,4 +260,85 @@ fieldset.field label:has(input:checked) { border-color: var(--ember); background
   display: inline-block; margin-left: 4px; padding: 1px 8px; border-radius: 999px; vertical-align: 3px;
   font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
   color: var(--bg); background: var(--band, var(--ember));
+}
+
+/* Your account (/me): tabs for worlds, games, word packs and settings. */
+.page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 12px; flex-wrap: wrap; margin: 12px 0 0; }
+.page-head h1 { margin: 0; font-size: 28px; }
+.page-head .muted { font-size: 14px; }
+#account-page .feedback { margin: 8px 0 0; }
+.acct-tabs { display: flex; gap: 22px; margin: 4px 0 20px; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.acct-tabs a {
+  color: var(--muted); text-decoration: none; padding: 0 0 8px; font-size: 14px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap;
+}
+.acct-tabs a.on { color: var(--text); border-bottom-color: var(--ember); }
+.section-title { margin: 28px 0 10px; }
+.acct-panel > .section-title:first-child { margin-top: 0; }
+.empty { background: var(--surface); border: 1px dashed var(--border); border-radius: 12px; padding: 16px 20px; }
+.empty p { margin: 0 0 12px; }
+.empty p:last-child { margin: 0; }
+a.button-link { display: inline-block; background: var(--ember); color: #1b0f05; border-radius: 8px; padding: 10px 16px; font-weight: 700; text-decoration: none; }
+/* Each kind of world's colour, for its card and its dot in Past games. */
+.card.public, .dot.public { --c: #ff7a29; }
+.card.room, .dot.room { --c: #6fcf7f; }
+.card.private, .dot.private { --c: #3cc2cf; }
+.card.competition, .dot.competition { --c: #a58bff; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--c, var(--ember)); border-radius: 12px;
+  padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; --band: var(--c);
+}
+.card h3 { margin: 0; font-size: 18px; }
+.card .kind { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.card .yours { margin-left: 8px; color: var(--c); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.facts { display: flex; gap: 22px; flex-wrap: wrap; }
+.facts b, .tiles b { display: block; font-size: 22px; font-variant-numeric: tabular-nums; }
+.facts span, .tiles span { color: var(--muted); font-size: 13px; }
+.card .foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+.card .foot p { margin: 0; color: var(--muted); font-size: 13px; }
+.card a.open { background: var(--c); color: #12100c; text-decoration: none; font-weight: 700; padding: 7px 14px; border-radius: 8px; font-size: 14px; flex: none; }
+.card.ended { opacity: 0.75; }
+.streak {
+  display: flex; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding: 20px 24px;
+  background: radial-gradient(circle at 0% 120%, var(--ember-dim), var(--surface) 70%); border: 1px solid var(--border); border-radius: 16px;
+}
+.streak .num { font-size: 56px; font-weight: 800; line-height: 1; color: var(--ember); font-variant-numeric: tabular-nums; }
+.streak .label { font-size: 18px; font-weight: 700; }
+.streak .sub { color: var(--muted); font-size: 14px; }
+.week { display: flex; gap: 8px; margin-left: auto; }
+.week div { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); }
+.week i { display: block; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); }
+.week i.on { background: var(--ember); border-color: var(--ember); }
+.week i.today { border-color: var(--ember); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.tiles > div { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; overflow-wrap: anywhere; }
+.games { list-style: none; margin: 0; padding: 0; }
+.games li { display: grid; grid-template-columns: 44px 1fr auto; gap: 2px 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.games .medal, .games .place { grid-row: span 2; text-align: center; }
+.games .medal { font-size: 26px; }
+.games .place { color: var(--muted); font-weight: 700; }
+.games a { color: var(--text); font-weight: 700; text-decoration: none; }
+.games a:hover { text-decoration: underline; }
+.games .score { grid-row: span 2; text-align: right; font-variant-numeric: tabular-nums; }
+.games .score b { display: block; font-size: 18px; }
+.games .score span, .games .meta { color: var(--muted); font-size: 13px; }
+.games .meta { grid-column: 2; font-size: 14px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; background: var(--c); }
+.pack-row, .setting { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.pack-row p, .setting p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.setting button.secondary { flex: none; }
+/* An on/off switch, for the daily email. */
+.switch { flex: none; width: 46px; height: 26px; padding: 0; border-radius: 13px; background: var(--border); position: relative; }
+.switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--text); transition: left 0.15s; }
+.switch[aria-checked="true"] { background: var(--ember); }
+.switch[aria-checked="true"]::after { left: 23px; }
+button.danger-solid { background: var(--bad); }
+.small-list { margin: 0 0 16px; padding-left: 20px; color: var(--muted); }
+.small-list li { margin-bottom: 6px; }
+@media (max-width: 700px) {
+  .acct-tabs { gap: 14px; }
+  .acct-tabs a { font-size: 13px; letter-spacing: 0.05em; }
+  .week { margin-left: 0; }
+  .streak .num { font-size: 44px; }
 }

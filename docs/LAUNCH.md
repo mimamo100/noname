@@ -36,6 +36,7 @@ off here as they're done.
   the server's own mail, so a burst of sign-ups doesn't hit the host's limit
   (SCALING.md, section 4).
 - [ ] A **privacy notice**: what's stored (email, name, games played), why, and
-  for how long; and a way to delete an account (SCALING.md, section 5).
+  for how long (SCALING.md, section 5). Deleting an account is done: Your
+  account, Settings.
 - [ ] **Payments** for the Host and Organiser plans, setting the plan
   automatically (until then, the admin sets plans by hand).

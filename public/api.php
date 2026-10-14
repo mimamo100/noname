@@ -5,11 +5,13 @@
 //   POST /api/auth/start                  {email}                  email a sign-in code
 //   POST /api/auth/verify                 {email, code, name?, claim?}  sign in; new accounts also send a name
 //   POST /api/auth/logout                                          sign this device out
-//   GET  /api/auth/me                                              the signed-in account, or null
+//   GET  /api/auth/me                                              the signed-in account, or null, and the admin link if any
 //
 //   GET  /api/me/history                                           finished games and personal bests (account needed)
 //   GET  /api/me/worlds                                            rooms, private worlds and competitions you're in (account needed)
 //   POST /api/me/reminders                {on}                     the daily email on or off (account needed)
+//   POST /api/me/name                     {name}                   change the account's name (account needed)
+//   POST /api/me/delete                   {confirm: true}          delete the account (account needed)
 //   POST /api/reminders/stop              {token}                  stop the daily email, from its link
 //
 //   POST /api/rooms                                         join a room: your own, or one with a free seat (account needed)
@@ -134,7 +136,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
             endAdminSession();
             respond(200, ['ok' => true]);
         }
-        if ($method === 'GET' && $authAction === 'me') respond(200, ['user' => $user]);
+        if ($method === 'GET' && $authAction === 'me') respond(200, ['user' => $user, 'admin' => adminLink($config)]);
         throw new GameError(404, 'Not found');
     }
 
@@ -146,6 +148,15 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
     // The daily email: on or off for the account, or off from the link in an email.
     if ($resource === 'me' && $method === 'POST' && $worldId === 'reminders') {
         $reminders->set((int) $needUser()['id'], (bool) (body()['on'] ?? false));
+        respond(200, ['ok' => true]);
+    }
+    if ($resource === 'me' && $method === 'POST' && $worldId === 'name') {
+        respond(200, ['user' => $auth->rename($needUser(), (string) (body()['name'] ?? ''), $game)]);
+    }
+    if ($resource === 'me' && $method === 'POST' && $worldId === 'delete') {
+        if ((body()['confirm'] ?? null) !== true) throw new GameError(400, 'Confirm that you want to delete your account');
+        $auth->deleteAccount($needUser(), $game);
+        endAdminSession();
         respond(200, ['ok' => true]);
     }
     if ($resource === 'reminders' && $method === 'POST' && $worldId === 'stop') {

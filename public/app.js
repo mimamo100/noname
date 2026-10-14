@@ -437,33 +437,31 @@ const packChoice = (prefix) => ($(`${prefix}-pack`).value
   ? { pack: $(`${prefix}-pack`).value, packMode: document.querySelector(`input[name="${prefix}-mode"]:checked`).value }
   : {});
 
-// The organiser's own packs: a list, and an editor.
+// The organiser's own packs: a list on the account page, and an editor in a dialog.
 let myPacks = [];
 let editingPack = null;
 
-async function showPacks() {
-  $('pack-form').hidden = true;
-  $('packs-list').hidden = false;
-  $('packs-buttons').hidden = false;
-  $('packs-list').replaceChildren(el('li', { className: 'muted', textContent: 'Loading…' }));
-  if (!$('packs-dialog').open) $('packs-dialog').showModal();
+async function renderPacks() {
+  $('packs-list').replaceChildren(el('p', { className: 'muted', textContent: 'Loading…' }));
   try {
     ({ packs: myPacks } = await rootApi('/me/packs'));
     $('packs-list').replaceChildren(...(myPacks.length ? myPacks.map((p) => {
-      const edit = el('button', { type: 'button', className: 'link row-actions', textContent: 'Edit' });
+      const edit = el('button', { type: 'button', className: 'secondary', textContent: 'Edit' });
       edit.addEventListener('click', () => editPack(p));
-      return el('li', {}, edit, el('b', { textContent: p.name }), ' ',
-        el('span', { className: 'when', textContent: `${p.words.toLocaleString()} words` }),
-        ...(p.reported.length ? [el('div', { className: 'small', textContent: `Players suggested ${p.reported.length} ${p.reported.length === 1 ? 'word' : 'words'}` })] : []),
-        ...(p.description ? [el('div', { className: 'muted small', textContent: p.description })] : []));
-    }) : [el('li', { className: 'muted', textContent: 'No packs yet. Make one with New pack.' })]));
+      const suggested = p.reported.length ? `Players suggested ${p.reported.length} ${p.reported.length === 1 ? 'word' : 'words'}` : '';
+      return el('div', { className: 'pack-row' },
+        el('div', {}, el('b', { textContent: p.name }), el('span', { className: 'muted', textContent: ` · ${p.words.toLocaleString()} words` }),
+          ...(p.description || suggested ? [el('p', { textContent: [p.description, suggested].filter(Boolean).join(' · ') })] : [])),
+        edit);
+    }) : [el('p', { className: 'empty', textContent: "No packs yet. Make one with New pack: a few lists of words on a theme, and it's ready to use in a private world or competition." })]));
   } catch (err) {
-    $('packs-list').replaceChildren(el('li', { className: 'bad', textContent: err.message }));
+    $('packs-list').replaceChildren(el('p', { className: 'bad', textContent: err.message }));
   }
 }
 
 function editPack(pack) {
   editingPack = pack;
+  $('pack-title').textContent = pack ? `Edit “${pack.name}”` : 'New word pack';
   $('pack-name').value = pack?.name ?? '';
   $('pack-description').value = pack?.description ?? '';
   $('pack-text').value = pack?.text ?? '';
@@ -471,28 +469,25 @@ function editPack(pack) {
   const reported = pack?.reported ?? [];
   const seen = el('button', { type: 'button', className: 'link', textContent: 'Mark as seen' });
   seen.addEventListener('click', async () => {
-    try { await rootApi(`/packs/${encodeURIComponent(pack.id)}/seen`, { method: 'POST' }); $('pack-reported').replaceChildren(); } catch (err) { alert(err.message); }
+    try { await rootApi(`/packs/${encodeURIComponent(pack.id)}/seen`, { method: 'POST' }); $('pack-reported').replaceChildren(); renderPacks(); } catch (err) { alert(err.message); }
   });
   $('pack-reported').replaceChildren(...(reported.length ? [
     el('p', {}, el('b', { textContent: 'Players suggested: ' }), reported.map((r) => `${r.word}${r.players > 1 ? ` (${r.players})` : ''}`).join(', '), '. ',
       'Add any that should count to a list above. ', seen),
   ] : []));
-  $('packs-list').hidden = true;
-  $('packs-buttons').hidden = true;
-  $('pack-form').hidden = false;
+  $('packs-dialog').showModal();
 }
 
-$('menu-packs').addEventListener('click', showPacks);
-$('packs-close').addEventListener('click', () => $('packs-dialog').close());
 $('pack-new').addEventListener('click', () => editPack(null));
-$('pack-cancel').addEventListener('click', showPacks);
+$('pack-cancel').addEventListener('click', () => $('packs-dialog').close());
 $('pack-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const body = { name: $('pack-name').value, description: $('pack-description').value, text: $('pack-text').value };
   try {
     const saved = await rootApi(editingPack ? `/packs/${encodeURIComponent(editingPack.id)}` : '/packs', { method: 'POST', body });
+    $('packs-dialog').close();
     feedback(`Saved “${body.name}”: ${saved.words.toLocaleString()} words in ${saved.lists.length} ${saved.lists.length === 1 ? 'list' : 'lists'}.`, 'good');
-    showPacks();
+    renderPacks();
   } catch (err) {
     alert(err.message);
   }
@@ -501,7 +496,8 @@ $('pack-delete').addEventListener('click', async () => {
   if (!confirm(`Delete “${editingPack.name}”? This can't be undone.`)) return;
   try {
     await rootApi(`/packs/${encodeURIComponent(editingPack.id)}/delete`, { method: 'POST' });
-    showPacks();
+    $('packs-dialog').close();
+    renderPacks();
   } catch (err) {
     alert(err.message);
   }
@@ -892,7 +888,6 @@ function saidAt(ms) {
   const time = d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
   return d.toDateString() === new Date().toDateString() ? `at ${time}` : `on ${d.toLocaleDateString(undefined, { day: 'numeric', month: 'short' })}, ${time}`;
 }
-const shortDate = (ms) => new Date(ms).toLocaleString(undefined, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
 
 const penaltyText = (r) => (r.penalty ? ` −${r.penalty} ${r.penalty === 1 ? 'point' : 'points'}.` : '');
 
@@ -993,8 +988,6 @@ function renderAccount(account, adminUrl) {
   if (!account) { closeMenu(); return; }
   $('account-button').textContent = account.name;
   $('new-competition').hidden = account.plan !== 'organiser';
-  $('menu-packs').hidden = account.plan !== 'organiser';
-  $('menu-reminders').textContent = `Daily email: ${account.reminders ? 'on' : 'off'}`;
 }
 
 function closeMenu() {
@@ -1013,21 +1006,10 @@ $('account-menu').addEventListener('click', closeMenu);
 document.addEventListener('click', (e) => { if (!$('account').contains(e.target)) closeMenu(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('account-menu').hidden) { closeMenu(); $('account-button').focus(); } });
 $('signin-link').addEventListener('click', () => { showSigninStep('email'); $('signin').hidden = false; $('signin').scrollIntoView({ block: 'center' }); });
-$('menu-worlds').addEventListener('click', () => showWorlds());
-$('menu-games').addEventListener('click', () => showHistory());
-$('menu-reminders').addEventListener('click', async () => {
-  const on = !lastState?.account?.reminders;
-  try {
-    await rootApi('/me/reminders', { method: 'POST', body: { on } });
-    feedback(on
-      ? "Daily email on: each morning, when the big world starts afresh, we'll email you unless you've already played. Turn it off here, or from the link in any email."
-      : 'Daily email off.', 'good');
-    refresh();
-  } catch (err) { feedback(err.message, 'bad'); }
-});
 $('menu-signout').addEventListener('click', async () => {
   try { await authApi('/logout', { method: 'POST' }); } catch { /* signed out locally anyway */ }
   setSession(null);
+  if (accountPage) { location.href = '/'; return; }
   feedback('Signed out.', 'good');
   refresh();
 });
@@ -1040,30 +1022,6 @@ function ago(ms) {
   return `${Math.floor(mins / 1440)} days ago`;
 }
 
-async function showWorlds() {
-  const big = el('li', {}, el('a', { href: '/', textContent: 'The Big World' }), el('div', { className: 'muted small', textContent: 'Everyone signed in, afresh every round' }));
-  $('worlds-list').replaceChildren(big, el('li', { className: 'muted', textContent: 'Loading…' }));
-  $('worlds-dialog').showModal();
-  try {
-    const { worlds } = await rootApi('/me/worlds');
-    $('worlds-list').replaceChildren(big, ...worlds.map((w) => el('li', {},
-      el('a', { href: `/w/${encodeURIComponent(w.id)}`, textContent: w.name }),
-      ' ', el('span', { className: 'when', textContent: (w.kind === 'room' ? 'room' : w.kind === 'competition' ? 'competition' : 'private') + (w.isOwner ? ' · yours' : '') }),
-      ...(w.packName ? [el('span', { className: 'when', textContent: ` · ${w.packName} words` })] : []),
-      el('div', { className: 'small', textContent: w.ended ? 'Ended. Open it to delete it, or see it in My games.' : [
-        ...(w.kind === 'competition' && w.startsAt > Date.now() ? [`starts ${whenText(w.startsAt)}`] : []),
-        ...(w.kind === 'competition' && w.startsAt <= Date.now() ? [`ends in ${timeLeft(w.endsAt - Date.now())}`] : []),
-        `${w.players} ${w.players === 1 ? 'player' : 'players'}`,
-        `${Math.round(w.left * 100)}% left`,
-        ...(w.score !== null ? [`you: ${w.score} points`] : []),
-        w.lastPlayed ? `played ${ago(w.lastPlayed)}` : 'not played yet',
-      ].join(' · ') }),
-    )), ...(worlds.length ? [] : [el('li', { className: 'muted', textContent: 'No rooms or private worlds yet. Join a room from the big world, or open an invite link.' })]));
-  } catch (err) {
-    $('worlds-list').replaceChildren(big, el('li', { className: 'bad', textContent: err.message }));
-  }
-}
-$('worlds-close').addEventListener('click', () => $('worlds-dialog').close());
 
 // --- World settings, for a private world's owner ---
 
@@ -1131,53 +1089,9 @@ $('settings-form').addEventListener('submit', async (e) => {
 });
 $('settings-copy').addEventListener('click', () => copyText(inviteUrl(settings.invite), 'Invite link copied.'));
 $('settings-new-invite').addEventListener('click', () => settingsAction('Make a new invite link? The old one will stop working.', 'invite', {}, 'New invite link made. Send it to anyone still to join.'));
-$('settings-end').addEventListener('click', () => settingsAction('End this world for everyone? Final standings go into everyone\'s My games. This can\'t be undone.', 'end', {}, 'The world has ended.'));
+$('settings-end').addEventListener('click', () => settingsAction('End this world for everyone? Final standings go into everyone\'s Games, under Your account. This can\'t be undone.', 'end', {}, 'The world has ended.'));
 $('settings-delete').addEventListener('click', () => settingsAction('Delete this world and everything in it? This can\'t be undone.', 'delete', {}, ''));
 
-async function showHistory() {
-  $('history').replaceChildren(el('p', { className: 'muted', textContent: 'Loading…' }));
-  $('history-dialog').showModal();
-  try {
-    const { bests, games } = await rootApi('/me/history');
-    const best = (value, label) => el('div', {}, el('b', { textContent: value }), el('span', { textContent: label }));
-    const streaks = [
-      best(bests.streak, `${bests.streak === 1 ? 'day' : 'days'} in a row${bests.streak && !bests.playedToday ? ': play today to keep it' : ''}`),
-      best(bests.bestStreak, 'best run of days'),
-    ];
-    if (!games.length) {
-      $('history').replaceChildren(el('div', { className: 'bests' }, ...streaks), el('p', { className: 'muted', textContent:
-        `No finished games yet. Big world rounds finish at the end of each round, and rooms when their words run out.${bests.wordsSaid ? ` So far you've said ${bests.wordsSaid.toLocaleString()} words.` : ''}` }));
-      return;
-    }
-    $('history').replaceChildren(
-      el('div', { className: 'bests' },
-        ...streaks,
-        best(bests.games, bests.games === 1 ? 'game' : 'games'),
-        best(bests.wins, bests.wins === 1 ? 'win' : 'wins'),
-        best(ordinal(bests.bestPlace), 'best finish'),
-        best(bests.bestScore, 'best score'),
-        best(bests.mostWords, 'most words in a game'),
-        best(bests.wordsSaid.toLocaleString(), 'words said in all'),
-        ...(bests.bestWord ? [best(bests.bestWord.word, `best word (+${bests.bestWord.points})`)] : []),
-      ),
-      el('ol', { className: 'history-list' }, ...games.map((g) => el('li', {},
-        el('a', { href: `/w/${encodeURIComponent(g.worldId)}`, textContent: g.name }),
-        ' ', el('span', { className: 'when', textContent: shortDate(g.endedAt) }),
-        ...(g.team ? [el('div', {}, 'Team ', el('b', { textContent: g.team.name }), g.team.place ? `: ${ordinal(g.team.place)} of ${g.team.teams} teams` : '')] : []),
-        el('div', { textContent: [
-          `${ordinal(g.place)} of ${g.players}`,
-          `${g.score} points`,
-          `${g.words} ${g.words === 1 ? 'word' : 'words'}`,
-          ...(g.bestWord ? [`best: ${g.bestWord} (+${g.bestPoints})`] : []),
-        ].join(' · ') }),
-        shareButton(g),
-      ))),
-    );
-  } catch (err) {
-    $('history').replaceChildren(el('p', { className: 'bad', textContent: err.message }));
-  }
-}
-$('history-close').addEventListener('click', () => $('history-dialog').close());
 
 $('signin-email').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -1295,11 +1209,229 @@ function schedulePoll() {
 
 // Back to the page: catch up at once, then poll at full speed again.
 document.addEventListener('visibilitychange', () => {
-  if (document.hidden) return;
+  if (document.hidden || accountPage) return;
   quietPolls = 0;
   refresh();
   schedulePoll();
 });
+
+// Every dialog gets a × in its top corner, as well as its own Close or Cancel.
+for (const dialog of document.querySelectorAll('dialog')) {
+  const x = el('button', { type: 'button', className: 'dialog-x', textContent: '×', title: 'Close' });
+  x.setAttribute('aria-label', 'Close');
+  x.addEventListener('click', () => dialog.close());
+  dialog.append(x); // Last, so opening a dialog still focuses its first box, not the ×.
+}
+
+// --- Your account (/me): worlds, games, word packs and settings ---
+
+const accountPage = location.pathname === '/me';
+let account = null;
+
+const KIND_NAMES = { public: 'The Big World', room: 'Room', private: 'Private world', competition: 'Competition' };
+const PLAN_NAMES = {
+  free: "Free: the big world, rooms, and worlds you're invited to",
+  host: 'Host: also your own private worlds',
+  organiser: 'Organiser: also competitions with teams, and your own word packs',
+};
+const dayMonth = (ms) => new Date(ms).toLocaleDateString(undefined, { day: 'numeric', month: 'short' });
+const plural = (n, one, many = `${one}s`) => `${n.toLocaleString()} ${n === 1 ? one : many}`;
+// In days beyond a day and a half, as competitions can run for weeks.
+const longTimeLeft = (ms) => (ms > 36 * 3_600_000 ? plural(Math.round(ms / 86_400_000), 'day') : timeLeft(ms));
+
+function showAccountTab() {
+  let tab = location.hash.slice(1);
+  if (!['worlds', 'games', 'packs', 'settings'].includes(tab) || (tab === 'packs' && $('acct-tab-packs').hidden)) tab = 'worlds';
+  for (const a of document.querySelectorAll('.acct-tabs a')) {
+    a.classList.toggle('on', a.dataset.tab === tab);
+    a.setAttribute('aria-selected', String(a.dataset.tab === tab));
+  }
+  for (const name of ['worlds', 'games', 'packs', 'settings']) $(`acct-${name}`).hidden = name !== tab;
+  if (tab === 'worlds') renderMyWorlds();
+  if (tab === 'games') renderMyGames();
+  if (tab === 'packs') renderPacks();
+}
+
+// A big figure with a small label under it, as on the world cards and bests.
+const figure = (value, label) => el('div', {}, el('b', { textContent: value }), el('span', { textContent: label }));
+
+function worldCard(w) {
+  const competition = w.kind === 'competition';
+  const now = Date.now();
+  const played = w.place !== null;
+  const facts = w.ended ? [] : [
+    played ? figure(ordinal(w.place), competition && w.team ? `Team ${w.team}` : `of ${w.players}`) : figure('–', 'not played yet'),
+    played ? figure(w.score.toLocaleString(), 'your points') : figure(w.players.toLocaleString(), w.players === 1 ? 'player' : 'players'),
+    figure(`${Math.round(w.left * 100)}%`, 'words left'),
+  ];
+  const when = w.ended ? 'Ended. Open it to delete it.'
+    : competition && w.startsAt > now ? `Starts ${whenText(w.startsAt)}`
+    : competition ? `Ends in ${longTimeLeft(w.endsAt - now)} · ${plural(w.players, 'player')}`
+    // When anyone last said a word there, not just this player.
+    : w.lastPlayed ? `Last word ${ago(w.lastPlayed)}` : 'No words yet';
+  return el('article', { className: `card ${w.kind}${w.ended ? ' ended' : ''}` },
+    el('div', {},
+      el('h3', {}, w.name, ...(w.isOwner ? [el('span', { className: 'yours', textContent: 'Yours' })] : [])),
+      el('p', { className: 'kind' }, KIND_NAMES[w.kind] ?? 'World', w.packName ? ' · ' : '',
+        ...(w.packName ? [el('span', { className: 'pack-tag', textContent: w.packName })] : []))),
+    ...(facts.length ? [el('div', { className: 'facts' }, ...facts)] : []),
+    el('div', { className: 'foot' }, el('p', { textContent: when }), el('a', { className: 'open', href: `/w/${encodeURIComponent(w.id)}`, textContent: 'Open' })));
+}
+
+async function renderMyWorlds() {
+  const box = $('acct-worlds');
+  if (!box.childElementCount) box.replaceChildren(el('p', { className: 'muted', textContent: 'Loading…' }));
+  try {
+    const { worlds } = await rootApi('/me/worlds');
+    const running = worlds.filter((w) => !w.ended);
+    const ended = worlds.filter((w) => w.ended);
+    // Your own worlds first, then the most recently played.
+    running.sort((a, b) => (b.isOwner - a.isOwner) || ((b.lastPlayed ?? 0) - (a.lastPlayed ?? 0)));
+    box.replaceChildren(
+      el('h2', { className: 'section-title', textContent: 'Playing now' }),
+      running.length ? el('div', { className: 'cards' }, ...running.map(worldCard))
+        : el('div', { className: 'empty' },
+          el('p', { textContent: "You're not in any rooms, private worlds or competitions yet. Rooms are worlds of 60 players that last for weeks; private worlds and competitions need an invite link from whoever runs them." }),
+          el('a', { className: 'button-link', href: '/', textContent: 'Play the Big World' })),
+      ...(ended.length ? [
+        el('h2', { className: 'section-title', textContent: 'Ended: yours to keep or delete' }),
+        el('div', { className: 'cards' }, ...ended.map(worldCard)),
+      ] : []),
+    );
+  } catch (err) {
+    box.replaceChildren(el('p', { className: 'bad', textContent: err.message }));
+  }
+}
+
+// The last seven days, today last, filled in for the days of the current run.
+function weekDots(streak, playedToday) {
+  return el('div', { className: 'week', ariaHidden: 'true' }, ...Array.from({ length: 7 }, (_, i) => {
+    const daysAgo = 6 - i;
+    const on = playedToday ? daysAgo < streak : daysAgo >= 1 && daysAgo <= streak;
+    const day = new Date(Date.now() - daysAgo * 86_400_000).toLocaleDateString(undefined, { weekday: 'short' }).slice(0, 2);
+    return el('div', {}, el('i', { className: on ? 'on' : daysAgo === 0 ? 'today' : '' }), day);
+  }));
+}
+
+async function renderMyGames() {
+  const box = $('acct-games');
+  if (!box.childElementCount) box.replaceChildren(el('p', { className: 'muted', textContent: 'Loading…' }));
+  try {
+    const { bests, games } = await rootApi('/me/history');
+    const streakNote = bests.streak === 0 ? `Say a word today to start a new run.${bests.bestStreak ? ` Your best is ${plural(bests.bestStreak, 'day')}.` : ''}`
+      : bests.playedToday ? `You've played today. Your best is ${plural(bests.bestStreak, 'day')}.`
+      : `Say a word today to make it ${bests.streak + 1}. Your best is ${plural(bests.bestStreak, 'day')}.`;
+    const tiles = [
+      ...(bests.bestPlace ? [figure(`${MEDALS[bests.bestPlace] ? `${MEDALS[bests.bestPlace]} ` : ''}${ordinal(bests.bestPlace)}`, `best finish${bests.wins ? ` · ${plural(bests.wins, 'win')}` : ''}`)] : []),
+      ...(bests.bestScore ? [figure(bests.bestScore.toLocaleString(), 'best score')] : []),
+      ...(bests.bestWord ? [figure(bests.bestWord.word, `best word (+${bests.bestWord.points})`)] : []),
+      ...(bests.wordsSaid ? [figure(bests.wordsSaid.toLocaleString(), 'words said in all')] : []),
+    ];
+    box.replaceChildren(
+      el('div', { className: 'streak' },
+        el('div', { className: 'num', textContent: bests.streak }),
+        el('div', {}, el('div', { className: 'label', textContent: bests.streak === 1 ? 'day in a row' : 'days in a row' }), el('div', { className: 'sub', textContent: streakNote })),
+        weekDots(bests.streak, bests.playedToday)),
+      ...(tiles.length ? [el('h2', { className: 'section-title', textContent: 'Your bests' }), el('div', { className: 'tiles' }, ...tiles)] : []),
+      el('h2', { className: 'section-title', textContent: 'Past games' }),
+      games.length ? el('ul', { className: 'games' }, ...games.map((g) => el('li', {},
+        MEDALS[g.place] ? el('span', { className: 'medal', textContent: MEDALS[g.place] }) : el('span', { className: 'place', textContent: ordinal(g.place) }),
+        el('a', { href: `/w/${encodeURIComponent(g.worldId)}`, textContent: g.name }),
+        el('span', { className: 'score' }, el('b', { textContent: g.score.toLocaleString() }), el('span', { textContent: Math.abs(g.score) === 1 ? 'point' : 'points' })),
+        el('span', { className: 'meta' }, el('span', { className: `dot ${g.kind}` }), [
+          `${ordinal(g.place)} of ${g.players}`,
+          ...(g.team ? [`Team ${g.team.name}${g.team.place ? ` (${ordinal(g.team.place)} of ${g.team.teams})` : ''}`] : []),
+          plural(g.words, 'word'),
+          ...(g.bestWord ? [`best: ${g.bestMasked ? mask(g.bestWord) : g.bestWord} (+${g.bestPoints})`] : []),
+          ...(g.kind === 'public' ? [] : [`ended ${dayMonth(g.endedAt)}`]),
+        ].join(' · ')),
+      ))) : el('div', { className: 'empty' }, el('p', { textContent:
+        `No finished games yet. Big world rounds finish at the end of each round, and rooms when their words run out.${bests.wordsSaid ? ` So far you've said ${plural(bests.wordsSaid, 'word')}.` : ''}` })),
+    );
+  } catch (err) {
+    box.replaceChildren(el('p', { className: 'bad', textContent: err.message }));
+  }
+}
+
+function renderSettings() {
+  $('acct-name').textContent = account.name;
+  $('acct-reminders').setAttribute('aria-checked', String(account.reminders));
+  $('acct-plan').textContent = PLAN_NAMES[account.plan] ?? account.plan;
+  $('acct-about').textContent = `${account.email} · ${(account.plan ?? 'free').replace(/^./, (c) => c.toUpperCase())} plan`;
+  $('delete-owned').hidden = account.plan === 'free';
+}
+
+async function startAccountPage() {
+  $('game').hidden = true;
+  $('account-page').hidden = false;
+  $('account-feedback-slot').replaceWith($('feedback')); // Messages show under the title here.
+  document.title = 'Your account · Unsaid';
+  document.body.dataset.kind = 'account';
+  let me;
+  try {
+    me = await authApi('/me');
+  } catch (err) {
+    feedback(err.message, 'bad');
+    return;
+  }
+  if (!me.user) { location.href = '/'; return; } // Signing in happens on the big world's page.
+  account = me.user;
+  renderAccount(account, me.admin);
+  $('acct-tab-packs').hidden = account.plan !== 'organiser';
+  renderSettings();
+  showAccountTab();
+}
+
+if (accountPage) {
+  addEventListener('hashchange', showAccountTab);
+  $('acct-reminders').addEventListener('click', async () => {
+    const on = !account.reminders;
+    try {
+      await rootApi('/me/reminders', { method: 'POST', body: { on } });
+      account.reminders = on;
+      renderSettings();
+      feedback(on ? "Daily email on: each morning we'll email you unless you've already played. Turn it off here, or from the link in any email." : 'Daily email off.', 'good');
+    } catch (err) { feedback(err.message, 'bad'); }
+  });
+  $('acct-rename').addEventListener('click', () => {
+    $('name-input').value = account.name;
+    $('name-dialog').showModal();
+    $('name-input').select();
+  });
+  $('name-cancel').addEventListener('click', () => $('name-dialog').close());
+  $('name-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      const { user } = await rootApi('/me/name', { method: 'POST', body: { name: $('name-input').value } });
+      account.name = user.name;
+      $('name-dialog').close();
+      renderAccount(account, $('menu-admin').hidden ? null : $('menu-admin').getAttribute('href'));
+      renderSettings();
+      feedback(`Your name is now ${user.name}.`, 'good');
+    } catch (err) { alert(err.message); }
+  });
+  $('acct-signout').addEventListener('click', () => $('menu-signout').click());
+  $('acct-delete').addEventListener('click', () => {
+    $('delete-input').value = '';
+    $('delete-confirm').disabled = true;
+    $('delete-dialog').showModal();
+  });
+  $('delete-input').addEventListener('input', () => { $('delete-confirm').disabled = $('delete-input').value.trim().toLowerCase() !== 'delete'; });
+  $('delete-cancel').addEventListener('click', () => $('delete-dialog').close());
+  $('delete-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      await rootApi('/me/delete', { method: 'POST', body: { confirm: true } });
+      setSession(null);
+      location.href = '/#account-deleted';
+    } catch (err) { alert(err.message); }
+  });
+}
+
+if (location.hash === '#account-deleted') {
+  history.replaceState(null, '', location.pathname + location.search);
+  feedback('Your account has been deleted. Thanks for playing.', 'good');
+}
 
 // The link at the bottom of a daily email stops them, without signing in.
 const stopEmails = new URLSearchParams(location.search).get('stop-emails');
@@ -1316,5 +1448,8 @@ if (location.hash === '#created') {
   feedback('Your competition is ready. Now send each team its link, using the Copy link buttons below.', 'good');
 }
 
-refresh();
-schedulePoll();
+if (accountPage) startAccountPage();
+else {
+  refresh();
+  schedulePoll();
+}

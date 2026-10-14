@@ -19,12 +19,9 @@
       <span class="menu-wrap" id="account" hidden>
         <button type="button" class="account-button" id="account-button" aria-haspopup="menu" aria-expanded="false" aria-controls="account-menu"></button>
         <span class="menu" id="account-menu" role="menu" hidden>
-          <button type="button" role="menuitem" id="menu-worlds">My worlds</button>
-          <button type="button" role="menuitem" id="menu-games">My games</button>
+          <a role="menuitem" href="/me">Your account</a>
           <button type="button" role="menuitem" id="new-world">New private world</button>
           <button type="button" role="menuitem" id="new-competition" hidden>New competition</button>
-          <button type="button" role="menuitem" id="menu-packs" hidden>My word packs</button>
-          <button type="button" role="menuitem" id="menu-reminders">Daily email: off</button>
           <a role="menuitem" id="menu-admin" hidden>Admin</a>
           <button type="button" role="menuitem" id="menu-signout">Sign out</button>
         </span>
@@ -32,7 +29,7 @@
     </span>
   </header>
 
-  <main>
+  <main id="game">
     <section id="world-banner" class="world-banner" hidden>
       <div>
         <h2><span id="banner-name"></span><button type="button" class="info" id="round-info-button" aria-expanded="false" aria-controls="banner-about" aria-label="About the Big World" title="About the Big World" hidden>i</button></h2>
@@ -159,11 +156,88 @@
         <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
         <li>A prompt ends once <b>80% of its answers</b> are said, or when its time runs out. Whoever says the answer that ends it gets <b>10 bonus points</b> 🏁. Then <b>Recent prompt</b> shows what nobody said: the commonest answers left.</li>
         <li><b>Where to play.</b> The big world is open to everyone signed in and starts afresh every day, with quick prompts. <b>Rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private worlds</b> are for you and the friends you invite: anyone can join one with its invite link, and creating one needs the Host plan. Private worlds and competitions can use a <b>word pack</b> (Science, Law, Music…) instead of everyday words. <b>Competitions</b> pit teams against each other between a start and an end time: open your team's link to join it, and every point you score counts for your team. Running one needs the Organiser plan.</li>
-        <li><b>My worlds</b> (under your name, top right) lists the rooms and private worlds you're in. <b>My games</b> shows how you finished in past rounds and rooms, your personal bests, and your <b>streak</b>: the days in a row you've said a word. <b>Daily email</b>, in the same menu, reminds you each morning if you haven't played yet.</li>
+        <li><b>Your account</b> (under your name, top right) lists the rooms, private worlds and competitions you're in, how you finished in past games, your personal bests and your <b>streak</b>: the days in a row you've said a word. Its settings turn on a <b>daily email</b> that reminds you each morning if you haven't played yet.</li>
       </ul>
       <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words said in this world.</p>
     </details>
   </main>
+
+  <!-- Your account (/me): worlds, games, word packs and settings, in tabs. -->
+  <main id="account-page" hidden>
+    <a href="/" class="back-link">← Back to the big world</a>
+    <div class="page-head">
+      <h1>Your account</h1>
+      <span class="muted" id="acct-about"></span>
+    </div>
+    <p id="account-feedback-slot"></p>
+    <nav class="acct-tabs" role="tablist">
+      <a href="#worlds" role="tab" data-tab="worlds">Worlds</a>
+      <a href="#games" role="tab" data-tab="games">Games</a>
+      <a href="#packs" role="tab" data-tab="packs" id="acct-tab-packs" hidden>Word packs</a>
+      <a href="#settings" role="tab" data-tab="settings">Settings</a>
+    </nav>
+    <section class="acct-panel" id="acct-worlds" role="tabpanel"></section>
+    <section class="acct-panel" id="acct-games" role="tabpanel" hidden></section>
+    <section class="acct-panel" id="acct-packs" role="tabpanel" hidden>
+      <p class="muted">Your own themed words for your private worlds and competitions: a topic you teach, your company's products, a quiz theme.</p>
+      <div id="packs-list"></div>
+      <p><button type="button" id="pack-new">New pack</button></p>
+    </section>
+    <section class="acct-panel" id="acct-settings" role="tabpanel" hidden>
+      <div class="setting">
+        <div><b>Name</b><p><span id="acct-name"></span> · what other players see</p></div>
+        <button type="button" class="secondary" id="acct-rename">Change</button>
+      </div>
+      <div class="setting">
+        <div><b>Daily email</b><p>Each morning, when the big world starts afresh, a reminder if you haven't played yet</p></div>
+        <button type="button" class="switch" role="switch" aria-checked="false" aria-label="Daily email" id="acct-reminders"></button>
+      </div>
+      <div class="setting">
+        <div><b>Plan</b><p id="acct-plan"></p></div>
+      </div>
+      <div class="setting">
+        <div><b>Sign out</b><p>On this device</p></div>
+        <button type="button" class="secondary" id="acct-signout">Sign out</button>
+      </div>
+      <div class="setting">
+        <div><b>Delete account</b><p>Your email and name are removed. Your words stay said, as a former player.</p></div>
+        <button type="button" class="secondary danger" id="acct-delete">Delete…</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="name-dialog">
+    <form id="name-form">
+      <h2>Change your name</h2>
+      <label class="field">Name
+        <input id="name-input" maxlength="20" required autocomplete="nickname">
+      </label>
+      <p class="muted small">It changes in the worlds you're playing now. Finished games keep the name you finished with.</p>
+      <div class="dialog-buttons">
+        <button type="button" class="link" id="name-cancel">Cancel</button>
+        <button type="submit">Save name</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="delete-dialog">
+    <form id="delete-form">
+      <h2>Delete your account?</h2>
+      <ul class="small-list">
+        <li>Your email address and name are removed, and you're signed out everywhere.</li>
+        <li>Words you said stay said, and your scores stay on leaderboards as “Former player”.</li>
+        <li id="delete-owned">Private worlds and competitions you run end now, and your word packs are deleted.</li>
+        <li>This can't be undone. You can sign up again with the same email, as a new player.</li>
+      </ul>
+      <label class="field"><span>Type <b>delete</b> to confirm</span>
+        <input id="delete-input" autocomplete="off" autocapitalize="off" spellcheck="false">
+      </label>
+      <div class="dialog-buttons">
+        <button type="button" class="link" id="delete-cancel">Cancel</button>
+        <button type="submit" class="danger-solid" id="delete-confirm" disabled>Delete my account</button>
+      </div>
+    </form>
+  </dialog>
 
   <dialog id="new-world-dialog">
     <form id="new-world-form" method="dialog">
@@ -289,10 +363,8 @@ Foxes</textarea>
   </dialog>
 
   <dialog id="packs-dialog">
-    <h2>My word packs</h2>
-    <p class="muted small">Your own themed words for your private worlds and competitions: a topic you teach, your company's products, a quiz theme.</p>
-    <ul id="packs-list" class="history-list"></ul>
-    <form id="pack-form" hidden>
+    <form id="pack-form">
+      <h2 id="pack-title">New word pack</h2>
       <label class="field">Name <input id="pack-name" maxlength="40" required placeholder="e.g. Space"></label>
       <label class="field">Description <span class="muted small">(optional)</span> <input id="pack-description" maxlength="200"></label>
       <label class="field">Lists
@@ -304,22 +376,10 @@ Foxes</textarea>
       <div id="pack-reported" class="small"></div>
       <div class="dialog-buttons">
         <button type="button" class="link danger" id="pack-delete" hidden>Delete pack</button>
-        <button type="button" class="link" id="pack-cancel">Back</button>
+        <button type="button" class="link" id="pack-cancel">Cancel</button>
         <button type="submit">Save pack</button>
       </div>
     </form>
-    <div class="dialog-buttons" id="packs-buttons">
-      <button type="button" class="link" id="packs-close">Close</button>
-      <button type="button" id="pack-new">New pack</button>
-    </div>
-  </dialog>
-
-  <dialog id="worlds-dialog">
-    <h2>My worlds</h2>
-    <ul id="worlds-list" class="history-list"></ul>
-    <div class="dialog-buttons">
-      <button type="button" class="link" id="worlds-close">Close</button>
-    </div>
   </dialog>
 
   <dialog id="settings-dialog">
@@ -359,14 +419,6 @@ Foxes</textarea>
     </p>
     <div class="dialog-buttons">
       <button type="button" class="link" id="settings-close">Close</button>
-    </div>
-  </dialog>
-
-  <dialog id="history-dialog">
-    <h2>My games</h2>
-    <div id="history"></div>
-    <div class="dialog-buttons">
-      <button type="button" class="link" id="history-close">Close</button>
     </div>
   </dialog>
 

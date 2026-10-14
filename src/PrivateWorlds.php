@@ -257,12 +257,13 @@ final class PrivateWorlds
     public function myWorlds(array $user): array
     {
         $stmt = $this->db->prepare("
-            SELECT w.*, p.score, p.words FROM players p JOIN worlds w ON w.id = p.world_id
+            SELECT w.*, p.score, p.words, t.name AS team_name FROM players p JOIN worlds w ON w.id = p.world_id
+            LEFT JOIN teams t ON t.id = p.team_id
             WHERE p.user_id = ? AND p.removed = 0 AND w.kind IN ('room', 'private', 'competition') AND w.ended_at IS NULL");
         $stmt->execute([$user['id']]);
         $worlds = [];
         foreach ($stmt->fetchAll() as $w) $worlds[$w['id']] = $w;
-        $stmt = $this->db->prepare("SELECT w.*, NULL AS score, NULL AS words FROM worlds w WHERE owner_user_id = ? AND kind IN ('private', 'competition')");
+        $stmt = $this->db->prepare("SELECT w.*, NULL AS score, NULL AS words, NULL AS team_name FROM worlds w WHERE owner_user_id = ? AND kind IN ('private', 'competition')");
         $stmt->execute([$user['id']]);
         foreach ($stmt->fetchAll() as $w) {
             // Owned worlds not already listed: ones the owner hasn't played, and ended ones (their
@@ -272,6 +273,8 @@ final class PrivateWorlds
 
         $players = $this->db->prepare('SELECT COUNT(*), COALESCE(MAX(last_active_at), 0) FROM players WHERE world_id = ? AND removed = 0');
         $burned = $this->db->prepare('SELECT COUNT(*) FROM burns WHERE world_id = ?');
+        // The account's place among those who've played, as on the leaderboard (shared on equal scores).
+        $ahead = $this->db->prepare('SELECT COUNT(*) FROM players WHERE world_id = ? AND removed = 0 AND (words > 0 OR score <> 0) AND score > ?');
         $out = [];
         foreach ($worlds as $w) {
             $players->execute([$w['id']]);
@@ -282,6 +285,9 @@ final class PrivateWorlds
                 'isOwner' => (int) $w['owner_user_id'] === (int) $user['id'],
                 'ended' => $w['ended_at'] !== null,
                 'score' => $w['score'] === null ? null : (int) $w['score'],
+                'place' => $w['score'] === null || ((int) $w['words'] === 0 && (int) $w['score'] === 0) ? null
+                    : ($ahead->execute([$w['id'], (int) $w['score']]) ? (int) $ahead->fetchColumn() + 1 : null),
+                'team' => $w['team_name'] ?? null,
                 'words' => $w['words'] === null ? null : (int) $w['words'],
                 'players' => (int) $count,
                 'lastPlayed' => (int) $lastPlayed ?: null,

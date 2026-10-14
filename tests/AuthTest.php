@@ -145,3 +145,52 @@ test('accounts play in worlds, and claim players from before accounts', function
     same('Fay 2', $game->joinAsUser($other['id'], $fay)['nickname']);
     same('Fay 2', $game->joinAsUser($other['id'], $fay)['nickname'], 'Joining twice is the same player');
 });
+
+test('a new name shows in unfinished worlds, with a number if taken there; finished worlds keep the old one', function () {
+    $game = makeGame();
+    $db = gameDb($game);
+    $mailer = new TestMailer();
+    $auth = makeAuth($db, $mailer);
+    [$kim] = signUp($auth, $mailer, 'kim@example.com', 'Kim');
+    [$other] = signUp($auth, $mailer, 'other@example.com', 'Other');
+    $running = $game->createWorld('Running');
+    $done = $game->createWorld('Done');
+    $game->joinAsUser($running['id'], $kim);
+    $game->joinAsUser($done['id'], $kim);
+    $game->finishWorld($done['id']);
+    $game->joinAsUser($running['id'], ['id' => $other['id'], 'name' => 'Kimberley']); // Someone there has the new name.
+
+    throwsStatus(409, fn () => $auth->rename($kim, 'other', $game));
+    throwsStatus(400, fn () => $auth->rename($kim, 'x!', $game));
+    same('Kimberley', $auth->rename($kim, ' Kimberley ', $game)['name']);
+    same('Kimberley', $db->query("SELECT name FROM users WHERE id = {$kim['id']}")->fetchColumn());
+    same('Kimberley 2', $game->playerForUser($running['id'], $kim['id'])['nickname']);
+    same('Kim', $game->playerForUser($done['id'], $kim['id'])['nickname'], 'A finished world keeps the name');
+});
+
+test('deleting an account: scores stay as a former player, its worlds end, its packs and sign-ins go', function () {
+    $game = makeGame();
+    $db = gameDb($game);
+    $mailer = new TestMailer();
+    $auth = makeAuth($db, $mailer);
+    [$kim, $session] = signUp($auth, $mailer, 'kim@example.com', 'Kim');
+    $kim = ['plan' => 'organiser'] + withPlan($db, $kim, 'organiser');
+    $theirs = (new PrivateWorlds($db, $game))->create($kim, ['name' => 'Kim club']);
+    $played = $game->createWorld('Played');
+    setPrompt($game, $played['id'], spec(null, ['contains', 'oo']));
+    $player = $game->joinAsUser($played['id'], $kim);
+    check($game->play($played['id'], $player['token'], 'moon')['ok']);
+    (new Packs($db))->create($kim, 'Space', '', PLANETS, testDictionary());
+
+    $auth->deleteAccount($kim, $game);
+    same(null, $auth->user($session), 'Signed out everywhere');
+    same(0, (int) $db->query("SELECT COUNT(*) FROM users WHERE email = 'kim@example.com'")->fetchColumn());
+    same(0, (int) $db->query('SELECT COUNT(*) FROM packs')->fetchColumn());
+    check($game->world($theirs['id'])['ended_at'] !== null, 'Their private world has ended');
+    same(null, $game->world($theirs['id'])['owner_user_id']);
+    $board = $game->state($played['id'], null)['leaderboard'];
+    same(['Former player'], array_column($board, 'nickname'), 'The score stays, without the name');
+    check($board[0]['total'] > 0);
+    same(0, (int) $db->query("SELECT COUNT(*) FROM results WHERE user_id = {$kim['id']}")->fetchColumn());
+    throwsStatus(401, fn () => $game->play($played['id'], $player['token'], 'book')); // The old token no longer plays.
+});
