@@ -99,7 +99,7 @@ points = base × rarity × world multiplier × prompt bonus
 | Part | Rule | Range |
 |---|---|---|
 | Base | word length − 2 | 1 for a 3-letter word, 8 for a 10-letter word |
-| Rarity | 1 + 2 × (frequency rank ÷ dictionary size) | ×1 for the most common words, ×3 for the rarest |
+| Rarity | 1 + 2 × (frequency rank ÷ dictionary size)² | ×1 for the most common words, ×1.5 halfway down the list, ×3 for the rarest |
 | World multiplier | 1 ÷ (1 − share of the dictionary said) | ×1 at the start, ×2 at half said, ×5 at 80% said (capped at ×10) |
 | Prompt bonus | 1 + the share of the prompt's answers already said | ×1 when the prompt starts, ×1.5 at half said, capped at ×2; *also* answers score at ×1 |
 
@@ -112,7 +112,7 @@ time a word was said would decide more than the word. Pack-only worlds go
 without too: in a small pack it soared within minutes (×6 by the end of the
 Kitchen Cup). Pack-only worlds' words also take their **everyday rarity**
 rather than their place among the pack's few words; a word that isn't an
-everyday word counts as fairly rare (0.6, so ×2.2). The page hides "World ×"
+everyday word counts as fairly rare (0.77, so ×2.2). The page hides "World ×"
 where there isn't one. `Game::usesWorldMultiplier` decides.
 
 Scarcity drives the multipliers, not the clock. A world that sits quiet for a

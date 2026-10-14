@@ -1,6 +1,8 @@
 # Rarity review (to do with the owner)
 
-**Status: waiting for the owner's marks.** Started 14 October 2026, after the owner found
+**Status: curve chosen (Curve B), 14 October 2026.** The owner agreed with Claude's marks, except
+*knead* (×1.5). Still open: moving the British words, by hand or with a British frequency list.
+Started 14 October 2026, after the owner found
 *teaspoon* scoring ×1.8 for rarity "a bit odd".
 
 ## How rarity works now
@@ -207,7 +209,7 @@ Two things the 140 words don't show:
 | ladybird | 24,898 | ×2.0 | ×1.7 | ×1.5 | ×1.2 | |
 | gooseberry | 27,369 | ×2.1 | ×1.8 | ×1.6 | ×1.6 | |
 | grater | 29,417 | ×2.1 | ×1.9 | ×1.6 | ×1.4 | |
-| knead | 30,283 | ×2.2 | ×1.9 | ×1.7 | ×1.7 | |
+| knead | 30,283 | ×2.2 | ×1.9 | ×1.7 | ×1.7 | ×1.5 |
 | saucepan | 31,520 | ×2.2 | ×1.9 | ×1.7 | ×1.3 | |
 | parsnip | 31,813 | ×2.2 | ×2.0 | ×1.7 | ×1.4 | |
 | tablespoon | 33,138 | ×2.3 | ×2.0 | ×1.8 | ×1.3 | |

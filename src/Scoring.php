@@ -49,7 +49,9 @@ final class Scoring
     public static function scoreWord(string $word, float $rarity, float $worldMult, float $promptMult): int
     {
         $base = self::base($word);
-        $rarityMult = 1 + 2 * $rarity;
+        // A curve, not a straight line: most words people know sit mid-list, so familiar
+        // words stay near ×1 and the top of the scale is kept for really unusual ones.
+        $rarityMult = 1 + 2 * $rarity ** 2;
         return max(1, (int) round($base * $rarityMult * $worldMult * $promptMult));
     }
 }

@@ -6,6 +6,15 @@ are at the top of each report in `playtests/`.
 
 ## 14 October 2026
 
+**Rarity follows a curve: `1 + 2 × p²`**, where p is a word's place in the list ÷ the list's
+size (it was `1 + 2 × p`). Most words people know sit in the middle of the 52,000, so on a
+straight line *teaspoon* scored ×1.8; on the curve familiar words stay near ×1 (*teaspoon*
+×1.4, *kettle* ×1.0) and ×2 to ×3 is kept for really unusual words. Chosen from 140 everyday
+words marked by Claude and checked by the owner (`dictionary-review/RARITY-REVIEW.md`); Curve B
+came closest. A pack word that isn't an everyday word stays at ×2.2. British kitchen and
+vegetable words (*courgette*, *saucepan*) still score too high, as subtitle counts under-rank
+them: to fix next, by hand or with a British frequency list. *Owner.*
+
 **Organisers list a word's other forms themselves.** Only the forms a pack lists, and their
 plurals, count for its lists, so *grilling* doesn't count for "A way of cooking" unless it's
 listed. Counting every -ing and -ed form would have done it automatically, but the game can't

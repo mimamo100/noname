@@ -146,8 +146,8 @@ final class Dictionary
      * score far apart in the Kitchen Cup playtest).
      */
     private ?Dictionary $everyday = null;
-    /** How rare a pack word that isn't an everyday word counts: fairly rare, not the rarest. */
-    public const PACK_WORD_RARITY = 0.6;
+    /** How rare a pack word that isn't an everyday word counts: fairly rare (×2.2), not the rarest. */
+    public const PACK_WORD_RARITY = 0.77;
 
     /**
      * The everyday dictionary plus a word pack: the pack's words that are new come last (so
