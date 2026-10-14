@@ -600,10 +600,22 @@ final class Game
         });
     }
 
+    /**
+     * The world multiplier rises as a world's words are used up, which suits worlds that last
+     * for weeks. In a small pack it soared within minutes, so a word's points depended on when
+     * it was said more than on the word (Kitchen Cup playtest): pack-only worlds go without.
+     */
+    public static function usesWorldMultiplier(array $world): bool
+    {
+        return !(!empty($world['pack']) && ($world['pack_mode'] ?? 'only') === 'only');
+    }
+
+    /** The world multiplier (null where it isn't used) and the prompt's. */
     private function multipliers(string $worldId, ?array $prompt): array
     {
         return [
-            'world' => round(Scoring::worldMultiplier(count($this->burned($worldId)), $this->dictionary->size()), 3),
+            'world' => !self::usesWorldMultiplier($this->world($worldId)) ? null
+                : round(Scoring::worldMultiplier(count($this->burned($worldId)), $this->dictionary->size()), 3),
             'prompt' => $prompt ? Scoring::promptBonus((int) $prompt['remaining'], (int) $prompt['available_at_start']) : 1.0,
         ];
     }
@@ -693,7 +705,7 @@ final class Game
             $singular = $this->dictionary->singular($word);
             // A phrase scores by its words as written ("paddle steamer"), not its joined length.
             $written = $this->dictionary->display($singular);
-            $points = Scoring::scoreWord($written, $this->rarityOf($singular, $written), $mult['world'], $mult['prompt']);
+            $points = Scoring::scoreWord($written, $this->rarityOf($singular, $written), $mult['world'] ?? 1.0, $mult['prompt']);
             // The answer that finishes the prompt (see END_SHARE) earns a flat bonus.
             $closing = !$previous && $counted && $after <= ($this->inLastMinutes($worldId) ? 0 : self::endsWhenLeft((int) $prompt['available_at_start']));
             if ($closing) {
@@ -735,8 +747,8 @@ final class Game
         $parts = preg_split('/[\s\-]+/', $written, -1, PREG_SPLIT_NO_EMPTY);
         if (count($parts) > 1) {
             usort($parts, fn ($a, $b) => strlen(self::typed($b)) <=> strlen(self::typed($a)));
-            $longest = self::typed($parts[0]);
-            if ($this->dictionary->has($longest)) return $this->dictionary->rarity($longest);
+            $rarity = $this->dictionary->knownRarity(self::typed($parts[0]));
+            if ($rarity !== null) return $rarity;
         }
         return $this->dictionary->rarity($word);
     }

@@ -115,3 +115,14 @@ test('a pack-only competition gets pack-sized prompts, whatever its pace', funct
     same([5, 40], $sizes(['promptMinutes' => 60, 'pack' => $made['id'], 'packMode' => 'only']), 'Long prompts');
     same([30, 200], $sizes(['promptMinutes' => 15, 'pack' => $made['id'], 'packMode' => 'mixed']), 'A mixed pack keeps the live-event sizes');
 });
+
+test('pack-only worlds: no world multiplier, and words as rare as they are in everyday English', function () {
+    $everyday = testDictionary();
+    $pack = Packs::build(Packs::parseText("A body\nmoon, moons\ncat\nquasar, quasars\n"), $everyday, 'sci');
+    $only = $everyday->onlyPack($pack);
+    same($everyday->rarity('moon'), $only->rarity('moon'), 'An everyday word keeps its everyday rarity');
+    same(Dictionary::PACK_WORD_RARITY, $only->rarity('quasar'), "A word that isn't everyday is fairly rare, not the rarest");
+    same(false, Game::usesWorldMultiplier(['pack' => 'sci', 'pack_mode' => 'only']));
+    same(true, Game::usesWorldMultiplier(['pack' => 'sci', 'pack_mode' => 'mixed']));
+    same(true, Game::usesWorldMultiplier(['pack' => null]));
+});

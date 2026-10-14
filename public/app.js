@@ -624,7 +624,9 @@ function render(state) {
   renderBanner(state);
   $('dict-size').textContent = state.dictionary.size.toLocaleString();
   $('dict-burned').textContent = state.dictionary.burned.toLocaleString();
-  $('world-mult').textContent = state.multipliers.world.toFixed(1);
+  // Pack-only worlds have no world multiplier.
+  $('world-mult').parentElement.hidden = state.multipliers.world === null;
+  if (state.multipliers.world !== null) $('world-mult').textContent = state.multipliers.world.toFixed(1);
   $('prompt-mult').textContent = state.multipliers.prompt.toFixed(2).replace(/0$/, '');
 
   // A competition before its start has no prompt yet: just say so, without empty counters.

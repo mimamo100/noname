@@ -133,10 +133,21 @@ final class Dictionary
      */
     public function onlyPack(array $pack): self
     {
-        return new self($pack['words'], self::keyedFamilies($pack['families']), $pack['categories'],
+        $only = new self($pack['words'], self::keyedFamilies($pack['families']), $pack['categories'],
             array_keys($this->blocked), $this->spelling, array_keys($this->masked),
             ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? [], array_keys($this->pluralWords));
+        $only->everyday = $this;
+        return $only;
     }
+
+    /**
+     * A pack-only dictionary's everyday one, for rarity: a pack word scores as rare as it is in
+     * everyday English, not by its place among the pack's few words (which made near neighbours
+     * score far apart in the Kitchen Cup playtest).
+     */
+    private ?Dictionary $everyday = null;
+    /** How rare a pack word that isn't an everyday word counts: fairly rare, not the rarest. */
+    public const PACK_WORD_RARITY = 0.6;
 
     /**
      * The everyday dictionary plus a word pack: the pack's words that are new come last (so
@@ -304,7 +315,17 @@ final class Dictionary
     /** 0 for the most common word, approaching 1 for the rarest. */
     public function rarity(string $word): float
     {
-        return $this->rank[$word] / $this->size();
+        return $this->knownRarity($word) ?? 1.0;
+    }
+
+    /** A word's rarity (0 for the commonest, near 1 for the rarest), or null if it isn't a word here. */
+    public function knownRarity(string $word): ?float
+    {
+        if ($this->everyday) {
+            if ($this->everyday->has($word)) return $this->everyday->rarity($word);
+            return isset($this->rank[$word]) ? self::PACK_WORD_RARITY : null;
+        }
+        return isset($this->rank[$word]) ? $this->rank[$word] / $this->size() : null;
     }
 
     /** @return string[] category ids */

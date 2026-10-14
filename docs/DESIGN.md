@@ -105,6 +105,14 @@ points = base × rarity × world multiplier × prompt bonus
 
 Points are rounded to whole numbers, with a minimum of 1.
 
+**Pack-only worlds** have no world multiplier: in a small pack it soared within
+minutes (×6 by the end of the Kitchen Cup), so points depended on when a word
+was said more than on the word. Their words also take their **everyday
+rarity** rather than their place among the pack's few words; a word that isn't
+an everyday word counts as fairly rare (0.6, so ×2.2). The page hides "World ×"
+there. (`Game::usesWorldMultiplier` decides; the owner may extend it to the big
+world and competitions, whose multiplier could also climb fast on a busy day.)
+
 Scarcity drives the multipliers, not the clock. A world that sits quiet for a
 week doesn't get easier to score in.
 
