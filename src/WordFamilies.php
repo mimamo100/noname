@@ -63,7 +63,7 @@ final class WordFamilies
         if (str_ends_with($word, 'es')) $candidates[] = substr($word, 0, -2); // boxes -> box
         if (str_ends_with($word, 'ied')) $candidates[] = substr($word, 0, -3) . 'y';
         if (str_ends_with($word, 'ed')) {
-            // -d is only stripped from longer words, so seed doesn't become see or shed become she.
+            // A silent e only comes back on longer -eed words, so steed doesn't become stee.
             $minLength = str_ends_with($word, 'eed') ? 6 : 5;
             array_push($candidates, ...self::verbRoots(substr($word, 0, -2), strlen($word) >= $minLength));
         }

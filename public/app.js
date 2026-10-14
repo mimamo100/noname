@@ -1,7 +1,7 @@
 // How often to check for changes: every 3 seconds, slowing down when the world goes quiet
 // or the page is in the background, where nobody is watching.
 const POLL_MS = 3000;
-const QUIET_POLL_MS = [6000, 12000]; // After a minute, then two minutes, with nothing new.
+const QUIET_POLL_MS = [6000, 12000]; // After one minute, then three minutes, with nothing new.
 const HIDDEN_POLL_MS = 30000;
 const worldId = location.pathname.startsWith('/w/') ? decodeURIComponent(location.pathname.slice(3)) : 'big';
 const SESSION_KEY = 'unsaid:session';
@@ -715,7 +715,7 @@ function renderSaid(groups, currentPromptId) {
         parts.push(more);
       }
     } else if (!group.words.length) {
-      continue;
+      continue; // Prompts nobody played aren't listed: they'd only make the page look quiet.
     } else {
       const details = el('details', { className: 'earlier', open: openPrompts.has(group.promptId) },
         el('summary', {}, el('span', { textContent: group.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(group.words.length)}` })),
@@ -725,7 +725,6 @@ function renderSaid(groups, currentPromptId) {
       parts.push(details);
     }
   }
-  // Prompts nobody played aren't listed: they'd only make the page look quiet.
   const firstEarlier = parts.findIndex((part) => part.tagName === 'DETAILS');
   if (firstEarlier >= 0) parts.splice(firstEarlier, 0, el('p', { className: 'group-title earlier-title', textContent: 'Earlier prompts' }));
   $('recent').replaceChildren(...parts);
@@ -937,7 +936,7 @@ $('play-form').addEventListener('submit', async (e) => {
 });
 
 // Players can tell us about real answers missing from a meaning list, or real words missing
-// from the dictionary. The admin page (/admin) reviews the reports.
+// from the dictionary. The admin page reviews the reports; reports on an organiser's own pack go to them.
 const isReportable = (r) => r.reason === 'not-in-category' || (r.reason === 'not-a-word' && /^[a-z]{3,30}$/.test(r.word.replace(/[\s'’-]/g, '')));
 
 // promptId: the prompt the miss was for, so the report is about the right meaning.

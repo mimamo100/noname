@@ -8,7 +8,7 @@
 //   GET  /api/auth/me                                              the signed-in account, or null
 //
 //   GET  /api/me/history                                           finished games and personal bests (account needed)
-//   GET  /api/me/worlds                                            rooms and private worlds you're in (account needed)
+//   GET  /api/me/worlds                                            rooms, private worlds and competitions you're in (account needed)
 //   POST /api/me/reminders                {on}                     the daily email on or off (account needed)
 //   POST /api/reminders/stop              {token}                  stop the daily email, from its link
 //
@@ -111,7 +111,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $parts = array_map('rawurldecode', array_values(array_filter(explode('/', $path), 'strlen')));
-    // Expect: api, worlds, {id}, {action}, {arg}   or   api, auth, {action}
+    // Expect: api, {resource}, {id or action}, {action}, {arg}, as in the list at the top
     [$api, $resource, $worldId, $action, $arg] = array_pad($parts, 5, null);
     if ($api !== 'api') throw new GameError(404, 'Not found');
     $session = $_SERVER['HTTP_X_SESSION_TOKEN'] ?? null;
@@ -119,7 +119,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
     $needUser = fn () => $user ?? throw new GameError(401, 'Please sign in to play');
 
     if ($resource === 'auth') {
-        $authAction = $worldId; // api/auth/{action}
+        $authAction = $worldId;
         if ($method === 'POST' && $authAction === 'start') {
             $auth->start((string) (body()['email'] ?? ''), $_SERVER['REMOTE_ADDR'] ?? '');
             respond(200, ['ok' => true]);
@@ -305,9 +305,9 @@ try {
     $cacheDir = $config['cache_dir'] ?? "$root/cache";
     $stateCache = $cacheDir ? StateCache::open($cacheDir) : null;
     $awayAfterMs = (int) (($config['rooms']['away_days'] ?? 7) * 86_400_000);
-    // A game for a dictionary: the everyday one, or a word pack's for a world that plays one.
     $streaks = new Streaks($db, $config['big_world']['timezone'] ?? 'Europe/London');
     $reminders = new Reminders($db, $streaks);
+    // A game for a dictionary: the everyday one, or a word pack's for a world that plays one.
     $gameWith = fn (Dictionary $d) => new Game($db, $d, stateCache: $stateCache, awayAfterMs: $awayAfterMs, streaks: $streaks);
     $game = $gameWith($dictionary);
     $packs = new Packs($db, $cacheDir ?: null);

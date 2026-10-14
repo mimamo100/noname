@@ -1,5 +1,6 @@
 <?php
-// Admin page: review reported words, accept or dismiss them, add words, see a few stats.
+// Admin page: download reported words and mark them reviewed, set account plans, take down
+// word packs, recount scores, run housekeeping, and see a few stats.
 // Turn it on by setting 'admin_password' in config.php. It answers only at the address set
 // by 'admin_path' (default "admin"); every other address, including /admin.php, gets
 // "Not found", so the page can't be found by guessing.

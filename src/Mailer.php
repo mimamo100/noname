@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 /**
- * Sends the game's emails (sign-in codes). Configured by the 'mail' section of config.php:
+ * Sends the game's emails (sign-in codes and the daily email). Configured by the 'mail' section of config.php:
  *
  *   'mail' => [
  *       'from' => 'noreply@yourdomain.com',  // a real address on your domain

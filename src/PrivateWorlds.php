@@ -84,7 +84,7 @@ final class PrivateWorlds
 
     private function validInvite(array $world, ?string $invite): bool
     {
-        // Worlds from before invite codes are open to anyone with the address.
+        // Every private world has a code; one without would be open to anyone with the address.
         return $world['invite_code'] === null || ($invite !== null && hash_equals($world['invite_code'], $invite));
     }
 
@@ -250,9 +250,9 @@ final class PrivateWorlds
     // --- My worlds ---
 
     /**
-     * The rooms and private worlds the account is in (and private worlds it owns), unfinished
-     * ones first, most recently played first. Finished worlds are in My games, except private
-     * worlds the account owns, which it may want to delete.
+     * The rooms, private worlds and competitions the account is in (and the private worlds and
+     * competitions it owns), unfinished ones first, most recently played first. Finished worlds
+     * are in My games, except ones the account owns, which it may want to delete.
      */
     public function myWorlds(array $user): array
     {
@@ -265,9 +265,9 @@ final class PrivateWorlds
         $stmt = $this->db->prepare("SELECT w.*, NULL AS score, NULL AS words FROM worlds w WHERE owner_user_id = ? AND kind IN ('private', 'competition')");
         $stmt->execute([$user['id']]);
         foreach ($stmt->fetchAll() as $w) {
-            if (isset($worlds[$w['id']])) continue;
-            // Owned worlds the owner has played in but that have ended: their score is in My games.
-            $worlds[$w['id']] = $w;
+            // Owned worlds not already listed: ones the owner hasn't played, and ended ones (their
+            // score is in My games).
+            if (!isset($worlds[$w['id']])) $worlds[$w['id']] = $w;
         }
 
         $players = $this->db->prepare('SELECT COUNT(*), COALESCE(MAX(last_active_at), 0) FROM players WHERE world_id = ? AND removed = 0');

@@ -44,8 +44,6 @@ final class Packs
      *
      * @param array<string, array{label: string, words: string[][], also?: string[][]}> $groups
      *   category id => label and lines (each line an array of forms, as written)
-     */
-    /**
      * @param string[] $leaveOut everyday forms not to bring along ("gassing" with "gas"), from a
      *   curated pack's "leave out:" line; a form the pack lists itself is kept
      */
@@ -131,8 +129,7 @@ final class Packs
     /**
      * An answer's forms from one line of a word list, as written. Separated by commas
      * ("black hole, black holes"); without a comma, a custom pack's line is split on spaces
-     * instead ("quark quarks"), as custom packs were first written, but a curated pack's line
-     * is one form ("habeas corpus").
+     * instead ("quark quarks"), but a curated pack's line is one form ("habeas corpus").
      *
      * @return string[]
      */
@@ -344,8 +341,8 @@ final class Packs
         $stmt->execute([$id]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!$row) return null;
-        // Built once per change and kept in the cache folder, as building takes a moment. (v2:
-        // built packs carry how phrases are written, and lines with commas split on them.)
+        // Built once per change and kept in the cache folder, as building takes a moment. Change
+        // the version in the name (-v2) when the built format changes, so old copies aren't read.
         $file = $this->cacheDir ? "{$this->cacheDir}/pack-$id-{$row['updated_at']}-v2.json" : null;
         $cached = $file ? json_decode((string) @file_get_contents($file), true) : null;
         if (!is_array($cached)) {

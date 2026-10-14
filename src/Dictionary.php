@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 final class Dictionary
 {
-    /** @var string[] words, most common first (words added by the admin come last) */
+    /** @var string[] words, most common first */
     public array $words;
     /** @var array<string, int> word => frequency rank */
     private array $rank;
@@ -231,7 +231,7 @@ final class Dictionary
 
     /**
      * How a word is shown to players: the way people write it ("tea towel", "t-shirt"), or the
-     * word itself. Masked words are left as they are, so they show masked (p***s) as before.
+     * word itself. Masked words are left as they are, so they still show masked (p***s).
      */
     public function display(string $word): string
     {
@@ -319,10 +319,9 @@ final class Dictionary
         return $this->categories[$id]['words'] ?? [];
     }
 
-    /** Whether a word is accepted for a category: a clear answer, or one with another meaning that fits ("squash"). */
     /**
-     * Adds a word at runtime, from an admin decision stored in the database. It goes at the
-     * end of the list, so it counts as rare. Returns false for blocked or malformed words.
+     * Adds a word at runtime. It goes at the end of the list, so it counts as rare. Returns
+     * false for blocked or malformed words.
      */
     public function addWord(string $word): bool
     {
@@ -347,6 +346,7 @@ final class Dictionary
         return isset($this->categories[$id]);
     }
 
+    /** Whether a word is accepted for a category: a clear answer, or one with another meaning that fits ("squash"). */
     public function inCategory(string $id, string $word): bool
     {
         $this->categorySets[$id] ??= array_fill_keys(

@@ -236,9 +236,10 @@ final class Game
     /**
      * @param array{kind?: string, startsAt?: int, endsAt?: int, promptMin?: int, promptMax?: int, maxPlayers?: int, teamSize?: int,
      *   pack?: string, packMode?: string} $options
-     *   kind 'competition' has teams (see Competitions) and starts at startsAt.
-     *   kind: 'private' (default), 'public' (a round of the big world, ending at endsAt) or 'room';
-     *   promptMin/promptMax: how many answers each prompt should have.
+     *   kind: 'private' (default), 'public' (a round of the big world, ending at endsAt), 'room',
+     *   or 'competition' (with teams, see Competitions, starting at startsAt);
+     *   promptMin/promptMax: how many answers each prompt should have;
+     *   pack/packMode: a word pack the world plays, alone ('only') or with everyday words ('mixed').
      */
     public function createWorld(string $name, ?string $id = null, int $promptDurationMs = self::DEFAULT_PROMPT_DURATION_MS, string $spelling = 'both', ?int $ownerUserId = null, array $options = []): array
     {
@@ -445,7 +446,7 @@ final class Game
         return ['cat' => null, 'rules' => [[$row['type'], $row['letters']]]];
     }
 
-    /** Returns the active prompt, rotating it first if it has expired or run dry. Null when the world has no words left. */
+    /** Returns the active prompt, rotating it first if it has expired or run dry. Null when there is none: the world has ended, run out of words or not started yet. */
     public function currentPrompt(string $worldId): ?array
     {
         $world = $this->world($worldId);
@@ -553,7 +554,7 @@ final class Game
                     $b['played_word'] ?? null, $b['points'] ?? null, $p['team_name'], $now,
                 ]);
             }
-            // A competition's teams, every team placed (an empty one comes last with 0).
+            // A competition's teams, every team placed (an empty one scores 0).
             $world = $this->world($worldId);
             if (($world['kind'] ?? '') === 'competition') {
                 $teams = $this->teamStandings($worldId, -1);

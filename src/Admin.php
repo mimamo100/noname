@@ -11,7 +11,7 @@ declare(strict_types=1);
  */
 final class Admin
 {
-    /** Category used for reports and decisions about the dictionary itself, not a meaning. */
+    /** Category used for reports about the dictionary itself, not a meaning. */
     public const DICTIONARY_ONLY = '';
 
     public function __construct(private readonly PDO $db, private readonly Dictionary $dictionary, private $clock = null, private readonly ?Packs $packs = null)

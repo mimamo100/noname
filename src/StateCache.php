@@ -7,7 +7,7 @@ declare(strict_types=1);
  *
  * Each copy is tagged with the world's version number, which goes up whenever a word is
  * said, so a new word shows straight away. The time limit covers changes that don't touch
- * the version, such as a prompt running out of time or an admin accepting a word.
+ * the version, such as a prompt running out of time.
  */
 final class StateCache
 {

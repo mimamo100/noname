@@ -2,6 +2,10 @@
 // Builds data/dictionary.php, the only data file the game reads, from:
 //   data/words.txt                 the word list, most common first
 //   data/extra-words.txt           hand-added words the list misses
+//   data/word-counts.txt,          how often words appear in film subtitles, to place the
+//     extra-word-counts.txt          hand-added words (built by scripts/count-extra-words.php)
+//   data/family-breaks.txt         words that start their own family
+//   data/plural-words.txt          words normally used in the plural, judged as written
 //   data/blocklist.txt             words that can never be played
 //   data/masked.txt                words that can be played but are hidden from other players
 //   data/packs/<id>/               curated word packs, each built into data/packs/<id>.php

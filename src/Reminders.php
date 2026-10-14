@@ -91,7 +91,7 @@ final class Reminders
             } catch (RuntimeException $e) {
                 error_log('Unsaid reminder: ' . $e->getMessage());
                 $refused = true;
-                break; // The mail server is refusing: try again tomorrow.
+                break; // The mail server is refusing: the rest wait for the next hourly batch.
             }
             $sent->execute([$today, $u['id']]);
             $count++;

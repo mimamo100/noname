@@ -166,6 +166,7 @@ dialog h2 { margin-top: 0; }
 #settings-dialog code { word-break: break-all; }
 .check { display: flex; gap: 8px; align-items: center; margin: 8px 0; }
 .history-list .row-actions { float: right; }
+/* Buttons */
 button.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 6px 12px; }
 button.danger { color: var(--bad); }
 button:disabled { opacity: 0.45; cursor: default; filter: none; }
@@ -186,6 +187,7 @@ button:disabled { opacity: 0.45; cursor: default; filter: none; }
 .cs-team-head input { flex: 1 1 140px; }
 .cs-team ul { list-style: none; padding: 0; margin: 6px 0 0; }
 .cs-team li { display: flex; gap: 8px; align-items: center; justify-content: space-between; padding: 3px 0; font-size: 14px; }
+/* Forms, and a prompt card waiting for its first prompt */
 textarea, select { font: inherit; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; width: 100%; box-sizing: border-box; }
 .prompt-card.waiting .counter, .prompt-card.waiting .meter, .prompt-card.waiting .stats { display: none; }
 button.link.nudge { color: var(--ember); font-size: 14px; }
@@ -193,6 +195,7 @@ button.link.nudge { color: var(--ember); font-size: 14px; }
 /* Word packs */
 #packs-dialog { width: min(600px, calc(100vw - 32px)); }
 #pack-text { font-family: ui-monospace, monospace; font-size: 14px; }
+/* The recent prompt: what was left unsaid, and sharing */
 .reveal p:last-child { margin-bottom: 0; }
 .reveal .eyebrow { margin-bottom: 4px; }
 .unsaid-line { margin: 4px 0 8px; }

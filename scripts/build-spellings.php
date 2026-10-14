@@ -11,8 +11,8 @@
 //             one word in our word list. They become one answer in the game. Spellings that
 //             are also everyday words on both sides ("check" for "cheque", "tire" for "tyre")
 //             aren't linked, so saying "tired" doesn't use up "tyre".
-//   us, uk    words acceptable in US or UK spelling (preferred, or a common variant).
-//             A word in neither list isn't regional ("cat"), so it's fine everywhere.
+//   usOnly,   clustered spellings acceptable in only US or only UK spelling. A word in
+//   ukOnly    neither list isn't regional ("cat"), so it's fine everywhere.
 
 declare(strict_types=1);
 

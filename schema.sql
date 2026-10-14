@@ -89,9 +89,9 @@ CREATE TABLE IF NOT EXISTS reports (
   FOREIGN KEY (prompt_id) REFERENCES prompts(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- The admin's decisions about reported words. Accepted words count straight away:
--- the game adds them to the dictionary on every request. An empty category means
--- "add to the dictionary", without a meaning.
+-- The admin's decisions about reported words from before the word files became the only
+-- source of truth. Nothing writes to it now: the admin page lists any accepted words the
+-- files still lack. An empty category means "add to the dictionary", without a meaning.
 CREATE TABLE IF NOT EXISTS word_decisions (
   category VARCHAR(20) CHARACTER SET ascii NOT NULL,
   word VARCHAR(40) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
