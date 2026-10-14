@@ -103,3 +103,24 @@ deletes its packs (the owner may want to revisit those two calls).
 6. **Code-only-in-tests:** `Game::join` (nickname join from before accounts), `Dictionary::addWord`
    and `addToCategory`, and `Prompts::fitting` are only called by the tests, as fixtures. The
    owner chose to keep them.
+7. **Ideas for the game, approved for the list (14 October), not started.** Most valuable first:
+   - **Big-screen mode for competitions:** for a projector at a quiz night or in a classroom; a
+     huge prompt, the countdown, team scores rising live, the closing word and "Nobody said"
+     with some ceremony, and no word box.
+   - **A first-game walkthrough:** a practice prompt on a first visit, costing nothing, that
+     shows the key rules as they happen: words stay said, someone else's word costs 2 points,
+     Who said it? is free. (Ada lost about 50 points to repeats in the Kitchen Cup.)
+   - **A weekly league for the big world:** your best 5 rounds of the week, reset on Mondays, so
+     there's a reason to come back; it pairs with streaks and the daily email.
+   - **A better end-of-round share:** a picture-style card with your place, best word and one
+     "nobody said…" surprise, rather than plain text.
+   - **Achievements on Your account:** first closing word, a 7-day streak, a ×3-rare word,
+     winning a room, 1,000 words said; built from data the game already keeps.
+   - **Results download for organisers:** a CSV of players, teams and words after a competition.
+   - **Themed days in the big world** (Food Friday), mixing a curated pack with everyday words.
+   - **Friends:** follow players, see them highlighted on leaderboards, start a room together.
+   - **A light colour scheme**, for daytime and projectors.
+   - **Player levels** (being discussed): a simple level shown when you tap a player's name,
+     so you can see the calibre of who you're up against; see `DECISIONS.md` once decided.
+   - **A playtest of a brand-new player** arriving cold at the big world: first impressions,
+     not features.
