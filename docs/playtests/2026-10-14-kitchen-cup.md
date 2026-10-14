@@ -12,6 +12,8 @@ Result: **Forks 902, Spoons 194.** Players: Dee 598, Cal 304, Ben 203, Ada −9.
 - **A long prompt wrapping onto a second line** ("A piece of cutlery or crockery with no" / "R") looks wrong. Tried in Eve's tab: a smaller size for long prompts (`clamp(24px, 5.5vw, 40px)` for labels over about 30 characters) fits it on one line on a wide screen, and `text-wrap: balance` on `.prompt-card h1` (`public/style.css`) splits the lines evenly on a phone.
 - **A pack this small gets repetitive**; it suits a shorter competition (see "Small packs" below).
 - **Using the "Nobody said" list was a great trick** by the players (see "The same list twice in a row").
+- **Organisers need helpful hints on putting a word pack together**: one answer per line with its other forms, enough answers per list for the competition's length, lists that don't overlap, and checking for the everyday words players will reach for first (*dish*, *pan*, *mix*). A short guide beside the editor, plus the summary after saving (see "Making a pack").
+- **Players should learn to check before sending in small packs**: people forget that a word can only be said once in each world, so in a small pack they keep trying words said on earlier prompts and lose 2 points each time (Ada's −9). Ideas: a line at the start of a pack world ("Words stay said for the whole competition: try Who said it? if you're unsure"), and the list's words already said shown with the prompt when the same list comes round again.
 - **A stray up/down arrow** at the right end of the tabs on Your account, in Chrome only (not in Firefox): the tab row's scrollbar showing.
 
 ## What worked
@@ -70,10 +72,10 @@ Kitchen words the players expected and Eve's lists lacked: *dish*, *tray*, *sauc
 
 ## Suggested fixes, most valuable first
 1. **The accent bug**: plain letters for accented ones when a word is typed, and only a-to-z words looked up in `missesOf`.
-2. **The pack editor**: one answer per line (commas the only separator), errors on the form not in an alert, a summary of what the pack became.
+2. **The pack editor**: one answer per line (commas the only separator), errors on the form not in an alert, a summary of what the pack became, and a short guide to putting a pack together.
 3. **Small-pack scoring**: no world multiplier (or a low cap) in pack-only worlds; everyday rarity for pack words.
 4. **Prompts in small packs**: not the same list twice in a row; consider holding back "Nobody said".
-5. **Messages**: "isn't in the Kitchen pack"; why a repeat costs or doesn't; "you've been moved to Forks"; a reply to reports; the out-of-date Teams hint.
+5. **Messages**: a reminder in pack worlds that words stay said (check with Who said it?); "isn't in the Kitchen pack"; why a repeat costs or doesn't; "you've been moved to Forks"; a reply to reports; the out-of-date Teams hint.
 6. **Wording the owner asked for**: the "Starts..." line, "Live", the long prompt on one line.
 7. **Competition form**: 10- and 30-minute prompts, "about N prompts", what a pack is good for.
 8. **The end**: drop the old "finished" box under the card; leaderboard on Teams; the result in the reply to a late word.
