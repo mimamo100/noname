@@ -65,7 +65,8 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
   padding: 24px; text-align: center; margin-top: 8px;
 }
 .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--muted); }
-.prompt-card h1 { margin: 4px 0 8px; font-size: clamp(28px, 7vw, 48px); line-height: 1.1; }
+.prompt-card h1 { margin: 4px 0 8px; font-size: clamp(28px, 7vw, 48px); line-height: 1.1; text-wrap: balance; }
+.prompt-card h1.long { font-size: clamp(24px, 5.5vw, 40px); }
 .counter { font-size: 18px; }
 .counter #remaining { font-size: 32px; font-weight: 800; color: var(--ember); font-variant-numeric: tabular-nums; }
 .meter { height: 6px; background: var(--bg); border-radius: 3px; margin: 12px auto; max-width: 360px; overflow: hidden; }
@@ -160,6 +161,7 @@ dialog { position: relative; }
 input[type="radio"], input[type="checkbox"] { accent-color: var(--ember); }
 .field { display: flex; flex-direction: column; gap: 6px; margin: 0 0 16px; border: 0; padding: 0; }
 .field legend { padding: 0; margin-bottom: 6px; }
+.field-hint { margin: -10px 0 16px; }
 .field label { display: flex; gap: 8px; align-items: center; }
 .dialog-buttons { display: flex; justify-content: flex-end; gap: 16px; align-items: center; }
 

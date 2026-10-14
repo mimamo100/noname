@@ -290,13 +290,16 @@
       </label>
       <label class="field">Each prompt lasts up to
         <select id="comp-pace">
-          <option value="5">5 minutes (a live event)</option>
+          <option value="5">5 minutes</option>
+          <option value="10">10 minutes</option>
           <option value="15" selected>15 minutes</option>
+          <option value="30">30 minutes</option>
           <option value="60">An hour</option>
           <option value="240">4 hours</option>
-          <option value="1440">A day (a long contest)</option>
+          <option value="1440">A day</option>
         </select>
       </label>
+      <p class="muted small field-hint" id="comp-pace-hint"></p>
       <label class="field">Words
         <select id="cp-pack" class="pack-select"><option value="">Everyday words</option></select>
       </label>
@@ -334,8 +337,8 @@ Foxes</textarea>
       <label class="field">Ends <input id="cs-ends" type="datetime-local" required></label>
       <label class="field">Each prompt lasts up to
         <select id="cs-pace">
-          <option value="5">5 minutes</option><option value="15">15 minutes</option><option value="60">An hour</option>
-          <option value="240">4 hours</option><option value="1440">A day</option>
+          <option value="5">5 minutes</option><option value="10">10 minutes</option><option value="15">15 minutes</option>
+          <option value="30">30 minutes</option><option value="60">An hour</option><option value="240">4 hours</option><option value="1440">A day</option>
         </select>
       </label>
       <label class="field">Players per team <input id="cs-size" type="number" min="1" max="50" placeholder="No limit"></label>

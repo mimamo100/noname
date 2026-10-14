@@ -19,7 +19,7 @@ final class Competitions
     public const MAX_TEAMS = 20;
     public const MAX_TEAM_SIZE = 50;
     /** Prompt lengths an organiser can choose, in minutes. */
-    public const PACES = [5, 15, 60, 240, 1440];
+    public const PACES = [5, 10, 15, 30, 60, 240, 1440];
     /** The longest a competition can run. */
     private const MAX_LENGTH_MS = 31 * 86_400_000;
 
@@ -82,7 +82,7 @@ final class Competitions
 
     private function pace(mixed $minutes): int
     {
-        if (!in_array((int) $minutes, self::PACES, true)) throw new GameError(400, 'Prompts can last 5, 15 or 60 minutes, 4 hours or a day');
+        if (!in_array((int) $minutes, self::PACES, true)) throw new GameError(400, 'Prompts can last 5, 10, 15 or 30 minutes, an hour, 4 hours or a day');
         return (int) $minutes;
     }
 

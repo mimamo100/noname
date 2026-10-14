@@ -235,10 +235,27 @@ let competitionShown = false;
 function renderCompetitionClock(state) {
   const line = document.getElementById('competition-clock');
   if (!line || state.world.ended) return;
-  const started = state.now >= state.world.startsAt;
-  line.textContent = started
-    ? `It's on: ends in ${timeLeft(state.world.endsAt - state.now)}.`
-    : `Starts in ${timeLeft(state.world.startsAt - state.now)} (${whenText(state.world.startsAt)}), ends ${whenText(state.world.endsAt)}.`;
+  const { now, startsAt, endsAt } = { now: state.now, ...state.world };
+  const endDay = sameDay(endsAt, now) || sameDay(endsAt, startsAt) ? '' : ` ${dayText(endsAt, now)}`;
+  if (now >= startsAt) line.textContent = `Live: ends${endDay} at ${clockTime(endsAt)} (in ${durationText(endsAt - now)}).`;
+  else if (startsAt - now < 60_000) line.textContent = 'Starts in under a minute.';
+  else line.textContent = `Starts ${dayText(startsAt, now)} at ${clockTime(startsAt)} (in ${durationText(startsAt - now)}) and ends${endDay} at ${clockTime(endsAt)}.`;
+}
+
+// For competition times: "20:00", "today" / "tomorrow" / "on Thu 15 Oct", "11 minutes".
+const clockTime = (ms) => new Date(ms).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+const sameDay = (a, b) => new Date(a).toDateString() === new Date(b).toDateString();
+function dayText(ms, now) {
+  if (sameDay(ms, now)) return 'today';
+  if (sameDay(ms, now + 86_400_000)) return 'tomorrow';
+  return `on ${new Date(ms).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })}`;
+}
+function durationText(ms) {
+  const mins = Math.max(1, Math.ceil(ms / 60_000));
+  const unit = (n, one) => `${n} ${one}${n === 1 ? '' : 's'}`;
+  if (mins < 60) return unit(mins, 'minute');
+  if (mins < 48 * 60) return `${unit(Math.floor(mins / 60), 'hour')}${mins % 60 ? ` ${unit(mins % 60, 'minute')}` : ''}`;
+  return unit(Math.round(mins / 1440), 'day');
 }
 
 function renderCompetition(state) {
@@ -304,11 +321,30 @@ function renderCompetition(state) {
 const toLocalInput = (ms) => { const d = new Date(ms); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 16); };
 const fromLocalInput = (value) => new Date(value).getTime();
 
+// Prompts end once most of their answers are said, so the length is a maximum: the hint
+// says roughly how many prompts the competition will have, and until the organiser picks a
+// length, one giving 4 to 6 prompts is chosen for them.
+let compPaceChosen = false;
+function compPaceHint() {
+  const length = fromLocalInput($('comp-ends').value) - fromLocalInput($('comp-starts').value);
+  if (!(length > 0)) { $('comp-pace-hint').textContent = ''; return; }
+  if (!compPaceChosen) {
+    const paces = [...$('comp-pace').options].map((o) => Number(o.value));
+    $('comp-pace').value = String(paces.filter((p) => length / (p * 60_000) >= 4).at(-1) ?? paces[0]);
+  }
+  const prompts = Math.max(1, Math.round(length / (Number($('comp-pace').value) * 60_000)));
+  $('comp-pace-hint').textContent = `About ${prompts} ${prompts === 1 ? 'prompt' : 'prompts'} in your ${durationText(length)}, or more if they're said quickly.`;
+}
+for (const id of ['comp-starts', 'comp-ends']) $(id).addEventListener('input', compPaceHint);
+$('comp-pace').addEventListener('input', () => { compPaceChosen = true; compPaceHint(); });
+
 $('new-competition').addEventListener('click', () => {
   const start = new Date();
   start.setHours(start.getHours() + 1, 0, 0, 0);
   $('comp-starts').value = toLocalInput(start.getTime());
   $('comp-ends').value = toLocalInput(start.getTime() + 3_600_000);
+  compPaceChosen = false;
+  compPaceHint();
   loadPackChoices('cp');
   $('comp-dialog').showModal();
 });
@@ -572,6 +608,7 @@ function render(state) {
   if (state.world.ended) renderResults(state);
   if (state.prompt) {
     $('prompt-label').textContent = state.prompt.label;
+    $('prompt-label').classList.toggle('long', state.prompt.label.length > 30); // Smaller, to fit one line.
     $('remaining').textContent = state.prompt.remaining;
     // The meter fills towards the prompt's end, which comes before every answer is said.
     const toSay = Math.max(1, state.prompt.availableAtStart - state.prompt.endsWhenLeft);

@@ -405,7 +405,7 @@ an office contest.
 
 As built:
 - **Creating** (Organiser plan, up to 3 planned or running at once): name,
-  start and end (up to 31 days apart), prompt length (5, 15 or 60 minutes,
+  start and end (up to 31 days apart), prompt length (5, 10, 15 or 30 minutes, an hour,
   4 hours or a day), 2–20 team names, an optional team size (up to 50), and
   spelling. Prompts of 15 minutes or less get 30–200 answers, so a busy room
   doesn't empty them at once.
