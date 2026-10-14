@@ -101,7 +101,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | You: {place} of {n} · {points} points *(under the card)* | app.js · render |
 | The first prompt appears at the start *(a competition before it starts)* | app.js · render |
 | This world has run out of words | app.js · render |
-| Recent prompt *(box: the latest earlier prompt someone played)* · {prompt} · {n} said | app.js · renderLastUnsaid |
+| Recent prompt *(box: the latest earlier prompt someone played; “Recent prompt · last round” early in a new round)* · {prompt} · {n} said | app.js · renderLastUnsaid |
 | Nobody said: {words} and {n} more | app.js · unsaidText |
 | Every answer was said! | app.js · unsaidText |
 | 🏁 {name} finished it with “{word}”, for 10 bonus points. | app.js · renderLastUnsaid |
@@ -110,7 +110,6 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Show all {n} / Show fewer | app.js · renderSaid |
 | Earlier prompts | app.js · renderSaid |
 | Nothing was said. | app.js · renderSaid |
-| Nobody played: “{prompt}”, “{prompt}” | app.js · renderSaid |
 | {name} (+{n} family) *(in the feed)* | app.js · saidList |
 | Tap to show the word *(a masked word, p\*\*\*s)* | app.js · saidWord |
 | Finished the prompt: 10 bonus points *(the 🏁, on hover)* | app.js · saidList |
@@ -164,10 +163,12 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Message | Where |
 |---|---|
 | The Big World, {date} *(the round's name)* | Lobby.php · currentRound |
-| Everyone signed in plays here, and it starts afresh every round. This round ends in {time}. | app.js · renderClock |
-| Last round: {place} {name} ({score}) · … | app.js · renderLobby |
+| The Big World *(the box's title)* | index.html |
+| Everyone signed in plays here, and it starts afresh every day. *(or every {n} hours)* | app.js · renderLobby |
+| This round ends in {time} | index.html, app.js · renderClock |
+| Last round *(heading)*, then {medal} {name} · {n} points for the top three | app.js · renderLobby |
 | You came {place} of {n} with {n} points. Share your result | app.js · renderLobby |
-| Rooms: play with up to 60 others in a world of your own, where the words run out over weeks. | index.html |
+| Play with 60 others in a separate world *(its own box)* | index.html |
 | Join a room / Back to {room} *(button)* | app.js · renderLobby |
 | Create your own world *(link by the date)* | index.html |
 | Room {n} *(a room's name)* | Lobby.php · newRoom |

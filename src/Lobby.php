@@ -93,6 +93,19 @@ final class Lobby
         return $round['id'];
     }
 
+    /** The last finished round's id, or null. */
+    public function previousRoundId(): ?string
+    {
+        $id = $this->db->query("SELECT id FROM worlds WHERE kind = 'public' AND ended_at IS NOT NULL ORDER BY ended_at DESC LIMIT 1")->fetchColumn();
+        return $id === false ? null : $id;
+    }
+
+    /** How many hours a round lasts (24: a new round every day). */
+    public function roundHours(): int
+    {
+        return $this->roundHours;
+    }
+
     /** The last finished round's top three, for the big world's page. */
     public function lastRound(): ?array
     {

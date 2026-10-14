@@ -840,7 +840,7 @@ final class Game
     }
 
     /** The latest ended prompt with at least one word said, with its words and what was left unsaid. */
-    private function recentPrompt(string $worldId, array $teamOf): ?array
+    public function recentPrompt(string $worldId, array $teamOf = []): ?array
     {
         $stmt = $this->db->prepare('
             SELECT p.id FROM prompts p

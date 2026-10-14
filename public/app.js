@@ -80,7 +80,7 @@ function renderClock(state) {
   }
   if (state.world.kind === 'competition') renderCompetitionClock(state);
   if (state.world.kind === 'public' && state.world.endsAt) {
-    $('round-info').textContent = `Everyone signed in plays here, and it starts afresh every round. This round ends in ${timeLeft(state.world.endsAt - state.now)}.`;
+    $('round-ends').textContent = timeLeft(state.world.endsAt - state.now);
   }
 }
 
@@ -142,13 +142,17 @@ function renderLobby(state) {
   const big = state.world.kind === 'public';
   $('lobby').hidden = !big;
   if (big) {
+    const hours = state.roundHours ?? 24;
+    $('round-about').textContent = `Everyone signed in plays here, and it starts afresh ${hours === 24 ? 'every day' : `every ${hours} ${hours === 1 ? 'hour' : 'hours'}`}.`;
     const last = state.lastRound;
     $('last-round').hidden = !last;
     if (last) {
       $('last-round').replaceChildren(
-        el('b', { textContent: 'Last round: ' }),
-        last.winners.map((w) => `${ordinal(w.place)} ${w.nickname} (${w.score})`).join(' · '),
-        ...(last.mine ? [el('br'), `You came ${resultLine(last.mine)}. `, shareButton(last.mine, 'Share your result')] : []),
+        el('h3', { textContent: 'Last round' }),
+        el('ol', { className: 'winners' }, ...last.winners.map((w) => el('li', {},
+          el('span', { textContent: `${MEDALS[w.place] ?? ordinal(w.place)} ${w.nickname}` }),
+          el('span', { className: 'muted', textContent: points(w.score) })))),
+        ...(last.mine ? [el('p', { className: 'small' }, `You came ${resultLine(last.mine)}. `, shareButton(last.mine, 'Share your result'))] : []),
       );
     }
     $('room-button').textContent = state.myRoom ? `Back to ${state.myRoom.name}` : 'Join a room';
@@ -680,7 +684,7 @@ function renderLastUnsaid(last) {
   $('last-unsaid').hidden = !last;
   if (!last) return;
   $('last-unsaid').replaceChildren(
-    el('p', { className: 'eyebrow', textContent: 'Recent prompt' }),
+    el('p', { className: 'eyebrow', textContent: last.lastRound ? 'Recent prompt · last round' : 'Recent prompt' }),
     el('p', {}, el('b', { textContent: last.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(last.words.length)}` })),
     el('p', {}, last.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(last.unsaid),
     ),
@@ -696,7 +700,6 @@ let showAllSaid = false;
 
 function renderSaid(groups, currentPromptId) {
   const parts = [];
-  const unplayed = [];
   for (const group of groups) {
     if (group.promptId === currentPromptId) {
       parts.push(el('p', { className: 'group-title', textContent: `This prompt · ${countText(group.words.length)}` }));
@@ -708,7 +711,7 @@ function renderSaid(groups, currentPromptId) {
         parts.push(more);
       }
     } else if (!group.words.length) {
-      unplayed.push(group.prompt); // Folded into one line below.
+      continue;
     } else {
       const details = el('details', { className: 'earlier', open: openPrompts.has(group.promptId) },
         el('summary', {}, el('span', { textContent: group.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(group.words.length)}` })),
@@ -718,10 +721,8 @@ function renderSaid(groups, currentPromptId) {
       parts.push(details);
     }
   }
-  if (unplayed.length) {
-    parts.push(el('p', { className: 'muted small unplayed', textContent: `Nobody played: ${unplayed.map((p) => `“${p}”`).join(', ')}` }));
-  }
-  const firstEarlier = parts.findIndex((part) => part.tagName === 'DETAILS' || part.classList?.contains('unplayed'));
+  // Prompts nobody played aren't listed: they'd only make the page look quiet.
+  const firstEarlier = parts.findIndex((part) => part.tagName === 'DETAILS');
   if (firstEarlier >= 0) parts.splice(firstEarlier, 0, el('p', { className: 'group-title earlier-title', textContent: 'Earlier prompts' }));
   $('recent').replaceChildren(...parts);
 }

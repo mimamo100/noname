@@ -260,6 +260,12 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         // How the viewer finished, to share.
         if ($user && !empty($state['world']['ended'])) $state['myResult'] = $lobby->result($world['id'], (int) $user['id']);
         if ($isBigWorld) {
+            $state['roundHours'] = $lobby->roundHours();
+            // Early in a new round, Recent prompt shows the last round's last played prompt.
+            if (empty($state['recentPrompt']) && ($previous = $lobby->previousRoundId())) {
+                $recent = $game->recentPrompt($previous);
+                if ($recent) $state['recentPrompt'] = $recent + ['lastRound' => true];
+            }
             $state['lastRound'] = $lobby->lastRound();
             if ($user && $state['lastRound']) $state['lastRound']['mine'] = $lobby->result($state['lastRound']['id'], (int) $user['id']);
             $state['myRoom'] = $user ? $lobby->myRoom((int) $user['id']) : null;
