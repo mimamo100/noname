@@ -160,7 +160,9 @@ function renderLobby(state) {
   const room = state.world.kind === 'room';
   const ended = state.world.ended;
   const notMine = room && !ended && !state.me;
-  $('ended').hidden = !ended && !notMine;
+  // A finished private world or competition has its results card; rooms and big world rounds
+  // also say where to play next.
+  $('ended').hidden = !(ended && ['room', 'public'].includes(state.world.kind)) && !notMine;
   if (ended) {
     $('ended-message').textContent = state.world.endedMessage;
     $('ended-button').textContent = room ? 'Join a new room' : 'Go to the big world';
@@ -262,6 +264,9 @@ function renderCompetition(state) {
   const competition = state.world.kind === 'competition';
   $('tab-teams').hidden = !competition;
   $('competition').hidden = !competition || state.world.ended;
+  // Once a world has finished there's no prompt to rank: show the final standings.
+  $('tab-prompt').hidden = state.world.ended;
+  if (state.world.ended && board === 'prompt') showBoard(competition ? 'teams' : 'overall', false);
   if (!competition) {
     if (board === 'teams') showBoard('overall', false);
     competitionShown = false;
@@ -333,7 +338,7 @@ function compPaceHint() {
     $('comp-pace').value = String(paces.filter((p) => length / (p * 60_000) >= 4).at(-1) ?? paces[0]);
   }
   const prompts = Math.max(1, Math.round(length / (Number($('comp-pace').value) * 60_000)));
-  $('comp-pace-hint').textContent = `About ${prompts} ${prompts === 1 ? 'prompt' : 'prompts'} in your ${durationText(length)}, or more if they're said quickly.`;
+  $('comp-pace-hint').textContent = `About ${prompts} ${prompts === 1 ? 'prompt' : 'prompts'} in ${durationText(length)}, or more if they're said quickly.`;
 }
 for (const id of ['comp-starts', 'comp-ends']) $(id).addEventListener('input', compPaceHint);
 $('comp-pace').addEventListener('input', () => { compPaceChosen = true; compPaceHint(); });
@@ -845,6 +850,7 @@ function showTab(name) {
 // Leaderboard tabs: Teams (competitions only), Overall and This prompt.
 let board = 'overall';
 function showBoard(name, remember = true) {
+  if (name === 'prompt' && $('tab-prompt').hidden) name = 'teams';
   if (name === 'teams' && $('tab-teams').hidden) name = 'overall';
   board = name;
   for (const b of ['teams', 'overall', 'prompt']) {

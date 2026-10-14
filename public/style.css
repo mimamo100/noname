@@ -269,7 +269,8 @@ fieldset.field label:has(input:checked) { border-color: var(--ember); background
 .page-head h1 { margin: 0; font-size: 28px; }
 .page-head .muted { font-size: 14px; }
 #account-page .feedback { margin: 8px 0 0; }
-.acct-tabs { display: flex; gap: 22px; margin: 4px 0 20px; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.acct-tabs { display: flex; gap: 22px; margin: 4px 0 20px; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+.acct-tabs::-webkit-scrollbar { display: none; } /* Chrome showed a scroll arrow at the end of the tabs. */
 .acct-tabs a {
   color: var(--muted); text-decoration: none; padding: 0 0 8px; font-size: 14px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap;
