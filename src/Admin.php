@@ -82,8 +82,7 @@ final class Admin
     public function openReports(): array
     {
         $rows = $this->db->query("
-            SELECT r.category, r.word, COUNT(*) AS reports, COUNT(DISTINCT r.player_id) AS players,
-              MIN(r.reported_at) AS first_reported, MAX(r.reported_at) AS last_reported,
+            SELECT r.category, r.word, COUNT(DISTINCT r.player_id) AS players, MAX(r.reported_at) AS last_reported,
               SUBSTRING_INDEX(GROUP_CONCAT(DISTINCT r.prompt_id ORDER BY r.prompt_id DESC), ',', 3) AS prompt_ids
             FROM reports r
             WHERE r.reviewed_at IS NULL AND r.category NOT REGEXP '^p[0-9a-f]{8}[.]'
@@ -93,9 +92,7 @@ final class Admin
             'category' => $r['category'],
             'categoryLabel' => $this->categoryLabel($r['category']),
             'word' => $r['word'],
-            'reports' => (int) $r['reports'],
             'players' => (int) $r['players'],
-            'firstReported' => (int) $r['first_reported'],
             'lastReported' => (int) $r['last_reported'],
             'prompts' => array_values(array_unique(array_map(fn ($id) => $this->promptLabel((int) $id), explode(',', (string) $r['prompt_ids'])))),
             'inDictionary' => str_contains($r['category'], '.') || $this->dictionary->has($r['word']), // Pack words needn't be everyday words.
@@ -188,14 +185,14 @@ final class Admin
     {
         $search = trim($search);
         if ($search === '') {
-            $stmt = $this->db->query("SELECT id, name, email, plan, created_at FROM users WHERE plan <> 'free' ORDER BY id DESC LIMIT 50");
+            $stmt = $this->db->query("SELECT id, name, email, plan FROM users WHERE plan <> 'free' ORDER BY id DESC LIMIT 50");
         } else {
             $like = '%' . addcslashes($search, '%_\\') . '%';
-            $stmt = $this->db->prepare('SELECT id, name, email, plan, created_at FROM users WHERE name LIKE ? OR email LIKE ? ORDER BY id DESC LIMIT 50');
+            $stmt = $this->db->prepare('SELECT id, name, email, plan FROM users WHERE name LIKE ? OR email LIKE ? ORDER BY id DESC LIMIT 50');
             $stmt->execute([$like, $like]);
         }
         return array_map(fn ($u) => [
-            'id' => (int) $u['id'], 'name' => $u['name'], 'email' => $u['email'], 'plan' => $u['plan'], 'createdAt' => (int) $u['created_at'],
+            'id' => (int) $u['id'], 'name' => $u['name'], 'email' => $u['email'], 'plan' => $u['plan'],
         ], $stmt->fetchAll());
     }
 
@@ -239,11 +236,5 @@ final class Admin
         if ($category === self::DICTIONARY_ONLY) return $this->dictionary->has($word);
         $dictionary = $this->dictionaryFor($category);
         return $dictionary->hasCategory($category) && $dictionary->inCategory($category, $word);
-    }
-
-    /** Organisers' own packs have ids like p1a2b3c4d: reports on those are theirs to act on, not the admin's. */
-    public static function isCustomPackCategory(string $category): bool
-    {
-        return (bool) preg_match('/^p[0-9a-f]{8}\./', $category);
     }
 }

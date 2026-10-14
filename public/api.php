@@ -153,9 +153,8 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         respond(200, ['ok' => true]);
     }
     if ($resource === 'me' && $method === 'GET' && $worldId === 'worlds') {
-        $everyday = $game->dictionarySize();
         // Pack worlds: their name, and how much is left of the pack rather than the everyday dictionary.
-        $worlds = array_map(function ($w) use ($packs, $game, $everyday) {
+        $worlds = array_map(function ($w) use ($packs, $game) {
             if (!$w['pack']) return $w;
             $size = $packs->dictionary($w['pack'], $w['packMode'] ?? 'only', $game->dictionary())->size();
             return ['packName' => $packs->name($w['pack'], $game->dictionary()), 'left' => max(0, 1 - $w['burned'] / max(1, $size))] + $w;

@@ -76,7 +76,7 @@ function renderClock(state) {
   if (state.prompt) {
     // A prompt ends when enough of its answers are said, or when its time runs out.
     const more = state.prompt.remaining - state.prompt.endsWhenLeft;
-    $('ends-text').replaceChildren('Ends after ', el('b', { textContent: `${more} more` }), ' or in ', el('b', { id: 'ends-in', textContent: timeLeft(state.prompt.endsAt - state.now) }));
+    $('ends-text').replaceChildren('Ends after ', el('b', { textContent: `${more} more` }), ' or in ', el('b', { textContent: timeLeft(state.prompt.endsAt - state.now) }));
   }
   if (state.world.kind === 'competition') renderCompetitionClock(state);
   if (state.world.kind === 'public' && state.world.endsAt) {
@@ -163,8 +163,6 @@ function renderLobby(state) {
   const ended = state.world.ended;
   const notMine = room && !ended && !state.me;
   $('ended').hidden = !ended && !notMine;
-  // The results card (in place of the prompt card) shows the player's own result now.
-  $('ended-result').hidden = true;
   if (ended) {
     $('ended-message').textContent = state.world.endedMessage;
     $('ended-button').textContent = room ? 'Join a new room' : 'Go to the big world';
@@ -581,11 +579,10 @@ function render(state) {
   } else {
     $('prompt-label').textContent = state.world.ended ? 'Finished' : waiting ? 'The first prompt appears at the start' : 'This world has run out of words';
     $('remaining').textContent = '0';
-    $('ends-text').replaceChildren('Ends in ', el('b', { id: 'ends-in', textContent: '–' }));
+    $('ends-text').replaceChildren('Ends in ', el('b', { textContent: '–' }));
   }
   const competition = state.world.kind === 'competition';
   $('copy-link').hidden = !state.invite;
-  $('copy-link').textContent = 'Copy invite link';
   $('world-settings').hidden = !state.isOwner;
   $('world-settings').textContent = competition ? 'Competition settings' : 'World settings';
   renderCompetition(state);

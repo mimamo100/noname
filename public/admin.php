@@ -125,7 +125,6 @@ try {
                 $_SESSION['flash'] = "$count " . ($count === 1 ? 'report' : 'reports') . ' marked reviewed.';
                 break;
             case 'housekeeping':
-                $cacheDir = $config['cache_dir'] ?? "$root/cache";
                 (new Housekeeping(
                     $db, (int) ($config['housekeeping']['keep_days'] ?? 30), $cacheDir ?: null,
                     game: new Game($db, $dictionary), idleDays: (int) ($config['housekeeping']['idle_days'] ?? 60),

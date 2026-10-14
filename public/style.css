@@ -37,7 +37,6 @@ main { max-width: 960px; margin: 0 auto; padding: 0 16px 48px; }
   display: flex; flex-direction: column; padding: 6px;
   background: var(--surface); border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 24px rgb(0 0 0 / 0.35);
 }
-.menu[hidden] { display: none; }
 .menu button, .menu a {
   background: none; color: var(--text); text-align: left; padding: 9px 12px; border-radius: 6px;
   font-weight: 400; text-decoration: none; white-space: nowrap;
@@ -84,7 +83,7 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .feedback { min-height: 1.5em; margin: 8px 0 0; transition: opacity 0.5s; }
 .feedback.fading { opacity: 0; }
 .feedback.good { color: var(--good); }
-.feedback.bad { color: var(--bad); }
+.bad { color: var(--bad); }
 .muted { color: var(--muted); }
 
 .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
@@ -108,7 +107,7 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 #misses-list li { flex-wrap: wrap; }
 #misses-list button.link, .small-note { flex-basis: 100%; text-align: left; font-size: 13px; }
 h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 8px; }
-section + section h2 ~ h2, .leaderboard + h2 { margin-top: 24px; }
+section + section h2 ~ h2 { margin-top: 24px; }
 
 .recent { list-style: none; margin: 0; padding: 0; }
 .recent li { display: flex; gap: 6px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--border); }
@@ -194,7 +193,6 @@ button.link.nudge { color: var(--ember); font-size: 14px; }
 /* Word packs */
 #packs-dialog { width: min(600px, calc(100vw - 32px)); }
 #pack-text { font-family: ui-monospace, monospace; font-size: 14px; }
-.world-pack { color: var(--muted); font-size: 14px; }
 .reveal p:last-child { margin-bottom: 0; }
 .reveal .eyebrow { margin-bottom: 4px; }
 .unsaid-line { margin: 4px 0 8px; }

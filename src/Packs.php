@@ -274,7 +274,7 @@ final class Packs
     /** The account's own custom packs, with their text, for the pack editor. */
     public function mine(array $user): array
     {
-        $stmt = $this->db->prepare('SELECT id, name, description, source, words, updated_at FROM packs WHERE owner_user_id = ? ORDER BY name');
+        $stmt = $this->db->prepare('SELECT id, name, description, source, words FROM packs WHERE owner_user_id = ? ORDER BY name');
         $stmt->execute([$user['id']]);
         $reported = $this->db->prepare("
             SELECT word, COUNT(DISTINCT player_id) AS players FROM reports
@@ -283,7 +283,7 @@ final class Packs
             $reported->execute([$p['id']]);
             return [
                 'id' => $p['id'], 'name' => $p['name'], 'description' => $p['description'], 'text' => $p['source'],
-                'words' => (int) $p['words'], 'updatedAt' => (int) $p['updated_at'],
+                'words' => (int) $p['words'],
                 // Words players in its worlds said should count: the organiser's to add, or not.
                 'reported' => array_map(fn ($r) => ['word' => $r['word'], 'players' => (int) $r['players']], $reported->fetchAll(PDO::FETCH_ASSOC)),
             ];
