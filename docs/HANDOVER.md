@@ -80,6 +80,10 @@ deletes its packs (the owner may want to revisit those two calls).
 
 ## Open items
 
+0. **Next: the rarity review** (`docs/dictionary-review/RARITY-REVIEW.md`). The owner will mark
+   how rare 140 everyday words feel under the current scale and two curves, to choose a curve
+   and list words to move by hand. The owner found *teaspoon* at ×1.8 odd.
+
 1. **Messages:** the owner is reviewing `docs/MESSAGES.md` and will send wording changes.
    If they want to change wording often, the next step (already discussed) is moving the
    wording into two message files, one for the page and one for the server, so it can be
