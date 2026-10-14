@@ -838,9 +838,28 @@ async function refresh() {
   }
 }
 
+// Messages fade away on their own: good news after a few seconds, problems after longer, and
+// longest when there's a button to press (see keepFeedback). Not while the pointer or keyboard
+// focus is on the message, so it can still be read or used.
+const FEEDBACK_MS = { good: 6000, bad: 10000 };
+let feedbackTimer = null;
+
 function feedback(text, kind) {
-  $('feedback').textContent = text;
-  $('feedback').className = `feedback ${kind}`;
+  const box = $('feedback');
+  box.textContent = text;
+  box.className = `feedback ${kind}`;
+  if (text) keepFeedback(FEEDBACK_MS[kind] ?? FEEDBACK_MS.good);
+  else clearTimeout(feedbackTimer);
+}
+
+function keepFeedback(ms) {
+  clearTimeout(feedbackTimer);
+  feedbackTimer = setTimeout(function fade() {
+    const box = $('feedback');
+    if (box.matches(':hover') || box.contains(document.activeElement)) { feedbackTimer = setTimeout(fade, 2000); return; }
+    box.classList.add('fading');
+    feedbackTimer = setTimeout(() => { box.textContent = ''; box.className = 'feedback'; }, 500);
+  }, ms);
 }
 
 // One way of writing when something happened: "at 14:05" today, "on 13 Oct, 14:05" before.
@@ -899,7 +918,10 @@ $('play-form').addEventListener('submit', async (e) => {
     } else {
       const forOld = result.previousPrompt ? ` (Judged against the last prompt, “${result.previousPrompt}”, as it had only just changed.)` : '';
       feedback(REASONS[result.reason](result.word, result) + forOld, 'bad');
-      if (isReportable(result)) $('feedback').append(' ', reportButton(result.word, result.reason, result.promptId));
+      if (isReportable(result)) {
+        $('feedback').append(' ', reportButton(result.word, result.reason, result.promptId));
+        keepFeedback(20000); // Time to decide whether to report it.
+      }
       input.select();
     }
     refresh();

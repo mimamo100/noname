@@ -81,7 +81,8 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .join { flex-wrap: wrap; align-items: center; }
 .join p { flex-basis: 100%; margin: 0; color: var(--muted); }
 
-.feedback { min-height: 1.5em; margin: 8px 0 0; }
+.feedback { min-height: 1.5em; margin: 8px 0 0; transition: opacity 0.5s; }
+.feedback.fading { opacity: 0; }
 .feedback.good { color: var(--good); }
 .feedback.bad { color: var(--bad); }
 .muted { color: var(--muted); }
