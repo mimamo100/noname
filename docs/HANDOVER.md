@@ -32,7 +32,7 @@ this first, then `docs/DESIGN.md` for how the game works.
   (`TEST_DB_NAME`, `TEST_DB_USER`, `TEST_DB_PASS`); 95 passing. For a browser check, a
   local MariaDB, a `config.php` with `'mail' => ['transport' => 'log', ...]` (the sign-in
   code lands in the log) and `php -S localhost:8000 -t public public/router.php` work.
-- **Docs:** `DESIGN.md` (rules and features), `DEPLOY.md` (cPanel set-up, both cron jobs),
+- **Docs:** `DESIGN.md` (rules and features), `DECISIONS.md` (why, decision by decision: add to it when the owner decides something), `DEPLOY.md` (cPanel set-up, both cron jobs),
   `LAUNCH.md` (before going live), `SCALING.md`, `MESSAGES.md`, `playtests/` (reports with the
   owner's decisions), `dictionary-review/` and `word-packs/` (word-list reviews), and the
   READMEs in `data/categories/` and `data/packs/` (word-list formats).

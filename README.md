@@ -14,6 +14,7 @@ left unsaid, scores rise, so clever late players can still catch up.
 - Reviewing the meaning categories: [docs/DICTIONARY-REVIEW.md](docs/DICTIONARY-REVIEW.md)
 - Before the first live release: [docs/LAUNCH.md](docs/LAUNCH.md)
 - Where things stand, for a new working session: [docs/HANDOVER.md](docs/HANDOVER.md)
+- Why things are the way they are, decision by decision: [docs/DECISIONS.md](docs/DECISIONS.md)
 
 ## Requirements
 
