@@ -59,10 +59,11 @@ language shrinks, players hunt for rarer words, and those words are worth more.
 - **Accounts.** Everyone needs a free account to play, join or create
   worlds; anyone can watch. See "Accounts" below.
 - **Each kind of world has its own look**, so players know where they are: the
-  big world is orange, with its own box; rooms are green, private worlds teal
-  and competitions purple, each with a banner (its name, what kind of world,
-  its words and spelling, and Back to the big world) and that colour behind
-  the prompt. A world playing a word pack shows the pack's name as a tag.
+  big world is orange, rooms green, private worlds teal and competitions
+  purple. Each has a banner above the prompt and that colour behind it. The big
+  world's banner has its name, what it is under an (i), and when the round
+  ends; the others' have the world's name, what kind of world, its words and
+  spelling, and Back to the big world. A world playing a word pack shows the pack's name as a tag.
 
 ## How you play
 

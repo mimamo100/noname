@@ -36,10 +36,11 @@
   <main>
     <section id="world-banner" class="world-banner" hidden>
       <div>
-        <h2 id="banner-name"></h2>
+        <h2><span id="banner-name"></span><button type="button" class="info" id="round-info-button" aria-expanded="false" aria-controls="banner-about" aria-label="About the Big World" title="About the Big World" hidden>i</button></h2>
         <p id="banner-about" class="muted small"></p>
       </div>
-      <a href="/" class="back-link">Back to the big world</a>
+      <a href="/" class="back-link" id="back-link">Back to the big world</a>
+      <p class="round-clock" id="round-clock" hidden>This round ends in <b id="round-ends">–</b></p>
     </section>
 
     <section class="prompt-card" aria-live="polite">
@@ -64,13 +65,10 @@
 
     <section id="competition" class="notice" hidden></section>
 
-    <div class="play-row">
-      <form id="play-form" class="play" autocomplete="off" hidden>
-        <input id="word" name="word" placeholder="Type a word…" maxlength="30" autocapitalize="off" spellcheck="false" required>
-        <button type="submit">Say it</button>
-      </form>
-      <p class="round-clock" id="round-clock" hidden>This round ends in <b id="round-ends">–</b></p>
-    </div>
+    <form id="play-form" class="play" autocomplete="off" hidden>
+      <input id="word" name="word" placeholder="Type a word…" maxlength="30" autocapitalize="off" spellcheck="false" required>
+      <button type="submit">Say it</button>
+    </form>
     <p id="feedback" class="feedback" role="status"></p>
 
     <section id="signin" class="signin" hidden>
@@ -93,13 +91,7 @@
     </section>
 
     <div class="columns">
-      <section class="notice lobby-big" id="lobby-big" hidden>
-        <h2 class="box-title">The Big World
-          <button type="button" class="info" id="round-info-button" aria-expanded="false" aria-controls="round-about" aria-label="About the Big World" title="About the Big World">i</button>
-        </h2>
-        <p class="muted small" id="round-about" hidden>Everyone signed in plays here, and it starts afresh every day.</p>
-        <div id="last-round" class="last-round" hidden></div>
-      </section>
+      <section class="notice" id="last-round" hidden></section>
       <section id="last-unsaid" class="notice reveal" hidden></section>
       <section class="notice lobby-rooms" id="lobby-rooms" hidden>
         <p>Play with 60 others in a separate world</p>

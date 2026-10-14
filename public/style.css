@@ -75,12 +75,9 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .stats b { color: var(--text); }
 
 .play, .join, .lookup { display: flex; gap: 8px; margin-top: 16px; }
-/* The word box, with the big world's round time beside it (under it on a phone). */
-.play-row { display: flex; gap: 8px 20px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
-.play-row .play { flex: 1 1 320px; min-width: 0; margin-top: 0; }
-.round-clock { margin: 0; color: var(--muted); white-space: nowrap; }
+/* The big world's round time, on the right of its banner. */
+.round-clock { color: var(--muted); font-size: 14px; white-space: nowrap; }
 .round-clock b { color: var(--text); }
-@media (max-width: 700px) { .round-clock { flex-basis: 100%; text-align: right; font-size: 14px; } }
 .play input, .join input, .lookup input { flex: 1; }
 .play input { font-size: 20px; }
 .join { flex-wrap: wrap; align-items: center; }
@@ -101,7 +98,7 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .columns > .notice { margin: 0 0 16px; }
 .columns > .board { grid-area: board; }
 .columns > .said { grid-area: said; }
-.columns > #lobby-big { grid-area: big; }
+.columns > #last-round { grid-area: big; }
 .columns > #last-unsaid { grid-area: recent; }
 .columns > #lobby-rooms { grid-area: rooms; }
 @media (max-width: 700px) {
@@ -160,10 +157,8 @@ dialog h2 { margin-top: 0; }
 /* The big world's round and rooms, and finished worlds */
 .notice { margin-top: 16px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 12px; }
 .notice p { margin: 0 0 8px; }
-/* The big world's page: a box about the big world, and one for rooms. */
+/* The big world's page: a box for the last round, and one for rooms. */
 .box-title { margin: 0 0 6px; font-size: 18px; text-transform: none; letter-spacing: 0; color: var(--text); }
-.last-round { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
-.last-round h3 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .winners { list-style: none; margin: 0 0 6px; padding: 0; }
 .winners li { display: flex; gap: 12px; padding: 2px 0; }
 .lobby-rooms { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
@@ -223,7 +218,7 @@ button.link.nudge { color: var(--ember); font-size: 14px; }
 /* The player's own place, under the prompt card. */
 .standing { margin: 12px 0 0; text-align: center; }
 
-/* Where you are: a banner and an accent colour for private worlds, rooms and competitions. */
+/* Where you are: a banner and an accent colour for each kind of world. */
 body[data-kind="private"] { --ember-dim: #0e4a52; --band: #3cc2cf; }
 body[data-kind="competition"] { --ember-dim: #3d2a6e; --band: #a58bff; }
 body[data-kind="room"] { --ember-dim: #1d4d2a; --band: #6fcf7f; }
@@ -256,7 +251,6 @@ fieldset.field label:has(input:checked) { border-color: var(--ember); background
   font: italic 700 12px/1 Georgia, serif; vertical-align: middle; cursor: pointer;
 }
 .info:hover, .info[aria-expanded="true"] { border-color: var(--ember); color: var(--ember); filter: none; }
-#round-about { margin: 0 0 6px; }
 
 /* A world's word pack, as a tag by its name in the banner. */
 .pack-tag {

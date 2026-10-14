@@ -163,10 +163,10 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Message | Where |
 |---|---|
 | The Big World, {date} *(the round's name)* | Lobby.php · currentRound |
-| The Big World *(the box's title)* | index.html |
-| Everyone signed in plays here, and it starts afresh every day. *(or every {n} hours; shown with the (i) by the title)* | app.js · renderLobby |
-| This round ends in {time} | index.html, app.js · renderClock |
-| Last round *(heading)*, then {medal} {name} · {n} points for the top three | app.js · renderLobby |
+| The Big World *(the banner's title)* | app.js · renderBanner |
+| Everyone signed in plays here, and it starts afresh every day. *(or every {n} hours; shown with the (i) by the title)* | app.js · renderBanner |
+| This round ends in {time} *(in the banner)* | index.html, app.js · renderClock |
+| Last round *(the box's title)*, then {medal} {name} · {n} points for the top three | app.js · renderLobby |
 | You came {place} of {n} with {n} points. Share your result | app.js · renderLobby |
 | Play with 60 others in a separate world *(its own box)* | index.html |
 | Join a room / Back to {room} *(button)* | app.js · renderLobby |

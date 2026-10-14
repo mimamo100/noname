@@ -140,15 +140,13 @@ const resultLine = (g) => `${MEDALS[g.place] ? `${MEDALS[g.place]} ` : ''}${ordi
 
 function renderLobby(state) {
   const big = state.world.kind === 'public';
-  for (const id of ['lobby-big', 'lobby-rooms', 'round-clock']) $(id).hidden = !big;
+  $('lobby-rooms').hidden = !big;
+  $('last-round').hidden = !big || !state.lastRound;
   if (big) {
-    const hours = state.roundHours ?? 24;
-    $('round-about').textContent = `Everyone signed in plays here, and it starts afresh ${hours === 24 ? 'every day' : `every ${hours} ${hours === 1 ? 'hour' : 'hours'}`}.`;
     const last = state.lastRound;
-    $('last-round').hidden = !last;
     if (last) {
       $('last-round').replaceChildren(
-        el('h3', { textContent: 'Last round' }),
+        el('h2', { className: 'box-title', textContent: 'Last round' }),
         el('ol', { className: 'winners' }, ...last.winners.map((w) => el('li', {},
           el('span', { textContent: `${MEDALS[w.place] ?? ordinal(w.place)} ${w.nickname}` }),
           el('span', { className: 'muted', textContent: points(w.score) })))),
@@ -525,19 +523,32 @@ async function joinRoom() {
   }
 }
 $('room-button').addEventListener('click', joinRoom);
-// The (i) by the Big World's title shows or hides what it is.
+// The (i) by the Big World's name shows or hides what it is.
+let roundAboutOpen = false;
 $('round-info-button').addEventListener('click', () => {
-  const open = $('round-about').hidden;
-  $('round-about').hidden = !open;
-  $('round-info-button').setAttribute('aria-expanded', String(open));
+  roundAboutOpen = !roundAboutOpen;
+  $('banner-about').hidden = !roundAboutOpen;
+  $('round-info-button').setAttribute('aria-expanded', String(roundAboutOpen));
 });
 
-// Anything but the big world gets a banner saying where you are, and its own colour.
+// A banner saying where you are, and its own colour. The big world's has the round's time
+// and what it is under an (i); the others say what kind of world it is, and link back.
 function renderBanner(state) {
   const kind = state.world.kind;
+  const big = kind === 'public';
   document.body.dataset.kind = kind;
-  $('world-banner').hidden = kind === 'public';
-  if (kind === 'public') return;
+  $('world-banner').hidden = false;
+  $('round-info-button').hidden = !big;
+  $('round-clock').hidden = !big;
+  $('back-link').hidden = big;
+  if (big) {
+    const hours = state.roundHours ?? 24;
+    $('banner-name').textContent = 'The Big World';
+    $('banner-about').textContent = `Everyone signed in plays here, and it starts afresh ${hours === 24 ? 'every day' : `every ${hours} ${hours === 1 ? 'hour' : 'hours'}`}.`;
+    $('banner-about').hidden = !roundAboutOpen;
+    return;
+  }
+  $('banner-about').hidden = false;
   const pack = state.pack;
   const words = !pack ? 'Everyday words' : pack.mode === 'only' ? `${pack.name} words only` : `Everyday and ${pack.name} words`;
   const spelling = { uk: 'UK spelling', us: 'US spelling' }[state.world.spelling];
