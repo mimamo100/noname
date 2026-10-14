@@ -4,6 +4,18 @@ Eve (Organiser plan) made a word pack and ran a competition with it, all through
 
 Result: **Forks 902, Spoons 194.** Players: Dee 598, Cal 304, Ben 203, Ada −9. Six prompts: cutlery or crockery with no R, the same with no E, a way of cooking, a kitchen job, cutlery or crockery with no O, a kitchen job with no T.
 
+## Done since (14 October, commits 041a1aa to 9ce1d55)
+
+- **The accent bug:** accented letters count as plain ones (*sauté* is *saute*), and the misses list only looks up words of a to z.
+- **The owner's notes:** "Starts today at 20:00 (in 11 minutes) and ends at 20:30.", "Live: ends at 20:30 (in 26 minutes).", long prompts smaller with balanced lines, prompt lengths of 5, 10, 15 and 30 minutes, an hour, 4 hours and a day, with "About 6 prompts in 30 minutes…" and a default giving 4 to 6 prompts.
+- **Pack editor:** one answer per line, other forms after commas (old packs keep their meaning, as format 1); errors in red on the form instead of alert boxes (all dialogs); a short guide; "Saved: {list}, {n} answers" per list.
+- **Small packs:** a new prompt avoids the list just asked about when another fits.
+- **The end:** no old box under a private world's or competition's results card; This prompt hidden once ended; competitions open on Teams.
+- **Smaller:** no scroll arrow on the account tabs in Chrome; New pack above the list; the Teams hint.
+- **Already on the page** (the agents saw only the API): "*kettle* isn't in this world's Kitchen words. No penalty." and who said a repeated word, when, and whether it cost points.
+
+**Waiting on the owner's decision:** small-pack scoring (no world multiplier, or a low cap, in pack-only worlds; everyday rarity for pack words); a "words stay said" reminder in pack worlds; telling a player they've been moved; a typo check in the pack editor; what a pack is good for on the competition form; the result on an ended competition's card and "You ran" in Past games; the winners in the reply to a late word; -ing forms for verb lists.
+
 ## The owner's notes
 
 - **Prompt lengths**: the choices (5 minutes, 15, an hour, 4 hours, a day) leave big gaps. Suggested: 5, 10, 15 and 30 minutes, 1 hour, 4 hours, 1 day, with a hint under the box ("About 6 prompts in your 30 minutes") and a default worked out from the start and end times (4 to 6 prompts). The setting is a maximum, as prompts end at 80% of their answers, so finer control buys little.
