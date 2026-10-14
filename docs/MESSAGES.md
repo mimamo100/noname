@@ -231,8 +231,8 @@ Shown under the word box; they fade after a few seconds (see section 13).
 
 | Message | Where |
 |---|---|
-| Starts today / tomorrow / on {day date} at {time} (in {n} minutes / hours / days) and ends at {time}. / Starts in under a minute. | app.js · renderCompetitionClock |
-| Live: ends at {time} (in {n} minutes). | app.js · renderCompetitionClock |
+| Starts **{time}** · Ends **{time}** *(with the day, “Thu 15 Oct, 20:00”, when it isn't today)* | app.js · drawCompetitionClock |
+| Starts in **{m:ss}** / LIVE **{m:ss}** left *(a countdown, ticking every second; “3 days” when far off)* | app.js · drawCompetitionClock |
 | You're in {team}. Every point you score will count for your team. *(before the start; “counts” after)* | app.js · renderCompetition |
 | The organiser moved you here from {team}. | app.js · renderCompetition |
 | This link is for {team}, but you're on {team}: players can't change team. Ask the organiser if you should. | app.js · renderCompetition |

@@ -234,23 +234,47 @@ function celebrate(worldId) {
 const whenText = (ms) => new Date(ms).toLocaleString(undefined, { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
 let competitionShown = false;
 
+// A competition's times in bold ("Starts 20:00 · Ends 20:30"), and a countdown under them
+// that ticks every second: to the start, then (Live) to the end.
+let serverOffset = 0; // The server's clock minus this device's, so the countdown matches it.
+
 function renderCompetitionClock(state) {
-  const line = document.getElementById('competition-clock');
-  if (!line || state.world.ended) return;
-  const { now, startsAt, endsAt } = { now: state.now, ...state.world };
-  const endDay = sameDay(endsAt, now) || sameDay(endsAt, startsAt) ? '' : ` ${dayText(endsAt, now)}`;
-  if (now >= startsAt) line.textContent = `Live: ends${endDay} at ${clockTime(endsAt)} (in ${durationText(endsAt - now)}).`;
-  else if (startsAt - now < 60_000) line.textContent = 'Starts in under a minute.';
-  else line.textContent = `Starts ${dayText(startsAt, now)} at ${clockTime(startsAt)} (in ${durationText(startsAt - now)}) and ends${endDay} at ${clockTime(endsAt)}.`;
+  const box = document.getElementById('competition-clock');
+  if (!box || state.world.ended) return;
+  serverOffset = state.now - Date.now();
+  drawCompetitionClock(box, state.world);
 }
 
-// For competition times: "20:00", "today" / "tomorrow" / "on Thu 15 Oct", "11 minutes".
+function drawCompetitionClock(box, world) {
+  const now = Date.now() + serverOffset;
+  const { startsAt, endsAt } = world;
+  const at = (ms) => (sameDay(ms, now) ? clockTime(ms) : `${shortDay(ms)}, ${clockTime(ms)}`);
+  const live = now >= startsAt;
+  box.replaceChildren(
+    el('div', { className: 'comp-times' },
+      el('span', {}, 'Starts ', el('b', { textContent: at(startsAt) })),
+      el('span', {}, 'Ends ', el('b', { textContent: at(endsAt) }))),
+    el('div', { className: 'comp-countdown' },
+      ...(live ? [el('span', { className: 'live', textContent: 'Live' }), ' '] : ['Starts in ']),
+      el('b', { textContent: countdown((live ? endsAt : startsAt) - now) }),
+      live ? ' left' : ''),
+  );
+}
+setInterval(() => {
+  const box = document.getElementById('competition-clock');
+  if (box && lastState?.world?.kind === 'competition' && !lastState.world.ended) drawCompetitionClock(box, lastState.world);
+}, 1000);
+
+// For competition times: "20:00", "Thu 15 Oct", and a countdown: "10:42", "1:05:09" or "3 days".
 const clockTime = (ms) => new Date(ms).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+const shortDay = (ms) => new Date(ms).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
 const sameDay = (a, b) => new Date(a).toDateString() === new Date(b).toDateString();
-function dayText(ms, now) {
-  if (sameDay(ms, now)) return 'today';
-  if (sameDay(ms, now + 86_400_000)) return 'tomorrow';
-  return `on ${new Date(ms).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })}`;
+function countdown(ms) {
+  const secs = Math.max(0, Math.ceil(ms / 1000));
+  if (secs >= 2 * 86_400) return `${Math.round(secs / 86_400)} days`;
+  const two = (n) => String(n).padStart(2, '0');
+  const [h, m, s] = [Math.floor(secs / 3600), Math.floor(secs / 60) % 60, secs % 60];
+  return h ? `${h}:${two(m)}:${two(s)}` : `${m}:${two(s)}`;
 }
 function durationText(ms) {
   const mins = Math.max(1, Math.ceil(ms / 60_000));
@@ -280,7 +304,7 @@ function renderCompetition(state) {
   }
   if (state.world.ended) return;
   const started = state.now >= state.world.startsAt;
-  const parts = [el('p', { id: 'competition-clock' })];
+  const parts = [el('div', { id: 'competition-clock', className: 'comp-clock' })];
   if (state.myTeam) {
     parts.push(el('p', {}, "You're in ", ...teamDot(state.myTeam.position), el('b', { textContent: state.myTeam.name }),
       started ? '. Every point you score counts for your team.' : '. Every point you score will count for your team.'));

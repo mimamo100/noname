@@ -198,6 +198,14 @@ button:disabled { opacity: 0.45; cursor: default; filter: none; }
 .team-4 { background: #e8c547; } .team-5 { background: #8f7ce0; } .team-6 { background: #3fc1b0; } .team-7 { background: #e0605f; }
 .team-8 { background: #a3a3a3; } .team-9 { background: #b08b5b; }
 #competition .teams-forming { list-style: none; padding: 0; margin: 8px 0 0; }
+.comp-clock { margin-bottom: 10px; }
+.comp-times { display: flex; gap: 6px 24px; flex-wrap: wrap; font-size: 18px; }
+.comp-countdown { margin-top: 2px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.comp-countdown b { color: var(--text); font-size: 18px; }
+.comp-countdown .live {
+  display: inline-block; padding: 1px 8px; border-radius: 999px; background: var(--band, var(--ember)); color: var(--bg);
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; vertical-align: 2px;
+}
 #competition .teams-forming li { padding: 4px 0; }
 #comp-dialog, #comp-settings-dialog { width: min(560px, calc(100vw - 32px)); }
 #comp-settings-dialog h3 { margin: 20px 0 6px; font-size: 15px; }
