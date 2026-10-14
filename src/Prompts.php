@@ -221,20 +221,28 @@ final class Prompts
      * @param array<string, true> $used prompt keys already used in this world
      * @return array{spec: array, available: int}|null null when no words are left at all
      */
-    public static function pick(Dictionary $dictionary, array $burned, array $used = [], int $min = 10, int $max = 80, int $attempts = 40): ?array
+    /**
+     * @param ?string $avoidCat the last prompt's meaning list: another list is chosen if one fits,
+     *   so a small pack doesn't ask about the same list twice running (its "Nobody said" answers
+     *   would still be fresh)
+     */
+    public static function pick(Dictionary $dictionary, array $burned, array $used = [], int $min = 10, int $max = 80, int $attempts = 40, ?string $avoidCat = null): ?array
     {
+        if (count($dictionary->categoryIds()) < 2) $avoidCat = null;
         // Choose the kind first, so kinds that rarely land in range still come up as often as intended.
         $kinds = $dictionary->categoryIds() ? self::weightedOrder(['meaningAndLetters' => 50, 'meaning' => 20, 'letters' => 30]) : ['letters'];
         $best = null;
         foreach ($kinds as $kind) {
             for ($i = 0; $i < $attempts; $i++) {
                 $spec = self::randomSpec($dictionary, $kind);
-                if (isset($used[self::key($spec)])) continue;
+                if (isset($used[self::key($spec)]) || ($avoidCat !== null && ($spec['cat'] ?? null) === $avoidCat)) continue;
                 $count = self::countUnsaid($spec, $dictionary, $burned);
                 if ($count >= $min && $count <= $max) return ['spec' => $spec, 'available' => $count];
                 if ($count > 0 && ($best === null || $count > $best['available'])) $best = ['spec' => $spec, 'available' => $count];
             }
         }
+        // Nothing else fits: the same list will do after all.
+        if ($avoidCat !== null) return self::pick($dictionary, $burned, $used, $min, $max, $attempts);
         return $best ?? self::simplePrompt($dictionary, $burned, $used);
     }
 

@@ -486,13 +486,18 @@ final class Game
                 $this->finishWorld($worldId); // The round's time is up.
                 return null;
             }
-            $stmt = $this->db->prepare('SELECT spec, type, letters FROM prompts WHERE world_id = ?');
+            $stmt = $this->db->prepare('SELECT spec, type, letters FROM prompts WHERE world_id = ? ORDER BY id');
             $stmt->execute([$worldId]);
             $used = [];
-            foreach ($stmt->fetchAll() as $row) $used[Prompts::key(self::specOf($row))] = true;
+            $lastCat = null;
+            foreach ($stmt->fetchAll() as $row) {
+                $used[Prompts::key($spec = self::specOf($row))] = true;
+                $lastCat = $spec['cat'] ?? null;
+            }
             $next = Prompts::pick(
                 $this->dictionary, $this->unavailable($worldId), $used,
                 (int) ($world['prompt_min'] ?? $this->promptMin), (int) ($world['prompt_max'] ?? $this->promptMax),
+                avoidCat: $lastCat,
             );
             if (!$next) {
                 $this->finishWorld($worldId); // Out of words.

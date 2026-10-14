@@ -925,3 +925,13 @@ test('accented letters count as plain ones, and odd characters in a miss never b
     $misses = $game->state($world['id'], $p['token'])['myMisses'];
     check(count($misses) >= 1, 'The page still loads, misses and all');
 });
+
+test('the next prompt avoids the list just asked about when another fits', function () {
+    $d = testDictionary();
+    $cats = $d->categoryIds();
+    check(count($cats) > 1);
+    for ($i = 0; $i < 30; $i++) {
+        $next = Prompts::pick($d, [], [], 1, 1000, avoidCat: $cats[0]);
+        check(($next['spec']['cat'] ?? null) !== $cats[0], 'Not the same list twice running');
+    }
+});
