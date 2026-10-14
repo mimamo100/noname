@@ -219,7 +219,7 @@ word-finder site. There are three kinds:
   how many answers, and the 12 commonest (one word per family, masked words
   counted but not shown), so players see the "oh, of course!" words they
   missed. It's noted on the prompt as it ends (later prompts use words up
-  too) and shown under **Last prompt** and with each earlier prompt in the
+  too) and shown under **Recent prompt** (the latest one someone played) and with each earlier prompt in the
   feed.
 - **My misses** lists a player's own wrong guesses (with the prompt, the
   reason and any penalty, plus what happened to any report: waiting,

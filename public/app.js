@@ -592,7 +592,7 @@ function render(state) {
   $('signin').hidden = signedIn;
 
   renderSaid(state.said ?? [], state.prompt?.id);
-  renderLastUnsaid(state.said ?? [], state.prompt?.id);
+  renderLastUnsaid(state.recentPrompt);
 
   $('tab-misses').hidden = !joined;
   renderMisses(state.myMisses ?? [], state.prompt?.id);
@@ -674,12 +674,13 @@ function unsaidText(u) {
   return `${u.words.join(', ')}${more > 0 ? `${u.words.length ? ' and ' : ''}${more.toLocaleString()} more` : ''}`;
 }
 
-function renderLastUnsaid(groups, currentPromptId) {
-  const last = groups.find((g) => g.promptId !== currentPromptId && g.unsaid);
+// The latest earlier prompt that someone played (from the server): one nobody played would make
+// the page look dead.
+function renderLastUnsaid(last) {
   $('last-unsaid').hidden = !last;
   if (!last) return;
   $('last-unsaid').replaceChildren(
-    el('p', { className: 'eyebrow', textContent: 'Last prompt' }),
+    el('p', { className: 'eyebrow', textContent: 'Recent prompt' }),
     el('p', {}, el('b', { textContent: last.prompt }), el('span', { className: 'muted', textContent: ` · ${countText(last.words.length)}` })),
     el('p', {}, last.unsaid.count ? el('span', { className: 'muted', textContent: 'Nobody said: ' }) : '', unsaidText(last.unsaid),
     ),

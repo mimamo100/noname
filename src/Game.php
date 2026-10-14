@@ -802,9 +802,10 @@ final class Game
      * The words said in the world's latest prompts (the current one first), each with all
      * its words, newest first. Older prompts' words can still be found with lookup().
      */
-    private function saidByPrompt(string $worldId, int $prompts = 4, array $teamOf = []): array
+    private function saidByPrompt(string $worldId, int $prompts = 4, array $teamOf = [], ?int $onlyPromptId = null): array
     {
-        $stmt = $this->db->prepare("SELECT id, spec, label, type, letters, unsaid_count, unsaid_words, closing_word FROM prompts WHERE world_id = ? ORDER BY id DESC LIMIT $prompts");
+        $only = $onlyPromptId !== null ? ' AND id = ' . (int) $onlyPromptId : '';
+        $stmt = $this->db->prepare("SELECT id, spec, label, type, letters, unsaid_count, unsaid_words, closing_word FROM prompts WHERE world_id = ?$only ORDER BY id DESC LIMIT $prompts");
         $stmt->execute([$worldId]);
         $groups = [];
         foreach ($stmt->fetchAll() as $row) {
@@ -836,6 +837,19 @@ final class Game
               + (isset($teamOf[$r['team_id']]) ? ['team' => $teamOf[$r['team_id']]] : []);
         }
         return array_values($groups);
+    }
+
+    /** The latest ended prompt with at least one word said, with its words and what was left unsaid. */
+    private function recentPrompt(string $worldId, array $teamOf): ?array
+    {
+        $stmt = $this->db->prepare('
+            SELECT p.id FROM prompts p
+            WHERE p.world_id = ? AND p.ended_at IS NOT NULL AND p.unsaid_count IS NOT NULL
+              AND EXISTS (SELECT 1 FROM burns b WHERE b.prompt_id = p.id)
+            ORDER BY p.id DESC LIMIT 1');
+        $stmt->execute([$worldId]);
+        $id = $stmt->fetchColumn();
+        return $id === false ? null : ($this->saidByPrompt($worldId, 1, $teamOf, (int) $id)[0] ?? null);
     }
 
     /** A player's most recent wrong guesses, newest first, with the prompt each was for. */
@@ -1035,6 +1049,8 @@ final class Game
             'dictionary' => ['size' => $this->dictionary->size(), 'burned' => count($this->burned($worldId))],
             // Every word said in the current prompt and the few before it, newest prompt first.
             'said' => $this->saidByPrompt($worldId, teamOf: $teamOf),
+            // The latest finished prompt someone played, however far back, for the Recent prompt box.
+            'recentPrompt' => $this->recentPrompt($worldId, $teamOf),
             'leaderboard' => $leaderboard,
             'promptBoard' => $promptBoard,
         ] + ($isCompetition ? ['teams' => $teams] : []);

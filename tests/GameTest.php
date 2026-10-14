@@ -865,3 +865,19 @@ test('a missed phrase is shown as typed in My misses, and a miss says which prom
     same([$game->state($world['id'], null)['prompt']['id'], 'double decker'], [$miss['promptId'], $miss['word']]);
     same('double decker', $game->state($world['id'], $p['token'])['myMisses'][0]['word']);
 });
+
+test('the recent prompt is the latest finished one someone played', function () {
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $world = $game->createWorld('Recent', null, 60_000);
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $p = $game->join($world['id'], 'Pat');
+    same(null, $game->state($world['id'], null)['recentPrompt'], 'Nothing has finished yet');
+    $game->play($world['id'], $p['token'], 'moon');
+    $clock += 61_000; // Contains OO ends; the next prompt runs out unplayed, and the one after it too.
+    $game->state($world['id'], null);
+    $clock += 61_000;
+    $game->state($world['id'], null);
+    $recent = $game->state($world['id'], null)['recentPrompt'];
+    same(['Contains OO', ['moon']], [$recent['prompt'], array_column($recent['words'], 'word')]);
+});

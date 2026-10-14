@@ -101,7 +101,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | You: {place} of {n} · {points} points *(under the card)* | app.js · render |
 | The first prompt appears at the start *(a competition before it starts)* | app.js · render |
 | This world has run out of words | app.js · render |
-| Last prompt *(box)* · {prompt} · {n} said | app.js · renderLastUnsaid |
+| Recent prompt *(box: the latest earlier prompt someone played)* · {prompt} · {n} said | app.js · renderLastUnsaid |
 | Nobody said: {words} and {n} more | app.js · unsaidText |
 | Every answer was said! | app.js · unsaidText |
 | 🏁 {name} finished it with “{word}”, for 10 bonus points. | app.js · renderLastUnsaid |
