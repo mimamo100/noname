@@ -13,6 +13,7 @@ left unsaid, scores rise, so clever late players can still catch up.
 - Growing to many players: [docs/SCALING.md](docs/SCALING.md)
 - Reviewing the meaning categories: [docs/DICTIONARY-REVIEW.md](docs/DICTIONARY-REVIEW.md)
 - Before the first live release: [docs/LAUNCH.md](docs/LAUNCH.md)
+- Where things stand, for a new working session: [docs/HANDOVER.md](docs/HANDOVER.md)
 
 ## Requirements
 
