@@ -79,6 +79,7 @@ if ($hasConfig && extension_loaded('pdo_mysql')) {
             $adminPath = trim(isset($config['admin_path']) ? (string) $config['admin_path'] : 'admin', '/');
             report((bool) preg_match('/^[A-Za-z0-9_-]{4,64}$/', $adminPath), 'Admin page is on, at the admin_path set in config.php',
                 'admin_path must be 4-64 letters, numbers, - or _ (for example backstage-7k2q).');
+            if ($adminPath === 'account') echo "        Problem: /account is the players' account page, so the admin page can't be there. Choose another admin_path.\n";
             if ($adminPath === 'admin') echo "        Tip: change admin_path in config.php to something nobody would guess.\n";
         }
     } catch (Exception $e) {

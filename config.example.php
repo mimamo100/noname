@@ -9,7 +9,8 @@ return [
     // The admin page. Leave the password empty to turn it off.
     'admin_password' => '',
     // The admin page's address: https://your-site/<admin_path>. Pick something nobody
-    // would guess (4-64 letters, numbers, - or _). Every other address says "Not found".
+    // would guess (4-64 letters, numbers, - or _), but not "account", which is the players'
+    // account page. Every other address says "Not found".
     'admin_path' => 'admin',
     // The big world: open to everyone signed in, started afresh every round_hours
     // (1, 2, 3, 4, 6, 8, 12 or 24), counted from midnight in this timezone.

@@ -360,7 +360,7 @@ can see or join it. Its players can copy the link to invite others.
 count). A private world with no guesses for 60 days ends automatically
 (housekeeping). Worlds created before plans existed keep working.
 
-**Your account** (`/me`, from the menu under the player's name) is a page
+**Your account** (`/account`, from the menu under the player's name) is a page
 with four tabs:
 
 - **Worlds:** a card for each room, private world and competition they're in

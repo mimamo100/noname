@@ -262,7 +262,7 @@ fieldset.field label:has(input:checked) { border-color: var(--ember); background
   color: var(--bg); background: var(--band, var(--ember));
 }
 
-/* Your account (/me): tabs for worlds, games, word packs and settings. */
+/* Your account (/account): tabs for worlds, games, word packs and settings. */
 .page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 12px; flex-wrap: wrap; margin: 12px 0 0; }
 .page-head h1 { margin: 0; font-size: 28px; }
 .page-head .muted { font-size: 14px; }

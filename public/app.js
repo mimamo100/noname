@@ -1223,9 +1223,9 @@ for (const dialog of document.querySelectorAll('dialog')) {
   dialog.append(x); // Last, so opening a dialog still focuses its first box, not the ×.
 }
 
-// --- Your account (/me): worlds, games, word packs and settings ---
+// --- Your account (/account): worlds, games, word packs and settings ---
 
-const accountPage = location.pathname === '/me';
+const accountPage = location.pathname === '/account';
 let account = null;
 
 const KIND_NAMES = { public: 'The Big World', room: 'Room', private: 'Private world', competition: 'Competition' };

@@ -113,7 +113,7 @@ test('HTTP API: sign in, create, play, look up', function () {
         same(401, $call('POST', '/api/me/name', ['name' => 'Kimberley'])['status'], 'Renaming needs an account');
         same('Kimberley', $call('POST', '/api/me/name', ['name' => 'Kimberley'], $session)['body']['user']['name']);
         same('Kimberley', $call('GET', "/api/worlds/$id", null, $session)['body']['me'], 'The new name shows in the world');
-        check(str_contains($call('GET', '/me')['raw'], 'Your account'), 'The account page serves index.html');
+        check(str_contains($call('GET', '/account')['raw'], 'Your account'), 'The account page serves index.html');
 
         same(200, $call('POST', '/api/auth/logout', null, $session)['status']);
         same(401, $call('POST', "/api/worlds/$id/words?invite={$created['body']['invite']}", ['word' => $word], $session)['status'], 'Signed out');
