@@ -382,8 +382,7 @@ async function compAction(action, body, done, question) {
     refresh();
     return result;
   } catch (err) {
-    feedback(err.message, 'bad');
-    alert(err.message);
+    formError($('comp-settings-dialog'), err.message);
   }
 }
 
@@ -505,7 +504,7 @@ function editPack(pack) {
   const reported = pack?.reported ?? [];
   const seen = el('button', { type: 'button', className: 'link', textContent: 'Mark as seen' });
   seen.addEventListener('click', async () => {
-    try { await rootApi(`/packs/${encodeURIComponent(pack.id)}/seen`, { method: 'POST' }); $('pack-reported').replaceChildren(); renderPacks(); } catch (err) { alert(err.message); }
+    try { await rootApi(`/packs/${encodeURIComponent(pack.id)}/seen`, { method: 'POST' }); $('pack-reported').replaceChildren(); renderPacks(); } catch (err) { formError($('packs-dialog'), err.message); }
   });
   $('pack-reported').replaceChildren(...(reported.length ? [
     el('p', {}, el('b', { textContent: 'Players suggested: ' }), reported.map((r) => `${r.word}${r.players > 1 ? ` (${r.players})` : ''}`).join(', '), '. ',
@@ -522,10 +521,10 @@ $('pack-form').addEventListener('submit', async (e) => {
   try {
     const saved = await rootApi(editingPack ? `/packs/${encodeURIComponent(editingPack.id)}` : '/packs', { method: 'POST', body });
     $('packs-dialog').close();
-    feedback(`Saved “${body.name}”: ${saved.words.toLocaleString()} words in ${saved.lists.length} ${saved.lists.length === 1 ? 'list' : 'lists'}.`, 'good');
+    feedback(`Saved “${body.name}”: ${saved.lists.map((l) => `${l.label}, ${l.words} ${l.words === 1 ? 'answer' : 'answers'}`).join('; ')}.`, 'good');
     renderPacks();
   } catch (err) {
-    alert(err.message);
+    formError($('packs-dialog'), err.message);
   }
 });
 $('pack-delete').addEventListener('click', async () => {
@@ -535,7 +534,7 @@ $('pack-delete').addEventListener('click', async () => {
     $('packs-dialog').close();
     renderPacks();
   } catch (err) {
-    alert(err.message);
+    formError($('packs-dialog'), err.message);
   }
 });
 
@@ -1252,8 +1251,20 @@ document.addEventListener('visibilitychange', () => {
   schedulePoll();
 });
 
+// A problem with what's in a dialog shows in red above its buttons, until it closes.
+function formError(dialog, message) {
+  let box = dialog.querySelector('.form-error');
+  if (!box) {
+    box = el('p', { className: 'form-error bad', role: 'alert' });
+    const buttons = [...dialog.querySelectorAll('.dialog-buttons')].at(-1);
+    if (buttons) buttons.before(box); else dialog.append(box);
+  }
+  box.textContent = message;
+}
+
 // Every dialog gets a × in its top corner, as well as its own Close or Cancel.
 for (const dialog of document.querySelectorAll('dialog')) {
+  dialog.addEventListener('close', () => dialog.querySelector('.form-error')?.remove());
   const x = el('button', { type: 'button', className: 'dialog-x', textContent: '×', title: 'Close' });
   x.setAttribute('aria-label', 'Close');
   x.addEventListener('click', () => dialog.close());
@@ -1445,7 +1456,7 @@ if (accountPage) {
       renderAccount(account, $('menu-admin').hidden ? null : $('menu-admin').getAttribute('href'));
       renderSettings();
       feedback(`Your name is now ${user.name}.`, 'good');
-    } catch (err) { alert(err.message); }
+    } catch (err) { formError($('name-dialog'), err.message); }
   });
   $('acct-signout').addEventListener('click', () => $('menu-signout').click());
   $('acct-delete').addEventListener('click', () => {
@@ -1461,7 +1472,7 @@ if (accountPage) {
       await rootApi('/me/delete', { method: 'POST', body: { confirm: true } });
       setSession(null);
       location.href = '/#account-deleted';
-    } catch (err) { alert(err.message); }
+    } catch (err) { formError($('delete-dialog'), err.message); }
   });
 }
 

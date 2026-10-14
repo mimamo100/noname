@@ -344,7 +344,7 @@ foreach (glob("$dataDir/packs/*/pack.txt") ?: [] as $packFile) {
     }
     // Curated, so blocked words it lists (the law pack's crimes) are kept, and playable only in its worlds.
     // "leave out:" names everyday forms the pack's words would otherwise bring along ("gassing").
-    $leaveOut = Packs::forms($meta['leave out'] ?? '', curated: true);
+    $leaveOut = Packs::forms($meta['leave out'] ?? '');
     $built = Packs::build($groups, $everyday, $packId, curated: true, leaveOut: $leaveOut);
     foreach ($built['problems'] as $problem) fwrite(STDERR, "packs/$packId: $problem\n");
     unset($built['problems']);

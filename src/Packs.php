@@ -127,17 +127,29 @@ final class Packs
     }
 
     /**
-     * An answer's forms from one line of a word list, as written. Separated by commas
-     * ("black hole, black holes"); without a comma, a custom pack's line is split on spaces
-     * instead ("quark quarks"), but a curated pack's line is one form ("habeas corpus").
+     * An answer's forms from one line of a word list, as written, separated by commas
+     * ("black hole, black holes"); a line without a comma is one form ("egg cup"). Packs
+     * written before that rule ($splitSpaces) split such a line on spaces ("quark quarks").
      *
      * @return string[]
      */
-    public static function forms(string $line, bool $curated = false): array
+    public static function forms(string $line, bool $splitSpaces = false): array
     {
         $line = mb_strtolower($line);
-        $parts = $curated || str_contains($line, ',') ? explode(',', $line) : preg_split('/\s+/', $line);
+        $parts = !$splitSpaces || str_contains($line, ',') ? explode(',', $line) : preg_split('/\s+/', $line);
         return array_values(array_filter(array_map('trim', $parts), 'strlen'));
+    }
+
+    /** An old pack's text (format 1) written the current way: a line's spaces become commas unless it has one. */
+    public static function convertOldText(string $text): string
+    {
+        return implode("\n\n", array_map(function (string $block) {
+            $lines = preg_split('/\R/', trim($block));
+            foreach ($lines as $i => $line) {
+                if ($i > 0 && !str_contains($line, ',')) $lines[$i] = implode(', ', preg_split('/\s+/', trim($line)));
+            }
+            return implode("\n", $lines);
+        }, preg_split('/\R\s*\R/', trim($text))));
     }
 
     /**
@@ -154,7 +166,7 @@ final class Packs
         foreach ($lines as $line) {
             if (str_starts_with($line, 'label:')) $group['label'] = trim(substr($line, 6));
             elseif ($line === 'also:') $list = 'also';
-            elseif ($forms = self::forms($line, curated: true)) $group[$list][] = $forms;
+            elseif ($forms = self::forms($line)) $group[$list][] = $forms;
         }
         return $group;
     }
@@ -165,7 +177,7 @@ final class Packs
      *
      * @return array<string, array{label: string, words: string[][]}>
      */
-    public static function parseText(string $text): array
+    public static function parseText(string $text, bool $splitSpaces = false): array
     {
         $groups = [];
         $n = 0;
@@ -175,7 +187,7 @@ final class Packs
             $label = mb_substr(array_shift($lines), 0, 60);
             $groups['c' . ++$n] = [
                 'label' => $label,
-                'words' => array_values(array_filter(array_map(fn ($l) => self::forms($l), $lines))),
+                'words' => array_values(array_filter(array_map(fn ($l) => self::forms($l, $splitSpaces), $lines))),
             ];
         }
         return $groups;
@@ -204,7 +216,7 @@ final class Packs
         $id = 'p' . bin2hex(random_bytes(4));
         [$name, $description, $text, $built] = $this->check($name, $description, $text, $everyday);
         $now = (int) floor(microtime(true) * 1000);
-        $this->db->prepare('INSERT INTO packs (id, owner_user_id, name, description, source, words, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)')
+        $this->db->prepare('INSERT INTO packs (id, owner_user_id, name, description, source, format, words, created_at, updated_at) VALUES (?, ?, ?, ?, ?, 2, ?, ?, ?)')
             ->execute([$id, $user['id'], $name, $description, $text, array_sum(array_column($built['categories'], 'answers')), $now, $now]);
         return $this->summary($id, $built);
     }
@@ -213,7 +225,7 @@ final class Packs
     {
         $this->owned($user, $id);
         [$name, $description, $text, $built] = $this->check($name, $description, $text, $everyday);
-        $this->db->prepare('UPDATE packs SET name = ?, description = ?, source = ?, words = ?, updated_at = ? WHERE id = ?')
+        $this->db->prepare('UPDATE packs SET name = ?, description = ?, source = ?, format = 2, words = ?, updated_at = ? WHERE id = ?')
             ->execute([$name, $description, $text, array_sum(array_column($built['categories'], 'answers')), (int) floor(microtime(true) * 1000), $id]);
         unset($this->built[$id]);
         return $this->summary($id, $built);
@@ -271,7 +283,7 @@ final class Packs
     /** The account's own custom packs, with their text, for the pack editor. */
     public function mine(array $user): array
     {
-        $stmt = $this->db->prepare('SELECT id, name, description, source, words FROM packs WHERE owner_user_id = ? ORDER BY name');
+        $stmt = $this->db->prepare('SELECT id, name, description, source, format, words FROM packs WHERE owner_user_id = ? ORDER BY name');
         $stmt->execute([$user['id']]);
         $reported = $this->db->prepare("
             SELECT word, COUNT(DISTINCT player_id) AS players FROM reports
@@ -279,7 +291,7 @@ final class Packs
         return array_map(function ($p) use ($reported) {
             $reported->execute([$p['id']]);
             return [
-                'id' => $p['id'], 'name' => $p['name'], 'description' => $p['description'], 'text' => $p['source'],
+                'id' => $p['id'], 'name' => $p['name'], 'description' => $p['description'], 'text' => (int) $p['format'] === 1 ? self::convertOldText($p['source']) : $p['source'],
                 'words' => (int) $p['words'],
                 // Words players in its worlds said should count: the organiser's to add, or not.
                 'reported' => array_map(fn ($r) => ['word' => $r['word'], 'players' => (int) $r['players']], $reported->fetchAll(PDO::FETCH_ASSOC)),
@@ -347,7 +359,7 @@ final class Packs
         $cached = $file ? json_decode((string) @file_get_contents($file), true) : null;
         if (!is_array($cached)) {
             $cached = ['name' => $row['name'], 'description' => $row['description']]
-                + self::build(self::parseText($row['source']), $everyday, $id);
+                + self::build(self::parseText($row['source'], (int) ($row['format'] ?? 1) === 1), $everyday, $id);
             if ($file) @file_put_contents($file, json_encode($cached));
         }
         return $this->built[$id] = $cached;

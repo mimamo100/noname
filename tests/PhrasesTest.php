@@ -4,7 +4,7 @@ declare(strict_types=1);
 // Phrases ("tea towel", "black hole") are played joined and shown as written; curated packs
 // may list blocked words, playable only in their worlds.
 
-const SPACE_PHRASES = "A space thing\nblack hole, black holes\nevent horizon, event horizons\nred giant, red giants\nwhite dwarf, white dwarfs\nquasar quasars\n";
+const SPACE_PHRASES = "A space thing\nblack hole, black holes\nevent horizon, event horizons\nred giant, red giants\nwhite dwarf, white dwarfs\nquasar, quasars\n";
 
 /** A clock tests can move, and a game on a dictionary that uses it. */
 function phraseGame(Dictionary $dictionary, int &$clock): Game
@@ -69,12 +69,15 @@ test('curated pack files list forms separated by commas, phrases included', func
     same('quark', $only->display('quark'));
 });
 
-test("organisers' packs split on commas when a line has one, and on spaces when it doesn't", function () {
-    $groups = Packs::parseText("A space thing\nquark quarks\nblack hole, black holes\nred giant,\nwhite dwarf\nNeutron  Star , neutron stars\n");
-    same([['quark', 'quarks'], ['black hole', 'black holes'], ['red giant'], ['white', 'dwarf'], ['neutron  star', 'neutron stars']], $groups['c1']['words']);
+test("organisers' packs: one answer per line, other forms after commas; old packs split on spaces", function () {
+    $groups = Packs::parseText("A space thing\nquark, quarks\nblack hole, black holes\nred giant,\nwhite dwarf\nNeutron  Star , neutron stars\n");
+    same([['quark', 'quarks'], ['black hole', 'black holes'], ['red giant'], ['white dwarf'], ['neutron  star', 'neutron stars']], $groups['c1']['words']);
     $built = Packs::build($groups, testDictionary(), 'x');
     same([], $built['problems']);
-    check(in_array('blackhole', $built['words'], true) && in_array('white', $built['words'], true) && !in_array('whitedwarf', $built['words'], true));
+    check(in_array('blackhole', $built['words'], true) && in_array('whitedwarf', $built['words'], true) && !in_array('white', $built['words'], true));
+    // A pack saved before that rule keeps its meaning, and the editor shows it the new way.
+    same([['quark', 'quarks'], ['white', 'dwarf']], Packs::parseText("A thing\nquark quarks\nwhite dwarf", splitSpaces: true)['c1']['words']);
+    same("A thing\nquark, quarks\nblack hole, black holes\n\nA moon\ntitan", Packs::convertOldText("A thing\nquark quarks\nblack hole, black holes\n\nA moon\ntitan"));
     same('neutron star', $built['display']['neutronstar'], 'Written forms are tidied to single spaces');
     same([], $built['blocked']);
 });

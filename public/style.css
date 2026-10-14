@@ -338,6 +338,7 @@ a.button-link { display: inline-block; background: var(--ember); color: #1b0f05;
 button.danger-solid { background: var(--bad); }
 .small-list { margin: 0 0 16px; padding-left: 20px; color: var(--muted); }
 .small-list li { margin-bottom: 6px; }
+.form-error { margin: 0 0 12px; }
 @media (max-width: 700px) {
   .acct-tabs { gap: 14px; }
   .acct-tabs a { font-size: 13px; letter-spacing: 0.05em; }

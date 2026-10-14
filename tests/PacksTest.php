@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-const PLANETS = "A planet\nmercury\nvenus\nearth\nmars\njupiter\nsaturn\nuranus\nneptune\n\nA moon\ntitan\neuropa\nrhea\ncallisto\nganymede\n\nA particle\nquark quarks\nnucleus nuclei\nproton protons\nneutron neutrons\nelectron electrons\nphoton photons\ngluon gluons\nmuon muons\nboson bosons\nlepton leptons\nhadron hadrons\nmeson mesons\npion pions\nkaon kaons\nbaryon baryons\nneutrino neutrinos\npositron positrons\ntachyon tachyons\naxion axions\ngraviton gravitons\nfermion fermions\n";
+const PLANETS = "A planet\nmercury\nvenus\nearth\nmars\njupiter\nsaturn\nuranus\nneptune\n\nA moon\ntitan\neuropa\nrhea\ncallisto\nganymede\n\nA particle\nquark, quarks\nnucleus, nuclei\nproton, protons\nneutron, neutrons\nelectron, electrons\nphoton, photons\ngluon, gluons\nmuon, muons\nboson, bosons\nlepton, leptons\nhadron, hadrons\nmeson, mesons\npion, pions\nkaon, kaons\nbaryon, baryons\nneutrino, neutrinos\npositron, positrons\ntachyon, tachyons\naxion, axions\ngraviton, gravitons\nfermion, fermions\n";
 
 test('a pack is built from lists: forms on a line are one answer, and everyday forms come along', function () {
-    $built = Packs::build(Packs::parseText("A planet\nmars\nvenus\n\nA thing\nmoon\nnucleus nuclei\nXbox\nf0o\n"), testDictionary(), 'sci');
+    $built = Packs::build(Packs::parseText("A planet\nmars\nvenus\n\nA thing\nmoon\nnucleus, nuclei\nXbox\nf0o\n"), testDictionary(), 'sci');
     same(['sci.c1', 'sci.c2'], array_keys($built['categories']));
     same('A planet', $built['categories']['sci.c1']['label']);
     check(in_array('moons', $built['words'], true), 'The everyday family of moon comes along');
@@ -15,7 +15,7 @@ test('a pack is built from lists: forms on a line are one answer, and everyday f
 
 test('a pack-only dictionary has just the pack; a mixed one adds it to everyday words', function () {
     $everyday = testDictionary();
-    $pack = Packs::build(Packs::parseText("A body\nmoon\nnucleus nuclei\nquasar quasars\n"), $everyday, 'sci');
+    $pack = Packs::build(Packs::parseText("A body\nmoon\nnucleus, nuclei\nquasar, quasars\n"), $everyday, 'sci');
     $only = $everyday->onlyPack($pack);
     same(['sci.c1'], $only->categoryIds());
     check($only->has('nuclei') && $only->has('moons') && !$only->has('cat'));

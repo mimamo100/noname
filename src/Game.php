@@ -142,6 +142,11 @@ final class Game
                 ADD COLUMN pack_mode VARCHAR(8) CHARACTER SET ascii NULL');
             $db->exec('ALTER TABLE reports MODIFY category VARCHAR(64) CHARACTER SET ascii NOT NULL');
         }
+        // Organisers' packs written before one answer per line (format 2): their lines without a
+        // comma were split on spaces ("quark quarks"), and keep that meaning.
+        if (!$db->query("SHOW COLUMNS FROM packs LIKE 'format'")->fetch()) {
+            $db->exec('ALTER TABLE packs ADD COLUMN format TINYINT UNSIGNED NOT NULL DEFAULT 1');
+        }
         // Running totals for the overall leaderboard, so polls don't re-add every word and miss.
         if (!$db->query("SHOW COLUMNS FROM players LIKE 'score'")->fetch()) {
             $db->exec('ALTER TABLE players

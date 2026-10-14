@@ -436,11 +436,13 @@ a music quiz.
   commas ("black hole, black holes"); a form may be a phrase, shown as
   written. They may list blocked words they need (see "Offensive words").
 - **Organisers' own packs** are written on the site (Your account, Word packs): lists
-  separated by blank lines, each a prompt line ("A planet") then one word per
-  line, with other forms of a word on the same line. A line with a comma is
-  split on commas, so it can hold phrases ("black hole, black holes"); a line
-  without one is split on spaces ("quark quarks"), as packs were first
-  written. Blocked words are refused. At least 30 answers, at
+  separated by blank lines, each a prompt line ("A planet") then one answer per
+  line, with its other forms after commas ("nucleus, nuclei", "black hole,
+  black holes"); a line without a comma is one answer, phrase or not ("egg
+  cup"). Packs saved before that rule (format 1) split such lines on spaces
+  and keep that meaning; the editor shows them with commas, and saving one
+  makes it format 2. A short guide sits in the editor, and saving says how
+  many answers each list has. Blocked words are refused. At least 30 answers, at
   most 5,000. Only their owner can use them. Words players report in a custom
   pack's worlds are shown to its owner in the pack editor, not to the admin;
   the admin page lists custom packs and can remove one (its worlds then play
