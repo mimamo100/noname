@@ -804,8 +804,12 @@ final class Game
      */
     private function saidByPrompt(string $worldId, int $prompts = 4, array $teamOf = [], ?int $onlyPromptId = null): array
     {
-        $only = $onlyPromptId !== null ? ' AND id = ' . (int) $onlyPromptId : '';
-        $stmt = $this->db->prepare("SELECT id, spec, label, type, letters, unsaid_count, unsaid_words, closing_word FROM prompts WHERE world_id = ?$only ORDER BY id DESC LIMIT $prompts");
+        // The current prompt and the latest ones that had words: prompts nobody played aren't
+        // shown, so they mustn't crowd out the ones that were.
+        $only = $onlyPromptId !== null ? ' AND p.id = ' . (int) $onlyPromptId
+            : ' AND (p.ended_at IS NULL OR EXISTS (SELECT 1 FROM burns b WHERE b.prompt_id = p.id))';
+        $stmt = $this->db->prepare("SELECT p.id, p.spec, p.label, p.type, p.letters, p.unsaid_count, p.unsaid_words, p.closing_word
+            FROM prompts p WHERE p.world_id = ?$only ORDER BY p.id DESC LIMIT $prompts");
         $stmt->execute([$worldId]);
         $groups = [];
         foreach ($stmt->fetchAll() as $row) {

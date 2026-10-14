@@ -636,8 +636,8 @@ test('the unsaid reveal is noted when the prompt ends, and leaves masked words o
     $game->state($world['id'], null);
     // Noted at the end, as later prompts use words up too.
     same('4', (string) gameDb($game)->query("SELECT unsaid_count FROM prompts WHERE world_id = '{$world['id']}' ORDER BY id LIMIT 1")->fetchColumn());
-    $said = $game->state($world['id'], null)['said'];
-    same(['count' => 4, 'words' => ['cat', 'assets', 'start']], end($said)['unsaid'], 'tit is counted but not shown');
+    $shown = json_decode((string) gameDb($game)->query("SELECT unsaid_words FROM prompts WHERE world_id = '{$world['id']}' ORDER BY id LIMIT 1")->fetchColumn(), true);
+    same(['cat', 'assets', 'start'], $shown, 'tit is counted but not shown');
 });
 
 test('spaces, hyphens and apostrophes are dropped from what players type', function () {
@@ -880,4 +880,17 @@ test('the recent prompt is the latest finished one someone played', function () 
     $game->state($world['id'], null);
     $recent = $game->state($world['id'], null)['recentPrompt'];
     same(['Contains OO', ['moon']], [$recent['prompt'], array_column($recent['words'], 'word')]);
+});
+
+test('earlier prompts in the feed are the latest ones that had words, past any nobody played', function () {
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $world = $game->createWorld('Feed', null, 60_000);
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $p = $game->join($world['id'], 'Pat');
+    $game->play($world['id'], $p['token'], 'moon');
+    for ($i = 0; $i < 5; $i++) { $clock += 61_000; $game->state($world['id'], null); } // Five prompts nobody plays.
+    $said = $game->state($world['id'], null)['said'];
+    same($game->state($world['id'], null)['prompt']['id'], $said[0]['promptId'], 'The current prompt first');
+    same(['Contains OO'], array_column(array_slice($said, 1), 'prompt'), 'Then the played one, not the empty ones');
 });
