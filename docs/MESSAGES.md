@@ -269,6 +269,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | A competition can last up to 31 days | Competitions.php · times, update |
 | Prompts can last 5, 10, 15 or 30 minutes, an hour, 4 hours or a day | Competitions.php · pace |
 | About {n} prompts in {length}, or more if they're said quickly. *(under the prompt length; the length defaults to one giving 4 to 6 prompts)* | app.js · compPaceHint |
+| {pack} has {n} answers: enough for about {n} prompts. This competition is set for about {n}, so the pack may run dry: make it shorter, or add everyday words. *(under Words, for a pack on its own)* | app.js · compPackHint |
 | Teams can have up to {n} players | Competitions.php · teamSize |
 | Every team needs a name / Two teams have the same name / There's already a team called {team} | Competitions.php · teamNames, insertTeam, renameTeam |
 | A competition needs 2–20 teams *(when creating)* / A competition can have up to {n} teams / A competition needs at least {n} teams | Competitions.php · teamNames, addTeam, removeTeam |

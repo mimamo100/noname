@@ -354,6 +354,7 @@ const fromLocalInput = (value) => new Date(value).getTime();
 // says roughly how many prompts the competition will have, and until the organiser picks a
 // length, one giving 4 to 6 prompts is chosen for them.
 let compPaceChosen = false;
+let compPrompts = 0; // About how many prompts the competition will have, for the pack's hint.
 function compPaceHint() {
   const length = fromLocalInput($('comp-ends').value) - fromLocalInput($('comp-starts').value);
   if (!(length > 0)) { $('comp-pace-hint').textContent = ''; return; }
@@ -361,8 +362,9 @@ function compPaceHint() {
     const paces = [...$('comp-pace').options].map((o) => Number(o.value));
     $('comp-pace').value = String(paces.filter((p) => length / (p * 60_000) >= 4).at(-1) ?? paces[0]);
   }
-  const prompts = Math.max(1, Math.round(length / (Number($('comp-pace').value) * 60_000)));
+  const prompts = compPrompts = Math.max(1, Math.round(length / (Number($('comp-pace').value) * 60_000)));
   $('comp-pace-hint').textContent = `About ${prompts} ${prompts === 1 ? 'prompt' : 'prompts'} in ${durationText(length)}, or more if they're said quickly.`;
+  compPackHint();
 }
 for (const id of ['comp-starts', 'comp-ends']) $(id).addEventListener('input', compPaceHint);
 $('comp-pace').addEventListener('input', () => { compPaceChosen = true; compPaceHint(); });
@@ -487,7 +489,11 @@ async function loadPackChoices(prefix) {
   const select = $(`${prefix}-pack`);
   try {
     const { curated, custom } = await rootApi('/packs');
-    const option = (p) => el('option', { value: p.id, textContent: `${p.name} (${p.words.toLocaleString()} words)`, title: p.description || '' });
+    const option = (p) => {
+      const o = el('option', { value: p.id, textContent: `${p.name} (${p.words.toLocaleString()} words)`, title: p.description || '' });
+      Object.assign(o.dataset, { name: p.name, answers: p.words });
+      return o;
+    };
     select.replaceChildren(el('option', { value: '', textContent: 'Everyday words' }),
       ...(curated.length ? [el('optgroup', { label: 'Word packs' }, ...curated.map(option))] : []),
       ...(custom.length ? [el('optgroup', { label: 'Your packs' }, ...custom.map(option))] : []));
@@ -495,7 +501,20 @@ async function loadPackChoices(prefix) {
   $(`${prefix}-pack-mode`).hidden = !select.value;
 }
 for (const prefix of ['nw', 'cp']) {
-  $(`${prefix}-pack`).addEventListener('change', () => { $(`${prefix}-pack-mode`).hidden = !$(`${prefix}-pack`).value; });
+  $(`${prefix}-pack`).addEventListener('change', () => { $(`${prefix}-pack-mode`).hidden = !$(`${prefix}-pack`).value; compPackHint(); });
+}
+for (const radio of document.querySelectorAll('input[name="cp-mode"]')) radio.addEventListener('change', compPackHint);
+
+// What a pack played on its own is good for. The Kitchen Cup's 80 answers lasted about 6
+// prompts, so roughly 13 answers a prompt.
+function compPackHint() {
+  const chosen = $('cp-pack').selectedOptions[0];
+  const only = document.querySelector('input[name="cp-mode"]:checked')?.value === 'only';
+  if (!chosen?.value || !only) { $('cp-pack-hint').textContent = ''; return; }
+  const answers = Number(chosen.dataset.answers);
+  const enough = Math.max(1, Math.round(answers / 13));
+  $('cp-pack-hint').textContent = `${chosen.dataset.name} has ${answers.toLocaleString()} answers: enough for about ${enough} ${enough === 1 ? 'prompt' : 'prompts'}.`
+    + (compPrompts > enough * 1.5 ? ` This competition is set for about ${compPrompts}, so the pack may run dry: make it shorter, or add everyday words.` : '');
 }
 const packChoice = (prefix) => ($(`${prefix}-pack`).value
   ? { pack: $(`${prefix}-pack`).value, packMode: document.querySelector(`input[name="${prefix}-mode"]:checked`).value }
