@@ -295,7 +295,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | No packs yet. Make one with New pack: a few lists of words on a theme, and it's ready to use in a private world or competition. | app.js · renderPacks |
 | New word pack / Edit “{pack}” *(the editor's title)* | app.js · editPack |
 | Players suggested: {words}. Add any that should count to a list above. Mark as seen | app.js · editPack |
-| Saved “{pack}”: {list}, {n} answers; {list}, {n} answers. | app.js · pack-form |
+| Saved “{pack}”: {list}, {n} answers; {list}, {n} answers. (Not in our everyday dictionary, so check the spelling: {words}.) | app.js · pack-form |
 | Start each list with its prompt (“A planet”), then one answer per line. Leave a blank line between lists. · Put other forms of the same answer on its line after commas: nucleus, nuclei or black hole, black holes. A phrase on its own is fine: egg cup. · Aim for 20 or more answers in each list; a longer competition needs more. Words said stay said, so a small pack soon runs dry. · Keep the lists from overlapping, and include the everyday words players will try first (dish, pan). · Each answer needs 3–30 letters, a to z (spaces, hyphens and apostrophes don't count). *(the guide in the pack editor)* | index.html |
 | *(Errors in a dialog show in red above its buttons, not in an alert box.)* | app.js · formError |
 | Making your own word packs needs the Organiser plan. | Packs.php · create |

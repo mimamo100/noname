@@ -56,6 +56,7 @@ final class Packs
         $categories = [];
         $display = [];
         $blocked = [];
+        $unknown = []; // Single words the everyday dictionary doesn't know: typos, or specialist words.
         foreach ($groups as $id => $group) {
             $category = ['label' => $group['label'], 'words' => [], 'also' => [], 'answers' => 0];
             foreach (['words', 'also'] as $list) {
@@ -77,6 +78,7 @@ final class Packs
                         }
                         $kept[] = $form;
                         if ($written !== $form) $display[$form] ??= $written;
+                        elseif (!$everyday->has($form)) $unknown[$written] = true;
                     }
                     if (!$kept) continue;
                     $family = $kept;
@@ -123,6 +125,7 @@ final class Packs
             'display' => $display,
             'blocked' => array_keys($blocked),
             'problems' => array_values(array_unique($problems)),
+            'unknown' => array_keys($unknown),
         ];
     }
 
@@ -277,6 +280,8 @@ final class Packs
             'id' => $id,
             'words' => array_sum(array_column($built['categories'], 'answers')),
             'lists' => array_map(fn ($c) => ['label' => $c['label'], 'words' => $c['answers']], array_values($built['categories'])),
+            // Not an error: a gentle "check the spelling?" when saving.
+            'unknown' => array_slice($built['unknown'] ?? [], 0, 30),
         ];
     }
 

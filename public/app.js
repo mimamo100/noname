@@ -569,7 +569,8 @@ $('pack-form').addEventListener('submit', async (e) => {
   try {
     const saved = await rootApi(editingPack ? `/packs/${encodeURIComponent(editingPack.id)}` : '/packs', { method: 'POST', body });
     $('packs-dialog').close();
-    feedback(`Saved “${body.name}”: ${saved.lists.map((l) => `${l.label}, ${l.words} ${l.words === 1 ? 'answer' : 'answers'}`).join('; ')}.`, 'good');
+    feedback(`Saved “${body.name}”: ${saved.lists.map((l) => `${l.label}, ${l.words} ${l.words === 1 ? 'answer' : 'answers'}`).join('; ')}.`
+      + (saved.unknown?.length ? ` Not in our everyday dictionary, so check the spelling: ${saved.unknown.join(', ')}.` : ''), 'good');
     renderPacks();
   } catch (err) {
     formError($('packs-dialog'), err.message);
