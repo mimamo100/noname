@@ -94,8 +94,10 @@
 
     <section id="lobby" hidden>
       <div class="notice lobby-big">
-        <h2 class="box-title">The Big World</h2>
-        <p class="muted" id="round-about">Everyone signed in plays here, and it starts afresh every day.</p>
+        <h2 class="box-title">The Big World
+          <button type="button" class="info" id="round-info-button" aria-expanded="false" aria-controls="round-about" aria-label="About the Big World" title="About the Big World">i</button>
+        </h2>
+        <p class="muted small" id="round-about" hidden>Everyone signed in plays here, and it starts afresh every day.</p>
         <p class="round-ends">This round ends in <b id="round-ends">–</b></p>
         <div id="last-round" class="last-round" hidden></div>
       </div>

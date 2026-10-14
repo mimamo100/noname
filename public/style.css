@@ -230,3 +230,12 @@ fieldset.field label:has(input:checked) { border-color: var(--ember); background
 .confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 50; }
 .confetti span { position: absolute; top: -12px; width: 8px; height: 14px; border-radius: 2px; animation: confetti-fall linear forwards; }
 @keyframes confetti-fall { to { top: 105%; transform: rotate(720deg); } }
+
+/* A small (i) button that shows or hides an explanation. */
+.info {
+  display: inline-grid; place-items: center; width: 20px; height: 20px; padding: 0; margin-left: 6px;
+  border: 1px solid var(--muted); border-radius: 50%; background: none; color: var(--muted);
+  font: italic 700 12px/1 Georgia, serif; vertical-align: middle; cursor: pointer;
+}
+.info:hover, .info[aria-expanded="true"] { border-color: var(--ember); color: var(--ember); filter: none; }
+#round-about { margin: 0 0 6px; }

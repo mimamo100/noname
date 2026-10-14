@@ -164,7 +164,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 |---|---|
 | The Big World, {date} *(the round's name)* | Lobby.php · currentRound |
 | The Big World *(the box's title)* | index.html |
-| Everyone signed in plays here, and it starts afresh every day. *(or every {n} hours)* | app.js · renderLobby |
+| Everyone signed in plays here, and it starts afresh every day. *(or every {n} hours; shown with the (i) by the title)* | app.js · renderLobby |
 | This round ends in {time} | index.html, app.js · renderClock |
 | Last round *(heading)*, then {medal} {name} · {n} points for the top three | app.js · renderLobby |
 | You came {place} of {n} with {n} points. Share your result | app.js · renderLobby |

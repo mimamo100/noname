@@ -527,6 +527,12 @@ async function joinRoom() {
   }
 }
 $('room-button').addEventListener('click', joinRoom);
+// The (i) by the Big World's title shows or hides what it is.
+$('round-info-button').addEventListener('click', () => {
+  const open = $('round-about').hidden;
+  $('round-about').hidden = !open;
+  $('round-info-button').setAttribute('aria-expanded', String(open));
+});
 
 // Anything but the big world gets a banner saying where you are, and its own colour.
 function renderBanner(state) {
