@@ -94,6 +94,8 @@ deletes its packs (the owner may want to revisit those two calls).
    message files (above); maybe more playtests (each one has produced a report in
    `docs/playtests/` with decisions at the top and a prioritised list of fixes at the end);
    a "Show all" link under the ten-row leaderboards, if the owner misses the longer list.
-5. **Code-only-in-tests:** `Game::join` (nickname join from before accounts), `Dictionary::addWord`
+5. **Starter packs:** the owner plans fuller packs of our own (curated, in `data/packs/`) for
+   organisers to base theirs on; a "start from this pack" choice in the editor would follow.
+6. **Code-only-in-tests:** `Game::join` (nickname join from before accounts), `Dictionary::addWord`
    and `addToCategory`, and `Prompts::fitting` are only called by the tests, as fixtures. The
    owner chose to keep them.

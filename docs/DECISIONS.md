@@ -6,6 +6,13 @@ are at the top of each report in `playtests/`.
 
 ## 14 October 2026
 
+**Organisers list a word's other forms themselves.** Only the forms a pack lists, and their
+plurals, count for its lists, so *grilling* doesn't count for "A way of cooking" unless it's
+listed. Counting every -ing and -ed form would have done it automatically, but the game can't
+tell a list of actions from a list of things (*forked* would count as cutlery). Instead the
+pack editor's guide reminds organisers to add them, and we'll build fuller packs of our own
+for organisers to start from. *Owner.*
+
 **The world multiplier only in rooms and private worlds.** It rises as a world's words are
 used up (×2 at half said, up to ×10), which suits worlds played over weeks: it's the story of
 a world slowly running out, and why saving a word for later can pay. The big world's daily
