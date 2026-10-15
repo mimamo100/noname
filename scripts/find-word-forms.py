@@ -75,7 +75,8 @@ def singular_of(plural, words):
         candidates.append(plural[:-1])
     if plural.endswith("ies"):
         candidates.append(plural[:-3] + "y")
-    if plural.endswith("es"):
+    # -es only follows s, x, z, ch, sh and o (boxes, tomatoes): "filles" isn't fill's.
+    if plural.endswith("es") and plural[:-2].endswith(("s", "x", "z", "ch", "sh", "o")):
         candidates.append(plural[:-2])
     return next((c for c in candidates if c in words and len(c) >= 3), None)
 

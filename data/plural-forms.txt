@@ -48,7 +48,6 @@ altimeters altimeter
 alts alt
 amasses amass
 amens amen
-amies ami
 ammos ammo
 amnesiacs amnesiac
 amnesties amnesty
@@ -122,7 +121,6 @@ ballpoints ballpoint
 bankbooks bankbook
 baptizes baptize
 barbarities barbarity
-bardes bard
 barlows barlow
 baronets baronet
 barres barre
@@ -294,7 +292,6 @@ colleens colleen
 colliders collider
 collinses collins
 colludes collude
-colones colon
 colorings coloring
 combustibles combustible
 combusts combust
@@ -425,7 +422,6 @@ dillies dilly
 dimmers dimmer
 dingbats dingbat
 dingers dinger
-dinges ding
 dingleberries dingleberry
 dioxins dioxin
 dirts dirt
@@ -540,7 +536,6 @@ eviscerates eviscerate
 evolutions evolution
 exacerbates exacerbate
 exalts exalt
-examinees examine
 excavates excavate
 expansions expansion
 expectancies expectancy
@@ -563,7 +558,6 @@ fantastics fantastic
 fastenings fastening
 fatwas fatwa
 fencers fencer
-feres fer
 fesses fess
 fetishists fetishist
 fets fet
@@ -575,7 +569,6 @@ fiefdoms fiefdom
 fightings fighting
 filches filch
 filibusters filibuster
-filles fill
 finalizes finalize
 finishers finisher
 firebombs firebomb
@@ -688,7 +681,6 @@ haciendas hacienda
 hairlines hairline
 hairstylists hairstylist
 hajjis hajji
-halteres halter
 hames hame
 handhelds handheld
 handrails handrail
@@ -845,7 +837,6 @@ kemps kemp
 keypads keypad
 keystones keystone
 kielbasas kielbasa
-kines kin
 kinfolks kinfolk
 kirs kir
 kleptomaniacs kleptomaniac
@@ -857,7 +848,6 @@ lambdas lambda
 lampoons lampoon
 landmasses landmass
 larcenies larceny
-lares lar
 lassoes lasso
 lassos lasso
 lattices lattice
@@ -895,7 +885,6 @@ loiters loiter
 longitudes longitude
 loofahs loofah
 lops lop
-loupes loup
 louvers louver
 lowes lowe
 lubes lube
@@ -1172,7 +1161,6 @@ propers proper
 prophylactics prophylactic
 proponents proponent
 prospectuses prospectus
-protegees protege
 pujas puja
 pulis puli
 pulps pulp
@@ -1198,7 +1186,6 @@ rainfalls rainfall
 raisers raiser
 rajahs rajah
 ramrods ramrod
-rapes rap
 rationales rationale
 rationalizations rationalization
 rationalizes rationalize
@@ -1353,7 +1340,6 @@ sedates sedate
 seesaws seesaw
 selectors selector
 senecas seneca
-senhores senhor
 sensitives sensitive
 sequencers sequencer
 serranos serrano
@@ -1364,7 +1350,6 @@ sexualities sexuality
 shadings shading
 shaws shaw
 shearers shearer
-sheathes sheath
 shiksas shiksa
 shimmies shimmy
 shims shim
@@ -1512,7 +1497,6 @@ survivals survival
 swaggers swagger
 swags swag
 swains swain
-swathes swath
 swaths swath
 swills swill
 swots swot
@@ -1659,7 +1643,6 @@ videographers videographer
 vies vie
 vindicates vindicate
 visualizes visualize
-vitamines vitamin
 vivas viva
 vogues vogue
 voiceprints voiceprint
@@ -1706,7 +1689,6 @@ workbooks workbook
 workhorses workhorse
 workstations workstation
 wrangles wrangle
-wreathes wreath
 yardsticks yardstick
 yays yay
 yeasts yeast
