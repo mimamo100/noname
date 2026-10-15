@@ -99,17 +99,28 @@ deletes its packs (the owner may want to revisit those two calls).
 
 ## Open items
 
-0. **Players see "room"** (The Big Room, public rooms, private rooms, competitions); code and docs say *world*. See `DECISIONS.md`.
-   **Done on 15 October (CLI session):** the room report is finished. Word lists: the insect
-   list (about 160 names, spiders and other creepy-crawlies, a note), notes on 30 lists for the
-   owner to check, irregular verb forms (`verbs:` in `data/irregular-forms.txt`), more irregular
-   plurals, *breadcrumb*, rarity placed by hand for 47 familiar words
-   (`data/rarity-overrides.txt`; add to it when players find a word that scores too high or too
-   low). Page: the "playing now" dot, My words, "the last 3 of 6", judging a word against the
-   prompt showing when typing started, "Finding you a room…", clearing an old miss message.
-   Local browser checks: `config.php` (git-ignored) points at an `unsaid_dev` database in XAMPP
-   with sign-in codes written to a log file; Playwright for Python drives the installed Chrome
-   (`channel="chrome"`).
+0. **Where things stand (15 October, end of day; the CLI session now does all the work).**
+   Today's playtest reports, each with "Done since" and fixes: `playtests/2026-10-15-rooms-and-new-rules.md`,
+   `2026-10-15-music-night.md`, `2026-10-15-night-cup.md`. All uploaded (last zip `59f2bbd`).
+   **To discuss next:** sizing prompts by familiar answers, not all answers (the owner couldn't
+   think of any of 173 insects, or of "Starts and ends with D" words once -ed forms stopped
+   counting; see the Night Cup report). **Small, not done:** "Copy watching link" in the
+   competition page's team-links box; check the word list for place names (*alaska* is in);
+   missing phrases (*dead end*, *common sense*); the blank Big Room card seen once.
+   Today's changes are in `DECISIONS.md` (15 October): players see "room"; a verb's -ing/-ed
+   forms count as the verb on letter prompts and score as it (free if refused only for that;
+   meaning prompts judge as written); missing forms and plurals added from ENABLE when film
+   subtitles use them 10+ times (`scripts/find-word-forms.py`, `data/verb-forms.txt`,
+   `data/plural-forms.txt`); About this list/prompt as quirks without examples (curated packs
+   can have notes); leaving public rooms ("just left" for an hour); hosts choose Remove (kept
+   in results, marked removed) or Remove completely; repeats free unless the host charges,
+   and then another spelling is free; "a rarer answer"; rarity placed by hand
+   (`data/rarity-overrides.txt`).
+   **Local browser checks:** `config.php` (git-ignored) points at an `unsaid_dev` database in
+   XAMPP with sign-in codes written to a log file; `php -S localhost:8000 -t public
+   public/router.php`; Playwright for Python drives the installed Chrome (`channel="chrome"`).
+   **Zips:** `sh scripts/build-zip.sh <path>` (no `.htaccess`, permissions set in the zip, works
+   on Windows).
 
 1. **Messages:** the owner is reviewing `docs/MESSAGES.md` and will send wording changes.
    If they want to change wording often, the next step (already discussed) is moving the
