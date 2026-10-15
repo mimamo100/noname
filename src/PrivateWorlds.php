@@ -103,7 +103,8 @@ final class PrivateWorlds
     {
         if (($world['kind'] ?? 'private') !== 'private' || $this->isOwner($world, $user)) return;
         $player = $user ? $this->game->playerForUser($world['id'], (int) $user['id']) : null;
-        if ($player && $player['removed']) throw new GameError(403, "You've been removed from this room.");
+        // Removed completely: not even to watch. Removed but kept in the results: they may watch.
+        if ($player && (int) $player['removed'] === 1) throw new GameError(403, "You've been removed from this room.");
         if ($player || $this->validInvite($world, $invite)) return;
         if ($invite !== null && $invite !== '') {
             throw new GameError(403, "This invite link doesn't work any more: the room's owner may have made a new one. Ask one of its players for the latest link.");
@@ -211,15 +212,19 @@ final class PrivateWorlds
         return $code;
     }
 
-    /** Takes a player out: off the leaderboards, and unable to see or rejoin the world. Their words stay used. */
-    public function removePlayer(string $worldId, array $user, string $nickname): void
+    /**
+     * Takes a player out: they can't play again, and their words stay used. Completely: off the
+     * leaderboards and unable to see the world. Otherwise they stay in the standings and results,
+     * marked removed, and may watch (the host chooses).
+     */
+    public function removePlayer(string $worldId, array $user, string $nickname, bool $completely = true): void
     {
         $this->ownedWorld($worldId, $user);
         $stmt = $this->db->prepare('SELECT id, user_id FROM players WHERE world_id = ? AND nickname = ? AND removed = 0');
         $stmt->execute([$worldId, $nickname]);
         $player = $stmt->fetch() ?: throw new GameError(404, 'No player of that name here.');
         if ((int) $player['user_id'] === (int) $user['id']) throw new GameError(400, "You can't remove yourself from your own room.");
-        $this->db->prepare('UPDATE players SET removed = 1 WHERE id = ?')->execute([$player['id']]);
+        $this->db->prepare('UPDATE players SET removed = ? WHERE id = ?')->execute([$completely ? 1 : 2, $player['id']]);
         $this->game->changed($worldId);
     }
 

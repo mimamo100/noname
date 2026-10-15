@@ -163,12 +163,18 @@ function renderLobby(state) {
   const notMine = room && !ended && (!state.me || left);
   // A finished private world or competition has its results card; rooms and big world rounds
   // also say where to play next.
-  $('ended').hidden = !(ended && ['room', 'public'].includes(state.world.kind)) && !notMine;
+  $('ended').hidden = !(ended && ['room', 'public'].includes(state.world.kind)) && !notMine && !(state.removedHere && !ended);
   $('leave-room').hidden = !room || ended || !state.me || left;
   if (ended) {
     $('ended-message').textContent = state.world.endedMessage;
     $('ended-button').textContent = room ? 'Join a new public room' : 'Go to the big room';
     $('ended-button').onclick = room ? joinRoom : () => { location.href = '/'; };
+  } else if (state.removedHere) {
+    $('ended-message').textContent = state.world.kind === 'competition'
+      ? "You've been removed from this competition. You can still watch, and your points stay in the standings."
+      : "You've been removed from this room. You can still watch, and your place stays in the results.";
+    $('ended-button').textContent = 'Go to the big room';
+    $('ended-button').onclick = () => { location.href = '/'; };
   } else if (notMine) {
     $('ended-message').textContent = left
       ? 'You left this room. Your words and points stay on its leaderboard, and it will be in your Games when it finishes.'
@@ -461,10 +467,8 @@ async function loadCompSettings() {
           move.addEventListener('change', () => move.value && compAction('move', { nickname: p.nickname, team: Number(move.value) }, `${p.nickname} moved.`));
           actions.push(move);
         }
-        const remove = el('button', { type: 'button', className: 'link', textContent: 'Remove' });
-        remove.addEventListener('click', () => compAction('remove', { nickname: p.nickname }, `${p.nickname} removed.`,
-          `Remove ${p.nickname}? Their words stay used up, but their points leave the team and they can't come back.`));
-        actions.push(remove);
+        actions.push(...removeButtons(p.nickname, (completely, question, done) =>
+          compAction('remove', { nickname: p.nickname, completely }, done, question)));
         return el('li', {}, el('span', {}, el('b', { textContent: p.nickname }), ` ${p.score} points`), el('span', {}, ...actions));
       }) : [el('li', { className: 'muted', textContent: 'Nobody yet' })])),
     );
@@ -739,7 +743,7 @@ function render(state) {
   renderAccount(state.account, state.admin);
   // In a competition, only team members (or someone who opened a team's link) can play.
   const watching = state.world.kind === 'competition' && !state.myTeam && !state.joiningTeam;
-  $('play-form').hidden = !signedIn || !state.prompt || (state.world.kind === 'room' && (!joined || state.leftRoom)) || watching;
+  $('play-form').hidden = !signedIn || !state.prompt || (state.world.kind === 'room' && (!joined || state.leftRoom)) || watching || Boolean(state.removedHere);
   // In a world playing only a word pack, words soon run short: a reminder that they stay said.
   $('pack-reminder').hidden = state.pack?.mode !== 'only' || !state.prompt || $('play-form').hidden;
   $('signin').hidden = signedIn;
@@ -792,7 +796,7 @@ function boardRows(players, scoreKey, me, standing = null, playingSince = Infini
     ? [el('span', { className: 'playing-dot', title: 'Playing now', ariaLabel: 'Playing now' })] : [];
   const row = (p, place) => el('tr', { className: p.nickname === me ? 'me' : '' },
     el('td', { className: 'rank', textContent: place }),
-    el('td', {}, ...teamDot(p.team), p.nickname, ...playing(p), ...(p.left ? (p.left >= justLeftSince ? [' ', el('span', { className: 'away', textContent: '(just left)' })] : [])
+    el('td', {}, ...teamDot(p.team), p.nickname, ...playing(p), ...(p.removed ? [' ', el('span', { className: 'away', textContent: '(removed)' })] : p.left ? (p.left >= justLeftSince ? [' ', el('span', { className: 'away', textContent: '(just left)' })] : [])
       : p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
     el('td', { textContent: p.words }),
     el('td', { textContent: p[scoreKey] }),
@@ -1139,7 +1143,7 @@ $('play-form').addEventListener('submit', async (e) => {
       const family = result.alsoBurned.length ? ` Gone with it: ${result.alsoBurned.join(', ')}.` : '';
       const streak = result.streak > 1 ? ` That's ${result.streak} days in a row!` : '';
       const closing = result.closing ? ' That finished the prompt: 10 bonus points!' : '';
-      const loose = result.uncounted ? " It's a looser answer, so it doesn't bring the count down or get the prompt bonus." : '';
+      const loose = result.uncounted ? " It's a rarer answer, so it doesn't bring the count down or get the prompt bonus." : '';
       const forOld = result.previousPrompt ? ` It counted for the last prompt, “${result.previousPrompt}”.` : '';
       feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}.${forOld}${closing}${loose} Nobody can say it again.${family}${streak}`, 'good');
       input.value = '';
@@ -1249,14 +1253,25 @@ async function loadSettings() {
   $('settings-players').replaceChildren(...settings.players.map((p) => {
     const row = el('li', {}, el('b', { textContent: p.nickname }), ' ',
       el('span', { className: 'when', textContent: `${p.words} words · ${p.score} points · last played ${ago(p.lastActive)}` }));
-    if (!p.isYou) {
-      const remove = el('button', { type: 'button', className: 'link row-actions', textContent: 'Remove' });
-      remove.addEventListener('click', () => settingsAction(`Remove ${p.nickname}? Their words stay used up, but they leave the leaderboard and can't come back.`,
-        'remove', { nickname: p.nickname }, `${p.nickname} has been removed.`));
-      row.prepend(remove);
-    }
+    if (!p.isYou) row.prepend(el('span', { className: 'row-actions' }, ...removeButtons(p.nickname, (completely, question, done) =>
+      settingsAction(question, 'remove', { nickname: p.nickname, completely }, done))));
     return row;
   }));
+}
+
+// A host's two ways to take a player out: they can't play again either way, and their words
+// stay used. "Remove" keeps them in the standings and results, marked removed; "Remove
+// completely" takes them off and stops them seeing the room.
+function removeButtons(nickname, act) {
+  const remove = el('button', { type: 'button', className: 'link', textContent: 'Remove' });
+  remove.addEventListener('click', () => act(false,
+    `Remove ${nickname}? They can't play again, but they stay in the standings and results, marked removed, and can still watch.`,
+    `${nickname} has been removed.`));
+  const completely = el('button', { type: 'button', className: 'link', textContent: 'Remove completely' });
+  completely.addEventListener('click', () => act(true,
+    `Remove ${nickname} completely? Their words stay used up, but they leave the standings and results, and can't see the room any more.`,
+    `${nickname} has been removed completely.`));
+  return [remove, ' · ', completely];
 }
 
 async function settingsAction(question, action, body, done) {

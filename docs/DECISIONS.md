@@ -6,6 +6,19 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**A host chooses how to remove a player**: "Remove" keeps them in the standings and results,
+marked "(removed)", and lets them watch; "Remove completely" takes them off and stops them seeing
+the room (as before). Either way they can't play again and their words stay said. In Music
+Night, removing Ada had taken her 88 points out of the results, harsh for someone removed only
+to tidy up. *Owner.*
+
+**Music pack**: "Part of a song, or how it's played" is now "A part of a song, or a way of
+playing", with a note; *diva*, *emcee*, *disc jockey* and *hymnist* are accepted for "A
+musician", which has a note too. Curated packs can now have notes. *Owner, Music Night.*
+
+**"A rarer answer"**, not "a looser answer", for an answer that's accepted but doesn't bring the
+count down. *Owner.*
+
 **Another spelling of a word already said is free**, even in a room that charges for repeats:
 the other side's spelling (*color* in a UK room) is let off, so *flutist* after *flautist* should
 be too. *flutist* and *lutist* are marked as the US words. A charged repeat now says "This room

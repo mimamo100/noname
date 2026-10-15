@@ -233,7 +233,8 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
             : $private->newInvite($worldId, $needUser())]);
     }
     if ($action === 'remove' && $method === 'POST') {
-        $owned->removePlayer($worldId, $needUser(), (string) (body()['nickname'] ?? ''));
+        $b = body();
+        $owned->removePlayer($worldId, $needUser(), (string) ($b['nickname'] ?? ''), (bool) ($b['completely'] ?? true));
         respond(200, ['ok' => true]);
     }
     if ($action === 'end' && $method === 'POST') {
@@ -279,6 +280,8 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         }
         // A public room the viewer has left: they can watch it, but not play.
         if (($world['kind'] ?? '') === 'room' && $player && $player['left_at'] !== null) $state['leftRoom'] = true;
+        // Removed by the host but kept in the results: they can watch, not play.
+        if ($player && (int) $player['removed'] === 2) $state['removedHere'] = true;
         // How the viewer finished, to share.
         if ($user && !empty($state['world']['ended'])) $state['myResult'] = $lobby->result($world['id'], (int) $user['id']);
         if ($isBigWorld) {

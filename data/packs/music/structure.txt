@@ -1,4 +1,5 @@
-label: Part of a song, or how it's played
+label: A part of a song, or a way of playing
+note: Parts of a song and ways of playing or singing it. Music theory and tempo words count as rarer answers.
 
 accompaniment, accompaniments
 ad lib, ad libs

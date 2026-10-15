@@ -1,4 +1,5 @@
 label: A musician
+note: Singers, players, composers and other music-makers, by role or instrument. Groups don't count.
 
 accompanist, accompanists
 accordionist, accordionists
@@ -86,14 +87,18 @@ chorus master, chorus masters
 contrabassist, contrabassists
 cornetist, cornetists, cornettist, cornettists
 cymbalist, cymbalists
+disc jockey, disc jockeys
+diva, divas
 drum major, drum majors
 duettist, duettists
+emcee, emcees
 flugelhornist, flugelhornists
 folkie, folkies
 griot, griots
 harmonicist, harmonicists
 harper, harpers
 hornist, hornists
+hymnist, hymnists
 improviser, improvisers, improvisor, improvisors
 jongleur, jongleurs
 kapellmeister, kapellmeisters

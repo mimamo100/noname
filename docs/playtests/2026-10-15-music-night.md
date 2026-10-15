@@ -14,6 +14,10 @@ Two prompts: "A musician with no R" (26 answers; ended on its own) and "Part of 
 - **A charged repeat says why** ("−2 points. This room charges for repeats."), and a free one gives the right reason: it said "as it was hidden" for any free repeat.
 - **Another spelling of a word said is free**, even where repeats are charged (the owner's decision), and *flutist* and *lutist* are marked as US spellings, so a UK-only room tells you to use *flautist*.
 - **About this list / prompt** rewritten as quirks and definitions, without examples (the owner's note).
+- **Removing**: the host chooses "Remove" (kept in the standings and results, marked removed, can watch) or "Remove completely" (as before).
+- **Music lists**: "A part of a song, or a way of playing", with a note; *diva*, *emcee*, *disc jockey*, *hymnist* accepted for "A musician", with a note. Curated packs can have notes now.
+- **"A rarer answer"** instead of "a looser answer".
+- **Smaller**: the repeats checkbox is a proper size; "Gone with it" leaves out the other side's spelling in a one-spelling room. Not done: the blank Big Room card (not seen again).
 
 ## What worked
 

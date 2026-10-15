@@ -975,6 +975,12 @@ test('repeating a word someone else said is free, unless the host chooses to cha
     gameDb($game)->exec("UPDATE burns SET burned_at = burned_at - 120000 WHERE world_id = '{$world['id']}'");
     $other = $game->play($world['id'], $b['token'], 'color');
     same(['already-burned', 0, true, true], [$other['reason'], $other['penalty'], $other['otherSpelling'] ?? false, $other['charged'] ?? false]);
+
+    // In a UK world, "Gone with it" doesn't list the US spelling, which was never playable there.
+    $uk = $game->createWorld('UK', null, 60_000, 'uk');
+    setPrompt($game, $uk['id'], spec(null, ['contains', 'o']));
+    $said = $game->play($uk['id'], $game->join($uk['id'], 'Ann')['token'], 'colour');
+    check(!in_array('color', $said['alsoBurned'], true), 'No US spelling under Gone with it: ' . implode(', ', $said['alsoBurned']));
 });
 
 test('irregular plurals are one answer with their singular, judged as it (data/irregular-forms.txt)', function () {

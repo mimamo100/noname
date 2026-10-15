@@ -27,7 +27,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | ` Gone with it: {other forms}.` | app.js · play-form |
 | ` That's {n} days in a row!` | app.js · play-form |
 | ` That finished the prompt: 10 bonus points!` | app.js · play-form |
-| ` It's a looser answer, so it doesn't bring the count down or get the prompt bonus.` | app.js · play-form |
+| ` It's a rarer answer, so it doesn't bring the count down or get the prompt bonus.` | app.js · play-form |
 | ` It counted for the last prompt, “{prompt}”.` | app.js · play-form |
 
 ### Not accepted
@@ -248,6 +248,12 @@ On a letter prompt, a verb's form adds what it counts as: it doesn't end in G (�
 | This room is closed to new players. | PrivateWorlds.php · playerFor |
 | This room is full. | PrivateWorlds.php · playerFor |
 | You've been removed from this room. | PrivateWorlds.php · checkCanView, playerFor |
+| Remove · Remove completely *(by each player in Room settings and Competition settings)* | app.js · removeButtons |
+| Remove {name}? They can't play again, but they stay in the standings and results, marked removed, and can still watch. *(confirm)* | app.js · removeButtons |
+| Remove {name} completely? Their words stay used up, but they leave the standings and results, and can't see the room any more. *(confirm)* | app.js · removeButtons |
+| {name} has been removed. / {name} has been removed completely. | app.js · removeButtons |
+| {name} (removed) *(on the leaderboard)* | app.js · boardRows |
+| You've been removed from this room. You can still watch, and your place stays in the results. *(or competition: your points stay in the standings)* | app.js · renderLobby |
 | Only the owner can change this room. | PrivateWorlds.php · ownedWorld |
 | No player of that name here. | PrivateWorlds.php · removePlayer |
 | You can't remove yourself from your own room. | PrivateWorlds.php · removePlayer |

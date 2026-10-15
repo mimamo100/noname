@@ -23,6 +23,8 @@ element.txt       label: A chemical element
 
 The format is like `data/categories/` (see its README), with these differences:
 
+- **A list can have a note** after its label (`note: ...`), shown under its prompts behind
+  "About this list": its quirks and what it counts, not examples.
 - **Pack words needn't be in the everyday dictionary.** Any word of 3–30 letters
   a to z can be listed.
 - **A line lists one answer with all its forms**, answer first, separated by

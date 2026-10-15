@@ -123,6 +123,8 @@ final class Game
                 $update->execute([self::newInviteCode(), $id]);
             }
         }
+        // removed: 0 playing, 1 removed completely (off the standings, can't see the world), 2 removed
+        // but kept in the standings and results (can watch, can't play).
         if (!$db->query("SHOW COLUMNS FROM players LIKE 'removed'")->fetch()) {
             $db->exec('ALTER TABLE players ADD COLUMN removed TINYINT NOT NULL DEFAULT 0');
         }
@@ -575,7 +577,7 @@ final class Game
             $stmt = $this->db->prepare('
                 SELECT p.id, p.user_id, p.nickname, p.score, p.words, t.name AS team_name FROM players p
                 LEFT JOIN teams t ON t.id = p.team_id
-                WHERE p.world_id = ? AND p.removed = 0 AND (p.words > 0 OR p.score <> 0)
+                WHERE p.world_id = ? AND p.removed <> 1 AND (p.words > 0 OR p.score <> 0)
                 ORDER BY p.score DESC, p.words DESC, p.nickname');
             $stmt->execute([$worldId]);
             $players = $stmt->fetchAll();
@@ -757,7 +759,8 @@ final class Game
                 'ok' => true,
                 'word' => $this->dictionary->display($word),
                 'points' => $points,
-                'alsoBurned' => array_map([$this->dictionary, 'display'], array_values(array_filter($family, fn ($w) => $w !== $word))),
+                // Not the other side's spelling in a one-spelling world: it was never playable here.
+                'alsoBurned' => array_map([$this->dictionary, 'display'], array_values(array_filter($family, fn ($w) => $w !== $word && !isset($wrong[$w])))),
                 'multipliers' => $mult,
             ] + ($counted ? [] : ['uncounted' => true]) + ($closing ? ['closing' => true] : [])
               + ($previous ? ['previousPrompt' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary)] : [])
@@ -1083,7 +1086,7 @@ final class Game
         if (!$mine || ((int) $mine['words'] === 0 && (int) $mine['score'] === 0)) return null;
         $stmt = $this->db->prepare('
             SELECT COUNT(*), COALESCE(SUM(score > ?), 0) FROM players
-            WHERE world_id = ? AND removed = 0 AND (words > 0 OR score <> 0)');
+            WHERE world_id = ? AND removed <> 1 AND (words > 0 OR score <> 0)');
         $stmt->execute([(int) $mine['score'], $worldId]);
         [$of, $ahead] = $stmt->fetch(PDO::FETCH_NUM);
         return ['place' => (int) $ahead + 1, 'of' => (int) $of, 'score' => (int) $mine['score'], 'words' => (int) $mine['words']];
@@ -1106,7 +1109,7 @@ final class Game
 
         // Scores include penalties for wrong guesses. Kept as running totals on each player.
         $stmt = $this->db->prepare('
-            SELECT nickname, score, words, last_active_at, left_at, team_id FROM players WHERE world_id = ? AND removed = 0
+            SELECT nickname, score, words, last_active_at, left_at, removed, team_id FROM players WHERE world_id = ? AND removed <> 1
             ORDER BY score DESC, words DESC, nickname LIMIT 50');
         $stmt->execute([$worldId]);
         // In rooms, players who've stopped playing show as away: their seat is free for someone new.
@@ -1115,7 +1118,7 @@ final class Game
             'nickname' => $r['nickname'], 'total' => (int) $r['score'], 'words' => (int) $r['words'],
             // When they last said or tried a word, so the page can mark who's playing now.
             'lastActive' => (int) $r['last_active_at'],
-        ] + ($r['left_at'] !== null ? ['left' => (int) $r['left_at']] : ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : [])), $r['team_id']), $stmt->fetchAll());
+        ] + ((int) $r['removed'] === 2 ? ['removed' => true] : []) + ($r['left_at'] !== null ? ['left' => (int) $r['left_at']] : ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : [])), $r['team_id']), $stmt->fetchAll());
 
         // The same, ranked by the current prompt alone, so late arrivals can top something.
         // Only players who have said a word or lost points in this prompt are listed (free misses don't count).
@@ -1129,7 +1132,7 @@ final class Game
             LEFT JOIN (
               SELECT player_id, SUM(points) AS points FROM misses WHERE prompt_id = ? GROUP BY player_id
             ) m ON m.player_id = p.id
-            WHERE p.world_id = ? AND p.removed = 0 AND (b.player_id IS NOT NULL OR COALESCE(m.points, 0) <> 0)
+            WHERE p.world_id = ? AND p.removed <> 1 AND (b.player_id IS NOT NULL OR COALESCE(m.points, 0) <> 0)
             ORDER BY points DESC, words DESC, p.nickname
             LIMIT 50');
         $stmt->execute([$promptId, $promptId, $worldId]);
@@ -1191,7 +1194,7 @@ final class Game
             $teams[(int) $t['id']] = ['id' => (int) $t['id'], 'name' => $t['name'], 'position' => (int) $t['position'],
                 'score' => 0, 'thisPrompt' => 0, 'words' => 0, 'players' => []];
         }
-        $stmt = $this->db->prepare('SELECT team_id, nickname, score, words FROM players WHERE world_id = ? AND removed = 0 AND team_id IS NOT NULL ORDER BY nickname');
+        $stmt = $this->db->prepare('SELECT team_id, nickname, score, words FROM players WHERE world_id = ? AND removed <> 1 AND team_id IS NOT NULL ORDER BY nickname');
         $stmt->execute([$worldId]);
         foreach ($stmt->fetchAll() as $p) {
             if (!isset($teams[(int) $p['team_id']])) continue;
@@ -1204,7 +1207,7 @@ final class Game
         foreach (['burns', 'misses'] as $table) {
             $stmt = $this->db->prepare("
                 SELECT p.team_id, SUM(x.points) AS points FROM $table x JOIN players p ON p.id = x.player_id
-                WHERE x.prompt_id = ? AND p.removed = 0 AND p.team_id IS NOT NULL GROUP BY p.team_id");
+                WHERE x.prompt_id = ? AND p.removed <> 1 AND p.team_id IS NOT NULL GROUP BY p.team_id");
             $stmt->execute([$promptId]);
             foreach ($stmt->fetchAll() as $r) {
                 if (isset($teams[(int) $r['team_id']])) $teams[(int) $r['team_id']]['thisPrompt'] += (int) $r['points'];

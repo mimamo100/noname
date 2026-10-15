@@ -71,6 +71,26 @@ test('owners can close a world, limit its players, rename it and change its pace
     throwsStatus(400, fn () => $private->update($made['id'], $host, ['maxPlayers' => 1]));
 });
 
+test('a host can remove a player but keep them in the standings and results, marked removed', function () {
+    [$db, $game, $private] = makePrivate();
+    $host = withPlan($db, makeUser($db, 'Hal'), 'host');
+    $made = $private->create($host, ['name' => 'Friends']);
+    $world = fn () => $game->world($made['id']);
+    setPrompt($game, $made['id'], spec(null, ['contains', 'oo']));
+    $ann = makeUser($db, 'Ann') + ['plan' => 'free'];
+    $token = $private->playerFor($world(), $ann, $made['invite'])['token'];
+    $game->play($made['id'], $token, 'moon');
+
+    $private->removePlayer($made['id'], $host, 'Ann', completely: false);
+    $board = $game->state($made['id'], null)['leaderboard'];
+    same(['Ann', true], [$board[0]['nickname'], $board[0]['removed'] ?? false], 'Still on the leaderboard, marked removed');
+    $private->checkCanView($world(), $ann, null); // May still watch, without the link.
+    throwsStatus(403, fn () => $private->playerFor($world(), $ann, $made['invite']));
+    throwsStatus(403, fn () => $game->play($made['id'], $token, 'book'));
+    $private->end($made['id'], $host);
+    same(1, (int) $db->query("SELECT COUNT(*) FROM results WHERE world_id = '{$made['id']}' AND nickname = 'Ann'")->fetchColumn(), 'In the final results');
+});
+
 test('a removed player drops off the leaderboard and cannot see, play or rejoin', function () {
     [$db, $game, $private] = makePrivate();
     $host = withPlan($db, makeUser($db, 'Hal'), 'host');

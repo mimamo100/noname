@@ -169918,7 +169918,7 @@ return array (
         121 => 'mobilehome',
         122 => 'rubberdinghy',
       ),
-      'note' => 'Anything that carries people or goods, with boats as looser answers. Animals and lifts don\'t count.',
+      'note' => 'Anything that carries people or goods, with boats as rarer answers. Animals and lifts don\'t count.',
     ),
     'weapon' => 
     array (

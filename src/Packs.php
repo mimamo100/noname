@@ -58,7 +58,8 @@ final class Packs
         $blocked = [];
         $unknown = []; // Single words the everyday dictionary doesn't know: typos, or specialist words.
         foreach ($groups as $id => $group) {
-            $category = ['label' => $group['label'], 'words' => [], 'also' => [], 'answers' => 0];
+            $category = ['label' => $group['label'], 'words' => [], 'also' => [], 'answers' => 0]
+                + (!empty($group['note']) ? ['note' => $group['note']] : []);
             foreach (['words', 'also'] as $list) {
                 foreach ($group[$list] ?? [] as $forms) {
                     $kept = [];
@@ -160,14 +161,16 @@ final class Packs
      * its lines of forms before and after "also:".
      *
      * @param string[] $lines non-empty lines, comments removed
-     * @return array{label: ?string, words: string[][], also: string[][]}
+     * @return array{label: ?string, note: ?string, words: string[][], also: string[][]}
      */
     public static function readCuratedFile(array $lines): array
     {
-        $group = ['label' => null, 'words' => [], 'also' => []];
+        $group = ['label' => null, 'note' => null, 'words' => [], 'also' => []];
         $list = 'words';
         foreach ($lines as $line) {
             if (str_starts_with($line, 'label:')) $group['label'] = trim(substr($line, 6));
+            // "About this list", as in data/categories: what the list counts and what it doesn't.
+            elseif (str_starts_with($line, 'note:')) $group['note'] = trim(substr($line, 5));
             elseif ($line === 'also:') $list = 'also';
             elseif ($forms = self::forms($line)) $group[$list][] = $forms;
         }

@@ -150,7 +150,7 @@ final class Competitions
     {
         if ($this->isOwner($world, $user)) return;
         $player = $user ? $this->game->playerForUser($world['id'], (int) $user['id']) : null;
-        if ($player && $player['removed']) throw new GameError(403, "You've been removed from this competition.");
+        if ($player && (int) $player['removed'] === 1) throw new GameError(403, "You've been removed from this competition.");
         if ($player) return;
         if ($invite !== null && hash_equals((string) $world['invite_code'], $invite)) return;
         if ($this->teamByInvite($world['id'], $invite)) return;
@@ -389,11 +389,12 @@ final class Competitions
         $this->game->changed($worldId);
     }
 
-    public function removePlayer(string $worldId, array $user, string $nickname): void
+    /** Takes a player out, completely (their points leave the team) or kept in the results, as for private rooms. */
+    public function removePlayer(string $worldId, array $user, string $nickname, bool $completely = true): void
     {
         $this->ownedCompetition($worldId, $user);
-        $stmt = $this->db->prepare('UPDATE players SET removed = 1 WHERE world_id = ? AND nickname = ? AND removed = 0');
-        $stmt->execute([$worldId, $nickname]);
+        $stmt = $this->db->prepare('UPDATE players SET removed = ? WHERE world_id = ? AND nickname = ? AND removed = 0');
+        $stmt->execute([$completely ? 1 : 2, $worldId, $nickname]);
         if (!$stmt->rowCount()) throw new GameError(404, 'No player of that name here.');
         $this->game->changed($worldId);
     }
