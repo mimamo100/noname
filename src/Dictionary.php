@@ -59,8 +59,10 @@ final class Dictionary
     public static function load(?string $path = null): self
     {
         $data = require $path ?? dirname(__DIR__) . '/data/dictionary.php';
-        return new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? [], $data['masked'] ?? [],
+        $dictionary = new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? [], $data['masked'] ?? [],
             $data['display'] ?? [], [], $data['pluralWords'] ?? []);
+        $dictionary->irregular = $data['irregular'] ?? [];
+        return $dictionary;
     }
 
     /**
@@ -137,6 +139,7 @@ final class Dictionary
             array_keys($this->blocked), $this->spelling, array_keys($this->masked),
             ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? [], array_keys($this->pluralWords));
         $only->everyday = $this;
+        $only->irregular = $this->irregular;
         return $only;
     }
 
@@ -146,6 +149,8 @@ final class Dictionary
      * score far apart in the Kitchen Cup playtest).
      */
     private ?Dictionary $everyday = null;
+    /** @var array<string, string> irregular form => its singular or base word ("mice" => "mouse") */
+    private array $irregular = [];
     /** How rare a pack word that isn't an everyday word counts: fairly rare (×2.2), not the rarest. */
     public const PACK_WORD_RARITY = 0.77;
 
@@ -172,8 +177,10 @@ final class Dictionary
             }
             $families['pack:' . $members[0]] = array_values(array_unique($joined));
         }
-        return new self($words, $families, $pack['categories'], array_keys($this->blocked), $this->spelling, array_keys($this->masked),
+        $with = new self($words, $families, $pack['categories'], array_keys($this->blocked), $this->spelling, array_keys($this->masked),
             ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? [], array_keys($this->pluralWords));
+        $with->irregular = $this->irregular;
+        return $with;
     }
 
     /** @param string[][] $families */
@@ -302,6 +309,8 @@ final class Dictionary
      */
     public function singular(string $word): string
     {
+        // Irregular plurals (data/irregular-forms.txt): "mice" is "mouse".
+        if (isset($this->irregular[$word]) && $this->has($this->irregular[$word])) return $this->irregular[$word];
         if (!str_ends_with($word, 's') || str_ends_with($word, 'ss') || isset($this->pluralWords[$word])) return $word;
         $candidates = [substr($word, 0, -1)];
         if (str_ends_with($word, 'es')) $candidates[] = substr($word, 0, -2);

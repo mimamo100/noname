@@ -52272,9 +52272,10 @@ return array (
     'man' => 
     array (
       0 => 'man',
-      1 => 'manning',
-      2 => 'mans',
-      3 => 'manned',
+      1 => 'men',
+      2 => 'manning',
+      3 => 'mans',
+      4 => 'manned',
     ),
     'say' => 
     array (
@@ -52314,10 +52315,12 @@ return array (
       2 => 'making',
       3 => 'makings',
     ),
-    'people' => 
+    'person' => 
     array (
       0 => 'people',
-      1 => 'peoples',
+      1 => 'person',
+      2 => 'persons',
+      3 => 'peoples',
     ),
     'over' => 
     array (
@@ -52390,10 +52393,11 @@ return array (
       0 => 'thing',
       1 => 'things',
     ),
-    'these' => 
+    'thesis' => 
     array (
       0 => 'these',
-      1 => 'theses',
+      1 => 'thesis',
+      2 => 'theses',
     ),
     'help' => 
     array (
@@ -52426,6 +52430,15 @@ return array (
       1 => 'finding',
       2 => 'finds',
       3 => 'findings',
+    ),
+    'life' => 
+    array (
+      0 => 'life',
+      1 => 'live',
+      2 => 'living',
+      3 => 'lives',
+      4 => 'lived',
+      5 => 'livings',
     ),
     'nothing' => 
     array (
@@ -52574,13 +52587,17 @@ return array (
       0 => 'years',
       1 => 'year',
     ),
-    'leave' => 
+    'leaf' => 
     array (
       0 => 'leave',
       1 => 'leaving',
       2 => 'leaves',
-      3 => 'leavings',
-      4 => 'leaved',
+      3 => 'leaf',
+      4 => 'leafs',
+      5 => 'leavings',
+      6 => 'leaved',
+      7 => 'leafing',
+      8 => 'leafed',
     ),
     'doe' => 
     array (
@@ -52861,7 +52878,8 @@ return array (
     'woman' => 
     array (
       0 => 'woman',
-      1 => 'womans',
+      1 => 'women',
+      2 => 'womans',
     ),
     'dead' => 
     array (
@@ -52958,14 +52976,6 @@ return array (
       2 => 'moved',
       3 => 'moves',
     ),
-    'live' => 
-    array (
-      0 => 'live',
-      1 => 'living',
-      2 => 'lives',
-      3 => 'lived',
-      4 => 'livings',
-    ),
     'miss' => 
     array (
       0 => 'miss',
@@ -53059,7 +53069,8 @@ return array (
     'wife' => 
     array (
       0 => 'wife',
-      1 => 'wifes',
+      1 => 'wives',
+      2 => 'wifes',
     ),
     'guess' => 
     array (
@@ -53205,7 +53216,11 @@ return array (
     array (
       0 => 'die',
       1 => 'dies',
-      2 => 'dieing',
+      2 => 'dice',
+      3 => 'diced',
+      4 => 'dices',
+      5 => 'dicing',
+      6 => 'dieing',
     ),
     'heart' => 
     array (
@@ -53277,11 +53292,6 @@ return array (
       1 => 'waters',
       2 => 'watering',
       3 => 'watered',
-    ),
-    'person' => 
-    array (
-      0 => 'person',
-      1 => 'persons',
     ),
     'part' => 
     array (
@@ -53573,6 +53583,12 @@ return array (
       0 => 'nobody',
       1 => 'nobodies',
     ),
+    'child' => 
+    array (
+      0 => 'children',
+      1 => 'child',
+      2 => 'childes',
+    ),
     'side' => 
     array (
       0 => 'side',
@@ -53613,11 +53629,6 @@ return array (
       1 => 'suppose',
       2 => 'supposing',
       3 => 'supposes',
-    ),
-    'child' => 
-    array (
-      0 => 'child',
-      1 => 'childes',
     ),
     'hour' => 
     array (
@@ -53746,6 +53757,12 @@ return array (
     array (
       0 => 'couple',
       1 => 'couples',
+    ),
+    'half' => 
+    array (
+      0 => 'half',
+      1 => 'halves',
+      2 => 'halve',
     ),
     'cool' => 
     array (
@@ -54490,6 +54507,11 @@ return array (
       0 => 'future',
       1 => 'futures',
     ),
+    'gentleman' => 
+    array (
+      0 => 'gentlemen',
+      1 => 'gentleman',
+    ),
     'chang' => 
     array (
       0 => 'changed',
@@ -54587,6 +54609,15 @@ return array (
       2 => 'landed',
       3 => 'lands',
       4 => 'landings',
+    ),
+    'foot' => 
+    array (
+      0 => 'feet',
+      1 => 'foot',
+      2 => 'footing',
+      3 => 'foots',
+      4 => 'footed',
+      5 => 'footings',
     ),
     'wonder' => 
     array (
@@ -56431,14 +56462,6 @@ return array (
       2 => 'bothered',
       3 => 'bothers',
     ),
-    'foot' => 
-    array (
-      0 => 'foot',
-      1 => 'footing',
-      2 => 'foots',
-      3 => 'footed',
-      4 => 'footings',
-    ),
     'blame' => 
     array (
       0 => 'blame',
@@ -57318,9 +57341,10 @@ return array (
     'knife' => 
     array (
       0 => 'knife',
-      1 => 'knifed',
-      2 => 'knifes',
-      3 => 'knifing',
+      1 => 'knives',
+      2 => 'knifed',
+      3 => 'knifes',
+      4 => 'knifing',
     ),
     'devil' => 
     array (
@@ -57853,10 +57877,13 @@ return array (
       0 => 'character',
       1 => 'characters',
     ),
-    'teeth' => 
+    'tooth' => 
     array (
       0 => 'teeth',
-      1 => 'teething',
+      1 => 'tooth',
+      2 => 'teething',
+      3 => 'toothed',
+      4 => 'tooths',
     ),
     'criminal' => 
     array (
@@ -59219,6 +59246,11 @@ return array (
       2 => 'touring',
       3 => 'toured',
     ),
+    'thief' => 
+    array (
+      0 => 'thief',
+      1 => 'thieves',
+    ),
     'bleep' => 
     array (
       0 => 'bleep',
@@ -60068,10 +60100,12 @@ return array (
       0 => 'studio',
       1 => 'studios',
     ),
-    'media' => 
+    'medium' => 
     array (
       0 => 'media',
-      1 => 'medias',
+      1 => 'medium',
+      2 => 'mediums',
+      3 => 'medias',
     ),
     'taxi' => 
     array (
@@ -60322,6 +60356,7 @@ return array (
     array (
       0 => 'penny',
       1 => 'pennies',
+      2 => 'pence',
     ),
     'claim' => 
     array (
@@ -60472,9 +60507,10 @@ return array (
     'wolf' => 
     array (
       0 => 'wolf',
-      1 => 'wolfs',
-      2 => 'wolfed',
-      3 => 'wolfing',
+      1 => 'wolves',
+      2 => 'wolfs',
+      3 => 'wolfed',
+      4 => 'wolfing',
     ),
     'coast' => 
     array (
@@ -62461,6 +62497,12 @@ return array (
       0 => 'plastic',
       1 => 'plastics',
     ),
+    'crisis' => 
+    array (
+      0 => 'crisis',
+      1 => 'cris',
+      2 => 'crises',
+    ),
     'fifth' => 
     array (
       0 => 'fifth',
@@ -63619,7 +63661,8 @@ return array (
     'mouse' => 
     array (
       0 => 'mouse',
-      1 => 'mouses',
+      1 => 'mice',
+      2 => 'mouses',
     ),
     'pit' => 
     array (
@@ -63844,6 +63887,11 @@ return array (
       1 => 'limited',
       2 => 'limits',
       3 => 'limiting',
+    ),
+    'policeman' => 
+    array (
+      0 => 'policeman',
+      1 => 'policemen',
     ),
     'reveal' => 
     array (
@@ -65339,12 +65387,6 @@ return array (
       0 => 'bee',
       1 => 'bees',
     ),
-    'tooth' => 
-    array (
-      0 => 'tooth',
-      1 => 'toothed',
-      2 => 'tooths',
-    ),
     'depress' => 
     array (
       0 => 'depressed',
@@ -66060,6 +66102,18 @@ return array (
       1 => 'boozing',
       2 => 'boozed',
       3 => 'boozes',
+    ),
+    'analysis' => 
+    array (
+      0 => 'analysis',
+      1 => 'analyze',
+      2 => 'analyzed',
+      3 => 'analyzing',
+      4 => 'analyse',
+      5 => 'analysed',
+      6 => 'analysing',
+      7 => 'analyses',
+      8 => 'analyzes',
     ),
     'vodka' => 
     array (
@@ -68129,9 +68183,10 @@ return array (
     'goose' => 
     array (
       0 => 'goose',
-      1 => 'goosed',
-      2 => 'gooses',
-      3 => 'goosing',
+      1 => 'geese',
+      2 => 'goosed',
+      3 => 'gooses',
+      4 => 'goosing',
     ),
     'conclusion' => 
     array (
@@ -70048,13 +70103,6 @@ return array (
       2 => 'snores',
       3 => 'snored',
     ),
-    'leaf' => 
-    array (
-      0 => 'leaf',
-      1 => 'leafs',
-      2 => 'leafing',
-      3 => 'leafed',
-    ),
     'jar' => 
     array (
       0 => 'jar',
@@ -70319,11 +70367,6 @@ return array (
     array (
       0 => 'carbon',
       1 => 'carbons',
-    ),
-    'medium' => 
-    array (
-      0 => 'medium',
-      1 => 'mediums',
     ),
     'fanny' => 
     array (
@@ -70595,13 +70638,6 @@ return array (
     array (
       0 => 'mode',
       1 => 'modes',
-    ),
-    'dice' => 
-    array (
-      0 => 'dice',
-      1 => 'diced',
-      2 => 'dices',
-      3 => 'dicing',
     ),
     'orphan' => 
     array (
@@ -71658,9 +71694,10 @@ return array (
     'scarf' => 
     array (
       0 => 'scarf',
-      1 => 'scarfing',
-      2 => 'scarfed',
-      3 => 'scarfs',
+      1 => 'scarves',
+      2 => 'scarfing',
+      3 => 'scarfed',
+      4 => 'scarfs',
     ),
     'institution' => 
     array (
@@ -71976,6 +72013,12 @@ return array (
     array (
       0 => 'whisky',
       1 => 'whiskies',
+    ),
+    'shelf' => 
+    array (
+      0 => 'shelf',
+      1 => 'shelves',
+      2 => 'shelve',
     ),
     'chart' => 
     array (
@@ -74317,7 +74360,8 @@ return array (
     'phenomenon' => 
     array (
       0 => 'phenomenon',
-      1 => 'phenomenons',
+      1 => 'phenomena',
+      2 => 'phenomenons',
     ),
     'expel' => 
     array (
@@ -74630,6 +74674,11 @@ return array (
     array (
       0 => 'banker',
       1 => 'bankers',
+    ),
+    'bacterium' => 
+    array (
+      0 => 'bacteria',
+      1 => 'bacterium',
     ),
     'assassination' => 
     array (
@@ -76502,6 +76551,11 @@ return array (
       0 => 'sixty',
       1 => 'sixties',
     ),
+    'fisherman' => 
+    array (
+      0 => 'fisherman',
+      1 => 'fishermen',
+    ),
     'nightclub' => 
     array (
       0 => 'nightclub',
@@ -77281,7 +77335,8 @@ return array (
     'calf' => 
     array (
       0 => 'calf',
-      1 => 'calfs',
+      1 => 'calves',
+      2 => 'calfs',
     ),
     'allowance' => 
     array (
@@ -78309,6 +78364,11 @@ return array (
       0 => 'soy',
       1 => 'soys',
     ),
+    'elf' => 
+    array (
+      0 => 'elf',
+      1 => 'elves',
+    ),
     'contractor' => 
     array (
       0 => 'contractor',
@@ -78835,17 +78895,6 @@ return array (
       1 => 'parachutes',
       2 => 'parachuted',
       3 => 'parachuting',
-    ),
-    'analyse' => 
-    array (
-      0 => 'analyze',
-      1 => 'analyzed',
-      2 => 'analyzing',
-      3 => 'analyse',
-      4 => 'analysed',
-      5 => 'analysing',
-      6 => 'analyses',
-      7 => 'analyzes',
     ),
     'classmate' => 
     array (
@@ -79814,8 +79863,9 @@ return array (
     'loaf' => 
     array (
       0 => 'loaf',
-      1 => 'loafing',
-      2 => 'loafs',
+      1 => 'loaves',
+      2 => 'loafing',
+      3 => 'loafs',
     ),
     'inconvenience' => 
     array (
@@ -80276,6 +80326,11 @@ return array (
       0 => 'pineapple',
       1 => 'pineapples',
     ),
+    'fireman' => 
+    array (
+      0 => 'fireman',
+      1 => 'firemen',
+    ),
     'thorn' => 
     array (
       0 => 'thorn',
@@ -80506,6 +80561,14 @@ return array (
     array (
       0 => 'paddle',
       1 => 'paddles',
+    ),
+    'louse' => 
+    array (
+      0 => 'lice',
+      1 => 'louse',
+      2 => 'loused',
+      3 => 'louses',
+      4 => 'lousing',
     ),
     'itch' => 
     array (
@@ -82472,6 +82535,11 @@ return array (
       0 => 'lupin',
       1 => 'lupins',
     ),
+    'postman' => 
+    array (
+      0 => 'postman',
+      1 => 'postmen',
+    ),
     'hostel' => 
     array (
       0 => 'hostel',
@@ -83236,11 +83304,6 @@ return array (
     array (
       0 => 'limitations',
       1 => 'limitation',
-    ),
-    'shelve' => 
-    array (
-      0 => 'shelves',
-      1 => 'shelve',
     ),
     'criticise' => 
     array (
@@ -84729,6 +84792,11 @@ return array (
     array (
       0 => 'puddle',
       1 => 'puddles',
+    ),
+    'fungus' => 
+    array (
+      0 => 'fungus',
+      1 => 'fungi',
     ),
     'barefoot' => 
     array (
@@ -86561,7 +86629,8 @@ return array (
     'cactus' => 
     array (
       0 => 'cactus',
-      1 => 'cactuses',
+      1 => 'cacti',
+      2 => 'cactuses',
     ),
     'wilt' => 
     array (
@@ -87080,6 +87149,14 @@ return array (
       3 => 'baptise',
       4 => 'baptizing',
       5 => 'baptising',
+    ),
+    'hoof' => 
+    array (
+      0 => 'hooves',
+      1 => 'hoof',
+      2 => 'hoofs',
+      3 => 'hoofing',
+      4 => 'hoofed',
     ),
     'payday' => 
     array (
@@ -88757,6 +88834,11 @@ return array (
       0 => 'chestnut',
       1 => 'chestnuts',
     ),
+    'criterion' => 
+    array (
+      0 => 'criteria',
+      1 => 'criterion',
+    ),
     'trainee' => 
     array (
       0 => 'trainee',
@@ -89262,6 +89344,11 @@ return array (
     array (
       0 => 'bio',
       1 => 'bios',
+    ),
+    'snowman' => 
+    array (
+      0 => 'snowman',
+      1 => 'snowmen',
     ),
     'geisha' => 
     array (
@@ -91009,6 +91096,11 @@ return array (
       0 => 'clubhouse',
       1 => 'clubhouses',
     ),
+    'nucleus' => 
+    array (
+      0 => 'nucleus',
+      1 => 'nuclei',
+    ),
     'councillor' => 
     array (
       0 => 'councillor',
@@ -92009,13 +92101,6 @@ return array (
     array (
       0 => 'leprechaun',
       1 => 'leprechauns',
-    ),
-    'hoof' => 
-    array (
-      0 => 'hoof',
-      1 => 'hoofs',
-      2 => 'hoofing',
-      3 => 'hoofed',
     ),
     'timetable' => 
     array (
@@ -94709,22 +94794,10 @@ return array (
       2 => 'resurrecting',
       3 => 'resurrects',
     ),
-    'halve' => 
-    array (
-      0 => 'halves',
-      1 => 'halve',
-    ),
     'ponytail' => 
     array (
       0 => 'ponytail',
       1 => 'ponytails',
-    ),
-    'louse' => 
-    array (
-      0 => 'louse',
-      1 => 'loused',
-      2 => 'louses',
-      3 => 'lousing',
     ),
     'dilate' => 
     array (
@@ -98195,11 +98268,6 @@ return array (
     array (
       0 => 'jester',
       1 => 'jesters',
-    ),
-    'cris' => 
-    array (
-      0 => 'cris',
-      1 => 'crises',
     ),
     'regulate' => 
     array (
@@ -102524,6 +102592,11 @@ return array (
     array (
       0 => 'transparency',
       1 => 'transparencies',
+    ),
+    'stimulus' => 
+    array (
+      0 => 'stimulus',
+      1 => 'stimuli',
     ),
     'clad' => 
     array (
@@ -125215,6 +125288,11 @@ return array (
       0 => 'gigabytes',
       1 => 'gigabyte',
     ),
+    'dormouse' => 
+    array (
+      0 => 'dormouse',
+      1 => 'dormice',
+    ),
     'egret' => 
     array (
       0 => 'egret',
@@ -128232,6 +128310,11 @@ return array (
     array (
       0 => 'mudskipper',
       1 => 'mudskippers',
+    ),
+    'woodlouse' => 
+    array (
+      0 => 'woodlouse',
+      1 => 'woodlice',
     ),
     'rambutan' => 
     array (
@@ -166341,5 +166424,51 @@ return array (
     'youngersister' => 'younger sister',
     'youthhostel' => 'youth hostel',
     'zebracrossing' => 'zebra crossing',
+  ),
+  'irregular' => 
+  array (
+    'children' => 'child',
+    'men' => 'man',
+    'women' => 'woman',
+    'people' => 'person',
+    'mice' => 'mouse',
+    'lice' => 'louse',
+    'woodlice' => 'woodlouse',
+    'dormice' => 'dormouse',
+    'geese' => 'goose',
+    'teeth' => 'tooth',
+    'feet' => 'foot',
+    'knives' => 'knife',
+    'wives' => 'wife',
+    'lives' => 'life',
+    'wolves' => 'wolf',
+    'leaves' => 'leaf',
+    'loaves' => 'loaf',
+    'calves' => 'calf',
+    'halves' => 'half',
+    'shelves' => 'shelf',
+    'thieves' => 'thief',
+    'elves' => 'elf',
+    'scarves' => 'scarf',
+    'hooves' => 'hoof',
+    'firemen' => 'fireman',
+    'postmen' => 'postman',
+    'policemen' => 'policeman',
+    'fishermen' => 'fisherman',
+    'snowmen' => 'snowman',
+    'gentlemen' => 'gentleman',
+    'cacti' => 'cactus',
+    'fungi' => 'fungus',
+    'nuclei' => 'nucleus',
+    'stimuli' => 'stimulus',
+    'crises' => 'crisis',
+    'theses' => 'thesis',
+    'analyses' => 'analysis',
+    'criteria' => 'criterion',
+    'phenomena' => 'phenomenon',
+    'bacteria' => 'bacterium',
+    'media' => 'medium',
+    'dice' => 'die',
+    'pence' => 'penny',
   ),
 );

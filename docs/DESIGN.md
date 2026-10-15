@@ -164,6 +164,9 @@ word-finder site. There are three kinds:
 - **Size.** A new prompt is only chosen if it has 10–80 distinct answers still
   unsaid (rooms 40–200, the big world 60–400), counting a word family once. Late in a world, when nothing fits
   that range, the game takes the richest prompt it can find.
+- **Irregular forms** (`data/irregular-forms.txt`: *mouse, mice*; *knife, knives*; *child,
+  children*) are one answer with their word, and an irregular plural is judged and scored as
+  its singular, so *woodlice* counts for "An insect or bug".
 - **Plurals count as their singular** for length rules and points, so
   adding an S can't stretch *brother* into an 8-letter answer or earn extra
   points. Spelling rules (*starts with*, *contains*) check the word as typed,

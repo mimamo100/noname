@@ -949,3 +949,10 @@ test('repeating a word someone else said is free, unless the host chooses to cha
         same($charge, $game->state($world['id'], null)['world']['repeatPenalty']);
     }
 });
+
+test('irregular plurals are one answer with their singular, judged as it (data/irregular-forms.txt)', function () {
+    $d = Dictionary::load();
+    same('mouse', $d->singular('mice'));
+    same('woodlouse', $d->singular('woodlice'));
+    check(in_array('knives', $d->family('knife'), true), 'Saying knife uses up knives');
+});

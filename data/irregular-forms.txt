@@ -1,0 +1,51 @@
+# Irregular forms: each line is a word, then its forms the family rules can't see, after commas.
+# Each line becomes one answer (saying one uses up the rest), and a plural listed here is
+# judged and scored as its singular ("mice" counts as "mouse" for "A small animal", and for
+# length rules). Rebuild after editing: php scripts/build-dictionary.php
+# The first word must be the singular (or the base form); the rest are its plurals or forms.
+child, children
+man, men
+woman, women
+person, people
+mouse, mice
+louse, lice
+woodlouse, woodlice
+dormouse, dormice
+goose, geese
+tooth, teeth
+foot, feet
+ox, oxen
+knife, knives
+wife, wives
+life, lives
+wolf, wolves
+leaf, leaves
+loaf, loaves
+calf, calves
+half, halves
+shelf, shelves
+thief, thieves
+elf, elves
+scarf, scarves
+hoof, hooves
+fireman, firemen
+postman, postmen
+policeman, policemen
+fisherman, fishermen
+snowman, snowmen
+gentleman, gentlemen
+cactus, cacti
+fungus, fungi
+nucleus, nuclei
+radius, radii
+stimulus, stimuli
+crisis, crises
+thesis, theses
+analysis, analyses
+criterion, criteria
+phenomenon, phenomena
+bacterium, bacteria
+medium, media
+datum, data
+die, dice
+penny, pence
