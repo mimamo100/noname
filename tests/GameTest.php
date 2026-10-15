@@ -989,6 +989,8 @@ test("a verb's -ing and -ed forms are one answer with it, and letter prompts jud
     same("it's 6 letters (“creasing” counts as “crease”), not 8 or more", Prompts::whyNot(['cat' => null, 'rules' => [['minLen', 8]]], $d, 'creasing'));
     same(true, Prompts::matches(['cat' => 'sport', 'rules' => [['minLen', 8]]], $d, 'swimming'), 'A list answer is judged as written');
     check(!in_array('earring', $d->family('ear'), true), "earring isn't ear's");
+    same([true, 'blurb'], [$d->has('blurbs'), $d->singular('blurbs')], 'A plural the word lists lacked (data/plural-forms.txt)');
+    same([false, false], [$d->has('plained'), $d->has('heliums')], 'Forms the subtitles hardly use are left out');
 });
 
 test('"About this prompt": a letter prompt says how forms are judged, a meaning prompt has its list note', function () {

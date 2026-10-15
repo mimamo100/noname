@@ -6,6 +6,18 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**Missing plurals are added, and forms nobody uses are left out.** 1,714 plurals of dictionary
+words that the word lists lacked are in (*blurbs*): safe, as a plural is judged and scored as
+its singular and no prompt asks for an S. Added forms (plurals and -ing/-ed forms) must appear
+at least 10 times in film subtitles, which keeps *heckled* (85) and *creasing* (18) and drops
+*plained* (1), *springed* (5) and *heliums*, which had shown under "Gone with it". 1,006 verb
+forms are added now, not 2,358. *Owner, after the round 6 playtest.*
+
+**Big prompts are left as they are for now.** The owner's "173 left" reaction was about not
+being able to think of any of them, not the number; capping prompts, ending quiet ones (30
+minutes is too short: players may be asleep) or a lower maximum were all set aside. Helping
+players find the long tail may be the better direction. *Owner.*
+
 **Players can leave a public room**: the seat is free at once, their words and points stay
 (marked "left"), and they're never put back in that room, so leaving is a fresh start rather than
 a way to dodge a full room's rules. Until now the only way out was a week away. A room more than
@@ -15,7 +27,7 @@ three quarters used up still takes no newcomers, freed seat or not. *Owner.*
 is *run*, so it doesn't end in G, isn't 7 letters, and scores as *run*; *wrote* is *write*. Like
 plurals, adding letters shouldn't earn points, and the root is what the player knew. A meaning
 prompt judges a word as written, as its list names it (*swimming* for "A sport"). The forms
-come from WordNet (`scripts/find-verb-forms.py`, `data/verb-forms.txt`), which also fixed links
+come from WordNet (`scripts/find-word-forms.py`, `data/verb-forms.txt`), which also fixed links
 the ending rules got wrong (*browsed* was joined to *brow*, *earring* to *ear*), and 2,358
 missing forms of dictionary verbs were added (*creasing*, *heckled*), as rare as their verb.
 "Ends with G" prompts now have about 1,000 answers instead of 4,800. *Owner.*

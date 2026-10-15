@@ -40,22 +40,22 @@ return array (
     32 => 'ring',
     33 => 'lead',
     34 => 'sun',
-    35 => 'sunned',
-    36 => 'force',
-    37 => 'charge',
-    38 => 'gold',
-    39 => 'bar',
-    40 => 'star',
-    41 => 'brain',
-    42 => 'braining',
-    43 => 'ice',
-    44 => 'cell',
-    45 => 'wall',
-    46 => 'field',
-    47 => 'wind',
-    48 => 'seconds',
-    49 => 'planet',
-    50 => 'henry',
+    35 => 'force',
+    36 => 'charge',
+    37 => 'gold',
+    38 => 'bar',
+    39 => 'star',
+    40 => 'brain',
+    41 => 'braining',
+    42 => 'ice',
+    43 => 'cell',
+    44 => 'wall',
+    45 => 'field',
+    46 => 'wind',
+    47 => 'seconds',
+    48 => 'planet',
+    49 => 'henry',
+    50 => 'henries',
     51 => 'moon',
     52 => 'rings',
     53 => 'low',
@@ -82,4050 +82,3999 @@ return array (
     74 => 'weight',
     75 => 'model',
     76 => 'medicine',
-    77 => 'medicined',
-    78 => 'medicining',
-    79 => 'based',
-    80 => 'weather',
-    81 => 'community',
-    82 => 'shake',
-    83 => 'snow',
-    84 => 'stomach',
-    85 => 'stomached',
-    86 => 'stomaching',
-    87 => 'spring',
-    88 => 'springed',
-    89 => 'storm',
-    90 => 'eggs',
-    91 => 'dating',
-    92 => 'competition',
-    93 => 'silver',
-    94 => 'silvered',
-    95 => 'silvering',
-    96 => 'giant',
-    97 => 'period',
-    98 => 'led',
-    99 => 'powers',
-    100 => 'forces',
-    101 => 'walls',
-    102 => 'switch',
-    103 => 'image',
-    104 => 'plate',
-    105 => 'charges',
-    106 => 'crack',
-    107 => 'mirror',
-    108 => 'iron',
-    109 => 'hearts',
-    110 => 'metal',
-    111 => 'metaled',
-    112 => 'metaling',
-    113 => 'metalled',
-    114 => 'metalling',
-    115 => 'egg',
-    116 => 'dust',
-    117 => 'drag',
-    118 => 'brains',
-    119 => 'section',
-    120 => 'solution',
-    121 => 'moments',
-    122 => 'mass',
-    123 => 'rocks',
-    124 => 'freeze',
-    125 => 'leading',
-    126 => 'kingdom',
-    127 => 'wave',
-    128 => 'leads',
-    129 => 'thunder',
-    130 => 'alcohol',
-    131 => 'valley',
-    132 => 'tail',
-    133 => 'current',
-    134 => 'salt',
-    135 => 'sand',
-    136 => 'culture',
-    137 => 'culturing',
-    138 => 'solid',
-    139 => 'potential',
-    140 => 'mixed',
-    141 => 'species',
-    142 => 'balance',
-    143 => 'degrees',
-    144 => 'reaction',
-    145 => 'diamond',
-    146 => 'bars',
-    147 => 'stress',
-    148 => 'cave',
-    149 => 'mix',
-    150 => 'experiment',
-    151 => 'bond',
-    152 => 'degree',
-    153 => 'virus',
-    154 => 'crystal',
-    155 => 'motion',
-    156 => 'electricity',
-    157 => 'charged',
-    158 => 'cells',
-    159 => 'product',
-    160 => 'temperature',
-    161 => 'waves',
-    162 => 'spit',
-    163 => 'sounded',
-    164 => 'nerve',
-    165 => 'nerved',
-    166 => 'nerving',
-    167 => 'fields',
-    168 => 'frozen',
-    169 => 'hail',
-    170 => 'clay',
-    171 => 'gray',
-    172 => 'atmosphere',
-    173 => 'sample',
-    174 => 'host',
-    175 => 'diamonds',
-    176 => 'cloud',
-    177 => 'pitch',
-    178 => 'spin',
-    179 => 'spined',
-    180 => 'clouds',
-    181 => 'producer',
-    182 => 'oxygen',
-    183 => 'gene',
-    184 => 'rocket',
-    185 => 'grey',
-    186 => 'greyed',
-    187 => 'dates',
-    188 => 'mars',
-    189 => 'scale',
-    190 => 'engineer',
-    191 => 'population',
-    192 => 'lightning',
-    193 => 'liver',
-    194 => 'dragged',
-    195 => 'alpha',
-    196 => 'jet',
-    197 => 'washed',
-    198 => 'core',
-    199 => 'cored',
-    200 => 'resistance',
-    201 => 'images',
-    202 => 'nerves',
-    203 => 'gloves',
-    204 => 'plates',
-    205 => 'muscle',
-    206 => 'shaking',
-    207 => 'tube',
-    208 => 'fingerprints',
-    209 => 'slide',
-    210 => 'freezing',
-    211 => 'battery',
-    212 => 'soil',
-    213 => 'satellite',
-    214 => 'barn',
-    215 => 'meters',
-    216 => 'amber',
-    217 => 'washing',
-    218 => 'gravity',
-    219 => 'chemical',
-    220 => 'phase',
-    221 => 'sunshine',
-    222 => 'focused',
-    223 => 'focussed',
-    224 => 'needle',
-    225 => 'needled',
-    226 => 'sunny',
-    227 => 'ancestors',
-    228 => 'ruby',
-    229 => 'ash',
-    230 => 'ashed',
-    231 => 'ashing',
-    232 => 'ashes',
-    233 => 'immunity',
-    234 => 'pearl',
-    235 => 'pearled',
-    236 => 'pearling',
-    237 => 'radiation',
-    238 => 'raining',
-    239 => 'lungs',
-    240 => 'galaxy',
-    241 => 'stations',
-    242 => 'electronic',
-    243 => 'tissue',
-    244 => 'tissued',
-    245 => 'tissuing',
-    246 => 'elements',
-    247 => 'coma',
-    248 => 'autopsy',
-    249 => 'autopsying',
-    250 => 'samples',
-    251 => 'acid',
-    252 => 'dated',
-    253 => 'era',
-    254 => 'liquid',
-    255 => 'envelope',
-    256 => 'oven',
-    257 => 'tin',
-    258 => 'tined',
-    259 => 'tining',
-    260 => 'tinning',
-    261 => 'models',
-    262 => 'planets',
-    263 => 'tension',
-    264 => 'controlled',
-    265 => 'lung',
-    266 => 'coal',
-    267 => 'coaled',
-    268 => 'coaling',
-    269 => 'prey',
-    270 => 'switched',
-    271 => 'formula',
-    272 => 'organ',
-    273 => 'engineering',
-    274 => 'element',
-    275 => 'spinning',
-    276 => 'genetic',
-    277 => 'muscles',
-    278 => 'kidney',
-    279 => 'products',
-    280 => 'cracked',
-    281 => 'controls',
-    282 => 'winds',
-    283 => 'breeze',
-    284 => 'instinct',
-    285 => 'physics',
-    286 => 'laser',
-    287 => 'rainbow',
-    288 => 'mole',
-    289 => 'copper',
-    290 => 'coppered',
-    291 => 'coppering',
-    292 => 'length',
-    293 => 'flood',
-    294 => 'depression',
-    295 => 'tide',
-    296 => 'tided',
-    297 => 'tiding',
-    298 => 'static',
-    299 => 'orbit',
-    300 => 'chemistry',
-    301 => 'label',
-    302 => 'climate',
-    303 => 'experiments',
-    304 => 'cracking',
-    305 => 'glove',
-    306 => 'fog',
-    307 => 'sperm',
-    308 => 'lighting',
-    309 => 'melt',
-    310 => 'carbon',
-    311 => 'stressed',
-    312 => 'earthquake',
-    313 => 'echo',
-    314 => 'compound',
-    315 => 'sequence',
-    316 => 'sequenced',
-    317 => 'circuit',
-    318 => 'circuiting',
-    319 => 'evolution',
-    320 => 'fold',
-    321 => 'organs',
-    322 => 'fluid',
-    323 => 'translation',
-    324 => 'shuttle',
-    325 => 'shuttled',
-    326 => 'shuttling',
-    327 => 'lifted',
-    328 => 'dragging',
-    329 => 'instincts',
-    330 => 'weigh',
-    331 => 'scissors',
-    332 => 'springs',
-    333 => 'organic',
-    334 => 'charging',
-    335 => 'observation',
-    336 => 'jade',
-    337 => 'jading',
-    338 => 'forcing',
-    339 => 'metres',
-    340 => 'dried',
-    341 => 'vacuum',
-    342 => 'forensics',
-    343 => 'frequency',
-    344 => 'concentration',
-    345 => 'radical',
-    346 => 'controlling',
-    347 => 'delta',
-    348 => 'cracks',
-    349 => 'strain',
-    350 => 'bonds',
-    351 => 'veins',
-    352 => 'ridge',
-    353 => 'ridged',
-    354 => 'ridging',
-    355 => 'rains',
-    356 => 'batteries',
-    357 => 'canyon',
-    358 => 'tails',
-    359 => 'stir',
-    360 => 'mechanic',
-    361 => 'scattered',
-    362 => 'frost',
-    363 => 'volcano',
-    364 => 'stain',
-    365 => 'meter',
-    366 => 'metering',
-    367 => 'gilbert',
-    368 => 'particles',
-    369 => 'chemicals',
-    370 => 'forensic',
-    371 => 'kilometers',
-    372 => 'kilometres',
-    373 => 'continent',
-    374 => 'sensors',
-    375 => 'reflection',
-    376 => 'echoing',
-    377 => 'hurricane',
-    378 => 'psychology',
-    379 => 'astronaut',
-    380 => 'boil',
-    381 => 'attraction',
-    382 => 'shook',
-    383 => 'selection',
-    384 => 'fuse',
-    385 => 'inheritance',
-    386 => 'genes',
-    387 => 'comet',
-    388 => 'engineers',
-    389 => 'newton',
-    390 => 'spaceship',
-    391 => 'probe',
-    392 => 'void',
-    393 => 'boiling',
-    394 => 'needles',
-    395 => 'waving',
-    396 => 'bacteria',
-    397 => 'starring',
-    398 => 'separation',
-    399 => 'carrier',
-    400 => 'producers',
-    401 => 'kilos',
-    402 => 'protein',
-    403 => 'lens',
-    404 => 'interference',
-    405 => 'sounding',
-    406 => 'ruler',
-    407 => 'biology',
-    408 => 'quantum',
-    409 => 'mirrors',
-    410 => 'jasper',
-    411 => 'dwarf',
-    412 => 'neutral',
-    413 => 'timer',
-    414 => 'debris',
-    415 => 'showers',
-    416 => 'telescope',
-    417 => 'telescoped',
-    418 => 'impulse',
-    419 => 'tubes',
-    420 => 'nickel',
-    421 => 'nickeled',
-    422 => 'nickeling',
-    423 => 'nickelled',
-    424 => 'nickelling',
-    425 => 'giants',
-    426 => 'caves',
-    427 => 'marble',
-    428 => 'marbled',
-    429 => 'marbling',
-    430 => 'speeding',
-    431 => 'lifting',
-    432 => 'maxwell',
-    433 => 'compass',
-    434 => 'compassed',
-    435 => 'compassing',
-    436 => 'mercury',
-    437 => 'thrust',
-    438 => 'thrusted',
-    439 => 'artery',
-    440 => 'dynamic',
-    441 => 'melted',
-    442 => 'microwave',
-    443 => 'heating',
-    444 => 'predators',
-    445 => 'pearls',
-    446 => 'predator',
-    447 => 'suspension',
-    448 => 'grams',
-    449 => 'shaken',
-    450 => 'pharmacy',
-    451 => 'dalton',
-    452 => 'grind',
-    453 => 'storms',
-    454 => 'vent',
-    455 => 'rocking',
-    456 => 'yield',
-    457 => 'masses',
-    458 => 'asteroid',
-    459 => 'mixing',
-    460 => 'temperatures',
-    461 => 'melting',
-    462 => 'lava',
-    463 => 'cosmos',
-    464 => 'streak',
-    465 => 'flooded',
-    466 => 'hydrogen',
-    467 => 'cultures',
-    468 => 'boiled',
-    469 => 'tong',
-    470 => 'gem',
-    471 => 'spitting',
-    472 => 'kidneys',
-    473 => 'plasma',
-    474 => 'conductor',
-    475 => 'capsule',
-    476 => 'capsuled',
-    477 => 'capsuling',
-    478 => 'crust',
-    479 => 'crusting',
-    480 => 'weighs',
-    481 => 'meteor',
-    482 => 'hormones',
-    483 => 'heated',
-    484 => 'reef',
-    485 => 'reefed',
-    486 => 'reefing',
-    487 => 'mathematics',
-    488 => 'atom',
-    489 => 'switching',
-    490 => 'mixture',
-    491 => 'rockets',
-    492 => 'spits',
-    493 => 'mist',
-    494 => 'galaxies',
-    495 => 'adrenaline',
-    496 => 'filter',
-    497 => 'magnet',
-    498 => 'vaccine',
-    499 => 'bases',
-    500 => 'focusing',
-    501 => 'focussing',
-    502 => 'rainy',
-    503 => 'shakes',
-    504 => 'stains',
-    505 => 'gale',
-    506 => 'flint',
-    507 => 'nova',
-    508 => 'chalk',
-    509 => 'clone',
-    510 => 'transformation',
-    511 => 'beta',
-    512 => 'gamma',
-    513 => 'matrix',
-    514 => 'antibiotics',
-    515 => 'scales',
-    516 => 'medicines',
-    517 => 'mineral',
-    518 => 'particle',
-    519 => 'electronics',
-    520 => 'sands',
-    521 => 'jets',
-    522 => 'trench',
-    523 => 'trenched',
-    524 => 'trenching',
-    525 => 'apron',
-    526 => 'vein',
-    527 => 'veined',
-    528 => 'froze',
-    529 => 'atoms',
-    530 => 'fingerprint',
-    531 => 'tornado',
-    532 => 'slate',
-    533 => 'slating',
-    534 => 'statistics',
-    535 => 'omega',
-    536 => 'stationed',
-    537 => 'crystals',
-    538 => 'kilo',
-    539 => 'expansion',
-    540 => 'stirring',
-    541 => 'communities',
-    542 => 'mechanics',
-    543 => 'anatomy',
-    544 => 'flare',
-    545 => 'sensor',
-    546 => 'fossil',
-    547 => 'fusion',
-    548 => 'fluids',
-    549 => 'sliding',
-    550 => 'eclipse',
-    551 => 'eclipsing',
-    552 => 'modeling',
-    553 => 'spacecraft',
-    554 => 'vitamins',
-    555 => 'cork',
-    556 => 'icy',
-    557 => 'wormhole',
-    558 => 'bladder',
-    559 => 'astronauts',
-    560 => 'echoes',
-    561 => 'grinding',
-    562 => 'ballistics',
-    563 => 'satellites',
-    564 => 'solutions',
-    565 => 'hybrid',
-    566 => 'weighed',
-    567 => 'cooling',
-    568 => 'sections',
-    569 => 'emerald',
-    570 => 'stokes',
-    571 => 'efficiency',
-    572 => 'crater',
-    573 => 'reactions',
-    574 => 'uranium',
-    575 => 'extinction',
-    576 => 'bonding',
-    577 => 'straining',
-    578 => 'windy',
-    579 => 'hosting',
-    580 => 'vitamin',
-    581 => 'periods',
-    582 => 'parasite',
-    583 => 'economics',
-    584 => 'moons',
-    585 => 'scalpel',
-    586 => 'wimp',
-    587 => 'momentum',
-    588 => 'weighing',
-    589 => 'circuits',
-    590 => 'cluster',
-    591 => 'faults',
-    592 => 'burner',
-    593 => 'clamp',
-    594 => 'labels',
-    595 => 'thermal',
-    596 => 'geography',
-    597 => 'agriculture',
-    598 => 'aurora',
-    599 => 'dominant',
-    600 => 'ancestor',
-    601 => 'rained',
-    602 => 'molecules',
-    603 => 'furnace',
-    604 => 'langley',
-    605 => 'lever',
-    606 => 'levered',
-    607 => 'tiles',
-    608 => 'slides',
-    609 => 'folded',
-    610 => 'calories',
-    611 => 'lengths',
-    612 => 'spectrum',
-    613 => 'drought',
-    614 => 'balanced',
-    615 => 'velocity',
-    616 => 'flooding',
-    617 => 'snowing',
-    618 => 'deposition',
-    619 => 'pitching',
-    620 => 'decay',
-    621 => 'waterfall',
-    622 => 'lifts',
-    623 => 'winding',
-    624 => 'rust',
-    625 => 'intensity',
-    626 => 'scatter',
-    627 => 'dew',
-    628 => 'currents',
-    629 => 'ultrasound',
-    630 => 'measurements',
-    631 => 'saliva',
-    632 => 'cyanide',
-    633 => 'stained',
-    634 => 'marbles',
-    635 => 'syringe',
-    636 => 'syringed',
-    637 => 'syringing',
-    638 => 'platinum',
-    639 => 'consumer',
-    640 => 'speeds',
-    641 => 'extraction',
-    642 => 'goggles',
-    643 => 'misty',
-    644 => 'trenches',
-    645 => 'habitat',
-    646 => 'earthquakes',
-    647 => 'eta',
-    648 => 'sodium',
-    649 => 'gram',
-    650 => 'forecast',
-    651 => 'organism',
-    652 => 'skins',
-    653 => 'powered',
-    654 => 'mammals',
-    655 => 'tesla',
-    656 => 'switches',
-    657 => 'fungus',
-    658 => 'microscope',
-    659 => 'hosts',
-    660 => 'aluminum',
-    661 => 'crest',
-    662 => 'halo',
-    663 => 'weights',
-    664 => 'lenses',
-    665 => 'volcanoes',
-    666 => 'watts',
-    667 => 'calmed',
-    668 => 'infrared',
-    669 => 'gases',
-    670 => 'rift',
-    671 => 'rocked',
-    672 => 'drying',
-    673 => 'nitrogen',
-    674 => 'stirred',
-    675 => 'cloudy',
-    676 => 'vector',
-    677 => 'horsepower',
-    678 => 'pascal',
-    679 => 'parasites',
-    680 => 'tile',
-    681 => 'pitched',
-    682 => 'tsunami',
-    683 => 'experimenting',
-    684 => 'simulation',
-    685 => 'lasers',
-    686 => 'basin',
-    687 => 'sprung',
-    688 => 'spleen',
-    689 => 'smear',
-    690 => 'gravel',
-    691 => 'graveled',
-    692 => 'graveling',
-    693 => 'gravelled',
-    694 => 'gravelling',
-    695 => 'frequencies',
-    696 => 'insulin',
-    697 => 'iceberg',
-    698 => 'melts',
-    699 => 'ore',
-    700 => 'boulder',
-    701 => 'gems',
-    702 => 'dissolve',
-    703 => 'continents',
-    704 => 'uterus',
-    705 => 'camouflage',
-    706 => 'colon',
-    707 => 'distances',
-    708 => 'organisms',
-    709 => 'bonded',
-    710 => 'tissues',
-    711 => 'rinse',
-    712 => 'stormy',
-    713 => 'coppers',
-    714 => 'methane',
-    715 => 'appendix',
-    716 => 'mantle',
-    717 => 'mantled',
-    718 => 'mantling',
-    719 => 'kingdoms',
-    720 => 'hologram',
-    721 => 'fielding',
-    722 => 'washes',
-    723 => 'avalanche',
-    724 => 'avalanched',
-    725 => 'avalanching',
-    726 => 'cylinder',
-    727 => 'fossils',
-    728 => 'impulses',
-    729 => 'pollen',
-    730 => 'swab',
-    731 => 'spat',
-    732 => 'spatted',
-    733 => 'spatting',
-    734 => 'petals',
-    735 => 'mutation',
-    736 => 'spun',
-    737 => 'biopsy',
-    738 => 'neon',
-    739 => 'milligrams',
-    740 => 'milligrammes',
-    741 => 'folding',
-    742 => 'reduction',
-    743 => 'boils',
-    744 => 'granite',
-    745 => 'valleys',
-    746 => 'observations',
-    747 => 'spins',
-    748 => 'glacier',
-    749 => 'floods',
-    750 => 'strained',
-    751 => 'mortar',
-    752 => 'mortaring',
-    753 => 'friction',
-    754 => 'calcium',
-    755 => 'plateau',
-    756 => 'hormone',
-    757 => 'fetus',
-    758 => 'reflex',
-    759 => 'strengths',
-    760 => 'density',
-    761 => 'eruption',
-    762 => 'waved',
-    763 => 'liters',
-    764 => 'pressures',
-    765 => 'buffer',
-    766 => 'helium',
-    767 => 'traits',
-    768 => 'potassium',
-    769 => 'rulers',
-    770 => 'intestines',
-    771 => 'envelopes',
-    772 => 'magnitude',
-    773 => 'motions',
-    774 => 'metals',
-    775 => 'accelerator',
-    776 => 'stormed',
-    777 => 'frosty',
-    778 => 'arteries',
-    779 => 'snowy',
-    780 => 'rad',
-    781 => 'silicon',
-    782 => 'succession',
-    783 => 'blizzard',
-    784 => 'fireball',
-    785 => 'flask',
-    786 => 'volatile',
-    787 => 'vents',
-    788 => 'foggy',
-    789 => 'astronomy',
-    790 => 'nebula',
-    791 => 'tailing',
-    792 => 'tides',
-    793 => 'reflexes',
-    794 => 'engineered',
-    795 => 'viruses',
-    796 => 'vial',
-    797 => 'arsenic',
-    798 => 'weber',
-    799 => 'ironing',
-    800 => 'mar',
-    801 => 'hemisphere',
-    802 => 'testosterone',
-    803 => 'lux',
-    804 => 'genetics',
-    805 => 'powering',
-    806 => 'labeled',
-    807 => 'meteorite',
-    808 => 'centimeters',
-    809 => 'centimetres',
-    810 => 'flares',
-    811 => 'icing',
-    812 => 'gorge',
-    813 => 'typhoon',
-    814 => 'turbulence',
-    815 => 'irons',
-    816 => 'imaging',
-    817 => 'voltage',
-    818 => 'dissolved',
-    819 => 'graft',
-    820 => 'minerals',
-    821 => 'barred',
-    822 => 'volts',
-    823 => 'amp',
-    824 => 'energies',
-    825 => 'cortex',
-    826 => 'ballistic',
-    827 => 'kelvin',
-    828 => 'cooled',
-    829 => 'carriers',
-    830 => 'lagoon',
-    831 => 'thermometer',
-    832 => 'haze',
-    833 => 'plutonium',
-    834 => 'monsoon',
-    835 => 'robotic',
-    836 => 'sleet',
-    837 => 'sleeted',
-    838 => 'sleeting',
-    839 => 'nucleus',
-    840 => 'nutrients',
-    841 => 'showered',
-    842 => 'titanium',
-    843 => 'humidity',
-    844 => 'electrons',
-    845 => 'constellation',
-    846 => 'strains',
-    847 => 'migration',
-    848 => 'pathology',
-    849 => 'dwarves',
-    850 => 'nutrition',
-    851 => 'visibility',
-    852 => 'twister',
-    853 => 'orbiting',
-    854 => 'salts',
-    855 => 'ether',
-    856 => 'ion',
-    857 => 'comets',
-    858 => 'funnel',
-    859 => 'tensions',
-    860 => 'electron',
-    861 => 'clones',
-    862 => 'folds',
-    863 => 'stomachs',
-    864 => 'dries',
-    865 => 'acceleration',
-    866 => 'trait',
-    867 => 'asteroids',
-    868 => 'variation',
-    869 => 'latitude',
-    870 => 'mammal',
-    871 => 'trough',
-    872 => 'slid',
-    873 => 'dialysis',
-    874 => 'quark',
-    875 => 'freezes',
-    876 => 'whirlwind',
-    877 => 'millimeter',
-    878 => 'millimetre',
-    879 => 'glands',
-    880 => 'ammonia',
-    881 => 'drags',
-    882 => 'fronts',
-    883 => 'pressured',
-    884 => 'dynamics',
-    885 => 'stoked',
-    886 => 'tonnes',
-    887 => 'calming',
-    888 => 'sulfur',
-    889 => 'sulfured',
-    890 => 'sulfuring',
-    891 => 'thaw',
-    892 => 'gauze',
-    893 => 'universes',
-    894 => 'skinned',
-    895 => 'stressing',
-    896 => 'calms',
-    897 => 'rainbows',
-    898 => 'variations',
-    899 => 'magma',
-    900 => 'reproduction',
-    901 => 'dunes',
-    902 => 'liter',
-    903 => 'emissions',
-    904 => 'metre',
-    905 => 'sapphire',
-    906 => 'psychiatry',
-    907 => 'adaptation',
-    908 => 'relativity',
-    909 => 'competitions',
-    910 => 'hydraulic',
-    911 => 'tau',
-    912 => 'filters',
-    913 => 'cultured',
-    914 => 'magnets',
-    915 => 'suns',
-    916 => 'molecule',
-    917 => 'smeared',
-    918 => 'limestone',
-    919 => 'orbits',
-    920 => 'showering',
-    921 => 'glaciers',
-    922 => 'supernova',
-    923 => 'populations',
-    924 => 'nickels',
-    925 => 'cloning',
-    926 => 'bora',
-    927 => 'proteins',
-    928 => 'neutron',
-    929 => 'compounds',
-    930 => 'cavern',
-    931 => 'caverned',
-    932 => 'caverning',
-    933 => 'dwarfs',
-    934 => 'embryo',
-    935 => 'frosting',
-    936 => 'orbital',
-    937 => 'metabolism',
-    938 => 'equator',
-    939 => 'ecosystem',
-    940 => 'dusting',
-    941 => 'fused',
-    942 => 'measurement',
-    943 => 'genome',
-    944 => 'ozone',
-    945 => 'compression',
-    946 => 'geology',
-    947 => 'dusted',
-    948 => 'flux',
-    949 => 'fluxed',
-    950 => 'fluxing',
-    951 => 'gland',
-    952 => 'scavenger',
-    953 => 'propane',
-    954 => 'fuses',
-    955 => 'cylinders',
-    956 => 'chlorine',
-    957 => 'radiology',
-    958 => 'telescopes',
-    959 => 'mesa',
-    960 => 'consumers',
-    961 => 'snowed',
-    962 => 'compute',
-    963 => 'soiled',
-    964 => 'antimatter',
-    965 => 'caved',
-    966 => 'seismic',
-    967 => 'mach',
-    968 => 'larvae',
-    969 => 'cools',
-    970 => 'hosted',
-    971 => 'cyclone',
-    972 => 'fahrenheit',
-    973 => 'poised',
-    974 => 'celsius',
-    975 => 'toxicology',
-    976 => 'opal',
-    977 => 'emeralds',
-    978 => 'plankton',
-    979 => 'balancing',
-    980 => 'binary',
-    981 => 'boulders',
-    982 => 'pressuring',
-    983 => 'intestine',
-    984 => 'indicator',
-    985 => 'salted',
-    986 => 'sequences',
-    987 => 'asbestos',
-    988 => 'thundering',
-    989 => 'combustion',
-    990 => 'tidings',
-    991 => 'moles',
-    992 => 'pitches',
-    993 => 'archaeology',
-    994 => 'storming',
-    995 => 'ironed',
-    996 => 'neurons',
-    997 => 'bedrock',
-    998 => 'clusters',
-    999 => 'abrasions',
-    1000 => 'hailing',
-    1001 => 'rubies',
-    1002 => 'plating',
-    1003 => 'coals',
-    1004 => 'hailed',
-    1005 => 'krypton',
-    1006 => 'alloy',
-    1007 => 'alloyed',
-    1008 => 'alloying',
-    1009 => 'niche',
-    1010 => 'dune',
-    1011 => 'glucose',
-    1012 => 'projectile',
-    1013 => 'humid',
-    1014 => 'probes',
-    1015 => 'wavelength',
-    1016 => 'ultraviolet',
-    1017 => 'oxide',
-    1018 => 'tailed',
-    1019 => 'compressions',
-    1020 => 'magnetism',
-    1021 => 'membrane',
-    1022 => 'hearted',
-    1023 => 'sigma',
-    1024 => 'kilograms',
-    1025 => 'kilogrammes',
-    1026 => 'nitrate',
-    1027 => 'nitrated',
-    1028 => 'nitrating',
-    1029 => 'litres',
-    1030 => 'clouded',
-    1031 => 'optic',
-    1032 => 'ridges',
-    1033 => 'bloods',
-    1034 => 'catalyst',
-    1035 => 'digestion',
-    1036 => 'watt',
-    1037 => 'workings',
-    1038 => 'thunderstorm',
-    1039 => 'spores',
-    1040 => 'snows',
-    1041 => 'vials',
-    1042 => 'reefs',
-    1043 => 'transformer',
-    1044 => 'physiology',
-    1045 => 'lithium',
-    1046 => 'experimented',
-    1047 => 'rusted',
-    1048 => 'enzyme',
-    1049 => 'hybrids',
-    1050 => 'stardust',
-    1051 => 'aerobics',
-    1052 => 'snowflake',
-    1053 => 'quartz',
-    1054 => 'rem',
-    1055 => 'hurricanes',
-    1056 => 'radicals',
-    1057 => 'kilometer',
-    1058 => 'kilometre',
-    1059 => 'modelling',
-    1060 => 'resonance',
-    1061 => 'garnet',
-    1062 => 'beryl',
-    1063 => 'acids',
-    1064 => 'microbes',
-    1065 => 'pancreas',
-    1066 => 'stirs',
-    1067 => 'gassed',
-    1068 => 'magnesium',
-    1069 => 'dehydration',
-    1070 => 'longitude',
-    1071 => 'tempest',
-    1072 => 'pores',
-    1073 => 'respiration',
-    1074 => 'capsules',
-    1075 => 'tremors',
-    1076 => 'starch',
-    1077 => 'starching',
-    1078 => 'pendulum',
-    1079 => 'uplifting',
-    1080 => 'torque',
-    1081 => 'antibodies',
-    1082 => 'embryos',
-    1083 => 'smog',
-    1084 => 'amethyst',
-    1085 => 'iodine',
-    1086 => 'tins',
-    1087 => 'anthropology',
-    1088 => 'placenta',
-    1089 => 'radioactivity',
-    1090 => 'mixes',
-    1091 => 'mutations',
-    1092 => 'blot',
-    1093 => 'clamps',
-    1094 => 'vaccines',
-    1095 => 'equilibrium',
-    1096 => 'phases',
-    1097 => 'corona',
-    1098 => 'heats',
-    1099 => 'cloned',
-    1100 => 'antibiotic',
-    1101 => 'protons',
-    1102 => 'ovaries',
-    1103 => 'eruptions',
-    1104 => 'erosion',
-    1105 => 'sprang',
-    1106 => 'stoke',
-    1107 => 'snowstorm',
-    1108 => 'litre',
-    1109 => 'sped',
-    1110 => 'induction',
-    1111 => 'liquids',
-    1112 => 'decaying',
-    1113 => 'proton',
-    1114 => 'prism',
-    1115 => 'reflections',
-    1116 => 'sampling',
-    1117 => 'rainfall',
-    1118 => 'attractions',
-    1119 => 'photon',
-    1120 => 'probing',
-    1121 => 'sulphur',
-    1122 => 'sulphured',
-    1123 => 'sulphuring',
-    1124 => 'chloride',
-    1125 => 'fixation',
-    1126 => 'meteors',
-    1127 => 'formulas',
-    1128 => 'formulae',
-    1129 => 'craters',
-    1130 => 'yielded',
-    1131 => 'metamorphosis',
-    1132 => 'highs',
-    1133 => 'wimps',
-    1134 => 'decomposition',
-    1135 => 'optics',
-    1136 => 'waterfalls',
-    1137 => 'nodes',
-    1138 => 'tremor',
-    1139 => 'thyroid',
-    1140 => 'lode',
-    1141 => 'tripod',
-    1142 => 'saturated',
-    1143 => 'robotics',
-    1144 => 'computing',
-    1145 => 'sociology',
-    1146 => 'timers',
-    1147 => 'petal',
-    1148 => 'ovens',
-    1149 => 'spaceships',
-    1150 => 'forceps',
-    1151 => 'zinc',
-    1152 => 'zinced',
-    1153 => 'zincing',
-    1154 => 'singularity',
-    1155 => 'venting',
-    1156 => 'barring',
-    1157 => 'enzymes',
-    1158 => 'electrodes',
-    1159 => 'meteorites',
-    1160 => 'bung',
-    1161 => 'sediment',
-    1162 => 'sedimented',
-    1163 => 'sedimenting',
-    1164 => 'sandstorm',
-    1165 => 'stigma',
-    1166 => 'purification',
-    1167 => 'lows',
-    1168 => 'scavengers',
-    1169 => 'tongs',
-    1170 => 'mortars',
-    1171 => 'yields',
-    1172 => 'hibernation',
-    1173 => 'swabs',
-    1174 => 'brimstone',
-    1175 => 'scissor',
-    1176 => 'scissored',
-    1177 => 'lighted',
-    1178 => 'cobalt',
-    1179 => 'infiltration',
-    1180 => 'dissection',
-    1181 => 'turquoise',
-    1182 => 'hazing',
-    1183 => 'thermostat',
-    1184 => 'thermostated',
-    1185 => 'thermostating',
-    1186 => 'incubator',
-    1187 => 'tundra',
-    1188 => 'balances',
-    1189 => 'transformers',
-    1190 => 'kinetic',
-    1191 => 'displacement',
-    1192 => 'classification',
-    1193 => 'walled',
-    1194 => 'trachea',
-    1195 => 'ester',
-    1196 => 'tweezers',
-    1197 => 'gust',
-    1198 => 'simulations',
-    1199 => 'drizzle',
-    1200 => 'drizzled',
-    1201 => 'millimeters',
-    1202 => 'millimetres',
-    1203 => 'basing',
-    1204 => 'estrogen',
-    1205 => 'oestrogen',
-    1206 => 'dissolving',
-    1207 => 'ohm',
-    1208 => 'starred',
-    1209 => 'botany',
-    1210 => 'node',
-    1211 => 'solvent',
-    1212 => 'chromosome',
-    1213 => 'sieve',
-    1214 => 'springing',
-    1215 => 'constellations',
-    1216 => 'filtered',
-    1217 => 'eons',
-    1218 => 'spatula',
-    1219 => 'poise',
-    1220 => 'poising',
-    1221 => 'leach',
-    1222 => 'translations',
-    1223 => 'snowflakes',
-    1224 => 'hydraulics',
-    1225 => 'aluminium',
-    1226 => 'focuses',
-    1227 => 'chromosomes',
-    1228 => 'caverns',
-    1229 => 'indicators',
-    1230 => 'cirque',
-    1231 => 'burners',
-    1232 => 'stopwatch',
-    1233 => 'grinds',
-    1234 => 'conglomerate',
-    1235 => 'conglomerating',
-    1236 => 'zephyr',
-    1237 => 'actin',
-    1238 => 'lambda',
-    1239 => 'modeled',
-    1240 => 'blooded',
-    1241 => 'peat',
-    1242 => 'pathogen',
-    1243 => 'cores',
-    1244 => 'stresses',
-    1245 => 'shale',
-    1246 => 'larynx',
-    1247 => 'canyons',
-    1248 => 'livers',
-    1249 => 'ecology',
-    1250 => 'receptors',
-    1251 => 'streaks',
-    1252 => 'weathers',
-    1253 => 'jaded',
-    1254 => 'peroxide',
-    1255 => 'peroxided',
-    1256 => 'peroxiding',
-    1257 => 'beaker',
-    1258 => 'statistic',
-    1259 => 'phosphorus',
-    1260 => 'depositions',
-    1261 => 'radium',
-    1262 => 'vectors',
-    1263 => 'hydrated',
-    1264 => 'triton',
-    1265 => 'echoed',
-    1266 => 'syringes',
-    1267 => 'centigrade',
-    1268 => 'autopsies',
-    1269 => 'esophagus',
-    1270 => 'oesophagus',
-    1271 => 'preying',
-    1272 => 'camouflaged',
-    1273 => 'fulcrum',
-    1274 => 'oncology',
-    1275 => 'frosted',
-    1276 => 'wormholes',
-    1277 => 'tubing',
-    1278 => 'deluge',
-    1279 => 'deluging',
-    1280 => 'breezes',
-    1281 => 'larva',
-    1282 => 'lymph',
-    1283 => 'dissolves',
-    1284 => 'condensed',
-    1285 => 'centimeter',
-    1286 => 'centimetre',
-    1287 => 'polymer',
-    1288 => 'shuttles',
-    1289 => 'levers',
-    1290 => 'neutrons',
-    1291 => 'parton',
-    1292 => 'ethanol',
-    1293 => 'curie',
-    1294 => 'hectares',
-    1295 => 'barometer',
-    1296 => 'sandstone',
-    1297 => 'labelled',
-    1298 => 'barns',
-    1299 => 'fungi',
-    1300 => 'tectonic',
-    1301 => 'acoustics',
-    1302 => 'aprons',
-    1303 => 'emission',
-    1304 => 'epicenter',
-    1305 => 'epicentre',
-    1306 => 'mirrored',
-    1307 => 'hertz',
-    1308 => 'weighted',
-    1309 => 'pulley',
-    1310 => 'clamped',
-    1311 => 'scaled',
-    1312 => 'gallbladder',
-    1313 => 'diluted',
-    1314 => 'refrigeration',
-    1315 => 'inert',
-    1316 => 'scattering',
-    1317 => 'soma',
-    1318 => 'sinkhole',
-    1319 => 'inertia',
-    1320 => 'entropy',
-    1321 => 'amps',
-    1322 => 'transistor',
-    1323 => 'concentrations',
-    1324 => 'tornadoes',
-    1325 => 'photons',
-    1326 => 'vacuuming',
-    1327 => 'topaz',
-    1328 => 'weathered',
-    1329 => 'hydrate',
-    1330 => 'ceres',
-    1331 => 'crees',
-    1332 => 'crucible',
-    1333 => 'yielding',
-    1334 => 'brine',
-    1335 => 'brined',
-    1336 => 'mica',
-    1337 => 'microwaves',
-    1338 => 'archeology',
-    1339 => 'calorie',
-    1340 => 'thunders',
-    1341 => 'thawed',
-    1342 => 'caving',
-    1343 => 'stratosphere',
-    1344 => 'thunderstorms',
-    1345 => 'cultivation',
-    1346 => 'rainstorm',
-    1347 => 'fjord',
-    1348 => 'solids',
-    1349 => 'filtering',
-    1350 => 'habitats',
-    1351 => 'soils',
-    1352 => 'downpour',
-    1353 => 'acidity',
-    1354 => 'winded',
-    1355 => 'snowfall',
-    1356 => 'mists',
-    1357 => 'harmonic',
-    1358 => 'alphas',
-    1359 => 'neurology',
-    1360 => 'membranes',
-    1361 => 'centaur',
-    1362 => 'isotope',
-    1363 => 'cardiology',
-    1364 => 'neutrinos',
-    1365 => 'wavelengths',
-    1366 => 'ammonium',
-    1367 => 'platelets',
-    1368 => 'thrusting',
-    1369 => 'holograms',
-    1370 => 'tonne',
-    1371 => 'spats',
-    1372 => 'mooning',
-    1373 => 'geyser',
-    1374 => 'cosmology',
-    1375 => 'scaling',
-    1376 => 'carnivore',
-    1377 => 'decayed',
-    1378 => 'furnaces',
-    1379 => 'pore',
-    1380 => 'tuff',
-    1381 => 'wolfram',
-    1382 => 'milligram',
-    1383 => 'milligramme',
-    1384 => 'fission',
-    1385 => 'biochemistry',
-    1386 => 'criminology',
-    1387 => 'palladium',
-    1388 => 'preyed',
-    1389 => 'absorption',
-    1390 => 'isotopes',
-    1391 => 'synthesis',
-    1392 => 'pulsar',
-    1393 => 'corrie',
-    1394 => 'molar',
-    1395 => 'fireballs',
-    1396 => 'bicarbonate',
-    1397 => 'moonstone',
-    1398 => 'hails',
-    1399 => 'flurry',
-    1400 => 'flurried',
-    1401 => 'flurrying',
-    1402 => 'stopper',
-    1403 => 'stoppered',
-    1404 => 'stoppering',
-    1405 => 'foetus',
-    1406 => 'comas',
-    1407 => 'ecosystems',
-    1408 => 'preys',
-    1409 => 'incubation',
-    1410 => 'clouding',
-    1411 => 'flared',
-    1412 => 'aerodynamic',
-    1413 => 'iridium',
-    1414 => 'photosynthesis',
-    1415 => 'ions',
-    1416 => 'alabaster',
-    1417 => 'crusts',
-    1418 => 'lumen',
-    1419 => 'obsidian',
-    1420 => 'cybernetic',
-    1421 => 'electrolytes',
-    1422 => 'carnivores',
-    1423 => 'reflux',
-    1424 => 'icicle',
-    1425 => 'astrophysics',
-    1426 => 'plated',
-    1427 => 'earths',
-    1428 => 'gusts',
-    1429 => 'kilogram',
-    1430 => 'kilogramme',
-    1431 => 'forestry',
-    1432 => 'walling',
-    1433 => 'icebergs',
-    1434 => 'probed',
-    1435 => 'chinook',
-    1436 => 'sampled',
-    1437 => 'rho',
-    1438 => 'linguistic',
-    1439 => 'silt',
-    1440 => 'silting',
-    1441 => 'magnification',
-    1442 => 'seconded',
-    1443 => 'quarks',
-    1444 => 'grafts',
-    1445 => 'selections',
-    1446 => 'lowing',
-    1447 => 'microbe',
-    1448 => 'carbide',
-    1449 => 'bacterium',
-    1450 => 'estuary',
-    1451 => 'smearing',
-    1452 => 'dilute',
-    1453 => 'sequencing',
-    1454 => 'aromatic',
-    1455 => 'staining',
-    1456 => 'nanotechnology',
-    1457 => 'conductors',
-    1458 => 'swabbed',
-    1459 => 'transformations',
-    1460 => 'overcast',
-    1461 => 'overcasted',
-    1462 => 'overcasting',
-    1463 => 'fronting',
-    1464 => 'dewar',
-    1465 => 'prominence',
-    1466 => 'masse',
-    1467 => 'cryogenic',
-    1468 => 'serpentine',
-    1469 => 'collider',
-    1470 => 'tachyon',
-    1471 => 'condensation',
-    1472 => 'synapses',
-    1473 => 'capacitor',
-    1474 => 'centrifuge',
-    1475 => 'centrifuged',
-    1476 => 'centrifuging',
-    1477 => 'skinning',
-    1478 => 'tsunamis',
-    1479 => 'abrasion',
-    1480 => 'aerodynamics',
-    1481 => 'sapphires',
-    1482 => 'epoch',
-    1483 => 'tinned',
-    1484 => 'graphite',
-    1485 => 'carbonate',
-    1486 => 'carbonating',
-    1487 => 'transcription',
-    1488 => 'nuclei',
-    1489 => 'acetone',
-    1490 => 'tungsten',
-    1491 => 'corks',
-    1492 => 'ovary',
-    1493 => 'neutrino',
-    1494 => 'modelled',
-    1495 => 'meteorologist',
-    1496 => 'gauss',
-    1497 => 'hydroxide',
-    1498 => 'hemoglobin',
-    1499 => 'haemoglobin',
-    1500 => 'pharmacies',
-    1501 => 'thrusts',
-    1502 => 'joules',
-    1503 => 'replication',
-    1504 => 'levee',
-    1505 => 'filtration',
-    1506 => 'sulfate',
-    1507 => 'sulfated',
-    1508 => 'sulfating',
-    1509 => 'sulphate',
-    1510 => 'gemstone',
-    1511 => 'volt',
-    1512 => 'streaking',
-    1513 => 'radon',
-    1514 => 'receptor',
-    1515 => 'cosmonaut',
-    1516 => 'argon',
-    1517 => 'nutrient',
-    1518 => 'milliseconds',
-    1519 => 'boson',
-    1520 => 'molars',
-    1521 => 'xenon',
-    1522 => 'climates',
-    1523 => 'compounded',
-    1524 => 'icicles',
-    1525 => 'eras',
-    1526 => 'carbohydrates',
-    1527 => 'malleable',
-    1528 => 'projectiles',
-    1529 => 'corrosion',
-    1530 => 'genus',
-    1531 => 'lightyear',
-    1532 => 'barium',
-    1533 => 'atmospheres',
-    1534 => 'pathogens',
-    1535 => 'eclipses',
-    1536 => 'linguistics',
-    1537 => 'spectrometer',
-    1538 => 'neuroscience',
-    1539 => 'marred',
-    1540 => 'watershed',
-    1541 => 'electrode',
-    1542 => 'smears',
-    1543 => 'antibody',
-    1544 => 'spindle',
-    1545 => 'sterilization',
-    1546 => 'sterilisation',
-    1547 => 'centaurs',
-    1548 => 'fertilization',
-    1549 => 'fertilisation',
-    1550 => 'aeronautics',
-    1551 => 'zoology',
-    1552 => 'buoyancy',
-    1553 => 'sunspots',
-    1554 => 'computed',
-    1555 => 'flaring',
-    1556 => 'uplift',
-    1557 => 'inversion',
-    1558 => 'labeling',
-    1559 => 'labelling',
-    1560 => 'decibels',
-    1561 => 'vacuumed',
-    1562 => 'slated',
-    1563 => 'groundwater',
-    1564 => 'fingerprinted',
-    1565 => 'ionic',
-    1566 => 'droughts',
-    1567 => 'strata',
-    1568 => 'eclipsed',
-    1569 => 'geysers',
-    1570 => 'phased',
-    1571 => 'elasticity',
-    1572 => 'amoeba',
-    1573 => 'ameba',
-    1574 => 'inoculation',
-    1575 => 'runoff',
-    1576 => 'fluoride',
-    1577 => 'geothermal',
-    1578 => 'precipitation',
-    1579 => 'grafted',
-    1580 => 'squall',
-    1581 => 'squalled',
-    1582 => 'symbiosis',
-    1583 => 'adaptations',
-    1584 => 'heredity',
-    1585 => 'pumice',
-    1586 => 'pumiced',
-    1587 => 'pumicing',
-    1588 => 'butte',
-    1589 => 'permafrost',
-    1590 => 'forecasts',
-    1591 => 'clays',
-    1592 => 'spectra',
-    1593 => 'evaporation',
-    1594 => 'thermals',
-    1595 => 'distanced',
-    1596 => 'biodiversity',
-    1597 => 'avalanches',
-    1598 => 'polonium',
-    1599 => 'ringed',
-    1600 => 'rusting',
-    1601 => 'gravitation',
-    1602 => 'egged',
-    1603 => 'calibration',
-    1604 => 'westerly',
-    1605 => 'ices',
-    1606 => 'typhoons',
-    1607 => 'thermodynamics',
-    1608 => 'benzene',
-    1609 => 'compasses',
-    1610 => 'atoll',
-    1611 => 'basins',
-    1612 => 'neuron',
-    1613 => 'attrition',
-    1614 => 'millisecond',
-    1615 => 'massing',
-    1616 => 'greys',
-    1617 => 'transverse',
-    1618 => 'graviton',
-    1619 => 'blizzards',
-    1620 => 'fjords',
-    1621 => 'retort',
-    1622 => 'retorting',
-    1623 => 'fetuses',
-    1624 => 'foetuses',
-    1625 => 'repulsion',
-    1626 => 'thallium',
-    1627 => 'hydrocarbons',
-    1628 => 'deuterium',
-    1629 => 'inorganic',
-    1630 => 'migrations',
-    1631 => 'bromide',
-    1632 => 'fusing',
-    1633 => 'chlorophyll',
-    1634 => 'microns',
-    1635 => 'fronted',
-    1636 => 'onyx',
-    1637 => 'cesium',
-    1638 => 'caesium',
-    1639 => 'tailings',
-    1640 => 'gorges',
-    1641 => 'nimbus',
-    1642 => 'gestation',
-    1643 => 'starched',
-    1644 => 'alloys',
-    1645 => 'rinsed',
-    1646 => 'herbivores',
-    1647 => 'capillaries',
-    1648 => 'condense',
-    1649 => 'condensing',
-    1650 => 'chromium',
-    1651 => 'transistors',
-    1652 => 'butane',
-    1653 => 'centrifugal',
-    1654 => 'sectioned',
-    1655 => 'bladders',
-    1656 => 'spore',
-    1657 => 'thermometers',
-    1658 => 'microorganisms',
-    1659 => 'alkaline',
-    1660 => 'scalpels',
-    1661 => 'thawing',
-    1662 => 'condenser',
-    1663 => 'fermentation',
-    1664 => 'egging',
-    1665 => 'sediments',
-    1666 => 'glassware',
-    1667 => 'buffers',
-    1668 => 'depressions',
-    1669 => 'electromagnetism',
-    1670 => 'lattice',
-    1671 => 'speeded',
-    1672 => 'phosphate',
-    1673 => 'manganese',
-    1674 => 'heatwave',
-    1675 => 'potentials',
-    1676 => 'flasks',
-    1677 => 'precipitate',
-    1678 => 'distancing',
-    1679 => 'grafting',
-    1680 => 'nitrates',
-    1681 => 'pulleys',
-    1682 => 'basalt',
-    1683 => 'matrices',
-    1684 => 'sanding',
-    1685 => 'supernovas',
-    1686 => 'aftershock',
-    1687 => 'hadron',
-    1688 => 'topsoil',
-    1689 => 'nanosecond',
-    1690 => 'quicksilver',
-    1691 => 'biosphere',
-    1692 => 'photonic',
-    1693 => 'scatters',
-    1694 => 'gales',
-    1695 => 'quasar',
-    1696 => 'grays',
-    1697 => 'gypsum',
-    1698 => 'clamping',
-    1699 => 'vented',
-    1700 => 'organics',
-    1701 => 'stigmata',
-    1702 => 'autotrophs',
-    1703 => 'voids',
-    1704 => 'eon',
-    1705 => 'diffusion',
-    1706 => 'phasing',
-    1707 => 'silvers',
-    1708 => 'precipitated',
-    1709 => 'caldera',
-    1710 => 'biotechnology',
-    1711 => 'viscosity',
-    1712 => 'golds',
-    1713 => 'tectonics',
-    1714 => 'chalked',
-    1715 => 'clustered',
-    1716 => 'sperms',
-    1717 => 'hemispheres',
-    1718 => 'strontium',
-    1719 => 'muggy',
-    1720 => 'acetate',
-    1721 => 'sulfide',
-    1722 => 'fogged',
-    1723 => 'assay',
-    1724 => 'assayed',
-    1725 => 'assaying',
-    1726 => 'soiling',
-    1727 => 'stoking',
-    1728 => 'beryllium',
-    1729 => 'neurotransmitters',
-    1730 => 'emulsion',
-    1731 => 'massed',
-    1732 => 'slates',
-    1733 => 'cellulose',
-    1734 => 'voided',
-    1735 => 'pestle',
-    1736 => 'pestled',
-    1737 => 'pestling',
-    1738 => 'mimicry',
-    1739 => 'microscopes',
-    1740 => 'tributary',
-    1741 => 'cosmonauts',
-    1742 => 'sedimentary',
-    1743 => 'rocketed',
-    1744 => 'carbonated',
-    1745 => 'electrolyte',
-    1746 => 'corked',
-    1747 => 'fingerprinting',
-    1748 => 'megahertz',
-    1749 => 'beakers',
-    1750 => 'synapse',
-    1751 => 'amplitude',
-    1752 => 'reproductions',
-    1753 => 'mirroring',
-    1754 => 'horticulture',
-    1755 => 'dispersion',
-    1756 => 'methyl',
-    1757 => 'refraction',
-    1758 => 'osmosis',
-    1759 => 'blotted',
-    1760 => 'mitochondria',
-    1761 => 'halos',
-    1762 => 'poring',
-    1763 => 'cyclones',
-    1764 => 'gemstones',
-    1765 => 'cryogenics',
-    1766 => 'meandering',
-    1767 => 'platelet',
-    1768 => 'fermi',
-    1769 => 'paleontology',
-    1770 => 'aerobic',
-    1771 => 'monsoons',
-    1772 => 'leaded',
-    1773 => 'talc',
-    1774 => 'talced',
-    1775 => 'talcing',
-    1776 => 'talcked',
-    1777 => 'talcking',
-    1778 => 'meteorology',
-    1779 => 'rinsing',
-    1780 => 'alkali',
-    1781 => 'funneled',
-    1782 => 'invertebrates',
-    1783 => 'hailstorm',
-    1784 => 'pharmacology',
-    1785 => 'metallurgy',
-    1786 => 'megatons',
-    1787 => 'ovum',
-    1788 => 'sequencer',
-    1789 => 'muscled',
-    1790 => 'octane',
-    1791 => 'harmonics',
-    1792 => 'oscillation',
-    1793 => 'streaked',
-    1794 => 'needling',
-    1795 => 'subduction',
-    1796 => 'thunderhead',
-    1797 => 'uplifted',
-    1798 => 'farad',
-    1799 => 'goggle',
-    1800 => 'goggled',
-    1801 => 'goggling',
-    1802 => 'decays',
-    1803 => 'extinctions',
-    1804 => 'cadmium',
-    1805 => 'drizzling',
-    1806 => 'gorging',
-    1807 => 'inoculations',
-    1808 => 'lagoons',
-    1809 => 'amplification',
-    1810 => 'boron',
-    1811 => 'forecasting',
-    1812 => 'sanded',
-    1813 => 'tornados',
-    1814 => 'rifts',
-    1815 => 'suspensions',
-    1816 => 'whiteout',
-    1817 => 'kilowatt',
-    1818 => 'funnels',
-    1819 => 'ionosphere',
-    1820 => 'reductions',
-    1821 => 'swabbing',
-    1822 => 'vertebrates',
-    1823 => 'crests',
-    1824 => 'coherence',
-    1825 => 'shales',
-    1826 => 'newtons',
-    1827 => 'tiled',
-    1828 => 'planetoid',
-    1829 => 'selenium',
-    1830 => 'glycol',
-    1831 => 'hydrothermal',
-    1832 => 'auroras',
-    1833 => 'outcrop',
-    1834 => 'outcropped',
-    1835 => 'electromagnet',
-    1836 => 'oxidation',
-    1837 => 'vacuums',
-    1838 => 'doldrums',
-    1839 => 'dropper',
-    1840 => 'nebulae',
-    1841 => 'germinate',
-    1842 => 'germinated',
-    1843 => 'germinating',
-    1844 => 'solvents',
-    1845 => 'niches',
-    1846 => 'crested',
-    1847 => 'duodenum',
-    1848 => 'aeon',
-    1849 => 'troughs',
-    1850 => 'microbiology',
-    1851 => 'antigen',
-    1852 => 'pulsars',
-    1853 => 'magnetosphere',
-    1854 => 'autopsied',
-    1855 => 'thaws',
-    1856 => 'gorged',
-    1857 => 'fogs',
-    1858 => 'immunities',
-    1859 => 'daltons',
-    1860 => 'thorium',
-    1861 => 'aquifer',
-    1862 => 'convection',
-    1863 => 'milliliters',
-    1864 => 'fluorine',
-    1865 => 'brained',
-    1866 => 'latitudes',
-    1867 => 'peridot',
-    1868 => 'pollination',
-    1869 => 'recessive',
-    1870 => 'betas',
-    1871 => 'capillary',
-    1872 => 'cathode',
-    1873 => 'sunning',
-    1874 => 'funneling',
-    1875 => 'distillation',
-    1876 => 'mixtures',
-    1877 => 'levees',
-    1878 => 'hazed',
-    1879 => 'aquamarine',
-    1880 => 'loam',
-    1881 => 'accelerators',
-    1882 => 'crusted',
-    1883 => 'vertebrate',
-    1884 => 'entomology',
-    1885 => 'ethylene',
-    1886 => 'litmus',
-    1887 => 'alleles',
-    1888 => 'quasars',
-    1889 => 'weathering',
-    1890 => 'pili',
-    1891 => 'soluble',
-    1892 => 'velocities',
-    1893 => 'jetting',
-    1894 => 'microwaved',
-    1895 => 'micrograms',
-    1896 => 'compounding',
-    1897 => 'blotting',
-    1898 => 'cybernetics',
-    1899 => 'carbohydrate',
-    1900 => 'reagent',
-    1901 => 'saturate',
-    1902 => 'saturating',
-    1903 => 'humus',
-    1904 => 'gammas',
-    1905 => 'rads',
-    1906 => 'tributaries',
-    1907 => 'birthstone',
-    1908 => 'supernovae',
-    1909 => 'muscling',
-    1910 => 'dwarfed',
-    1911 => 'herbivore',
-    1912 => 'vestigial',
-    1913 => 'longitudinal',
-    1914 => 'aftershocks',
-    1915 => 'sinkholes',
-    1916 => 'disinfection',
-    1917 => 'blots',
-    1918 => 'capacitors',
-    1919 => 'rocketing',
-    1920 => 'stoppers',
-    1921 => 'easterly',
-    1922 => 'hectare',
-    1923 => 'nebulas',
-    1924 => 'borax',
-    1925 => 'dermatology',
-    1926 => 'flints',
-    1927 => 'mistral',
-    1928 => 'agate',
-    1929 => 'megaton',
-    1930 => 'thundered',
-    1931 => 'conglomerates',
-    1932 => 'orbited',
-    1933 => 'twisters',
-    1934 => 'candela',
-    1935 => 'polymers',
-    1936 => 'tantalum',
-    1937 => 'breezed',
-    1938 => 'fogging',
-    1939 => 'meander',
-    1940 => 'meandered',
-    1941 => 'micron',
-    1942 => 'decibel',
-    1943 => 'tiling',
-    1944 => 'separations',
-    1945 => 'trilobites',
-    1946 => 'condenses',
-    1947 => 'oceanography',
-    1948 => 'jaspers',
-    1949 => 'gloved',
-    1950 => 'hydrating',
-    1951 => 'tripods',
-    1952 => 'diluting',
-    1953 => 'cartography',
-    1954 => 'ornithology',
-    1955 => 'kilowatts',
-    1956 => 'megawatts',
-    1957 => 'incubators',
-    1958 => 'bismuth',
-    1959 => 'bloodstone',
-    1960 => 'deltas',
-    1961 => 'sunstone',
-    1962 => 'omegas',
-    1963 => 'respirations',
-    1964 => 'buffering',
-    1965 => 'meteorologists',
-    1966 => 'kilotons',
-    1967 => 'frosts',
-    1968 => 'ampoules',
-    1969 => 'zirconium',
-    1970 => 'parsecs',
-    1971 => 'tubed',
-    1972 => 'genomes',
-    1973 => 'salting',
-    1974 => 'feldspar',
-    1975 => 'stalactites',
-    1976 => 'densities',
-    1977 => 'phosphates',
-    1978 => 'computes',
-    1979 => 'faulted',
-    1980 => 'clustering',
-    1981 => 'thymus',
-    1982 => 'ultrasounds',
-    1983 => 'flurries',
-    1984 => 'sandstorms',
-    1985 => 'cloudburst',
-    1986 => 'schist',
-    1987 => 'volcanos',
-    1988 => 'bunged',
-    1989 => 'breezing',
-    1990 => 'squalls',
-    1991 => 'henrys',
-    1992 => 'snowdrift',
-    1993 => 'chalking',
-    1994 => 'fielded',
-    1995 => 'mooned',
-    1996 => 'lensing',
-    1997 => 'trilobite',
-    1998 => 'rime',
-    1999 => 'rimed',
-    2000 => 'riming',
-    2001 => 'malachite',
-    2002 => 'antimony',
-    2003 => 'precipitating',
-    2004 => 'genera',
-    2005 => 'blustery',
-    2006 => 'ophthalmology',
-    2007 => 'rusts',
-    2008 => 'tempests',
-    2009 => 'tachyons',
-    2010 => 'amoebas',
-    2011 => 'protractor',
-    2012 => 'reverberations',
-    2013 => 'kilohertz',
-    2014 => 'hailstones',
-    2015 => 'meanders',
-    2016 => 'rubidium',
-    2017 => 'ampere',
-    2018 => 'extractions',
-    2019 => 'graying',
-    2020 => 'ammonites',
-    2021 => 'sirocco',
-    2022 => 'centrifuges',
-    2023 => 'estuaries',
-    2024 => 'pored',
-    2025 => 'oxides',
-    2026 => 'prisms',
-    2027 => 'gallium',
-    2028 => 'plateaus',
-    2029 => 'coring',
-    2030 => 'fixations',
-    2031 => 'carbons',
-    2032 => 'biopsies',
-    2033 => 'dusts',
-    2034 => 'classifications',
-    2035 => 'waterspout',
-    2036 => 'bauxite',
-    2037 => 'gigawatts',
-    2038 => 'lightnings',
-    2039 => 'hotplate',
-    2040 => 'taus',
-    2041 => 'endocrinology',
-    2042 => 'nanoseconds',
-    2043 => 'dissections',
-    2044 => 'singularities',
-    2045 => 'neutrals',
-    2046 => 'grinded',
-    2047 => 'vectoring',
-    2048 => 'radiations',
-    2049 => 'cinnabar',
-    2050 => 'joule',
-    2051 => 'whirlwinds',
-    2052 => 'gilberts',
-    2053 => 'downpours',
-    2054 => 'drizzles',
-    2055 => 'leaching',
-    2056 => 'snowdrifts',
-    2057 => 'pitchblende',
-    2058 => 'microsecond',
-    2059 => 'coronas',
-    2060 => 'amethysts',
-    2061 => 'ores',
-    2062 => 'chalks',
-    2063 => 'ampoule',
-    2064 => 'olivine',
-    2065 => 'erg',
-    2066 => 'squalling',
-    2067 => 'snowstorms',
-    2068 => 'invertebrate',
-    2069 => 'imaged',
-    2070 => 'opals',
-    2071 => 'outcrops',
-    2072 => 'stalagmites',
-    2073 => 'heliotrope',
-    2074 => 'motioned',
-    2075 => 'stratum',
-    2076 => 'oxbow',
-    2077 => 'germanium',
-    2078 => 'jetstream',
-    2079 => 'garnets',
-    2080 => 'calibrations',
-    2081 => 'alveoli',
-    2082 => 'travertine',
-    2083 => 'virology',
-    2084 => 'echos',
-    2085 => 'retorts',
-    2086 => 'catalysts',
-    2087 => 'drizzly',
-    2088 => 'moraine',
-    2089 => 'anthracite',
-    2090 => 'dolomites',
-    2091 => 'lodestone',
-    2092 => 'magnetite',
-    2093 => 'dyne',
-    2094 => 'spatulas',
-    2095 => 'starches',
-    2096 => 'cratered',
-    2097 => 'dilutes',
-    2098 => 'camouflaging',
-    2099 => 'rainstorms',
-    2100 => 'epidemiology',
-    2101 => 'gigahertz',
-    2102 => 'buttes',
-    2103 => 'spleens',
-    2104 => 'condensers',
-    2105 => 'galena',
-    2106 => 'microseconds',
-    2107 => 'pathologies',
-    2108 => 'soundings',
-    2109 => 'ammonite',
-    2110 => 'vanadium',
-    2111 => 'seismology',
-    2112 => 'funnelled',
-    2113 => 'rinses',
-    2114 => 'spitted',
-    2115 => 'plateaued',
-    2116 => 'icecaps',
-    2117 => 'reverberation',
-    2118 => 'molybdenum',
-    2119 => 'osmium',
-    2120 => 'immunology',
-    2121 => 'leached',
-    2122 => 'omnivores',
-    2123 => 'mesas',
-    2124 => 'spacecrafts',
-    2125 => 'marring',
-    2126 => 'ambers',
-    2127 => 'retorted',
-    2128 => 'jetted',
-    2129 => 'palaeontology',
-    2130 => 'millilitres',
-    2131 => 'angstrom',
-    2132 => 'epochs',
-    2133 => 'microwaving',
-    2134 => 'brining',
-    2135 => 'interferences',
-    2136 => 'uteruses',
-    2137 => 'icecap',
-    2138 => 'placentas',
-    2139 => 'biopsied',
-    2140 => 'forecasted',
-    2141 => 'scree',
-    2142 => 'neodymium',
-    2143 => 'calcite',
-    2144 => 'carnelian',
-    2145 => 'scissoring',
-    2146 => 'outcropping',
-    2147 => 'misting',
-    2148 => 'pharynx',
-    2149 => 'stalactite',
-    2150 => 'atolls',
-    2151 => 'spindles',
-    2152 => 'greying',
-    2153 => 'precipitates',
-    2154 => 'pyrite',
-    2155 => 'zircon',
-    2156 => 'neurones',
-    2157 => 'torqued',
-    2158 => 'floodplain',
-    2159 => 'dolomite',
-    2160 => 'transcriptions',
-    2161 => 'weighting',
-    2162 => 'pendulums',
-    2163 => 'leaches',
-    2164 => 'gravitons',
-    2165 => 'cresting',
-    2166 => 'metabolisms',
-    2167 => 'hydrates',
-    2168 => 'voiding',
-    2169 => 'parsec',
-    2170 => 'jades',
-    2171 => 'veining',
-    2172 => 'omnivore',
-    2173 => 'stalagmite',
-    2174 => 'dewars',
-    2175 => 'faulting',
-    2176 => 'torques',
-    2177 => 'therm',
-    2178 => 'blooding',
-    2179 => 'andesite',
-    2180 => 'bacteriology',
-    2181 => 'alcohols',
-    2182 => 'dews',
-    2183 => 'breccia',
-    2184 => 'megawatt',
-    2185 => 'millibars',
-    2186 => 'candelas',
-    2187 => 'kelvins',
-    2188 => 'snowfalls',
-    2189 => 'inheritances',
-    2190 => 'neons',
-    2191 => 'webers',
-    2192 => 'voltages',
-    2193 => 'bosons',
-    2194 => 'gravels',
-    2195 => 'tritons',
-    2196 => 'drys',
-    2197 => 'soapstone',
-    2198 => 'sunstones',
-    2199 => 'tourmaline',
-    2200 => 'gerontology',
-    2201 => 'kiloton',
-    2202 => 'sieves',
-    2203 => 'aromatics',
-    2204 => 'thermostats',
-    2205 => 'barometers',
-    2206 => 'rimes',
-    2207 => 'efficiencies',
-    2208 => 'mantles',
-    2209 => 'grayed',
-    2210 => 'camouflages',
-    2211 => 'rems',
-    2212 => 'motioning',
-    2213 => 'lavas',
-    2214 => 'volatiles',
-    2215 => 'celled',
-    2216 => 'corking',
-    2217 => 'plasmas',
-    2218 => 'gadolinium',
-    2219 => 'rhodium',
-    2220 => 'radiography',
-    2221 => 'haematology',
-    2222 => 'gallbladders',
-    2223 => 'silted',
-    2224 => 'zephyrs',
-    2225 => 'vectored',
-    2226 => 'deluged',
-    2227 => 'hazes',
-    2228 => 'bromides',
-    2229 => 'geophysics',
-    2230 => 'ohms',
-    2231 => 'stigmas',
-    2232 => 'sectioning',
-    2233 => 'circuited',
-    2234 => 'hailstone',
-    2235 => 'citrine',
-    2236 => 'kaolin',
-    2237 => 'quartzite',
-    2238 => 'angstroms',
-    2239 => 'chinooks',
-    2240 => 'colons',
-    2241 => 'dwarfing',
-    2242 => 'buffered',
-    2243 => 'resonances',
-    2244 => 'kinetics',
-    2245 => 'photonics',
-    2246 => 'mortared',
-    2247 => 'callipers',
-    2248 => 'micrometer',
-    2249 => 'biophysics',
-    2250 => 'resistances',
-    2251 => 'telescoping',
-    2252 => 'inversions',
-    2253 => 'intensities',
-    2254 => 'conglomerated',
-    2255 => 'westerlies',
-    2256 => 'cratering',
-    2257 => 'americium',
-    2258 => 'boras',
-    2259 => 'frictions',
-    2260 => 'uplifts',
-    2261 => 'stationing',
-    2262 => 'lowed',
-    2263 => 'zircons',
-    2264 => 'becquerel',
-    2265 => 'bungs',
-    2266 => 'granites',
-    2267 => 'sieved',
-    2268 => 'gravities',
-    2269 => 'sieving',
-    2270 => 'earthed',
-    2271 => 'actinium',
-    2272 => 'amperes',
-    2273 => 'appendixes',
-    2274 => 'funnelling',
-    2275 => 'novas',
-    2276 => 'metered',
-    2277 => 'levering',
-    2278 => 'bouldering',
-    2279 => 'horsepowers',
-    2280 => 'bunging',
-    2281 => 'haloes',
-    2282 => 'fusions',
-    2283 => 'spectrometers',
-    2284 => 'misted',
-    2285 => 'windchill',
-    2286 => 'gneiss',
-    2287 => 'mineralogy',
-    2288 => 'hydrology',
-    2289 => 'lightyears',
-    2290 => 'crucibles',
-    2291 => 'watersheds',
-    2292 => 'labcoat',
-    2293 => 'anticyclone',
-    2294 => 'hafnium',
-    2295 => 'jadeite',
-    2296 => 'appendices',
-    2297 => 'haar',
-    2298 => 'becquerels',
-    2299 => 'curies',
-    2300 => 'lumens',
-    2301 => 'hotspring',
-    2302 => 'calderas',
-    2303 => 'pyrites',
-    2304 => 'volcanology',
-    2305 => 'coulomb',
-    2306 => 'teslas',
-    2307 => 'seabreeze',
-    2308 => 'indium',
-    2309 => 'lanthanum',
-    2310 => 'yttrium',
-    2311 => 'torr',
-    2312 => 'protractors',
-    2313 => 'hailstorms',
-    2314 => 'karst',
-    2315 => 'agates',
-    2316 => 'cornelian',
-    2317 => 'informatics',
-    2318 => 'nanometre',
-    2319 => 'micrometers',
-    2320 => 'showery',
-    2321 => 'ironstone',
-    2322 => 'lignite',
-    2323 => 'climatology',
-    2324 => 'moraines',
-    2325 => 'fluorite',
-    2326 => 'radians',
-    2327 => 'kilovolts',
-    2328 => 'cloudbursts',
-    2329 => 'niobium',
-    2330 => 'alexandrite',
-    2331 => 'chalcedony',
-    2332 => 'gabbro',
-    2333 => 'millilitre',
-    2334 => 'thyroids',
-    2335 => 'tradewinds',
-    2336 => 'pestles',
-    2337 => 'neptunium',
-    2338 => 'rhyolite',
-    2339 => 'nanometres',
-    2340 => 'gigawatt',
-    2341 => 'kilojoules',
-    2342 => 'cortexes',
-    2343 => 'waterspouts',
-    2344 => 'cerium',
-    2345 => 'rhenium',
-    2346 => 'ruthenium',
-    2347 => 'scandium',
-    2348 => 'microgram',
-    2349 => 'sievert',
-    2350 => 'floodplains',
-    2351 => 'arete',
-    2352 => 'heliotropes',
-    2353 => 'chert',
-    2354 => 'mudstone',
-    2355 => 'demography',
-    2356 => 'millibar',
-    2357 => 'hotsprings',
-    2358 => 'heatwaves',
-    2359 => 'curium',
-    2360 => 'europium',
-    2361 => 'francium',
-    2362 => 'lodestones',
-    2363 => 'mudstones',
-    2364 => 'decilitres',
-    2365 => 'radian',
-    2366 => 'larvas',
-    2367 => 'californium',
-    2368 => 'alveolus',
-    2369 => 'multimeter',
-    2370 => 'hotplates',
-    2371 => 'hoarfrost',
-    2372 => 'aretes',
-    2373 => 'einsteinium',
-    2374 => 'nobelium',
-    2375 => 'morganite',
-    2376 => 'dietetics',
-    2377 => 'whiteouts',
-    2378 => 'halite',
-    2379 => 'peridots',
-    2380 => 'glaciology',
-    2381 => 'centilitres',
-    2382 => 'ergs',
-    2383 => 'larynxes',
-    2384 => 'secondes',
-    2385 => 'tundras',
-    2386 => 'canyoning',
-    2387 => 'siroccos',
-    2388 => 'breccias',
-    2389 => 'dolerite',
-    2390 => 'fluorspar',
-    2391 => 'spinels',
-    2392 => 'tanzanite',
-    2393 => 'mycology',
-    2394 => 'therms',
-    2395 => 'kilocalories',
-    2396 => 'kilovolt',
-    2397 => 'pascals',
-    2398 => 'tracheas',
-    2399 => 'easterlies',
-    2400 => 'anticyclones',
-    2401 => 'peasouper',
-    2402 => 'screes',
-    2403 => 'bloodstones',
-    2404 => 'spinel',
-    2405 => 'travertines',
-    2406 => 'jetes',
-    2407 => 'tradewind',
-    2408 => 'duststorm',
-    2409 => 'esker',
-    2410 => 'aquamarines',
-    2411 => 'birthstones',
-    2412 => 'gritstone',
-    2413 => 'labradorite',
-    2414 => 'magnetites',
-    2415 => 'decilitre',
-    2416 => 'kilocalorie',
-    2417 => 'kilojoule',
-    2418 => 'coulombs',
-    2419 => 'dynes',
-    2420 => 'karsts',
-    2421 => 'luxes',
-    2422 => 'thermes',
-    2423 => 'coldfront',
-    2424 => 'labcoats',
-    2425 => 'duodenums',
-    2426 => 'peasoupers',
-    2427 => 'oxbows',
-    2428 => 'citrines',
-    2429 => 'andesites',
-    2430 => 'carnelians',
-    2431 => 'cornelians',
-    2432 => 'feldspars',
-    2433 => 'haematite',
-    2434 => 'marcasite',
-    2435 => 'rhyolites',
-    2436 => 'schists',
-    2437 => 'sodalite',
-    2438 => 'centilitre',
-    2439 => 'sieverts',
-    2440 => 'corries',
-    2441 => 'glasswares',
-    2442 => 'hertzes',
-    2443 => 'voltes',
-    2444 => 'warmfront',
-    2445 => 'blackice',
-    2446 => 'pharynxes',
-    2447 => 'thymuses',
-    2448 => 'multimeters',
-    2449 => 'mistrals',
-    2450 => 'jetstreams',
-    2451 => 'duststorms',
-    2452 => 'eskers',
-    2453 => 'cinnabars',
-    2454 => 'malachites',
-    2455 => 'testtube',
-    2456 => 'testtubes',
-    2457 => 'alexandrites',
-    2458 => 'calcites',
-    2459 => 'chalcedonys',
-    2460 => 'cherts',
-    2461 => 'dolerites',
-    2462 => 'fluorites',
-    2463 => 'gabbros',
-    2464 => 'galenas',
-    2465 => 'gneisses',
-    2466 => 'gritstones',
-    2467 => 'haematites',
-    2468 => 'ironstones',
-    2469 => 'jadeites',
-    2470 => 'labradorites',
-    2471 => 'lapislazuli',
-    2472 => 'marcasites',
-    2473 => 'morganites',
-    2474 => 'olivines',
-    2475 => 'quartzites',
-    2476 => 'rocksalt',
-    2477 => 'siltstone',
-    2478 => 'siltstones',
-    2479 => 'soapstones',
-    2480 => 'sodalites',
-    2481 => 'tanzanites',
-    2482 => 'tigerseye',
-    2483 => 'tourmalines',
-    2484 => 'farads',
-    2485 => 'cirques',
-    2486 => 'glandes',
-    2487 => 'coldfronts',
-    2488 => 'warmfronts',
-    2489 => 'tropicalstorm',
-    2490 => 'tropicalstorms',
-    2491 => 'icestorm',
-    2492 => 'icestorms',
-    2493 => 'freezingrain',
-    2494 => 'acidrain',
-    2495 => 'indiansummer',
-    2496 => 'indiansummers',
-    2497 => 'seabreezes',
-    2498 => 'oxbowlake',
-    2499 => 'oxbowlakes',
-    2500 => 'riftvalley',
-    2501 => 'riftvalleys',
-    2502 => 'magnifyingglass',
-    2503 => 'magnifyingglasses',
-    2504 => 'smallintestine',
-    2505 => 'smallintestines',
-    2506 => 'largeintestine',
-    2507 => 'largeintestines',
-    2508 => 'kilowatthour',
-    2509 => 'kilowatthours',
-    2510 => 'astronomicalunit',
-    2511 => 'astronomicalunits',
-    2512 => 'cubiccentimetre',
-    2513 => 'cubiccentimetres',
-    2514 => 'rosequartz',
-    2515 => 'foolsgold',
-    2516 => 'rockcrystal',
-    2517 => 'ironore',
-    2518 => 'abiotic',
-    2519 => 'accelerations',
-    2520 => 'acetates',
-    2521 => 'acrosome',
-    2522 => 'acrosomes',
-    2523 => 'actinolite',
-    2524 => 'activationenergy',
-    2525 => 'adiabatic',
-    2526 => 'adrenalin',
-    2527 => 'aeons',
-    2528 => 'agronomy',
-    2529 => 'airfrost',
-    2530 => 'airmass',
-    2531 => 'airmasses',
-    2532 => 'airpressure',
-    2533 => 'albite',
-    2534 => 'aldehyde',
-    2535 => 'aldehydes',
-    2536 => 'alembic',
-    2537 => 'alembics',
-    2538 => 'aliquot',
-    2539 => 'aliquots',
-    2540 => 'alkalies',
-    2541 => 'alkalimetal',
-    2542 => 'alkalimetals',
-    2543 => 'alkalinity',
-    2544 => 'alkalis',
-    2545 => 'alkane',
-    2546 => 'alkanes',
-    2547 => 'alkene',
-    2548 => 'alkenes',
-    2549 => 'alkyne',
-    2550 => 'alkynes',
-    2551 => 'allele',
-    2552 => 'allotrope',
-    2553 => 'allotropes',
-    2554 => 'alphaparticle',
-    2555 => 'alphaparticles',
-    2556 => 'altocumulus',
-    2557 => 'altostratus',
-    2558 => 'amazonite',
-    2559 => 'amide',
-    2560 => 'amides',
-    2561 => 'amine',
-    2562 => 'amines',
-    2563 => 'aminoacid',
-    2564 => 'aminoacids',
-    2565 => 'ammeter',
-    2566 => 'ammeters',
-    2567 => 'amoebae',
-    2568 => 'amphibole',
-    2569 => 'amphiboles',
-    2570 => 'amphibolite',
-    2571 => 'amphoteric',
-    2572 => 'amplitudes',
-    2573 => 'amyloplast',
-    2574 => 'amyloplasts',
-    2575 => 'anabatic',
-    2576 => 'anaerobic',
-    2577 => 'andalusite',
-    2578 => 'anemometer',
-    2579 => 'anemometers',
-    2580 => 'anhydride',
-    2581 => 'anhydrides',
-    2582 => 'anhydrite',
-    2583 => 'anhydrous',
-    2584 => 'anion',
-    2585 => 'anions',
-    2586 => 'annealing',
-    2587 => 'anode',
-    2588 => 'anodes',
-    2589 => 'anther',
-    2590 => 'anthers',
-    2591 => 'anthropocene',
-    2592 => 'anticline',
-    2593 => 'anticlines',
-    2594 => 'antielectron',
-    2595 => 'antielectrons',
-    2596 => 'antigens',
-    2597 => 'antimuon',
-    2598 => 'antimuons',
-    2599 => 'antineutrino',
-    2600 => 'antineutrinos',
-    2601 => 'antineutron',
-    2602 => 'antineutrons',
-    2603 => 'antinode',
-    2604 => 'antinodes',
-    2605 => 'antiparticle',
-    2606 => 'antiparticles',
-    2607 => 'antiproton',
-    2608 => 'antiprotons',
-    2609 => 'antiquark',
-    2610 => 'antiquarks',
-    2611 => 'anvilcloud',
-    2612 => 'anvilclouds',
-    2613 => 'anyon',
-    2614 => 'anyons',
-    2615 => 'apatite',
-    2616 => 'apoptosis',
-    2617 => 'aqueous',
-    2618 => 'aquifers',
-    2619 => 'arachnology',
-    2620 => 'aragonite',
-    2621 => 'arcminute',
-    2622 => 'arcminutes',
-    2623 => 'arcsecond',
-    2624 => 'arcseconds',
-    2625 => 'arcus',
-    2626 => 'argentum',
-    2627 => 'arkose',
-    2628 => 'assays',
-    2629 => 'astatine',
-    2630 => 'asterism',
-    2631 => 'asterisms',
-    2632 => 'asteroidbelt',
-    2633 => 'asteroidbelts',
-    2634 => 'asthenosphere',
-    2635 => 'astrobiology',
-    2636 => 'astrochemistry',
-    2637 => 'astrometry',
-    2638 => 'astronautics',
-    2639 => 'atomicmass',
-    2640 => 'atomicmasses',
-    2641 => 'atomicnumber',
-    2642 => 'atomicnumbers',
-    2643 => 'attosecond',
-    2644 => 'attoseconds',
-    2645 => 'augite',
-    2646 => 'aurorae',
-    2647 => 'aurum',
-    2648 => 'autoclave',
-    2649 => 'autoclaves',
-    2650 => 'autoclaving',
-    2651 => 'autoradiography',
-    2652 => 'autotroph',
-    2653 => 'aventurine',
-    2654 => 'axion',
-    2655 => 'axions',
-    2656 => 'axon',
-    2657 => 'axons',
-    2658 => 'azote',
-    2659 => 'azurite',
-    2660 => 'barite',
-    2661 => 'baryon',
-    2662 => 'baryons',
-    2663 => 'baryte',
-    2664 => 'basalbodies',
-    2665 => 'basalbody',
-    2666 => 'basalts',
-    2667 => 'baud',
-    2668 => 'belljar',
-    2669 => 'belljars',
-    2670 => 'berkelium',
-    2671 => 'beryls',
-    2672 => 'betaparticle',
-    2673 => 'betaparticles',
-    2674 => 'bigbang',
-    2675 => 'binaries',
-    2676 => 'bioengineering',
-    2677 => 'biogeography',
-    2678 => 'bioinformatics',
-    2679 => 'biomass',
-    2680 => 'biome',
-    2681 => 'biomechanics',
-    2682 => 'biomedicine',
-    2683 => 'biomes',
-    2684 => 'bioreactor',
-    2685 => 'bioreactors',
-    2686 => 'biotic',
-    2687 => 'biotite',
-    2688 => 'blackbodies',
-    2689 => 'blackbody',
-    2690 => 'blackhole',
-    2691 => 'blackholes',
-    2692 => 'blazar',
-    2693 => 'blazars',
-    2694 => 'blindtest',
-    2695 => 'blindtests',
-    2696 => 'blueshift',
-    2697 => 'bohrium',
-    2698 => 'boilingtube',
-    2699 => 'boilingtubes',
-    2700 => 'bolide',
-    2701 => 'bolides',
-    2702 => 'bornite',
-    2703 => 'bottomquark',
-    2704 => 'bottomquarks',
-    2705 => 'bromine',
-    2706 => 'browndwarf',
-    2707 => 'browndwarfs',
-    2708 => 'bryology',
-    2709 => 'btu',
-    2710 => 'btus',
-    2711 => 'bunsen',
-    2712 => 'bunsenburner',
-    2713 => 'bunsenburners',
-    2714 => 'bunsens',
-    2715 => 'buret',
-    2716 => 'burets',
-    2717 => 'burette',
-    2718 => 'burettes',
-    2719 => 'caliper',
-    2720 => 'calipers',
-    2721 => 'calliper',
-    2722 => 'calorimeter',
-    2723 => 'calorimeters',
-    2724 => 'calorimetry',
-    2725 => 'cambrian',
-    2726 => 'capacitance',
-    2727 => 'carbonates',
-    2728 => 'carbondating',
-    2729 => 'carbondioxide',
-    2730 => 'carboniferous',
-    2731 => 'carbonmonoxide',
-    2732 => 'carbonyl',
-    2733 => 'carbonyls',
-    2734 => 'carboxyl',
-    2735 => 'carboxyls',
-    2736 => 'carpel',
-    2737 => 'carpels',
-    2738 => 'cassiterite',
-    2739 => 'catalysis',
-    2740 => 'catchment',
-    2741 => 'catchments',
-    2742 => 'cathodes',
-    2743 => 'cation',
-    2744 => 'cations',
-    2745 => 'catseye',
-    2746 => 'celestine',
-    2747 => 'celestite',
-    2748 => 'cellmembrane',
-    2749 => 'cellmembranes',
-    2750 => 'cellplate',
-    2751 => 'cellplates',
-    2752 => 'cellwall',
-    2753 => 'cellwalls',
-    2754 => 'cenozoic',
-    2755 => 'centerofmass',
-    2756 => 'centiliter',
-    2757 => 'centiliters',
-    2758 => 'centreofmass',
-    2759 => 'centrifugation',
-    2760 => 'centriole',
-    2761 => 'centrioles',
-    2762 => 'centripetal',
-    2763 => 'centromere',
-    2764 => 'centromeres',
-    2765 => 'centrosome',
-    2766 => 'centrosomes',
-    2767 => 'chainreaction',
-    2768 => 'chainreactions',
-    2769 => 'chalcopyrite',
-    2770 => 'charmquark',
-    2771 => 'charmquarks',
-    2772 => 'chelate',
-    2773 => 'chelates',
-    2774 => 'chinaclay',
-    2775 => 'chirality',
-    2776 => 'chlorate',
-    2777 => 'chlorates',
-    2778 => 'chlorides',
-    2779 => 'chlorite',
-    2780 => 'chloroplast',
-    2781 => 'chloroplasts',
-    2782 => 'chromatid',
-    2783 => 'chromatids',
-    2784 => 'chromatin',
-    2785 => 'chromatography',
-    2786 => 'chromite',
-    2787 => 'chromoplast',
-    2788 => 'chromoplasts',
-    2789 => 'chromosphere',
-    2790 => 'chromospheres',
-    2791 => 'chronobiology',
-    2792 => 'chrysoberyl',
-    2793 => 'chrysoprase',
-    2794 => 'cilia',
-    2795 => 'cilium',
-    2796 => 'cirrocumulus',
-    2797 => 'cirrostratus',
-    2798 => 'cirrus',
-    2799 => 'cisterna',
-    2800 => 'cisternae',
-    2801 => 'clade',
-    2802 => 'clades',
-    2803 => 'cladistics',
-    2804 => 'climatechange',
-    2805 => 'codominance',
-    2806 => 'codon',
-    2807 => 'codons',
-    2808 => 'colloid',
-    2809 => 'colloids',
-    2810 => 'colorimeter',
-    2811 => 'colorimeters',
-    2812 => 'colorimetry',
-    2813 => 'commensalism',
-    2814 => 'conductance',
-    2815 => 'conduction',
-    2816 => 'conductivity',
-    2817 => 'conicalflask',
-    2818 => 'conicalflasks',
-    2819 => 'continentaldrift',
-    2820 => 'contractilevacuole',
-    2821 => 'contractilevacuoles',
-    2822 => 'contrail',
-    2823 => 'contrails',
-    2824 => 'controlgroup',
-    2825 => 'controlgroups',
-    2826 => 'convectionalrainfall',
-    2827 => 'copernicium',
-    2828 => 'coquina',
-    2829 => 'coronae',
-    2830 => 'cortices',
-    2831 => 'corundum',
-    2832 => 'covalent',
-    2833 => 'covalentbond',
-    2834 => 'covalentbonds',
-    2835 => 'coverslip',
-    2836 => 'coverslips',
-    2837 => 'cretaceous',
-    2838 => 'crista',
-    2839 => 'cristae',
-    2840 => 'crocodileclip',
-    2841 => 'crocodileclips',
-    2842 => 'cryobiology',
-    2843 => 'cryolite',
-    2844 => 'cryopreservation',
-    2845 => 'cryostat',
-    2846 => 'cryostats',
-    2847 => 'crystallisation',
-    2848 => 'crystallization',
-    2849 => 'crystallography',
-    2850 => 'cubiccentimeter',
-    2851 => 'cubiccentimeters',
-    2852 => 'cumuli',
-    2853 => 'cumulonimbi',
-    2854 => 'cumulonimbus',
-    2855 => 'cumulus',
-    2856 => 'cuprite',
-    2857 => 'cuprum',
-    2858 => 'cuvette',
-    2859 => 'cuvettes',
-    2860 => 'cyclotron',
-    2861 => 'cyclotrons',
-    2862 => 'cytokinesis',
-    2863 => 'cytology',
-    2864 => 'cytometry',
-    2865 => 'cytoplasm',
-    2866 => 'cytoplasms',
-    2867 => 'cytoskeleton',
-    2868 => 'cytoskeletons',
-    2869 => 'cytosol',
-    2870 => 'dacite',
-    2871 => 'darkenergy',
-    2872 => 'darkmatter',
-    2873 => 'darmstadtium',
-    2874 => 'datalogger',
-    2875 => 'dataloggers',
-    2876 => 'debye',
-    2877 => 'debyes',
-    2878 => 'decantation',
-    2879 => 'decanting',
-    2880 => 'deciliter',
-    2881 => 'deciliters',
-    2882 => 'decomposer',
-    2883 => 'decomposers',
-    2884 => 'deflagratingspoon',
-    2885 => 'deflagratingspoons',
-    2886 => 'dendrite',
-    2887 => 'dendrites',
-    2888 => 'dendrology',
-    2889 => 'deoxyribonucleicacid',
-    2890 => 'derecho',
-    2891 => 'derechos',
-    2892 => 'desiccation',
-    2893 => 'desiccator',
-    2894 => 'desiccators',
-    2895 => 'desmosome',
-    2896 => 'desmosomes',
-    2897 => 'detritivore',
-    2898 => 'detritivores',
-    2899 => 'deuteron',
-    2900 => 'deuterons',
-    2901 => 'devonian',
-    2902 => 'dewpoint',
-    2903 => 'dewpoints',
-    2904 => 'diatomic',
-    2905 => 'diatomite',
-    2906 => 'dictyosome',
-    2907 => 'dictyosomes',
-    2908 => 'diffraction',
-    2909 => 'dilution',
-    2910 => 'dilutions',
-    2911 => 'diode',
-    2912 => 'diodes',
-    2913 => 'diopter',
-    2914 => 'diopters',
-    2915 => 'dioptre',
-    2916 => 'dioptres',
-    2917 => 'diorite',
-    2918 => 'diploid',
-    2919 => 'diquark',
-    2920 => 'diquarks',
-    2921 => 'distillate',
-    2922 => 'distillates',
-    2923 => 'distilling',
-    2924 => 'dna',
-    2925 => 'dosimeter',
-    2926 => 'dosimeters',
-    2927 => 'doublehelix',
-    2928 => 'downburst',
-    2929 => 'downbursts',
-    2930 => 'downdraft',
-    2931 => 'downdrafts',
-    2932 => 'downdraught',
-    2933 => 'downdraughts',
-    2934 => 'downquark',
-    2935 => 'downquarks',
-    2936 => 'droppers',
-    2937 => 'dubnium',
-    2938 => 'ductile',
-    2939 => 'dunite',
-    2940 => 'duodena',
-    2941 => 'dustdevil',
-    2942 => 'dustdevils',
-    2943 => 'dynamometer',
-    2944 => 'dynamometers',
-    2945 => 'dysprosium',
-    2946 => 'eclogite',
-    2947 => 'effervescence',
-    2948 => 'electrochemistry',
-    2949 => 'electrolysis',
-    2950 => 'electromagnets',
-    2951 => 'electronegativity',
-    2952 => 'electronvolt',
-    2953 => 'electronvolts',
-    2954 => 'electrophile',
-    2955 => 'electrophiles',
-    2956 => 'electrophoresis',
-    2957 => 'electroplating',
-    2958 => 'electroporation',
-    2959 => 'electroscope',
-    2960 => 'electroscopes',
-    2961 => 'electrostatics',
-    2962 => 'elementaryparticle',
-    2963 => 'elementaryparticles',
-    2964 => 'elisa',
-    2965 => 'elnino',
-    2966 => 'embryology',
-    2967 => 'emulsifier',
-    2968 => 'emulsifiers',
-    2969 => 'emulsions',
-    2970 => 'enantiomer',
-    2971 => 'enantiomers',
-    2972 => 'endoplasmicreticulum',
-    2973 => 'endosome',
-    2974 => 'endosomes',
-    2975 => 'endothermic',
-    2976 => 'enthalpy',
-    2977 => 'epicenters',
-    2978 => 'epicentres',
-    2979 => 'epidote',
-    2980 => 'epigenetics',
-    2981 => 'equilibria',
-    2982 => 'erbium',
-    2983 => 'ergonomics',
-    2984 => 'eris',
-    2985 => 'erythrocyte',
-    2986 => 'erythrocytes',
-    2987 => 'esophagi',
-    2988 => 'esophaguses',
-    2989 => 'esterification',
-    2990 => 'esters',
-    2991 => 'etas',
-    2992 => 'ethane',
-    2993 => 'ethene',
-    2994 => 'ethers',
-    2995 => 'ethology',
-    2996 => 'eudiometer',
-    2997 => 'eudiometers',
-    2998 => 'evaporatingbasin',
-    2999 => 'evaporatingbasins',
-    3000 => 'evaporatingdish',
-    3001 => 'evaporatingdishes',
-    3002 => 'evaporator',
-    3003 => 'evaporators',
-    3004 => 'evaporite',
-    3005 => 'evaporites',
-    3006 => 'exciton',
-    3007 => 'excitons',
-    3008 => 'excretion',
-    3009 => 'exobiology',
-    3010 => 'exomoon',
-    3011 => 'exomoons',
-    3012 => 'exon',
-    3013 => 'exons',
-    3014 => 'exoplanet',
-    3015 => 'exoplanets',
-    3016 => 'exosphere',
-    3017 => 'exothermic',
-    3018 => 'eyespot',
-    3019 => 'eyespots',
-    3020 => 'eyewall',
-    3021 => 'eyewalls',
-    3022 => 'eyewash',
-    3023 => 'eyewashes',
-    3024 => 'fairtest',
-    3025 => 'fairtests',
-    3026 => 'faultline',
-    3027 => 'faultlines',
-    3028 => 'felspar',
-    3029 => 'felspars',
-    3030 => 'femtometer',
-    3031 => 'femtometers',
-    3032 => 'femtometre',
-    3033 => 'femtometres',
-    3034 => 'femtosecond',
-    3035 => 'femtoseconds',
-    3036 => 'fermenter',
-    3037 => 'fermenters',
-    3038 => 'fermion',
-    3039 => 'fermions',
-    3040 => 'fermis',
-    3041 => 'fermium',
-    3042 => 'ferrum',
-    3043 => 'fimbria',
-    3044 => 'fimbriae',
-    3045 => 'fiord',
-    3046 => 'fiords',
-    3047 => 'flagella',
-    3048 => 'flagellum',
-    3049 => 'flametest',
-    3050 => 'flametests',
-    3051 => 'flashflood',
-    3052 => 'flashfloods',
-    3053 => 'flerovium',
-    3054 => 'fluorescence',
-    3055 => 'focallength',
-    3056 => 'focallengths',
-    3057 => 'foehn',
-    3058 => 'fogbank',
-    3059 => 'fogbanks',
-    3060 => 'fogbow',
-    3061 => 'fogbows',
-    3062 => 'fohn',
-    3063 => 'foodchain',
-    3064 => 'foodchains',
-    3065 => 'foodweb',
-    3066 => 'foodwebs',
-    3067 => 'forcemeter',
-    3068 => 'forcemeters',
-    3069 => 'fractionation',
-    3070 => 'freezedrying',
-    3071 => 'frontalrainfall',
-    3072 => 'fullersearth',
-    3073 => 'fumarole',
-    3074 => 'fumaroles',
-    3075 => 'fumecupboard',
-    3076 => 'fumecupboards',
-    3077 => 'fumehood',
-    3078 => 'fumehoods',
-    3079 => 'functionalgroup',
-    3080 => 'functionalgroups',
-    3081 => 'funguses',
-    3082 => 'funnelcloud',
-    3083 => 'funnelclouds',
-    3084 => 'galvanometer',
-    3085 => 'galvanometers',
-    3086 => 'gamete',
-    3087 => 'gametes',
-    3088 => 'gammaray',
-    3089 => 'gammarays',
-    3090 => 'gasjar',
-    3091 => 'gasjars',
-    3092 => 'gauzes',
-    3093 => 'geiger',
-    3094 => 'geigercounter',
-    3095 => 'geigercounters',
-    3096 => 'geigers',
-    3097 => 'gelelectrophoresis',
-    3098 => 'gemmology',
-    3099 => 'gemology',
-    3100 => 'geneediting',
-    3101 => 'geneticengineering',
-    3102 => 'genomics',
-    3103 => 'genotype',
-    3104 => 'genotypes',
-    3105 => 'genotyping',
-    3106 => 'geochemistry',
-    3107 => 'geodesy',
-    3108 => 'geomagnetic',
-    3109 => 'geomorphology',
-    3110 => 'germinates',
-    3111 => 'germination',
-    3112 => 'gigaelectronvolt',
-    3113 => 'gigaelectronvolts',
-    3114 => 'glaciation',
-    3115 => 'glaciations',
-    3116 => 'globalwarming',
-    3117 => 'glovebox',
-    3118 => 'gloveboxes',
-    3119 => 'glueball',
-    3120 => 'glueballs',
-    3121 => 'gluino',
-    3122 => 'gluinos',
-    3123 => 'gluon',
-    3124 => 'gluons',
-    3125 => 'glycerol',
-    3126 => 'glycocalyx',
-    3127 => 'glycogen',
-    3128 => 'glycols',
-    3129 => 'glyoxysome',
-    3130 => 'glyoxysomes',
-    3131 => 'goethite',
-    3132 => 'golgi',
-    3133 => 'golgiapparatus',
-    3134 => 'golgibodies',
-    3135 => 'golgibody',
-    3136 => 'gondwana',
-    3137 => 'gondwanaland',
-    3138 => 'gramme',
-    3139 => 'grammes',
-    3140 => 'grana',
-    3141 => 'granum',
-    3142 => 'graupel',
-    3143 => 'gravitino',
-    3144 => 'gravitinos',
-    3145 => 'graywacke',
-    3146 => 'greenhouseeffect',
-    3147 => 'greenhousegas',
-    3148 => 'greenhousegases',
-    3149 => 'greenstone',
-    3150 => 'greywacke',
-    3151 => 'groundfrost',
-    3152 => 'haboob',
-    3153 => 'haboobs',
-    3154 => 'hadrons',
-    3155 => 'haemocytometer',
-    3156 => 'haemocytometers',
-    3157 => 'halflife',
-    3158 => 'halflives',
-    3159 => 'halide',
-    3160 => 'halides',
-    3161 => 'halogen',
-    3162 => 'halogens',
-    3163 => 'handlens',
-    3164 => 'handlenses',
-    3165 => 'haploid',
-    3166 => 'harmattan',
-    3167 => 'hassium',
-    3168 => 'haumea',
-    3169 => 'heatindex',
-    3170 => 'heatproofmat',
-    3171 => 'heatproofmats',
-    3172 => 'hectopascal',
-    3173 => 'hectopascals',
-    3174 => 'heliosphere',
-    3175 => 'heliospheres',
-    3176 => 'hematite',
-    3177 => 'hematology',
-    3178 => 'hemocytometer',
-    3179 => 'hemocytometers',
-    3180 => 'henries',
-    3181 => 'herpetology',
-    3182 => 'heterotroph',
-    3183 => 'heterotrophs',
-    3184 => 'heterozygous',
-    3185 => 'higgsboson',
-    3186 => 'higgsbosons',
-    3187 => 'histology',
-    3188 => 'histone',
-    3189 => 'histones',
-    3190 => 'holmium',
-    3191 => 'holocene',
-    3192 => 'homeostasis',
-    3193 => 'homogenisation',
-    3194 => 'homogenization',
-    3195 => 'homologous',
-    3196 => 'homozygous',
-    3197 => 'hookeslaw',
-    3198 => 'hornblende',
-    3199 => 'hornfels',
-    3200 => 'hybridisation',
-    3201 => 'hybridization',
-    3202 => 'hydrargyrum',
-    3203 => 'hydride',
-    3204 => 'hydrides',
-    3205 => 'hydrocarbon',
-    3206 => 'hydrodynamics',
-    3207 => 'hydrogenation',
-    3208 => 'hydrogenbond',
-    3209 => 'hydrogenbonds',
-    3210 => 'hydrolysis',
-    3211 => 'hydrometer',
-    3212 => 'hydrometers',
-    3213 => 'hydrophilic',
-    3214 => 'hydrophobic',
-    3215 => 'hydroxides',
-    3216 => 'hydroxyl',
-    3217 => 'hydroxyls',
-    3218 => 'hygrometer',
-    3219 => 'hygrometers',
-    3220 => 'hypergiant',
-    3221 => 'hypergiants',
-    3222 => 'hypernova',
-    3223 => 'hypernovae',
-    3224 => 'hypernovas',
-    3225 => 'hyperon',
-    3226 => 'hyperons',
-    3227 => 'hysteresis',
-    3228 => 'iceage',
-    3229 => 'iceages',
-    3230 => 'ichthyology',
-    3231 => 'igneous',
-    3232 => 'igneousrock',
-    3233 => 'igneousrocks',
-    3234 => 'ignimbrite',
-    3235 => 'ilmenite',
-    3236 => 'immunoassay',
-    3237 => 'immunoassays',
-    3238 => 'inductance',
-    3239 => 'inductor',
-    3240 => 'inductors',
-    3241 => 'insoluble',
-    3242 => 'insulator',
-    3243 => 'insulators',
-    3244 => 'interferometer',
-    3245 => 'interferometers',
-    3246 => 'interglacial',
-    3247 => 'interglacials',
-    3248 => 'intron',
-    3249 => 'introns',
-    3250 => 'iodide',
-    3251 => 'iodides',
-    3252 => 'iolite',
-    3253 => 'ionicbond',
-    3254 => 'ionicbonds',
-    3255 => 'ionisation',
-    3256 => 'ionization',
-    3257 => 'ironpyrites',
-    3258 => 'irradiation',
-    3259 => 'isobar',
-    3260 => 'isobars',
-    3261 => 'isohyet',
-    3262 => 'isohyets',
-    3263 => 'isomer',
-    3264 => 'isomerism',
-    3265 => 'isomers',
-    3266 => 'isotherm',
-    3267 => 'isotherms',
-    3268 => 'jansky',
-    3269 => 'janskys',
-    3270 => 'joulemeter',
-    3271 => 'joulemeters',
-    3272 => 'jupiter',
-    3273 => 'jurassic',
-    3274 => 'kalium',
-    3275 => 'kaolinite',
-    3276 => 'kaon',
-    3277 => 'kaons',
-    3278 => 'karyotype',
-    3279 => 'karyotypes',
-    3280 => 'katabatic',
-    3281 => 'katal',
-    3282 => 'katals',
-    3283 => 'ketone',
-    3284 => 'ketones',
-    3285 => 'khamsin',
-    3286 => 'kilobar',
-    3287 => 'kilobars',
-    3288 => 'kilohm',
-    3289 => 'kilohms',
-    3290 => 'kilonewton',
-    3291 => 'kilonewtons',
-    3292 => 'kilonova',
-    3293 => 'kilonovae',
-    3294 => 'kilonovas',
-    3295 => 'kiloparsec',
-    3296 => 'kiloparsecs',
-    3297 => 'kilopascal',
-    3298 => 'kilopascals',
-    3299 => 'kilotonne',
-    3300 => 'kilotonnes',
-    3301 => 'kimberlite',
-    3302 => 'kinematics',
-    3303 => 'kinesiology',
-    3304 => 'kineticenergy',
-    3305 => 'kinetochore',
-    3306 => 'kinetochores',
-    3307 => 'komatiite',
-    3308 => 'kunzite',
-    3309 => 'kyanite',
-    3310 => 'lahar',
-    3311 => 'lahars',
-    3312 => 'lambdas',
-    3313 => 'lamella',
-    3314 => 'lamellae',
-    3315 => 'langleys',
-    3316 => 'lanina',
-    3317 => 'lapserate',
-    3318 => 'lapserates',
-    3319 => 'larynges',
-    3320 => 'lattices',
-    3321 => 'lawrencium',
-    3322 => 'lazurite',
-    3323 => 'lenticular',
-    3324 => 'lepidolite',
-    3325 => 'lepidopterology',
-    3326 => 'lepton',
-    3327 => 'leptons',
-    3328 => 'leucite',
-    3329 => 'leucocyte',
-    3330 => 'leucocytes',
-    3331 => 'leucoplast',
-    3332 => 'leucoplasts',
-    3333 => 'leukocyte',
-    3334 => 'leukocytes',
-    3335 => 'ligand',
-    3336 => 'ligands',
-    3337 => 'ligase',
-    3338 => 'ligases',
-    3339 => 'ligation',
-    3340 => 'lightgate',
-    3341 => 'lightgates',
-    3342 => 'lightsecond',
-    3343 => 'lightseconds',
-    3344 => 'limestones',
-    3345 => 'limnology',
-    3346 => 'limonite',
-    3347 => 'lipid',
-    3348 => 'lipids',
-    3349 => 'lithosphere',
-    3350 => 'livermorium',
-    3351 => 'loadstone',
-    3352 => 'loadstones',
-    3353 => 'loess',
-    3354 => 'loupe',
-    3355 => 'loupes',
-    3356 => 'lumina',
-    3357 => 'luminosity',
-    3358 => 'lutetium',
-    3359 => 'lymphocyte',
-    3360 => 'lymphocytes',
-    3361 => 'lyophilisation',
-    3362 => 'lyophilization',
-    3363 => 'lysis',
-    3364 => 'lysosome',
-    3365 => 'lysosomes',
-    3366 => 'mackerelskies',
-    3367 => 'mackerelsky',
-    3368 => 'magmas',
-    3369 => 'magnetar',
-    3370 => 'magnetars',
-    3371 => 'magneticfield',
-    3372 => 'magneticfields',
-    3373 => 'magnetospheres',
-    3374 => 'magnifier',
-    3375 => 'magnifiers',
-    3376 => 'magnon',
-    3377 => 'magnons',
-    3378 => 'makemake',
-    3379 => 'malacology',
-    3380 => 'mammalogy',
-    3381 => 'mammatus',
-    3382 => 'manometer',
-    3383 => 'manometers',
-    3384 => 'marl',
-    3385 => 'maxwells',
-    3386 => 'measuringcylinder',
-    3387 => 'measuringcylinders',
-    3388 => 'megajoule',
-    3389 => 'megajoules',
-    3390 => 'megaparsec',
-    3391 => 'megaparsecs',
-    3392 => 'megatonne',
-    3393 => 'megatonnes',
-    3394 => 'megohm',
-    3395 => 'megohms',
-    3396 => 'meiosis',
-    3397 => 'meitnerium',
-    3398 => 'mendelevium',
-    3399 => 'mesocyclone',
-    3400 => 'mesocyclones',
-    3401 => 'meson',
-    3402 => 'mesons',
-    3403 => 'mesosome',
-    3404 => 'mesosomes',
-    3405 => 'mesosphere',
-    3406 => 'mesozoic',
-    3407 => 'metalloid',
-    3408 => 'metalloids',
-    3409 => 'metamorphic',
-    3410 => 'metamorphicrock',
-    3411 => 'metamorphicrocks',
-    3412 => 'meteoritics',
-    3413 => 'meteoroid',
-    3414 => 'meteoroids',
-    3415 => 'meteorshower',
-    3416 => 'meteorshowers',
-    3417 => 'metrology',
-    3418 => 'mho',
-    3419 => 'mhos',
-    3420 => 'micas',
-    3421 => 'microburst',
-    3422 => 'microbursts',
-    3423 => 'microclimate',
-    3424 => 'microclimates',
-    3425 => 'microfarad',
-    3426 => 'microfarads',
-    3427 => 'microfilament',
-    3428 => 'microfilaments',
-    3429 => 'microinjection',
-    3430 => 'microliter',
-    3431 => 'microliters',
-    3432 => 'microlitre',
-    3433 => 'microlitres',
-    3434 => 'micrometre',
-    3435 => 'micrometres',
-    3436 => 'micromole',
-    3437 => 'micromoles',
-    3438 => 'microorganism',
-    3439 => 'micropipette',
-    3440 => 'micropipettes',
-    3441 => 'microscopy',
-    3442 => 'microsievert',
-    3443 => 'microsieverts',
-    3444 => 'microtome',
-    3445 => 'microtomes',
-    3446 => 'microtubule',
-    3447 => 'microtubules',
-    3448 => 'microvilli',
-    3449 => 'microvillus',
-    3450 => 'migmatite',
-    3451 => 'milkyway',
-    3452 => 'milliamp',
-    3453 => 'milliampere',
-    3454 => 'milliamperes',
-    3455 => 'milliamps',
-    3456 => 'milliliter',
-    3457 => 'millimole',
-    3458 => 'millimoles',
-    3459 => 'millisievert',
-    3460 => 'millisieverts',
-    3461 => 'millivolt',
-    3462 => 'millivolts',
-    3463 => 'millstonegrit',
-    3464 => 'mitochondrion',
-    3465 => 'mitosis',
-    3466 => 'molarity',
-    3467 => 'molybdenite',
-    3468 => 'momenta',
-    3469 => 'monomer',
-    3470 => 'monomers',
-    3471 => 'monopole',
-    3472 => 'monopoles',
-    3473 => 'montmorillonite',
-    3474 => 'moonbow',
-    3475 => 'moonbows',
-    3476 => 'moonlet',
-    3477 => 'moonlets',
-    3478 => 'moonstones',
-    3479 => 'moscovium',
-    3480 => 'muon',
-    3481 => 'muons',
-    3482 => 'muscovite',
-    3483 => 'mutagenesis',
-    3484 => 'mutualism',
-    3485 => 'myelin',
-    3486 => 'myosin',
-    3487 => 'nanogram',
-    3488 => 'nanograms',
-    3489 => 'nanometer',
-    3490 => 'nanometers',
-    3491 => 'nanoscience',
-    3492 => 'natrium',
-    3493 => 'natron',
-    3494 => 'naturalselection',
-    3495 => 'nepheline',
-    3496 => 'nephrite',
-    3497 => 'nephron',
-    3498 => 'nephrons',
-    3499 => 'neptune',
-    3500 => 'neurobiology',
-    3501 => 'neurochemistry',
-    3502 => 'neurone',
-    3503 => 'neurotransmitter',
-    3504 => 'neutralino',
-    3505 => 'neutralinos',
-    3506 => 'neutralisation',
-    3507 => 'neutralization',
-    3508 => 'neutronstar',
-    3509 => 'neutronstars',
-    3510 => 'newtonmeter',
-    3511 => 'newtonmeters',
-    3512 => 'nihonium',
-    3513 => 'nimbostratus',
-    3514 => 'nitride',
-    3515 => 'nitrides',
-    3516 => 'nitrite',
-    3517 => 'nitrites',
-    3518 => 'noblegas',
-    3519 => 'noblegases',
-    3520 => 'noctilucent',
-    3521 => 'nonmetal',
-    3522 => 'nonmetals',
-    3523 => 'noreaster',
-    3524 => 'noreasters',
-    3525 => 'novae',
-    3526 => 'nuclearenvelope',
-    3527 => 'nuclearenvelopes',
-    3528 => 'nuclearmembrane',
-    3529 => 'nuclearmembranes',
-    3530 => 'nuclearpore',
-    3531 => 'nuclearpores',
-    3532 => 'nucleoid',
-    3533 => 'nucleoids',
-    3534 => 'nucleoli',
-    3535 => 'nucleolus',
-    3536 => 'nucleon',
-    3537 => 'nucleonics',
-    3538 => 'nucleons',
-    3539 => 'nucleophile',
-    3540 => 'nucleophiles',
-    3541 => 'nucleoplasm',
-    3542 => 'nucleosome',
-    3543 => 'nucleosomes',
-    3544 => 'nucleotide',
-    3545 => 'nucleotides',
-    3546 => 'occludedfront',
-    3547 => 'occludedfronts',
-    3548 => 'occlusion',
-    3549 => 'occlusions',
-    3550 => 'oceanology',
-    3551 => 'octet',
-    3552 => 'octets',
-    3553 => 'oersted',
-    3554 => 'oersteds',
-    3555 => 'oesophagi',
-    3556 => 'oesophaguses',
-    3557 => 'oganesson',
-    3558 => 'ohmmeter',
-    3559 => 'ohmmeters',
-    3560 => 'oolite',
-    3561 => 'opacity',
-    3562 => 'operon',
-    3563 => 'operons',
-    3564 => 'ordovician',
-    3565 => 'organelle',
-    3566 => 'organelles',
-    3567 => 'orogenies',
-    3568 => 'orogeny',
-    3569 => 'orographic',
-    3570 => 'orpiment',
-    3571 => 'orthoclase',
-    3572 => 'oscillations',
-    3573 => 'oscilloscope',
-    3574 => 'oscilloscopes',
-    3575 => 'ova',
-    3576 => 'ovule',
-    3577 => 'ovules',
-    3578 => 'oxidant',
-    3579 => 'oxidants',
-    3580 => 'oxidise',
-    3581 => 'oxidised',
-    3582 => 'oxidises',
-    3583 => 'oxidize',
-    3584 => 'oxidized',
-    3585 => 'oxidizes',
-    3586 => 'ozonelayer',
-    3587 => 'palaeobotany',
-    3588 => 'palaeozoic',
-    3589 => 'paleobotany',
-    3590 => 'paleozoic',
-    3591 => 'palynology',
-    3592 => 'pancreases',
-    3593 => 'pangaea',
-    3594 => 'pangea',
-    3595 => 'paperchromatography',
-    3596 => 'parasitism',
-    3597 => 'parasitology',
-    3598 => 'partons',
-    3599 => 'pasteurisation',
-    3600 => 'pasteurization',
-    3601 => 'pcr',
-    3602 => 'pedology',
-    3603 => 'pegmatite',
-    3604 => 'pellicle',
-    3605 => 'pellicles',
-    3606 => 'pentaquark',
-    3607 => 'pentaquarks',
-    3608 => 'peridotite',
-    3609 => 'periodictable',
-    3610 => 'periodictables',
-    3611 => 'permanganate',
-    3612 => 'permanganates',
-    3613 => 'permian',
-    3614 => 'peroxisome',
-    3615 => 'peroxisomes',
-    3616 => 'petrichor',
-    3617 => 'petridish',
-    3618 => 'petridishes',
-    3619 => 'petrology',
-    3620 => 'phagocyte',
-    3621 => 'phagocytes',
-    3622 => 'phagosome',
-    3623 => 'phagosomes',
-    3624 => 'pharynges',
-    3625 => 'phenol',
-    3626 => 'phenols',
-    3627 => 'phenotype',
-    3628 => 'phenotypes',
-    3629 => 'phloem',
-    3630 => 'phonolite',
-    3631 => 'phonon',
-    3632 => 'phonons',
-    3633 => 'phosphorescence',
-    3634 => 'photino',
-    3635 => 'photinos',
-    3636 => 'photochemistry',
-    3637 => 'photoelectric',
-    3638 => 'photometer',
-    3639 => 'photometers',
-    3640 => 'photosphere',
-    3641 => 'photospheres',
-    3642 => 'phycology',
-    3643 => 'phyla',
-    3644 => 'phyllite',
-    3645 => 'phylogenetics',
-    3646 => 'phylogenies',
-    3647 => 'phylogeny',
-    3648 => 'phylum',
-    3649 => 'picofarad',
-    3650 => 'picofarads',
-    3651 => 'picometer',
-    3652 => 'picometers',
-    3653 => 'picometre',
-    3654 => 'picometres',
-    3655 => 'picosecond',
-    3656 => 'picoseconds',
-    3657 => 'piezoelectric',
-    3658 => 'pileus',
-    3659 => 'pilus',
-    3660 => 'pion',
-    3661 => 'pions',
-    3662 => 'pipet',
-    3663 => 'pipets',
-    3664 => 'pipette',
-    3665 => 'pipettes',
-    3666 => 'pipetting',
-    3667 => 'pistil',
-    3668 => 'pistils',
-    3669 => 'placentae',
-    3670 => 'plagioclase',
-    3671 => 'planetesimal',
-    3672 => 'planetesimals',
-    3673 => 'planetoids',
-    3674 => 'planetology',
-    3675 => 'plasmalemma',
-    3676 => 'plasmalemmas',
-    3677 => 'plasmamembrane',
-    3678 => 'plasmamembranes',
-    3679 => 'plasmid',
-    3680 => 'plasmids',
-    3681 => 'plasmodesma',
-    3682 => 'plasmodesmata',
-    3683 => 'plasmon',
-    3684 => 'plasmons',
-    3685 => 'plastid',
-    3686 => 'plastids',
-    3687 => 'platetectonics',
-    3688 => 'pleistocene',
-    3689 => 'plumbum',
-    3690 => 'pluto',
-    3691 => 'polarfront',
-    3692 => 'polarimeter',
-    3693 => 'polarimeters',
-    3694 => 'polarisation',
-    3695 => 'polarization',
-    3696 => 'polarvortex',
-    3697 => 'polarvortices',
-    3698 => 'polymerase',
-    3699 => 'polymerases',
-    3700 => 'polymerisation',
-    3701 => 'polymerization',
-    3702 => 'polysome',
-    3703 => 'polysomes',
-    3704 => 'pomeron',
-    3705 => 'pomerons',
-    3706 => 'pooter',
-    3707 => 'pooters',
-    3708 => 'porphyries',
-    3709 => 'porphyry',
-    3710 => 'positron',
-    3711 => 'positrons',
-    3712 => 'potentialenergy',
-    3713 => 'potentiometer',
-    3714 => 'potentiometers',
-    3715 => 'potometer',
-    3716 => 'potometers',
-    3717 => 'powerpack',
-    3718 => 'powerpacks',
-    3719 => 'praseodymium',
-    3720 => 'precambrian',
-    3721 => 'preciousstone',
-    3722 => 'preciousstones',
-    3723 => 'preon',
-    3724 => 'preons',
-    3725 => 'primatology',
-    3726 => 'promethium',
-    3727 => 'protactinium',
-    3728 => 'proteasome',
-    3729 => 'proteasomes',
-    3730 => 'proteomics',
-    3731 => 'protist',
-    3732 => 'protists',
-    3733 => 'protoplanet',
-    3734 => 'protoplanets',
-    3735 => 'protostar',
-    3736 => 'protostars',
-    3737 => 'pseudopod',
-    3738 => 'pseudopodia',
-    3739 => 'pseudopodium',
-    3740 => 'pseudopods',
-    3741 => 'pycnometer',
-    3742 => 'pycnometers',
-    3743 => 'pyrenoid',
-    3744 => 'pyrenoids',
-    3745 => 'pyrometer',
-    3746 => 'pyrometers',
-    3747 => 'pyroxene',
-    3748 => 'pyroxenes',
-    3749 => 'quadrat',
-    3750 => 'quadrats',
-    3751 => 'quanta',
-    3752 => 'quantification',
-    3753 => 'quarkstar',
-    3754 => 'quarkstars',
-    3755 => 'quasiparticle',
-    3756 => 'quasiparticles',
-    3757 => 'quaternary',
-    3758 => 'radiochemistry',
-    3759 => 'radiowave',
-    3760 => 'radiowaves',
-    3761 => 'raingauge',
-    3762 => 'raingauges',
-    3763 => 'randomisation',
-    3764 => 'randomization',
-    3765 => 'rankine',
-    3766 => 'rarefaction',
-    3767 => 'rarefactions',
-    3768 => 'raybox',
-    3769 => 'rayboxes',
-    3770 => 'reactant',
-    3771 => 'reactants',
-    3772 => 'reactivity',
-    3773 => 'reagents',
-    3774 => 'realgar',
-    3775 => 'recombination',
-    3776 => 'recrystallisation',
-    3777 => 'recrystallization',
-    3778 => 'redgiant',
-    3779 => 'redgiants',
-    3780 => 'redox',
-    3781 => 'redshift',
-    3782 => 'reductant',
-    3783 => 'reductants',
-    3784 => 'refractometer',
-    3785 => 'refractometers',
-    3786 => 'relativehumidity',
-    3787 => 'reliefrainfall',
-    3788 => 'resistivity',
-    3789 => 'resistor',
-    3790 => 'resistors',
-    3791 => 'respirometer',
-    3792 => 'respirometers',
-    3793 => 'reticula',
-    3794 => 'reticulum',
-    3795 => 'retortstand',
-    3796 => 'retortstands',
-    3797 => 'rheostat',
-    3798 => 'rheostats',
-    3799 => 'rhodochrosite',
-    3800 => 'rhodonite',
-    3801 => 'rhos',
-    3802 => 'ribonucleicacid',
-    3803 => 'ribosome',
-    3804 => 'ribosomes',
-    3805 => 'rna',
-    3806 => 'rocketry',
-    3807 => 'roentgen',
-    3808 => 'roentgenium',
-    3809 => 'roentgens',
-    3810 => 'roughendoplasmicreticulum',
-    3811 => 'rutherford',
-    3812 => 'rutherfordium',
-    3813 => 'rutherfords',
-    3814 => 'rutile',
-    3815 => 'salinity',
-    3816 => 'samarium',
-    3817 => 'sandstones',
-    3818 => 'sarcomere',
-    3819 => 'sarcomeres',
-    3820 => 'saturn',
-    3821 => 'scheelite',
-    3822 => 'scoria',
-    3823 => 'seaborgium',
-    3824 => 'seafret',
-    3825 => 'seamount',
-    3826 => 'seamounts',
-    3827 => 'sedimentaryrock',
-    3828 => 'sedimentaryrocks',
-    3829 => 'sedimentation',
-    3830 => 'sedimentology',
-    3831 => 'seismograph',
-    3832 => 'seismographs',
-    3833 => 'seismometer',
-    3834 => 'seismometers',
-    3835 => 'selectron',
-    3836 => 'selectrons',
-    3837 => 'selenology',
-    3838 => 'semiconductor',
-    3839 => 'semiconductors',
-    3840 => 'semipreciousstone',
-    3841 => 'semipreciousstones',
-    3842 => 'sepal',
-    3843 => 'sepals',
-    3844 => 'separatingfunnel',
-    3845 => 'separatingfunnels',
-    3846 => 'sequencers',
-    3847 => 'serialdilution',
-    3848 => 'serialdilutions',
-    3849 => 'serpentinite',
-    3850 => 'shelfcloud',
-    3851 => 'shelfclouds',
-    3852 => 'shockwave',
-    3853 => 'shockwaves',
-    3854 => 'siderite',
-    3855 => 'siemens',
-    3856 => 'sigmas',
-    3857 => 'silicate',
-    3858 => 'silicates',
-    3859 => 'sillimanite',
-    3860 => 'silurian',
-    3861 => 'simoom',
-    3862 => 'smoothendoplasmicreticulum',
-    3863 => 'sneutrino',
-    3864 => 'sneutrinos',
-    3865 => 'sociobiology',
-    3866 => 'solarsystem',
-    3867 => 'solarsystems',
-    3868 => 'solarwind',
-    3869 => 'solenoid',
-    3870 => 'solenoids',
-    3871 => 'solubility',
-    3872 => 'solute',
-    3873 => 'solutes',
-    3874 => 'somas',
-    3875 => 'somata',
-    3876 => 'sonication',
-    3877 => 'sonicator',
-    3878 => 'sonicators',
-    3879 => 'sonometer',
-    3880 => 'sonometers',
-    3881 => 'spacestation',
-    3882 => 'spacestations',
-    3883 => 'spacetime',
-    3884 => 'sparticle',
-    3885 => 'sparticles',
-    3886 => 'speciation',
-    3887 => 'spectrometry',
-    3888 => 'spectrophotometer',
-    3889 => 'spectrophotometers',
-    3890 => 'spectrophotometry',
-    3891 => 'spectroscope',
-    3892 => 'spectroscopes',
-    3893 => 'spectroscopy',
-    3894 => 'speleology',
-    3895 => 'spessartine',
-    3896 => 'sphalerite',
-    3897 => 'spirometer',
-    3898 => 'spirometers',
-    3899 => 'spodumene',
-    3900 => 'spottingtile',
-    3901 => 'spottingtiles',
-    3902 => 'squark',
-    3903 => 'squarks',
-    3904 => 'stamen',
-    3905 => 'stamens',
-    3906 => 'standardisation',
-    3907 => 'standardization',
-    3908 => 'stannum',
-    3909 => 'starcluster',
-    3910 => 'starclusters',
-    3911 => 'statics',
-    3912 => 'staurolite',
-    3913 => 'stemcell',
-    3914 => 'stemcells',
-    3915 => 'steradian',
-    3916 => 'steradians',
-    3917 => 'stibium',
-    3918 => 'stibnite',
-    3919 => 'stirrer',
-    3920 => 'stirrers',
-    3921 => 'stoichiometry',
-    3922 => 'stoma',
-    3923 => 'stomata',
-    3924 => 'stopclock',
-    3925 => 'stopclocks',
-    3926 => 'stopwatches',
-    3927 => 'stormsurge',
-    3928 => 'stormsurges',
-    3929 => 'strangequark',
-    3930 => 'strangequarks',
-    3931 => 'stratigraphy',
-    3932 => 'stratocumulus',
-    3933 => 'stratus',
-    3934 => 'stroma',
-    3935 => 'subculturing',
-    3936 => 'sublimation',
-    3937 => 'subsoil',
-    3938 => 'substrate',
-    3939 => 'substrates',
-    3940 => 'sulfates',
-    3941 => 'sulfides',
-    3942 => 'sulfite',
-    3943 => 'sulfites',
-    3944 => 'sulphates',
-    3945 => 'sulphide',
-    3946 => 'sulphides',
-    3947 => 'sulphite',
-    3948 => 'sulphites',
-    3949 => 'sundog',
-    3950 => 'sundogs',
-    3951 => 'sunspot',
-    3952 => 'supercell',
-    3953 => 'supercells',
-    3954 => 'supercluster',
-    3955 => 'superclusters',
-    3956 => 'superconductor',
-    3957 => 'superconductors',
-    3958 => 'supergiant',
-    3959 => 'supergiants',
-    3960 => 'superposition',
-    3961 => 'syenite',
-    3962 => 'sylvite',
-    3963 => 'synchrotron',
-    3964 => 'synchrotrons',
-    3965 => 'syncline',
-    3966 => 'synclines',
-    3967 => 'synopticchart',
-    3968 => 'synopticcharts',
-    3969 => 'systematics',
-    3970 => 'talus',
-    3971 => 'tauon',
-    3972 => 'tauons',
-    3973 => 'taxonomy',
-    3974 => 'technetium',
-    3975 => 'tectonicplate',
-    3976 => 'tectonicplates',
-    3977 => 'tellurium',
-    3978 => 'temperatureinversion',
-    3979 => 'temperatureinversions',
-    3980 => 'tennessine',
-    3981 => 'tephra',
-    3982 => 'terawatt',
-    3983 => 'terawatts',
-    3984 => 'terbium',
-    3985 => 'terminalvelocity',
-    3986 => 'tetraquark',
-    3987 => 'tetraquarks',
-    3988 => 'thermochemistry',
-    3989 => 'thermocouple',
-    3990 => 'thermocouples',
-    3991 => 'thermocycler',
-    3992 => 'thermocyclers',
-    3993 => 'thermosphere',
-    3994 => 'thulium',
-    3995 => 'thunderheads',
-    3996 => 'thylakoid',
-    3997 => 'thylakoids',
-    3998 => 'thymi',
-    3999 => 'tickertimer',
-    4000 => 'tickertimers',
-    4001 => 'tigereye',
-    4002 => 'titer',
-    4003 => 'titers',
-    4004 => 'titrating',
-    4005 => 'titration',
-    4006 => 'titrations',
-    4007 => 'titre',
-    4008 => 'titres',
-    4009 => 'tomography',
-    4010 => 'tonoplast',
-    4011 => 'tonoplasts',
-    4012 => 'topazes',
-    4013 => 'topquark',
-    4014 => 'topquarks',
-    4015 => 'tracheae',
-    4016 => 'trachyte',
-    4017 => 'transduction',
-    4018 => 'transfection',
-    4019 => 'transitionmetal',
-    4020 => 'transitionmetals',
-    4021 => 'transpiration',
-    4022 => 'transposon',
-    4023 => 'transposons',
-    4024 => 'tremolite',
-    4025 => 'triassic',
-    4026 => 'tritium',
-    4027 => 'trituration',
-    4028 => 'trojan',
-    4029 => 'trojans',
-    4030 => 'tropicalcyclone',
-    4031 => 'tropicalcyclones',
-    4032 => 'tropopause',
-    4033 => 'troposphere',
-    4034 => 'tubulin',
-    4035 => 'tufa',
-    4036 => 'tuningfork',
-    4037 => 'tuningforks',
-    4038 => 'ultracentrifuge',
-    4039 => 'ultracentrifuges',
-    4040 => 'unconformities',
-    4041 => 'unconformity',
-    4042 => 'unsaturated',
-    4043 => 'updraft',
-    4044 => 'updrafts',
-    4045 => 'updraught',
-    4046 => 'updraughts',
-    4047 => 'upquark',
-    4048 => 'upquarks',
-    4049 => 'upsilon',
-    4050 => 'upsilons',
-    4051 => 'upthrust',
-    4052 => 'uraninite',
-    4053 => 'uranus',
-    4054 => 'uteri',
-    4055 => 'vacua',
-    4056 => 'vacuole',
-    4057 => 'vacuoles',
-    4058 => 'vacuumpump',
-    4059 => 'vacuumpumps',
-    4060 => 'valence',
-    4061 => 'valences',
-    4062 => 'valencies',
-    4063 => 'valency',
-    4064 => 'venus',
-    4065 => 'vermiculite',
-    4066 => 'vernier',
-    4067 => 'verniers',
-    4068 => 'vesicle',
-    4069 => 'vesicles',
-    4070 => 'villi',
-    4071 => 'villus',
-    4072 => 'virga',
-    4073 => 'viscometer',
-    4074 => 'viscometers',
-    4075 => 'vivisection',
-    4076 => 'voltmeter',
-    4077 => 'voltmeters',
-    4078 => 'vortexing',
-    4079 => 'vulcanology',
-    4080 => 'wallcloud',
-    4081 => 'wallclouds',
-    4082 => 'washbottle',
-    4083 => 'washbottles',
-    4084 => 'watchglass',
-    4085 => 'watchglasses',
-    4086 => 'waterbath',
-    4087 => 'waterbaths',
-    4088 => 'watercycle',
-    4089 => 'watertable',
-    4090 => 'watertables',
-    4091 => 'wavefront',
-    4092 => 'wavefronts',
-    4093 => 'wboson',
-    4094 => 'wbosons',
-    4095 => 'weatherballoon',
-    4096 => 'weatherballoons',
-    4097 => 'weatherforecast',
-    4098 => 'weatherforecasts',
-    4099 => 'weathervane',
-    4100 => 'weathervanes',
-    4101 => 'westernblot',
-    4102 => 'westernblots',
-    4103 => 'westernblotting',
-    4104 => 'whitedwarf',
-    4105 => 'whitedwarfs',
-    4106 => 'windshear',
-    4107 => 'wireloop',
-    4108 => 'wireloops',
-    4109 => 'wolframite',
-    4110 => 'wollastonite',
-    4111 => 'xray',
-    4112 => 'xrays',
-    4113 => 'xylem',
-    4114 => 'ytterbium',
-    4115 => 'zboson',
-    4116 => 'zbosons',
-    4117 => 'zeolite',
-    4118 => 'zeolites',
-    4119 => 'zygote',
-    4120 => 'zygotes',
+    77 => 'based',
+    78 => 'weather',
+    79 => 'community',
+    80 => 'shake',
+    81 => 'snow',
+    82 => 'stomach',
+    83 => 'stomached',
+    84 => 'spring',
+    85 => 'storm',
+    86 => 'eggs',
+    87 => 'dating',
+    88 => 'competition',
+    89 => 'silver',
+    90 => 'silvered',
+    91 => 'giant',
+    92 => 'period',
+    93 => 'led',
+    94 => 'powers',
+    95 => 'forces',
+    96 => 'walls',
+    97 => 'switch',
+    98 => 'image',
+    99 => 'plate',
+    100 => 'charges',
+    101 => 'crack',
+    102 => 'mirror',
+    103 => 'iron',
+    104 => 'hearts',
+    105 => 'metal',
+    106 => 'egg',
+    107 => 'dust',
+    108 => 'drag',
+    109 => 'brains',
+    110 => 'section',
+    111 => 'solution',
+    112 => 'moments',
+    113 => 'mass',
+    114 => 'rocks',
+    115 => 'freeze',
+    116 => 'leading',
+    117 => 'kingdom',
+    118 => 'wave',
+    119 => 'leads',
+    120 => 'thunder',
+    121 => 'alcohol',
+    122 => 'valley',
+    123 => 'tail',
+    124 => 'current',
+    125 => 'salt',
+    126 => 'sand',
+    127 => 'culture',
+    128 => 'culturing',
+    129 => 'solid',
+    130 => 'potential',
+    131 => 'mixed',
+    132 => 'species',
+    133 => 'balance',
+    134 => 'degrees',
+    135 => 'reaction',
+    136 => 'diamond',
+    137 => 'bars',
+    138 => 'stress',
+    139 => 'cave',
+    140 => 'mix',
+    141 => 'experiment',
+    142 => 'bond',
+    143 => 'degree',
+    144 => 'virus',
+    145 => 'crystal',
+    146 => 'motion',
+    147 => 'electricity',
+    148 => 'charged',
+    149 => 'cells',
+    150 => 'product',
+    151 => 'temperature',
+    152 => 'waves',
+    153 => 'spit',
+    154 => 'sounded',
+    155 => 'nerve',
+    156 => 'nerved',
+    157 => 'fields',
+    158 => 'frozen',
+    159 => 'hail',
+    160 => 'clay',
+    161 => 'gray',
+    162 => 'atmosphere',
+    163 => 'sample',
+    164 => 'host',
+    165 => 'diamonds',
+    166 => 'cloud',
+    167 => 'pitch',
+    168 => 'spin',
+    169 => 'clouds',
+    170 => 'producer',
+    171 => 'oxygen',
+    172 => 'gene',
+    173 => 'rocket',
+    174 => 'grey',
+    175 => 'greyed',
+    176 => 'dates',
+    177 => 'mars',
+    178 => 'scale',
+    179 => 'engineer',
+    180 => 'population',
+    181 => 'lightning',
+    182 => 'liver',
+    183 => 'dragged',
+    184 => 'alpha',
+    185 => 'jet',
+    186 => 'washed',
+    187 => 'core',
+    188 => 'cored',
+    189 => 'resistance',
+    190 => 'images',
+    191 => 'nerves',
+    192 => 'gloves',
+    193 => 'plates',
+    194 => 'muscle',
+    195 => 'shaking',
+    196 => 'tube',
+    197 => 'fingerprints',
+    198 => 'slide',
+    199 => 'freezing',
+    200 => 'battery',
+    201 => 'soil',
+    202 => 'satellite',
+    203 => 'barn',
+    204 => 'meters',
+    205 => 'amber',
+    206 => 'washing',
+    207 => 'washings',
+    208 => 'gravity',
+    209 => 'chemical',
+    210 => 'phase',
+    211 => 'sunshine',
+    212 => 'sunshines',
+    213 => 'focused',
+    214 => 'focussed',
+    215 => 'needle',
+    216 => 'needled',
+    217 => 'sunny',
+    218 => 'ancestors',
+    219 => 'ruby',
+    220 => 'ash',
+    221 => 'ashed',
+    222 => 'ashing',
+    223 => 'ashes',
+    224 => 'immunity',
+    225 => 'pearl',
+    226 => 'pearling',
+    227 => 'radiation',
+    228 => 'raining',
+    229 => 'lungs',
+    230 => 'galaxy',
+    231 => 'stations',
+    232 => 'electronic',
+    233 => 'tissue',
+    234 => 'elements',
+    235 => 'coma',
+    236 => 'autopsy',
+    237 => 'autopsying',
+    238 => 'samples',
+    239 => 'acid',
+    240 => 'dated',
+    241 => 'era',
+    242 => 'liquid',
+    243 => 'envelope',
+    244 => 'oven',
+    245 => 'tin',
+    246 => 'models',
+    247 => 'planets',
+    248 => 'tension',
+    249 => 'controlled',
+    250 => 'lung',
+    251 => 'coal',
+    252 => 'coaling',
+    253 => 'prey',
+    254 => 'switched',
+    255 => 'formula',
+    256 => 'organ',
+    257 => 'engineering',
+    258 => 'element',
+    259 => 'spinning',
+    260 => 'genetic',
+    261 => 'muscles',
+    262 => 'kidney',
+    263 => 'products',
+    264 => 'cracked',
+    265 => 'controls',
+    266 => 'winds',
+    267 => 'breeze',
+    268 => 'instinct',
+    269 => 'physics',
+    270 => 'laser',
+    271 => 'rainbow',
+    272 => 'mole',
+    273 => 'copper',
+    274 => 'coppering',
+    275 => 'length',
+    276 => 'flood',
+    277 => 'depression',
+    278 => 'tide',
+    279 => 'tided',
+    280 => 'tiding',
+    281 => 'static',
+    282 => 'statics',
+    283 => 'orbit',
+    284 => 'chemistry',
+    285 => 'chemistries',
+    286 => 'label',
+    287 => 'climate',
+    288 => 'experiments',
+    289 => 'cracking',
+    290 => 'glove',
+    291 => 'fog',
+    292 => 'sperm',
+    293 => 'lighting',
+    294 => 'lightings',
+    295 => 'melt',
+    296 => 'carbon',
+    297 => 'stressed',
+    298 => 'earthquake',
+    299 => 'echo',
+    300 => 'compound',
+    301 => 'sequence',
+    302 => 'sequenced',
+    303 => 'circuit',
+    304 => 'circuiting',
+    305 => 'evolution',
+    306 => 'evolutions',
+    307 => 'fold',
+    308 => 'organs',
+    309 => 'fluid',
+    310 => 'translation',
+    311 => 'shuttle',
+    312 => 'shuttled',
+    313 => 'shuttling',
+    314 => 'lifted',
+    315 => 'dragging',
+    316 => 'instincts',
+    317 => 'weigh',
+    318 => 'scissors',
+    319 => 'springs',
+    320 => 'organic',
+    321 => 'charging',
+    322 => 'observation',
+    323 => 'jade',
+    324 => 'forcing',
+    325 => 'metres',
+    326 => 'dried',
+    327 => 'vacuum',
+    328 => 'forensics',
+    329 => 'frequency',
+    330 => 'concentration',
+    331 => 'radical',
+    332 => 'controlling',
+    333 => 'delta',
+    334 => 'cracks',
+    335 => 'strain',
+    336 => 'bonds',
+    337 => 'veins',
+    338 => 'ridge',
+    339 => 'ridged',
+    340 => 'rains',
+    341 => 'batteries',
+    342 => 'canyon',
+    343 => 'tails',
+    344 => 'stir',
+    345 => 'mechanic',
+    346 => 'scattered',
+    347 => 'frost',
+    348 => 'volcano',
+    349 => 'stain',
+    350 => 'meter',
+    351 => 'metering',
+    352 => 'gilbert',
+    353 => 'particles',
+    354 => 'chemicals',
+    355 => 'forensic',
+    356 => 'kilometers',
+    357 => 'kilometres',
+    358 => 'continent',
+    359 => 'sensors',
+    360 => 'reflection',
+    361 => 'echoing',
+    362 => 'hurricane',
+    363 => 'psychology',
+    364 => 'astronaut',
+    365 => 'boil',
+    366 => 'attraction',
+    367 => 'shook',
+    368 => 'selection',
+    369 => 'fuse',
+    370 => 'inheritance',
+    371 => 'genes',
+    372 => 'comet',
+    373 => 'engineers',
+    374 => 'newton',
+    375 => 'spaceship',
+    376 => 'probe',
+    377 => 'void',
+    378 => 'boiling',
+    379 => 'needles',
+    380 => 'waving',
+    381 => 'bacteria',
+    382 => 'bacterias',
+    383 => 'starring',
+    384 => 'separation',
+    385 => 'carrier',
+    386 => 'producers',
+    387 => 'kilos',
+    388 => 'protein',
+    389 => 'lens',
+    390 => 'interference',
+    391 => 'sounding',
+    392 => 'ruler',
+    393 => 'biology',
+    394 => 'biologies',
+    395 => 'quantum',
+    396 => 'mirrors',
+    397 => 'jasper',
+    398 => 'dwarf',
+    399 => 'neutral',
+    400 => 'timer',
+    401 => 'debris',
+    402 => 'showers',
+    403 => 'telescope',
+    404 => 'impulse',
+    405 => 'tubes',
+    406 => 'nickel',
+    407 => 'giants',
+    408 => 'caves',
+    409 => 'marble',
+    410 => 'marbled',
+    411 => 'marbling',
+    412 => 'speeding',
+    413 => 'lifting',
+    414 => 'maxwell',
+    415 => 'maxwells',
+    416 => 'compass',
+    417 => 'compassed',
+    418 => 'compassing',
+    419 => 'mercury',
+    420 => 'thrust',
+    421 => 'thrusted',
+    422 => 'artery',
+    423 => 'dynamic',
+    424 => 'melted',
+    425 => 'microwave',
+    426 => 'heating',
+    427 => 'predators',
+    428 => 'pearls',
+    429 => 'predator',
+    430 => 'suspension',
+    431 => 'grams',
+    432 => 'shaken',
+    433 => 'pharmacy',
+    434 => 'dalton',
+    435 => 'grind',
+    436 => 'storms',
+    437 => 'vent',
+    438 => 'rocking',
+    439 => 'yield',
+    440 => 'masses',
+    441 => 'asteroid',
+    442 => 'mixing',
+    443 => 'temperatures',
+    444 => 'melting',
+    445 => 'lava',
+    446 => 'cosmos',
+    447 => 'streak',
+    448 => 'flooded',
+    449 => 'hydrogen',
+    450 => 'hydrogens',
+    451 => 'cultures',
+    452 => 'boiled',
+    453 => 'tong',
+    454 => 'gem',
+    455 => 'spitting',
+    456 => 'kidneys',
+    457 => 'plasma',
+    458 => 'conductor',
+    459 => 'capsule',
+    460 => 'crust',
+    461 => 'crusting',
+    462 => 'weighs',
+    463 => 'meteor',
+    464 => 'hormones',
+    465 => 'heated',
+    466 => 'reef',
+    467 => 'mathematics',
+    468 => 'atom',
+    469 => 'switching',
+    470 => 'mixture',
+    471 => 'rockets',
+    472 => 'spits',
+    473 => 'mist',
+    474 => 'galaxies',
+    475 => 'adrenaline',
+    476 => 'filter',
+    477 => 'magnet',
+    478 => 'vaccine',
+    479 => 'bases',
+    480 => 'focusing',
+    481 => 'focussing',
+    482 => 'rainy',
+    483 => 'shakes',
+    484 => 'stains',
+    485 => 'gale',
+    486 => 'flint',
+    487 => 'nova',
+    488 => 'chalk',
+    489 => 'clone',
+    490 => 'transformation',
+    491 => 'beta',
+    492 => 'gamma',
+    493 => 'matrix',
+    494 => 'antibiotics',
+    495 => 'scales',
+    496 => 'medicines',
+    497 => 'mineral',
+    498 => 'particle',
+    499 => 'electronics',
+    500 => 'sands',
+    501 => 'jets',
+    502 => 'trench',
+    503 => 'trenched',
+    504 => 'trenching',
+    505 => 'apron',
+    506 => 'vein',
+    507 => 'veined',
+    508 => 'froze',
+    509 => 'atoms',
+    510 => 'fingerprint',
+    511 => 'tornado',
+    512 => 'slate',
+    513 => 'statistics',
+    514 => 'omega',
+    515 => 'stationed',
+    516 => 'crystals',
+    517 => 'kilo',
+    518 => 'expansion',
+    519 => 'expansions',
+    520 => 'stirring',
+    521 => 'communities',
+    522 => 'mechanics',
+    523 => 'anatomy',
+    524 => 'flare',
+    525 => 'sensor',
+    526 => 'fossil',
+    527 => 'fusion',
+    528 => 'fluids',
+    529 => 'sliding',
+    530 => 'eclipse',
+    531 => 'eclipsing',
+    532 => 'modeling',
+    533 => 'spacecraft',
+    534 => 'vitamins',
+    535 => 'cork',
+    536 => 'icy',
+    537 => 'wormhole',
+    538 => 'bladder',
+    539 => 'astronauts',
+    540 => 'echoes',
+    541 => 'grinding',
+    542 => 'ballistics',
+    543 => 'satellites',
+    544 => 'solutions',
+    545 => 'hybrid',
+    546 => 'weighed',
+    547 => 'cooling',
+    548 => 'sections',
+    549 => 'emerald',
+    550 => 'stokes',
+    551 => 'efficiency',
+    552 => 'crater',
+    553 => 'reactions',
+    554 => 'uranium',
+    555 => 'extinction',
+    556 => 'bonding',
+    557 => 'straining',
+    558 => 'windy',
+    559 => 'hosting',
+    560 => 'vitamin',
+    561 => 'vitamines',
+    562 => 'periods',
+    563 => 'parasite',
+    564 => 'economics',
+    565 => 'moons',
+    566 => 'scalpel',
+    567 => 'wimp',
+    568 => 'momentum',
+    569 => 'weighing',
+    570 => 'circuits',
+    571 => 'cluster',
+    572 => 'faults',
+    573 => 'burner',
+    574 => 'clamp',
+    575 => 'labels',
+    576 => 'thermal',
+    577 => 'geography',
+    578 => 'geographies',
+    579 => 'agriculture',
+    580 => 'aurora',
+    581 => 'dominant',
+    582 => 'ancestor',
+    583 => 'rained',
+    584 => 'molecules',
+    585 => 'furnace',
+    586 => 'langley',
+    587 => 'lever',
+    588 => 'levered',
+    589 => 'tiles',
+    590 => 'slides',
+    591 => 'folded',
+    592 => 'calories',
+    593 => 'lengths',
+    594 => 'spectrum',
+    595 => 'spectrums',
+    596 => 'drought',
+    597 => 'balanced',
+    598 => 'velocity',
+    599 => 'flooding',
+    600 => 'snowing',
+    601 => 'deposition',
+    602 => 'pitching',
+    603 => 'decay',
+    604 => 'waterfall',
+    605 => 'lifts',
+    606 => 'winding',
+    607 => 'windings',
+    608 => 'rust',
+    609 => 'intensity',
+    610 => 'scatter',
+    611 => 'dew',
+    612 => 'currents',
+    613 => 'ultrasound',
+    614 => 'measurements',
+    615 => 'saliva',
+    616 => 'cyanide',
+    617 => 'stained',
+    618 => 'marbles',
+    619 => 'syringe',
+    620 => 'platinum',
+    621 => 'consumer',
+    622 => 'speeds',
+    623 => 'extraction',
+    624 => 'goggles',
+    625 => 'misty',
+    626 => 'trenches',
+    627 => 'habitat',
+    628 => 'earthquakes',
+    629 => 'eta',
+    630 => 'sodium',
+    631 => 'gram',
+    632 => 'forecast',
+    633 => 'organism',
+    634 => 'skins',
+    635 => 'powered',
+    636 => 'mammals',
+    637 => 'tesla',
+    638 => 'switches',
+    639 => 'fungus',
+    640 => 'microscope',
+    641 => 'hosts',
+    642 => 'aluminum',
+    643 => 'crest',
+    644 => 'halo',
+    645 => 'weights',
+    646 => 'lenses',
+    647 => 'volcanoes',
+    648 => 'watts',
+    649 => 'calmed',
+    650 => 'infrared',
+    651 => 'infrareds',
+    652 => 'gases',
+    653 => 'rift',
+    654 => 'rocked',
+    655 => 'drying',
+    656 => 'nitrogen',
+    657 => 'stirred',
+    658 => 'cloudy',
+    659 => 'vector',
+    660 => 'horsepower',
+    661 => 'pascal',
+    662 => 'parasites',
+    663 => 'tile',
+    664 => 'pitched',
+    665 => 'tsunami',
+    666 => 'experimenting',
+    667 => 'simulation',
+    668 => 'lasers',
+    669 => 'basin',
+    670 => 'sprung',
+    671 => 'spleen',
+    672 => 'smear',
+    673 => 'gravel',
+    674 => 'graveled',
+    675 => 'frequencies',
+    676 => 'insulin',
+    677 => 'iceberg',
+    678 => 'melts',
+    679 => 'ore',
+    680 => 'boulder',
+    681 => 'gems',
+    682 => 'dissolve',
+    683 => 'continents',
+    684 => 'uterus',
+    685 => 'camouflage',
+    686 => 'colon',
+    687 => 'colones',
+    688 => 'distances',
+    689 => 'organisms',
+    690 => 'bonded',
+    691 => 'tissues',
+    692 => 'rinse',
+    693 => 'stormy',
+    694 => 'coppers',
+    695 => 'methane',
+    696 => 'appendix',
+    697 => 'mantle',
+    698 => 'kingdoms',
+    699 => 'hologram',
+    700 => 'fielding',
+    701 => 'washes',
+    702 => 'avalanche',
+    703 => 'cylinder',
+    704 => 'fossils',
+    705 => 'impulses',
+    706 => 'pollen',
+    707 => 'pollens',
+    708 => 'swab',
+    709 => 'spat',
+    710 => 'petals',
+    711 => 'mutation',
+    712 => 'spun',
+    713 => 'biopsy',
+    714 => 'neon',
+    715 => 'milligrams',
+    716 => 'milligrammes',
+    717 => 'folding',
+    718 => 'reduction',
+    719 => 'boils',
+    720 => 'granite',
+    721 => 'valleys',
+    722 => 'observations',
+    723 => 'spins',
+    724 => 'glacier',
+    725 => 'floods',
+    726 => 'strained',
+    727 => 'mortar',
+    728 => 'friction',
+    729 => 'calcium',
+    730 => 'plateau',
+    731 => 'hormone',
+    732 => 'fetus',
+    733 => 'reflex',
+    734 => 'strengths',
+    735 => 'density',
+    736 => 'eruption',
+    737 => 'waved',
+    738 => 'liters',
+    739 => 'pressures',
+    740 => 'buffer',
+    741 => 'helium',
+    742 => 'traits',
+    743 => 'potassium',
+    744 => 'rulers',
+    745 => 'intestines',
+    746 => 'envelopes',
+    747 => 'magnitude',
+    748 => 'magnitudes',
+    749 => 'motions',
+    750 => 'metals',
+    751 => 'accelerator',
+    752 => 'stormed',
+    753 => 'frosty',
+    754 => 'arteries',
+    755 => 'snowy',
+    756 => 'rad',
+    757 => 'silicon',
+    758 => 'succession',
+    759 => 'successions',
+    760 => 'blizzard',
+    761 => 'fireball',
+    762 => 'flask',
+    763 => 'volatile',
+    764 => 'vents',
+    765 => 'foggy',
+    766 => 'astronomy',
+    767 => 'nebula',
+    768 => 'tailing',
+    769 => 'tides',
+    770 => 'reflexes',
+    771 => 'engineered',
+    772 => 'viruses',
+    773 => 'vial',
+    774 => 'arsenic',
+    775 => 'weber',
+    776 => 'ironing',
+    777 => 'mar',
+    778 => 'hemisphere',
+    779 => 'testosterone',
+    780 => 'lux',
+    781 => 'genetics',
+    782 => 'powering',
+    783 => 'labeled',
+    784 => 'meteorite',
+    785 => 'centimeters',
+    786 => 'centimetres',
+    787 => 'flares',
+    788 => 'icing',
+    789 => 'gorge',
+    790 => 'typhoon',
+    791 => 'turbulence',
+    792 => 'irons',
+    793 => 'imaging',
+    794 => 'voltage',
+    795 => 'dissolved',
+    796 => 'graft',
+    797 => 'minerals',
+    798 => 'barred',
+    799 => 'volts',
+    800 => 'amp',
+    801 => 'energies',
+    802 => 'cortex',
+    803 => 'ballistic',
+    804 => 'kelvin',
+    805 => 'cooled',
+    806 => 'carriers',
+    807 => 'lagoon',
+    808 => 'thermometer',
+    809 => 'haze',
+    810 => 'plutonium',
+    811 => 'monsoon',
+    812 => 'robotic',
+    813 => 'sleet',
+    814 => 'nucleus',
+    815 => 'nutrients',
+    816 => 'showered',
+    817 => 'titanium',
+    818 => 'humidity',
+    819 => 'electrons',
+    820 => 'constellation',
+    821 => 'strains',
+    822 => 'migration',
+    823 => 'pathology',
+    824 => 'dwarves',
+    825 => 'nutrition',
+    826 => 'visibility',
+    827 => 'twister',
+    828 => 'orbiting',
+    829 => 'salts',
+    830 => 'ether',
+    831 => 'ethers',
+    832 => 'ion',
+    833 => 'comets',
+    834 => 'funnel',
+    835 => 'tensions',
+    836 => 'electron',
+    837 => 'clones',
+    838 => 'folds',
+    839 => 'stomachs',
+    840 => 'dries',
+    841 => 'acceleration',
+    842 => 'accelerations',
+    843 => 'trait',
+    844 => 'asteroids',
+    845 => 'variation',
+    846 => 'latitude',
+    847 => 'mammal',
+    848 => 'trough',
+    849 => 'slid',
+    850 => 'dialysis',
+    851 => 'quark',
+    852 => 'freezes',
+    853 => 'whirlwind',
+    854 => 'millimeter',
+    855 => 'millimetre',
+    856 => 'glands',
+    857 => 'ammonia',
+    858 => 'drags',
+    859 => 'fronts',
+    860 => 'pressured',
+    861 => 'dynamics',
+    862 => 'stoked',
+    863 => 'tonnes',
+    864 => 'calming',
+    865 => 'sulfur',
+    866 => 'thaw',
+    867 => 'gauze',
+    868 => 'universes',
+    869 => 'skinned',
+    870 => 'stressing',
+    871 => 'calms',
+    872 => 'rainbows',
+    873 => 'variations',
+    874 => 'magma',
+    875 => 'reproduction',
+    876 => 'dunes',
+    877 => 'liter',
+    878 => 'emissions',
+    879 => 'metre',
+    880 => 'sapphire',
+    881 => 'psychiatry',
+    882 => 'adaptation',
+    883 => 'relativity',
+    884 => 'competitions',
+    885 => 'hydraulic',
+    886 => 'tau',
+    887 => 'filters',
+    888 => 'cultured',
+    889 => 'magnets',
+    890 => 'suns',
+    891 => 'molecule',
+    892 => 'smeared',
+    893 => 'limestone',
+    894 => 'limestones',
+    895 => 'orbits',
+    896 => 'showering',
+    897 => 'glaciers',
+    898 => 'supernova',
+    899 => 'populations',
+    900 => 'nickels',
+    901 => 'cloning',
+    902 => 'bora',
+    903 => 'proteins',
+    904 => 'neutron',
+    905 => 'compounds',
+    906 => 'cavern',
+    907 => 'dwarfs',
+    908 => 'embryo',
+    909 => 'frosting',
+    910 => 'orbital',
+    911 => 'orbitals',
+    912 => 'metabolism',
+    913 => 'equator',
+    914 => 'ecosystem',
+    915 => 'dusting',
+    916 => 'fused',
+    917 => 'measurement',
+    918 => 'genome',
+    919 => 'ozone',
+    920 => 'compression',
+    921 => 'geology',
+    922 => 'dusted',
+    923 => 'flux',
+    924 => 'fluxes',
+    925 => 'gland',
+    926 => 'scavenger',
+    927 => 'propane',
+    928 => 'fuses',
+    929 => 'cylinders',
+    930 => 'chlorine',
+    931 => 'radiology',
+    932 => 'telescopes',
+    933 => 'mesa',
+    934 => 'consumers',
+    935 => 'snowed',
+    936 => 'compute',
+    937 => 'soiled',
+    938 => 'antimatter',
+    939 => 'caved',
+    940 => 'seismic',
+    941 => 'mach',
+    942 => 'larvae',
+    943 => 'cools',
+    944 => 'hosted',
+    945 => 'cyclone',
+    946 => 'fahrenheit',
+    947 => 'poised',
+    948 => 'celsius',
+    949 => 'toxicology',
+    950 => 'opal',
+    951 => 'emeralds',
+    952 => 'plankton',
+    953 => 'balancing',
+    954 => 'binary',
+    955 => 'binaries',
+    956 => 'boulders',
+    957 => 'pressuring',
+    958 => 'intestine',
+    959 => 'indicator',
+    960 => 'salted',
+    961 => 'sequences',
+    962 => 'asbestos',
+    963 => 'thundering',
+    964 => 'combustion',
+    965 => 'tidings',
+    966 => 'moles',
+    967 => 'pitches',
+    968 => 'archaeology',
+    969 => 'storming',
+    970 => 'ironed',
+    971 => 'neurons',
+    972 => 'bedrock',
+    973 => 'clusters',
+    974 => 'abrasions',
+    975 => 'hailing',
+    976 => 'rubies',
+    977 => 'plating',
+    978 => 'coals',
+    979 => 'hailed',
+    980 => 'krypton',
+    981 => 'alloy',
+    982 => 'niche',
+    983 => 'dune',
+    984 => 'glucose',
+    985 => 'projectile',
+    986 => 'humid',
+    987 => 'probes',
+    988 => 'wavelength',
+    989 => 'ultraviolet',
+    990 => 'oxide',
+    991 => 'tailed',
+    992 => 'compressions',
+    993 => 'magnetism',
+    994 => 'membrane',
+    995 => 'hearted',
+    996 => 'sigma',
+    997 => 'sigmas',
+    998 => 'kilograms',
+    999 => 'kilogrammes',
+    1000 => 'nitrate',
+    1001 => 'litres',
+    1002 => 'clouded',
+    1003 => 'optic',
+    1004 => 'ridges',
+    1005 => 'bloods',
+    1006 => 'catalyst',
+    1007 => 'digestion',
+    1008 => 'watt',
+    1009 => 'workings',
+    1010 => 'thunderstorm',
+    1011 => 'spores',
+    1012 => 'snows',
+    1013 => 'vials',
+    1014 => 'reefs',
+    1015 => 'transformer',
+    1016 => 'physiology',
+    1017 => 'lithium',
+    1018 => 'experimented',
+    1019 => 'rusted',
+    1020 => 'enzyme',
+    1021 => 'hybrids',
+    1022 => 'stardust',
+    1023 => 'aerobics',
+    1024 => 'snowflake',
+    1025 => 'quartz',
+    1026 => 'rem',
+    1027 => 'hurricanes',
+    1028 => 'radicals',
+    1029 => 'kilometer',
+    1030 => 'kilometre',
+    1031 => 'modelling',
+    1032 => 'resonance',
+    1033 => 'garnet',
+    1034 => 'beryl',
+    1035 => 'acids',
+    1036 => 'microbes',
+    1037 => 'pancreas',
+    1038 => 'stirs',
+    1039 => 'gassed',
+    1040 => 'magnesium',
+    1041 => 'dehydration',
+    1042 => 'longitude',
+    1043 => 'longitudes',
+    1044 => 'tempest',
+    1045 => 'pores',
+    1046 => 'respiration',
+    1047 => 'capsules',
+    1048 => 'tremors',
+    1049 => 'starch',
+    1050 => 'starching',
+    1051 => 'pendulum',
+    1052 => 'uplifting',
+    1053 => 'torque',
+    1054 => 'antibodies',
+    1055 => 'embryos',
+    1056 => 'smog',
+    1057 => 'amethyst',
+    1058 => 'iodine',
+    1059 => 'tins',
+    1060 => 'anthropology',
+    1061 => 'placenta',
+    1062 => 'radioactivity',
+    1063 => 'mixes',
+    1064 => 'mutations',
+    1065 => 'blot',
+    1066 => 'clamps',
+    1067 => 'vaccines',
+    1068 => 'equilibrium',
+    1069 => 'phases',
+    1070 => 'corona',
+    1071 => 'heats',
+    1072 => 'cloned',
+    1073 => 'antibiotic',
+    1074 => 'protons',
+    1075 => 'ovaries',
+    1076 => 'eruptions',
+    1077 => 'erosion',
+    1078 => 'erosions',
+    1079 => 'sprang',
+    1080 => 'stoke',
+    1081 => 'snowstorm',
+    1082 => 'litre',
+    1083 => 'sped',
+    1084 => 'induction',
+    1085 => 'inductions',
+    1086 => 'systematic',
+    1087 => 'systematics',
+    1088 => 'liquids',
+    1089 => 'decaying',
+    1090 => 'proton',
+    1091 => 'prism',
+    1092 => 'reflections',
+    1093 => 'sampling',
+    1094 => 'samplings',
+    1095 => 'rainfall',
+    1096 => 'rainfalls',
+    1097 => 'attractions',
+    1098 => 'photon',
+    1099 => 'probing',
+    1100 => 'sulphur',
+    1101 => 'chloride',
+    1102 => 'fixation',
+    1103 => 'meteors',
+    1104 => 'formulas',
+    1105 => 'formulae',
+    1106 => 'craters',
+    1107 => 'yielded',
+    1108 => 'metamorphosis',
+    1109 => 'highs',
+    1110 => 'wimps',
+    1111 => 'decomposition',
+    1112 => 'optics',
+    1113 => 'waterfalls',
+    1114 => 'nodes',
+    1115 => 'tremor',
+    1116 => 'thyroid',
+    1117 => 'lode',
+    1118 => 'lodes',
+    1119 => 'tripod',
+    1120 => 'saturated',
+    1121 => 'robotics',
+    1122 => 'computing',
+    1123 => 'sociology',
+    1124 => 'timers',
+    1125 => 'petal',
+    1126 => 'ovens',
+    1127 => 'spaceships',
+    1128 => 'forceps',
+    1129 => 'zinc',
+    1130 => 'singularity',
+    1131 => 'venting',
+    1132 => 'barring',
+    1133 => 'enzymes',
+    1134 => 'electrodes',
+    1135 => 'meteorites',
+    1136 => 'bung',
+    1137 => 'sediment',
+    1138 => 'sandstorm',
+    1139 => 'stigma',
+    1140 => 'purification',
+    1141 => 'lows',
+    1142 => 'scavengers',
+    1143 => 'tongs',
+    1144 => 'mortars',
+    1145 => 'yields',
+    1146 => 'hibernation',
+    1147 => 'swabs',
+    1148 => 'brimstone',
+    1149 => 'scissor',
+    1150 => 'scissored',
+    1151 => 'lighted',
+    1152 => 'cobalt',
+    1153 => 'infiltration',
+    1154 => 'infiltrations',
+    1155 => 'dissection',
+    1156 => 'turquoise',
+    1157 => 'hazing',
+    1158 => 'thermostat',
+    1159 => 'incubator',
+    1160 => 'tundra',
+    1161 => 'balances',
+    1162 => 'transformers',
+    1163 => 'kinetic',
+    1164 => 'displacement',
+    1165 => 'displacements',
+    1166 => 'classification',
+    1167 => 'walled',
+    1168 => 'trachea',
+    1169 => 'ester',
+    1170 => 'esters',
+    1171 => 'tweezers',
+    1172 => 'gust',
+    1173 => 'simulations',
+    1174 => 'drizzle',
+    1175 => 'drizzled',
+    1176 => 'millimeters',
+    1177 => 'millimetres',
+    1178 => 'basing',
+    1179 => 'estrogen',
+    1180 => 'estrogens',
+    1181 => 'oestrogen',
+    1182 => 'dissolving',
+    1183 => 'ohm',
+    1184 => 'starred',
+    1185 => 'botany',
+    1186 => 'node',
+    1187 => 'solvent',
+    1188 => 'chromosome',
+    1189 => 'sieve',
+    1190 => 'springing',
+    1191 => 'constellations',
+    1192 => 'filtered',
+    1193 => 'eons',
+    1194 => 'spatula',
+    1195 => 'poise',
+    1196 => 'leach',
+    1197 => 'translations',
+    1198 => 'snowflakes',
+    1199 => 'hydraulics',
+    1200 => 'aluminium',
+    1201 => 'focuses',
+    1202 => 'chromosomes',
+    1203 => 'caverns',
+    1204 => 'indicators',
+    1205 => 'cirque',
+    1206 => 'burners',
+    1207 => 'stopwatch',
+    1208 => 'stopwatches',
+    1209 => 'grinds',
+    1210 => 'conglomerate',
+    1211 => 'zephyr',
+    1212 => 'actin',
+    1213 => 'lambda',
+    1214 => 'lambdas',
+    1215 => 'modeled',
+    1216 => 'blooded',
+    1217 => 'peat',
+    1218 => 'pathogen',
+    1219 => 'cores',
+    1220 => 'stresses',
+    1221 => 'shale',
+    1222 => 'larynx',
+    1223 => 'canyons',
+    1224 => 'livers',
+    1225 => 'ecology',
+    1226 => 'receptors',
+    1227 => 'streaks',
+    1228 => 'weathers',
+    1229 => 'jaded',
+    1230 => 'peroxide',
+    1231 => 'beaker',
+    1232 => 'statistic',
+    1233 => 'phosphorus',
+    1234 => 'depositions',
+    1235 => 'radium',
+    1236 => 'vectors',
+    1237 => 'hydrated',
+    1238 => 'triton',
+    1239 => 'echoed',
+    1240 => 'syringes',
+    1241 => 'centigrade',
+    1242 => 'autopsies',
+    1243 => 'esophagus',
+    1244 => 'oesophagus',
+    1245 => 'preying',
+    1246 => 'camouflaged',
+    1247 => 'fulcrum',
+    1248 => 'oncology',
+    1249 => 'frosted',
+    1250 => 'wormholes',
+    1251 => 'tubing',
+    1252 => 'deluge',
+    1253 => 'deluges',
+    1254 => 'breezes',
+    1255 => 'larva',
+    1256 => 'lymph',
+    1257 => 'lymphs',
+    1258 => 'dissolves',
+    1259 => 'condensed',
+    1260 => 'centimeter',
+    1261 => 'centimetre',
+    1262 => 'polymer',
+    1263 => 'shuttles',
+    1264 => 'levers',
+    1265 => 'neutrons',
+    1266 => 'parton',
+    1267 => 'ethanol',
+    1268 => 'curie',
+    1269 => 'hectares',
+    1270 => 'barometer',
+    1271 => 'sandstone',
+    1272 => 'sandstones',
+    1273 => 'labelled',
+    1274 => 'barns',
+    1275 => 'fungi',
+    1276 => 'tectonic',
+    1277 => 'acoustics',
+    1278 => 'aprons',
+    1279 => 'emission',
+    1280 => 'epicenter',
+    1281 => 'epicenters',
+    1282 => 'epicentre',
+    1283 => 'mirrored',
+    1284 => 'hertz',
+    1285 => 'weighted',
+    1286 => 'pulley',
+    1287 => 'clamped',
+    1288 => 'scaled',
+    1289 => 'gallbladder',
+    1290 => 'diluted',
+    1291 => 'refrigeration',
+    1292 => 'inert',
+    1293 => 'scattering',
+    1294 => 'soma',
+    1295 => 'sinkhole',
+    1296 => 'inertia',
+    1297 => 'entropy',
+    1298 => 'amps',
+    1299 => 'transistor',
+    1300 => 'concentrations',
+    1301 => 'tornadoes',
+    1302 => 'photons',
+    1303 => 'vacuuming',
+    1304 => 'topaz',
+    1305 => 'topazes',
+    1306 => 'weathered',
+    1307 => 'hydrate',
+    1308 => 'ceres',
+    1309 => 'crees',
+    1310 => 'crucible',
+    1311 => 'yielding',
+    1312 => 'brine',
+    1313 => 'brined',
+    1314 => 'mica',
+    1315 => 'microwaves',
+    1316 => 'archeology',
+    1317 => 'calorie',
+    1318 => 'thunders',
+    1319 => 'thawed',
+    1320 => 'caving',
+    1321 => 'stratosphere',
+    1322 => 'thunderstorms',
+    1323 => 'cultivation',
+    1324 => 'rainstorm',
+    1325 => 'fjord',
+    1326 => 'solids',
+    1327 => 'filtering',
+    1328 => 'habitats',
+    1329 => 'soils',
+    1330 => 'downpour',
+    1331 => 'acidity',
+    1332 => 'winded',
+    1333 => 'snowfall',
+    1334 => 'mists',
+    1335 => 'harmonic',
+    1336 => 'alphas',
+    1337 => 'neurology',
+    1338 => 'membranes',
+    1339 => 'centaur',
+    1340 => 'isotope',
+    1341 => 'cardiology',
+    1342 => 'neutrinos',
+    1343 => 'wavelengths',
+    1344 => 'ammonium',
+    1345 => 'platelets',
+    1346 => 'thrusting',
+    1347 => 'holograms',
+    1348 => 'tonne',
+    1349 => 'spats',
+    1350 => 'mooning',
+    1351 => 'geyser',
+    1352 => 'cosmology',
+    1353 => 'scaling',
+    1354 => 'carnivore',
+    1355 => 'decayed',
+    1356 => 'furnaces',
+    1357 => 'pore',
+    1358 => 'tuff',
+    1359 => 'wolfram',
+    1360 => 'milligram',
+    1361 => 'milligramme',
+    1362 => 'fission',
+    1363 => 'biochemistry',
+    1364 => 'criminology',
+    1365 => 'palladium',
+    1366 => 'preyed',
+    1367 => 'absorption',
+    1368 => 'isotopes',
+    1369 => 'synthesis',
+    1370 => 'pulsar',
+    1371 => 'corrie',
+    1372 => 'molar',
+    1373 => 'fireballs',
+    1374 => 'bicarbonate',
+    1375 => 'moonstone',
+    1376 => 'moonstones',
+    1377 => 'hails',
+    1378 => 'flurry',
+    1379 => 'stopper',
+    1380 => 'stoppered',
+    1381 => 'foetus',
+    1382 => 'comas',
+    1383 => 'ecosystems',
+    1384 => 'preys',
+    1385 => 'incubation',
+    1386 => 'clouding',
+    1387 => 'flared',
+    1388 => 'aerodynamic',
+    1389 => 'iridium',
+    1390 => 'photosynthesis',
+    1391 => 'ions',
+    1392 => 'alabaster',
+    1393 => 'crusts',
+    1394 => 'lumen',
+    1395 => 'obsidian',
+    1396 => 'cybernetic',
+    1397 => 'electrolytes',
+    1398 => 'carnivores',
+    1399 => 'reflux',
+    1400 => 'icicle',
+    1401 => 'astrophysics',
+    1402 => 'plated',
+    1403 => 'earths',
+    1404 => 'gusts',
+    1405 => 'kilogram',
+    1406 => 'kilogramme',
+    1407 => 'forestry',
+    1408 => 'walling',
+    1409 => 'icebergs',
+    1410 => 'probed',
+    1411 => 'chinook',
+    1412 => 'sampled',
+    1413 => 'rho',
+    1414 => 'rhos',
+    1415 => 'linguistic',
+    1416 => 'silt',
+    1417 => 'silting',
+    1418 => 'magnification',
+    1419 => 'seconded',
+    1420 => 'quarks',
+    1421 => 'grafts',
+    1422 => 'selections',
+    1423 => 'lowing',
+    1424 => 'microbe',
+    1425 => 'carbide',
+    1426 => 'bacterium',
+    1427 => 'estuary',
+    1428 => 'smearing',
+    1429 => 'dilute',
+    1430 => 'sequencing',
+    1431 => 'aromatic',
+    1432 => 'staining',
+    1433 => 'nanotechnology',
+    1434 => 'conductors',
+    1435 => 'swabbed',
+    1436 => 'transformations',
+    1437 => 'overcast',
+    1438 => 'fronting',
+    1439 => 'dewar',
+    1440 => 'prominence',
+    1441 => 'prominences',
+    1442 => 'masse',
+    1443 => 'cryogenic',
+    1444 => 'serpentine',
+    1445 => 'collider',
+    1446 => 'colliders',
+    1447 => 'tachyon',
+    1448 => 'condensation',
+    1449 => 'synapses',
+    1450 => 'capacitor',
+    1451 => 'centrifuge',
+    1452 => 'skinning',
+    1453 => 'tsunamis',
+    1454 => 'abrasion',
+    1455 => 'aerodynamics',
+    1456 => 'sapphires',
+    1457 => 'epoch',
+    1458 => 'tinned',
+    1459 => 'graphite',
+    1460 => 'carbonate',
+    1461 => 'transcription',
+    1462 => 'nuclei',
+    1463 => 'acetone',
+    1464 => 'tungsten',
+    1465 => 'corks',
+    1466 => 'ovary',
+    1467 => 'neutrino',
+    1468 => 'modelled',
+    1469 => 'meteorologist',
+    1470 => 'gauss',
+    1471 => 'hydroxide',
+    1472 => 'hemoglobin',
+    1473 => 'haemoglobin',
+    1474 => 'pharmacies',
+    1475 => 'thrusts',
+    1476 => 'joules',
+    1477 => 'replication',
+    1478 => 'levee',
+    1479 => 'filtration',
+    1480 => 'sulfate',
+    1481 => 'sulfates',
+    1482 => 'sulphate',
+    1483 => 'gemstone',
+    1484 => 'volt',
+    1485 => 'streaking',
+    1486 => 'radon',
+    1487 => 'receptor',
+    1488 => 'cosmonaut',
+    1489 => 'argon',
+    1490 => 'nutrient',
+    1491 => 'milliseconds',
+    1492 => 'boson',
+    1493 => 'molars',
+    1494 => 'xenon',
+    1495 => 'climates',
+    1496 => 'compounded',
+    1497 => 'icicles',
+    1498 => 'eras',
+    1499 => 'carbohydrates',
+    1500 => 'malleable',
+    1501 => 'projectiles',
+    1502 => 'corrosion',
+    1503 => 'genus',
+    1504 => 'lightyear',
+    1505 => 'barium',
+    1506 => 'atmospheres',
+    1507 => 'pathogens',
+    1508 => 'eclipses',
+    1509 => 'linguistics',
+    1510 => 'spectrometer',
+    1511 => 'neuroscience',
+    1512 => 'neurosciences',
+    1513 => 'marred',
+    1514 => 'watershed',
+    1515 => 'electrode',
+    1516 => 'smears',
+    1517 => 'antibody',
+    1518 => 'spindle',
+    1519 => 'sterilization',
+    1520 => 'sterilisation',
+    1521 => 'centaurs',
+    1522 => 'fertilization',
+    1523 => 'fertilisation',
+    1524 => 'aeronautics',
+    1525 => 'zoology',
+    1526 => 'buoyancy',
+    1527 => 'sunspots',
+    1528 => 'computed',
+    1529 => 'flaring',
+    1530 => 'uplift',
+    1531 => 'inversion',
+    1532 => 'labeling',
+    1533 => 'labelling',
+    1534 => 'decibels',
+    1535 => 'vacuumed',
+    1536 => 'slated',
+    1537 => 'groundwater',
+    1538 => 'fingerprinted',
+    1539 => 'ionic',
+    1540 => 'droughts',
+    1541 => 'strata',
+    1542 => 'eclipsed',
+    1543 => 'geysers',
+    1544 => 'phased',
+    1545 => 'elasticity',
+    1546 => 'amoeba',
+    1547 => 'ameba',
+    1548 => 'inoculation',
+    1549 => 'runoff',
+    1550 => 'fluoride',
+    1551 => 'geothermal',
+    1552 => 'precipitation',
+    1553 => 'grafted',
+    1554 => 'squall',
+    1555 => 'symbiosis',
+    1556 => 'adaptations',
+    1557 => 'heredity',
+    1558 => 'pumice',
+    1559 => 'butte',
+    1560 => 'permafrost',
+    1561 => 'forecasts',
+    1562 => 'clays',
+    1563 => 'spectra',
+    1564 => 'evaporation',
+    1565 => 'thermals',
+    1566 => 'distanced',
+    1567 => 'biodiversity',
+    1568 => 'avalanches',
+    1569 => 'polonium',
+    1570 => 'ringed',
+    1571 => 'rusting',
+    1572 => 'gravitation',
+    1573 => 'egged',
+    1574 => 'calibration',
+    1575 => 'westerly',
+    1576 => 'ices',
+    1577 => 'typhoons',
+    1578 => 'thermodynamics',
+    1579 => 'benzene',
+    1580 => 'compasses',
+    1581 => 'atoll',
+    1582 => 'basins',
+    1583 => 'neuron',
+    1584 => 'attrition',
+    1585 => 'millisecond',
+    1586 => 'massing',
+    1587 => 'greys',
+    1588 => 'transverse',
+    1589 => 'graviton',
+    1590 => 'blizzards',
+    1591 => 'fjords',
+    1592 => 'retort',
+    1593 => 'fetuses',
+    1594 => 'foetuses',
+    1595 => 'repulsion',
+    1596 => 'thallium',
+    1597 => 'hydrocarbons',
+    1598 => 'deuterium',
+    1599 => 'inorganic',
+    1600 => 'migrations',
+    1601 => 'bromide',
+    1602 => 'fusing',
+    1603 => 'chlorophyll',
+    1604 => 'microns',
+    1605 => 'fronted',
+    1606 => 'onyx',
+    1607 => 'cesium',
+    1608 => 'caesium',
+    1609 => 'tailings',
+    1610 => 'gorges',
+    1611 => 'nimbus',
+    1612 => 'gestation',
+    1613 => 'starched',
+    1614 => 'loup',
+    1615 => 'loupes',
+    1616 => 'alloys',
+    1617 => 'rinsed',
+    1618 => 'herbivores',
+    1619 => 'capillaries',
+    1620 => 'condense',
+    1621 => 'condensing',
+    1622 => 'chromium',
+    1623 => 'transistors',
+    1624 => 'butane',
+    1625 => 'centrifugal',
+    1626 => 'sectioned',
+    1627 => 'bladders',
+    1628 => 'spore',
+    1629 => 'thermometers',
+    1630 => 'microorganisms',
+    1631 => 'alkaline',
+    1632 => 'scalpels',
+    1633 => 'thawing',
+    1634 => 'condenser',
+    1635 => 'fermentation',
+    1636 => 'egging',
+    1637 => 'sediments',
+    1638 => 'glassware',
+    1639 => 'buffers',
+    1640 => 'depressions',
+    1641 => 'electromagnetism',
+    1642 => 'lattice',
+    1643 => 'lattices',
+    1644 => 'speeded',
+    1645 => 'phosphate',
+    1646 => 'manganese',
+    1647 => 'heatwave',
+    1648 => 'potentials',
+    1649 => 'flasks',
+    1650 => 'precipitate',
+    1651 => 'distancing',
+    1652 => 'grafting',
+    1653 => 'nitrates',
+    1654 => 'pulleys',
+    1655 => 'basalt',
+    1656 => 'basalts',
+    1657 => 'matrices',
+    1658 => 'sanding',
+    1659 => 'supernovas',
+    1660 => 'aftershock',
+    1661 => 'hadron',
+    1662 => 'topsoil',
+    1663 => 'nanosecond',
+    1664 => 'quicksilver',
+    1665 => 'biosphere',
+    1666 => 'biospheres',
+    1667 => 'photonic',
+    1668 => 'scatters',
+    1669 => 'gales',
+    1670 => 'quasar',
+    1671 => 'grays',
+    1672 => 'gypsum',
+    1673 => 'clamping',
+    1674 => 'vented',
+    1675 => 'organics',
+    1676 => 'stigmata',
+    1677 => 'autotrophs',
+    1678 => 'voids',
+    1679 => 'eon',
+    1680 => 'diffusion',
+    1681 => 'phasing',
+    1682 => 'silvers',
+    1683 => 'precipitated',
+    1684 => 'caldera',
+    1685 => 'biotechnology',
+    1686 => 'viscosity',
+    1687 => 'golds',
+    1688 => 'tectonics',
+    1689 => 'chalked',
+    1690 => 'clustered',
+    1691 => 'sperms',
+    1692 => 'hemispheres',
+    1693 => 'strontium',
+    1694 => 'muggy',
+    1695 => 'acetate',
+    1696 => 'acetates',
+    1697 => 'sulfide',
+    1698 => 'fogged',
+    1699 => 'assay',
+    1700 => 'assayed',
+    1701 => 'assays',
+    1702 => 'soiling',
+    1703 => 'stoking',
+    1704 => 'beryllium',
+    1705 => 'neurotransmitters',
+    1706 => 'emulsion',
+    1707 => 'emulsions',
+    1708 => 'massed',
+    1709 => 'slates',
+    1710 => 'cellulose',
+    1711 => 'voided',
+    1712 => 'pestle',
+    1713 => 'mimicry',
+    1714 => 'microscopes',
+    1715 => 'tributary',
+    1716 => 'cosmonauts',
+    1717 => 'sedimentary',
+    1718 => 'rocketed',
+    1719 => 'carbonated',
+    1720 => 'electrolyte',
+    1721 => 'corked',
+    1722 => 'fingerprinting',
+    1723 => 'megahertz',
+    1724 => 'beakers',
+    1725 => 'synapse',
+    1726 => 'amplitude',
+    1727 => 'reproductions',
+    1728 => 'mirroring',
+    1729 => 'horticulture',
+    1730 => 'dispersion',
+    1731 => 'methyl',
+    1732 => 'refraction',
+    1733 => 'refractions',
+    1734 => 'osmosis',
+    1735 => 'blotted',
+    1736 => 'mitochondria',
+    1737 => 'halos',
+    1738 => 'poring',
+    1739 => 'cyclones',
+    1740 => 'gemstones',
+    1741 => 'cryogenics',
+    1742 => 'meandering',
+    1743 => 'platelet',
+    1744 => 'fermi',
+    1745 => 'paleontology',
+    1746 => 'aerobic',
+    1747 => 'monsoons',
+    1748 => 'leaded',
+    1749 => 'talc',
+    1750 => 'meteorology',
+    1751 => 'rinsing',
+    1752 => 'alkali',
+    1753 => 'alkalis',
+    1754 => 'funneled',
+    1755 => 'invertebrates',
+    1756 => 'hailstorm',
+    1757 => 'pharmacology',
+    1758 => 'metallurgy',
+    1759 => 'megatons',
+    1760 => 'ovum',
+    1761 => 'sequencer',
+    1762 => 'sequencers',
+    1763 => 'muscled',
+    1764 => 'octane',
+    1765 => 'harmonics',
+    1766 => 'oscillation',
+    1767 => 'oscillations',
+    1768 => 'streaked',
+    1769 => 'needling',
+    1770 => 'subduction',
+    1771 => 'thunderhead',
+    1772 => 'thunderheads',
+    1773 => 'uplifted',
+    1774 => 'farad',
+    1775 => 'goggle',
+    1776 => 'goggled',
+    1777 => 'goggling',
+    1778 => 'decays',
+    1779 => 'extinctions',
+    1780 => 'cadmium',
+    1781 => 'drizzling',
+    1782 => 'gorging',
+    1783 => 'inoculations',
+    1784 => 'lagoons',
+    1785 => 'amplification',
+    1786 => 'boron',
+    1787 => 'forecasting',
+    1788 => 'sanded',
+    1789 => 'tornados',
+    1790 => 'rifts',
+    1791 => 'suspensions',
+    1792 => 'whiteout',
+    1793 => 'kilowatt',
+    1794 => 'funnels',
+    1795 => 'ionosphere',
+    1796 => 'reductions',
+    1797 => 'swabbing',
+    1798 => 'vertebrates',
+    1799 => 'crests',
+    1800 => 'coherence',
+    1801 => 'shales',
+    1802 => 'newtons',
+    1803 => 'tiled',
+    1804 => 'planetoid',
+    1805 => 'planetoids',
+    1806 => 'selenium',
+    1807 => 'glycol',
+    1808 => 'hydrothermal',
+    1809 => 'auroras',
+    1810 => 'outcrop',
+    1811 => 'electromagnet',
+    1812 => 'electromagnets',
+    1813 => 'oxidation',
+    1814 => 'vacuums',
+    1815 => 'doldrums',
+    1816 => 'dropper',
+    1817 => 'droppers',
+    1818 => 'nebulae',
+    1819 => 'germinate',
+    1820 => 'germinated',
+    1821 => 'germinating',
+    1822 => 'germinates',
+    1823 => 'solvents',
+    1824 => 'niches',
+    1825 => 'crested',
+    1826 => 'duodenum',
+    1827 => 'aeon',
+    1828 => 'aeons',
+    1829 => 'troughs',
+    1830 => 'microbiology',
+    1831 => 'antigen',
+    1832 => 'antigens',
+    1833 => 'pulsars',
+    1834 => 'magnetosphere',
+    1835 => 'autopsied',
+    1836 => 'thaws',
+    1837 => 'gorged',
+    1838 => 'fogs',
+    1839 => 'immunities',
+    1840 => 'daltons',
+    1841 => 'thorium',
+    1842 => 'aquifer',
+    1843 => 'aquifers',
+    1844 => 'convection',
+    1845 => 'milliliters',
+    1846 => 'fluorine',
+    1847 => 'brained',
+    1848 => 'latitudes',
+    1849 => 'peridot',
+    1850 => 'pollination',
+    1851 => 'recessive',
+    1852 => 'betas',
+    1853 => 'capillary',
+    1854 => 'cathode',
+    1855 => 'sunning',
+    1856 => 'funneling',
+    1857 => 'distillation',
+    1858 => 'mixtures',
+    1859 => 'levees',
+    1860 => 'hazed',
+    1861 => 'aquamarine',
+    1862 => 'loam',
+    1863 => 'accelerators',
+    1864 => 'crusted',
+    1865 => 'vertebrate',
+    1866 => 'entomology',
+    1867 => 'ethylene',
+    1868 => 'litmus',
+    1869 => 'alleles',
+    1870 => 'quasars',
+    1871 => 'weathering',
+    1872 => 'pili',
+    1873 => 'soluble',
+    1874 => 'velocities',
+    1875 => 'jetting',
+    1876 => 'microwaved',
+    1877 => 'micrograms',
+    1878 => 'compounding',
+    1879 => 'blotting',
+    1880 => 'cybernetics',
+    1881 => 'carbohydrate',
+    1882 => 'reagent',
+    1883 => 'reagents',
+    1884 => 'saturate',
+    1885 => 'saturating',
+    1886 => 'saturates',
+    1887 => 'humus',
+    1888 => 'gammas',
+    1889 => 'rads',
+    1890 => 'tributaries',
+    1891 => 'birthstone',
+    1892 => 'supernovae',
+    1893 => 'muscling',
+    1894 => 'dwarfed',
+    1895 => 'herbivore',
+    1896 => 'vestigial',
+    1897 => 'longitudinal',
+    1898 => 'aftershocks',
+    1899 => 'sinkholes',
+    1900 => 'disinfection',
+    1901 => 'blots',
+    1902 => 'capacitors',
+    1903 => 'rocketing',
+    1904 => 'stoppers',
+    1905 => 'easterly',
+    1906 => 'hectare',
+    1907 => 'nebulas',
+    1908 => 'borax',
+    1909 => 'dermatology',
+    1910 => 'flints',
+    1911 => 'mistral',
+    1912 => 'agate',
+    1913 => 'megaton',
+    1914 => 'thundered',
+    1915 => 'conglomerates',
+    1916 => 'orbited',
+    1917 => 'twisters',
+    1918 => 'candela',
+    1919 => 'polymers',
+    1920 => 'tantalum',
+    1921 => 'breezed',
+    1922 => 'fogging',
+    1923 => 'meander',
+    1924 => 'meandered',
+    1925 => 'micron',
+    1926 => 'decibel',
+    1927 => 'tiling',
+    1928 => 'separations',
+    1929 => 'trilobites',
+    1930 => 'condenses',
+    1931 => 'oceanography',
+    1932 => 'jaspers',
+    1933 => 'gloved',
+    1934 => 'hydrating',
+    1935 => 'tripods',
+    1936 => 'diluting',
+    1937 => 'cartography',
+    1938 => 'ornithology',
+    1939 => 'kilowatts',
+    1940 => 'megawatts',
+    1941 => 'incubators',
+    1942 => 'bismuth',
+    1943 => 'bloodstone',
+    1944 => 'deltas',
+    1945 => 'sunstone',
+    1946 => 'omegas',
+    1947 => 'respirations',
+    1948 => 'buffering',
+    1949 => 'meteorologists',
+    1950 => 'kilotons',
+    1951 => 'frosts',
+    1952 => 'ampoules',
+    1953 => 'zirconium',
+    1954 => 'parsecs',
+    1955 => 'tubed',
+    1956 => 'genomes',
+    1957 => 'salting',
+    1958 => 'feldspar',
+    1959 => 'stalactites',
+    1960 => 'densities',
+    1961 => 'phosphates',
+    1962 => 'computes',
+    1963 => 'faulted',
+    1964 => 'clustering',
+    1965 => 'thymus',
+    1966 => 'ultrasounds',
+    1967 => 'flurries',
+    1968 => 'sandstorms',
+    1969 => 'cloudburst',
+    1970 => 'schist',
+    1971 => 'volcanos',
+    1972 => 'bunged',
+    1973 => 'breezing',
+    1974 => 'squalls',
+    1975 => 'henrys',
+    1976 => 'snowdrift',
+    1977 => 'chalking',
+    1978 => 'fielded',
+    1979 => 'mooned',
+    1980 => 'lensing',
+    1981 => 'trilobite',
+    1982 => 'rime',
+    1983 => 'malachite',
+    1984 => 'antimony',
+    1985 => 'precipitating',
+    1986 => 'genera',
+    1987 => 'blustery',
+    1988 => 'ophthalmology',
+    1989 => 'rusts',
+    1990 => 'tempests',
+    1991 => 'tachyons',
+    1992 => 'amoebas',
+    1993 => 'protractor',
+    1994 => 'reverberations',
+    1995 => 'kilohertz',
+    1996 => 'hailstones',
+    1997 => 'meanders',
+    1998 => 'rubidium',
+    1999 => 'ampere',
+    2000 => 'extractions',
+    2001 => 'graying',
+    2002 => 'ammonites',
+    2003 => 'sirocco',
+    2004 => 'centrifuges',
+    2005 => 'estuaries',
+    2006 => 'pored',
+    2007 => 'oxides',
+    2008 => 'prisms',
+    2009 => 'gallium',
+    2010 => 'plateaus',
+    2011 => 'coring',
+    2012 => 'fixations',
+    2013 => 'carbons',
+    2014 => 'biopsies',
+    2015 => 'dusts',
+    2016 => 'classifications',
+    2017 => 'waterspout',
+    2018 => 'bauxite',
+    2019 => 'gigawatts',
+    2020 => 'lightnings',
+    2021 => 'hotplate',
+    2022 => 'taus',
+    2023 => 'endocrinology',
+    2024 => 'nanoseconds',
+    2025 => 'dissections',
+    2026 => 'singularities',
+    2027 => 'neutrals',
+    2028 => 'grinded',
+    2029 => 'vectoring',
+    2030 => 'radiations',
+    2031 => 'cinnabar',
+    2032 => 'joule',
+    2033 => 'whirlwinds',
+    2034 => 'gilberts',
+    2035 => 'downpours',
+    2036 => 'drizzles',
+    2037 => 'leaching',
+    2038 => 'snowdrifts',
+    2039 => 'pitchblende',
+    2040 => 'microsecond',
+    2041 => 'coronas',
+    2042 => 'amethysts',
+    2043 => 'ores',
+    2044 => 'chalks',
+    2045 => 'ampoule',
+    2046 => 'olivine',
+    2047 => 'erg',
+    2048 => 'squalling',
+    2049 => 'snowstorms',
+    2050 => 'invertebrate',
+    2051 => 'imaged',
+    2052 => 'opals',
+    2053 => 'outcrops',
+    2054 => 'stalagmites',
+    2055 => 'heliotrope',
+    2056 => 'motioned',
+    2057 => 'stratum',
+    2058 => 'oxbow',
+    2059 => 'germanium',
+    2060 => 'jetstream',
+    2061 => 'garnets',
+    2062 => 'calibrations',
+    2063 => 'alveoli',
+    2064 => 'travertine',
+    2065 => 'virology',
+    2066 => 'echos',
+    2067 => 'retorts',
+    2068 => 'catalysts',
+    2069 => 'drizzly',
+    2070 => 'moraine',
+    2071 => 'anthracite',
+    2072 => 'dolomites',
+    2073 => 'lodestone',
+    2074 => 'magnetite',
+    2075 => 'dyne',
+    2076 => 'spatulas',
+    2077 => 'starches',
+    2078 => 'cratered',
+    2079 => 'dilutes',
+    2080 => 'camouflaging',
+    2081 => 'rainstorms',
+    2082 => 'epidemiology',
+    2083 => 'gigahertz',
+    2084 => 'buttes',
+    2085 => 'spleens',
+    2086 => 'condensers',
+    2087 => 'galena',
+    2088 => 'microseconds',
+    2089 => 'pathologies',
+    2090 => 'soundings',
+    2091 => 'ammonite',
+    2092 => 'vanadium',
+    2093 => 'seismology',
+    2094 => 'funnelled',
+    2095 => 'rinses',
+    2096 => 'spitted',
+    2097 => 'plateaued',
+    2098 => 'icecaps',
+    2099 => 'reverberation',
+    2100 => 'molybdenum',
+    2101 => 'osmium',
+    2102 => 'immunology',
+    2103 => 'leached',
+    2104 => 'omnivores',
+    2105 => 'mesas',
+    2106 => 'spacecrafts',
+    2107 => 'marring',
+    2108 => 'ambers',
+    2109 => 'retorted',
+    2110 => 'jetted',
+    2111 => 'palaeontology',
+    2112 => 'millilitres',
+    2113 => 'angstrom',
+    2114 => 'epochs',
+    2115 => 'microwaving',
+    2116 => 'brining',
+    2117 => 'interferences',
+    2118 => 'uteruses',
+    2119 => 'icecap',
+    2120 => 'placentas',
+    2121 => 'biopsied',
+    2122 => 'forecasted',
+    2123 => 'scree',
+    2124 => 'neodymium',
+    2125 => 'calcite',
+    2126 => 'carnelian',
+    2127 => 'scissoring',
+    2128 => 'outcropping',
+    2129 => 'outcroppings',
+    2130 => 'misting',
+    2131 => 'pharynx',
+    2132 => 'stalactite',
+    2133 => 'atolls',
+    2134 => 'spindles',
+    2135 => 'greying',
+    2136 => 'precipitates',
+    2137 => 'pyrite',
+    2138 => 'zircon',
+    2139 => 'neurones',
+    2140 => 'torqued',
+    2141 => 'floodplain',
+    2142 => 'dolomite',
+    2143 => 'transcriptions',
+    2144 => 'weighting',
+    2145 => 'pendulums',
+    2146 => 'leaches',
+    2147 => 'gravitons',
+    2148 => 'cresting',
+    2149 => 'metabolisms',
+    2150 => 'hydrates',
+    2151 => 'voiding',
+    2152 => 'parsec',
+    2153 => 'jades',
+    2154 => 'veining',
+    2155 => 'omnivore',
+    2156 => 'stalagmite',
+    2157 => 'dewars',
+    2158 => 'faulting',
+    2159 => 'torques',
+    2160 => 'therm',
+    2161 => 'blooding',
+    2162 => 'andesite',
+    2163 => 'bacteriology',
+    2164 => 'alcohols',
+    2165 => 'dews',
+    2166 => 'breccia',
+    2167 => 'megawatt',
+    2168 => 'millibars',
+    2169 => 'candelas',
+    2170 => 'kelvins',
+    2171 => 'snowfalls',
+    2172 => 'inheritances',
+    2173 => 'neons',
+    2174 => 'webers',
+    2175 => 'voltages',
+    2176 => 'bosons',
+    2177 => 'gravels',
+    2178 => 'tritons',
+    2179 => 'drys',
+    2180 => 'soapstone',
+    2181 => 'sunstones',
+    2182 => 'tourmaline',
+    2183 => 'gerontology',
+    2184 => 'kiloton',
+    2185 => 'sieves',
+    2186 => 'aromatics',
+    2187 => 'thermostats',
+    2188 => 'barometers',
+    2189 => 'rimes',
+    2190 => 'efficiencies',
+    2191 => 'mantles',
+    2192 => 'grayed',
+    2193 => 'camouflages',
+    2194 => 'rems',
+    2195 => 'motioning',
+    2196 => 'lavas',
+    2197 => 'volatiles',
+    2198 => 'celled',
+    2199 => 'corking',
+    2200 => 'plasmas',
+    2201 => 'gadolinium',
+    2202 => 'rhodium',
+    2203 => 'radiography',
+    2204 => 'haematology',
+    2205 => 'gallbladders',
+    2206 => 'silted',
+    2207 => 'zephyrs',
+    2208 => 'vectored',
+    2209 => 'deluged',
+    2210 => 'hazes',
+    2211 => 'bromides',
+    2212 => 'geophysics',
+    2213 => 'ohms',
+    2214 => 'stigmas',
+    2215 => 'sectioning',
+    2216 => 'circuited',
+    2217 => 'hailstone',
+    2218 => 'citrine',
+    2219 => 'kaolin',
+    2220 => 'quartzite',
+    2221 => 'angstroms',
+    2222 => 'chinooks',
+    2223 => 'colons',
+    2224 => 'dwarfing',
+    2225 => 'buffered',
+    2226 => 'resonances',
+    2227 => 'kinetics',
+    2228 => 'photonics',
+    2229 => 'mortared',
+    2230 => 'callipers',
+    2231 => 'micrometer',
+    2232 => 'biophysics',
+    2233 => 'resistances',
+    2234 => 'telescoping',
+    2235 => 'inversions',
+    2236 => 'intensities',
+    2237 => 'conglomerated',
+    2238 => 'westerlies',
+    2239 => 'cratering',
+    2240 => 'americium',
+    2241 => 'boras',
+    2242 => 'frictions',
+    2243 => 'uplifts',
+    2244 => 'stationing',
+    2245 => 'lowed',
+    2246 => 'zircons',
+    2247 => 'becquerel',
+    2248 => 'bungs',
+    2249 => 'granites',
+    2250 => 'sieved',
+    2251 => 'gravities',
+    2252 => 'sieving',
+    2253 => 'earthed',
+    2254 => 'actinium',
+    2255 => 'amperes',
+    2256 => 'appendixes',
+    2257 => 'funnelling',
+    2258 => 'novas',
+    2259 => 'metered',
+    2260 => 'levering',
+    2261 => 'bouldering',
+    2262 => 'horsepowers',
+    2263 => 'bunging',
+    2264 => 'haloes',
+    2265 => 'fusions',
+    2266 => 'spectrometers',
+    2267 => 'misted',
+    2268 => 'windchill',
+    2269 => 'gneiss',
+    2270 => 'mineralogy',
+    2271 => 'hydrology',
+    2272 => 'lightyears',
+    2273 => 'crucibles',
+    2274 => 'watersheds',
+    2275 => 'labcoat',
+    2276 => 'anticyclone',
+    2277 => 'hafnium',
+    2278 => 'jadeite',
+    2279 => 'appendices',
+    2280 => 'haar',
+    2281 => 'haars',
+    2282 => 'becquerels',
+    2283 => 'curies',
+    2284 => 'lumens',
+    2285 => 'hotspring',
+    2286 => 'calderas',
+    2287 => 'pyrites',
+    2288 => 'volcanology',
+    2289 => 'coulomb',
+    2290 => 'teslas',
+    2291 => 'seabreeze',
+    2292 => 'indium',
+    2293 => 'lanthanum',
+    2294 => 'yttrium',
+    2295 => 'torr',
+    2296 => 'protractors',
+    2297 => 'hailstorms',
+    2298 => 'karst',
+    2299 => 'agates',
+    2300 => 'cornelian',
+    2301 => 'informatics',
+    2302 => 'nanometre',
+    2303 => 'micrometers',
+    2304 => 'showery',
+    2305 => 'ironstone',
+    2306 => 'lignite',
+    2307 => 'climatology',
+    2308 => 'moraines',
+    2309 => 'fluorite',
+    2310 => 'radians',
+    2311 => 'kilovolts',
+    2312 => 'cloudbursts',
+    2313 => 'niobium',
+    2314 => 'alexandrite',
+    2315 => 'chalcedony',
+    2316 => 'gabbro',
+    2317 => 'millilitre',
+    2318 => 'thyroids',
+    2319 => 'tradewinds',
+    2320 => 'pestles',
+    2321 => 'neptunium',
+    2322 => 'rhyolite',
+    2323 => 'nanometres',
+    2324 => 'gigawatt',
+    2325 => 'kilojoules',
+    2326 => 'cortexes',
+    2327 => 'waterspouts',
+    2328 => 'cerium',
+    2329 => 'rhenium',
+    2330 => 'ruthenium',
+    2331 => 'scandium',
+    2332 => 'microgram',
+    2333 => 'sievert',
+    2334 => 'floodplains',
+    2335 => 'arete',
+    2336 => 'heliotropes',
+    2337 => 'chert',
+    2338 => 'mudstone',
+    2339 => 'demography',
+    2340 => 'millibar',
+    2341 => 'hotsprings',
+    2342 => 'heatwaves',
+    2343 => 'curium',
+    2344 => 'europium',
+    2345 => 'francium',
+    2346 => 'lodestones',
+    2347 => 'mudstones',
+    2348 => 'decilitres',
+    2349 => 'radian',
+    2350 => 'larvas',
+    2351 => 'californium',
+    2352 => 'alveolus',
+    2353 => 'multimeter',
+    2354 => 'hotplates',
+    2355 => 'hoarfrost',
+    2356 => 'aretes',
+    2357 => 'einsteinium',
+    2358 => 'nobelium',
+    2359 => 'morganite',
+    2360 => 'dietetics',
+    2361 => 'whiteouts',
+    2362 => 'halite',
+    2363 => 'peridots',
+    2364 => 'glaciology',
+    2365 => 'centilitres',
+    2366 => 'ergs',
+    2367 => 'larynxes',
+    2368 => 'secondes',
+    2369 => 'tundras',
+    2370 => 'canyoning',
+    2371 => 'siroccos',
+    2372 => 'breccias',
+    2373 => 'dolerite',
+    2374 => 'fluorspar',
+    2375 => 'spinels',
+    2376 => 'tanzanite',
+    2377 => 'mycology',
+    2378 => 'therms',
+    2379 => 'kilocalories',
+    2380 => 'kilovolt',
+    2381 => 'pascals',
+    2382 => 'tracheas',
+    2383 => 'easterlies',
+    2384 => 'anticyclones',
+    2385 => 'peasouper',
+    2386 => 'screes',
+    2387 => 'bloodstones',
+    2388 => 'spinel',
+    2389 => 'travertines',
+    2390 => 'jetes',
+    2391 => 'tradewind',
+    2392 => 'duststorm',
+    2393 => 'esker',
+    2394 => 'aquamarines',
+    2395 => 'birthstones',
+    2396 => 'gritstone',
+    2397 => 'labradorite',
+    2398 => 'magnetites',
+    2399 => 'decilitre',
+    2400 => 'kilocalorie',
+    2401 => 'kilojoule',
+    2402 => 'coulombs',
+    2403 => 'dynes',
+    2404 => 'karsts',
+    2405 => 'luxes',
+    2406 => 'thermes',
+    2407 => 'coldfront',
+    2408 => 'labcoats',
+    2409 => 'duodenums',
+    2410 => 'peasoupers',
+    2411 => 'oxbows',
+    2412 => 'citrines',
+    2413 => 'andesites',
+    2414 => 'carnelians',
+    2415 => 'cornelians',
+    2416 => 'feldspars',
+    2417 => 'haematite',
+    2418 => 'marcasite',
+    2419 => 'rhyolites',
+    2420 => 'schists',
+    2421 => 'sodalite',
+    2422 => 'centilitre',
+    2423 => 'sieverts',
+    2424 => 'corries',
+    2425 => 'glasswares',
+    2426 => 'hertzes',
+    2427 => 'voltes',
+    2428 => 'warmfront',
+    2429 => 'blackice',
+    2430 => 'pharynxes',
+    2431 => 'thymuses',
+    2432 => 'multimeters',
+    2433 => 'mistrals',
+    2434 => 'jetstreams',
+    2435 => 'duststorms',
+    2436 => 'eskers',
+    2437 => 'cinnabars',
+    2438 => 'malachites',
+    2439 => 'testtube',
+    2440 => 'testtubes',
+    2441 => 'alexandrites',
+    2442 => 'calcites',
+    2443 => 'chalcedonys',
+    2444 => 'cherts',
+    2445 => 'dolerites',
+    2446 => 'fluorites',
+    2447 => 'gabbros',
+    2448 => 'galenas',
+    2449 => 'gneisses',
+    2450 => 'gritstones',
+    2451 => 'haematites',
+    2452 => 'ironstones',
+    2453 => 'jadeites',
+    2454 => 'labradorites',
+    2455 => 'lapislazuli',
+    2456 => 'marcasites',
+    2457 => 'morganites',
+    2458 => 'olivines',
+    2459 => 'quartzites',
+    2460 => 'rocksalt',
+    2461 => 'siltstone',
+    2462 => 'siltstones',
+    2463 => 'soapstones',
+    2464 => 'sodalites',
+    2465 => 'tanzanites',
+    2466 => 'tigerseye',
+    2467 => 'tourmalines',
+    2468 => 'farads',
+    2469 => 'cirques',
+    2470 => 'glandes',
+    2471 => 'coldfronts',
+    2472 => 'warmfronts',
+    2473 => 'tropicalstorm',
+    2474 => 'tropicalstorms',
+    2475 => 'icestorm',
+    2476 => 'icestorms',
+    2477 => 'freezingrain',
+    2478 => 'acidrain',
+    2479 => 'indiansummer',
+    2480 => 'indiansummers',
+    2481 => 'seabreezes',
+    2482 => 'oxbowlake',
+    2483 => 'oxbowlakes',
+    2484 => 'riftvalley',
+    2485 => 'riftvalleys',
+    2486 => 'magnifyingglass',
+    2487 => 'magnifyingglasses',
+    2488 => 'smallintestine',
+    2489 => 'smallintestines',
+    2490 => 'largeintestine',
+    2491 => 'largeintestines',
+    2492 => 'kilowatthour',
+    2493 => 'kilowatthours',
+    2494 => 'astronomicalunit',
+    2495 => 'astronomicalunits',
+    2496 => 'cubiccentimetre',
+    2497 => 'cubiccentimetres',
+    2498 => 'rosequartz',
+    2499 => 'foolsgold',
+    2500 => 'rockcrystal',
+    2501 => 'ironore',
+    2502 => 'abiotic',
+    2503 => 'acrosome',
+    2504 => 'acrosomes',
+    2505 => 'actinolite',
+    2506 => 'activationenergy',
+    2507 => 'adiabatic',
+    2508 => 'adrenalin',
+    2509 => 'agronomy',
+    2510 => 'airfrost',
+    2511 => 'airmass',
+    2512 => 'airmasses',
+    2513 => 'airpressure',
+    2514 => 'albite',
+    2515 => 'aldehyde',
+    2516 => 'aldehydes',
+    2517 => 'alembic',
+    2518 => 'alembics',
+    2519 => 'aliquot',
+    2520 => 'aliquots',
+    2521 => 'alkalies',
+    2522 => 'alkalimetal',
+    2523 => 'alkalimetals',
+    2524 => 'alkalinity',
+    2525 => 'alkane',
+    2526 => 'alkanes',
+    2527 => 'alkene',
+    2528 => 'alkenes',
+    2529 => 'alkyne',
+    2530 => 'alkynes',
+    2531 => 'allele',
+    2532 => 'allotrope',
+    2533 => 'allotropes',
+    2534 => 'alphaparticle',
+    2535 => 'alphaparticles',
+    2536 => 'altocumulus',
+    2537 => 'altostratus',
+    2538 => 'amazonite',
+    2539 => 'amide',
+    2540 => 'amides',
+    2541 => 'amine',
+    2542 => 'amines',
+    2543 => 'aminoacid',
+    2544 => 'aminoacids',
+    2545 => 'ammeter',
+    2546 => 'ammeters',
+    2547 => 'amoebae',
+    2548 => 'amphibole',
+    2549 => 'amphiboles',
+    2550 => 'amphibolite',
+    2551 => 'amphoteric',
+    2552 => 'amplitudes',
+    2553 => 'amyloplast',
+    2554 => 'amyloplasts',
+    2555 => 'anabatic',
+    2556 => 'anaerobic',
+    2557 => 'andalusite',
+    2558 => 'anemometer',
+    2559 => 'anemometers',
+    2560 => 'anhydride',
+    2561 => 'anhydrides',
+    2562 => 'anhydrite',
+    2563 => 'anhydrous',
+    2564 => 'anion',
+    2565 => 'anions',
+    2566 => 'annealing',
+    2567 => 'anode',
+    2568 => 'anodes',
+    2569 => 'anther',
+    2570 => 'anthers',
+    2571 => 'anthropocene',
+    2572 => 'anticline',
+    2573 => 'anticlines',
+    2574 => 'antielectron',
+    2575 => 'antielectrons',
+    2576 => 'antimuon',
+    2577 => 'antimuons',
+    2578 => 'antineutrino',
+    2579 => 'antineutrinos',
+    2580 => 'antineutron',
+    2581 => 'antineutrons',
+    2582 => 'antinode',
+    2583 => 'antinodes',
+    2584 => 'antiparticle',
+    2585 => 'antiparticles',
+    2586 => 'antiproton',
+    2587 => 'antiprotons',
+    2588 => 'antiquark',
+    2589 => 'antiquarks',
+    2590 => 'anvilcloud',
+    2591 => 'anvilclouds',
+    2592 => 'anyon',
+    2593 => 'anyons',
+    2594 => 'apatite',
+    2595 => 'apoptosis',
+    2596 => 'aqueous',
+    2597 => 'arachnology',
+    2598 => 'aragonite',
+    2599 => 'arcminute',
+    2600 => 'arcminutes',
+    2601 => 'arcsecond',
+    2602 => 'arcseconds',
+    2603 => 'arcus',
+    2604 => 'argentum',
+    2605 => 'arkose',
+    2606 => 'astatine',
+    2607 => 'asterism',
+    2608 => 'asterisms',
+    2609 => 'asteroidbelt',
+    2610 => 'asteroidbelts',
+    2611 => 'asthenosphere',
+    2612 => 'astrobiology',
+    2613 => 'astrochemistry',
+    2614 => 'astrometry',
+    2615 => 'astronautics',
+    2616 => 'atomicmass',
+    2617 => 'atomicmasses',
+    2618 => 'atomicnumber',
+    2619 => 'atomicnumbers',
+    2620 => 'attosecond',
+    2621 => 'attoseconds',
+    2622 => 'augite',
+    2623 => 'aurorae',
+    2624 => 'aurum',
+    2625 => 'autoclave',
+    2626 => 'autoclaves',
+    2627 => 'autoclaving',
+    2628 => 'autoradiography',
+    2629 => 'autotroph',
+    2630 => 'aventurine',
+    2631 => 'axion',
+    2632 => 'axions',
+    2633 => 'axon',
+    2634 => 'axons',
+    2635 => 'azote',
+    2636 => 'azurite',
+    2637 => 'barite',
+    2638 => 'baryon',
+    2639 => 'baryons',
+    2640 => 'baryte',
+    2641 => 'basalbodies',
+    2642 => 'basalbody',
+    2643 => 'baud',
+    2644 => 'belljar',
+    2645 => 'belljars',
+    2646 => 'berkelium',
+    2647 => 'beryls',
+    2648 => 'betaparticle',
+    2649 => 'betaparticles',
+    2650 => 'bigbang',
+    2651 => 'bioengineering',
+    2652 => 'biogeography',
+    2653 => 'bioinformatics',
+    2654 => 'biomass',
+    2655 => 'biome',
+    2656 => 'biomechanics',
+    2657 => 'biomedicine',
+    2658 => 'biomes',
+    2659 => 'bioreactor',
+    2660 => 'bioreactors',
+    2661 => 'biotic',
+    2662 => 'biotite',
+    2663 => 'blackbodies',
+    2664 => 'blackbody',
+    2665 => 'blackhole',
+    2666 => 'blackholes',
+    2667 => 'blazar',
+    2668 => 'blazars',
+    2669 => 'blindtest',
+    2670 => 'blindtests',
+    2671 => 'blueshift',
+    2672 => 'bohrium',
+    2673 => 'boilingtube',
+    2674 => 'boilingtubes',
+    2675 => 'bolide',
+    2676 => 'bolides',
+    2677 => 'bornite',
+    2678 => 'bottomquark',
+    2679 => 'bottomquarks',
+    2680 => 'bromine',
+    2681 => 'browndwarf',
+    2682 => 'browndwarfs',
+    2683 => 'bryology',
+    2684 => 'btu',
+    2685 => 'btus',
+    2686 => 'bunsen',
+    2687 => 'bunsenburner',
+    2688 => 'bunsenburners',
+    2689 => 'bunsens',
+    2690 => 'buret',
+    2691 => 'burets',
+    2692 => 'burette',
+    2693 => 'burettes',
+    2694 => 'caliper',
+    2695 => 'calipers',
+    2696 => 'calliper',
+    2697 => 'calorimeter',
+    2698 => 'calorimeters',
+    2699 => 'calorimetry',
+    2700 => 'cambrian',
+    2701 => 'capacitance',
+    2702 => 'carbonates',
+    2703 => 'carbondating',
+    2704 => 'carbondioxide',
+    2705 => 'carboniferous',
+    2706 => 'carbonmonoxide',
+    2707 => 'carbonyl',
+    2708 => 'carbonyls',
+    2709 => 'carboxyl',
+    2710 => 'carboxyls',
+    2711 => 'carpel',
+    2712 => 'carpels',
+    2713 => 'cassiterite',
+    2714 => 'catalysis',
+    2715 => 'catchment',
+    2716 => 'catchments',
+    2717 => 'cathodes',
+    2718 => 'cation',
+    2719 => 'cations',
+    2720 => 'catseye',
+    2721 => 'celestine',
+    2722 => 'celestite',
+    2723 => 'cellmembrane',
+    2724 => 'cellmembranes',
+    2725 => 'cellplate',
+    2726 => 'cellplates',
+    2727 => 'cellwall',
+    2728 => 'cellwalls',
+    2729 => 'cenozoic',
+    2730 => 'centerofmass',
+    2731 => 'centiliter',
+    2732 => 'centiliters',
+    2733 => 'centreofmass',
+    2734 => 'centrifugation',
+    2735 => 'centrifuging',
+    2736 => 'centriole',
+    2737 => 'centrioles',
+    2738 => 'centripetal',
+    2739 => 'centromere',
+    2740 => 'centromeres',
+    2741 => 'centrosome',
+    2742 => 'centrosomes',
+    2743 => 'chainreaction',
+    2744 => 'chainreactions',
+    2745 => 'chalcopyrite',
+    2746 => 'charmquark',
+    2747 => 'charmquarks',
+    2748 => 'chelate',
+    2749 => 'chelates',
+    2750 => 'chinaclay',
+    2751 => 'chirality',
+    2752 => 'chlorate',
+    2753 => 'chlorates',
+    2754 => 'chlorides',
+    2755 => 'chlorite',
+    2756 => 'chloroplast',
+    2757 => 'chloroplasts',
+    2758 => 'chromatid',
+    2759 => 'chromatids',
+    2760 => 'chromatin',
+    2761 => 'chromatography',
+    2762 => 'chromite',
+    2763 => 'chromoplast',
+    2764 => 'chromoplasts',
+    2765 => 'chromosphere',
+    2766 => 'chromospheres',
+    2767 => 'chronobiology',
+    2768 => 'chrysoberyl',
+    2769 => 'chrysoprase',
+    2770 => 'cilia',
+    2771 => 'cilium',
+    2772 => 'cirrocumulus',
+    2773 => 'cirrostratus',
+    2774 => 'cirrus',
+    2775 => 'cisterna',
+    2776 => 'cisternae',
+    2777 => 'clade',
+    2778 => 'clades',
+    2779 => 'cladistics',
+    2780 => 'climatechange',
+    2781 => 'codominance',
+    2782 => 'codon',
+    2783 => 'codons',
+    2784 => 'colloid',
+    2785 => 'colloids',
+    2786 => 'colorimeter',
+    2787 => 'colorimeters',
+    2788 => 'colorimetry',
+    2789 => 'commensalism',
+    2790 => 'conductance',
+    2791 => 'conduction',
+    2792 => 'conductivity',
+    2793 => 'conicalflask',
+    2794 => 'conicalflasks',
+    2795 => 'continentaldrift',
+    2796 => 'contractilevacuole',
+    2797 => 'contractilevacuoles',
+    2798 => 'contrail',
+    2799 => 'contrails',
+    2800 => 'controlgroup',
+    2801 => 'controlgroups',
+    2802 => 'convectionalrainfall',
+    2803 => 'copernicium',
+    2804 => 'coquina',
+    2805 => 'coronae',
+    2806 => 'cortices',
+    2807 => 'corundum',
+    2808 => 'covalent',
+    2809 => 'covalentbond',
+    2810 => 'covalentbonds',
+    2811 => 'coverslip',
+    2812 => 'coverslips',
+    2813 => 'cretaceous',
+    2814 => 'crista',
+    2815 => 'cristae',
+    2816 => 'crocodileclip',
+    2817 => 'crocodileclips',
+    2818 => 'cryobiology',
+    2819 => 'cryolite',
+    2820 => 'cryopreservation',
+    2821 => 'cryostat',
+    2822 => 'cryostats',
+    2823 => 'crystallisation',
+    2824 => 'crystallization',
+    2825 => 'crystallography',
+    2826 => 'cubiccentimeter',
+    2827 => 'cubiccentimeters',
+    2828 => 'cumuli',
+    2829 => 'cumulonimbi',
+    2830 => 'cumulonimbus',
+    2831 => 'cumulus',
+    2832 => 'cuprite',
+    2833 => 'cuprum',
+    2834 => 'cuvette',
+    2835 => 'cuvettes',
+    2836 => 'cyclotron',
+    2837 => 'cyclotrons',
+    2838 => 'cytokinesis',
+    2839 => 'cytology',
+    2840 => 'cytometry',
+    2841 => 'cytoplasm',
+    2842 => 'cytoplasms',
+    2843 => 'cytoskeleton',
+    2844 => 'cytoskeletons',
+    2845 => 'cytosol',
+    2846 => 'dacite',
+    2847 => 'darkenergy',
+    2848 => 'darkmatter',
+    2849 => 'darmstadtium',
+    2850 => 'datalogger',
+    2851 => 'dataloggers',
+    2852 => 'debye',
+    2853 => 'debyes',
+    2854 => 'decantation',
+    2855 => 'decanting',
+    2856 => 'deciliter',
+    2857 => 'deciliters',
+    2858 => 'decomposer',
+    2859 => 'decomposers',
+    2860 => 'deflagratingspoon',
+    2861 => 'deflagratingspoons',
+    2862 => 'dendrite',
+    2863 => 'dendrites',
+    2864 => 'dendrology',
+    2865 => 'deoxyribonucleicacid',
+    2866 => 'derecho',
+    2867 => 'derechos',
+    2868 => 'desiccation',
+    2869 => 'desiccator',
+    2870 => 'desiccators',
+    2871 => 'desmosome',
+    2872 => 'desmosomes',
+    2873 => 'detritivore',
+    2874 => 'detritivores',
+    2875 => 'deuteron',
+    2876 => 'deuterons',
+    2877 => 'devonian',
+    2878 => 'dewpoint',
+    2879 => 'dewpoints',
+    2880 => 'diatomic',
+    2881 => 'diatomite',
+    2882 => 'dictyosome',
+    2883 => 'dictyosomes',
+    2884 => 'diffraction',
+    2885 => 'dilution',
+    2886 => 'dilutions',
+    2887 => 'diode',
+    2888 => 'diodes',
+    2889 => 'diopter',
+    2890 => 'diopters',
+    2891 => 'dioptre',
+    2892 => 'dioptres',
+    2893 => 'diorite',
+    2894 => 'diploid',
+    2895 => 'diquark',
+    2896 => 'diquarks',
+    2897 => 'distillate',
+    2898 => 'distillates',
+    2899 => 'distilling',
+    2900 => 'dna',
+    2901 => 'dosimeter',
+    2902 => 'dosimeters',
+    2903 => 'doublehelix',
+    2904 => 'downburst',
+    2905 => 'downbursts',
+    2906 => 'downdraft',
+    2907 => 'downdrafts',
+    2908 => 'downdraught',
+    2909 => 'downdraughts',
+    2910 => 'downquark',
+    2911 => 'downquarks',
+    2912 => 'dubnium',
+    2913 => 'ductile',
+    2914 => 'dunite',
+    2915 => 'duodena',
+    2916 => 'dustdevil',
+    2917 => 'dustdevils',
+    2918 => 'dynamometer',
+    2919 => 'dynamometers',
+    2920 => 'dysprosium',
+    2921 => 'eclogite',
+    2922 => 'effervescence',
+    2923 => 'electrochemistry',
+    2924 => 'electrolysis',
+    2925 => 'electronegativity',
+    2926 => 'electronvolt',
+    2927 => 'electronvolts',
+    2928 => 'electrophile',
+    2929 => 'electrophiles',
+    2930 => 'electrophoresis',
+    2931 => 'electroplating',
+    2932 => 'electroporation',
+    2933 => 'electroscope',
+    2934 => 'electroscopes',
+    2935 => 'electrostatics',
+    2936 => 'elementaryparticle',
+    2937 => 'elementaryparticles',
+    2938 => 'elisa',
+    2939 => 'elnino',
+    2940 => 'embryology',
+    2941 => 'emulsifier',
+    2942 => 'emulsifiers',
+    2943 => 'enantiomer',
+    2944 => 'enantiomers',
+    2945 => 'endoplasmicreticulum',
+    2946 => 'endosome',
+    2947 => 'endosomes',
+    2948 => 'endothermic',
+    2949 => 'enthalpy',
+    2950 => 'epicentres',
+    2951 => 'epidote',
+    2952 => 'epigenetics',
+    2953 => 'equilibria',
+    2954 => 'erbium',
+    2955 => 'ergonomics',
+    2956 => 'eris',
+    2957 => 'erythrocyte',
+    2958 => 'erythrocytes',
+    2959 => 'esophagi',
+    2960 => 'esophaguses',
+    2961 => 'esterification',
+    2962 => 'etas',
+    2963 => 'ethane',
+    2964 => 'ethene',
+    2965 => 'ethology',
+    2966 => 'eudiometer',
+    2967 => 'eudiometers',
+    2968 => 'evaporatingbasin',
+    2969 => 'evaporatingbasins',
+    2970 => 'evaporatingdish',
+    2971 => 'evaporatingdishes',
+    2972 => 'evaporator',
+    2973 => 'evaporators',
+    2974 => 'evaporite',
+    2975 => 'evaporites',
+    2976 => 'exciton',
+    2977 => 'excitons',
+    2978 => 'excretion',
+    2979 => 'exobiology',
+    2980 => 'exomoon',
+    2981 => 'exomoons',
+    2982 => 'exon',
+    2983 => 'exons',
+    2984 => 'exoplanet',
+    2985 => 'exoplanets',
+    2986 => 'exosphere',
+    2987 => 'exothermic',
+    2988 => 'eyespot',
+    2989 => 'eyespots',
+    2990 => 'eyewall',
+    2991 => 'eyewalls',
+    2992 => 'eyewash',
+    2993 => 'eyewashes',
+    2994 => 'fairtest',
+    2995 => 'fairtests',
+    2996 => 'faultline',
+    2997 => 'faultlines',
+    2998 => 'felspar',
+    2999 => 'felspars',
+    3000 => 'femtometer',
+    3001 => 'femtometers',
+    3002 => 'femtometre',
+    3003 => 'femtometres',
+    3004 => 'femtosecond',
+    3005 => 'femtoseconds',
+    3006 => 'fermenter',
+    3007 => 'fermenters',
+    3008 => 'fermion',
+    3009 => 'fermions',
+    3010 => 'fermis',
+    3011 => 'fermium',
+    3012 => 'ferrum',
+    3013 => 'fimbria',
+    3014 => 'fimbriae',
+    3015 => 'fiord',
+    3016 => 'fiords',
+    3017 => 'flagella',
+    3018 => 'flagellum',
+    3019 => 'flametest',
+    3020 => 'flametests',
+    3021 => 'flashflood',
+    3022 => 'flashfloods',
+    3023 => 'flerovium',
+    3024 => 'fluorescence',
+    3025 => 'focallength',
+    3026 => 'focallengths',
+    3027 => 'foehn',
+    3028 => 'fogbank',
+    3029 => 'fogbanks',
+    3030 => 'fogbow',
+    3031 => 'fogbows',
+    3032 => 'fohn',
+    3033 => 'foodchain',
+    3034 => 'foodchains',
+    3035 => 'foodweb',
+    3036 => 'foodwebs',
+    3037 => 'forcemeter',
+    3038 => 'forcemeters',
+    3039 => 'fractionation',
+    3040 => 'freezedrying',
+    3041 => 'frontalrainfall',
+    3042 => 'fullersearth',
+    3043 => 'fumarole',
+    3044 => 'fumaroles',
+    3045 => 'fumecupboard',
+    3046 => 'fumecupboards',
+    3047 => 'fumehood',
+    3048 => 'fumehoods',
+    3049 => 'functionalgroup',
+    3050 => 'functionalgroups',
+    3051 => 'funguses',
+    3052 => 'funnelcloud',
+    3053 => 'funnelclouds',
+    3054 => 'galvanometer',
+    3055 => 'galvanometers',
+    3056 => 'gamete',
+    3057 => 'gametes',
+    3058 => 'gammaray',
+    3059 => 'gammarays',
+    3060 => 'gasjar',
+    3061 => 'gasjars',
+    3062 => 'gauzes',
+    3063 => 'geiger',
+    3064 => 'geigercounter',
+    3065 => 'geigercounters',
+    3066 => 'geigers',
+    3067 => 'gelelectrophoresis',
+    3068 => 'gemmology',
+    3069 => 'gemology',
+    3070 => 'geneediting',
+    3071 => 'geneticengineering',
+    3072 => 'genomics',
+    3073 => 'genotype',
+    3074 => 'genotypes',
+    3075 => 'genotyping',
+    3076 => 'geochemistry',
+    3077 => 'geodesy',
+    3078 => 'geomagnetic',
+    3079 => 'geomorphology',
+    3080 => 'germination',
+    3081 => 'gigaelectronvolt',
+    3082 => 'gigaelectronvolts',
+    3083 => 'glaciation',
+    3084 => 'glaciations',
+    3085 => 'globalwarming',
+    3086 => 'glovebox',
+    3087 => 'gloveboxes',
+    3088 => 'glueball',
+    3089 => 'glueballs',
+    3090 => 'gluino',
+    3091 => 'gluinos',
+    3092 => 'gluon',
+    3093 => 'gluons',
+    3094 => 'glycerol',
+    3095 => 'glycocalyx',
+    3096 => 'glycogen',
+    3097 => 'glycols',
+    3098 => 'glyoxysome',
+    3099 => 'glyoxysomes',
+    3100 => 'goethite',
+    3101 => 'golgi',
+    3102 => 'golgiapparatus',
+    3103 => 'golgibodies',
+    3104 => 'golgibody',
+    3105 => 'gondwana',
+    3106 => 'gondwanaland',
+    3107 => 'gramme',
+    3108 => 'grammes',
+    3109 => 'grana',
+    3110 => 'granum',
+    3111 => 'graupel',
+    3112 => 'gravitino',
+    3113 => 'gravitinos',
+    3114 => 'graywacke',
+    3115 => 'greenhouseeffect',
+    3116 => 'greenhousegas',
+    3117 => 'greenhousegases',
+    3118 => 'greenstone',
+    3119 => 'greywacke',
+    3120 => 'groundfrost',
+    3121 => 'haboob',
+    3122 => 'haboobs',
+    3123 => 'hadrons',
+    3124 => 'haemocytometer',
+    3125 => 'haemocytometers',
+    3126 => 'halflife',
+    3127 => 'halflives',
+    3128 => 'halide',
+    3129 => 'halides',
+    3130 => 'halogen',
+    3131 => 'halogens',
+    3132 => 'handlens',
+    3133 => 'handlenses',
+    3134 => 'haploid',
+    3135 => 'harmattan',
+    3136 => 'hassium',
+    3137 => 'haumea',
+    3138 => 'heatindex',
+    3139 => 'heatproofmat',
+    3140 => 'heatproofmats',
+    3141 => 'hectopascal',
+    3142 => 'hectopascals',
+    3143 => 'heliosphere',
+    3144 => 'heliospheres',
+    3145 => 'hematite',
+    3146 => 'hematology',
+    3147 => 'hemocytometer',
+    3148 => 'hemocytometers',
+    3149 => 'herpetology',
+    3150 => 'heterotroph',
+    3151 => 'heterotrophs',
+    3152 => 'heterozygous',
+    3153 => 'higgsboson',
+    3154 => 'higgsbosons',
+    3155 => 'histology',
+    3156 => 'histone',
+    3157 => 'histones',
+    3158 => 'holmium',
+    3159 => 'holocene',
+    3160 => 'homeostasis',
+    3161 => 'homogenisation',
+    3162 => 'homogenization',
+    3163 => 'homologous',
+    3164 => 'homozygous',
+    3165 => 'hookeslaw',
+    3166 => 'hornblende',
+    3167 => 'hornfels',
+    3168 => 'hybridisation',
+    3169 => 'hybridization',
+    3170 => 'hydrargyrum',
+    3171 => 'hydride',
+    3172 => 'hydrides',
+    3173 => 'hydrocarbon',
+    3174 => 'hydrodynamics',
+    3175 => 'hydrogenation',
+    3176 => 'hydrogenbond',
+    3177 => 'hydrogenbonds',
+    3178 => 'hydrolysis',
+    3179 => 'hydrometer',
+    3180 => 'hydrometers',
+    3181 => 'hydrophilic',
+    3182 => 'hydrophobic',
+    3183 => 'hydroxides',
+    3184 => 'hydroxyl',
+    3185 => 'hydroxyls',
+    3186 => 'hygrometer',
+    3187 => 'hygrometers',
+    3188 => 'hypergiant',
+    3189 => 'hypergiants',
+    3190 => 'hypernova',
+    3191 => 'hypernovae',
+    3192 => 'hypernovas',
+    3193 => 'hyperon',
+    3194 => 'hyperons',
+    3195 => 'hysteresis',
+    3196 => 'iceage',
+    3197 => 'iceages',
+    3198 => 'ichthyology',
+    3199 => 'igneous',
+    3200 => 'igneousrock',
+    3201 => 'igneousrocks',
+    3202 => 'ignimbrite',
+    3203 => 'ilmenite',
+    3204 => 'immunoassay',
+    3205 => 'immunoassays',
+    3206 => 'inductance',
+    3207 => 'inductor',
+    3208 => 'inductors',
+    3209 => 'insoluble',
+    3210 => 'insulator',
+    3211 => 'insulators',
+    3212 => 'interferometer',
+    3213 => 'interferometers',
+    3214 => 'interglacial',
+    3215 => 'interglacials',
+    3216 => 'intron',
+    3217 => 'introns',
+    3218 => 'iodide',
+    3219 => 'iodides',
+    3220 => 'iolite',
+    3221 => 'ionicbond',
+    3222 => 'ionicbonds',
+    3223 => 'ionisation',
+    3224 => 'ionization',
+    3225 => 'ironpyrites',
+    3226 => 'irradiation',
+    3227 => 'isobar',
+    3228 => 'isobars',
+    3229 => 'isohyet',
+    3230 => 'isohyets',
+    3231 => 'isomer',
+    3232 => 'isomerism',
+    3233 => 'isomers',
+    3234 => 'isotherm',
+    3235 => 'isotherms',
+    3236 => 'jansky',
+    3237 => 'janskys',
+    3238 => 'joulemeter',
+    3239 => 'joulemeters',
+    3240 => 'jupiter',
+    3241 => 'jurassic',
+    3242 => 'kalium',
+    3243 => 'kaolinite',
+    3244 => 'kaon',
+    3245 => 'kaons',
+    3246 => 'karyotype',
+    3247 => 'karyotypes',
+    3248 => 'katabatic',
+    3249 => 'katal',
+    3250 => 'katals',
+    3251 => 'ketone',
+    3252 => 'ketones',
+    3253 => 'khamsin',
+    3254 => 'kilobar',
+    3255 => 'kilobars',
+    3256 => 'kilohm',
+    3257 => 'kilohms',
+    3258 => 'kilonewton',
+    3259 => 'kilonewtons',
+    3260 => 'kilonova',
+    3261 => 'kilonovae',
+    3262 => 'kilonovas',
+    3263 => 'kiloparsec',
+    3264 => 'kiloparsecs',
+    3265 => 'kilopascal',
+    3266 => 'kilopascals',
+    3267 => 'kilotonne',
+    3268 => 'kilotonnes',
+    3269 => 'kimberlite',
+    3270 => 'kinematics',
+    3271 => 'kinesiology',
+    3272 => 'kineticenergy',
+    3273 => 'kinetochore',
+    3274 => 'kinetochores',
+    3275 => 'komatiite',
+    3276 => 'kunzite',
+    3277 => 'kyanite',
+    3278 => 'lahar',
+    3279 => 'lahars',
+    3280 => 'lamella',
+    3281 => 'lamellae',
+    3282 => 'langleys',
+    3283 => 'lanina',
+    3284 => 'lapserate',
+    3285 => 'lapserates',
+    3286 => 'larynges',
+    3287 => 'lawrencium',
+    3288 => 'lazurite',
+    3289 => 'lenticular',
+    3290 => 'lepidolite',
+    3291 => 'lepidopterology',
+    3292 => 'lepton',
+    3293 => 'leptons',
+    3294 => 'leucite',
+    3295 => 'leucocyte',
+    3296 => 'leucocytes',
+    3297 => 'leucoplast',
+    3298 => 'leucoplasts',
+    3299 => 'leukocyte',
+    3300 => 'leukocytes',
+    3301 => 'ligand',
+    3302 => 'ligands',
+    3303 => 'ligase',
+    3304 => 'ligases',
+    3305 => 'ligation',
+    3306 => 'lightgate',
+    3307 => 'lightgates',
+    3308 => 'lightsecond',
+    3309 => 'lightseconds',
+    3310 => 'limnology',
+    3311 => 'limonite',
+    3312 => 'lipid',
+    3313 => 'lipids',
+    3314 => 'lithosphere',
+    3315 => 'livermorium',
+    3316 => 'loadstone',
+    3317 => 'loadstones',
+    3318 => 'loess',
+    3319 => 'loupe',
+    3320 => 'lumina',
+    3321 => 'luminosity',
+    3322 => 'lutetium',
+    3323 => 'lymphocyte',
+    3324 => 'lymphocytes',
+    3325 => 'lyophilisation',
+    3326 => 'lyophilization',
+    3327 => 'lysis',
+    3328 => 'lysosome',
+    3329 => 'lysosomes',
+    3330 => 'mackerelskies',
+    3331 => 'mackerelsky',
+    3332 => 'magmas',
+    3333 => 'magnetar',
+    3334 => 'magnetars',
+    3335 => 'magneticfield',
+    3336 => 'magneticfields',
+    3337 => 'magnetospheres',
+    3338 => 'magnifier',
+    3339 => 'magnifiers',
+    3340 => 'magnon',
+    3341 => 'magnons',
+    3342 => 'makemake',
+    3343 => 'malacology',
+    3344 => 'mammalogy',
+    3345 => 'mammatus',
+    3346 => 'manometer',
+    3347 => 'manometers',
+    3348 => 'marl',
+    3349 => 'measuringcylinder',
+    3350 => 'measuringcylinders',
+    3351 => 'megajoule',
+    3352 => 'megajoules',
+    3353 => 'megaparsec',
+    3354 => 'megaparsecs',
+    3355 => 'megatonne',
+    3356 => 'megatonnes',
+    3357 => 'megohm',
+    3358 => 'megohms',
+    3359 => 'meiosis',
+    3360 => 'meitnerium',
+    3361 => 'mendelevium',
+    3362 => 'mesocyclone',
+    3363 => 'mesocyclones',
+    3364 => 'meson',
+    3365 => 'mesons',
+    3366 => 'mesosome',
+    3367 => 'mesosomes',
+    3368 => 'mesosphere',
+    3369 => 'mesozoic',
+    3370 => 'metalloid',
+    3371 => 'metalloids',
+    3372 => 'metamorphic',
+    3373 => 'metamorphicrock',
+    3374 => 'metamorphicrocks',
+    3375 => 'meteoritics',
+    3376 => 'meteoroid',
+    3377 => 'meteoroids',
+    3378 => 'meteorshower',
+    3379 => 'meteorshowers',
+    3380 => 'metrology',
+    3381 => 'mho',
+    3382 => 'mhos',
+    3383 => 'micas',
+    3384 => 'microburst',
+    3385 => 'microbursts',
+    3386 => 'microclimate',
+    3387 => 'microclimates',
+    3388 => 'microfarad',
+    3389 => 'microfarads',
+    3390 => 'microfilament',
+    3391 => 'microfilaments',
+    3392 => 'microinjection',
+    3393 => 'microliter',
+    3394 => 'microliters',
+    3395 => 'microlitre',
+    3396 => 'microlitres',
+    3397 => 'micrometre',
+    3398 => 'micrometres',
+    3399 => 'micromole',
+    3400 => 'micromoles',
+    3401 => 'microorganism',
+    3402 => 'micropipette',
+    3403 => 'micropipettes',
+    3404 => 'microscopy',
+    3405 => 'microsievert',
+    3406 => 'microsieverts',
+    3407 => 'microtome',
+    3408 => 'microtomes',
+    3409 => 'microtubule',
+    3410 => 'microtubules',
+    3411 => 'microvilli',
+    3412 => 'microvillus',
+    3413 => 'migmatite',
+    3414 => 'milkyway',
+    3415 => 'milliamp',
+    3416 => 'milliampere',
+    3417 => 'milliamperes',
+    3418 => 'milliamps',
+    3419 => 'milliliter',
+    3420 => 'millimole',
+    3421 => 'millimoles',
+    3422 => 'millisievert',
+    3423 => 'millisieverts',
+    3424 => 'millivolt',
+    3425 => 'millivolts',
+    3426 => 'millstonegrit',
+    3427 => 'mitochondrion',
+    3428 => 'mitosis',
+    3429 => 'molarity',
+    3430 => 'molybdenite',
+    3431 => 'momenta',
+    3432 => 'monomer',
+    3433 => 'monomers',
+    3434 => 'monopole',
+    3435 => 'monopoles',
+    3436 => 'montmorillonite',
+    3437 => 'moonbow',
+    3438 => 'moonbows',
+    3439 => 'moonlet',
+    3440 => 'moonlets',
+    3441 => 'moscovium',
+    3442 => 'muon',
+    3443 => 'muons',
+    3444 => 'muscovite',
+    3445 => 'mutagenesis',
+    3446 => 'mutualism',
+    3447 => 'myelin',
+    3448 => 'myosin',
+    3449 => 'nanogram',
+    3450 => 'nanograms',
+    3451 => 'nanometer',
+    3452 => 'nanometers',
+    3453 => 'nanoscience',
+    3454 => 'natrium',
+    3455 => 'natron',
+    3456 => 'naturalselection',
+    3457 => 'nepheline',
+    3458 => 'nephrite',
+    3459 => 'nephron',
+    3460 => 'nephrons',
+    3461 => 'neptune',
+    3462 => 'neurobiology',
+    3463 => 'neurochemistry',
+    3464 => 'neurone',
+    3465 => 'neurotransmitter',
+    3466 => 'neutralino',
+    3467 => 'neutralinos',
+    3468 => 'neutralisation',
+    3469 => 'neutralization',
+    3470 => 'neutronstar',
+    3471 => 'neutronstars',
+    3472 => 'newtonmeter',
+    3473 => 'newtonmeters',
+    3474 => 'nihonium',
+    3475 => 'nimbostratus',
+    3476 => 'nitride',
+    3477 => 'nitrides',
+    3478 => 'nitrite',
+    3479 => 'nitrites',
+    3480 => 'noblegas',
+    3481 => 'noblegases',
+    3482 => 'noctilucent',
+    3483 => 'nonmetal',
+    3484 => 'nonmetals',
+    3485 => 'noreaster',
+    3486 => 'noreasters',
+    3487 => 'novae',
+    3488 => 'nuclearenvelope',
+    3489 => 'nuclearenvelopes',
+    3490 => 'nuclearmembrane',
+    3491 => 'nuclearmembranes',
+    3492 => 'nuclearpore',
+    3493 => 'nuclearpores',
+    3494 => 'nucleoid',
+    3495 => 'nucleoids',
+    3496 => 'nucleoli',
+    3497 => 'nucleolus',
+    3498 => 'nucleon',
+    3499 => 'nucleonics',
+    3500 => 'nucleons',
+    3501 => 'nucleophile',
+    3502 => 'nucleophiles',
+    3503 => 'nucleoplasm',
+    3504 => 'nucleosome',
+    3505 => 'nucleosomes',
+    3506 => 'nucleotide',
+    3507 => 'nucleotides',
+    3508 => 'occludedfront',
+    3509 => 'occludedfronts',
+    3510 => 'occlusion',
+    3511 => 'occlusions',
+    3512 => 'oceanology',
+    3513 => 'octet',
+    3514 => 'octets',
+    3515 => 'oersted',
+    3516 => 'oersteds',
+    3517 => 'oesophagi',
+    3518 => 'oesophaguses',
+    3519 => 'oganesson',
+    3520 => 'ohmmeter',
+    3521 => 'ohmmeters',
+    3522 => 'oolite',
+    3523 => 'opacity',
+    3524 => 'operon',
+    3525 => 'operons',
+    3526 => 'ordovician',
+    3527 => 'organelle',
+    3528 => 'organelles',
+    3529 => 'orogenies',
+    3530 => 'orogeny',
+    3531 => 'orographic',
+    3532 => 'orpiment',
+    3533 => 'orthoclase',
+    3534 => 'oscilloscope',
+    3535 => 'oscilloscopes',
+    3536 => 'ova',
+    3537 => 'ovule',
+    3538 => 'ovules',
+    3539 => 'oxidant',
+    3540 => 'oxidants',
+    3541 => 'oxidise',
+    3542 => 'oxidised',
+    3543 => 'oxidises',
+    3544 => 'oxidize',
+    3545 => 'oxidized',
+    3546 => 'oxidizes',
+    3547 => 'ozonelayer',
+    3548 => 'palaeobotany',
+    3549 => 'palaeozoic',
+    3550 => 'paleobotany',
+    3551 => 'paleozoic',
+    3552 => 'palynology',
+    3553 => 'pancreases',
+    3554 => 'pangaea',
+    3555 => 'pangea',
+    3556 => 'paperchromatography',
+    3557 => 'parasitism',
+    3558 => 'parasitology',
+    3559 => 'partons',
+    3560 => 'pasteurisation',
+    3561 => 'pasteurization',
+    3562 => 'pcr',
+    3563 => 'pedology',
+    3564 => 'pegmatite',
+    3565 => 'pellicle',
+    3566 => 'pellicles',
+    3567 => 'pentaquark',
+    3568 => 'pentaquarks',
+    3569 => 'peridotite',
+    3570 => 'periodictable',
+    3571 => 'periodictables',
+    3572 => 'permanganate',
+    3573 => 'permanganates',
+    3574 => 'permian',
+    3575 => 'peroxisome',
+    3576 => 'peroxisomes',
+    3577 => 'petrichor',
+    3578 => 'petridish',
+    3579 => 'petridishes',
+    3580 => 'petrology',
+    3581 => 'phagocyte',
+    3582 => 'phagocytes',
+    3583 => 'phagosome',
+    3584 => 'phagosomes',
+    3585 => 'pharynges',
+    3586 => 'phenol',
+    3587 => 'phenols',
+    3588 => 'phenotype',
+    3589 => 'phenotypes',
+    3590 => 'phloem',
+    3591 => 'phonolite',
+    3592 => 'phonon',
+    3593 => 'phonons',
+    3594 => 'phosphorescence',
+    3595 => 'photino',
+    3596 => 'photinos',
+    3597 => 'photochemistry',
+    3598 => 'photoelectric',
+    3599 => 'photometer',
+    3600 => 'photometers',
+    3601 => 'photosphere',
+    3602 => 'photospheres',
+    3603 => 'phycology',
+    3604 => 'phyla',
+    3605 => 'phyllite',
+    3606 => 'phylogenetics',
+    3607 => 'phylogenies',
+    3608 => 'phylogeny',
+    3609 => 'phylum',
+    3610 => 'picofarad',
+    3611 => 'picofarads',
+    3612 => 'picometer',
+    3613 => 'picometers',
+    3614 => 'picometre',
+    3615 => 'picometres',
+    3616 => 'picosecond',
+    3617 => 'picoseconds',
+    3618 => 'piezoelectric',
+    3619 => 'pileus',
+    3620 => 'pilus',
+    3621 => 'pion',
+    3622 => 'pions',
+    3623 => 'pipet',
+    3624 => 'pipets',
+    3625 => 'pipette',
+    3626 => 'pipettes',
+    3627 => 'pipetting',
+    3628 => 'pistil',
+    3629 => 'pistils',
+    3630 => 'placentae',
+    3631 => 'plagioclase',
+    3632 => 'planetesimal',
+    3633 => 'planetesimals',
+    3634 => 'planetology',
+    3635 => 'plasmalemma',
+    3636 => 'plasmalemmas',
+    3637 => 'plasmamembrane',
+    3638 => 'plasmamembranes',
+    3639 => 'plasmid',
+    3640 => 'plasmids',
+    3641 => 'plasmodesma',
+    3642 => 'plasmodesmata',
+    3643 => 'plasmon',
+    3644 => 'plasmons',
+    3645 => 'plastid',
+    3646 => 'plastids',
+    3647 => 'platetectonics',
+    3648 => 'pleistocene',
+    3649 => 'plumbum',
+    3650 => 'pluto',
+    3651 => 'polarfront',
+    3652 => 'polarimeter',
+    3653 => 'polarimeters',
+    3654 => 'polarisation',
+    3655 => 'polarization',
+    3656 => 'polarvortex',
+    3657 => 'polarvortices',
+    3658 => 'polymerase',
+    3659 => 'polymerases',
+    3660 => 'polymerisation',
+    3661 => 'polymerization',
+    3662 => 'polysome',
+    3663 => 'polysomes',
+    3664 => 'pomeron',
+    3665 => 'pomerons',
+    3666 => 'pooter',
+    3667 => 'pooters',
+    3668 => 'porphyries',
+    3669 => 'porphyry',
+    3670 => 'positron',
+    3671 => 'positrons',
+    3672 => 'potentialenergy',
+    3673 => 'potentiometer',
+    3674 => 'potentiometers',
+    3675 => 'potometer',
+    3676 => 'potometers',
+    3677 => 'powerpack',
+    3678 => 'powerpacks',
+    3679 => 'praseodymium',
+    3680 => 'precambrian',
+    3681 => 'preciousstone',
+    3682 => 'preciousstones',
+    3683 => 'preon',
+    3684 => 'preons',
+    3685 => 'primatology',
+    3686 => 'promethium',
+    3687 => 'protactinium',
+    3688 => 'proteasome',
+    3689 => 'proteasomes',
+    3690 => 'proteomics',
+    3691 => 'protist',
+    3692 => 'protists',
+    3693 => 'protoplanet',
+    3694 => 'protoplanets',
+    3695 => 'protostar',
+    3696 => 'protostars',
+    3697 => 'pseudopod',
+    3698 => 'pseudopodia',
+    3699 => 'pseudopodium',
+    3700 => 'pseudopods',
+    3701 => 'pycnometer',
+    3702 => 'pycnometers',
+    3703 => 'pyrenoid',
+    3704 => 'pyrenoids',
+    3705 => 'pyrometer',
+    3706 => 'pyrometers',
+    3707 => 'pyroxene',
+    3708 => 'pyroxenes',
+    3709 => 'quadrat',
+    3710 => 'quadrats',
+    3711 => 'quanta',
+    3712 => 'quantification',
+    3713 => 'quarkstar',
+    3714 => 'quarkstars',
+    3715 => 'quasiparticle',
+    3716 => 'quasiparticles',
+    3717 => 'quaternary',
+    3718 => 'radiochemistry',
+    3719 => 'radiowave',
+    3720 => 'radiowaves',
+    3721 => 'raingauge',
+    3722 => 'raingauges',
+    3723 => 'randomisation',
+    3724 => 'randomization',
+    3725 => 'rankine',
+    3726 => 'rarefaction',
+    3727 => 'rarefactions',
+    3728 => 'raybox',
+    3729 => 'rayboxes',
+    3730 => 'reactant',
+    3731 => 'reactants',
+    3732 => 'reactivity',
+    3733 => 'realgar',
+    3734 => 'recombination',
+    3735 => 'recrystallisation',
+    3736 => 'recrystallization',
+    3737 => 'redgiant',
+    3738 => 'redgiants',
+    3739 => 'redox',
+    3740 => 'redshift',
+    3741 => 'reductant',
+    3742 => 'reductants',
+    3743 => 'refractometer',
+    3744 => 'refractometers',
+    3745 => 'relativehumidity',
+    3746 => 'reliefrainfall',
+    3747 => 'resistivity',
+    3748 => 'resistor',
+    3749 => 'resistors',
+    3750 => 'respirometer',
+    3751 => 'respirometers',
+    3752 => 'reticula',
+    3753 => 'reticulum',
+    3754 => 'retortstand',
+    3755 => 'retortstands',
+    3756 => 'rheostat',
+    3757 => 'rheostats',
+    3758 => 'rhodochrosite',
+    3759 => 'rhodonite',
+    3760 => 'ribonucleicacid',
+    3761 => 'ribosome',
+    3762 => 'ribosomes',
+    3763 => 'rna',
+    3764 => 'rocketry',
+    3765 => 'roentgen',
+    3766 => 'roentgenium',
+    3767 => 'roentgens',
+    3768 => 'roughendoplasmicreticulum',
+    3769 => 'rutherford',
+    3770 => 'rutherfordium',
+    3771 => 'rutherfords',
+    3772 => 'rutile',
+    3773 => 'salinity',
+    3774 => 'samarium',
+    3775 => 'sarcomere',
+    3776 => 'sarcomeres',
+    3777 => 'saturn',
+    3778 => 'scheelite',
+    3779 => 'scoria',
+    3780 => 'seaborgium',
+    3781 => 'seafret',
+    3782 => 'seamount',
+    3783 => 'seamounts',
+    3784 => 'sedimentaryrock',
+    3785 => 'sedimentaryrocks',
+    3786 => 'sedimentation',
+    3787 => 'sedimentology',
+    3788 => 'seismograph',
+    3789 => 'seismographs',
+    3790 => 'seismometer',
+    3791 => 'seismometers',
+    3792 => 'selectron',
+    3793 => 'selectrons',
+    3794 => 'selenology',
+    3795 => 'semiconductor',
+    3796 => 'semiconductors',
+    3797 => 'semipreciousstone',
+    3798 => 'semipreciousstones',
+    3799 => 'sepal',
+    3800 => 'sepals',
+    3801 => 'separatingfunnel',
+    3802 => 'separatingfunnels',
+    3803 => 'serialdilution',
+    3804 => 'serialdilutions',
+    3805 => 'serpentinite',
+    3806 => 'shelfcloud',
+    3807 => 'shelfclouds',
+    3808 => 'shockwave',
+    3809 => 'shockwaves',
+    3810 => 'siderite',
+    3811 => 'siemens',
+    3812 => 'silicate',
+    3813 => 'silicates',
+    3814 => 'sillimanite',
+    3815 => 'silurian',
+    3816 => 'simoom',
+    3817 => 'smoothendoplasmicreticulum',
+    3818 => 'sneutrino',
+    3819 => 'sneutrinos',
+    3820 => 'sociobiology',
+    3821 => 'solarsystem',
+    3822 => 'solarsystems',
+    3823 => 'solarwind',
+    3824 => 'solenoid',
+    3825 => 'solenoids',
+    3826 => 'solubility',
+    3827 => 'solute',
+    3828 => 'solutes',
+    3829 => 'somas',
+    3830 => 'somata',
+    3831 => 'sonication',
+    3832 => 'sonicator',
+    3833 => 'sonicators',
+    3834 => 'sonometer',
+    3835 => 'sonometers',
+    3836 => 'spacestation',
+    3837 => 'spacestations',
+    3838 => 'spacetime',
+    3839 => 'sparticle',
+    3840 => 'sparticles',
+    3841 => 'speciation',
+    3842 => 'spectrometry',
+    3843 => 'spectrophotometer',
+    3844 => 'spectrophotometers',
+    3845 => 'spectrophotometry',
+    3846 => 'spectroscope',
+    3847 => 'spectroscopes',
+    3848 => 'spectroscopy',
+    3849 => 'speleology',
+    3850 => 'spessartine',
+    3851 => 'sphalerite',
+    3852 => 'spirometer',
+    3853 => 'spirometers',
+    3854 => 'spodumene',
+    3855 => 'spottingtile',
+    3856 => 'spottingtiles',
+    3857 => 'squark',
+    3858 => 'squarks',
+    3859 => 'stamen',
+    3860 => 'stamens',
+    3861 => 'standardisation',
+    3862 => 'standardization',
+    3863 => 'stannum',
+    3864 => 'starcluster',
+    3865 => 'starclusters',
+    3866 => 'staurolite',
+    3867 => 'stemcell',
+    3868 => 'stemcells',
+    3869 => 'steradian',
+    3870 => 'steradians',
+    3871 => 'stibium',
+    3872 => 'stibnite',
+    3873 => 'stirrer',
+    3874 => 'stirrers',
+    3875 => 'stoichiometry',
+    3876 => 'stoma',
+    3877 => 'stomata',
+    3878 => 'stopclock',
+    3879 => 'stopclocks',
+    3880 => 'stormsurge',
+    3881 => 'stormsurges',
+    3882 => 'strangequark',
+    3883 => 'strangequarks',
+    3884 => 'stratigraphy',
+    3885 => 'stratocumulus',
+    3886 => 'stratus',
+    3887 => 'stroma',
+    3888 => 'subculturing',
+    3889 => 'sublimation',
+    3890 => 'subsoil',
+    3891 => 'substrate',
+    3892 => 'substrates',
+    3893 => 'sulfides',
+    3894 => 'sulfite',
+    3895 => 'sulfites',
+    3896 => 'sulphates',
+    3897 => 'sulphide',
+    3898 => 'sulphides',
+    3899 => 'sulphite',
+    3900 => 'sulphites',
+    3901 => 'sundog',
+    3902 => 'sundogs',
+    3903 => 'sunspot',
+    3904 => 'supercell',
+    3905 => 'supercells',
+    3906 => 'supercluster',
+    3907 => 'superclusters',
+    3908 => 'superconductor',
+    3909 => 'superconductors',
+    3910 => 'supergiant',
+    3911 => 'supergiants',
+    3912 => 'superposition',
+    3913 => 'syenite',
+    3914 => 'sylvite',
+    3915 => 'synchrotron',
+    3916 => 'synchrotrons',
+    3917 => 'syncline',
+    3918 => 'synclines',
+    3919 => 'synopticchart',
+    3920 => 'synopticcharts',
+    3921 => 'talus',
+    3922 => 'tauon',
+    3923 => 'tauons',
+    3924 => 'taxonomy',
+    3925 => 'technetium',
+    3926 => 'tectonicplate',
+    3927 => 'tectonicplates',
+    3928 => 'tellurium',
+    3929 => 'temperatureinversion',
+    3930 => 'temperatureinversions',
+    3931 => 'tennessine',
+    3932 => 'tephra',
+    3933 => 'terawatt',
+    3934 => 'terawatts',
+    3935 => 'terbium',
+    3936 => 'terminalvelocity',
+    3937 => 'tetraquark',
+    3938 => 'tetraquarks',
+    3939 => 'thermochemistry',
+    3940 => 'thermocouple',
+    3941 => 'thermocouples',
+    3942 => 'thermocycler',
+    3943 => 'thermocyclers',
+    3944 => 'thermosphere',
+    3945 => 'thulium',
+    3946 => 'thylakoid',
+    3947 => 'thylakoids',
+    3948 => 'thymi',
+    3949 => 'tickertimer',
+    3950 => 'tickertimers',
+    3951 => 'tigereye',
+    3952 => 'titer',
+    3953 => 'titers',
+    3954 => 'titrating',
+    3955 => 'titration',
+    3956 => 'titrations',
+    3957 => 'titre',
+    3958 => 'titres',
+    3959 => 'tomography',
+    3960 => 'tonoplast',
+    3961 => 'tonoplasts',
+    3962 => 'topquark',
+    3963 => 'topquarks',
+    3964 => 'tracheae',
+    3965 => 'trachyte',
+    3966 => 'transduction',
+    3967 => 'transfection',
+    3968 => 'transitionmetal',
+    3969 => 'transitionmetals',
+    3970 => 'transpiration',
+    3971 => 'transposon',
+    3972 => 'transposons',
+    3973 => 'tremolite',
+    3974 => 'triassic',
+    3975 => 'tritium',
+    3976 => 'trituration',
+    3977 => 'trojan',
+    3978 => 'trojans',
+    3979 => 'tropicalcyclone',
+    3980 => 'tropicalcyclones',
+    3981 => 'tropopause',
+    3982 => 'troposphere',
+    3983 => 'tubulin',
+    3984 => 'tufa',
+    3985 => 'tuningfork',
+    3986 => 'tuningforks',
+    3987 => 'ultracentrifuge',
+    3988 => 'ultracentrifuges',
+    3989 => 'unconformities',
+    3990 => 'unconformity',
+    3991 => 'unsaturated',
+    3992 => 'updraft',
+    3993 => 'updrafts',
+    3994 => 'updraught',
+    3995 => 'updraughts',
+    3996 => 'upquark',
+    3997 => 'upquarks',
+    3998 => 'upsilon',
+    3999 => 'upsilons',
+    4000 => 'upthrust',
+    4001 => 'uraninite',
+    4002 => 'uranus',
+    4003 => 'uteri',
+    4004 => 'vacua',
+    4005 => 'vacuole',
+    4006 => 'vacuoles',
+    4007 => 'vacuumpump',
+    4008 => 'vacuumpumps',
+    4009 => 'valence',
+    4010 => 'valences',
+    4011 => 'valencies',
+    4012 => 'valency',
+    4013 => 'venus',
+    4014 => 'vermiculite',
+    4015 => 'vernier',
+    4016 => 'verniers',
+    4017 => 'vesicle',
+    4018 => 'vesicles',
+    4019 => 'villi',
+    4020 => 'villus',
+    4021 => 'virga',
+    4022 => 'viscometer',
+    4023 => 'viscometers',
+    4024 => 'vivisection',
+    4025 => 'voltmeter',
+    4026 => 'voltmeters',
+    4027 => 'vortexing',
+    4028 => 'vulcanology',
+    4029 => 'wallcloud',
+    4030 => 'wallclouds',
+    4031 => 'washbottle',
+    4032 => 'washbottles',
+    4033 => 'watchglass',
+    4034 => 'watchglasses',
+    4035 => 'waterbath',
+    4036 => 'waterbaths',
+    4037 => 'watercycle',
+    4038 => 'watertable',
+    4039 => 'watertables',
+    4040 => 'wavefront',
+    4041 => 'wavefronts',
+    4042 => 'wboson',
+    4043 => 'wbosons',
+    4044 => 'weatherballoon',
+    4045 => 'weatherballoons',
+    4046 => 'weatherforecast',
+    4047 => 'weatherforecasts',
+    4048 => 'weathervane',
+    4049 => 'weathervanes',
+    4050 => 'westernblot',
+    4051 => 'westernblots',
+    4052 => 'westernblotting',
+    4053 => 'whitedwarf',
+    4054 => 'whitedwarfs',
+    4055 => 'windshear',
+    4056 => 'wireloop',
+    4057 => 'wireloops',
+    4058 => 'wolframite',
+    4059 => 'wollastonite',
+    4060 => 'xray',
+    4061 => 'xrays',
+    4062 => 'xylem',
+    4063 => 'ytterbium',
+    4064 => 'zboson',
+    4065 => 'zbosons',
+    4066 => 'zeolite',
+    4067 => 'zeolites',
+    4068 => 'zygote',
+    4069 => 'zygotes',
   ),
   'families' => 
   array (
@@ -4211,6 +4160,7 @@ return array (
     array (
       0 => 'bacterium',
       1 => 'bacteria',
+      2 => 'bacterias',
     ),
     16 => 
     array (
@@ -4219,189 +4169,199 @@ return array (
     ),
     17 => 
     array (
+      0 => 'biosphere',
+      1 => 'biospheres',
+    ),
+    18 => 
+    array (
       0 => 'bladder',
       1 => 'bladders',
     ),
-    18 => 
+    19 => 
     array (
       0 => 'blood',
       1 => 'bloods',
       2 => 'blooded',
       3 => 'blooding',
     ),
-    19 => 
+    20 => 
     array (
       0 => 'brain',
       1 => 'brains',
       2 => 'braining',
       3 => 'brained',
     ),
-    20 => 
+    21 => 
     array (
       0 => 'camouflage',
       1 => 'camouflaged',
       2 => 'camouflaging',
       3 => 'camouflages',
     ),
-    21 => 
+    22 => 
     array (
       0 => 'capillary',
       1 => 'capillaries',
     ),
-    22 => 
+    23 => 
     array (
       0 => 'carbohydrate',
       1 => 'carbohydrates',
     ),
-    23 => 
+    24 => 
     array (
       0 => 'carnivore',
       1 => 'carnivores',
     ),
-    24 => 
+    25 => 
     array (
       0 => 'carpel',
       1 => 'carpels',
     ),
-    25 => 
+    26 => 
     array (
       0 => 'carrier',
       1 => 'carriers',
     ),
-    26 => 
+    27 => 
     array (
       0 => 'cell',
       1 => 'cells',
       2 => 'celled',
     ),
-    27 => 
+    28 => 
     array (
       0 => 'chromosome',
       1 => 'chromosomes',
     ),
-    28 => 
+    29 => 
     array (
       0 => 'classification',
       1 => 'classifications',
     ),
-    29 => 
+    30 => 
     array (
       0 => 'clone',
       1 => 'clones',
       2 => 'cloning',
       3 => 'cloned',
     ),
-    30 => 
+    31 => 
     array (
       0 => 'codon',
       1 => 'codons',
     ),
-    31 => 
+    32 => 
     array (
       0 => 'community',
       1 => 'communities',
     ),
-    32 => 
+    33 => 
     array (
       0 => 'competition',
       1 => 'competitions',
     ),
-    33 => 
+    34 => 
     array (
       0 => 'consumer',
       1 => 'consumers',
     ),
-    34 => 
+    35 => 
     array (
       0 => 'decomposer',
       1 => 'decomposers',
     ),
-    35 => 
+    36 => 
     array (
       0 => 'ecosystem',
       1 => 'ecosystems',
     ),
-    36 => 
+    37 => 
     array (
       0 => 'egg',
       1 => 'eggs',
       2 => 'egged',
       3 => 'egging',
     ),
-    37 => 
+    38 => 
     array (
       0 => 'embryo',
       1 => 'embryos',
     ),
-    38 => 
+    39 => 
     array (
       0 => 'enzyme',
       1 => 'enzymes',
     ),
-    39 => 
+    40 => 
+    array (
+      0 => 'evolution',
+      1 => 'evolutions',
+    ),
+    41 => 
     array (
       0 => 'extinction',
       1 => 'extinctions',
     ),
-    40 => 
+    42 => 
     array (
       0 => 'fertilisation',
       1 => 'fertilization',
     ),
-    41 => 
+    43 => 
     array (
       0 => 'foetus',
       1 => 'fetus',
       2 => 'foetuses',
       3 => 'fetuses',
     ),
-    42 => 
+    44 => 
     array (
       0 => 'foodchain',
       1 => 'foodchains',
     ),
-    43 => 
+    45 => 
     array (
       0 => 'foodweb',
       1 => 'foodwebs',
     ),
-    44 => 
+    46 => 
     array (
       0 => 'fungus',
       1 => 'fungi',
       2 => 'funguses',
     ),
-    45 => 
+    47 => 
     array (
       0 => 'gallbladder',
       1 => 'gallbladders',
     ),
-    46 => 
+    48 => 
     array (
       0 => 'gamete',
       1 => 'gametes',
     ),
-    47 => 
+    49 => 
     array (
       0 => 'gene',
       1 => 'genes',
     ),
-    48 => 
+    50 => 
     array (
       0 => 'genome',
       1 => 'genomes',
     ),
-    49 => 
+    51 => 
     array (
       0 => 'genotype',
       1 => 'genotypes',
     ),
-    50 => 
+    52 => 
     array (
       0 => 'genus',
       1 => 'genera',
     ),
-    51 => 
+    53 => 
     array (
       0 => 'germination',
       1 => 'germinate',
@@ -4409,206 +4369,210 @@ return array (
       3 => 'germinated',
       4 => 'germinating',
     ),
-    52 => 
+    54 => 
     array (
       0 => 'gland',
       1 => 'glands',
       2 => 'glandes',
     ),
-    53 => 
+    55 => 
     array (
       0 => 'grafting',
       1 => 'graft',
       2 => 'grafts',
       3 => 'grafted',
     ),
-    54 => 
+    56 => 
     array (
       0 => 'habitat',
       1 => 'habitats',
     ),
-    55 => 
+    57 => 
     array (
       0 => 'haemoglobin',
       1 => 'hemoglobin',
     ),
-    56 => 
+    58 => 
     array (
       0 => 'heart',
       1 => 'hearts',
       2 => 'hearted',
     ),
-    57 => 
+    59 => 
     array (
       0 => 'herbivore',
       1 => 'herbivores',
     ),
-    58 => 
+    60 => 
     array (
       0 => 'heterotroph',
       1 => 'heterotrophs',
     ),
-    59 => 
+    61 => 
     array (
       0 => 'hormone',
       1 => 'hormones',
     ),
-    60 => 
+    62 => 
     array (
       0 => 'host',
       1 => 'hosts',
       2 => 'hosting',
       3 => 'hosted',
     ),
-    61 => 
+    63 => 
     array (
       0 => 'hybrid',
       1 => 'hybrids',
     ),
-    62 => 
+    64 => 
     array (
       0 => 'immunity',
       1 => 'immunities',
     ),
-    63 => 
+    65 => 
     array (
       0 => 'inheritance',
       1 => 'inheritances',
     ),
-    64 => 
+    66 => 
     array (
       0 => 'instinct',
       1 => 'instincts',
     ),
-    65 => 
+    67 => 
     array (
       0 => 'intestine',
       1 => 'intestines',
     ),
-    66 => 
+    68 => 
     array (
       0 => 'invertebrate',
       1 => 'invertebrates',
     ),
-    67 => 
+    69 => 
     array (
       0 => 'kidney',
       1 => 'kidneys',
     ),
-    68 => 
+    70 => 
     array (
       0 => 'kingdom',
       1 => 'kingdoms',
     ),
-    69 => 
+    71 => 
     array (
       0 => 'largeintestine',
       1 => 'largeintestines',
     ),
-    70 => 
+    72 => 
     array (
       0 => 'larva',
       1 => 'larvae',
       2 => 'larvas',
     ),
-    71 => 
+    73 => 
     array (
       0 => 'larynx',
       1 => 'larynxes',
       2 => 'larynges',
     ),
-    72 => 
+    74 => 
     array (
       0 => 'lipid',
       1 => 'lipids',
     ),
-    73 => 
+    75 => 
     array (
       0 => 'liver',
       1 => 'livers',
     ),
-    74 => 
+    76 => 
     array (
       0 => 'lung',
       1 => 'lungs',
     ),
-    75 => 
+    77 => 
+    array (
+      0 => 'lymph',
+      1 => 'lymphs',
+    ),
+    78 => 
     array (
       0 => 'lymphocyte',
       1 => 'lymphocytes',
     ),
-    76 => 
+    79 => 
     array (
       0 => 'mammal',
       1 => 'mammals',
     ),
-    77 => 
+    80 => 
     array (
       0 => 'metabolism',
       1 => 'metabolisms',
     ),
-    78 => 
+    81 => 
     array (
       0 => 'microbe',
       1 => 'microbes',
     ),
-    79 => 
+    82 => 
     array (
       0 => 'microorganism',
       1 => 'microorganisms',
     ),
-    80 => 
+    83 => 
     array (
       0 => 'migration',
       1 => 'migrations',
     ),
-    81 => 
+    84 => 
     array (
       0 => 'muscle',
       1 => 'muscles',
       2 => 'muscled',
       3 => 'muscling',
     ),
-    82 => 
+    85 => 
     array (
       0 => 'mutation',
       1 => 'mutations',
     ),
-    83 => 
+    86 => 
     array (
       0 => 'nerve',
       1 => 'nerved',
-      2 => 'nerving',
-      3 => 'nerves',
+      2 => 'nerves',
     ),
-    84 => 
+    87 => 
     array (
       0 => 'neuron',
       1 => 'neurons',
       2 => 'neurone',
       3 => 'neurones',
     ),
-    85 => 
+    88 => 
     array (
       0 => 'neurotransmitter',
       1 => 'neurotransmitters',
     ),
-    86 => 
+    89 => 
     array (
       0 => 'niche',
       1 => 'niches',
     ),
-    87 => 
+    90 => 
     array (
       0 => 'nucleotide',
       1 => 'nucleotides',
     ),
-    88 => 
+    91 => 
     array (
       0 => 'nutrient',
       1 => 'nutrients',
     ),
-    89 => 
+    92 => 
     array (
       0 => 'oesophagus',
       1 => 'esophagus',
@@ -4617,1355 +4581,1392 @@ return array (
       4 => 'oesophaguses',
       5 => 'esophaguses',
     ),
-    90 => 
+    93 => 
     array (
       0 => 'oestrogen',
       1 => 'estrogen',
+      2 => 'estrogens',
     ),
-    91 => 
+    94 => 
     array (
       0 => 'omnivore',
       1 => 'omnivores',
     ),
-    92 => 
+    95 => 
     array (
       0 => 'organ',
       1 => 'organs',
     ),
-    93 => 
+    96 => 
     array (
       0 => 'organism',
       1 => 'organisms',
     ),
-    94 => 
+    97 => 
     array (
       0 => 'ovary',
       1 => 'ovaries',
     ),
-    95 => 
+    98 => 
     array (
       0 => 'ovule',
       1 => 'ovules',
     ),
-    96 => 
+    99 => 
     array (
       0 => 'ovum',
       1 => 'ova',
     ),
-    97 => 
+    100 => 
     array (
       0 => 'pancreas',
       1 => 'pancreases',
     ),
-    98 => 
+    101 => 
     array (
       0 => 'parasite',
       1 => 'parasites',
     ),
-    99 => 
+    102 => 
     array (
       0 => 'pathogen',
       1 => 'pathogens',
     ),
-    100 => 
+    103 => 
     array (
       0 => 'petal',
       1 => 'petals',
     ),
-    101 => 
+    104 => 
     array (
       0 => 'phagocyte',
       1 => 'phagocytes',
     ),
-    102 => 
+    105 => 
     array (
       0 => 'pharynx',
       1 => 'pharynxes',
       2 => 'pharynges',
     ),
-    103 => 
+    106 => 
     array (
       0 => 'phenotype',
       1 => 'phenotypes',
     ),
-    104 => 
+    107 => 
     array (
       0 => 'phylum',
       1 => 'phyla',
     ),
-    105 => 
+    108 => 
     array (
       0 => 'pistil',
       1 => 'pistils',
     ),
-    106 => 
+    109 => 
     array (
       0 => 'placenta',
       1 => 'placentas',
       2 => 'placentae',
     ),
-    107 => 
+    110 => 
     array (
       0 => 'plasma',
       1 => 'plasmas',
     ),
-    108 => 
+    111 => 
     array (
       0 => 'platelet',
       1 => 'platelets',
     ),
-    109 => 
+    112 => 
+    array (
+      0 => 'pollen',
+      1 => 'pollens',
+    ),
+    113 => 
     array (
       0 => 'population',
       1 => 'populations',
     ),
-    110 => 
+    114 => 
     array (
       0 => 'predator',
       1 => 'predators',
     ),
-    111 => 
+    115 => 
     array (
       0 => 'prey',
       1 => 'preying',
       2 => 'preyed',
       3 => 'preys',
     ),
-    112 => 
+    116 => 
     array (
       0 => 'producer',
       1 => 'producers',
     ),
-    113 => 
+    117 => 
     array (
       0 => 'protein',
       1 => 'proteins',
     ),
-    114 => 
+    118 => 
     array (
       0 => 'protist',
       1 => 'protists',
     ),
-    115 => 
+    119 => 
     array (
       0 => 'reflex',
       1 => 'reflexes',
     ),
-    116 => 
+    120 => 
     array (
       0 => 'reproduction',
       1 => 'reproductions',
     ),
-    117 => 
+    121 => 
     array (
       0 => 'respiration',
       1 => 'respirations',
     ),
-    118 => 
+    122 => 
     array (
       0 => 'scavenger',
       1 => 'scavengers',
     ),
-    119 => 
+    123 => 
     array (
       0 => 'selection',
       1 => 'selections',
     ),
-    120 => 
+    124 => 
     array (
       0 => 'sepal',
       1 => 'sepals',
     ),
-    121 => 
+    125 => 
     array (
       0 => 'skin',
       1 => 'skins',
       2 => 'skinned',
       3 => 'skinning',
     ),
-    122 => 
+    126 => 
     array (
       0 => 'smallintestine',
       1 => 'smallintestines',
     ),
-    123 => 
+    127 => 
     array (
       0 => 'sperm',
       1 => 'sperms',
     ),
-    124 => 
+    128 => 
     array (
       0 => 'spleen',
       1 => 'spleens',
     ),
-    125 => 
+    129 => 
     array (
       0 => 'spore',
       1 => 'spores',
     ),
-    126 => 
+    130 => 
     array (
       0 => 'stamen',
       1 => 'stamens',
     ),
-    127 => 
+    131 => 
     array (
       0 => 'starch',
       1 => 'starching',
       2 => 'starched',
       3 => 'starches',
     ),
-    128 => 
+    132 => 
     array (
       0 => 'stemcell',
       1 => 'stemcells',
     ),
-    129 => 
+    133 => 
     array (
       0 => 'stigma',
       1 => 'stigmas',
       2 => 'stigmata',
     ),
-    130 => 
+    134 => 
     array (
       0 => 'stoma',
       1 => 'stomata',
     ),
-    131 => 
+    135 => 
     array (
       0 => 'stomach',
       1 => 'stomachs',
       2 => 'stomached',
-      3 => 'stomaching',
     ),
-    132 => 
+    136 => 
+    array (
+      0 => 'succession',
+      1 => 'successions',
+    ),
+    137 => 
     array (
       0 => 'synapse',
       1 => 'synapses',
     ),
-    133 => 
+    138 => 
     array (
       0 => 'thymus',
       1 => 'thymuses',
       2 => 'thymi',
     ),
-    134 => 
+    139 => 
     array (
       0 => 'thyroid',
       1 => 'thyroids',
     ),
-    135 => 
+    140 => 
     array (
       0 => 'tissue',
       1 => 'tissues',
-      2 => 'tissued',
-      3 => 'tissuing',
     ),
-    136 => 
+    141 => 
     array (
       0 => 'trachea',
       1 => 'tracheae',
       2 => 'tracheas',
     ),
-    137 => 
+    142 => 
     array (
       0 => 'trait',
       1 => 'traits',
     ),
-    138 => 
+    143 => 
     array (
       0 => 'transcription',
       1 => 'transcriptions',
     ),
-    139 => 
+    144 => 
     array (
       0 => 'translation',
       1 => 'translations',
     ),
-    140 => 
+    145 => 
     array (
       0 => 'uterus',
       1 => 'uteri',
       2 => 'uteruses',
     ),
-    141 => 
+    146 => 
     array (
       0 => 'vaccine',
       1 => 'vaccines',
     ),
-    142 => 
+    147 => 
     array (
       0 => 'variation',
       1 => 'variations',
     ),
-    143 => 
+    148 => 
     array (
       0 => 'vein',
       1 => 'veins',
       2 => 'veined',
       3 => 'veining',
     ),
-    144 => 
+    149 => 
     array (
       0 => 'vertebrate',
       1 => 'vertebrates',
     ),
-    145 => 
+    150 => 
     array (
       0 => 'virus',
       1 => 'viruses',
     ),
-    146 => 
+    151 => 
     array (
       0 => 'vitamin',
       1 => 'vitamins',
+      2 => 'vitamines',
     ),
-    147 => 
+    152 => 
     array (
       0 => 'zygote',
       1 => 'zygotes',
     ),
-    148 => 
+    153 => 
     array (
       0 => 'clade',
       1 => 'clades',
     ),
-    149 => 
+    154 => 
     array (
       0 => 'colon',
       1 => 'colons',
+      2 => 'colones',
     ),
-    150 => 
+    155 => 
     array (
       0 => 'detritivore',
       1 => 'detritivores',
     ),
-    151 => 
+    156 => 
     array (
       0 => 'duodenum',
       1 => 'duodena',
       2 => 'duodenums',
     ),
-    152 => 
+    157 => 
     array (
       0 => 'erythrocyte',
       1 => 'erythrocytes',
     ),
-    153 => 
+    158 => 
     array (
       0 => 'exon',
       1 => 'exons',
     ),
-    154 => 
+    159 => 
     array (
       0 => 'intron',
       1 => 'introns',
     ),
-    155 => 
+    160 => 
     array (
       0 => 'karyotype',
       1 => 'karyotypes',
     ),
-    156 => 
+    161 => 
     array (
       0 => 'leucocyte',
       1 => 'leukocyte',
       2 => 'leucocytes',
       3 => 'leukocytes',
     ),
-    157 => 
+    162 => 
     array (
       0 => 'ligase',
       1 => 'ligases',
     ),
-    158 => 
+    163 => 
     array (
       0 => 'nephron',
       1 => 'nephrons',
     ),
-    159 => 
+    164 => 
     array (
       0 => 'operon',
       1 => 'operons',
     ),
-    160 => 
+    165 => 
     array (
       0 => 'phylogeny',
       1 => 'phylogenies',
     ),
-    161 => 
+    166 => 
     array (
       0 => 'polymerase',
       1 => 'polymerases',
     ),
-    162 => 
+    167 => 
     array (
       0 => 'transposon',
       1 => 'transposons',
     ),
-    163 => 
+    168 => 
     array (
       0 => 'villus',
       1 => 'villi',
     ),
-    164 => 
+    169 => 
     array (
       0 => 'aerodynamics',
       1 => 'aerodynamic',
     ),
-    165 => 
+    170 => 
     array (
       0 => 'archaeology',
       1 => 'archeology',
     ),
-    166 => 
+    171 => 
     array (
       0 => 'ballistics',
       1 => 'ballistic',
     ),
-    167 => 
+    172 => 
+    array (
+      0 => 'biology',
+      1 => 'biologies',
+    ),
+    173 => 
+    array (
+      0 => 'chemistry',
+      1 => 'chemistries',
+    ),
+    174 => 
     array (
       0 => 'cryogenics',
       1 => 'cryogenic',
     ),
-    168 => 
+    175 => 
     array (
       0 => 'cybernetics',
       1 => 'cybernetic',
     ),
-    169 => 
+    176 => 
     array (
       0 => 'electronics',
       1 => 'electronic',
     ),
-    170 => 
+    177 => 
     array (
       0 => 'engineering',
       1 => 'engineer',
       2 => 'engineers',
       3 => 'engineered',
     ),
-    171 => 
+    178 => 
     array (
       0 => 'forensics',
       1 => 'forensic',
     ),
-    172 => 
+    179 => 
     array (
       0 => 'gemmology',
       1 => 'gemology',
     ),
-    173 => 
+    180 => 
     array (
       0 => 'genetics',
       1 => 'genetic',
     ),
-    174 => 
+    181 => 
+    array (
+      0 => 'geography',
+      1 => 'geographies',
+    ),
+    182 => 
     array (
       0 => 'haematology',
       1 => 'hematology',
     ),
-    175 => 
+    183 => 
     array (
       0 => 'hydraulics',
       1 => 'hydraulic',
     ),
-    176 => 
+    184 => 
     array (
       0 => 'linguistics',
       1 => 'linguistic',
     ),
-    177 => 
+    185 => 
     array (
       0 => 'mechanics',
       1 => 'mechanic',
     ),
-    178 => 
+    186 => 
     array (
       0 => 'medicine',
-      1 => 'medicined',
-      2 => 'medicining',
-      3 => 'medicines',
+      1 => 'medicines',
     ),
-    179 => 
+    187 => 
+    array (
+      0 => 'neuroscience',
+      1 => 'neurosciences',
+    ),
+    188 => 
     array (
       0 => 'optics',
       1 => 'optic',
     ),
-    180 => 
+    189 => 
     array (
       0 => 'palaeontology',
       1 => 'paleontology',
     ),
-    181 => 
+    190 => 
     array (
       0 => 'pathology',
       1 => 'pathologies',
     ),
-    182 => 
+    191 => 
     array (
       0 => 'pharmacy',
       1 => 'pharmacies',
     ),
-    183 => 
+    192 => 
     array (
       0 => 'photonics',
       1 => 'photonic',
     ),
-    184 => 
+    193 => 
     array (
       0 => 'robotics',
       1 => 'robotic',
     ),
-    185 => 
+    194 => 
     array (
       0 => 'volcanology',
       1 => 'vulcanology',
     ),
-    186 => 
+    195 => 
     array (
       0 => 'computing',
       1 => 'compute',
       2 => 'computed',
       3 => 'computes',
     ),
-    187 => 
+    196 => 
     array (
       0 => 'dynamics',
       1 => 'dynamic',
     ),
-    188 => 
+    197 => 
     array (
       0 => 'palaeobotany',
       1 => 'paleobotany',
     ),
-    189 => 
+    198 => 
+    array (
+      0 => 'statics',
+      1 => 'static',
+    ),
+    199 => 
     array (
       0 => 'statistics',
       1 => 'statistic',
     ),
-    190 => 
+    200 => 
+    array (
+      0 => 'systematics',
+      1 => 'systematic',
+    ),
+    201 => 
     array (
       0 => 'axon',
       1 => 'axons',
     ),
-    191 => 
+    202 => 
     array (
       0 => 'capsule',
       1 => 'capsules',
-      2 => 'capsuled',
-      3 => 'capsuling',
     ),
-    192 => 
+    203 => 
     array (
       0 => 'cellmembrane',
       1 => 'cellmembranes',
     ),
-    193 => 
+    204 => 
     array (
       0 => 'cellwall',
       1 => 'cellwalls',
     ),
-    194 => 
+    205 => 
     array (
       0 => 'centriole',
       1 => 'centrioles',
     ),
-    195 => 
+    206 => 
     array (
       0 => 'centromere',
       1 => 'centromeres',
     ),
-    196 => 
+    207 => 
     array (
       0 => 'centrosome',
       1 => 'centrosomes',
     ),
-    197 => 
+    208 => 
     array (
       0 => 'chloroplast',
       1 => 'chloroplasts',
     ),
-    198 => 
+    209 => 
     array (
       0 => 'chromatid',
       1 => 'chromatids',
     ),
-    199 => 
+    210 => 
     array (
       0 => 'cilium',
       1 => 'cilia',
     ),
-    200 => 
+    211 => 
     array (
       0 => 'cortex',
       1 => 'cortices',
       2 => 'cortexes',
     ),
-    201 => 
+    212 => 
     array (
       0 => 'crista',
       1 => 'cristae',
     ),
-    202 => 
+    213 => 
     array (
       0 => 'cytoplasm',
       1 => 'cytoplasms',
     ),
-    203 => 
+    214 => 
     array (
       0 => 'cytoskeleton',
       1 => 'cytoskeletons',
     ),
-    204 => 
+    215 => 
     array (
       0 => 'dendrite',
       1 => 'dendrites',
     ),
-    205 => 
+    216 => 
     array (
       0 => 'envelope',
       1 => 'envelopes',
     ),
-    206 => 
+    217 => 
     array (
       0 => 'flagellum',
       1 => 'flagella',
     ),
-    207 => 
+    218 => 
     array (
       0 => 'golgibody',
       1 => 'golgibodies',
     ),
-    208 => 
+    219 => 
     array (
       0 => 'granum',
       1 => 'grana',
     ),
-    209 => 
+    220 => 
     array (
       0 => 'lysosome',
       1 => 'lysosomes',
     ),
-    210 => 
+    221 => 
     array (
       0 => 'matrix',
       1 => 'matrices',
     ),
-    211 => 
+    222 => 
     array (
       0 => 'membrane',
       1 => 'membranes',
     ),
-    212 => 
+    223 => 
     array (
       0 => 'microfilament',
       1 => 'microfilaments',
     ),
-    213 => 
+    224 => 
     array (
       0 => 'microtubule',
       1 => 'microtubules',
     ),
-    214 => 
+    225 => 
     array (
       0 => 'microvillus',
       1 => 'microvilli',
     ),
-    215 => 
+    226 => 
     array (
       0 => 'mitochondrion',
       1 => 'mitochondria',
     ),
-    216 => 
+    227 => 
     array (
       0 => 'nuclearmembrane',
       1 => 'nuclearmembranes',
     ),
-    217 => 
+    228 => 
     array (
       0 => 'nucleoid',
       1 => 'nucleoids',
     ),
-    218 => 
+    229 => 
     array (
       0 => 'nucleolus',
       1 => 'nucleoli',
     ),
-    219 => 
+    230 => 
     array (
       0 => 'nucleus',
       1 => 'nuclei',
     ),
-    220 => 
+    231 => 
     array (
       0 => 'organelle',
       1 => 'organelles',
     ),
-    221 => 
+    232 => 
     array (
       0 => 'peroxisome',
       1 => 'peroxisomes',
     ),
-    222 => 
+    233 => 
     array (
       0 => 'pilus',
       1 => 'pili',
     ),
-    223 => 
+    234 => 
     array (
       0 => 'plasmid',
       1 => 'plasmids',
     ),
-    224 => 
+    235 => 
     array (
       0 => 'plasmodesma',
       1 => 'plasmodesmata',
     ),
-    225 => 
+    236 => 
     array (
       0 => 'plastid',
       1 => 'plastids',
     ),
-    226 => 
+    237 => 
     array (
       0 => 'pore',
       1 => 'pores',
       2 => 'poring',
       3 => 'pored',
     ),
-    227 => 
+    238 => 
     array (
       0 => 'pseudopod',
       1 => 'pseudopods',
       2 => 'pseudopodium',
       3 => 'pseudopodia',
     ),
-    228 => 
+    239 => 
     array (
       0 => 'receptor',
       1 => 'receptors',
     ),
-    229 => 
+    240 => 
     array (
       0 => 'reticulum',
       1 => 'reticula',
     ),
-    230 => 
+    241 => 
     array (
       0 => 'ribosome',
       1 => 'ribosomes',
     ),
-    231 => 
+    242 => 
     array (
       0 => 'soma',
       1 => 'somata',
       2 => 'somas',
     ),
-    232 => 
+    243 => 
     array (
       0 => 'spindle',
       1 => 'spindles',
     ),
-    233 => 
+    244 => 
     array (
       0 => 'thylakoid',
       1 => 'thylakoids',
     ),
-    234 => 
+    245 => 
     array (
       0 => 'vacuole',
       1 => 'vacuoles',
     ),
-    235 => 
+    246 => 
     array (
       0 => 'vesicle',
       1 => 'vesicles',
     ),
-    236 => 
+    247 => 
     array (
       0 => 'wall',
       1 => 'walls',
       2 => 'walled',
       3 => 'walling',
     ),
-    237 => 
+    248 => 
     array (
       0 => 'acrosome',
       1 => 'acrosomes',
     ),
-    238 => 
+    249 => 
     array (
       0 => 'amyloplast',
       1 => 'amyloplasts',
     ),
-    239 => 
+    250 => 
     array (
       0 => 'basalbody',
       1 => 'basalbodies',
     ),
-    240 => 
+    251 => 
     array (
       0 => 'cellplate',
       1 => 'cellplates',
     ),
-    241 => 
+    252 => 
     array (
       0 => 'chromoplast',
       1 => 'chromoplasts',
     ),
-    242 => 
+    253 => 
     array (
       0 => 'cisterna',
       1 => 'cisternae',
     ),
-    243 => 
+    254 => 
     array (
       0 => 'contractilevacuole',
       1 => 'contractilevacuoles',
     ),
-    244 => 
+    255 => 
     array (
       0 => 'desmosome',
       1 => 'desmosomes',
     ),
-    245 => 
+    256 => 
     array (
       0 => 'dictyosome',
       1 => 'dictyosomes',
     ),
-    246 => 
+    257 => 
     array (
       0 => 'endosome',
       1 => 'endosomes',
     ),
-    247 => 
+    258 => 
     array (
       0 => 'eyespot',
       1 => 'eyespots',
     ),
-    248 => 
+    259 => 
     array (
       0 => 'fimbria',
       1 => 'fimbriae',
     ),
-    249 => 
+    260 => 
     array (
       0 => 'glyoxysome',
       1 => 'glyoxysomes',
     ),
-    250 => 
+    261 => 
     array (
       0 => 'histone',
       1 => 'histones',
     ),
-    251 => 
+    262 => 
     array (
       0 => 'kinetochore',
       1 => 'kinetochores',
     ),
-    252 => 
+    263 => 
     array (
       0 => 'lamella',
       1 => 'lamellae',
     ),
-    253 => 
+    264 => 
     array (
       0 => 'leucoplast',
       1 => 'leucoplasts',
     ),
-    254 => 
+    265 => 
     array (
       0 => 'lumen',
       1 => 'lumina',
       2 => 'lumens',
     ),
-    255 => 
+    266 => 
     array (
       0 => 'mesosome',
       1 => 'mesosomes',
     ),
-    256 => 
+    267 => 
     array (
       0 => 'nuclearenvelope',
       1 => 'nuclearenvelopes',
     ),
-    257 => 
+    268 => 
     array (
       0 => 'nuclearpore',
       1 => 'nuclearpores',
     ),
-    258 => 
+    269 => 
     array (
       0 => 'nucleosome',
       1 => 'nucleosomes',
     ),
-    259 => 
+    270 => 
     array (
       0 => 'pellicle',
       1 => 'pellicles',
     ),
-    260 => 
+    271 => 
     array (
       0 => 'phagosome',
       1 => 'phagosomes',
     ),
-    261 => 
+    272 => 
     array (
       0 => 'plasmalemma',
       1 => 'plasmalemmas',
     ),
-    262 => 
+    273 => 
     array (
       0 => 'plasmamembrane',
       1 => 'plasmamembranes',
     ),
-    263 => 
+    274 => 
     array (
       0 => 'polysome',
       1 => 'polysomes',
     ),
-    264 => 
+    275 => 
     array (
       0 => 'proteasome',
       1 => 'proteasomes',
     ),
-    265 => 
+    276 => 
     array (
       0 => 'pyrenoid',
       1 => 'pyrenoids',
     ),
-    266 => 
+    277 => 
     array (
       0 => 'sarcomere',
       1 => 'sarcomeres',
     ),
-    267 => 
+    278 => 
     array (
       0 => 'tonoplast',
       1 => 'tonoplasts',
     ),
-    268 => 
+    279 => 
     array (
       0 => 'acetate',
       1 => 'acetates',
     ),
-    269 => 
+    280 => 
     array (
       0 => 'acid',
       1 => 'acids',
     ),
-    270 => 
+    281 => 
     array (
       0 => 'alcohol',
       1 => 'alcohols',
     ),
-    271 => 
+    282 => 
     array (
       0 => 'aldehyde',
       1 => 'aldehydes',
     ),
-    272 => 
+    283 => 
     array (
       0 => 'alkalimetal',
       1 => 'alkalimetals',
     ),
-    273 => 
+    284 => 
     array (
       0 => 'alkali',
       1 => 'alkalis',
       2 => 'alkalies',
     ),
-    274 => 
+    285 => 
     array (
       0 => 'alkane',
       1 => 'alkanes',
     ),
-    275 => 
+    286 => 
     array (
       0 => 'alkene',
       1 => 'alkenes',
     ),
-    276 => 
+    287 => 
     array (
       0 => 'alkyne',
       1 => 'alkynes',
     ),
-    277 => 
+    288 => 
     array (
       0 => 'allotrope',
       1 => 'allotropes',
     ),
-    278 => 
+    289 => 
     array (
       0 => 'alloy',
       1 => 'alloys',
-      2 => 'alloyed',
-      3 => 'alloying',
     ),
-    279 => 
+    290 => 
     array (
       0 => 'amine',
       1 => 'amines',
     ),
-    280 => 
+    291 => 
     array (
       0 => 'anion',
       1 => 'anions',
     ),
-    281 => 
+    292 => 
     array (
       0 => 'anode',
       1 => 'anodes',
     ),
-    282 => 
+    293 => 
     array (
       0 => 'aromatic',
       1 => 'aromatics',
     ),
-    283 => 
+    294 => 
     array (
       0 => 'atom',
       1 => 'atoms',
     ),
-    284 => 
+    295 => 
     array (
       0 => 'atomicmass',
       1 => 'atomicmasses',
     ),
-    285 => 
+    296 => 
     array (
       0 => 'atomicnumber',
       1 => 'atomicnumbers',
     ),
-    286 => 
+    297 => 
     array (
       0 => 'base',
       1 => 'bases',
       2 => 'based',
       3 => 'basing',
     ),
-    287 => 
+    298 => 
     array (
       0 => 'bond',
       1 => 'bonds',
       2 => 'bonding',
       3 => 'bonded',
     ),
-    288 => 
+    299 => 
     array (
       0 => 'brine',
       1 => 'brined',
       2 => 'brining',
     ),
-    289 => 
+    300 => 
     array (
       0 => 'bromide',
       1 => 'bromides',
     ),
-    290 => 
+    301 => 
     array (
       0 => 'buffer',
       1 => 'buffers',
       2 => 'buffering',
       3 => 'buffered',
     ),
-    291 => 
+    302 => 
     array (
       0 => 'carbonate',
       1 => 'carbonates',
-      2 => 'carbonating',
-      3 => 'carbonated',
+      2 => 'carbonated',
     ),
-    292 => 
+    303 => 
     array (
       0 => 'catalyst',
       1 => 'catalysts',
     ),
-    293 => 
+    304 => 
     array (
       0 => 'cathode',
       1 => 'cathodes',
     ),
-    294 => 
+    305 => 
     array (
       0 => 'cation',
       1 => 'cations',
     ),
-    295 => 
+    306 => 
     array (
       0 => 'chemical',
       1 => 'chemicals',
     ),
-    296 => 
+    307 => 
     array (
       0 => 'chloride',
       1 => 'chlorides',
     ),
-    297 => 
+    308 => 
     array (
       0 => 'colloid',
       1 => 'colloids',
     ),
-    298 => 
+    309 => 
     array (
       0 => 'compound',
       1 => 'compounds',
       2 => 'compounded',
       3 => 'compounding',
     ),
-    299 => 
+    310 => 
     array (
       0 => 'concentration',
       1 => 'concentrations',
     ),
-    300 => 
+    311 => 
     array (
       0 => 'covalentbond',
       1 => 'covalentbonds',
     ),
-    301 => 
+    312 => 
     array (
       0 => 'cracking',
       1 => 'crack',
       2 => 'cracked',
       3 => 'cracks',
     ),
-    302 => 
+    313 => 
     array (
       0 => 'crystal',
       1 => 'crystals',
     ),
-    303 => 
+    314 => 
     array (
       0 => 'dilute',
       1 => 'diluted',
       2 => 'diluting',
       3 => 'dilutes',
     ),
-    304 => 
+    315 => 
+    array (
+      0 => 'displacement',
+      1 => 'displacements',
+    ),
+    316 => 
     array (
       0 => 'dissolve',
       1 => 'dissolves',
       2 => 'dissolved',
       3 => 'dissolving',
     ),
-    305 => 
+    317 => 
     array (
       0 => 'electrolyte',
       1 => 'electrolytes',
     ),
-    306 => 
+    318 => 
     array (
       0 => 'element',
       1 => 'elements',
     ),
-    307 => 
+    319 => 
     array (
       0 => 'emulsion',
       1 => 'emulsions',
     ),
-    308 => 
+    320 => 
     array (
       0 => 'equilibrium',
       1 => 'equilibria',
     ),
-    309 => 
+    321 => 
     array (
       0 => 'ester',
       1 => 'esters',
     ),
-    310 => 
+    322 => 
     array (
       0 => 'ether',
       1 => 'ethers',
     ),
-    311 => 
+    323 => 
     array (
       0 => 'formula',
       1 => 'formulae',
       2 => 'formulas',
     ),
-    312 => 
+    324 => 
     array (
       0 => 'gas',
       1 => 'gases',
       2 => 'gassed',
     ),
-    313 => 
+    325 => 
     array (
       0 => 'glycol',
       1 => 'glycols',
     ),
-    314 => 
+    326 => 
     array (
       0 => 'halide',
       1 => 'halides',
     ),
-    315 => 
+    327 => 
     array (
       0 => 'halogen',
       1 => 'halogens',
     ),
-    316 => 
+    328 => 
     array (
       0 => 'hydrate',
       1 => 'hydrated',
       2 => 'hydrating',
       3 => 'hydrates',
     ),
-    317 => 
+    329 => 
     array (
       0 => 'hydrocarbon',
       1 => 'hydrocarbons',
     ),
-    318 => 
+    330 => 
     array (
       0 => 'hydrogenbond',
       1 => 'hydrogenbonds',
     ),
-    319 => 
+    331 => 
     array (
       0 => 'hydroxide',
       1 => 'hydroxides',
     ),
-    320 => 
+    332 => 
     array (
       0 => 'indicator',
       1 => 'indicators',
     ),
-    321 => 
+    333 => 
     array (
       0 => 'iodide',
       1 => 'iodides',
     ),
-    322 => 
+    334 => 
     array (
       0 => 'ion',
       1 => 'ions',
     ),
-    323 => 
+    335 => 
     array (
       0 => 'ionicbond',
       1 => 'ionicbonds',
     ),
-    324 => 
+    336 => 
     array (
       0 => 'ionisation',
       1 => 'ionization',
     ),
-    325 => 
+    337 => 
     array (
       0 => 'isomer',
       1 => 'isomers',
     ),
-    326 => 
+    338 => 
     array (
       0 => 'isotope',
       1 => 'isotopes',
     ),
-    327 => 
+    339 => 
     array (
       0 => 'ketone',
       1 => 'ketones',
     ),
-    328 => 
+    340 => 
     array (
       0 => 'lattice',
       1 => 'lattices',
     ),
-    329 => 
+    341 => 
     array (
       0 => 'liquid',
       1 => 'liquids',
     ),
-    330 => 
+    342 => 
     array (
       0 => 'metal',
       1 => 'metals',
-      2 => 'metaled',
-      3 => 'metaling',
-      4 => 'metalled',
-      5 => 'metalling',
     ),
-    331 => 
+    343 => 
     array (
       0 => 'metalloid',
       1 => 'metalloids',
     ),
-    332 => 
+    344 => 
     array (
       0 => 'mixture',
       1 => 'mixtures',
     ),
-    333 => 
+    345 => 
     array (
       0 => 'molar',
       1 => 'molars',
     ),
-    334 => 
+    346 => 
     array (
       0 => 'mole',
       1 => 'moles',
     ),
-    335 => 
+    347 => 
     array (
       0 => 'molecule',
       1 => 'molecules',
     ),
-    336 => 
+    348 => 
     array (
       0 => 'monomer',
       1 => 'monomers',
     ),
-    337 => 
+    349 => 
     array (
       0 => 'neutral',
       1 => 'neutrals',
     ),
-    338 => 
+    350 => 
     array (
       0 => 'neutralisation',
       1 => 'neutralization',
     ),
-    339 => 
+    351 => 
     array (
       0 => 'nitrate',
       1 => 'nitrates',
-      2 => 'nitrated',
-      3 => 'nitrating',
     ),
-    340 => 
+    352 => 
     array (
       0 => 'nitrite',
       1 => 'nitrites',
     ),
-    341 => 
+    353 => 
     array (
       0 => 'noblegas',
       1 => 'noblegases',
     ),
-    342 => 
+    354 => 
     array (
       0 => 'nonmetal',
       1 => 'nonmetals',
     ),
-    343 => 
+    355 => 
     array (
       0 => 'octet',
       1 => 'octets',
     ),
-    344 => 
+    356 => 
+    array (
+      0 => 'orbital',
+      1 => 'orbitals',
+    ),
+    357 => 
     array (
       0 => 'organic',
       1 => 'organics',
     ),
-    345 => 
+    358 => 
     array (
       0 => 'oxide',
       1 => 'oxides',
     ),
-    346 => 
+    359 => 
     array (
       0 => 'oxidise',
       1 => 'oxidize',
@@ -5974,769 +5975,760 @@ return array (
       4 => 'oxidised',
       5 => 'oxidized',
     ),
-    347 => 
+    360 => 
     array (
       0 => 'periodictable',
       1 => 'periodictables',
     ),
-    348 => 
-    array (
-      0 => 'peroxide',
-      1 => 'peroxided',
-      2 => 'peroxiding',
-    ),
-    349 => 
+    361 => 
     array (
       0 => 'phenol',
       1 => 'phenols',
     ),
-    350 => 
+    362 => 
     array (
       0 => 'phosphate',
       1 => 'phosphates',
     ),
-    351 => 
+    363 => 
     array (
       0 => 'polymer',
       1 => 'polymers',
     ),
-    352 => 
+    364 => 
     array (
       0 => 'polymerisation',
       1 => 'polymerization',
     ),
-    353 => 
+    365 => 
     array (
       0 => 'precipitate',
       1 => 'precipitates',
       2 => 'precipitated',
       3 => 'precipitating',
     ),
-    354 => 
+    366 => 
     array (
       0 => 'product',
       1 => 'products',
     ),
-    355 => 
+    367 => 
     array (
       0 => 'radical',
       1 => 'radicals',
     ),
-    356 => 
+    368 => 
     array (
       0 => 'reactant',
       1 => 'reactants',
     ),
-    357 => 
+    369 => 
     array (
       0 => 'reaction',
       1 => 'reactions',
     ),
-    358 => 
+    370 => 
     array (
       0 => 'reagent',
       1 => 'reagents',
     ),
-    359 => 
+    371 => 
     array (
       0 => 'reduction',
       1 => 'reductions',
     ),
-    360 => 
+    372 => 
     array (
       0 => 'rust',
       1 => 'rusted',
       2 => 'rusting',
       3 => 'rusts',
     ),
-    361 => 
+    373 => 
     array (
       0 => 'salt',
       1 => 'salts',
       2 => 'salted',
       3 => 'salting',
     ),
-    362 => 
+    374 => 
     array (
       0 => 'saturated',
       1 => 'saturate',
       2 => 'saturating',
+      3 => 'saturates',
     ),
-    363 => 
+    375 => 
     array (
       0 => 'silicate',
       1 => 'silicates',
     ),
-    364 => 
+    376 => 
     array (
       0 => 'solid',
       1 => 'solids',
     ),
-    365 => 
+    377 => 
     array (
       0 => 'solute',
       1 => 'solutes',
     ),
-    366 => 
+    378 => 
     array (
       0 => 'solution',
       1 => 'solutions',
     ),
-    367 => 
+    379 => 
     array (
       0 => 'solvent',
       1 => 'solvents',
     ),
-    368 => 
+    380 => 
     array (
       0 => 'substrate',
       1 => 'substrates',
     ),
-    369 => 
+    381 => 
     array (
       0 => 'sulphate',
       1 => 'sulfate',
       2 => 'sulphates',
       3 => 'sulfates',
-      4 => 'sulfated',
-      5 => 'sulfating',
     ),
-    370 => 
+    382 => 
     array (
       0 => 'sulphide',
       1 => 'sulfide',
       2 => 'sulphides',
       3 => 'sulfides',
     ),
-    371 => 
+    383 => 
     array (
       0 => 'suspension',
       1 => 'suspensions',
     ),
-    372 => 
+    384 => 
     array (
       0 => 'titration',
       1 => 'titrations',
       2 => 'titrating',
     ),
-    373 => 
+    385 => 
     array (
       0 => 'transitionmetal',
       1 => 'transitionmetals',
     ),
-    374 => 
+    386 => 
     array (
       0 => 'valency',
       1 => 'valence',
       2 => 'valencies',
       3 => 'valences',
     ),
-    375 => 
+    387 => 
     array (
       0 => 'volatile',
       1 => 'volatiles',
     ),
-    376 => 
+    388 => 
     array (
       0 => 'yield',
       1 => 'yielded',
       2 => 'yields',
       3 => 'yielding',
     ),
-    377 => 
+    389 => 
     array (
       0 => 'amide',
       1 => 'amides',
     ),
-    378 => 
+    390 => 
     array (
       0 => 'anhydride',
       1 => 'anhydrides',
     ),
-    379 => 
+    391 => 
     array (
       0 => 'carbonyl',
       1 => 'carbonyls',
     ),
-    380 => 
+    392 => 
     array (
       0 => 'carboxyl',
       1 => 'carboxyls',
     ),
-    381 => 
+    393 => 
     array (
       0 => 'chelate',
       1 => 'chelates',
     ),
-    382 => 
+    394 => 
     array (
       0 => 'chlorate',
       1 => 'chlorates',
     ),
-    383 => 
+    395 => 
     array (
       0 => 'distillate',
       1 => 'distillates',
     ),
-    384 => 
+    396 => 
     array (
       0 => 'electrophile',
       1 => 'electrophiles',
     ),
-    385 => 
+    397 => 
     array (
       0 => 'emulsifier',
       1 => 'emulsifiers',
     ),
-    386 => 
+    398 => 
     array (
       0 => 'enantiomer',
       1 => 'enantiomers',
     ),
-    387 => 
+    399 => 
     array (
       0 => 'functionalgroup',
       1 => 'functionalgroups',
     ),
-    388 => 
+    400 => 
     array (
       0 => 'hydride',
       1 => 'hydrides',
     ),
-    389 => 
+    401 => 
     array (
       0 => 'hydroxyl',
       1 => 'hydroxyls',
     ),
-    390 => 
+    402 => 
     array (
       0 => 'kinetics',
       1 => 'kinetic',
     ),
-    391 => 
+    403 => 
     array (
       0 => 'ligand',
       1 => 'ligands',
     ),
-    392 => 
+    404 => 
     array (
       0 => 'nitride',
       1 => 'nitrides',
     ),
-    393 => 
+    405 => 
     array (
       0 => 'nucleophile',
       1 => 'nucleophiles',
     ),
-    394 => 
+    406 => 
     array (
       0 => 'oxidant',
       1 => 'oxidants',
     ),
-    395 => 
+    407 => 
     array (
       0 => 'permanganate',
       1 => 'permanganates',
     ),
-    396 => 
+    408 => 
     array (
       0 => 'reductant',
       1 => 'reductants',
     ),
-    397 => 
+    409 => 
     array (
       0 => 'sulphite',
       1 => 'sulfite',
       2 => 'sulphites',
       3 => 'sulfites',
     ),
-    398 => 
+    410 => 
     array (
       0 => 'titre',
       1 => 'titer',
       2 => 'titres',
       3 => 'titers',
     ),
-    399 => 
+    411 => 
     array (
       0 => 'abrasion',
       1 => 'abrasions',
     ),
-    400 => 
+    412 => 
     array (
       0 => 'aftershock',
       1 => 'aftershocks',
     ),
-    401 => 
+    413 => 
     array (
       0 => 'ammonite',
       1 => 'ammonites',
     ),
-    402 => 
+    414 => 
     array (
       0 => 'aquifer',
       1 => 'aquifers',
     ),
-    403 => 
+    415 => 
     array (
       0 => 'arete',
       1 => 'aretes',
     ),
-    404 => 
+    416 => 
     array (
       0 => 'ash',
       1 => 'ashed',
       2 => 'ashing',
       3 => 'ashes',
     ),
-    405 => 
+    417 => 
     array (
       0 => 'atoll',
       1 => 'atolls',
     ),
-    406 => 
+    418 => 
     array (
       0 => 'avalanche',
       1 => 'avalanches',
-      2 => 'avalanched',
-      3 => 'avalanching',
     ),
-    407 => 
+    419 => 
     array (
       0 => 'basin',
       1 => 'basins',
     ),
-    408 => 
+    420 => 
     array (
       0 => 'boulder',
       1 => 'boulders',
       2 => 'bouldering',
     ),
-    409 => 
+    421 => 
     array (
       0 => 'butte',
       1 => 'buttes',
     ),
-    410 => 
+    422 => 
     array (
       0 => 'caldera',
       1 => 'calderas',
     ),
-    411 => 
+    423 => 
     array (
       0 => 'canyon',
       1 => 'canyons',
       2 => 'canyoning',
     ),
-    412 => 
+    424 => 
     array (
       0 => 'catchment',
       1 => 'catchments',
     ),
-    413 => 
+    425 => 
     array (
       0 => 'cave',
       1 => 'caves',
       2 => 'caved',
       3 => 'caving',
     ),
-    414 => 
+    426 => 
     array (
       0 => 'cavern',
-      1 => 'caverned',
-      2 => 'caverning',
-      3 => 'caverns',
+      1 => 'caverns',
     ),
-    415 => 
+    427 => 
     array (
       0 => 'cirque',
       1 => 'cirques',
     ),
-    416 => 
+    428 => 
     array (
       0 => 'continent',
       1 => 'continents',
     ),
-    417 => 
+    429 => 
     array (
       0 => 'core',
       1 => 'cores',
       2 => 'cored',
       3 => 'coring',
     ),
-    418 => 
+    430 => 
     array (
       0 => 'corrie',
       1 => 'corries',
     ),
-    419 => 
+    431 => 
     array (
       0 => 'crater',
       1 => 'craters',
       2 => 'cratered',
       3 => 'cratering',
     ),
-    420 => 
+    432 => 
     array (
       0 => 'crust',
       1 => 'crusts',
       2 => 'crusting',
       3 => 'crusted',
     ),
-    421 => 
+    433 => 
     array (
       0 => 'delta',
       1 => 'deltas',
     ),
-    422 => 
+    434 => 
     array (
       0 => 'deposition',
       1 => 'depositions',
     ),
-    423 => 
+    435 => 
     array (
       0 => 'dune',
       1 => 'dunes',
     ),
-    424 => 
+    436 => 
     array (
       0 => 'earthquake',
       1 => 'earthquakes',
     ),
-    425 => 
+    437 => 
     array (
       0 => 'eon',
       1 => 'aeon',
       2 => 'eons',
       3 => 'aeons',
     ),
-    426 => 
+    438 => 
     array (
       0 => 'epicentre',
       1 => 'epicenter',
       2 => 'epicentres',
       3 => 'epicenters',
     ),
-    427 => 
+    439 => 
     array (
       0 => 'epoch',
       1 => 'epochs',
     ),
-    428 => 
+    440 => 
     array (
       0 => 'era',
       1 => 'eras',
     ),
-    429 => 
+    441 => 
+    array (
+      0 => 'erosion',
+      1 => 'erosions',
+    ),
+    442 => 
     array (
       0 => 'eruption',
       1 => 'eruptions',
     ),
-    430 => 
+    443 => 
     array (
       0 => 'esker',
       1 => 'eskers',
     ),
-    431 => 
+    444 => 
     array (
       0 => 'estuary',
       1 => 'estuaries',
     ),
-    432 => 
+    445 => 
     array (
       0 => 'faultline',
       1 => 'faultlines',
     ),
-    433 => 
+    446 => 
     array (
       0 => 'fault',
       1 => 'faults',
       2 => 'faulted',
       3 => 'faulting',
     ),
-    434 => 
+    447 => 
     array (
       0 => 'fjord',
       1 => 'fiord',
       2 => 'fjords',
       3 => 'fiords',
     ),
-    435 => 
+    448 => 
     array (
       0 => 'floodplain',
       1 => 'floodplains',
     ),
-    436 => 
+    449 => 
     array (
       0 => 'fold',
       1 => 'folds',
       2 => 'folded',
       3 => 'folding',
     ),
-    437 => 
+    450 => 
     array (
       0 => 'fossil',
       1 => 'fossils',
     ),
-    438 => 
+    451 => 
     array (
       0 => 'geyser',
       1 => 'geysers',
     ),
-    439 => 
+    452 => 
     array (
       0 => 'glaciation',
       1 => 'glaciations',
     ),
-    440 => 
+    453 => 
     array (
       0 => 'glacier',
       1 => 'glaciers',
     ),
-    441 => 
+    454 => 
     array (
       0 => 'gorge',
       1 => 'gorges',
       2 => 'gorging',
       3 => 'gorged',
     ),
-    442 => 
+    455 => 
     array (
       0 => 'gravel',
       1 => 'graveled',
-      2 => 'graveling',
-      3 => 'gravelled',
-      4 => 'gravelling',
-      5 => 'gravels',
+      2 => 'gravels',
     ),
-    443 => 
+    456 => 
     array (
       0 => 'hemisphere',
       1 => 'hemispheres',
     ),
-    444 => 
+    457 => 
     array (
       0 => 'hotspring',
       1 => 'hotsprings',
     ),
-    445 => 
+    458 => 
     array (
       0 => 'iceage',
       1 => 'iceages',
     ),
-    446 => 
+    459 => 
     array (
       0 => 'icecap',
       1 => 'icecaps',
     ),
-    447 => 
+    460 => 
     array (
       0 => 'iceberg',
       1 => 'icebergs',
     ),
-    448 => 
+    461 => 
     array (
       0 => 'interglacial',
       1 => 'interglacials',
     ),
-    449 => 
+    462 => 
     array (
       0 => 'karst',
       1 => 'karsts',
     ),
-    450 => 
+    463 => 
     array (
       0 => 'lagoon',
       1 => 'lagoons',
     ),
-    451 => 
+    464 => 
     array (
       0 => 'latitude',
       1 => 'latitudes',
     ),
-    452 => 
+    465 => 
     array (
       0 => 'lava',
       1 => 'lavas',
     ),
-    453 => 
+    466 => 
     array (
       0 => 'levee',
       1 => 'levees',
     ),
-    454 => 
+    467 => 
+    array (
+      0 => 'longitude',
+      1 => 'longitudes',
+    ),
+    468 => 
     array (
       0 => 'magma',
       1 => 'magmas',
     ),
-    455 => 
+    469 => 
+    array (
+      0 => 'magnitude',
+      1 => 'magnitudes',
+    ),
+    470 => 
     array (
       0 => 'mantle',
       1 => 'mantles',
-      2 => 'mantled',
-      3 => 'mantling',
     ),
-    456 => 
+    471 => 
     array (
       0 => 'meander',
       1 => 'meanders',
       2 => 'meandering',
       3 => 'meandered',
     ),
-    457 => 
+    472 => 
     array (
       0 => 'mesa',
       1 => 'mesas',
     ),
-    458 => 
+    473 => 
     array (
       0 => 'moraine',
       1 => 'moraines',
     ),
-    459 => 
+    474 => 
     array (
       0 => 'outcrop',
-      1 => 'outcropped',
-      2 => 'outcrops',
-      3 => 'outcropping',
+      1 => 'outcrops',
+      2 => 'outcropping',
+      3 => 'outcroppings',
     ),
-    460 => 
+    475 => 
     array (
       0 => 'oxbowlake',
       1 => 'oxbow',
       2 => 'oxbowlakes',
       3 => 'oxbows',
     ),
-    461 => 
+    476 => 
     array (
       0 => 'period',
       1 => 'periods',
     ),
-    462 => 
+    477 => 
     array (
       0 => 'plate',
       1 => 'plates',
       2 => 'plating',
       3 => 'plated',
     ),
-    463 => 
+    478 => 
     array (
       0 => 'plateau',
       1 => 'plateaus',
       2 => 'plateaued',
     ),
-    464 => 
+    479 => 
     array (
       0 => 'reef',
-      1 => 'reefed',
-      2 => 'reefing',
-      3 => 'reefs',
+      1 => 'reefs',
     ),
-    465 => 
+    480 => 
     array (
       0 => 'ridge',
       1 => 'ridged',
-      2 => 'ridging',
-      3 => 'ridges',
+      2 => 'ridges',
     ),
-    466 => 
+    481 => 
     array (
       0 => 'rift',
       1 => 'rifts',
     ),
-    467 => 
+    482 => 
     array (
       0 => 'riftvalley',
       1 => 'riftvalleys',
     ),
-    468 => 
+    483 => 
     array (
       0 => 'sand',
       1 => 'sands',
       2 => 'sanding',
       3 => 'sanded',
     ),
-    469 => 
+    484 => 
     array (
       0 => 'scree',
       1 => 'screes',
     ),
-    470 => 
+    485 => 
     array (
       0 => 'sediment',
       1 => 'sediments',
-      2 => 'sedimented',
-      3 => 'sedimenting',
     ),
-    471 => 
+    486 => 
     array (
       0 => 'seismograph',
       1 => 'seismographs',
     ),
-    472 => 
+    487 => 
     array (
       0 => 'silt',
       1 => 'silting',
       2 => 'silted',
     ),
-    473 => 
+    488 => 
     array (
       0 => 'sinkhole',
       1 => 'sinkholes',
     ),
-    474 => 
+    489 => 
     array (
       0 => 'soil',
       1 => 'soiled',
       2 => 'soils',
       3 => 'soiling',
     ),
-    475 => 
+    490 => 
     array (
       0 => 'spit',
       1 => 'spitting',
       2 => 'spits',
       3 => 'spat',
-      4 => 'spatted',
-      5 => 'spatting',
-      6 => 'spats',
-      7 => 'spitted',
+      4 => 'spats',
+      5 => 'spitted',
     ),
-    476 => 
+    491 => 
     array (
       0 => 'spring',
-      1 => 'springed',
-      2 => 'springs',
-      3 => 'sprung',
-      4 => 'sprang',
-      5 => 'springing',
+      1 => 'springs',
+      2 => 'sprung',
+      3 => 'sprang',
+      4 => 'springing',
     ),
-    477 => 
+    492 => 
     array (
       0 => 'stalactite',
       1 => 'stalactites',
     ),
-    478 => 
+    493 => 
     array (
       0 => 'stalagmite',
       1 => 'stalagmites',
     ),
-    479 => 
+    494 => 
     array (
       0 => 'stratum',
       1 => 'strata',
     ),
-    480 => 
+    495 => 
     array (
       0 => 'tectonicplate',
       1 => 'tectonicplates',
     ),
-    481 => 
+    496 => 
     array (
       0 => 'tectonics',
       1 => 'tectonic',
     ),
-    482 => 
+    497 => 
     array (
       0 => 'tide',
       1 => 'tided',
@@ -6744,170 +6736,184 @@ return array (
       3 => 'tides',
       4 => 'tidings',
     ),
-    483 => 
+    498 => 
     array (
       0 => 'tremor',
       1 => 'tremors',
     ),
-    484 => 
+    499 => 
     array (
       0 => 'trench',
       1 => 'trenched',
       2 => 'trenching',
       3 => 'trenches',
     ),
-    485 => 
+    500 => 
     array (
       0 => 'tributary',
       1 => 'tributaries',
     ),
-    486 => 
+    501 => 
     array (
       0 => 'trilobite',
       1 => 'trilobites',
     ),
-    487 => 
+    502 => 
     array (
       0 => 'tsunami',
       1 => 'tsunamis',
     ),
-    488 => 
+    503 => 
     array (
       0 => 'tundra',
       1 => 'tundras',
     ),
-    489 => 
+    504 => 
     array (
       0 => 'uplift',
       1 => 'uplifting',
       2 => 'uplifted',
       3 => 'uplifts',
     ),
-    490 => 
+    505 => 
     array (
       0 => 'valley',
       1 => 'valleys',
     ),
-    491 => 
+    506 => 
     array (
       0 => 'vent',
       1 => 'vents',
       2 => 'venting',
       3 => 'vented',
     ),
-    492 => 
+    507 => 
     array (
       0 => 'volcano',
       1 => 'volcanoes',
       2 => 'volcanos',
     ),
-    493 => 
+    508 => 
     array (
       0 => 'watertable',
       1 => 'watertables',
     ),
-    494 => 
+    509 => 
     array (
       0 => 'waterfall',
       1 => 'waterfalls',
     ),
-    495 => 
+    510 => 
     array (
       0 => 'watershed',
       1 => 'watersheds',
     ),
-    496 => 
+    511 => 
     array (
       0 => 'weathering',
       1 => 'weather',
       2 => 'weathers',
       3 => 'weathered',
     ),
-    497 => 
+    512 => 
     array (
       0 => 'anticline',
       1 => 'anticlines',
     ),
-    498 => 
+    513 => 
     array (
       0 => 'fumarole',
       1 => 'fumaroles',
     ),
-    499 => 
+    514 => 
     array (
       0 => 'gondwana',
       1 => 'gondwanaland',
     ),
-    500 => 
+    515 => 
+    array (
+      0 => 'infiltration',
+      1 => 'infiltrations',
+    ),
+    516 => 
     array (
       0 => 'lahar',
       1 => 'lahars',
     ),
-    501 => 
+    517 => 
+    array (
+      0 => 'lode',
+      1 => 'lodes',
+    ),
+    518 => 
     array (
       0 => 'orogeny',
       1 => 'orogenies',
     ),
-    502 => 
+    519 => 
     array (
       0 => 'palaeozoic',
       1 => 'paleozoic',
     ),
-    503 => 
+    520 => 
     array (
       0 => 'pangaea',
       1 => 'pangea',
     ),
-    504 => 
+    521 => 
     array (
       0 => 'seamount',
       1 => 'seamounts',
     ),
-    505 => 
+    522 => 
     array (
       0 => 'syncline',
       1 => 'synclines',
     ),
-    506 => 
+    523 => 
     array (
       0 => 'unconformity',
       1 => 'unconformities',
     ),
-    507 => 
+    524 => 
     array (
       0 => 'aluminium',
       1 => 'aluminum',
     ),
-    508 => 
+    525 => 
     array (
       0 => 'caesium',
       1 => 'cesium',
     ),
-    509 => 
+    526 => 
     array (
       0 => 'carbon',
       1 => 'carbons',
     ),
-    510 => 
+    527 => 
     array (
       0 => 'copper',
-      1 => 'coppered',
-      2 => 'coppering',
-      3 => 'coppers',
+      1 => 'coppering',
+      2 => 'coppers',
     ),
-    511 => 
+    528 => 
     array (
       0 => 'gold',
       1 => 'golds',
     ),
-    512 => 
+    529 => 
+    array (
+      0 => 'hydrogen',
+      1 => 'hydrogens',
+    ),
+    530 => 
     array (
       0 => 'iron',
       1 => 'ironing',
       2 => 'irons',
       3 => 'ironed',
     ),
-    513 => 
+    531 => 
     array (
       0 => 'lead',
       1 => 'led',
@@ -6915,259 +6921,238 @@ return array (
       3 => 'leads',
       4 => 'leaded',
     ),
-    514 => 
+    532 => 
     array (
       0 => 'neon',
       1 => 'neons',
     ),
-    515 => 
+    533 => 
     array (
       0 => 'nickel',
-      1 => 'nickeled',
-      2 => 'nickeling',
-      3 => 'nickelled',
-      4 => 'nickelling',
-      5 => 'nickels',
+      1 => 'nickels',
     ),
-    516 => 
+    534 => 
     array (
       0 => 'silver',
       1 => 'silvered',
-      2 => 'silvering',
-      3 => 'silvers',
+      2 => 'silvers',
     ),
-    517 => 
+    535 => 
     array (
       0 => 'sulphur',
       1 => 'sulfur',
-      2 => 'sulfured',
-      3 => 'sulfuring',
-      4 => 'sulphured',
-      5 => 'sulphuring',
     ),
-    518 => 
+    536 => 
     array (
       0 => 'tin',
-      1 => 'tined',
-      2 => 'tining',
-      3 => 'tinning',
-      4 => 'tins',
-      5 => 'tinned',
+      1 => 'tins',
+      2 => 'tinned',
     ),
-    519 => 
-    array (
-      0 => 'zinc',
-      1 => 'zinced',
-      2 => 'zincing',
-    ),
-    520 => 
+    537 => 
     array (
       0 => 'alembic',
       1 => 'alembics',
     ),
-    521 => 
+    538 => 
     array (
       0 => 'ammeter',
       1 => 'ammeters',
     ),
-    522 => 
+    539 => 
     array (
       0 => 'ampoule',
       1 => 'ampoules',
     ),
-    523 => 
+    540 => 
     array (
       0 => 'anemometer',
       1 => 'anemometers',
     ),
-    524 => 
+    541 => 
     array (
       0 => 'apron',
       1 => 'aprons',
     ),
-    525 => 
+    542 => 
     array (
       0 => 'autoclave',
       1 => 'autoclaves',
     ),
-    526 => 
+    543 => 
     array (
       0 => 'balance',
       1 => 'balances',
       2 => 'balanced',
       3 => 'balancing',
     ),
-    527 => 
+    544 => 
     array (
       0 => 'barometer',
       1 => 'barometers',
     ),
-    528 => 
+    545 => 
     array (
       0 => 'battery',
       1 => 'batteries',
     ),
-    529 => 
+    546 => 
     array (
       0 => 'beaker',
       1 => 'beakers',
     ),
-    530 => 
+    547 => 
     array (
       0 => 'belljar',
       1 => 'belljars',
     ),
-    531 => 
+    548 => 
     array (
       0 => 'bioreactor',
       1 => 'bioreactors',
     ),
-    532 => 
+    549 => 
     array (
       0 => 'bung',
       1 => 'bunged',
       2 => 'bungs',
       3 => 'bunging',
     ),
-    533 => 
+    550 => 
     array (
       0 => 'bunsenburner',
       1 => 'bunsenburners',
     ),
-    534 => 
+    551 => 
     array (
       0 => 'bunsen',
       1 => 'bunsens',
     ),
-    535 => 
+    552 => 
     array (
       0 => 'burette',
       1 => 'buret',
       2 => 'burettes',
       3 => 'burets',
     ),
-    536 => 
+    553 => 
     array (
       0 => 'burner',
       1 => 'burners',
     ),
-    537 => 
+    554 => 
     array (
       0 => 'calliper',
       1 => 'caliper',
       2 => 'callipers',
       3 => 'calipers',
     ),
-    538 => 
+    555 => 
     array (
       0 => 'calorimeter',
       1 => 'calorimeters',
     ),
-    539 => 
+    556 => 
     array (
       0 => 'centrifuge',
       1 => 'centrifuges',
-      2 => 'centrifuged',
-      3 => 'centrifuging',
-      4 => 'centrifugation',
     ),
-    540 => 
+    557 => 
     array (
       0 => 'clamp',
       1 => 'clamps',
       2 => 'clamped',
       3 => 'clamping',
     ),
-    541 => 
+    558 => 
     array (
       0 => 'colorimeter',
       1 => 'colorimeters',
     ),
-    542 => 
+    559 => 
     array (
       0 => 'compass',
       1 => 'compassed',
       2 => 'compassing',
       3 => 'compasses',
     ),
-    543 => 
+    560 => 
     array (
       0 => 'condenser',
       1 => 'condensers',
     ),
-    544 => 
+    561 => 
     array (
       0 => 'conicalflask',
       1 => 'conicalflasks',
     ),
-    545 => 
+    562 => 
     array (
       0 => 'cork',
       1 => 'corks',
       2 => 'corked',
       3 => 'corking',
     ),
-    546 => 
+    563 => 
     array (
       0 => 'coverslip',
       1 => 'coverslips',
     ),
-    547 => 
+    564 => 
     array (
       0 => 'crucible',
       1 => 'crucibles',
     ),
-    548 => 
+    565 => 
     array (
       0 => 'cuvette',
       1 => 'cuvettes',
     ),
-    549 => 
+    566 => 
     array (
       0 => 'cylinder',
       1 => 'cylinders',
     ),
-    550 => 
+    567 => 
     array (
       0 => 'desiccator',
       1 => 'desiccators',
     ),
-    551 => 
+    568 => 
     array (
       0 => 'dosimeter',
       1 => 'dosimeters',
     ),
-    552 => 
+    569 => 
     array (
       0 => 'dropper',
       1 => 'droppers',
     ),
-    553 => 
+    570 => 
     array (
       0 => 'dynamometer',
       1 => 'dynamometers',
     ),
-    554 => 
+    571 => 
     array (
       0 => 'electrode',
       1 => 'electrodes',
     ),
-    555 => 
+    572 => 
     array (
       0 => 'electroscope',
       1 => 'electroscopes',
     ),
-    556 => 
+    573 => 
     array (
       0 => 'eyewash',
       1 => 'eyewashes',
     ),
-    557 => 
+    574 => 
     array (
       0 => 'fermenter',
       1 => 'fermenters',
     ),
-    558 => 
+    575 => 
     array (
       0 => 'filter',
       1 => 'filters',
@@ -7175,17 +7160,17 @@ return array (
       3 => 'filtering',
       4 => 'filtration',
     ),
-    559 => 
+    576 => 
     array (
       0 => 'flask',
       1 => 'flasks',
     ),
-    560 => 
+    577 => 
     array (
       0 => 'fumecupboard',
       1 => 'fumecupboards',
     ),
-    561 => 
+    578 => 
     array (
       0 => 'funnel',
       1 => 'funnels',
@@ -7194,1168 +7179,1164 @@ return array (
       4 => 'funnelled',
       5 => 'funnelling',
     ),
-    562 => 
+    579 => 
     array (
       0 => 'furnace',
       1 => 'furnaces',
     ),
-    563 => 
+    580 => 
     array (
       0 => 'galvanometer',
       1 => 'galvanometers',
     ),
-    564 => 
+    581 => 
     array (
       0 => 'gauze',
       1 => 'gauzes',
     ),
-    565 => 
+    582 => 
     array (
       0 => 'gloves',
       1 => 'glove',
       2 => 'gloved',
     ),
-    566 => 
+    583 => 
     array (
       0 => 'goggles',
       1 => 'goggle',
       2 => 'goggled',
       3 => 'goggling',
     ),
-    567 => 
+    584 => 
     array (
       0 => 'hotplate',
       1 => 'hotplates',
     ),
-    568 => 
+    585 => 
     array (
       0 => 'hydrometer',
       1 => 'hydrometers',
     ),
-    569 => 
+    586 => 
     array (
       0 => 'hygrometer',
       1 => 'hygrometers',
     ),
-    570 => 
+    587 => 
     array (
       0 => 'incubator',
       1 => 'incubators',
     ),
-    571 => 
+    588 => 
     array (
       0 => 'joulemeter',
       1 => 'joulemeters',
     ),
-    572 => 
+    589 => 
     array (
       0 => 'labcoat',
       1 => 'labcoats',
     ),
-    573 => 
+    590 => 
     array (
       0 => 'laser',
       1 => 'lasers',
     ),
-    574 => 
+    591 => 
     array (
       0 => 'lens',
       1 => 'lenses',
       2 => 'lensing',
     ),
-    575 => 
+    592 => 
     array (
       0 => 'loupe',
       1 => 'loupes',
+      2 => 'loup',
     ),
-    576 => 
+    593 => 
     array (
       0 => 'magnet',
       1 => 'magnets',
     ),
-    577 => 
+    594 => 
     array (
       0 => 'magnifier',
       1 => 'magnifiers',
     ),
-    578 => 
+    595 => 
     array (
       0 => 'magnifyingglass',
       1 => 'magnifyingglasses',
     ),
-    579 => 
+    596 => 
     array (
       0 => 'manometer',
       1 => 'manometers',
     ),
-    580 => 
+    597 => 
     array (
       0 => 'measuringcylinder',
       1 => 'measuringcylinders',
     ),
-    581 => 
+    598 => 
     array (
       0 => 'micrometer',
       1 => 'micrometers',
       2 => 'micrometre',
       3 => 'micrometres',
     ),
-    582 => 
+    599 => 
     array (
       0 => 'micropipette',
       1 => 'micropipettes',
     ),
-    583 => 
+    600 => 
     array (
       0 => 'microscope',
       1 => 'microscopes',
     ),
-    584 => 
+    601 => 
     array (
       0 => 'microtome',
       1 => 'microtomes',
     ),
-    585 => 
+    602 => 
     array (
       0 => 'mirror',
       1 => 'mirrors',
       2 => 'mirrored',
       3 => 'mirroring',
     ),
-    586 => 
+    603 => 
     array (
       0 => 'mortar',
       1 => 'mortars',
-      2 => 'mortaring',
-      3 => 'mortared',
+      2 => 'mortared',
     ),
-    587 => 
+    604 => 
     array (
       0 => 'multimeter',
       1 => 'multimeters',
     ),
-    588 => 
+    605 => 
     array (
       0 => 'needle',
       1 => 'needled',
       2 => 'needles',
       3 => 'needling',
     ),
-    589 => 
+    606 => 
     array (
       0 => 'newtonmeter',
       1 => 'newtonmeters',
     ),
-    590 => 
+    607 => 
     array (
       0 => 'ohmmeter',
       1 => 'ohmmeters',
     ),
-    591 => 
+    608 => 
     array (
       0 => 'oscilloscope',
       1 => 'oscilloscopes',
     ),
-    592 => 
+    609 => 
     array (
       0 => 'oven',
       1 => 'ovens',
     ),
-    593 => 
+    610 => 
     array (
       0 => 'pestle',
       1 => 'pestles',
-      2 => 'pestled',
-      3 => 'pestling',
     ),
-    594 => 
+    611 => 
     array (
       0 => 'petridish',
       1 => 'petridishes',
     ),
-    595 => 
+    612 => 
     array (
       0 => 'pipette',
       1 => 'pipet',
       2 => 'pipettes',
       3 => 'pipets',
     ),
-    596 => 
+    613 => 
     array (
       0 => 'pooter',
       1 => 'pooters',
     ),
-    597 => 
+    614 => 
     array (
       0 => 'potentiometer',
       1 => 'potentiometers',
     ),
-    598 => 
+    615 => 
     array (
       0 => 'potometer',
       1 => 'potometers',
     ),
-    599 => 
+    616 => 
     array (
       0 => 'prism',
       1 => 'prisms',
     ),
-    600 => 
+    617 => 
     array (
       0 => 'probe',
       1 => 'probes',
       2 => 'probing',
       3 => 'probed',
     ),
-    601 => 
+    618 => 
     array (
       0 => 'protractor',
       1 => 'protractors',
     ),
-    602 => 
+    619 => 
     array (
       0 => 'pulley',
       1 => 'pulleys',
     ),
-    603 => 
+    620 => 
     array (
       0 => 'quadrat',
       1 => 'quadrats',
     ),
-    604 => 
+    621 => 
     array (
       0 => 'raingauge',
       1 => 'raingauges',
     ),
-    605 => 
+    622 => 
     array (
       0 => 'respirometer',
       1 => 'respirometers',
     ),
-    606 => 
+    623 => 
     array (
       0 => 'retortstand',
       1 => 'retortstands',
     ),
-    607 => 
+    624 => 
     array (
       0 => 'retort',
       1 => 'retorts',
-      2 => 'retorting',
-      3 => 'retorted',
+      2 => 'retorted',
     ),
-    608 => 
+    625 => 
     array (
       0 => 'rheostat',
       1 => 'rheostats',
     ),
-    609 => 
+    626 => 
     array (
       0 => 'ruler',
       1 => 'rulers',
     ),
-    610 => 
+    627 => 
     array (
       0 => 'scale',
       1 => 'scales',
       2 => 'scaled',
       3 => 'scaling',
     ),
-    611 => 
+    628 => 
     array (
       0 => 'scalpel',
       1 => 'scalpels',
     ),
-    612 => 
+    629 => 
     array (
       0 => 'scissors',
       1 => 'scissor',
       2 => 'scissored',
       3 => 'scissoring',
     ),
-    613 => 
+    630 => 
     array (
       0 => 'seismometer',
       1 => 'seismometers',
     ),
-    614 => 
+    631 => 
     array (
       0 => 'sensor',
       1 => 'sensors',
     ),
-    615 => 
+    632 => 
     array (
       0 => 'sieve',
       1 => 'sieves',
       2 => 'sieved',
       3 => 'sieving',
     ),
-    616 => 
+    633 => 
     array (
       0 => 'slide',
       1 => 'sliding',
       2 => 'slides',
       3 => 'slid',
     ),
-    617 => 
+    634 => 
     array (
       0 => 'spatula',
       1 => 'spatulas',
     ),
-    618 => 
+    635 => 
     array (
       0 => 'spectrometer',
       1 => 'spectrometers',
     ),
-    619 => 
+    636 => 
     array (
       0 => 'spectrophotometer',
       1 => 'spectrophotometers',
     ),
-    620 => 
+    637 => 
     array (
       0 => 'spectroscope',
       1 => 'spectroscopes',
     ),
-    621 => 
+    638 => 
     array (
       0 => 'spirometer',
       1 => 'spirometers',
     ),
-    622 => 
+    639 => 
     array (
       0 => 'stirrer',
       1 => 'stirrers',
     ),
-    623 => 
+    640 => 
     array (
       0 => 'stopclock',
       1 => 'stopclocks',
     ),
-    624 => 
+    641 => 
     array (
       0 => 'stopper',
       1 => 'stoppers',
       2 => 'stoppered',
-      3 => 'stoppering',
     ),
-    625 => 
+    642 => 
     array (
       0 => 'stopwatch',
       1 => 'stopwatches',
     ),
-    626 => 
+    643 => 
     array (
       0 => 'swab',
       1 => 'swabs',
       2 => 'swabbed',
       3 => 'swabbing',
     ),
-    627 => 
+    644 => 
     array (
       0 => 'syringe',
       1 => 'syringes',
-      2 => 'syringed',
-      3 => 'syringing',
     ),
-    628 => 
+    645 => 
     array (
       0 => 'telescope',
       1 => 'telescopes',
-      2 => 'telescoped',
-      3 => 'telescoping',
+      2 => 'telescoping',
     ),
-    629 => 
+    646 => 
     array (
       0 => 'testtube',
       1 => 'testtubes',
     ),
-    630 => 
+    647 => 
     array (
       0 => 'thermocouple',
       1 => 'thermocouples',
     ),
-    631 => 
+    648 => 
     array (
       0 => 'thermometer',
       1 => 'thermometers',
     ),
-    632 => 
+    649 => 
     array (
       0 => 'thermostat',
-      1 => 'thermostated',
-      2 => 'thermostating',
-      3 => 'thermostats',
+      1 => 'thermostats',
     ),
-    633 => 
+    650 => 
     array (
       0 => 'timer',
       1 => 'timers',
     ),
-    634 => 
+    651 => 
     array (
       0 => 'tongs',
       1 => 'tong',
     ),
-    635 => 
+    652 => 
     array (
       0 => 'tripod',
       1 => 'tripods',
     ),
-    636 => 
+    653 => 
     array (
       0 => 'tube',
       1 => 'tubes',
       2 => 'tubing',
       3 => 'tubed',
     ),
-    637 => 
+    654 => 
     array (
       0 => 'tuningfork',
       1 => 'tuningforks',
     ),
-    638 => 
+    655 => 
     array (
       0 => 'vacuumpump',
       1 => 'vacuumpumps',
     ),
-    639 => 
+    656 => 
     array (
       0 => 'vial',
       1 => 'vials',
     ),
-    640 => 
+    657 => 
     array (
       0 => 'voltmeter',
       1 => 'voltmeters',
     ),
-    641 => 
+    658 => 
     array (
       0 => 'waterbath',
       1 => 'waterbaths',
     ),
-    642 => 
+    659 => 
     array (
       0 => 'accelerator',
       1 => 'accelerators',
     ),
-    643 => 
+    660 => 
     array (
       0 => 'boilingtube',
       1 => 'boilingtubes',
     ),
-    644 => 
+    661 => 
+    array (
+      0 => 'collider',
+      1 => 'colliders',
+    ),
+    662 => 
     array (
       0 => 'crocodileclip',
       1 => 'crocodileclips',
     ),
-    645 => 
+    663 => 
     array (
       0 => 'cryostat',
       1 => 'cryostats',
     ),
-    646 => 
+    664 => 
     array (
       0 => 'cyclotron',
       1 => 'cyclotrons',
     ),
-    647 => 
+    665 => 
     array (
       0 => 'datalogger',
       1 => 'dataloggers',
     ),
-    648 => 
+    666 => 
     array (
       0 => 'deflagratingspoon',
       1 => 'deflagratingspoons',
     ),
-    649 => 
+    667 => 
     array (
       0 => 'dewar',
       1 => 'dewars',
     ),
-    650 => 
+    668 => 
     array (
       0 => 'eudiometer',
       1 => 'eudiometers',
     ),
-    651 => 
+    669 => 
     array (
       0 => 'evaporatingbasin',
       1 => 'evaporatingbasins',
     ),
-    652 => 
+    670 => 
     array (
       0 => 'evaporatingdish',
       1 => 'evaporatingdishes',
     ),
-    653 => 
+    671 => 
     array (
       0 => 'evaporator',
       1 => 'evaporators',
     ),
-    654 => 
+    672 => 
     array (
       0 => 'forcemeter',
       1 => 'forcemeters',
     ),
-    655 => 
+    673 => 
     array (
       0 => 'fumehood',
       1 => 'fumehoods',
     ),
-    656 => 
+    674 => 
     array (
       0 => 'gasjar',
       1 => 'gasjars',
     ),
-    657 => 
+    675 => 
     array (
       0 => 'geiger',
       1 => 'geigers',
       2 => 'geigercounter',
       3 => 'geigercounters',
     ),
-    658 => 
+    676 => 
     array (
       0 => 'glassware',
       1 => 'glasswares',
     ),
-    659 => 
+    677 => 
     array (
       0 => 'glovebox',
       1 => 'gloveboxes',
     ),
-    660 => 
+    678 => 
     array (
       0 => 'haemocytometer',
       1 => 'hemocytometer',
       2 => 'haemocytometers',
       3 => 'hemocytometers',
     ),
-    661 => 
+    679 => 
     array (
       0 => 'handlens',
       1 => 'handlenses',
     ),
-    662 => 
+    680 => 
     array (
       0 => 'heatproofmat',
       1 => 'heatproofmats',
     ),
-    663 => 
+    681 => 
     array (
       0 => 'interferometer',
       1 => 'interferometers',
     ),
-    664 => 
+    682 => 
     array (
       0 => 'lightgate',
       1 => 'lightgates',
     ),
-    665 => 
+    683 => 
     array (
       0 => 'photometer',
       1 => 'photometers',
     ),
-    666 => 
+    684 => 
     array (
       0 => 'polarimeter',
       1 => 'polarimeters',
     ),
-    667 => 
+    685 => 
     array (
       0 => 'powerpack',
       1 => 'powerpacks',
     ),
-    668 => 
+    686 => 
     array (
       0 => 'pycnometer',
       1 => 'pycnometers',
     ),
-    669 => 
+    687 => 
     array (
       0 => 'pyrometer',
       1 => 'pyrometers',
     ),
-    670 => 
+    688 => 
     array (
       0 => 'raybox',
       1 => 'rayboxes',
     ),
-    671 => 
+    689 => 
     array (
       0 => 'refractometer',
       1 => 'refractometers',
     ),
-    672 => 
+    690 => 
     array (
       0 => 'separatingfunnel',
       1 => 'separatingfunnels',
     ),
-    673 => 
+    691 => 
     array (
       0 => 'sequencer',
       1 => 'sequencers',
     ),
-    674 => 
+    692 => 
     array (
       0 => 'sonicator',
       1 => 'sonicators',
     ),
-    675 => 
+    693 => 
     array (
       0 => 'sonometer',
       1 => 'sonometers',
     ),
-    676 => 
+    694 => 
     array (
       0 => 'spottingtile',
       1 => 'spottingtiles',
     ),
-    677 => 
+    695 => 
     array (
       0 => 'synchrotron',
       1 => 'synchrotrons',
     ),
-    678 => 
+    696 => 
     array (
       0 => 'thermocycler',
       1 => 'thermocyclers',
     ),
-    679 => 
+    697 => 
     array (
       0 => 'tickertimer',
       1 => 'tickertimers',
     ),
-    680 => 
+    698 => 
     array (
       0 => 'tile',
       1 => 'tiles',
       2 => 'tiled',
       3 => 'tiling',
     ),
-    681 => 
+    699 => 
     array (
       0 => 'ultracentrifuge',
       1 => 'ultracentrifuges',
     ),
-    682 => 
+    700 => 
     array (
       0 => 'vernier',
       1 => 'verniers',
     ),
-    683 => 
+    701 => 
     array (
       0 => 'viscometer',
       1 => 'viscometers',
     ),
-    684 => 
+    702 => 
     array (
       0 => 'washbottle',
       1 => 'washbottles',
     ),
-    685 => 
+    703 => 
     array (
       0 => 'watchglass',
       1 => 'watchglasses',
     ),
-    686 => 
+    704 => 
     array (
       0 => 'wireloop',
       1 => 'wireloops',
     ),
-    687 => 
+    705 => 
     array (
       0 => 'alphaparticle',
       1 => 'alpha',
       2 => 'alphaparticles',
       3 => 'alphas',
     ),
-    688 => 
+    706 => 
     array (
       0 => 'antineutrino',
       1 => 'antineutrinos',
     ),
-    689 => 
+    707 => 
     array (
       0 => 'antineutron',
       1 => 'antineutrons',
     ),
-    690 => 
+    708 => 
     array (
       0 => 'antiparticle',
       1 => 'antiparticles',
     ),
-    691 => 
+    709 => 
     array (
       0 => 'antiproton',
       1 => 'antiprotons',
     ),
-    692 => 
+    710 => 
     array (
       0 => 'antiquark',
       1 => 'antiquarks',
     ),
-    693 => 
+    711 => 
     array (
       0 => 'axion',
       1 => 'axions',
     ),
-    694 => 
+    712 => 
     array (
       0 => 'baryon',
       1 => 'baryons',
     ),
-    695 => 
+    713 => 
     array (
       0 => 'betaparticle',
       1 => 'beta',
       2 => 'betaparticles',
       3 => 'betas',
     ),
-    696 => 
+    714 => 
     array (
       0 => 'boson',
       1 => 'bosons',
     ),
-    697 => 
+    715 => 
     array (
       0 => 'deuteron',
       1 => 'deuterons',
     ),
-    698 => 
+    716 => 
     array (
       0 => 'downquark',
       1 => 'downquarks',
     ),
-    699 => 
+    717 => 
     array (
       0 => 'electron',
       1 => 'electrons',
     ),
-    700 => 
+    718 => 
     array (
       0 => 'fermion',
       1 => 'fermions',
     ),
-    701 => 
+    719 => 
     array (
       0 => 'gluon',
       1 => 'gluons',
     ),
-    702 => 
+    720 => 
     array (
       0 => 'graviton',
       1 => 'gravitons',
     ),
-    703 => 
+    721 => 
     array (
       0 => 'hadron',
       1 => 'hadrons',
     ),
-    704 => 
+    722 => 
     array (
       0 => 'higgsboson',
       1 => 'higgsbosons',
     ),
-    705 => 
+    723 => 
     array (
       0 => 'kaon',
       1 => 'kaons',
     ),
-    706 => 
+    724 => 
     array (
       0 => 'lepton',
       1 => 'leptons',
     ),
-    707 => 
+    725 => 
     array (
       0 => 'meson',
       1 => 'mesons',
     ),
-    708 => 
+    726 => 
     array (
       0 => 'muon',
       1 => 'muons',
     ),
-    709 => 
+    727 => 
     array (
       0 => 'neutrino',
       1 => 'neutrinos',
     ),
-    710 => 
+    728 => 
     array (
       0 => 'neutron',
       1 => 'neutrons',
     ),
-    711 => 
+    729 => 
     array (
       0 => 'nucleon',
       1 => 'nucleons',
     ),
-    712 => 
+    730 => 
     array (
       0 => 'photon',
       1 => 'photons',
     ),
-    713 => 
+    731 => 
     array (
       0 => 'pion',
       1 => 'pions',
     ),
-    714 => 
+    732 => 
     array (
       0 => 'positron',
       1 => 'positrons',
     ),
-    715 => 
+    733 => 
     array (
       0 => 'proton',
       1 => 'protons',
     ),
-    716 => 
+    734 => 
     array (
       0 => 'quark',
       1 => 'quarks',
     ),
-    717 => 
+    735 => 
     array (
       0 => 'tachyon',
       1 => 'tachyons',
     ),
-    718 => 
+    736 => 
     array (
       0 => 'tau',
       1 => 'tauon',
       2 => 'taus',
       3 => 'tauons',
     ),
-    719 => 
+    737 => 
     array (
       0 => 'topquark',
       1 => 'topquarks',
     ),
-    720 => 
+    738 => 
     array (
       0 => 'upquark',
       1 => 'upquarks',
     ),
-    721 => 
+    739 => 
     array (
       0 => 'antielectron',
       1 => 'antielectrons',
     ),
-    722 => 
+    740 => 
     array (
       0 => 'antimuon',
       1 => 'antimuons',
     ),
-    723 => 
+    741 => 
     array (
       0 => 'anyon',
       1 => 'anyons',
     ),
-    724 => 
+    742 => 
     array (
       0 => 'bottomquark',
       1 => 'bottomquarks',
     ),
-    725 => 
+    743 => 
     array (
       0 => 'charmquark',
       1 => 'charmquarks',
     ),
-    726 => 
+    744 => 
     array (
       0 => 'diquark',
       1 => 'diquarks',
     ),
-    727 => 
+    745 => 
     array (
       0 => 'elementaryparticle',
       1 => 'elementaryparticles',
     ),
-    728 => 
+    746 => 
     array (
       0 => 'eta',
       1 => 'etas',
     ),
-    729 => 
+    747 => 
     array (
       0 => 'exciton',
       1 => 'excitons',
     ),
-    730 => 
+    748 => 
     array (
       0 => 'gamma',
       1 => 'gammas',
     ),
-    731 => 
+    749 => 
     array (
       0 => 'glueball',
       1 => 'glueballs',
     ),
-    732 => 
+    750 => 
     array (
       0 => 'gluino',
       1 => 'gluinos',
     ),
-    733 => 
+    751 => 
     array (
       0 => 'gravitino',
       1 => 'gravitinos',
     ),
-    734 => 
+    752 => 
     array (
       0 => 'hyperon',
       1 => 'hyperons',
     ),
-    735 => 
+    753 => 
     array (
       0 => 'lambda',
       1 => 'lambdas',
     ),
-    736 => 
+    754 => 
     array (
       0 => 'magnon',
       1 => 'magnons',
     ),
-    737 => 
+    755 => 
     array (
       0 => 'monopole',
       1 => 'monopoles',
     ),
-    738 => 
+    756 => 
     array (
       0 => 'neutralino',
       1 => 'neutralinos',
     ),
-    739 => 
+    757 => 
     array (
       0 => 'omega',
       1 => 'omegas',
     ),
-    740 => 
+    758 => 
     array (
       0 => 'parton',
       1 => 'partons',
     ),
-    741 => 
+    759 => 
     array (
       0 => 'pentaquark',
       1 => 'pentaquarks',
     ),
-    742 => 
+    760 => 
     array (
       0 => 'phonon',
       1 => 'phonons',
     ),
-    743 => 
+    761 => 
     array (
       0 => 'photino',
       1 => 'photinos',
     ),
-    744 => 
+    762 => 
     array (
       0 => 'plasmon',
       1 => 'plasmons',
     ),
-    745 => 
+    763 => 
     array (
       0 => 'pomeron',
       1 => 'pomerons',
     ),
-    746 => 
+    764 => 
     array (
       0 => 'preon',
       1 => 'preons',
     ),
-    747 => 
+    765 => 
     array (
       0 => 'quasiparticle',
       1 => 'quasiparticles',
     ),
-    748 => 
+    766 => 
     array (
       0 => 'rho',
       1 => 'rhos',
     ),
-    749 => 
+    767 => 
     array (
       0 => 'selectron',
       1 => 'selectrons',
     ),
-    750 => 
+    768 => 
     array (
       0 => 'sigma',
       1 => 'sigmas',
     ),
-    751 => 
+    769 => 
     array (
       0 => 'sneutrino',
       1 => 'sneutrinos',
     ),
-    752 => 
+    770 => 
     array (
       0 => 'sparticle',
       1 => 'sparticles',
     ),
-    753 => 
+    771 => 
     array (
       0 => 'squark',
       1 => 'squarks',
     ),
-    754 => 
+    772 => 
     array (
       0 => 'strangequark',
       1 => 'strangequarks',
     ),
-    755 => 
+    773 => 
     array (
       0 => 'tetraquark',
       1 => 'tetraquarks',
     ),
-    756 => 
+    774 => 
     array (
       0 => 'triton',
       1 => 'tritons',
     ),
-    757 => 
+    775 => 
     array (
       0 => 'upsilon',
       1 => 'upsilons',
     ),
-    758 => 
+    776 => 
     array (
       0 => 'wboson',
       1 => 'wbosons',
     ),
-    759 => 
+    777 => 
     array (
       0 => 'wimp',
       1 => 'wimps',
     ),
-    760 => 
+    778 => 
     array (
       0 => 'zboson',
       1 => 'zbosons',
     ),
-    761 => 
+    779 => 
     array (
       0 => 'acceleration',
       1 => 'accelerations',
     ),
-    762 => 
+    780 => 
     array (
       0 => 'ampere',
       1 => 'amp',
       2 => 'amperes',
       3 => 'amps',
     ),
-    763 => 
+    781 => 
     array (
       0 => 'amplitude',
       1 => 'amplitudes',
     ),
-    764 => 
+    782 => 
     array (
       0 => 'antinode',
       1 => 'antinodes',
     ),
-    765 => 
+    783 => 
     array (
       0 => 'attraction',
       1 => 'attractions',
     ),
-    766 => 
+    784 => 
     array (
       0 => 'blackhole',
       1 => 'blackholes',
     ),
-    767 => 
+    785 => 
     array (
       0 => 'capacitor',
       1 => 'capacitors',
     ),
-    768 => 
+    786 => 
     array (
       0 => 'centreofmass',
       1 => 'centerofmass',
     ),
-    769 => 
+    787 => 
     array (
       0 => 'chainreaction',
       1 => 'chainreactions',
     ),
-    770 => 
+    788 => 
     array (
       0 => 'charge',
       1 => 'charges',
       2 => 'charged',
       3 => 'charging',
     ),
-    771 => 
+    789 => 
     array (
       0 => 'circuit',
       1 => 'circuits',
       2 => 'circuiting',
       3 => 'circuited',
     ),
-    772 => 
+    790 => 
     array (
       0 => 'compression',
       1 => 'compressions',
     ),
-    773 => 
+    791 => 
     array (
       0 => 'conductor',
       1 => 'conductors',
     ),
-    774 => 
+    792 => 
     array (
       0 => 'crest',
       1 => 'crests',
       2 => 'crested',
       3 => 'cresting',
     ),
-    775 => 
+    793 => 
     array (
       0 => 'current',
       1 => 'currents',
     ),
-    776 => 
+    794 => 
     array (
       0 => 'decay',
       1 => 'decaying',
       2 => 'decayed',
       3 => 'decays',
     ),
-    777 => 
+    795 => 
     array (
       0 => 'density',
       1 => 'densities',
     ),
-    778 => 
+    796 => 
     array (
       0 => 'diode',
       1 => 'diodes',
     ),
-    779 => 
+    797 => 
     array (
       0 => 'distance',
       1 => 'distances',
       2 => 'distanced',
       3 => 'distancing',
     ),
-    780 => 
+    798 => 
     array (
       0 => 'drag',
       1 => 'dragged',
       2 => 'dragging',
       3 => 'drags',
     ),
-    781 => 
+    799 => 
     array (
       0 => 'echo',
       1 => 'echoes',
@@ -8363,45 +8344,49 @@ return array (
       3 => 'echoed',
       4 => 'echos',
     ),
-    782 => 
+    800 => 
     array (
       0 => 'efficiency',
       1 => 'efficiencies',
     ),
-    783 => 
+    801 => 
     array (
       0 => 'electromagnet',
       1 => 'electromagnets',
     ),
-    784 => 
+    802 => 
     array (
       0 => 'emission',
       1 => 'emissions',
     ),
-    785 => 
+    803 => 
     array (
       0 => 'energy',
       1 => 'energies',
     ),
-    786 => 
+    804 => 
+    array (
+      0 => 'expansion',
+      1 => 'expansions',
+    ),
+    805 => 
     array (
       0 => 'field',
       1 => 'fields',
       2 => 'fielding',
       3 => 'fielded',
     ),
-    787 => 
+    806 => 
     array (
       0 => 'fluid',
       1 => 'fluids',
     ),
-    788 => 
+    807 => 
     array (
       0 => 'flux',
-      1 => 'fluxed',
-      2 => 'fluxing',
+      1 => 'fluxes',
     ),
-    789 => 
+    808 => 
     array (
       0 => 'focus',
       1 => 'focused',
@@ -8410,139 +8395,150 @@ return array (
       4 => 'focussing',
       5 => 'focuses',
     ),
-    790 => 
+    809 => 
     array (
       0 => 'force',
       1 => 'forces',
       2 => 'forced',
       3 => 'forcing',
     ),
-    791 => 
+    810 => 
     array (
       0 => 'frequency',
       1 => 'frequencies',
     ),
-    792 => 
+    811 => 
     array (
       0 => 'friction',
       1 => 'frictions',
     ),
-    793 => 
+    812 => 
     array (
       0 => 'fuse',
       1 => 'fused',
       2 => 'fuses',
       3 => 'fusing',
     ),
-    794 => 
+    813 => 
     array (
       0 => 'fusion',
       1 => 'fusions',
     ),
-    795 => 
+    814 => 
     array (
       0 => 'gammaray',
       1 => 'gammarays',
     ),
-    796 => 
+    815 => 
     array (
       0 => 'gravity',
       1 => 'gravities',
     ),
-    797 => 
+    816 => 
     array (
       0 => 'halflife',
       1 => 'halflives',
     ),
-    798 => 
+    817 => 
     array (
       0 => 'harmonic',
       1 => 'harmonics',
     ),
-    799 => 
+    818 => 
     array (
       0 => 'heat',
       1 => 'heating',
       2 => 'heated',
       3 => 'heats',
     ),
-    800 => 
+    819 => 
     array (
       0 => 'hertz',
       1 => 'hertzes',
     ),
-    801 => 
+    820 => 
     array (
       0 => 'hologram',
       1 => 'holograms',
     ),
-    802 => 
+    821 => 
     array (
       0 => 'impulse',
       1 => 'impulses',
     ),
-    803 => 
+    822 => 
+    array (
+      0 => 'induction',
+      1 => 'inductions',
+    ),
+    823 => 
     array (
       0 => 'inductor',
       1 => 'inductors',
     ),
-    804 => 
+    824 => 
+    array (
+      0 => 'infrared',
+      1 => 'infrareds',
+    ),
+    825 => 
     array (
       0 => 'insulator',
       1 => 'insulators',
     ),
-    805 => 
+    826 => 
     array (
       0 => 'intensity',
       1 => 'intensities',
     ),
-    806 => 
+    827 => 
     array (
       0 => 'interference',
       1 => 'interferences',
     ),
-    807 => 
+    828 => 
     array (
       0 => 'joule',
       1 => 'joules',
     ),
-    808 => 
+    829 => 
     array (
       0 => 'kelvin',
       1 => 'kelvins',
     ),
-    809 => 
+    830 => 
     array (
       0 => 'length',
       1 => 'lengths',
     ),
-    810 => 
+    831 => 
     array (
       0 => 'lever',
       1 => 'levered',
       2 => 'levers',
       3 => 'levering',
     ),
-    811 => 
+    832 => 
     array (
       0 => 'lift',
       1 => 'lifted',
       2 => 'lifting',
       3 => 'lifts',
     ),
-    812 => 
+    833 => 
     array (
       0 => 'light',
       1 => 'lights',
       2 => 'lighting',
-      3 => 'lighted',
+      3 => 'lightings',
+      4 => 'lighted',
     ),
-    813 => 
+    834 => 
     array (
       0 => 'magneticfield',
       1 => 'magneticfields',
     ),
-    814 => 
+    835 => 
     array (
       0 => 'mass',
       1 => 'masses',
@@ -8550,178 +8546,183 @@ return array (
       3 => 'massed',
       4 => 'masse',
     ),
-    815 => 
+    836 => 
     array (
       0 => 'microwave',
       1 => 'microwaves',
       2 => 'microwaved',
       3 => 'microwaving',
     ),
-    816 => 
+    837 => 
     array (
       0 => 'moment',
       1 => 'moments',
     ),
-    817 => 
+    838 => 
     array (
       0 => 'momentum',
       1 => 'momenta',
     ),
-    818 => 
+    839 => 
     array (
       0 => 'motion',
       1 => 'motions',
       2 => 'motioned',
       3 => 'motioning',
     ),
-    819 => 
+    840 => 
     array (
       0 => 'newton',
       1 => 'newtons',
     ),
-    820 => 
+    841 => 
     array (
       0 => 'node',
       1 => 'nodes',
     ),
-    821 => 
+    842 => 
     array (
       0 => 'ohm',
       1 => 'ohms',
     ),
-    822 => 
+    843 => 
     array (
       0 => 'orbit',
       1 => 'orbiting',
       2 => 'orbits',
       3 => 'orbited',
     ),
-    823 => 
+    844 => 
     array (
       0 => 'oscillation',
       1 => 'oscillations',
     ),
-    824 => 
+    845 => 
     array (
       0 => 'particle',
       1 => 'particles',
     ),
-    825 => 
+    846 => 
     array (
       0 => 'pendulum',
       1 => 'pendulums',
     ),
-    826 => 
+    847 => 
     array (
       0 => 'phase',
       1 => 'phases',
       2 => 'phased',
       3 => 'phasing',
     ),
-    827 => 
+    848 => 
     array (
       0 => 'pitch',
       1 => 'pitching',
       2 => 'pitched',
       3 => 'pitches',
     ),
-    828 => 
+    849 => 
     array (
       0 => 'polarisation',
       1 => 'polarization',
     ),
-    829 => 
+    850 => 
     array (
       0 => 'potential',
       1 => 'potentials',
     ),
-    830 => 
+    851 => 
     array (
       0 => 'power',
       1 => 'powers',
       2 => 'powered',
       3 => 'powering',
     ),
-    831 => 
+    852 => 
     array (
       0 => 'pressure',
       1 => 'pressures',
       2 => 'pressured',
       3 => 'pressuring',
     ),
-    832 => 
+    853 => 
     array (
       0 => 'projectile',
       1 => 'projectiles',
     ),
-    833 => 
+    854 => 
     array (
       0 => 'quantum',
       1 => 'quanta',
     ),
-    834 => 
+    855 => 
     array (
       0 => 'radiation',
       1 => 'radiations',
     ),
-    835 => 
+    856 => 
     array (
       0 => 'radiowave',
       1 => 'radiowaves',
     ),
-    836 => 
+    857 => 
     array (
       0 => 'rarefaction',
       1 => 'rarefactions',
     ),
-    837 => 
+    858 => 
     array (
       0 => 'reflection',
       1 => 'reflections',
     ),
-    838 => 
+    859 => 
+    array (
+      0 => 'refraction',
+      1 => 'refractions',
+    ),
+    860 => 
     array (
       0 => 'resistance',
       1 => 'resistances',
     ),
-    839 => 
+    861 => 
     array (
       0 => 'resistor',
       1 => 'resistors',
     ),
-    840 => 
+    862 => 
     array (
       0 => 'resonance',
       1 => 'resonances',
     ),
-    841 => 
+    863 => 
     array (
       0 => 'reverberation',
       1 => 'reverberations',
     ),
-    842 => 
+    864 => 
     array (
       0 => 'scattering',
       1 => 'scattered',
       2 => 'scatter',
       3 => 'scatters',
     ),
-    843 => 
+    865 => 
     array (
       0 => 'semiconductor',
       1 => 'semiconductors',
     ),
-    844 => 
+    866 => 
     array (
       0 => 'shockwave',
       1 => 'shockwaves',
     ),
-    845 => 
+    867 => 
     array (
       0 => 'solenoid',
       1 => 'solenoids',
     ),
-    846 => 
+    868 => 
     array (
       0 => 'sound',
       1 => 'sounds',
@@ -8729,12 +8730,13 @@ return array (
       3 => 'sounding',
       4 => 'soundings',
     ),
-    847 => 
+    869 => 
     array (
       0 => 'spectrum',
       1 => 'spectra',
+      2 => 'spectrums',
     ),
-    848 => 
+    870 => 
     array (
       0 => 'speed',
       1 => 'speeds',
@@ -8742,82 +8744,81 @@ return array (
       3 => 'sped',
       4 => 'speeded',
     ),
-    849 => 
+    871 => 
     array (
       0 => 'spin',
-      1 => 'spined',
-      2 => 'spinning',
-      3 => 'spun',
-      4 => 'spins',
+      1 => 'spinning',
+      2 => 'spun',
+      3 => 'spins',
     ),
-    850 => 
+    872 => 
     array (
       0 => 'strain',
       1 => 'straining',
       2 => 'strained',
       3 => 'strains',
     ),
-    851 => 
+    873 => 
     array (
       0 => 'strength',
       1 => 'strengths',
     ),
-    852 => 
+    874 => 
     array (
       0 => 'stress',
       1 => 'stressed',
       2 => 'stressing',
       3 => 'stresses',
     ),
-    853 => 
+    875 => 
     array (
       0 => 'superconductor',
       1 => 'superconductors',
     ),
-    854 => 
+    876 => 
     array (
       0 => 'temperature',
       1 => 'temperatures',
     ),
-    855 => 
+    877 => 
     array (
       0 => 'tension',
       1 => 'tensions',
     ),
-    856 => 
+    878 => 
     array (
       0 => 'thrust',
       1 => 'thrusted',
       2 => 'thrusting',
       3 => 'thrusts',
     ),
-    857 => 
+    879 => 
     array (
       0 => 'torque',
       1 => 'torques',
       2 => 'torqued',
     ),
-    858 => 
+    880 => 
     array (
       0 => 'transformer',
       1 => 'transformers',
     ),
-    859 => 
+    881 => 
     array (
       0 => 'transistor',
       1 => 'transistors',
     ),
-    860 => 
+    882 => 
     array (
       0 => 'trough',
       1 => 'troughs',
     ),
-    861 => 
+    883 => 
     array (
       0 => 'ultrasound',
       1 => 'ultrasounds',
     ),
-    862 => 
+    884 => 
     array (
       0 => 'vacuum',
       1 => 'vacuums',
@@ -8825,54 +8826,54 @@ return array (
       3 => 'vacuuming',
       4 => 'vacuumed',
     ),
-    863 => 
+    885 => 
     array (
       0 => 'vector',
       1 => 'vectors',
       2 => 'vectoring',
       3 => 'vectored',
     ),
-    864 => 
+    886 => 
     array (
       0 => 'velocity',
       1 => 'velocities',
     ),
-    865 => 
+    887 => 
     array (
       0 => 'volt',
       1 => 'volts',
       2 => 'voltes',
     ),
-    866 => 
+    888 => 
     array (
       0 => 'voltage',
       1 => 'voltages',
     ),
-    867 => 
+    889 => 
     array (
       0 => 'watt',
       1 => 'watts',
     ),
-    868 => 
+    890 => 
     array (
       0 => 'wave',
       1 => 'waves',
       2 => 'waving',
       3 => 'waved',
     ),
-    869 => 
+    891 => 
     array (
       0 => 'wavelength',
       1 => 'wavelengths',
     ),
-    870 => 
+    892 => 
     array (
       0 => 'weight',
       1 => 'weights',
       2 => 'weighted',
       3 => 'weighting',
     ),
-    871 => 
+    893 => 
     array (
       0 => 'work',
       1 => 'working',
@@ -8880,273 +8881,270 @@ return array (
       3 => 'works',
       4 => 'workings',
     ),
-    872 => 
+    894 => 
     array (
       0 => 'xray',
       1 => 'xrays',
     ),
-    873 => 
+    895 => 
     array (
       0 => 'blackbody',
       1 => 'blackbodies',
     ),
-    874 => 
+    896 => 
     array (
       0 => 'coulomb',
       1 => 'coulombs',
     ),
-    875 => 
+    897 => 
     array (
       0 => 'focallength',
       1 => 'focallengths',
     ),
-    876 => 
+    898 => 
     array (
       0 => 'lightyear',
       1 => 'lightyears',
     ),
-    877 => 
+    899 => 
     array (
       0 => 'pascal',
       1 => 'pascals',
     ),
-    878 => 
+    900 => 
     array (
       0 => 'switch',
       1 => 'switched',
       2 => 'switching',
       3 => 'switches',
     ),
-    879 => 
+    901 => 
     array (
       0 => 'tesla',
       1 => 'teslas',
     ),
-    880 => 
+    902 => 
     array (
       0 => 'wavefront',
       1 => 'wavefronts',
     ),
-    881 => 
+    903 => 
     array (
       0 => 'wormhole',
       1 => 'wormholes',
     ),
-    882 => 
+    904 => 
     array (
       0 => 'agate',
       1 => 'agates',
     ),
-    883 => 
+    905 => 
     array (
       0 => 'amber',
       1 => 'ambers',
     ),
-    884 => 
+    906 => 
     array (
       0 => 'amethyst',
       1 => 'amethysts',
     ),
-    885 => 
+    907 => 
     array (
       0 => 'andesite',
       1 => 'andesites',
     ),
-    886 => 
+    908 => 
     array (
       0 => 'aquamarine',
       1 => 'aquamarines',
     ),
-    887 => 
+    909 => 
     array (
       0 => 'basalt',
       1 => 'basalts',
     ),
-    888 => 
+    910 => 
     array (
       0 => 'beryl',
       1 => 'beryls',
     ),
-    889 => 
+    911 => 
     array (
       0 => 'birthstone',
       1 => 'birthstones',
     ),
-    890 => 
+    912 => 
     array (
       0 => 'bloodstone',
       1 => 'bloodstones',
     ),
-    891 => 
+    913 => 
     array (
       0 => 'breccia',
       1 => 'breccias',
     ),
-    892 => 
+    914 => 
     array (
       0 => 'calcite',
       1 => 'calcites',
     ),
-    893 => 
+    915 => 
     array (
       0 => 'carnelian',
       1 => 'cornelian',
       2 => 'carnelians',
       3 => 'cornelians',
     ),
-    894 => 
+    916 => 
     array (
       0 => 'chalcedony',
       1 => 'chalcedonys',
     ),
-    895 => 
+    917 => 
     array (
       0 => 'chalk',
       1 => 'chalks',
       2 => 'chalked',
       3 => 'chalking',
     ),
-    896 => 
+    918 => 
     array (
       0 => 'chert',
       1 => 'cherts',
     ),
-    897 => 
+    919 => 
     array (
       0 => 'cinnabar',
       1 => 'cinnabars',
     ),
-    898 => 
+    920 => 
     array (
       0 => 'citrine',
       1 => 'citrines',
     ),
-    899 => 
+    921 => 
     array (
       0 => 'clay',
       1 => 'clays',
     ),
-    900 => 
+    922 => 
     array (
       0 => 'coal',
-      1 => 'coaled',
-      2 => 'coaling',
-      3 => 'coals',
+      1 => 'coaling',
+      2 => 'coals',
     ),
-    901 => 
+    923 => 
     array (
       0 => 'conglomerate',
       1 => 'conglomerates',
-      2 => 'conglomerating',
-      3 => 'conglomerated',
+      2 => 'conglomerated',
     ),
-    902 => 
+    924 => 
     array (
       0 => 'diamond',
       1 => 'diamonds',
     ),
-    903 => 
+    925 => 
     array (
       0 => 'dolerite',
       1 => 'dolerites',
     ),
-    904 => 
+    926 => 
     array (
       0 => 'dolomite',
       1 => 'dolomites',
     ),
-    905 => 
+    927 => 
     array (
       0 => 'emerald',
       1 => 'emeralds',
     ),
-    906 => 
+    928 => 
     array (
       0 => 'feldspar',
       1 => 'felspar',
       2 => 'feldspars',
       3 => 'felspars',
     ),
-    907 => 
+    929 => 
     array (
       0 => 'flint',
       1 => 'flints',
     ),
-    908 => 
+    930 => 
     array (
       0 => 'fluorite',
       1 => 'fluorspar',
       2 => 'fluorites',
     ),
-    909 => 
+    931 => 
     array (
       0 => 'gabbro',
       1 => 'gabbros',
     ),
-    910 => 
+    932 => 
     array (
       0 => 'galena',
       1 => 'galenas',
     ),
-    911 => 
+    933 => 
     array (
       0 => 'garnet',
       1 => 'garnets',
     ),
-    912 => 
+    934 => 
     array (
       0 => 'gem',
       1 => 'gems',
     ),
-    913 => 
+    935 => 
     array (
       0 => 'gemstone',
       1 => 'gemstones',
     ),
-    914 => 
+    936 => 
     array (
       0 => 'gneiss',
       1 => 'gneisses',
     ),
-    915 => 
+    937 => 
     array (
       0 => 'granite',
       1 => 'granites',
     ),
-    916 => 
+    938 => 
     array (
       0 => 'gritstone',
       1 => 'gritstones',
     ),
-    917 => 
+    939 => 
     array (
       0 => 'haematite',
       1 => 'hematite',
       2 => 'haematites',
     ),
-    918 => 
+    940 => 
     array (
       0 => 'igneousrock',
       1 => 'igneousrocks',
     ),
-    919 => 
+    941 => 
     array (
       0 => 'ironstone',
       1 => 'ironstones',
     ),
-    920 => 
+    942 => 
     array (
       0 => 'jade',
-      1 => 'jading',
-      2 => 'jaded',
-      3 => 'jades',
+      1 => 'jaded',
+      2 => 'jades',
     ),
-    921 => 
+    943 => 
     array (
       0 => 'jasper',
       1 => 'jaspers',
     ),
-    922 => 
+    944 => 
     array (
       0 => 'jet',
       1 => 'jets',
@@ -9154,389 +9152,373 @@ return array (
       3 => 'jetted',
       4 => 'jetes',
     ),
-    923 => 
+    945 => 
     array (
       0 => 'kaolin',
       1 => 'kaolinite',
       2 => 'chinaclay',
     ),
-    924 => 
+    946 => 
     array (
       0 => 'limestone',
       1 => 'limestones',
     ),
-    925 => 
+    947 => 
     array (
       0 => 'lodestone',
       1 => 'loadstone',
       2 => 'lodestones',
       3 => 'loadstones',
     ),
-    926 => 
+    948 => 
     array (
       0 => 'magnetite',
       1 => 'magnetites',
     ),
-    927 => 
+    949 => 
     array (
       0 => 'malachite',
       1 => 'malachites',
     ),
-    928 => 
+    950 => 
     array (
       0 => 'marble',
       1 => 'marbles',
       2 => 'marbled',
       3 => 'marbling',
     ),
-    929 => 
+    951 => 
     array (
       0 => 'metamorphicrock',
       1 => 'metamorphicrocks',
     ),
-    930 => 
+    952 => 
     array (
       0 => 'mica',
       1 => 'micas',
     ),
-    931 => 
+    953 => 
     array (
       0 => 'mineral',
       1 => 'minerals',
     ),
-    932 => 
+    954 => 
     array (
       0 => 'moonstone',
       1 => 'moonstones',
     ),
-    933 => 
+    955 => 
     array (
       0 => 'mudstone',
       1 => 'mudstones',
     ),
-    934 => 
+    956 => 
     array (
       0 => 'olivine',
       1 => 'olivines',
     ),
-    935 => 
+    957 => 
     array (
       0 => 'opal',
       1 => 'opals',
     ),
-    936 => 
+    958 => 
     array (
       0 => 'ore',
       1 => 'ores',
     ),
-    937 => 
+    959 => 
     array (
       0 => 'pearl',
-      1 => 'pearled',
-      2 => 'pearling',
-      3 => 'pearls',
+      1 => 'pearling',
+      2 => 'pearls',
     ),
-    938 => 
+    960 => 
     array (
       0 => 'peridot',
       1 => 'peridots',
     ),
-    939 => 
+    961 => 
     array (
       0 => 'preciousstone',
       1 => 'preciousstones',
     ),
-    940 => 
-    array (
-      0 => 'pumice',
-      1 => 'pumiced',
-      2 => 'pumicing',
-    ),
-    941 => 
+    962 => 
     array (
       0 => 'pyrite',
       1 => 'pyrites',
       2 => 'ironpyrites',
     ),
-    942 => 
+    963 => 
     array (
       0 => 'quartzite',
       1 => 'quartzites',
     ),
-    943 => 
+    964 => 
     array (
       0 => 'rhyolite',
       1 => 'rhyolites',
     ),
-    944 => 
+    965 => 
     array (
       0 => 'rock',
       1 => 'rocks',
       2 => 'rocking',
       3 => 'rocked',
     ),
-    945 => 
+    966 => 
     array (
       0 => 'ruby',
       1 => 'rubies',
     ),
-    946 => 
+    967 => 
     array (
       0 => 'sandstone',
       1 => 'sandstones',
     ),
-    947 => 
+    968 => 
     array (
       0 => 'sapphire',
       1 => 'sapphires',
     ),
-    948 => 
+    969 => 
     array (
       0 => 'schist',
       1 => 'schists',
     ),
-    949 => 
+    970 => 
     array (
       0 => 'sedimentaryrock',
       1 => 'sedimentaryrocks',
     ),
-    950 => 
+    971 => 
     array (
       0 => 'semipreciousstone',
       1 => 'semipreciousstones',
     ),
-    951 => 
+    972 => 
     array (
       0 => 'shale',
       1 => 'shales',
     ),
-    952 => 
+    973 => 
     array (
       0 => 'siltstone',
       1 => 'siltstones',
     ),
-    953 => 
+    974 => 
     array (
       0 => 'slate',
       1 => 'slates',
-      2 => 'slating',
-      3 => 'slated',
+      2 => 'slated',
     ),
-    954 => 
+    975 => 
     array (
       0 => 'soapstone',
       1 => 'soapstones',
     ),
-    955 => 
-    array (
-      0 => 'talc',
-      1 => 'talced',
-      2 => 'talcing',
-      3 => 'talcked',
-      4 => 'talcking',
-    ),
-    956 => 
+    976 => 
     array (
       0 => 'tanzanite',
       1 => 'tanzanites',
     ),
-    957 => 
+    977 => 
     array (
       0 => 'tigerseye',
       1 => 'tigereye',
     ),
-    958 => 
+    978 => 
     array (
       0 => 'topaz',
       1 => 'topazes',
     ),
-    959 => 
+    979 => 
     array (
       0 => 'tourmaline',
       1 => 'tourmalines',
     ),
-    960 => 
+    980 => 
     array (
       0 => 'zircon',
       1 => 'zircons',
     ),
-    961 => 
+    981 => 
     array (
       0 => 'alexandrite',
       1 => 'alexandrites',
     ),
-    962 => 
+    982 => 
     array (
       0 => 'amphibole',
       1 => 'amphiboles',
     ),
-    963 => 
+    983 => 
     array (
       0 => 'barite',
       1 => 'baryte',
     ),
-    964 => 
+    984 => 
     array (
       0 => 'celestine',
       1 => 'celestite',
     ),
-    965 => 
+    985 => 
     array (
       0 => 'evaporite',
       1 => 'evaporites',
     ),
-    966 => 
+    986 => 
     array (
       0 => 'greywacke',
       1 => 'graywacke',
     ),
-    967 => 
+    987 => 
     array (
       0 => 'heliotrope',
       1 => 'heliotropes',
     ),
-    968 => 
+    988 => 
     array (
       0 => 'jadeite',
       1 => 'jadeites',
     ),
-    969 => 
+    989 => 
     array (
       0 => 'labradorite',
       1 => 'labradorites',
     ),
-    970 => 
+    990 => 
     array (
       0 => 'marcasite',
       1 => 'marcasites',
     ),
-    971 => 
+    991 => 
     array (
       0 => 'morganite',
       1 => 'morganites',
     ),
-    972 => 
+    992 => 
     array (
       0 => 'porphyry',
       1 => 'porphyries',
     ),
-    973 => 
+    993 => 
     array (
       0 => 'pyroxene',
       1 => 'pyroxenes',
     ),
-    974 => 
+    994 => 
     array (
       0 => 'sodalite',
       1 => 'sodalites',
     ),
-    975 => 
+    995 => 
     array (
       0 => 'spinel',
       1 => 'spinels',
     ),
-    976 => 
+    996 => 
     array (
       0 => 'sunstone',
       1 => 'sunstones',
     ),
-    977 => 
+    997 => 
     array (
       0 => 'travertine',
       1 => 'travertines',
     ),
-    978 => 
+    998 => 
     array (
       0 => 'zeolite',
       1 => 'zeolites',
     ),
-    979 => 
+    999 => 
     array (
       0 => 'asteroid',
       1 => 'asteroids',
     ),
-    980 => 
+    1000 => 
     array (
       0 => 'asteroidbelt',
       1 => 'asteroidbelts',
     ),
-    981 => 
+    1001 => 
     array (
       0 => 'astronaut',
       1 => 'astronauts',
     ),
-    982 => 
+    1002 => 
     array (
       0 => 'aurora',
       1 => 'auroras',
       2 => 'aurorae',
     ),
-    983 => 
+    1003 => 
     array (
       0 => 'binary',
       1 => 'binaries',
     ),
-    984 => 
+    1004 => 
     array (
       0 => 'blazar',
       1 => 'blazars',
     ),
-    985 => 
+    1005 => 
     array (
       0 => 'browndwarf',
       1 => 'browndwarfs',
     ),
-    986 => 
+    1006 => 
     array (
       0 => 'ceres',
       1 => 'crees',
     ),
-    987 => 
+    1007 => 
     array (
       0 => 'chromosphere',
       1 => 'chromospheres',
     ),
-    988 => 
+    1008 => 
     array (
       0 => 'cluster',
       1 => 'clusters',
       2 => 'clustered',
       3 => 'clustering',
     ),
-    989 => 
+    1009 => 
     array (
       0 => 'coma',
       1 => 'comas',
     ),
-    990 => 
+    1010 => 
     array (
       0 => 'comet',
       1 => 'comets',
     ),
-    991 => 
+    1011 => 
     array (
       0 => 'constellation',
       1 => 'constellations',
     ),
-    992 => 
+    1012 => 
     array (
       0 => 'corona',
       1 => 'coronas',
       2 => 'coronae',
     ),
-    993 => 
+    1013 => 
     array (
       0 => 'cosmonaut',
       1 => 'cosmonauts',
     ),
-    994 => 
+    1014 => 
     array (
       0 => 'dust',
       1 => 'dusting',
       2 => 'dusted',
       3 => 'dusts',
     ),
-    995 => 
+    1015 => 
     array (
       0 => 'dwarf',
       1 => 'dwarfs',
@@ -9544,253 +9526,257 @@ return array (
       3 => 'dwarfed',
       4 => 'dwarfing',
     ),
-    996 => 
+    1016 => 
     array (
       0 => 'earth',
       1 => 'earthing',
       2 => 'earths',
       3 => 'earthed',
     ),
-    997 => 
+    1017 => 
     array (
       0 => 'eclipse',
       1 => 'eclipses',
       2 => 'eclipsing',
       3 => 'eclipsed',
     ),
-    998 => 
+    1018 => 
     array (
       0 => 'exoplanet',
       1 => 'exoplanets',
     ),
-    999 => 
+    1019 => 
     array (
       0 => 'fireball',
       1 => 'fireballs',
     ),
-    1000 => 
+    1020 => 
     array (
       0 => 'flare',
       1 => 'flares',
       2 => 'flared',
       3 => 'flaring',
     ),
-    1001 => 
+    1021 => 
     array (
       0 => 'galaxy',
       1 => 'galaxies',
     ),
-    1002 => 
+    1022 => 
     array (
       0 => 'giant',
       1 => 'giants',
     ),
-    1003 => 
+    1023 => 
     array (
       0 => 'halo',
       1 => 'halos',
       2 => 'haloes',
     ),
-    1004 => 
+    1024 => 
     array (
       0 => 'magnetar',
       1 => 'magnetars',
     ),
-    1005 => 
+    1025 => 
     array (
       0 => 'magnetosphere',
       1 => 'magnetospheres',
     ),
-    1006 => 
+    1026 => 
     array (
       0 => 'mars',
       1 => 'mar',
       2 => 'marred',
       3 => 'marring',
     ),
-    1007 => 
+    1027 => 
     array (
       0 => 'meteor',
       1 => 'meteors',
     ),
-    1008 => 
+    1028 => 
     array (
       0 => 'meteorite',
       1 => 'meteorites',
     ),
-    1009 => 
+    1029 => 
     array (
       0 => 'meteoroid',
       1 => 'meteoroids',
     ),
-    1010 => 
+    1030 => 
     array (
       0 => 'meteorshower',
       1 => 'meteorshowers',
     ),
-    1011 => 
+    1031 => 
     array (
       0 => 'moon',
       1 => 'moons',
       2 => 'mooning',
       3 => 'mooned',
     ),
-    1012 => 
+    1032 => 
     array (
       0 => 'nebula',
       1 => 'nebulae',
       2 => 'nebulas',
     ),
-    1013 => 
+    1033 => 
     array (
       0 => 'neutronstar',
       1 => 'neutronstars',
     ),
-    1014 => 
+    1034 => 
     array (
       0 => 'nova',
       1 => 'novae',
       2 => 'novas',
     ),
-    1015 => 
+    1035 => 
     array (
       0 => 'photosphere',
       1 => 'photospheres',
     ),
-    1016 => 
+    1036 => 
     array (
       0 => 'planet',
       1 => 'planets',
     ),
-    1017 => 
+    1037 => 
     array (
       0 => 'planetoid',
       1 => 'planetoids',
     ),
-    1018 => 
+    1038 => 
+    array (
+      0 => 'prominence',
+      1 => 'prominences',
+    ),
+    1039 => 
     array (
       0 => 'protoplanet',
       1 => 'protoplanets',
     ),
-    1019 => 
+    1040 => 
     array (
       0 => 'protostar',
       1 => 'protostars',
     ),
-    1020 => 
+    1041 => 
     array (
       0 => 'pulsar',
       1 => 'pulsars',
     ),
-    1021 => 
+    1042 => 
     array (
       0 => 'quasar',
       1 => 'quasars',
     ),
-    1022 => 
+    1043 => 
     array (
       0 => 'redgiant',
       1 => 'redgiants',
     ),
-    1023 => 
+    1044 => 
     array (
       0 => 'ring',
       1 => 'rings',
       2 => 'ringing',
       3 => 'ringed',
     ),
-    1024 => 
+    1045 => 
     array (
       0 => 'rocket',
       1 => 'rockets',
       2 => 'rocketed',
       3 => 'rocketing',
     ),
-    1025 => 
+    1046 => 
     array (
       0 => 'satellite',
       1 => 'satellites',
     ),
-    1026 => 
+    1047 => 
     array (
       0 => 'shuttle',
       1 => 'shuttled',
       2 => 'shuttling',
       3 => 'shuttles',
     ),
-    1027 => 
+    1048 => 
     array (
       0 => 'singularity',
       1 => 'singularities',
     ),
-    1028 => 
+    1049 => 
     array (
       0 => 'solarsystem',
       1 => 'solarsystems',
     ),
-    1029 => 
+    1050 => 
     array (
       0 => 'spacecraft',
       1 => 'spacecrafts',
     ),
-    1030 => 
+    1051 => 
     array (
       0 => 'spaceship',
       1 => 'spaceships',
     ),
-    1031 => 
+    1052 => 
     array (
       0 => 'spacestation',
       1 => 'spacestations',
     ),
-    1032 => 
+    1053 => 
     array (
       0 => 'star',
       1 => 'stars',
       2 => 'starring',
       3 => 'starred',
     ),
-    1033 => 
+    1054 => 
     array (
       0 => 'starcluster',
       1 => 'starclusters',
     ),
-    1034 => 
+    1055 => 
     array (
       0 => 'station',
       1 => 'stations',
       2 => 'stationed',
       3 => 'stationing',
     ),
-    1035 => 
+    1056 => 
     array (
       0 => 'sun',
       1 => 'suns',
-      2 => 'sunned',
-      3 => 'sunning',
+      2 => 'sunning',
     ),
-    1036 => 
+    1057 => 
     array (
       0 => 'sunspot',
       1 => 'sunspots',
     ),
-    1037 => 
+    1058 => 
     array (
       0 => 'supercluster',
       1 => 'superclusters',
     ),
-    1038 => 
+    1059 => 
     array (
       0 => 'supergiant',
       1 => 'supergiants',
     ),
-    1039 => 
+    1060 => 
     array (
       0 => 'supernova',
       1 => 'supernovae',
       2 => 'supernovas',
     ),
-    1040 => 
+    1061 => 
     array (
       0 => 'tail',
       1 => 'tails',
@@ -9798,234 +9784,238 @@ return array (
       3 => 'tailed',
       4 => 'tailings',
     ),
-    1041 => 
+    1062 => 
     array (
       0 => 'universe',
       1 => 'universes',
     ),
-    1042 => 
+    1063 => 
     array (
       0 => 'void',
       1 => 'voids',
       2 => 'voided',
       3 => 'voiding',
     ),
-    1043 => 
+    1064 => 
     array (
       0 => 'whitedwarf',
       1 => 'whitedwarfs',
     ),
-    1044 => 
+    1065 => 
     array (
       0 => 'asterism',
       1 => 'asterisms',
     ),
-    1045 => 
+    1066 => 
     array (
       0 => 'bolide',
       1 => 'bolides',
     ),
-    1046 => 
+    1067 => 
     array (
       0 => 'centaur',
       1 => 'centaurs',
     ),
-    1047 => 
+    1068 => 
     array (
       0 => 'exomoon',
       1 => 'exomoons',
     ),
-    1048 => 
+    1069 => 
     array (
       0 => 'heliosphere',
       1 => 'heliospheres',
     ),
-    1049 => 
+    1070 => 
     array (
       0 => 'hypergiant',
       1 => 'hypergiants',
     ),
-    1050 => 
+    1071 => 
     array (
       0 => 'hypernova',
       1 => 'hypernovae',
       2 => 'hypernovas',
     ),
-    1051 => 
+    1072 => 
     array (
       0 => 'kilonova',
       1 => 'kilonovae',
       2 => 'kilonovas',
     ),
-    1052 => 
+    1073 => 
     array (
       0 => 'moonlet',
       1 => 'moonlets',
     ),
-    1053 => 
+    1074 => 
     array (
       0 => 'planetesimal',
       1 => 'planetesimals',
     ),
-    1054 => 
+    1075 => 
     array (
       0 => 'quarkstar',
       1 => 'quarkstars',
     ),
-    1055 => 
+    1076 => 
     array (
       0 => 'trojan',
       1 => 'trojans',
     ),
-    1056 => 
+    1077 => 
     array (
       0 => 'aliquot',
       1 => 'aliquots',
     ),
-    1057 => 
+    1078 => 
     array (
       0 => 'assay',
       1 => 'assays',
       2 => 'assayed',
-      3 => 'assaying',
     ),
-    1058 => 
+    1079 => 
     array (
       0 => 'autopsy',
       1 => 'autopsying',
       2 => 'autopsies',
       3 => 'autopsied',
     ),
-    1059 => 
+    1080 => 
     array (
       0 => 'biopsy',
       1 => 'biopsies',
       2 => 'biopsied',
     ),
-    1060 => 
+    1081 => 
     array (
       0 => 'blindtest',
       1 => 'blindtests',
     ),
-    1061 => 
+    1082 => 
     array (
       0 => 'blotting',
       1 => 'blot',
       2 => 'blotted',
       3 => 'blots',
     ),
-    1062 => 
+    1083 => 
     array (
       0 => 'boiling',
       1 => 'boil',
       2 => 'boiled',
       3 => 'boils',
     ),
-    1063 => 
+    1084 => 
     array (
       0 => 'calibration',
       1 => 'calibrations',
     ),
-    1064 => 
+    1085 => 
+    array (
+      0 => 'centrifugation',
+      1 => 'centrifuging',
+    ),
+    1086 => 
     array (
       0 => 'condensing',
       1 => 'condensed',
       2 => 'condense',
       3 => 'condenses',
     ),
-    1065 => 
+    1087 => 
     array (
       0 => 'control',
       1 => 'controlled',
       2 => 'controls',
       3 => 'controlling',
     ),
-    1066 => 
+    1088 => 
     array (
       0 => 'controlgroup',
       1 => 'controlgroups',
     ),
-    1067 => 
+    1089 => 
     array (
       0 => 'cooling',
       1 => 'cool',
       2 => 'cooled',
       3 => 'cools',
     ),
-    1068 => 
+    1090 => 
     array (
       0 => 'crystallisation',
       1 => 'crystallization',
     ),
-    1069 => 
+    1091 => 
     array (
       0 => 'culture',
       1 => 'cultures',
       2 => 'culturing',
       3 => 'cultured',
     ),
-    1070 => 
+    1092 => 
     array (
       0 => 'dating',
       1 => 'date',
       2 => 'dates',
       3 => 'dated',
     ),
-    1071 => 
+    1093 => 
     array (
       0 => 'decanting',
       1 => 'decantation',
     ),
-    1072 => 
+    1094 => 
     array (
       0 => 'dilution',
       1 => 'dilutions',
     ),
-    1073 => 
+    1095 => 
     array (
       0 => 'dissection',
       1 => 'dissections',
     ),
-    1074 => 
+    1096 => 
     array (
       0 => 'distillation',
       1 => 'distilling',
     ),
-    1075 => 
+    1097 => 
     array (
       0 => 'experiment',
       1 => 'experiments',
       2 => 'experimenting',
       3 => 'experimented',
     ),
-    1076 => 
+    1098 => 
     array (
       0 => 'extraction',
       1 => 'extractions',
     ),
-    1077 => 
+    1099 => 
     array (
       0 => 'fairtest',
       1 => 'fairtests',
     ),
-    1078 => 
+    1100 => 
     array (
       0 => 'fingerprinting',
       1 => 'fingerprints',
       2 => 'fingerprint',
       3 => 'fingerprinted',
     ),
-    1079 => 
+    1101 => 
     array (
       0 => 'fixation',
       1 => 'fixations',
     ),
-    1080 => 
+    1102 => 
     array (
       0 => 'flametest',
       1 => 'flametests',
     ),
-    1081 => 
+    1103 => 
     array (
       0 => 'freezing',
       1 => 'freeze',
@@ -10033,31 +10023,31 @@ return array (
       3 => 'froze',
       4 => 'freezes',
     ),
-    1082 => 
+    1104 => 
     array (
       0 => 'grinding',
       1 => 'grind',
       2 => 'grinds',
       3 => 'grinded',
     ),
-    1083 => 
+    1105 => 
     array (
       0 => 'homogenisation',
       1 => 'homogenization',
     ),
-    1084 => 
+    1106 => 
     array (
       0 => 'imaging',
       1 => 'image',
       2 => 'images',
       3 => 'imaged',
     ),
-    1085 => 
+    1107 => 
     array (
       0 => 'inoculation',
       1 => 'inoculations',
     ),
-    1086 => 
+    1108 => 
     array (
       0 => 'labelling',
       1 => 'labeling',
@@ -10066,26 +10056,26 @@ return array (
       4 => 'labeled',
       5 => 'labelled',
     ),
-    1087 => 
+    1109 => 
     array (
       0 => 'measurement',
       1 => 'measurements',
     ),
-    1088 => 
+    1110 => 
     array (
       0 => 'melting',
       1 => 'melt',
       2 => 'melted',
       3 => 'melts',
     ),
-    1089 => 
+    1111 => 
     array (
       0 => 'mixing',
       1 => 'mixed',
       2 => 'mix',
       3 => 'mixes',
     ),
-    1090 => 
+    1112 => 
     array (
       0 => 'modelling',
       1 => 'modeling',
@@ -10094,48 +10084,49 @@ return array (
       4 => 'modeled',
       5 => 'modelled',
     ),
-    1091 => 
+    1113 => 
     array (
       0 => 'observation',
       1 => 'observations',
     ),
-    1092 => 
+    1114 => 
     array (
       0 => 'pasteurisation',
       1 => 'pasteurization',
     ),
-    1093 => 
+    1115 => 
     array (
       0 => 'recrystallisation',
       1 => 'recrystallization',
     ),
-    1094 => 
+    1116 => 
     array (
       0 => 'rinsing',
       1 => 'rinse',
       2 => 'rinsed',
       3 => 'rinses',
     ),
-    1095 => 
+    1117 => 
     array (
       0 => 'sampling',
       1 => 'sample',
       2 => 'samples',
-      3 => 'sampled',
+      3 => 'samplings',
+      4 => 'sampled',
     ),
-    1096 => 
+    1118 => 
     array (
       0 => 'separation',
       1 => 'separations',
     ),
-    1097 => 
+    1119 => 
     array (
       0 => 'sequencing',
       1 => 'sequence',
       2 => 'sequenced',
       3 => 'sequences',
     ),
-    1098 => 
+    1120 => 
     array (
       0 => 'shaking',
       1 => 'shake',
@@ -10143,64 +10134,65 @@ return array (
       3 => 'shaken',
       4 => 'shakes',
     ),
-    1099 => 
+    1121 => 
     array (
       0 => 'simulation',
       1 => 'simulations',
     ),
-    1100 => 
+    1122 => 
     array (
       0 => 'smear',
       1 => 'smeared',
       2 => 'smearing',
       3 => 'smears',
     ),
-    1101 => 
+    1123 => 
     array (
       0 => 'staining',
       1 => 'stain',
       2 => 'stains',
       3 => 'stained',
     ),
-    1102 => 
+    1124 => 
     array (
       0 => 'sterilisation',
       1 => 'sterilization',
     ),
-    1103 => 
+    1125 => 
     array (
       0 => 'stirring',
       1 => 'stir',
       2 => 'stirred',
       3 => 'stirs',
     ),
-    1104 => 
+    1126 => 
     array (
       0 => 'streaking',
       1 => 'streak',
       2 => 'streaks',
       3 => 'streaked',
     ),
-    1105 => 
+    1127 => 
     array (
       0 => 'transformation',
       1 => 'transformations',
     ),
-    1106 => 
+    1128 => 
     array (
       0 => 'washing',
       1 => 'wash',
       2 => 'washed',
-      3 => 'washes',
+      3 => 'washings',
+      4 => 'washes',
     ),
-    1107 => 
+    1129 => 
     array (
       0 => 'weighing',
       1 => 'weigh',
       2 => 'weighs',
       3 => 'weighed',
     ),
-    1108 => 
+    1130 => 
     array (
       0 => 'drying',
       1 => 'dry',
@@ -10208,191 +10200,191 @@ return array (
       3 => 'dries',
       4 => 'drys',
     ),
-    1109 => 
+    1131 => 
     array (
       0 => 'hybridisation',
       1 => 'hybridization',
     ),
-    1110 => 
+    1132 => 
     array (
       0 => 'immunoassay',
       1 => 'immunoassays',
     ),
-    1111 => 
+    1133 => 
     array (
       0 => 'leaching',
       1 => 'leach',
       2 => 'leached',
       3 => 'leaches',
     ),
-    1112 => 
+    1134 => 
     array (
       0 => 'lyophilisation',
       1 => 'lyophilization',
     ),
-    1113 => 
+    1135 => 
     array (
       0 => 'randomisation',
       1 => 'randomization',
     ),
-    1114 => 
+    1136 => 
     array (
       0 => 'sectioning',
       1 => 'section',
       2 => 'sections',
       3 => 'sectioned',
     ),
-    1115 => 
+    1137 => 
     array (
       0 => 'serialdilution',
       1 => 'serialdilutions',
     ),
-    1116 => 
+    1138 => 
     array (
       0 => 'standardisation',
       1 => 'standardization',
     ),
-    1117 => 
+    1139 => 
     array (
       0 => 'westernblot',
       1 => 'westernblots',
       2 => 'westernblotting',
     ),
-    1118 => 
+    1140 => 
     array (
       0 => 'angstrom',
       1 => 'angstroms',
     ),
-    1119 => 
+    1141 => 
     array (
       0 => 'astronomicalunit',
       1 => 'astronomicalunits',
     ),
-    1120 => 
+    1142 => 
     array (
       0 => 'atmosphere',
       1 => 'atmospheres',
     ),
-    1121 => 
+    1143 => 
     array (
       0 => 'bar',
       1 => 'bars',
       2 => 'barred',
       3 => 'barring',
     ),
-    1122 => 
+    1144 => 
     array (
       0 => 'becquerel',
       1 => 'becquerels',
     ),
-    1123 => 
+    1145 => 
     array (
       0 => 'calorie',
       1 => 'calories',
     ),
-    1124 => 
+    1146 => 
     array (
       0 => 'candela',
       1 => 'candelas',
     ),
-    1125 => 
+    1147 => 
     array (
       0 => 'celsius',
       1 => 'centigrade',
     ),
-    1126 => 
+    1148 => 
     array (
       0 => 'centilitre',
       1 => 'centiliter',
       2 => 'centilitres',
       3 => 'centiliters',
     ),
-    1127 => 
+    1149 => 
     array (
       0 => 'centimetre',
       1 => 'centimeter',
       2 => 'centimetres',
       3 => 'centimeters',
     ),
-    1128 => 
+    1150 => 
     array (
       0 => 'cubiccentimetre',
       1 => 'cubiccentimeter',
       2 => 'cubiccentimetres',
       3 => 'cubiccentimeters',
     ),
-    1129 => 
+    1151 => 
     array (
       0 => 'curie',
       1 => 'curies',
     ),
-    1130 => 
+    1152 => 
     array (
       0 => 'dalton',
       1 => 'daltons',
     ),
-    1131 => 
+    1153 => 
     array (
       0 => 'day',
       1 => 'days',
     ),
-    1132 => 
+    1154 => 
     array (
       0 => 'decibel',
       1 => 'decibels',
     ),
-    1133 => 
+    1155 => 
     array (
       0 => 'decilitre',
       1 => 'deciliter',
       2 => 'decilitres',
       3 => 'deciliters',
     ),
-    1134 => 
+    1156 => 
     array (
       0 => 'degree',
       1 => 'degrees',
     ),
-    1135 => 
+    1157 => 
     array (
       0 => 'dioptre',
       1 => 'diopter',
       2 => 'dioptres',
       3 => 'diopters',
     ),
-    1136 => 
+    1158 => 
     array (
       0 => 'dyne',
       1 => 'dynes',
     ),
-    1137 => 
+    1159 => 
     array (
       0 => 'electronvolt',
       1 => 'electronvolts',
     ),
-    1138 => 
+    1160 => 
     array (
       0 => 'erg',
       1 => 'ergs',
     ),
-    1139 => 
+    1161 => 
     array (
       0 => 'farad',
       1 => 'farads',
     ),
-    1140 => 
+    1162 => 
     array (
       0 => 'gigawatt',
       1 => 'gigawatts',
     ),
-    1141 => 
+    1163 => 
     array (
       0 => 'gram',
       1 => 'gramme',
       2 => 'grams',
       3 => 'grammes',
     ),
-    1142 => 
+    1164 => 
     array (
       0 => 'gray',
       1 => 'grays',
@@ -10403,38 +10395,38 @@ return array (
       6 => 'greying',
       7 => 'grayed',
     ),
-    1143 => 
+    1165 => 
     array (
       0 => 'hectare',
       1 => 'hectares',
     ),
-    1144 => 
+    1166 => 
     array (
       0 => 'hectopascal',
       1 => 'hectopascals',
     ),
-    1145 => 
+    1167 => 
     array (
       0 => 'henry',
       1 => 'henrys',
       2 => 'henries',
     ),
-    1146 => 
+    1168 => 
     array (
       0 => 'horsepower',
       1 => 'horsepowers',
     ),
-    1147 => 
+    1169 => 
     array (
       0 => 'hour',
       1 => 'hours',
     ),
-    1148 => 
+    1170 => 
     array (
       0 => 'kilocalorie',
       1 => 'kilocalories',
     ),
-    1149 => 
+    1171 => 
     array (
       0 => 'kilogram',
       1 => 'kilogramme',
@@ -10443,80 +10435,80 @@ return array (
       4 => 'kilogrammes',
       5 => 'kilos',
     ),
-    1150 => 
+    1172 => 
     array (
       0 => 'kilojoule',
       1 => 'kilojoules',
     ),
-    1151 => 
+    1173 => 
     array (
       0 => 'kilometre',
       1 => 'kilometer',
       2 => 'kilometres',
       3 => 'kilometers',
     ),
-    1152 => 
+    1174 => 
     array (
       0 => 'kilonewton',
       1 => 'kilonewtons',
     ),
-    1153 => 
+    1175 => 
     array (
       0 => 'kilopascal',
       1 => 'kilopascals',
     ),
-    1154 => 
+    1176 => 
     array (
       0 => 'kiloton',
       1 => 'kilotonne',
       2 => 'kilotons',
       3 => 'kilotonnes',
     ),
-    1155 => 
+    1177 => 
     array (
       0 => 'kilovolt',
       1 => 'kilovolts',
     ),
-    1156 => 
+    1178 => 
     array (
       0 => 'kilowatthour',
       1 => 'kilowatthours',
     ),
-    1157 => 
+    1179 => 
     array (
       0 => 'kilowatt',
       1 => 'kilowatts',
     ),
-    1158 => 
+    1180 => 
     array (
       0 => 'litre',
       1 => 'liter',
       2 => 'litres',
       3 => 'liters',
     ),
-    1159 => 
+    1181 => 
     array (
       0 => 'lux',
       1 => 'luxes',
     ),
-    1160 => 
+    1182 => 
     array (
       0 => 'megajoule',
       1 => 'megajoules',
     ),
-    1161 => 
+    1183 => 
     array (
       0 => 'megaton',
       1 => 'megatonne',
       2 => 'megatons',
       3 => 'megatonnes',
     ),
-    1162 => 
+    1184 => 
     array (
       0 => 'megawatt',
       1 => 'megawatts',
     ),
-    1163 => 
+    1185 => 
     array (
       0 => 'metre',
       1 => 'meter',
@@ -10525,126 +10517,126 @@ return array (
       4 => 'metering',
       5 => 'metered',
     ),
-    1164 => 
+    1186 => 
     array (
       0 => 'microgram',
       1 => 'micrograms',
     ),
-    1165 => 
+    1187 => 
     array (
       0 => 'microlitre',
       1 => 'microliter',
       2 => 'microlitres',
       3 => 'microliters',
     ),
-    1166 => 
+    1188 => 
     array (
       0 => 'micron',
       1 => 'microns',
     ),
-    1167 => 
+    1189 => 
     array (
       0 => 'microsecond',
       1 => 'microseconds',
     ),
-    1168 => 
+    1190 => 
     array (
       0 => 'milliampere',
       1 => 'milliamp',
       2 => 'milliamperes',
       3 => 'milliamps',
     ),
-    1169 => 
+    1191 => 
     array (
       0 => 'millibar',
       1 => 'millibars',
     ),
-    1170 => 
+    1192 => 
     array (
       0 => 'milligram',
       1 => 'milligrams',
       2 => 'milligrammes',
       3 => 'milligramme',
     ),
-    1171 => 
+    1193 => 
     array (
       0 => 'millilitre',
       1 => 'milliliter',
       2 => 'millilitres',
       3 => 'milliliters',
     ),
-    1172 => 
+    1194 => 
     array (
       0 => 'millimetre',
       1 => 'millimeter',
       2 => 'millimetres',
       3 => 'millimeters',
     ),
-    1173 => 
+    1195 => 
     array (
       0 => 'millisecond',
       1 => 'milliseconds',
     ),
-    1174 => 
+    1196 => 
     array (
       0 => 'millisievert',
       1 => 'millisieverts',
     ),
-    1175 => 
+    1197 => 
     array (
       0 => 'millivolt',
       1 => 'millivolts',
     ),
-    1176 => 
+    1198 => 
     array (
       0 => 'minute',
       1 => 'minutes',
     ),
-    1177 => 
+    1199 => 
     array (
       0 => 'nanogram',
       1 => 'nanograms',
     ),
-    1178 => 
+    1200 => 
     array (
       0 => 'nanometre',
       1 => 'nanometer',
       2 => 'nanometres',
       3 => 'nanometers',
     ),
-    1179 => 
+    1201 => 
     array (
       0 => 'nanosecond',
       1 => 'nanoseconds',
     ),
-    1180 => 
+    1202 => 
     array (
       0 => 'parsec',
       1 => 'parsecs',
     ),
-    1181 => 
+    1203 => 
     array (
       0 => 'picometre',
       1 => 'picometer',
       2 => 'picometres',
       3 => 'picometers',
     ),
-    1182 => 
+    1204 => 
     array (
       0 => 'picosecond',
       1 => 'picoseconds',
     ),
-    1183 => 
+    1205 => 
     array (
       0 => 'radian',
       1 => 'radians',
     ),
-    1184 => 
+    1206 => 
     array (
       0 => 'roentgen',
       1 => 'roentgens',
     ),
-    1185 => 
+    1207 => 
     array (
       0 => 'second',
       1 => 'seconds',
@@ -10652,888 +10644,886 @@ return array (
       3 => 'seconded',
       4 => 'secondes',
     ),
-    1186 => 
+    1208 => 
     array (
       0 => 'sievert',
       1 => 'sieverts',
     ),
-    1187 => 
+    1209 => 
     array (
       0 => 'steradian',
       1 => 'steradians',
     ),
-    1188 => 
+    1210 => 
     array (
       0 => 'terawatt',
       1 => 'terawatts',
     ),
-    1189 => 
+    1211 => 
     array (
       0 => 'tonne',
       1 => 'tonnes',
     ),
-    1190 => 
+    1212 => 
     array (
       0 => 'weber',
       1 => 'webers',
     ),
-    1191 => 
+    1213 => 
     array (
       0 => 'year',
       1 => 'years',
     ),
-    1192 => 
+    1214 => 
     array (
       0 => 'arcminute',
       1 => 'arcminutes',
     ),
-    1193 => 
+    1215 => 
     array (
       0 => 'arcsecond',
       1 => 'arcseconds',
     ),
-    1194 => 
+    1216 => 
     array (
       0 => 'attosecond',
       1 => 'attoseconds',
     ),
-    1195 => 
+    1217 => 
     array (
       0 => 'barn',
       1 => 'barns',
     ),
-    1196 => 
+    1218 => 
     array (
       0 => 'btu',
       1 => 'btus',
     ),
-    1197 => 
+    1219 => 
     array (
       0 => 'debye',
       1 => 'debyes',
     ),
-    1198 => 
+    1220 => 
     array (
       0 => 'femtometre',
       1 => 'femtometer',
       2 => 'femtometres',
       3 => 'femtometers',
     ),
-    1199 => 
+    1221 => 
     array (
       0 => 'femtosecond',
       1 => 'femtoseconds',
     ),
-    1200 => 
+    1222 => 
     array (
       0 => 'fermi',
       1 => 'fermis',
     ),
-    1201 => 
+    1223 => 
     array (
       0 => 'gigaelectronvolt',
       1 => 'gigaelectronvolts',
     ),
-    1202 => 
+    1224 => 
     array (
       0 => 'gilbert',
       1 => 'gilberts',
     ),
-    1203 => 
+    1225 => 
     array (
       0 => 'jansky',
       1 => 'janskys',
     ),
-    1204 => 
+    1226 => 
     array (
       0 => 'katal',
       1 => 'katals',
     ),
-    1205 => 
+    1227 => 
     array (
       0 => 'kilobar',
       1 => 'kilobars',
     ),
-    1206 => 
+    1228 => 
     array (
       0 => 'kilohm',
       1 => 'kilohms',
     ),
-    1207 => 
+    1229 => 
     array (
       0 => 'kiloparsec',
       1 => 'kiloparsecs',
     ),
-    1208 => 
+    1230 => 
     array (
       0 => 'langley',
       1 => 'langleys',
     ),
-    1209 => 
+    1231 => 
     array (
       0 => 'lightsecond',
       1 => 'lightseconds',
     ),
-    1210 => 
+    1232 => 
     array (
       0 => 'maxwell',
       1 => 'maxwells',
     ),
-    1211 => 
+    1233 => 
     array (
       0 => 'megaparsec',
       1 => 'megaparsecs',
     ),
-    1212 => 
+    1234 => 
     array (
       0 => 'megohm',
       1 => 'megohms',
     ),
-    1213 => 
+    1235 => 
     array (
       0 => 'mho',
       1 => 'mhos',
     ),
-    1214 => 
+    1236 => 
     array (
       0 => 'microfarad',
       1 => 'microfarads',
     ),
-    1215 => 
+    1237 => 
     array (
       0 => 'micromole',
       1 => 'micromoles',
     ),
-    1216 => 
+    1238 => 
     array (
       0 => 'microsievert',
       1 => 'microsieverts',
     ),
-    1217 => 
+    1239 => 
     array (
       0 => 'millimole',
       1 => 'millimoles',
     ),
-    1218 => 
+    1240 => 
     array (
       0 => 'oersted',
       1 => 'oersteds',
     ),
-    1219 => 
+    1241 => 
     array (
       0 => 'picofarad',
       1 => 'picofarads',
     ),
-    1220 => 
+    1242 => 
     array (
       0 => 'poise',
       1 => 'poised',
-      2 => 'poising',
     ),
-    1221 => 
+    1243 => 
     array (
       0 => 'rad',
       1 => 'rads',
     ),
-    1222 => 
+    1244 => 
     array (
       0 => 'rem',
       1 => 'rems',
     ),
-    1223 => 
+    1245 => 
     array (
       0 => 'rutherford',
       1 => 'rutherfords',
     ),
-    1224 => 
+    1246 => 
     array (
       0 => 'stokes',
       1 => 'stoked',
       2 => 'stoke',
       3 => 'stoking',
     ),
-    1225 => 
+    1247 => 
     array (
       0 => 'therm',
       1 => 'therms',
       2 => 'thermes',
     ),
-    1226 => 
+    1248 => 
     array (
       0 => 'airmass',
       1 => 'airmasses',
     ),
-    1227 => 
+    1249 => 
     array (
       0 => 'anticyclone',
       1 => 'anticyclones',
     ),
-    1228 => 
+    1250 => 
     array (
       0 => 'blizzard',
       1 => 'blizzards',
     ),
-    1229 => 
+    1251 => 
     array (
       0 => 'breeze',
       1 => 'breezes',
       2 => 'breezed',
       3 => 'breezing',
     ),
-    1230 => 
+    1252 => 
     array (
       0 => 'calm',
       1 => 'calmed',
       2 => 'calming',
       3 => 'calms',
     ),
-    1231 => 
+    1253 => 
     array (
       0 => 'climate',
       1 => 'climates',
     ),
-    1232 => 
+    1254 => 
     array (
       0 => 'cloud',
       1 => 'clouds',
       2 => 'clouded',
       3 => 'clouding',
     ),
-    1233 => 
+    1255 => 
     array (
       0 => 'cloudburst',
       1 => 'cloudbursts',
     ),
-    1234 => 
+    1256 => 
     array (
       0 => 'coldfront',
       1 => 'coldfronts',
     ),
-    1235 => 
+    1257 => 
     array (
       0 => 'cumulonimbus',
       1 => 'cumulonimbi',
     ),
-    1236 => 
+    1258 => 
     array (
       0 => 'cumulus',
       1 => 'cumuli',
     ),
-    1237 => 
+    1259 => 
     array (
       0 => 'cyclone',
       1 => 'cyclones',
     ),
-    1238 => 
+    1260 => 
     array (
       0 => 'deluge',
-      1 => 'deluging',
+      1 => 'deluges',
       2 => 'deluged',
     ),
-    1239 => 
+    1261 => 
     array (
       0 => 'depression',
       1 => 'depressions',
     ),
-    1240 => 
+    1262 => 
     array (
       0 => 'dew',
       1 => 'dews',
     ),
-    1241 => 
+    1263 => 
     array (
       0 => 'dewpoint',
       1 => 'dewpoints',
     ),
-    1242 => 
+    1264 => 
     array (
       0 => 'downpour',
       1 => 'downpours',
     ),
-    1243 => 
+    1265 => 
     array (
       0 => 'drizzle',
       1 => 'drizzled',
       2 => 'drizzling',
       3 => 'drizzles',
     ),
-    1244 => 
+    1266 => 
     array (
       0 => 'drought',
       1 => 'droughts',
     ),
-    1245 => 
+    1267 => 
     array (
       0 => 'duststorm',
       1 => 'duststorms',
     ),
-    1246 => 
+    1268 => 
     array (
       0 => 'flashflood',
       1 => 'flashfloods',
     ),
-    1247 => 
+    1269 => 
     array (
       0 => 'flood',
       1 => 'flooded',
       2 => 'flooding',
       3 => 'floods',
     ),
-    1248 => 
+    1270 => 
     array (
       0 => 'flurry',
-      1 => 'flurried',
-      2 => 'flurrying',
-      3 => 'flurries',
+      1 => 'flurries',
     ),
-    1249 => 
+    1271 => 
     array (
       0 => 'fog',
       1 => 'fogged',
       2 => 'fogs',
       3 => 'fogging',
     ),
-    1250 => 
+    1272 => 
     array (
       0 => 'forecast',
       1 => 'forecasts',
       2 => 'forecasting',
       3 => 'forecasted',
     ),
-    1251 => 
+    1273 => 
     array (
       0 => 'front',
       1 => 'fronts',
       2 => 'fronting',
       3 => 'fronted',
     ),
-    1252 => 
+    1274 => 
     array (
       0 => 'frost',
       1 => 'frosting',
       2 => 'frosted',
       3 => 'frosts',
     ),
-    1253 => 
+    1275 => 
     array (
       0 => 'funnelcloud',
       1 => 'funnelclouds',
     ),
-    1254 => 
+    1276 => 
     array (
       0 => 'gale',
       1 => 'gales',
     ),
-    1255 => 
+    1277 => 
     array (
       0 => 'greenhousegas',
       1 => 'greenhousegases',
     ),
-    1256 => 
+    1278 => 
     array (
       0 => 'gust',
       1 => 'gusts',
     ),
-    1257 => 
+    1279 => 
     array (
       0 => 'hail',
       1 => 'hailing',
       2 => 'hailed',
       3 => 'hails',
     ),
-    1258 => 
+    1280 => 
     array (
       0 => 'hailstone',
       1 => 'hailstones',
     ),
-    1259 => 
+    1281 => 
     array (
       0 => 'hailstorm',
       1 => 'hailstorms',
     ),
-    1260 => 
+    1282 => 
     array (
       0 => 'haze',
       1 => 'hazing',
       2 => 'hazed',
       3 => 'hazes',
     ),
-    1261 => 
+    1283 => 
     array (
       0 => 'heatwave',
       1 => 'heatwaves',
     ),
-    1262 => 
+    1284 => 
     array (
       0 => 'high',
       1 => 'highs',
     ),
-    1263 => 
+    1285 => 
     array (
       0 => 'hurricane',
       1 => 'hurricanes',
     ),
-    1264 => 
+    1286 => 
     array (
       0 => 'ice',
       1 => 'icing',
       2 => 'ices',
     ),
-    1265 => 
+    1287 => 
     array (
       0 => 'icicle',
       1 => 'icicles',
     ),
-    1266 => 
+    1288 => 
     array (
       0 => 'indiansummer',
       1 => 'indiansummers',
     ),
-    1267 => 
+    1289 => 
     array (
       0 => 'isobar',
       1 => 'isobars',
     ),
-    1268 => 
+    1290 => 
     array (
       0 => 'isotherm',
       1 => 'isotherms',
     ),
-    1269 => 
+    1291 => 
     array (
       0 => 'jetstream',
       1 => 'jetstreams',
     ),
-    1270 => 
+    1292 => 
     array (
       0 => 'lightning',
       1 => 'lightnings',
     ),
-    1271 => 
+    1293 => 
     array (
       0 => 'low',
       1 => 'lows',
       2 => 'lowing',
       3 => 'lowed',
     ),
-    1272 => 
+    1294 => 
     array (
       0 => 'meteorologist',
       1 => 'meteorologists',
     ),
-    1273 => 
+    1295 => 
     array (
       0 => 'microclimate',
       1 => 'microclimates',
     ),
-    1274 => 
+    1296 => 
     array (
       0 => 'mist',
       1 => 'mists',
       2 => 'misting',
       3 => 'misted',
     ),
-    1275 => 
+    1297 => 
     array (
       0 => 'monsoon',
       1 => 'monsoons',
     ),
-    1276 => 
-    array (
-      0 => 'overcast',
-      1 => 'overcasted',
-      2 => 'overcasting',
-    ),
-    1277 => 
+    1298 => 
     array (
       0 => 'rain',
       1 => 'raining',
       2 => 'rains',
       3 => 'rained',
     ),
-    1278 => 
+    1299 => 
     array (
       0 => 'rainbow',
       1 => 'rainbows',
     ),
-    1279 => 
+    1300 => 
+    array (
+      0 => 'rainfall',
+      1 => 'rainfalls',
+    ),
+    1301 => 
     array (
       0 => 'rainstorm',
       1 => 'rainstorms',
     ),
-    1280 => 
+    1302 => 
     array (
       0 => 'sandstorm',
       1 => 'sandstorms',
     ),
-    1281 => 
+    1303 => 
     array (
       0 => 'seabreeze',
       1 => 'seabreezes',
     ),
-    1282 => 
+    1304 => 
     array (
       0 => 'shower',
       1 => 'showers',
       2 => 'showered',
       3 => 'showering',
     ),
-    1283 => 
-    array (
-      0 => 'sleet',
-      1 => 'sleeted',
-      2 => 'sleeting',
-    ),
-    1284 => 
+    1305 => 
     array (
       0 => 'snow',
       1 => 'snowing',
       2 => 'snowed',
       3 => 'snows',
     ),
-    1285 => 
+    1306 => 
     array (
       0 => 'snowdrift',
       1 => 'snowdrifts',
     ),
-    1286 => 
+    1307 => 
     array (
       0 => 'snowfall',
       1 => 'snowfalls',
     ),
-    1287 => 
+    1308 => 
     array (
       0 => 'snowflake',
       1 => 'snowflakes',
     ),
-    1288 => 
+    1309 => 
     array (
       0 => 'snowstorm',
       1 => 'snowstorms',
     ),
-    1289 => 
+    1310 => 
     array (
       0 => 'squall',
-      1 => 'squalled',
-      2 => 'squalls',
-      3 => 'squalling',
+      1 => 'squalls',
+      2 => 'squalling',
     ),
-    1290 => 
+    1311 => 
     array (
       0 => 'storm',
       1 => 'storms',
       2 => 'stormed',
       3 => 'storming',
     ),
-    1291 => 
+    1312 => 
     array (
       0 => 'stormsurge',
       1 => 'stormsurges',
     ),
-    1292 => 
+    1313 => 
+    array (
+      0 => 'sunshine',
+      1 => 'sunshines',
+    ),
+    1314 => 
     array (
       0 => 'tempest',
       1 => 'tempests',
     ),
-    1293 => 
+    1315 => 
     array (
       0 => 'thaw',
       1 => 'thawed',
       2 => 'thawing',
       3 => 'thaws',
     ),
-    1294 => 
+    1316 => 
     array (
       0 => 'thermal',
       1 => 'thermals',
     ),
-    1295 => 
+    1317 => 
     array (
       0 => 'thunder',
       1 => 'thundering',
       2 => 'thunders',
       3 => 'thundered',
     ),
-    1296 => 
+    1318 => 
     array (
       0 => 'thunderstorm',
       1 => 'thunderstorms',
     ),
-    1297 => 
+    1319 => 
     array (
       0 => 'tornado',
       1 => 'tornadoes',
       2 => 'tornados',
     ),
-    1298 => 
+    1320 => 
     array (
       0 => 'tradewind',
       1 => 'tradewinds',
     ),
-    1299 => 
+    1321 => 
     array (
       0 => 'tropicalstorm',
       1 => 'tropicalstorms',
     ),
-    1300 => 
+    1322 => 
     array (
       0 => 'twister',
       1 => 'twisters',
     ),
-    1301 => 
+    1323 => 
     array (
       0 => 'typhoon',
       1 => 'typhoons',
     ),
-    1302 => 
+    1324 => 
     array (
       0 => 'updraft',
       1 => 'updraught',
       2 => 'updrafts',
       3 => 'updraughts',
     ),
-    1303 => 
+    1325 => 
     array (
       0 => 'warmfront',
       1 => 'warmfronts',
     ),
-    1304 => 
+    1326 => 
     array (
       0 => 'waterspout',
       1 => 'waterspouts',
     ),
-    1305 => 
+    1327 => 
     array (
       0 => 'weatherforecast',
       1 => 'weatherforecasts',
     ),
-    1306 => 
+    1328 => 
     array (
       0 => 'weathervane',
       1 => 'weathervanes',
     ),
-    1307 => 
+    1329 => 
     array (
       0 => 'whirlwind',
       1 => 'whirlwinds',
     ),
-    1308 => 
+    1330 => 
     array (
       0 => 'whiteout',
       1 => 'whiteouts',
     ),
-    1309 => 
+    1331 => 
     array (
       0 => 'wind',
       1 => 'winds',
       2 => 'winding',
-      3 => 'winded',
+      3 => 'windings',
+      4 => 'winded',
     ),
-    1310 => 
+    1332 => 
     array (
       0 => 'anvilcloud',
       1 => 'anvilclouds',
     ),
-    1311 => 
+    1333 => 
     array (
       0 => 'bora',
       1 => 'boras',
     ),
-    1312 => 
+    1334 => 
     array (
       0 => 'chinook',
       1 => 'chinooks',
     ),
-    1313 => 
+    1335 => 
     array (
       0 => 'contrail',
       1 => 'contrails',
     ),
-    1314 => 
+    1336 => 
     array (
       0 => 'derecho',
       1 => 'derechos',
     ),
-    1315 => 
+    1337 => 
     array (
       0 => 'downburst',
       1 => 'downbursts',
     ),
-    1316 => 
+    1338 => 
     array (
       0 => 'downdraft',
       1 => 'downdraught',
       2 => 'downdrafts',
       3 => 'downdraughts',
     ),
-    1317 => 
+    1339 => 
     array (
       0 => 'dustdevil',
       1 => 'dustdevils',
     ),
-    1318 => 
+    1340 => 
     array (
       0 => 'easterlies',
       1 => 'easterly',
     ),
-    1319 => 
+    1341 => 
     array (
       0 => 'eyewall',
       1 => 'eyewalls',
     ),
-    1320 => 
+    1342 => 
     array (
       0 => 'foehn',
       1 => 'fohn',
     ),
-    1321 => 
+    1343 => 
     array (
       0 => 'fogbank',
       1 => 'fogbanks',
     ),
-    1322 => 
+    1344 => 
     array (
       0 => 'fogbow',
       1 => 'fogbows',
     ),
-    1323 => 
+    1345 => 
+    array (
+      0 => 'haar',
+      1 => 'haars',
+    ),
+    1346 => 
     array (
       0 => 'haboob',
       1 => 'haboobs',
     ),
-    1324 => 
+    1347 => 
     array (
       0 => 'icestorm',
       1 => 'icestorms',
     ),
-    1325 => 
+    1348 => 
     array (
       0 => 'inversion',
       1 => 'inversions',
     ),
-    1326 => 
+    1349 => 
     array (
       0 => 'isohyet',
       1 => 'isohyets',
     ),
-    1327 => 
+    1350 => 
     array (
       0 => 'lapserate',
       1 => 'lapserates',
     ),
-    1328 => 
+    1351 => 
     array (
       0 => 'mackerelsky',
       1 => 'mackerelskies',
     ),
-    1329 => 
+    1352 => 
     array (
       0 => 'mesocyclone',
       1 => 'mesocyclones',
     ),
-    1330 => 
+    1353 => 
     array (
       0 => 'microburst',
       1 => 'microbursts',
     ),
-    1331 => 
+    1354 => 
     array (
       0 => 'mistral',
       1 => 'mistrals',
     ),
-    1332 => 
+    1355 => 
     array (
       0 => 'moonbow',
       1 => 'moonbows',
     ),
-    1333 => 
+    1356 => 
     array (
       0 => 'noreaster',
       1 => 'noreasters',
     ),
-    1334 => 
+    1357 => 
     array (
       0 => 'occludedfront',
       1 => 'occludedfronts',
     ),
-    1335 => 
+    1358 => 
     array (
       0 => 'occlusion',
       1 => 'occlusions',
     ),
-    1336 => 
+    1359 => 
     array (
       0 => 'peasouper',
       1 => 'peasoupers',
     ),
-    1337 => 
+    1360 => 
     array (
       0 => 'polarvortex',
       1 => 'polarvortices',
     ),
-    1338 => 
+    1361 => 
     array (
       0 => 'rime',
-      1 => 'rimed',
-      2 => 'riming',
-      3 => 'rimes',
+      1 => 'rimes',
     ),
-    1339 => 
+    1362 => 
     array (
       0 => 'shelfcloud',
       1 => 'shelfclouds',
     ),
-    1340 => 
+    1363 => 
     array (
       0 => 'sirocco',
       1 => 'siroccos',
     ),
-    1341 => 
+    1364 => 
     array (
       0 => 'sundog',
       1 => 'sundogs',
     ),
-    1342 => 
+    1365 => 
     array (
       0 => 'supercell',
       1 => 'supercells',
     ),
-    1343 => 
+    1366 => 
     array (
       0 => 'synopticchart',
       1 => 'synopticcharts',
     ),
-    1344 => 
+    1367 => 
     array (
       0 => 'temperatureinversion',
       1 => 'temperatureinversions',
     ),
-    1345 => 
+    1368 => 
     array (
       0 => 'thunderhead',
       1 => 'thunderheads',
     ),
-    1346 => 
+    1369 => 
     array (
       0 => 'tropicalcyclone',
       1 => 'tropicalcyclones',
     ),
-    1347 => 
+    1370 => 
     array (
       0 => 'wallcloud',
       1 => 'wallclouds',
     ),
-    1348 => 
+    1371 => 
     array (
       0 => 'weatherballoon',
       1 => 'weatherballoons',
     ),
-    1349 => 
+    1372 => 
     array (
       0 => 'westerlies',
       1 => 'westerly',
     ),
-    1350 => 
+    1373 => 
     array (
       0 => 'zephyr',
       1 => 'zephyrs',
@@ -15479,1294 +15469,1259 @@ return array (
     4 => 'anaerobic',
     5 => 'anther',
     6 => 'anthers',
-    7 => 'antigens',
-    8 => 'autotroph',
-    9 => 'biomass',
-    10 => 'biome',
-    11 => 'biomes',
-    12 => 'biotic',
-    13 => 'carpel',
-    14 => 'carpels',
-    15 => 'codon',
-    16 => 'codons',
-    17 => 'decomposer',
-    18 => 'decomposers',
-    19 => 'diploid',
-    20 => 'dna',
-    21 => 'excretion',
-    22 => 'funguses',
-    23 => 'gamete',
-    24 => 'gametes',
-    25 => 'genotype',
-    26 => 'genotypes',
-    27 => 'germination',
-    28 => 'germinates',
-    29 => 'glycogen',
-    30 => 'haploid',
-    31 => 'heterotroph',
-    32 => 'heterotrophs',
-    33 => 'heterozygous',
-    34 => 'homeostasis',
-    35 => 'homozygous',
-    36 => 'larynges',
-    37 => 'lipid',
-    38 => 'lipids',
-    39 => 'lymphocyte',
-    40 => 'lymphocytes',
-    41 => 'meiosis',
-    42 => 'microorganism',
-    43 => 'mitosis',
-    44 => 'mutualism',
-    45 => 'neurone',
-    46 => 'neurotransmitter',
-    47 => 'nucleotide',
-    48 => 'nucleotides',
-    49 => 'oesophagi',
-    50 => 'esophagi',
-    51 => 'oesophaguses',
-    52 => 'esophaguses',
-    53 => 'ovule',
-    54 => 'ovules',
-    55 => 'ova',
-    56 => 'pancreases',
-    57 => 'parasitism',
-    58 => 'phagocyte',
-    59 => 'phagocytes',
-    60 => 'pharynges',
-    61 => 'phenotype',
-    62 => 'phenotypes',
-    63 => 'phloem',
-    64 => 'phylum',
-    65 => 'phyla',
-    66 => 'pistil',
-    67 => 'pistils',
-    68 => 'placentae',
-    69 => 'protist',
-    70 => 'protists',
-    71 => 'sepal',
-    72 => 'sepals',
-    73 => 'speciation',
-    74 => 'stamen',
-    75 => 'stamens',
-    76 => 'stoma',
-    77 => 'stomata',
-    78 => 'thymi',
-    79 => 'tracheae',
-    80 => 'transpiration',
-    81 => 'uteri',
-    82 => 'xylem',
-    83 => 'zygote',
-    84 => 'zygotes',
-    85 => 'apoptosis',
-    86 => 'clade',
-    87 => 'clades',
-    88 => 'cladistics',
-    89 => 'codominance',
-    90 => 'commensalism',
-    91 => 'cytokinesis',
-    92 => 'detritivore',
-    93 => 'detritivores',
-    94 => 'duodena',
-    95 => 'epigenetics',
-    96 => 'erythrocyte',
-    97 => 'erythrocytes',
-    98 => 'exon',
-    99 => 'exons',
-    100 => 'homologous',
-    101 => 'intron',
-    102 => 'introns',
-    103 => 'karyotype',
-    104 => 'karyotypes',
-    105 => 'leucocyte',
-    106 => 'leukocyte',
-    107 => 'leucocytes',
-    108 => 'leukocytes',
-    109 => 'ligase',
-    110 => 'ligases',
-    111 => 'nephron',
-    112 => 'nephrons',
-    113 => 'operon',
-    114 => 'operons',
-    115 => 'phylogeny',
-    116 => 'phylogenies',
-    117 => 'polymerase',
-    118 => 'polymerases',
-    119 => 'recombination',
-    120 => 'rna',
-    121 => 'transposon',
-    122 => 'transposons',
-    123 => 'villus',
-    124 => 'villi',
-    125 => 'agronomy',
-    126 => 'astrobiology',
-    127 => 'astronautics',
-    128 => 'biomechanics',
-    129 => 'crystallography',
-    130 => 'cytology',
-    131 => 'electrochemistry',
-    132 => 'embryology',
-    133 => 'ethology',
-    134 => 'gemmology',
-    135 => 'gemology',
-    136 => 'genomics',
-    137 => 'geochemistry',
-    138 => 'hematology',
-    139 => 'herpetology',
-    140 => 'histology',
-    141 => 'ichthyology',
-    142 => 'kinematics',
-    143 => 'limnology',
-    144 => 'neurobiology',
-    145 => 'parasitology',
-    146 => 'petrology',
-    147 => 'primatology',
-    148 => 'spectroscopy',
-    149 => 'speleology',
-    150 => 'taxonomy',
-    151 => 'vulcanology',
-    152 => 'arachnology',
-    153 => 'astrochemistry',
-    154 => 'astrometry',
-    155 => 'bioengineering',
-    156 => 'biogeography',
-    157 => 'bioinformatics',
-    158 => 'biomedicine',
-    159 => 'bryology',
-    160 => 'chronobiology',
-    161 => 'cryobiology',
-    162 => 'dendrology',
-    163 => 'ergonomics',
-    164 => 'exobiology',
-    165 => 'geodesy',
-    166 => 'geomorphology',
-    167 => 'hydrodynamics',
-    168 => 'kinesiology',
-    169 => 'lepidopterology',
-    170 => 'malacology',
-    171 => 'mammalogy',
-    172 => 'meteoritics',
-    173 => 'metrology',
-    174 => 'nanoscience',
-    175 => 'neurochemistry',
-    176 => 'nucleonics',
-    177 => 'oceanology',
-    178 => 'palaeobotany',
-    179 => 'paleobotany',
-    180 => 'palynology',
-    181 => 'pedology',
-    182 => 'photochemistry',
-    183 => 'phycology',
-    184 => 'phylogenetics',
-    185 => 'planetology',
-    186 => 'proteomics',
-    187 => 'radiochemistry',
-    188 => 'rocketry',
-    189 => 'sedimentology',
-    190 => 'selenology',
-    191 => 'sociobiology',
-    192 => 'statics',
-    193 => 'stratigraphy',
-    194 => 'systematics',
-    195 => 'thermochemistry',
-    196 => 'axon',
-    197 => 'axons',
-    198 => 'centriole',
-    199 => 'centrioles',
-    200 => 'centromere',
-    201 => 'centromeres',
-    202 => 'centrosome',
-    203 => 'centrosomes',
-    204 => 'chloroplast',
-    205 => 'chloroplasts',
-    206 => 'chromatid',
-    207 => 'chromatids',
-    208 => 'chromatin',
-    209 => 'cilium',
-    210 => 'cilia',
-    211 => 'cortices',
-    212 => 'crista',
-    213 => 'cristae',
-    214 => 'cytoplasm',
-    215 => 'cytoplasms',
-    216 => 'cytoskeleton',
-    217 => 'cytoskeletons',
-    218 => 'cytosol',
-    219 => 'dendrite',
-    220 => 'dendrites',
-    221 => 'flagellum',
-    222 => 'flagella',
-    223 => 'golgi',
-    224 => 'granum',
-    225 => 'grana',
-    226 => 'lysosome',
-    227 => 'lysosomes',
-    228 => 'microfilament',
-    229 => 'microfilaments',
-    230 => 'microtubule',
-    231 => 'microtubules',
-    232 => 'microvillus',
-    233 => 'microvilli',
-    234 => 'mitochondrion',
-    235 => 'myelin',
-    236 => 'nucleoid',
-    237 => 'nucleoids',
-    238 => 'nucleolus',
-    239 => 'nucleoli',
-    240 => 'organelle',
-    241 => 'organelles',
-    242 => 'peroxisome',
-    243 => 'peroxisomes',
-    244 => 'pilus',
-    245 => 'plasmid',
-    246 => 'plasmids',
-    247 => 'plasmodesma',
-    248 => 'plasmodesmata',
-    249 => 'plastid',
-    250 => 'plastids',
-    251 => 'pseudopod',
-    252 => 'pseudopods',
-    253 => 'pseudopodium',
-    254 => 'pseudopodia',
-    255 => 'reticulum',
-    256 => 'reticula',
-    257 => 'ribosome',
-    258 => 'ribosomes',
-    259 => 'somata',
-    260 => 'somas',
-    261 => 'stroma',
-    262 => 'thylakoid',
-    263 => 'thylakoids',
-    264 => 'vacuole',
-    265 => 'vacuoles',
-    266 => 'vesicle',
-    267 => 'vesicles',
-    268 => 'acrosome',
-    269 => 'acrosomes',
-    270 => 'amyloplast',
-    271 => 'amyloplasts',
-    272 => 'chromoplast',
-    273 => 'chromoplasts',
-    274 => 'cisterna',
-    275 => 'cisternae',
-    276 => 'desmosome',
-    277 => 'desmosomes',
-    278 => 'dictyosome',
-    279 => 'dictyosomes',
-    280 => 'endosome',
-    281 => 'endosomes',
-    282 => 'eyespot',
-    283 => 'eyespots',
-    284 => 'fimbria',
-    285 => 'fimbriae',
-    286 => 'glycocalyx',
-    287 => 'glyoxysome',
-    288 => 'glyoxysomes',
-    289 => 'histone',
-    290 => 'histones',
-    291 => 'kinetochore',
-    292 => 'kinetochores',
-    293 => 'lamella',
-    294 => 'lamellae',
-    295 => 'leucoplast',
-    296 => 'leucoplasts',
-    297 => 'lumina',
-    298 => 'mesosome',
-    299 => 'mesosomes',
-    300 => 'myosin',
-    301 => 'nucleoplasm',
-    302 => 'nucleosome',
-    303 => 'nucleosomes',
-    304 => 'pellicle',
-    305 => 'pellicles',
-    306 => 'phagosome',
-    307 => 'phagosomes',
-    308 => 'plasmalemma',
-    309 => 'plasmalemmas',
-    310 => 'polysome',
-    311 => 'polysomes',
-    312 => 'proteasome',
-    313 => 'proteasomes',
-    314 => 'pyrenoid',
-    315 => 'pyrenoids',
-    316 => 'sarcomere',
-    317 => 'sarcomeres',
-    318 => 'tonoplast',
-    319 => 'tonoplasts',
-    320 => 'tubulin',
-    321 => 'acetates',
-    322 => 'aldehyde',
-    323 => 'aldehydes',
-    324 => 'alkalis',
-    325 => 'alkalies',
-    326 => 'alkalinity',
-    327 => 'alkane',
-    328 => 'alkanes',
-    329 => 'alkene',
-    330 => 'alkenes',
-    331 => 'alkyne',
-    332 => 'alkynes',
-    333 => 'allotrope',
-    334 => 'allotropes',
-    335 => 'amine',
-    336 => 'amines',
-    337 => 'anhydrous',
-    338 => 'anion',
-    339 => 'anions',
-    340 => 'anode',
-    341 => 'anodes',
-    342 => 'aqueous',
-    343 => 'carbonates',
-    344 => 'catalysis',
-    345 => 'cathodes',
-    346 => 'cation',
-    347 => 'cations',
-    348 => 'chlorides',
-    349 => 'colloid',
-    350 => 'colloids',
-    351 => 'covalent',
-    352 => 'diatomic',
-    353 => 'ductile',
-    354 => 'effervescence',
-    355 => 'electrolysis',
-    356 => 'electronegativity',
-    357 => 'electroplating',
-    358 => 'emulsions',
-    359 => 'endothermic',
-    360 => 'enthalpy',
-    361 => 'equilibria',
-    362 => 'esters',
-    363 => 'ethane',
-    364 => 'ethene',
-    365 => 'ethers',
-    366 => 'exothermic',
-    367 => 'glycols',
-    368 => 'halide',
-    369 => 'halides',
-    370 => 'halogen',
-    371 => 'halogens',
-    372 => 'hydrocarbon',
-    373 => 'hydrolysis',
-    374 => 'hydrophilic',
-    375 => 'hydrophobic',
-    376 => 'hydroxides',
-    377 => 'insoluble',
-    378 => 'iodide',
-    379 => 'iodides',
-    380 => 'ionisation',
-    381 => 'ionization',
-    382 => 'isomer',
-    383 => 'isomers',
-    384 => 'isomerism',
-    385 => 'ketone',
-    386 => 'ketones',
-    387 => 'lattices',
-    388 => 'metalloid',
-    389 => 'metalloids',
-    390 => 'molarity',
-    391 => 'monomer',
-    392 => 'monomers',
-    393 => 'neutralisation',
-    394 => 'neutralization',
-    395 => 'nitrite',
-    396 => 'nitrites',
-    397 => 'nonmetal',
-    398 => 'nonmetals',
-    399 => 'octet',
-    400 => 'octets',
-    401 => 'oxidise',
-    402 => 'oxidize',
-    403 => 'oxidises',
-    404 => 'oxidizes',
-    405 => 'oxidised',
-    406 => 'oxidized',
-    407 => 'phenol',
-    408 => 'phenols',
-    409 => 'polymerisation',
-    410 => 'polymerization',
-    411 => 'reactant',
-    412 => 'reactants',
-    413 => 'reactivity',
-    414 => 'reagents',
-    415 => 'redox',
-    416 => 'silicate',
-    417 => 'silicates',
-    418 => 'solubility',
-    419 => 'solute',
-    420 => 'solutes',
-    421 => 'stoichiometry',
-    422 => 'sublimation',
-    423 => 'substrate',
-    424 => 'substrates',
-    425 => 'sulphates',
-    426 => 'sulfates',
-    427 => 'sulphide',
-    428 => 'sulphides',
-    429 => 'sulfides',
-    430 => 'titration',
-    431 => 'unsaturated',
-    432 => 'valency',
-    433 => 'valence',
-    434 => 'valencies',
-    435 => 'valences',
-    436 => 'amide',
-    437 => 'amides',
-    438 => 'amphoteric',
-    439 => 'anhydride',
-    440 => 'anhydrides',
-    441 => 'carbonyl',
-    442 => 'carbonyls',
-    443 => 'carboxyl',
-    444 => 'carboxyls',
-    445 => 'chelate',
-    446 => 'chelates',
-    447 => 'chirality',
-    448 => 'chlorate',
-    449 => 'chlorates',
-    450 => 'distillate',
-    451 => 'distillates',
-    452 => 'electrophile',
-    453 => 'electrophiles',
-    454 => 'emulsifier',
-    455 => 'emulsifiers',
-    456 => 'enantiomer',
-    457 => 'enantiomers',
-    458 => 'esterification',
-    459 => 'glycerol',
-    460 => 'hydride',
-    461 => 'hydrides',
-    462 => 'hydrogenation',
-    463 => 'hydroxyl',
-    464 => 'hydroxyls',
-    465 => 'ligand',
-    466 => 'ligands',
-    467 => 'nitride',
-    468 => 'nitrides',
-    469 => 'nucleophile',
-    470 => 'nucleophiles',
-    471 => 'oxidant',
-    472 => 'oxidants',
-    473 => 'permanganate',
-    474 => 'permanganates',
-    475 => 'reductant',
-    476 => 'reductants',
-    477 => 'sulphite',
-    478 => 'sulfite',
-    479 => 'sulphites',
-    480 => 'sulfites',
-    481 => 'titre',
-    482 => 'titer',
-    483 => 'titres',
-    484 => 'titers',
-    485 => 'aquifers',
-    486 => 'cambrian',
-    487 => 'catchment',
-    488 => 'catchments',
-    489 => 'cretaceous',
-    490 => 'aeons',
-    491 => 'epicentres',
-    492 => 'epicenters',
-    493 => 'fiord',
-    494 => 'fiords',
-    495 => 'glaciation',
-    496 => 'glaciations',
-    497 => 'igneous',
-    498 => 'interglacial',
-    499 => 'interglacials',
-    500 => 'jurassic',
-    501 => 'lithosphere',
-    502 => 'magmas',
-    503 => 'metamorphic',
-    504 => 'precambrian',
-    505 => 'salinity',
-    506 => 'seismograph',
-    507 => 'seismographs',
-    508 => 'triassic',
-    509 => 'anthropocene',
-    510 => 'anticline',
-    511 => 'anticlines',
-    512 => 'asthenosphere',
-    513 => 'carboniferous',
-    514 => 'cenozoic',
-    515 => 'devonian',
-    516 => 'fumarole',
-    517 => 'fumaroles',
-    518 => 'geomagnetic',
-    519 => 'gondwana',
-    520 => 'gondwanaland',
-    521 => 'holocene',
-    522 => 'lahar',
-    523 => 'lahars',
-    524 => 'loess',
-    525 => 'mesozoic',
-    526 => 'ordovician',
-    527 => 'orogeny',
-    528 => 'orogenies',
-    529 => 'palaeozoic',
-    530 => 'paleozoic',
-    531 => 'pangaea',
-    532 => 'pangea',
-    533 => 'permian',
-    534 => 'pleistocene',
-    535 => 'quaternary',
-    536 => 'seamount',
-    537 => 'seamounts',
-    538 => 'silurian',
-    539 => 'subsoil',
-    540 => 'syncline',
-    541 => 'synclines',
-    542 => 'talus',
-    543 => 'tephra',
-    544 => 'unconformity',
-    545 => 'unconformities',
-    546 => 'astatine',
-    547 => 'berkelium',
-    548 => 'bohrium',
-    549 => 'bromine',
-    550 => 'copernicium',
-    551 => 'darmstadtium',
-    552 => 'dubnium',
-    553 => 'dysprosium',
-    554 => 'erbium',
-    555 => 'fermium',
-    556 => 'flerovium',
-    557 => 'hassium',
-    558 => 'holmium',
-    559 => 'lawrencium',
-    560 => 'livermorium',
-    561 => 'lutetium',
-    562 => 'meitnerium',
-    563 => 'mendelevium',
-    564 => 'moscovium',
-    565 => 'nihonium',
-    566 => 'oganesson',
-    567 => 'praseodymium',
-    568 => 'promethium',
-    569 => 'protactinium',
-    570 => 'roentgenium',
-    571 => 'rutherfordium',
-    572 => 'samarium',
-    573 => 'seaborgium',
-    574 => 'technetium',
-    575 => 'tellurium',
-    576 => 'tennessine',
-    577 => 'terbium',
-    578 => 'thulium',
-    579 => 'ytterbium',
-    580 => 'argentum',
-    581 => 'aurum',
-    582 => 'azote',
-    583 => 'cuprum',
-    584 => 'ferrum',
-    585 => 'hydrargyrum',
-    586 => 'kalium',
-    587 => 'natrium',
-    588 => 'plumbum',
-    589 => 'stannum',
-    590 => 'stibium',
-    591 => 'tritium',
-    592 => 'alembic',
-    593 => 'alembics',
-    594 => 'ammeter',
-    595 => 'ammeters',
-    596 => 'anemometer',
-    597 => 'anemometers',
-    598 => 'autoclave',
-    599 => 'autoclaves',
-    600 => 'bioreactor',
-    601 => 'bioreactors',
-    602 => 'bunsen',
-    603 => 'bunsens',
-    604 => 'burette',
-    605 => 'buret',
-    606 => 'burettes',
-    607 => 'burets',
-    608 => 'calliper',
-    609 => 'caliper',
-    610 => 'calipers',
-    611 => 'calorimeter',
-    612 => 'calorimeters',
-    613 => 'colorimeter',
-    614 => 'colorimeters',
-    615 => 'coverslip',
-    616 => 'coverslips',
-    617 => 'cuvette',
-    618 => 'cuvettes',
-    619 => 'desiccator',
-    620 => 'desiccators',
-    621 => 'dosimeter',
-    622 => 'dosimeters',
-    623 => 'droppers',
-    624 => 'dynamometer',
-    625 => 'dynamometers',
-    626 => 'electroscope',
-    627 => 'electroscopes',
-    628 => 'eyewash',
-    629 => 'eyewashes',
-    630 => 'fermenter',
-    631 => 'fermenters',
-    632 => 'galvanometer',
-    633 => 'galvanometers',
-    634 => 'gauzes',
-    635 => 'hydrometer',
-    636 => 'hydrometers',
-    637 => 'hygrometer',
-    638 => 'hygrometers',
-    639 => 'joulemeter',
-    640 => 'joulemeters',
-    641 => 'loupe',
-    642 => 'loupes',
-    643 => 'magnifier',
-    644 => 'magnifiers',
-    645 => 'manometer',
-    646 => 'manometers',
-    647 => 'micropipette',
-    648 => 'micropipettes',
-    649 => 'microtome',
-    650 => 'microtomes',
-    651 => 'ohmmeter',
-    652 => 'ohmmeters',
-    653 => 'oscilloscope',
-    654 => 'oscilloscopes',
-    655 => 'pipette',
-    656 => 'pipet',
-    657 => 'pipettes',
-    658 => 'pipets',
-    659 => 'pooter',
-    660 => 'pooters',
-    661 => 'potentiometer',
-    662 => 'potentiometers',
-    663 => 'potometer',
-    664 => 'potometers',
-    665 => 'quadrat',
-    666 => 'quadrats',
-    667 => 'respirometer',
-    668 => 'respirometers',
-    669 => 'rheostat',
-    670 => 'rheostats',
-    671 => 'seismometer',
-    672 => 'seismometers',
-    673 => 'spectrophotometer',
-    674 => 'spectrophotometers',
-    675 => 'spectroscope',
-    676 => 'spectroscopes',
-    677 => 'spirometer',
-    678 => 'spirometers',
-    679 => 'stirrer',
-    680 => 'stirrers',
-    681 => 'stopclock',
-    682 => 'stopclocks',
-    683 => 'stopwatches',
-    684 => 'thermocouple',
-    685 => 'thermocouples',
-    686 => 'voltmeter',
-    687 => 'voltmeters',
-    688 => 'cryostat',
-    689 => 'cryostats',
-    690 => 'cyclotron',
-    691 => 'cyclotrons',
-    692 => 'eudiometer',
-    693 => 'eudiometers',
-    694 => 'evaporator',
-    695 => 'evaporators',
-    696 => 'forcemeter',
-    697 => 'forcemeters',
-    698 => 'geiger',
-    699 => 'geigers',
-    700 => 'glovebox',
-    701 => 'gloveboxes',
-    702 => 'haemocytometer',
-    703 => 'hemocytometer',
-    704 => 'haemocytometers',
-    705 => 'hemocytometers',
-    706 => 'interferometer',
-    707 => 'interferometers',
-    708 => 'photometer',
-    709 => 'photometers',
-    710 => 'polarimeter',
-    711 => 'polarimeters',
-    712 => 'pycnometer',
-    713 => 'pycnometers',
-    714 => 'pyrometer',
-    715 => 'pyrometers',
-    716 => 'refractometer',
-    717 => 'refractometers',
-    718 => 'sequencers',
-    719 => 'sonicator',
-    720 => 'sonicators',
-    721 => 'sonometer',
-    722 => 'sonometers',
-    723 => 'synchrotron',
-    724 => 'synchrotrons',
-    725 => 'thermocycler',
-    726 => 'thermocyclers',
-    727 => 'ultracentrifuge',
-    728 => 'ultracentrifuges',
-    729 => 'vernier',
-    730 => 'verniers',
-    731 => 'viscometer',
-    732 => 'viscometers',
-    733 => 'antineutrino',
-    734 => 'antineutrinos',
-    735 => 'antineutron',
-    736 => 'antineutrons',
-    737 => 'antiparticle',
-    738 => 'antiparticles',
-    739 => 'antiproton',
-    740 => 'antiprotons',
-    741 => 'antiquark',
-    742 => 'antiquarks',
-    743 => 'axion',
-    744 => 'axions',
-    745 => 'baryon',
-    746 => 'baryons',
-    747 => 'deuteron',
-    748 => 'deuterons',
-    749 => 'fermion',
-    750 => 'fermions',
-    751 => 'gluon',
-    752 => 'gluons',
-    753 => 'hadrons',
-    754 => 'kaon',
-    755 => 'kaons',
-    756 => 'lepton',
-    757 => 'leptons',
-    758 => 'meson',
-    759 => 'mesons',
-    760 => 'muon',
-    761 => 'muons',
-    762 => 'nucleon',
-    763 => 'nucleons',
-    764 => 'pion',
-    765 => 'pions',
-    766 => 'positron',
-    767 => 'positrons',
-    768 => 'tauon',
-    769 => 'tauons',
-    770 => 'antielectron',
-    771 => 'antielectrons',
-    772 => 'antimuon',
-    773 => 'antimuons',
-    774 => 'anyon',
-    775 => 'anyons',
-    776 => 'diquark',
-    777 => 'diquarks',
-    778 => 'etas',
-    779 => 'exciton',
-    780 => 'excitons',
-    781 => 'glueball',
-    782 => 'glueballs',
-    783 => 'gluino',
-    784 => 'gluinos',
-    785 => 'gravitino',
-    786 => 'gravitinos',
-    787 => 'hyperon',
-    788 => 'hyperons',
-    789 => 'lambdas',
-    790 => 'magnon',
-    791 => 'magnons',
-    792 => 'monopole',
-    793 => 'monopoles',
-    794 => 'neutralino',
-    795 => 'neutralinos',
-    796 => 'partons',
-    797 => 'pentaquark',
-    798 => 'pentaquarks',
-    799 => 'phonon',
-    800 => 'phonons',
-    801 => 'photino',
-    802 => 'photinos',
-    803 => 'plasmon',
-    804 => 'plasmons',
-    805 => 'pomeron',
-    806 => 'pomerons',
-    807 => 'preon',
-    808 => 'preons',
-    809 => 'quasiparticle',
-    810 => 'quasiparticles',
-    811 => 'rhos',
-    812 => 'selectron',
-    813 => 'selectrons',
-    814 => 'sigmas',
-    815 => 'sneutrino',
-    816 => 'sneutrinos',
-    817 => 'sparticle',
-    818 => 'sparticles',
-    819 => 'squark',
-    820 => 'squarks',
-    821 => 'tetraquark',
-    822 => 'tetraquarks',
-    823 => 'upsilon',
-    824 => 'upsilons',
-    825 => 'accelerations',
-    826 => 'amplitudes',
-    827 => 'antinode',
-    828 => 'antinodes',
-    829 => 'capacitance',
-    830 => 'centripetal',
-    831 => 'conductance',
-    832 => 'conduction',
-    833 => 'conductivity',
-    834 => 'diffraction',
-    835 => 'diode',
-    836 => 'diodes',
-    837 => 'electromagnets',
-    838 => 'electrostatics',
-    839 => 'fluorescence',
-    840 => 'inductance',
-    841 => 'inductor',
-    842 => 'inductors',
-    843 => 'insulator',
-    844 => 'insulators',
-    845 => 'luminosity',
-    846 => 'momenta',
-    847 => 'oscillations',
-    848 => 'polarisation',
-    849 => 'polarization',
-    850 => 'quanta',
-    851 => 'rarefaction',
-    852 => 'rarefactions',
-    853 => 'redshift',
-    854 => 'resistivity',
-    855 => 'resistor',
-    856 => 'resistors',
-    857 => 'semiconductor',
-    858 => 'semiconductors',
-    859 => 'shockwave',
-    860 => 'shockwaves',
-    861 => 'solenoid',
-    862 => 'solenoids',
-    863 => 'spacetime',
-    864 => 'superconductor',
-    865 => 'superconductors',
-    866 => 'superposition',
-    867 => 'upthrust',
-    868 => 'vacua',
-    869 => 'blueshift',
-    870 => 'hysteresis',
-    871 => 'opacity',
-    872 => 'phosphorescence',
-    873 => 'photoelectric',
-    874 => 'piezoelectric',
-    875 => 'wavefront',
-    876 => 'wavefronts',
-    877 => 'azurite',
-    878 => 'basalts',
-    879 => 'beryls',
-    880 => 'corundum',
-    881 => 'felspar',
-    882 => 'felspars',
-    883 => 'hematite',
-    884 => 'hornblende',
-    885 => 'kaolinite',
-    886 => 'limestones',
-    887 => 'loadstone',
-    888 => 'loadstones',
-    889 => 'micas',
-    890 => 'moonstones',
-    891 => 'sandstones',
-    892 => 'topazes',
-    893 => 'actinolite',
-    894 => 'albite',
-    895 => 'amazonite',
-    896 => 'amphibole',
-    897 => 'amphiboles',
-    898 => 'amphibolite',
-    899 => 'andalusite',
-    900 => 'anhydrite',
-    901 => 'apatite',
-    902 => 'aragonite',
-    903 => 'arkose',
-    904 => 'augite',
-    905 => 'aventurine',
-    906 => 'barite',
-    907 => 'baryte',
-    908 => 'biotite',
-    909 => 'bornite',
-    910 => 'cassiterite',
-    911 => 'celestine',
-    912 => 'celestite',
-    913 => 'chalcopyrite',
-    914 => 'chlorite',
-    915 => 'chromite',
-    916 => 'chrysoberyl',
-    917 => 'chrysoprase',
-    918 => 'coquina',
-    919 => 'cryolite',
-    920 => 'cuprite',
-    921 => 'dacite',
-    922 => 'diatomite',
-    923 => 'diorite',
-    924 => 'dunite',
-    925 => 'eclogite',
-    926 => 'epidote',
-    927 => 'evaporite',
-    928 => 'evaporites',
-    929 => 'goethite',
-    930 => 'greenstone',
-    931 => 'greywacke',
-    932 => 'graywacke',
-    933 => 'hornfels',
-    934 => 'ignimbrite',
-    935 => 'ilmenite',
-    936 => 'iolite',
-    937 => 'kimberlite',
-    938 => 'komatiite',
-    939 => 'kunzite',
-    940 => 'kyanite',
-    941 => 'lazurite',
-    942 => 'lepidolite',
-    943 => 'leucite',
-    944 => 'limonite',
-    945 => 'marl',
-    946 => 'migmatite',
-    947 => 'molybdenite',
-    948 => 'montmorillonite',
-    949 => 'muscovite',
-    950 => 'natron',
-    951 => 'nepheline',
-    952 => 'nephrite',
-    953 => 'oolite',
-    954 => 'orpiment',
-    955 => 'orthoclase',
-    956 => 'pegmatite',
-    957 => 'peridotite',
-    958 => 'phonolite',
-    959 => 'phyllite',
-    960 => 'plagioclase',
-    961 => 'porphyry',
-    962 => 'porphyries',
-    963 => 'pyroxene',
-    964 => 'pyroxenes',
-    965 => 'realgar',
-    966 => 'rhodochrosite',
-    967 => 'rhodonite',
-    968 => 'rutile',
-    969 => 'scheelite',
-    970 => 'scoria',
-    971 => 'serpentinite',
-    972 => 'siderite',
-    973 => 'sillimanite',
-    974 => 'spessartine',
-    975 => 'sphalerite',
-    976 => 'spodumene',
-    977 => 'staurolite',
-    978 => 'stibnite',
-    979 => 'syenite',
-    980 => 'sylvite',
-    981 => 'trachyte',
-    982 => 'tremolite',
-    983 => 'tufa',
-    984 => 'uraninite',
-    985 => 'vermiculite',
-    986 => 'wolframite',
-    987 => 'wollastonite',
-    988 => 'zeolite',
-    989 => 'zeolites',
-    990 => 'aurorae',
-    991 => 'binaries',
-    992 => 'blazar',
-    993 => 'blazars',
-    994 => 'chromosphere',
-    995 => 'chromospheres',
-    996 => 'coronae',
-    997 => 'exoplanet',
-    998 => 'exoplanets',
-    999 => 'jupiter',
-    1000 => 'magnetar',
-    1001 => 'magnetars',
-    1002 => 'magnetospheres',
-    1003 => 'meteoroid',
-    1004 => 'meteoroids',
-    1005 => 'neptune',
-    1006 => 'novae',
-    1007 => 'photosphere',
-    1008 => 'photospheres',
-    1009 => 'planetoids',
-    1010 => 'pluto',
-    1011 => 'protoplanet',
-    1012 => 'protoplanets',
-    1013 => 'protostar',
-    1014 => 'protostars',
-    1015 => 'saturn',
-    1016 => 'sunspot',
-    1017 => 'supercluster',
-    1018 => 'superclusters',
-    1019 => 'supergiant',
-    1020 => 'supergiants',
-    1021 => 'uranus',
-    1022 => 'venus',
-    1023 => 'asterism',
-    1024 => 'asterisms',
-    1025 => 'bolide',
-    1026 => 'bolides',
-    1027 => 'eris',
-    1028 => 'exomoon',
-    1029 => 'exomoons',
-    1030 => 'haumea',
-    1031 => 'heliosphere',
-    1032 => 'heliospheres',
-    1033 => 'hypergiant',
-    1034 => 'hypergiants',
-    1035 => 'hypernova',
-    1036 => 'hypernovae',
-    1037 => 'hypernovas',
-    1038 => 'kilonova',
-    1039 => 'kilonovae',
-    1040 => 'kilonovas',
-    1041 => 'makemake',
-    1042 => 'moonlet',
-    1043 => 'moonlets',
-    1044 => 'planetesimal',
-    1045 => 'planetesimals',
-    1046 => 'trojan',
-    1047 => 'trojans',
-    1048 => 'aliquot',
-    1049 => 'aliquots',
-    1050 => 'annealing',
-    1051 => 'assays',
-    1052 => 'autoclaving',
-    1053 => 'calorimetry',
-    1054 => 'centrifugation',
-    1055 => 'chromatography',
-    1056 => 'colorimetry',
-    1057 => 'crystallisation',
-    1058 => 'crystallization',
-    1059 => 'decanting',
-    1060 => 'decantation',
-    1061 => 'desiccation',
-    1062 => 'dilution',
-    1063 => 'dilutions',
-    1064 => 'distilling',
-    1065 => 'electrophoresis',
-    1066 => 'fractionation',
-    1067 => 'homogenisation',
-    1068 => 'homogenization',
-    1069 => 'irradiation',
-    1070 => 'lysis',
-    1071 => 'microscopy',
-    1072 => 'pasteurisation',
-    1073 => 'pasteurization',
-    1074 => 'pipetting',
-    1075 => 'recrystallisation',
-    1076 => 'recrystallization',
-    1077 => 'sedimentation',
-    1078 => 'spectrometry',
-    1079 => 'spectrophotometry',
-    1080 => 'titrations',
-    1081 => 'titrating',
-    1082 => 'tomography',
-    1083 => 'vivisection',
-    1084 => 'autoradiography',
-    1085 => 'cryopreservation',
-    1086 => 'cytometry',
-    1087 => 'electroporation',
-    1088 => 'elisa',
-    1089 => 'genotyping',
-    1090 => 'hybridisation',
-    1091 => 'hybridization',
-    1092 => 'immunoassay',
-    1093 => 'immunoassays',
-    1094 => 'ligation',
-    1095 => 'lyophilisation',
-    1096 => 'lyophilization',
-    1097 => 'microinjection',
-    1098 => 'mutagenesis',
-    1099 => 'pcr',
-    1100 => 'quantification',
-    1101 => 'randomisation',
-    1102 => 'randomization',
-    1103 => 'sonication',
-    1104 => 'standardisation',
-    1105 => 'standardization',
-    1106 => 'subculturing',
-    1107 => 'transduction',
-    1108 => 'transfection',
-    1109 => 'trituration',
-    1110 => 'vortexing',
-    1111 => 'centiliter',
-    1112 => 'centiliters',
-    1113 => 'deciliter',
-    1114 => 'deciliters',
-    1115 => 'dioptre',
-    1116 => 'diopter',
-    1117 => 'dioptres',
-    1118 => 'diopters',
-    1119 => 'electronvolt',
-    1120 => 'electronvolts',
-    1121 => 'gramme',
-    1122 => 'grammes',
-    1123 => 'hectopascal',
-    1124 => 'hectopascals',
-    1125 => 'henries',
-    1126 => 'kilonewton',
-    1127 => 'kilonewtons',
-    1128 => 'kilopascal',
-    1129 => 'kilopascals',
-    1130 => 'kilotonne',
-    1131 => 'kilotonnes',
-    1132 => 'megajoule',
-    1133 => 'megajoules',
-    1134 => 'megatonne',
-    1135 => 'megatonnes',
-    1136 => 'microlitre',
-    1137 => 'microliter',
-    1138 => 'microlitres',
-    1139 => 'microliters',
-    1140 => 'micrometre',
-    1141 => 'micrometres',
-    1142 => 'milliampere',
-    1143 => 'milliamp',
-    1144 => 'milliamperes',
-    1145 => 'milliamps',
-    1146 => 'milliliter',
-    1147 => 'millisievert',
-    1148 => 'millisieverts',
-    1149 => 'millivolt',
-    1150 => 'millivolts',
-    1151 => 'nanogram',
-    1152 => 'nanograms',
-    1153 => 'nanometer',
-    1154 => 'nanometers',
-    1155 => 'picometre',
-    1156 => 'picometer',
-    1157 => 'picometres',
-    1158 => 'picometers',
-    1159 => 'picosecond',
-    1160 => 'picoseconds',
-    1161 => 'roentgen',
-    1162 => 'roentgens',
-    1163 => 'siemens',
-    1164 => 'steradian',
-    1165 => 'steradians',
-    1166 => 'terawatt',
-    1167 => 'terawatts',
-    1168 => 'arcminute',
-    1169 => 'arcminutes',
-    1170 => 'arcsecond',
-    1171 => 'arcseconds',
-    1172 => 'attosecond',
-    1173 => 'attoseconds',
-    1174 => 'baud',
-    1175 => 'btu',
-    1176 => 'btus',
-    1177 => 'debye',
-    1178 => 'debyes',
-    1179 => 'femtometre',
-    1180 => 'femtometer',
-    1181 => 'femtometres',
-    1182 => 'femtometers',
-    1183 => 'femtosecond',
-    1184 => 'femtoseconds',
-    1185 => 'fermis',
-    1186 => 'gigaelectronvolt',
-    1187 => 'gigaelectronvolts',
-    1188 => 'jansky',
-    1189 => 'janskys',
-    1190 => 'katal',
-    1191 => 'katals',
-    1192 => 'kilobar',
-    1193 => 'kilobars',
-    1194 => 'kilohm',
-    1195 => 'kilohms',
-    1196 => 'kiloparsec',
-    1197 => 'kiloparsecs',
-    1198 => 'langleys',
-    1199 => 'maxwells',
-    1200 => 'megaparsec',
-    1201 => 'megaparsecs',
-    1202 => 'megohm',
-    1203 => 'megohms',
-    1204 => 'mho',
-    1205 => 'mhos',
-    1206 => 'microfarad',
-    1207 => 'microfarads',
-    1208 => 'micromole',
-    1209 => 'micromoles',
-    1210 => 'microsievert',
-    1211 => 'microsieverts',
-    1212 => 'millimole',
-    1213 => 'millimoles',
-    1214 => 'oersted',
-    1215 => 'oersteds',
-    1216 => 'picofarad',
-    1217 => 'picofarads',
-    1218 => 'rankine',
-    1219 => 'rutherford',
-    1220 => 'rutherfords',
-    1221 => 'altocumulus',
-    1222 => 'altostratus',
-    1223 => 'cirrocumulus',
-    1224 => 'cirrostratus',
-    1225 => 'cirrus',
-    1226 => 'cumulonimbus',
-    1227 => 'cumulonimbi',
-    1228 => 'cumulus',
-    1229 => 'cumuli',
-    1230 => 'exosphere',
-    1231 => 'isobar',
-    1232 => 'isobars',
-    1233 => 'isotherm',
-    1234 => 'isotherms',
-    1235 => 'mesosphere',
-    1236 => 'microclimate',
-    1237 => 'microclimates',
-    1238 => 'nimbostratus',
-    1239 => 'stratocumulus',
-    1240 => 'stratus',
-    1241 => 'thermosphere',
-    1242 => 'troposphere',
-    1243 => 'updraft',
-    1244 => 'updraught',
-    1245 => 'updrafts',
-    1246 => 'updraughts',
-    1247 => 'weathervane',
-    1248 => 'weathervanes',
-    1249 => 'adiabatic',
-    1250 => 'anabatic',
-    1251 => 'arcus',
-    1252 => 'contrail',
-    1253 => 'contrails',
-    1254 => 'derecho',
-    1255 => 'derechos',
-    1256 => 'downburst',
-    1257 => 'downbursts',
-    1258 => 'downdraft',
-    1259 => 'downdraught',
-    1260 => 'downdrafts',
-    1261 => 'downdraughts',
-    1262 => 'eyewall',
-    1263 => 'eyewalls',
-    1264 => 'foehn',
-    1265 => 'fohn',
-    1266 => 'fogbow',
-    1267 => 'fogbows',
-    1268 => 'graupel',
-    1269 => 'haboob',
-    1270 => 'haboobs',
-    1271 => 'harmattan',
-    1272 => 'isohyet',
-    1273 => 'isohyets',
-    1274 => 'katabatic',
-    1275 => 'khamsin',
-    1276 => 'lenticular',
-    1277 => 'mammatus',
-    1278 => 'mesocyclone',
-    1279 => 'mesocyclones',
-    1280 => 'microburst',
-    1281 => 'microbursts',
-    1282 => 'moonbow',
-    1283 => 'moonbows',
-    1284 => 'noctilucent',
-    1285 => 'occlusion',
-    1286 => 'occlusions',
-    1287 => 'orographic',
-    1288 => 'petrichor',
-    1289 => 'pileus',
-    1290 => 'simoom',
-    1291 => 'supercell',
-    1292 => 'supercells',
-    1293 => 'thunderheads',
-    1294 => 'tropopause',
-    1295 => 'virga',
+    7 => 'autotroph',
+    8 => 'biomass',
+    9 => 'biome',
+    10 => 'biomes',
+    11 => 'biotic',
+    12 => 'carpel',
+    13 => 'carpels',
+    14 => 'codon',
+    15 => 'codons',
+    16 => 'decomposer',
+    17 => 'decomposers',
+    18 => 'diploid',
+    19 => 'dna',
+    20 => 'excretion',
+    21 => 'funguses',
+    22 => 'gamete',
+    23 => 'gametes',
+    24 => 'genotype',
+    25 => 'genotypes',
+    26 => 'germination',
+    27 => 'glycogen',
+    28 => 'haploid',
+    29 => 'heterotroph',
+    30 => 'heterotrophs',
+    31 => 'heterozygous',
+    32 => 'homeostasis',
+    33 => 'homozygous',
+    34 => 'larynges',
+    35 => 'lipid',
+    36 => 'lipids',
+    37 => 'lymphocyte',
+    38 => 'lymphocytes',
+    39 => 'meiosis',
+    40 => 'microorganism',
+    41 => 'mitosis',
+    42 => 'mutualism',
+    43 => 'neurone',
+    44 => 'neurotransmitter',
+    45 => 'nucleotide',
+    46 => 'nucleotides',
+    47 => 'oesophagi',
+    48 => 'esophagi',
+    49 => 'oesophaguses',
+    50 => 'esophaguses',
+    51 => 'ovule',
+    52 => 'ovules',
+    53 => 'ova',
+    54 => 'pancreases',
+    55 => 'parasitism',
+    56 => 'phagocyte',
+    57 => 'phagocytes',
+    58 => 'pharynges',
+    59 => 'phenotype',
+    60 => 'phenotypes',
+    61 => 'phloem',
+    62 => 'phylum',
+    63 => 'phyla',
+    64 => 'pistil',
+    65 => 'pistils',
+    66 => 'placentae',
+    67 => 'protist',
+    68 => 'protists',
+    69 => 'sepal',
+    70 => 'sepals',
+    71 => 'speciation',
+    72 => 'stamen',
+    73 => 'stamens',
+    74 => 'stoma',
+    75 => 'stomata',
+    76 => 'thymi',
+    77 => 'tracheae',
+    78 => 'transpiration',
+    79 => 'uteri',
+    80 => 'xylem',
+    81 => 'zygote',
+    82 => 'zygotes',
+    83 => 'apoptosis',
+    84 => 'clade',
+    85 => 'clades',
+    86 => 'cladistics',
+    87 => 'codominance',
+    88 => 'commensalism',
+    89 => 'cytokinesis',
+    90 => 'detritivore',
+    91 => 'detritivores',
+    92 => 'duodena',
+    93 => 'epigenetics',
+    94 => 'erythrocyte',
+    95 => 'erythrocytes',
+    96 => 'exon',
+    97 => 'exons',
+    98 => 'homologous',
+    99 => 'intron',
+    100 => 'introns',
+    101 => 'karyotype',
+    102 => 'karyotypes',
+    103 => 'leucocyte',
+    104 => 'leukocyte',
+    105 => 'leucocytes',
+    106 => 'leukocytes',
+    107 => 'ligase',
+    108 => 'ligases',
+    109 => 'nephron',
+    110 => 'nephrons',
+    111 => 'operon',
+    112 => 'operons',
+    113 => 'phylogeny',
+    114 => 'phylogenies',
+    115 => 'polymerase',
+    116 => 'polymerases',
+    117 => 'recombination',
+    118 => 'rna',
+    119 => 'transposon',
+    120 => 'transposons',
+    121 => 'villus',
+    122 => 'villi',
+    123 => 'agronomy',
+    124 => 'astrobiology',
+    125 => 'astronautics',
+    126 => 'biomechanics',
+    127 => 'crystallography',
+    128 => 'cytology',
+    129 => 'electrochemistry',
+    130 => 'embryology',
+    131 => 'ethology',
+    132 => 'gemmology',
+    133 => 'gemology',
+    134 => 'genomics',
+    135 => 'geochemistry',
+    136 => 'hematology',
+    137 => 'herpetology',
+    138 => 'histology',
+    139 => 'ichthyology',
+    140 => 'kinematics',
+    141 => 'limnology',
+    142 => 'neurobiology',
+    143 => 'parasitology',
+    144 => 'petrology',
+    145 => 'primatology',
+    146 => 'spectroscopy',
+    147 => 'speleology',
+    148 => 'taxonomy',
+    149 => 'vulcanology',
+    150 => 'arachnology',
+    151 => 'astrochemistry',
+    152 => 'astrometry',
+    153 => 'bioengineering',
+    154 => 'biogeography',
+    155 => 'bioinformatics',
+    156 => 'biomedicine',
+    157 => 'bryology',
+    158 => 'chronobiology',
+    159 => 'cryobiology',
+    160 => 'dendrology',
+    161 => 'ergonomics',
+    162 => 'exobiology',
+    163 => 'geodesy',
+    164 => 'geomorphology',
+    165 => 'hydrodynamics',
+    166 => 'kinesiology',
+    167 => 'lepidopterology',
+    168 => 'malacology',
+    169 => 'mammalogy',
+    170 => 'meteoritics',
+    171 => 'metrology',
+    172 => 'nanoscience',
+    173 => 'neurochemistry',
+    174 => 'nucleonics',
+    175 => 'oceanology',
+    176 => 'palaeobotany',
+    177 => 'paleobotany',
+    178 => 'palynology',
+    179 => 'pedology',
+    180 => 'photochemistry',
+    181 => 'phycology',
+    182 => 'phylogenetics',
+    183 => 'planetology',
+    184 => 'proteomics',
+    185 => 'radiochemistry',
+    186 => 'rocketry',
+    187 => 'sedimentology',
+    188 => 'selenology',
+    189 => 'sociobiology',
+    190 => 'stratigraphy',
+    191 => 'thermochemistry',
+    192 => 'axon',
+    193 => 'axons',
+    194 => 'centriole',
+    195 => 'centrioles',
+    196 => 'centromere',
+    197 => 'centromeres',
+    198 => 'centrosome',
+    199 => 'centrosomes',
+    200 => 'chloroplast',
+    201 => 'chloroplasts',
+    202 => 'chromatid',
+    203 => 'chromatids',
+    204 => 'chromatin',
+    205 => 'cilium',
+    206 => 'cilia',
+    207 => 'cortices',
+    208 => 'crista',
+    209 => 'cristae',
+    210 => 'cytoplasm',
+    211 => 'cytoplasms',
+    212 => 'cytoskeleton',
+    213 => 'cytoskeletons',
+    214 => 'cytosol',
+    215 => 'dendrite',
+    216 => 'dendrites',
+    217 => 'flagellum',
+    218 => 'flagella',
+    219 => 'golgi',
+    220 => 'granum',
+    221 => 'grana',
+    222 => 'lysosome',
+    223 => 'lysosomes',
+    224 => 'microfilament',
+    225 => 'microfilaments',
+    226 => 'microtubule',
+    227 => 'microtubules',
+    228 => 'microvillus',
+    229 => 'microvilli',
+    230 => 'mitochondrion',
+    231 => 'myelin',
+    232 => 'nucleoid',
+    233 => 'nucleoids',
+    234 => 'nucleolus',
+    235 => 'nucleoli',
+    236 => 'organelle',
+    237 => 'organelles',
+    238 => 'peroxisome',
+    239 => 'peroxisomes',
+    240 => 'pilus',
+    241 => 'plasmid',
+    242 => 'plasmids',
+    243 => 'plasmodesma',
+    244 => 'plasmodesmata',
+    245 => 'plastid',
+    246 => 'plastids',
+    247 => 'pseudopod',
+    248 => 'pseudopods',
+    249 => 'pseudopodium',
+    250 => 'pseudopodia',
+    251 => 'reticulum',
+    252 => 'reticula',
+    253 => 'ribosome',
+    254 => 'ribosomes',
+    255 => 'somata',
+    256 => 'somas',
+    257 => 'stroma',
+    258 => 'thylakoid',
+    259 => 'thylakoids',
+    260 => 'vacuole',
+    261 => 'vacuoles',
+    262 => 'vesicle',
+    263 => 'vesicles',
+    264 => 'acrosome',
+    265 => 'acrosomes',
+    266 => 'amyloplast',
+    267 => 'amyloplasts',
+    268 => 'chromoplast',
+    269 => 'chromoplasts',
+    270 => 'cisterna',
+    271 => 'cisternae',
+    272 => 'desmosome',
+    273 => 'desmosomes',
+    274 => 'dictyosome',
+    275 => 'dictyosomes',
+    276 => 'endosome',
+    277 => 'endosomes',
+    278 => 'eyespot',
+    279 => 'eyespots',
+    280 => 'fimbria',
+    281 => 'fimbriae',
+    282 => 'glycocalyx',
+    283 => 'glyoxysome',
+    284 => 'glyoxysomes',
+    285 => 'histone',
+    286 => 'histones',
+    287 => 'kinetochore',
+    288 => 'kinetochores',
+    289 => 'lamella',
+    290 => 'lamellae',
+    291 => 'leucoplast',
+    292 => 'leucoplasts',
+    293 => 'lumina',
+    294 => 'mesosome',
+    295 => 'mesosomes',
+    296 => 'myosin',
+    297 => 'nucleoplasm',
+    298 => 'nucleosome',
+    299 => 'nucleosomes',
+    300 => 'pellicle',
+    301 => 'pellicles',
+    302 => 'phagosome',
+    303 => 'phagosomes',
+    304 => 'plasmalemma',
+    305 => 'plasmalemmas',
+    306 => 'polysome',
+    307 => 'polysomes',
+    308 => 'proteasome',
+    309 => 'proteasomes',
+    310 => 'pyrenoid',
+    311 => 'pyrenoids',
+    312 => 'sarcomere',
+    313 => 'sarcomeres',
+    314 => 'tonoplast',
+    315 => 'tonoplasts',
+    316 => 'tubulin',
+    317 => 'aldehyde',
+    318 => 'aldehydes',
+    319 => 'alkalies',
+    320 => 'alkalinity',
+    321 => 'alkane',
+    322 => 'alkanes',
+    323 => 'alkene',
+    324 => 'alkenes',
+    325 => 'alkyne',
+    326 => 'alkynes',
+    327 => 'allotrope',
+    328 => 'allotropes',
+    329 => 'amine',
+    330 => 'amines',
+    331 => 'anhydrous',
+    332 => 'anion',
+    333 => 'anions',
+    334 => 'anode',
+    335 => 'anodes',
+    336 => 'aqueous',
+    337 => 'carbonates',
+    338 => 'catalysis',
+    339 => 'cathodes',
+    340 => 'cation',
+    341 => 'cations',
+    342 => 'chlorides',
+    343 => 'colloid',
+    344 => 'colloids',
+    345 => 'covalent',
+    346 => 'diatomic',
+    347 => 'ductile',
+    348 => 'effervescence',
+    349 => 'electrolysis',
+    350 => 'electronegativity',
+    351 => 'electroplating',
+    352 => 'endothermic',
+    353 => 'enthalpy',
+    354 => 'equilibria',
+    355 => 'ethane',
+    356 => 'ethene',
+    357 => 'exothermic',
+    358 => 'glycols',
+    359 => 'halide',
+    360 => 'halides',
+    361 => 'halogen',
+    362 => 'halogens',
+    363 => 'hydrocarbon',
+    364 => 'hydrolysis',
+    365 => 'hydrophilic',
+    366 => 'hydrophobic',
+    367 => 'hydroxides',
+    368 => 'insoluble',
+    369 => 'iodide',
+    370 => 'iodides',
+    371 => 'ionisation',
+    372 => 'ionization',
+    373 => 'isomer',
+    374 => 'isomers',
+    375 => 'isomerism',
+    376 => 'ketone',
+    377 => 'ketones',
+    378 => 'metalloid',
+    379 => 'metalloids',
+    380 => 'molarity',
+    381 => 'monomer',
+    382 => 'monomers',
+    383 => 'neutralisation',
+    384 => 'neutralization',
+    385 => 'nitrite',
+    386 => 'nitrites',
+    387 => 'nonmetal',
+    388 => 'nonmetals',
+    389 => 'octet',
+    390 => 'octets',
+    391 => 'oxidise',
+    392 => 'oxidize',
+    393 => 'oxidises',
+    394 => 'oxidizes',
+    395 => 'oxidised',
+    396 => 'oxidized',
+    397 => 'phenol',
+    398 => 'phenols',
+    399 => 'polymerisation',
+    400 => 'polymerization',
+    401 => 'reactant',
+    402 => 'reactants',
+    403 => 'reactivity',
+    404 => 'redox',
+    405 => 'silicate',
+    406 => 'silicates',
+    407 => 'solubility',
+    408 => 'solute',
+    409 => 'solutes',
+    410 => 'stoichiometry',
+    411 => 'sublimation',
+    412 => 'substrate',
+    413 => 'substrates',
+    414 => 'sulphates',
+    415 => 'sulphide',
+    416 => 'sulphides',
+    417 => 'sulfides',
+    418 => 'titration',
+    419 => 'unsaturated',
+    420 => 'valency',
+    421 => 'valence',
+    422 => 'valencies',
+    423 => 'valences',
+    424 => 'amide',
+    425 => 'amides',
+    426 => 'amphoteric',
+    427 => 'anhydride',
+    428 => 'anhydrides',
+    429 => 'carbonyl',
+    430 => 'carbonyls',
+    431 => 'carboxyl',
+    432 => 'carboxyls',
+    433 => 'chelate',
+    434 => 'chelates',
+    435 => 'chirality',
+    436 => 'chlorate',
+    437 => 'chlorates',
+    438 => 'distillate',
+    439 => 'distillates',
+    440 => 'electrophile',
+    441 => 'electrophiles',
+    442 => 'emulsifier',
+    443 => 'emulsifiers',
+    444 => 'enantiomer',
+    445 => 'enantiomers',
+    446 => 'esterification',
+    447 => 'glycerol',
+    448 => 'hydride',
+    449 => 'hydrides',
+    450 => 'hydrogenation',
+    451 => 'hydroxyl',
+    452 => 'hydroxyls',
+    453 => 'ligand',
+    454 => 'ligands',
+    455 => 'nitride',
+    456 => 'nitrides',
+    457 => 'nucleophile',
+    458 => 'nucleophiles',
+    459 => 'oxidant',
+    460 => 'oxidants',
+    461 => 'permanganate',
+    462 => 'permanganates',
+    463 => 'reductant',
+    464 => 'reductants',
+    465 => 'sulphite',
+    466 => 'sulfite',
+    467 => 'sulphites',
+    468 => 'sulfites',
+    469 => 'titre',
+    470 => 'titer',
+    471 => 'titres',
+    472 => 'titers',
+    473 => 'cambrian',
+    474 => 'catchment',
+    475 => 'catchments',
+    476 => 'cretaceous',
+    477 => 'epicentres',
+    478 => 'fiord',
+    479 => 'fiords',
+    480 => 'glaciation',
+    481 => 'glaciations',
+    482 => 'igneous',
+    483 => 'interglacial',
+    484 => 'interglacials',
+    485 => 'jurassic',
+    486 => 'lithosphere',
+    487 => 'magmas',
+    488 => 'metamorphic',
+    489 => 'precambrian',
+    490 => 'salinity',
+    491 => 'seismograph',
+    492 => 'seismographs',
+    493 => 'triassic',
+    494 => 'anthropocene',
+    495 => 'anticline',
+    496 => 'anticlines',
+    497 => 'asthenosphere',
+    498 => 'carboniferous',
+    499 => 'cenozoic',
+    500 => 'devonian',
+    501 => 'fumarole',
+    502 => 'fumaroles',
+    503 => 'geomagnetic',
+    504 => 'gondwana',
+    505 => 'gondwanaland',
+    506 => 'holocene',
+    507 => 'lahar',
+    508 => 'lahars',
+    509 => 'loess',
+    510 => 'mesozoic',
+    511 => 'ordovician',
+    512 => 'orogeny',
+    513 => 'orogenies',
+    514 => 'palaeozoic',
+    515 => 'paleozoic',
+    516 => 'pangaea',
+    517 => 'pangea',
+    518 => 'permian',
+    519 => 'pleistocene',
+    520 => 'quaternary',
+    521 => 'seamount',
+    522 => 'seamounts',
+    523 => 'silurian',
+    524 => 'subsoil',
+    525 => 'syncline',
+    526 => 'synclines',
+    527 => 'talus',
+    528 => 'tephra',
+    529 => 'unconformity',
+    530 => 'unconformities',
+    531 => 'astatine',
+    532 => 'berkelium',
+    533 => 'bohrium',
+    534 => 'bromine',
+    535 => 'copernicium',
+    536 => 'darmstadtium',
+    537 => 'dubnium',
+    538 => 'dysprosium',
+    539 => 'erbium',
+    540 => 'fermium',
+    541 => 'flerovium',
+    542 => 'hassium',
+    543 => 'holmium',
+    544 => 'lawrencium',
+    545 => 'livermorium',
+    546 => 'lutetium',
+    547 => 'meitnerium',
+    548 => 'mendelevium',
+    549 => 'moscovium',
+    550 => 'nihonium',
+    551 => 'oganesson',
+    552 => 'praseodymium',
+    553 => 'promethium',
+    554 => 'protactinium',
+    555 => 'roentgenium',
+    556 => 'rutherfordium',
+    557 => 'samarium',
+    558 => 'seaborgium',
+    559 => 'technetium',
+    560 => 'tellurium',
+    561 => 'tennessine',
+    562 => 'terbium',
+    563 => 'thulium',
+    564 => 'ytterbium',
+    565 => 'argentum',
+    566 => 'aurum',
+    567 => 'azote',
+    568 => 'cuprum',
+    569 => 'ferrum',
+    570 => 'hydrargyrum',
+    571 => 'kalium',
+    572 => 'natrium',
+    573 => 'plumbum',
+    574 => 'stannum',
+    575 => 'stibium',
+    576 => 'tritium',
+    577 => 'alembic',
+    578 => 'alembics',
+    579 => 'ammeter',
+    580 => 'ammeters',
+    581 => 'anemometer',
+    582 => 'anemometers',
+    583 => 'autoclave',
+    584 => 'autoclaves',
+    585 => 'bioreactor',
+    586 => 'bioreactors',
+    587 => 'bunsen',
+    588 => 'bunsens',
+    589 => 'burette',
+    590 => 'buret',
+    591 => 'burettes',
+    592 => 'burets',
+    593 => 'calliper',
+    594 => 'caliper',
+    595 => 'calipers',
+    596 => 'calorimeter',
+    597 => 'calorimeters',
+    598 => 'colorimeter',
+    599 => 'colorimeters',
+    600 => 'coverslip',
+    601 => 'coverslips',
+    602 => 'cuvette',
+    603 => 'cuvettes',
+    604 => 'desiccator',
+    605 => 'desiccators',
+    606 => 'dosimeter',
+    607 => 'dosimeters',
+    608 => 'dynamometer',
+    609 => 'dynamometers',
+    610 => 'electroscope',
+    611 => 'electroscopes',
+    612 => 'eyewash',
+    613 => 'eyewashes',
+    614 => 'fermenter',
+    615 => 'fermenters',
+    616 => 'galvanometer',
+    617 => 'galvanometers',
+    618 => 'gauzes',
+    619 => 'hydrometer',
+    620 => 'hydrometers',
+    621 => 'hygrometer',
+    622 => 'hygrometers',
+    623 => 'joulemeter',
+    624 => 'joulemeters',
+    625 => 'loupe',
+    626 => 'magnifier',
+    627 => 'magnifiers',
+    628 => 'manometer',
+    629 => 'manometers',
+    630 => 'micropipette',
+    631 => 'micropipettes',
+    632 => 'microtome',
+    633 => 'microtomes',
+    634 => 'ohmmeter',
+    635 => 'ohmmeters',
+    636 => 'oscilloscope',
+    637 => 'oscilloscopes',
+    638 => 'pipette',
+    639 => 'pipet',
+    640 => 'pipettes',
+    641 => 'pipets',
+    642 => 'pooter',
+    643 => 'pooters',
+    644 => 'potentiometer',
+    645 => 'potentiometers',
+    646 => 'potometer',
+    647 => 'potometers',
+    648 => 'quadrat',
+    649 => 'quadrats',
+    650 => 'respirometer',
+    651 => 'respirometers',
+    652 => 'rheostat',
+    653 => 'rheostats',
+    654 => 'seismometer',
+    655 => 'seismometers',
+    656 => 'spectrophotometer',
+    657 => 'spectrophotometers',
+    658 => 'spectroscope',
+    659 => 'spectroscopes',
+    660 => 'spirometer',
+    661 => 'spirometers',
+    662 => 'stirrer',
+    663 => 'stirrers',
+    664 => 'stopclock',
+    665 => 'stopclocks',
+    666 => 'thermocouple',
+    667 => 'thermocouples',
+    668 => 'voltmeter',
+    669 => 'voltmeters',
+    670 => 'cryostat',
+    671 => 'cryostats',
+    672 => 'cyclotron',
+    673 => 'cyclotrons',
+    674 => 'eudiometer',
+    675 => 'eudiometers',
+    676 => 'evaporator',
+    677 => 'evaporators',
+    678 => 'forcemeter',
+    679 => 'forcemeters',
+    680 => 'geiger',
+    681 => 'geigers',
+    682 => 'glovebox',
+    683 => 'gloveboxes',
+    684 => 'haemocytometer',
+    685 => 'hemocytometer',
+    686 => 'haemocytometers',
+    687 => 'hemocytometers',
+    688 => 'interferometer',
+    689 => 'interferometers',
+    690 => 'photometer',
+    691 => 'photometers',
+    692 => 'polarimeter',
+    693 => 'polarimeters',
+    694 => 'pycnometer',
+    695 => 'pycnometers',
+    696 => 'pyrometer',
+    697 => 'pyrometers',
+    698 => 'refractometer',
+    699 => 'refractometers',
+    700 => 'sonicator',
+    701 => 'sonicators',
+    702 => 'sonometer',
+    703 => 'sonometers',
+    704 => 'synchrotron',
+    705 => 'synchrotrons',
+    706 => 'thermocycler',
+    707 => 'thermocyclers',
+    708 => 'ultracentrifuge',
+    709 => 'ultracentrifuges',
+    710 => 'vernier',
+    711 => 'verniers',
+    712 => 'viscometer',
+    713 => 'viscometers',
+    714 => 'antineutrino',
+    715 => 'antineutrinos',
+    716 => 'antineutron',
+    717 => 'antineutrons',
+    718 => 'antiparticle',
+    719 => 'antiparticles',
+    720 => 'antiproton',
+    721 => 'antiprotons',
+    722 => 'antiquark',
+    723 => 'antiquarks',
+    724 => 'axion',
+    725 => 'axions',
+    726 => 'baryon',
+    727 => 'baryons',
+    728 => 'deuteron',
+    729 => 'deuterons',
+    730 => 'fermion',
+    731 => 'fermions',
+    732 => 'gluon',
+    733 => 'gluons',
+    734 => 'hadrons',
+    735 => 'kaon',
+    736 => 'kaons',
+    737 => 'lepton',
+    738 => 'leptons',
+    739 => 'meson',
+    740 => 'mesons',
+    741 => 'muon',
+    742 => 'muons',
+    743 => 'nucleon',
+    744 => 'nucleons',
+    745 => 'pion',
+    746 => 'pions',
+    747 => 'positron',
+    748 => 'positrons',
+    749 => 'tauon',
+    750 => 'tauons',
+    751 => 'antielectron',
+    752 => 'antielectrons',
+    753 => 'antimuon',
+    754 => 'antimuons',
+    755 => 'anyon',
+    756 => 'anyons',
+    757 => 'diquark',
+    758 => 'diquarks',
+    759 => 'etas',
+    760 => 'exciton',
+    761 => 'excitons',
+    762 => 'glueball',
+    763 => 'glueballs',
+    764 => 'gluino',
+    765 => 'gluinos',
+    766 => 'gravitino',
+    767 => 'gravitinos',
+    768 => 'hyperon',
+    769 => 'hyperons',
+    770 => 'magnon',
+    771 => 'magnons',
+    772 => 'monopole',
+    773 => 'monopoles',
+    774 => 'neutralino',
+    775 => 'neutralinos',
+    776 => 'partons',
+    777 => 'pentaquark',
+    778 => 'pentaquarks',
+    779 => 'phonon',
+    780 => 'phonons',
+    781 => 'photino',
+    782 => 'photinos',
+    783 => 'plasmon',
+    784 => 'plasmons',
+    785 => 'pomeron',
+    786 => 'pomerons',
+    787 => 'preon',
+    788 => 'preons',
+    789 => 'quasiparticle',
+    790 => 'quasiparticles',
+    791 => 'selectron',
+    792 => 'selectrons',
+    793 => 'sneutrino',
+    794 => 'sneutrinos',
+    795 => 'sparticle',
+    796 => 'sparticles',
+    797 => 'squark',
+    798 => 'squarks',
+    799 => 'tetraquark',
+    800 => 'tetraquarks',
+    801 => 'upsilon',
+    802 => 'upsilons',
+    803 => 'amplitudes',
+    804 => 'antinode',
+    805 => 'antinodes',
+    806 => 'capacitance',
+    807 => 'centripetal',
+    808 => 'conductance',
+    809 => 'conduction',
+    810 => 'conductivity',
+    811 => 'diffraction',
+    812 => 'diode',
+    813 => 'diodes',
+    814 => 'electrostatics',
+    815 => 'fluorescence',
+    816 => 'inductance',
+    817 => 'inductor',
+    818 => 'inductors',
+    819 => 'insulator',
+    820 => 'insulators',
+    821 => 'luminosity',
+    822 => 'momenta',
+    823 => 'polarisation',
+    824 => 'polarization',
+    825 => 'quanta',
+    826 => 'rarefaction',
+    827 => 'rarefactions',
+    828 => 'redshift',
+    829 => 'resistivity',
+    830 => 'resistor',
+    831 => 'resistors',
+    832 => 'semiconductor',
+    833 => 'semiconductors',
+    834 => 'shockwave',
+    835 => 'shockwaves',
+    836 => 'solenoid',
+    837 => 'solenoids',
+    838 => 'spacetime',
+    839 => 'superconductor',
+    840 => 'superconductors',
+    841 => 'superposition',
+    842 => 'upthrust',
+    843 => 'vacua',
+    844 => 'blueshift',
+    845 => 'hysteresis',
+    846 => 'opacity',
+    847 => 'phosphorescence',
+    848 => 'photoelectric',
+    849 => 'piezoelectric',
+    850 => 'wavefront',
+    851 => 'wavefronts',
+    852 => 'azurite',
+    853 => 'beryls',
+    854 => 'corundum',
+    855 => 'felspar',
+    856 => 'felspars',
+    857 => 'hematite',
+    858 => 'hornblende',
+    859 => 'kaolinite',
+    860 => 'loadstone',
+    861 => 'loadstones',
+    862 => 'micas',
+    863 => 'actinolite',
+    864 => 'albite',
+    865 => 'amazonite',
+    866 => 'amphibole',
+    867 => 'amphiboles',
+    868 => 'amphibolite',
+    869 => 'andalusite',
+    870 => 'anhydrite',
+    871 => 'apatite',
+    872 => 'aragonite',
+    873 => 'arkose',
+    874 => 'augite',
+    875 => 'aventurine',
+    876 => 'barite',
+    877 => 'baryte',
+    878 => 'biotite',
+    879 => 'bornite',
+    880 => 'cassiterite',
+    881 => 'celestine',
+    882 => 'celestite',
+    883 => 'chalcopyrite',
+    884 => 'chlorite',
+    885 => 'chromite',
+    886 => 'chrysoberyl',
+    887 => 'chrysoprase',
+    888 => 'coquina',
+    889 => 'cryolite',
+    890 => 'cuprite',
+    891 => 'dacite',
+    892 => 'diatomite',
+    893 => 'diorite',
+    894 => 'dunite',
+    895 => 'eclogite',
+    896 => 'epidote',
+    897 => 'evaporite',
+    898 => 'evaporites',
+    899 => 'goethite',
+    900 => 'greenstone',
+    901 => 'greywacke',
+    902 => 'graywacke',
+    903 => 'hornfels',
+    904 => 'ignimbrite',
+    905 => 'ilmenite',
+    906 => 'iolite',
+    907 => 'kimberlite',
+    908 => 'komatiite',
+    909 => 'kunzite',
+    910 => 'kyanite',
+    911 => 'lazurite',
+    912 => 'lepidolite',
+    913 => 'leucite',
+    914 => 'limonite',
+    915 => 'marl',
+    916 => 'migmatite',
+    917 => 'molybdenite',
+    918 => 'montmorillonite',
+    919 => 'muscovite',
+    920 => 'natron',
+    921 => 'nepheline',
+    922 => 'nephrite',
+    923 => 'oolite',
+    924 => 'orpiment',
+    925 => 'orthoclase',
+    926 => 'pegmatite',
+    927 => 'peridotite',
+    928 => 'phonolite',
+    929 => 'phyllite',
+    930 => 'plagioclase',
+    931 => 'porphyry',
+    932 => 'porphyries',
+    933 => 'pyroxene',
+    934 => 'pyroxenes',
+    935 => 'realgar',
+    936 => 'rhodochrosite',
+    937 => 'rhodonite',
+    938 => 'rutile',
+    939 => 'scheelite',
+    940 => 'scoria',
+    941 => 'serpentinite',
+    942 => 'siderite',
+    943 => 'sillimanite',
+    944 => 'spessartine',
+    945 => 'sphalerite',
+    946 => 'spodumene',
+    947 => 'staurolite',
+    948 => 'stibnite',
+    949 => 'syenite',
+    950 => 'sylvite',
+    951 => 'trachyte',
+    952 => 'tremolite',
+    953 => 'tufa',
+    954 => 'uraninite',
+    955 => 'vermiculite',
+    956 => 'wolframite',
+    957 => 'wollastonite',
+    958 => 'zeolite',
+    959 => 'zeolites',
+    960 => 'aurorae',
+    961 => 'blazar',
+    962 => 'blazars',
+    963 => 'chromosphere',
+    964 => 'chromospheres',
+    965 => 'coronae',
+    966 => 'exoplanet',
+    967 => 'exoplanets',
+    968 => 'jupiter',
+    969 => 'magnetar',
+    970 => 'magnetars',
+    971 => 'magnetospheres',
+    972 => 'meteoroid',
+    973 => 'meteoroids',
+    974 => 'neptune',
+    975 => 'novae',
+    976 => 'photosphere',
+    977 => 'photospheres',
+    978 => 'pluto',
+    979 => 'protoplanet',
+    980 => 'protoplanets',
+    981 => 'protostar',
+    982 => 'protostars',
+    983 => 'saturn',
+    984 => 'sunspot',
+    985 => 'supercluster',
+    986 => 'superclusters',
+    987 => 'supergiant',
+    988 => 'supergiants',
+    989 => 'uranus',
+    990 => 'venus',
+    991 => 'asterism',
+    992 => 'asterisms',
+    993 => 'bolide',
+    994 => 'bolides',
+    995 => 'eris',
+    996 => 'exomoon',
+    997 => 'exomoons',
+    998 => 'haumea',
+    999 => 'heliosphere',
+    1000 => 'heliospheres',
+    1001 => 'hypergiant',
+    1002 => 'hypergiants',
+    1003 => 'hypernova',
+    1004 => 'hypernovae',
+    1005 => 'hypernovas',
+    1006 => 'kilonova',
+    1007 => 'kilonovae',
+    1008 => 'kilonovas',
+    1009 => 'makemake',
+    1010 => 'moonlet',
+    1011 => 'moonlets',
+    1012 => 'planetesimal',
+    1013 => 'planetesimals',
+    1014 => 'trojan',
+    1015 => 'trojans',
+    1016 => 'aliquot',
+    1017 => 'aliquots',
+    1018 => 'annealing',
+    1019 => 'autoclaving',
+    1020 => 'calorimetry',
+    1021 => 'centrifugation',
+    1022 => 'centrifuging',
+    1023 => 'chromatography',
+    1024 => 'colorimetry',
+    1025 => 'crystallisation',
+    1026 => 'crystallization',
+    1027 => 'decanting',
+    1028 => 'decantation',
+    1029 => 'desiccation',
+    1030 => 'dilution',
+    1031 => 'dilutions',
+    1032 => 'distilling',
+    1033 => 'electrophoresis',
+    1034 => 'fractionation',
+    1035 => 'homogenisation',
+    1036 => 'homogenization',
+    1037 => 'irradiation',
+    1038 => 'lysis',
+    1039 => 'microscopy',
+    1040 => 'pasteurisation',
+    1041 => 'pasteurization',
+    1042 => 'pipetting',
+    1043 => 'recrystallisation',
+    1044 => 'recrystallization',
+    1045 => 'sedimentation',
+    1046 => 'spectrometry',
+    1047 => 'spectrophotometry',
+    1048 => 'titrations',
+    1049 => 'titrating',
+    1050 => 'tomography',
+    1051 => 'vivisection',
+    1052 => 'autoradiography',
+    1053 => 'cryopreservation',
+    1054 => 'cytometry',
+    1055 => 'electroporation',
+    1056 => 'elisa',
+    1057 => 'genotyping',
+    1058 => 'hybridisation',
+    1059 => 'hybridization',
+    1060 => 'immunoassay',
+    1061 => 'immunoassays',
+    1062 => 'ligation',
+    1063 => 'lyophilisation',
+    1064 => 'lyophilization',
+    1065 => 'microinjection',
+    1066 => 'mutagenesis',
+    1067 => 'pcr',
+    1068 => 'quantification',
+    1069 => 'randomisation',
+    1070 => 'randomization',
+    1071 => 'sonication',
+    1072 => 'standardisation',
+    1073 => 'standardization',
+    1074 => 'subculturing',
+    1075 => 'transduction',
+    1076 => 'transfection',
+    1077 => 'trituration',
+    1078 => 'vortexing',
+    1079 => 'centiliter',
+    1080 => 'centiliters',
+    1081 => 'deciliter',
+    1082 => 'deciliters',
+    1083 => 'dioptre',
+    1084 => 'diopter',
+    1085 => 'dioptres',
+    1086 => 'diopters',
+    1087 => 'electronvolt',
+    1088 => 'electronvolts',
+    1089 => 'gramme',
+    1090 => 'grammes',
+    1091 => 'hectopascal',
+    1092 => 'hectopascals',
+    1093 => 'kilonewton',
+    1094 => 'kilonewtons',
+    1095 => 'kilopascal',
+    1096 => 'kilopascals',
+    1097 => 'kilotonne',
+    1098 => 'kilotonnes',
+    1099 => 'megajoule',
+    1100 => 'megajoules',
+    1101 => 'megatonne',
+    1102 => 'megatonnes',
+    1103 => 'microlitre',
+    1104 => 'microliter',
+    1105 => 'microlitres',
+    1106 => 'microliters',
+    1107 => 'micrometre',
+    1108 => 'micrometres',
+    1109 => 'milliampere',
+    1110 => 'milliamp',
+    1111 => 'milliamperes',
+    1112 => 'milliamps',
+    1113 => 'milliliter',
+    1114 => 'millisievert',
+    1115 => 'millisieverts',
+    1116 => 'millivolt',
+    1117 => 'millivolts',
+    1118 => 'nanogram',
+    1119 => 'nanograms',
+    1120 => 'nanometer',
+    1121 => 'nanometers',
+    1122 => 'picometre',
+    1123 => 'picometer',
+    1124 => 'picometres',
+    1125 => 'picometers',
+    1126 => 'picosecond',
+    1127 => 'picoseconds',
+    1128 => 'roentgen',
+    1129 => 'roentgens',
+    1130 => 'siemens',
+    1131 => 'steradian',
+    1132 => 'steradians',
+    1133 => 'terawatt',
+    1134 => 'terawatts',
+    1135 => 'arcminute',
+    1136 => 'arcminutes',
+    1137 => 'arcsecond',
+    1138 => 'arcseconds',
+    1139 => 'attosecond',
+    1140 => 'attoseconds',
+    1141 => 'baud',
+    1142 => 'btu',
+    1143 => 'btus',
+    1144 => 'debye',
+    1145 => 'debyes',
+    1146 => 'femtometre',
+    1147 => 'femtometer',
+    1148 => 'femtometres',
+    1149 => 'femtometers',
+    1150 => 'femtosecond',
+    1151 => 'femtoseconds',
+    1152 => 'fermis',
+    1153 => 'gigaelectronvolt',
+    1154 => 'gigaelectronvolts',
+    1155 => 'jansky',
+    1156 => 'janskys',
+    1157 => 'katal',
+    1158 => 'katals',
+    1159 => 'kilobar',
+    1160 => 'kilobars',
+    1161 => 'kilohm',
+    1162 => 'kilohms',
+    1163 => 'kiloparsec',
+    1164 => 'kiloparsecs',
+    1165 => 'langleys',
+    1166 => 'megaparsec',
+    1167 => 'megaparsecs',
+    1168 => 'megohm',
+    1169 => 'megohms',
+    1170 => 'mho',
+    1171 => 'mhos',
+    1172 => 'microfarad',
+    1173 => 'microfarads',
+    1174 => 'micromole',
+    1175 => 'micromoles',
+    1176 => 'microsievert',
+    1177 => 'microsieverts',
+    1178 => 'millimole',
+    1179 => 'millimoles',
+    1180 => 'oersted',
+    1181 => 'oersteds',
+    1182 => 'picofarad',
+    1183 => 'picofarads',
+    1184 => 'rankine',
+    1185 => 'rutherford',
+    1186 => 'rutherfords',
+    1187 => 'altocumulus',
+    1188 => 'altostratus',
+    1189 => 'cirrocumulus',
+    1190 => 'cirrostratus',
+    1191 => 'cirrus',
+    1192 => 'cumulonimbus',
+    1193 => 'cumulonimbi',
+    1194 => 'cumulus',
+    1195 => 'cumuli',
+    1196 => 'exosphere',
+    1197 => 'isobar',
+    1198 => 'isobars',
+    1199 => 'isotherm',
+    1200 => 'isotherms',
+    1201 => 'mesosphere',
+    1202 => 'microclimate',
+    1203 => 'microclimates',
+    1204 => 'nimbostratus',
+    1205 => 'stratocumulus',
+    1206 => 'stratus',
+    1207 => 'thermosphere',
+    1208 => 'troposphere',
+    1209 => 'updraft',
+    1210 => 'updraught',
+    1211 => 'updrafts',
+    1212 => 'updraughts',
+    1213 => 'weathervane',
+    1214 => 'weathervanes',
+    1215 => 'adiabatic',
+    1216 => 'anabatic',
+    1217 => 'arcus',
+    1218 => 'contrail',
+    1219 => 'contrails',
+    1220 => 'derecho',
+    1221 => 'derechos',
+    1222 => 'downburst',
+    1223 => 'downbursts',
+    1224 => 'downdraft',
+    1225 => 'downdraught',
+    1226 => 'downdrafts',
+    1227 => 'downdraughts',
+    1228 => 'eyewall',
+    1229 => 'eyewalls',
+    1230 => 'foehn',
+    1231 => 'fohn',
+    1232 => 'fogbow',
+    1233 => 'fogbows',
+    1234 => 'graupel',
+    1235 => 'haboob',
+    1236 => 'haboobs',
+    1237 => 'harmattan',
+    1238 => 'isohyet',
+    1239 => 'isohyets',
+    1240 => 'katabatic',
+    1241 => 'khamsin',
+    1242 => 'lenticular',
+    1243 => 'mammatus',
+    1244 => 'mesocyclone',
+    1245 => 'mesocyclones',
+    1246 => 'microburst',
+    1247 => 'microbursts',
+    1248 => 'moonbow',
+    1249 => 'moonbows',
+    1250 => 'noctilucent',
+    1251 => 'occlusion',
+    1252 => 'occlusions',
+    1253 => 'orographic',
+    1254 => 'petrichor',
+    1255 => 'pileus',
+    1256 => 'simoom',
+    1257 => 'supercell',
+    1258 => 'supercells',
+    1259 => 'tropopause',
+    1260 => 'virga',
   ),
 );
