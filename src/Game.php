@@ -40,6 +40,13 @@ final class Game
     /** @var callable(): int */
     private $clock;
 
+    /**
+     * How many answers a room's prompts have. A room holds up to 60 players, and a 10-answer
+     * prompt went in a minute with six (room playtest, 14 October): bigger prompts last, so a
+     * slower player gets a turn.
+     */
+    public const ROOM_PROMPT_ANSWERS = [40, 200];
+
     public function __construct(
         private readonly PDO $db,
         private readonly Dictionary $dictionary,
@@ -496,7 +503,8 @@ final class Game
             }
             $next = Prompts::pick(
                 $this->dictionary, $this->unavailable($worldId), $used,
-                (int) ($world['prompt_min'] ?? $this->promptMin), (int) ($world['prompt_max'] ?? $this->promptMax),
+                (int) ($world['prompt_min'] ?? ($world['kind'] === 'room' ? self::ROOM_PROMPT_ANSWERS[0] : $this->promptMin)),
+                (int) ($world['prompt_max'] ?? ($world['kind'] === 'room' ? self::ROOM_PROMPT_ANSWERS[1] : $this->promptMax)),
                 avoidCat: $lastCat,
             );
             if (!$next) {

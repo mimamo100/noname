@@ -4,6 +4,15 @@ Why the game is the way it is: one entry per decision, newest first, with the re
 where it came from. `DESIGN.md` says what the rules are; this says why. Earlier decisions
 are at the top of each report in `playtests/`.
 
+## 15 October 2026
+
+**Rooms' prompts have 40 to 200 answers** (other private worlds 10 to 80, the big world 60 to
+400). A room holds up to 60 players, and in the room playtest a 10-answer prompt went in about
+a minute with six: a slower player never got a turn. *Owner, after the room playtest.*
+
+**Room cards show words said**, with the share left once it rounds below 100%: a room of 52,000
+words read "100% words left" after dozens of words, as if nothing had happened. *Owner.*
+
 ## 14 October 2026
 
 **Rarity follows a curve: `1 + 2 × p²`**, where p is a word's place in the list ÷ the list's

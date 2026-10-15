@@ -1378,7 +1378,9 @@ function worldCard(w) {
   const facts = w.ended ? [] : [
     played ? figure(ordinal(w.place), competition && w.team ? `Team ${w.team}` : `of ${w.players}`) : figure('–', 'not played yet'),
     played ? figure(w.score.toLocaleString(), 'your points') : figure(w.players.toLocaleString(), w.players === 1 ? 'player' : 'players'),
-    figure(`${Math.round(w.left * 100)}%`, 'words left'),
+    // Words said, as a big world of 52,000 words reads "100% left" for days; the share left joins
+    // it once it rounds below 100%.
+    figure(w.burned.toLocaleString(), `words said${Math.round(w.left * 100) < 100 ? ` · ${Math.round(w.left * 100)}% left` : ''}`),
   ];
   const when = w.ended ? `${w.teams?.length ? `${teamsResult(w.teams)}. ` : ''}Ended. Open it to delete it.`
     : competition && w.startsAt > now ? `Starts ${whenText(w.startsAt)}`

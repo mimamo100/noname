@@ -162,7 +162,7 @@ word-finder site. There are three kinds:
   becomes a suggestion to approve. Accepting a surprising answer is better
   than rejecting a sensible one.
 - **Size.** A new prompt is only chosen if it has 10–80 distinct answers still
-  unsaid, counting a word family once. Late in a world, when nothing fits
+  unsaid (rooms 40–200, the big world 60–400), counting a word family once. Late in a world, when nothing fits
   that range, the game takes the richest prompt it can find.
 - **Plurals count as their singular** for length rules and points, so
   adding an S can't stretch *brother* into an 8-letter answer or earn extra

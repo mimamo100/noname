@@ -329,7 +329,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | ← Back to the big world · Your account · {email} · {Plan} plan · Worlds / Games / Word packs / Settings | index.html, app.js · renderSettings |
 | **Worlds:** Playing now · Ended: yours to keep or delete | app.js · renderMyWorlds |
 | {world} Yours · Room / Private world / Competition · {pack} *(a card)* | app.js · worldCard |
-| {place} of {n} / Team {team} / – not played yet · {n} your points / {n} players · {n}% words left | app.js · worldCard |
+| {place} of {n} / Team {team} / – not played yet · {n} your points / {n} players · {n} words said (· {n}% left, once below 100%) | app.js · worldCard |
 | Last word {time} ago / No words yet / Starts {when} / Ends in {time} · {n} players / Ended. Open it to delete it. · Open | app.js · worldCard |
 | {team} won, {n} to {n} / {team} won with {n} / A draw, {n} each *(an ended competition's result, on its card and in Past games)* | app.js · teamsResult |
 | Ran · You ran this competition · {result} · ended {date} *(Past games, for a competition you ran without playing)* | app.js · renderMyGames |
