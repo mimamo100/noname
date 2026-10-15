@@ -1,7 +1,10 @@
 # Rarity review (to do with the owner)
 
-**Status: curve chosen (Curve B), 14 October 2026.** The owner agreed with Claude's marks, except
-*knead* (×1.5). Still open: moving the British words, by hand or with a British frequency list.
+**Status: done, 15 October 2026.** Curve B chosen (the owner agreed with Claude's marks, except
+*knead*, ×1.5). Words still out under it are placed by hand in `data/rarity-overrides.txt`,
+with others found in the room playtest and a check of everyday British words. Placing closed
+compounds by their parts was tried and dropped (see the end). A British frequency list would
+fix more at once, but SUBTLEX-UK is for research use only.
 Started 14 October 2026, after the owner found
 *teaspoon* scoring ×1.8 for rarity "a bit odd".
 
@@ -219,3 +222,12 @@ Two things the 140 words don't show:
 | tureen | 38,241 | ×2.5 | ×2.3 | ×2.1 | ×2.4 | |
 | courgette | 43,005 | ×2.7 | ×2.5 | ×2.4 | ×1.4 | |
 | ramekin | 46,021 | ×2.8 | ×2.7 | ×2.6 | ×2.3 | |
+
+
+## Closed compounds by their parts: tried and dropped (15 October)
+
+Placing a word like *housefly* by its parts (*house*, *fly*) fixes the familiar ones, but makes
+obscure compounds of common words cheap (*froghopper*, *springtail*, *stonechat*, *razorbill*,
+*bradawl*), which players rightly found rare, and splits words wrongly (*herring*, *siskin*,
+*mangoes*). Even limited to words on the meaning lists, about 1,100 words would have moved.
+How see-through a compound is says nothing about how familiar it is.

@@ -49,9 +49,22 @@ final class Scoring
     public static function scoreWord(string $word, float $rarity, float $worldMult, float $promptMult): int
     {
         $base = self::base($word);
-        // A curve, not a straight line: most words people know sit mid-list, so familiar
-        // words stay near ×1 and the top of the scale is kept for really unusual ones.
-        $rarityMult = 1 + 2 * $rarity ** 2;
+        $rarityMult = self::rarityMultiplier($rarity);
         return max(1, (int) round($base * $rarityMult * $worldMult * $promptMult));
+    }
+
+    /**
+     * A curve, not a straight line: most words people know sit mid-list, so familiar words stay
+     * near ×1 and the top of the scale is kept for really unusual ones.
+     */
+    public static function rarityMultiplier(float $rarity): float
+    {
+        return 1 + 2 * $rarity ** 2;
+    }
+
+    /** The rarity (0 to 1) that gives a multiplier, for placing a word by hand (data/rarity-overrides.txt). */
+    public static function rarityFor(float $multiplier): float
+    {
+        return sqrt(max(0.0, min(1.0, ($multiplier - 1) / 2)));
     }
 }

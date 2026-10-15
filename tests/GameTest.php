@@ -961,6 +961,13 @@ test('irregular plurals are one answer with their singular, judged as it (data/i
     check(!in_array('doe', $d->family('did'), true), "did doesn't use up doe");
 });
 
+test('words placed by hand take the multiplier written (data/rarity-overrides.txt)', function () {
+    same(1.4, round(Scoring::rarityMultiplier(Scoring::rarityFor(1.4)), 2));
+    $d = Dictionary::load();
+    same(1.4, round(Scoring::rarityMultiplier($d->rarity('courgette')), 1));
+    same(2.0, round(Scoring::rarityMultiplier($d->rarity('zeppelin')), 1));
+});
+
 test("a list's note is read from its file and shown with its prompt", function () {
     $category = Dictionary::readCategory(['label: An insect or bug', 'note: Spiders count as bugs here.', 'ant', 'spider']);
     same('Spiders count as bugs here.', $category['note']);

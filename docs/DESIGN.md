@@ -1,4 +1,4 @@
-# Unsaid — Design
+# Unsaid: design
 
 > Every word you play, no one can say again.
 
@@ -77,7 +77,7 @@ language shrinks, players hunt for rarer words, and those words are worth more.
 3. An accepted word scores points, and **nobody in that world can say it
    again**, including in all future prompts. Its **word family** goes with it,
    so saying *cat* also uses up *cats*.
-4. The game records who said each word ("*moon* — said by Sam").
+4. The game records who said each word ("*moon*, said by Sam").
 5. Each prompt shows a **live counter**: "41 words left unsaid".
 6. The prompt changes when its counter reaches zero, or after its time runs
    out (24 hours by default).
@@ -99,7 +99,7 @@ points = base × rarity × world multiplier × prompt bonus
 | Part | Rule | Range |
 |---|---|---|
 | Base | word length − 2 | 1 for a 3-letter word, 8 for a 10-letter word |
-| Rarity | 1 + 2 × (frequency rank ÷ dictionary size)² | ×1 for the most common words, ×1.5 halfway down the list, ×3 for the rarest |
+| Rarity | 1 + 2 × (frequency rank ÷ dictionary size)², with some familiar words placed by hand (`data/rarity-overrides.txt`) | ×1 for the most common words, ×1.5 halfway down the list, ×3 for the rarest |
 | World multiplier | 1 ÷ (1 − share of the dictionary said) | ×1 at the start, ×2 at half said, ×5 at 80% said (capped at ×10) |
 | Prompt bonus | 1 + the share of the prompt's answers already said | ×1 when the prompt starts, ×1.5 at half said, capped at ×2; *also* answers score at ×1 |
 
@@ -492,7 +492,7 @@ a music quiz.
 - **Undo and take back:** undoing an accepted word currently only affects
   the future; anyone who already said it keeps the points, and it stays used
   up in that world. A stronger admin option could remove those points, free
-  the word, and note it in the feed ("*sofa* — removed by the admin"). Only
+  the word, and note it in the feed ("*sofa*: removed by the admin"). Only
   worth adding if accepted words are ever abused.
 
 - **More word packs** (the mechanism is built; see "Word packs"): themed dictionaries such as Music,

@@ -1,0 +1,57 @@
+# Words placed by hand: each word, then the rarity multiplier it should have (1 for the
+# commonest words, 3 for the rarest). The build moves it to the place in the list that gives
+# that multiplier on the curve in src/Scoring.php, with its other spellings beside it; its
+# plural scores as it does. Use it for familiar words that film subtitles under-count, mostly
+# British ones (courgette, housefly), or the odd one they over-count.
+# Rebuild after editing: php scripts/build-dictionary.php
+
+# From the rarity review (dictionary-review/RARITY-REVIEW.md), marked by Claude, checked by the owner
+courgette 1.4
+aubergine 1.4
+parsnip 1.4
+tablespoon 1.3
+saucepan 1.3
+colander 1.6
+grater 1.4
+ladybird 1.2
+teaspoon 1.2
+knead 1.5
+zeppelin 2.0
+curling 1.5
+tureen 2.4
+ramekin 2.3
+
+# From the room playtest (14 October) and a check of everyday British words: Claude's marks
+housefly 1.3
+horsefly 1.4
+greenfly 1.4
+whitefly 1.6
+hoverfly 1.7
+silverfish 1.5
+woodworm 1.5
+woodlouse 1.4
+bluebottle 1.4
+tortoiseshell 1.6
+mealworm 1.7
+honeybee 1.3
+earwig 1.4
+mangetout 1.6
+celeriac 1.8
+teacake 1.5
+crumpet 1.3
+chipolata 1.7
+gammon 1.4
+flapjack 1.4
+bap 1.4
+coriander 1.3
+beetroot 1.2
+serviette 1.5
+doily 1.6
+hob 1.3
+pushchair 1.3
+highchair 1.3
+earmuff 1.5
+cagoule 1.8
+anorak 1.4
+plimsolls 1.6
+wellies 1.3

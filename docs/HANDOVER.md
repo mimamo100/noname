@@ -96,13 +96,12 @@ deletes its packs (the owner may want to revisit those two calls).
 
 ## Open items
 
-0. **Next: rarity** for British words and closed compounds (housefly, woodlouse, greenfly,
-   bluebottle, courgette), which still score high. Try placing a closed compound by its spaced
-   form ("house fly"), and a British frequency list; see `dictionary-review/RARITY-REVIEW.md`.
-   Done on 15 October: the insect list (about 160 names added, spiders and other
-   creepy-crawlies, a note), notes on 30 lists for the owner to check, irregular verb forms
-   (`verbs:` in `data/irregular-forms.txt`: one answer, each judged as typed), more irregular
-   plurals, *breadcrumb*.
+0. **Next: the room report's remaining items** (`playtests/2026-10-14-room.md`, "Still to do").
+   Done on 15 October: the insect list (about 160 names, spiders and other creepy-crawlies, a
+   note), notes on 30 lists for the owner to check, irregular verb forms (`verbs:` in
+   `data/irregular-forms.txt`), more irregular plurals, *breadcrumb*, and rarity placed by hand
+   for 47 familiar words (`data/rarity-overrides.txt`; add to it when players find a word that
+   scores too high or too low).
 
 1. **Messages:** the owner is reviewing `docs/MESSAGES.md` and will send wording changes.
    If they want to change wording often, the next step (already discussed) is moving the

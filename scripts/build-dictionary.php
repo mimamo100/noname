@@ -5,6 +5,7 @@
 //   data/word-counts.txt,          how often words appear in film subtitles, to place the
 //     extra-word-counts.txt          hand-added words (built by scripts/count-extra-words.php)
 //   data/family-breaks.txt         words that start their own family
+//   data/rarity-overrides.txt      words placed by hand, by the rarity multiplier they should have
 //   data/irregular-forms.txt       irregular plurals and forms joined to their word (mouse, mice)
 //   data/plural-words.txt          words normally used in the plural, judged as written
 //   data/blocklist.txt             words that can never be played
@@ -26,6 +27,7 @@ declare(strict_types=1);
 require __DIR__ . '/../src/WordFamilies.php';
 require __DIR__ . '/../src/Dictionary.php';
 require __DIR__ . '/../src/Packs.php';
+require __DIR__ . '/../src/Scoring.php';
 
 const ENABLE_URL = 'https://raw.githubusercontent.com/dolph/dictionary/master/enable1.txt';
 const FREQ_URL = 'https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/en/en_50k.txt';
@@ -167,6 +169,29 @@ foreach ($words as $word) {
     }
 }
 $words = $withSpellings;
+
+// Words placed by hand (data/rarity-overrides.txt): familiar words that subtitles under-count
+// (courgette, housefly) or the odd one they over-count. Each moves to the place in the list
+// that gives it the multiplier written, with its other spellings beside it.
+$overrides = [];
+foreach (readList("$dataDir/rarity-overrides.txt") as $line) {
+    [$word, $multiplier] = preg_split('/\s+/', strtolower($line)) + [null, null];
+    if (!in_array($word, $words, true) || !is_numeric($multiplier) || $multiplier < 1 || $multiplier > 3) {
+        fwrite(STDERR, "rarity-overrides.txt: \"$line\" needs a word in the dictionary and a multiplier from 1 to 3
+");
+        continue;
+    }
+    $overrides[$word] = (float) $multiplier;
+}
+$spellingsOf = [];
+foreach ($clusters as $cluster) foreach ($cluster as $w) $spellingsOf[$w] = $cluster;
+asort($overrides);
+foreach ($overrides as $word => $multiplier) {
+    $group = array_values(array_filter($spellingsOf[$word] ?? [$word], fn ($w) => in_array($w, $words, true)));
+    $words = array_values(array_diff($words, $group));
+    $at = (int) round(Scoring::rarityFor($multiplier) * (count($words) + count($group)));
+    array_splice($words, min($at, count($words)), 0, $group);
+}
 $families = WordFamilies::build($words, $standalone);
 foreach ($standalone as $word) {
     if (!in_array($word, $words, true)) fwrite(STDERR, "family-breaks.txt: \"$word\" isn't in the dictionary\n");

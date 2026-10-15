@@ -6,6 +6,14 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**Familiar words that subtitles under-count are placed by hand** (`data/rarity-overrides.txt`:
+a word and the multiplier it should have). 47 so far: the rarity review's words still out under
+the curve, the room playtest's (*housefly*, *woodlouse*, *bluebottle*) and everyday British
+words (*mangetout* was ×2.7, *pushchair* ×2.3). Placing closed compounds by their parts was
+tried and dropped, as it made obscure ones cheap (*froghopper*); a British frequency list would
+fix more at once, but SUBTLEX-UK is for research use only. The 33 words beyond the review are
+Claude's marks, open to change. *Claude, following the owner's marks.*
+
 **Spiders and other creepy-crawlies count as bugs, but worms, slugs and snails don't.** The owner
 decided spiders count; where to stop was Claude's call: a person might call a woodlouse or a
 centipede a bug, but hardly an earthworm or a slug. The list's note says so. *Proposed by
