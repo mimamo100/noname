@@ -68,6 +68,9 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .prompt-card h1 { margin: 4px 0 8px; font-size: clamp(28px, 7vw, 48px); line-height: 1.1; text-wrap: balance; }
 .prompt-card h1.long { font-size: clamp(24px, 5.5vw, 40px); }
 .counter { font-size: 18px; }
+.prompt-note { margin: -4px 0 8px; }
+p.prompt-note.small { color: var(--muted); max-width: 520px; margin: 0 auto 10px; }
+.prompt-card.results .prompt-note, .prompt-card.waiting .prompt-note { display: none; }
 .counter #remaining { font-size: 32px; font-weight: 800; color: var(--ember); font-variant-numeric: tabular-nums; }
 .meter { height: 6px; background: var(--bg); border-radius: 3px; margin: 12px auto; max-width: 360px; overflow: hidden; }
 .meter div { height: 100%; width: 0; background: var(--ember); transition: width 0.4s; }

@@ -113,6 +113,9 @@ final class Dictionary
         foreach ($lines as $line) {
             if (str_starts_with($line, 'label:')) {
                 $category['label'] = trim(substr($line, 6));
+            } elseif (str_starts_with($line, 'note:')) {
+                // What the list does and doesn't include, shown by "About this list" under the prompt.
+                $category['note'] = trim(($category['note'] ?? '') . ' ' . trim(substr($line, 5)));
             } elseif (str_starts_with($line, 'includes:')) {
                 $category['includes'] = preg_split('/\s+/', trim(substr($line, 9)), -1, PREG_SPLIT_NO_EMPTY);
             } elseif ($line === 'also:') {
@@ -341,6 +344,12 @@ final class Dictionary
     public function categoryIds(): array
     {
         return array_keys($this->categories);
+    }
+
+    /** A list's note on what it includes ("Spiders and other creepy-crawlies count"), or null. */
+    public function categoryNote(string $id): ?string
+    {
+        return $this->categories[$id]['note'] ?? null;
     }
 
     public function categoryLabel(string $id): string

@@ -78,11 +78,38 @@ deletes its packs (the owner may want to revisit those two calls).
 - Two cron jobs: housekeeping daily at 4am, and `scripts/daily-email.php` hourly (DEPLOY.md
   steps 9 and 10).
 
+## Done since the last handover (14–15 October)
+
+- **Kitchen Cup fixes** (see that report's "Done since"): accents read as plain letters; the
+  pack editor (one answer per line, errors on the form, a guide, a spelling check); competition
+  times in bold with a ticking countdown; 10- and 30-minute prompts with a prompt-count hint;
+  prompts avoid the last list; finished worlds open on Teams.
+- **Scoring:** no world multiplier except in rooms and private worlds; pack words use their
+  everyday rarity. The rarity curve (`1 + 2 × p²`) and pack rarity 0.77 came from the CLI
+  session's rarity review.
+- **Your account:** ended competitions show their result; competitions you ran appear in Past
+  games ("Ran").
+- **Room playtest fixes** (see that report's "Done since"): bigger room prompts, words said on
+  room cards, Just said under the word box, free repeats (optional charge for hosts and
+  organisers), irregular plurals, and "About this list" notes on prompts.
+- `docs/DECISIONS.md` logs each decision and why: add to it when the owner decides something.
+
 ## Open items
 
-0. **Next: the rarity review** (`docs/dictionary-review/RARITY-REVIEW.md`). The owner will mark
-   how rare 140 everyday words feel under the current scale and two curves, to choose a curve
-   and list words to move by hand. The owner found *teaspoon* at ×1.8 odd.
+0. **Next, for the CLI session (word lists and rarity):**
+   - **Insects:** add the missing two-word insects from the room report (bark beetle, emperor
+     moth, carpenter bee and the rest, and planthopper, backswimmer, bristletail, cutworm,
+     firebrat); add spiders and other creepy-crawlies (the owner's decision), treating house
+     spider, wolf spider and garden spider alike; write a `note:` for the list (for example
+     "Spiders, woodlice and other creepy-crawlies count as bugs").
+   - **Notes:** write `note:` lines for other lists with quirks (see `data/categories/README.md`).
+   - **Irregular forms:** extend `data/irregular-forms.txt` (verb forms such as go, went;
+     run, ran; and ox, radius and datum, skipped as one of each pair is missing from the
+     dictionary), then rebuild.
+   - **Rarity:** British words and closed compounds still score high (housefly, woodlouse,
+     greenfly, bluebottle, courgette). Try a British frequency list, and placing a closed
+     compound by its spaced form's count ("house fly"); see `dictionary-review/RARITY-REVIEW.md`.
+   - Add *breadcrumb*.
 
 1. **Messages:** the owner is reviewing `docs/MESSAGES.md` and will send wording changes.
    If they want to change wording often, the next step (already discussed) is moving the

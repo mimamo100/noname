@@ -956,3 +956,13 @@ test('irregular plurals are one answer with their singular, judged as it (data/i
     same('woodlouse', $d->singular('woodlice'));
     check(in_array('knives', $d->family('knife'), true), 'Saying knife uses up knives');
 });
+
+test("a list's note is read from its file and shown with its prompt", function () {
+    $category = Dictionary::readCategory(['label: An insect or bug', 'note: Spiders count as bugs here.', 'ant', 'spider']);
+    same('Spiders count as bugs here.', $category['note']);
+    $d = Dictionary::fromWords(['ant', 'ants', 'spider', 'moon'], ['insect' => ['label' => 'An insect or bug', 'note' => 'Spiders count.', 'words' => ['ant', 'spider']]]);
+    $game = new Game(testDb(), $d, fn () => 1_000, promptMin: 1, promptMax: 1000);
+    $world = $game->createWorld('Bugs');
+    setPrompt($game, $world['id'], spec('insect'));
+    same('Spiders count.', $game->state($world['id'], null)['prompt']['note']);
+});

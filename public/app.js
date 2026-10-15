@@ -606,6 +606,11 @@ async function joinRoom() {
   }
 }
 $('room-button').addEventListener('click', joinRoom);
+$('prompt-info').addEventListener('click', () => {
+  const open = $('prompt-note').hidden;
+  $('prompt-note').hidden = !open;
+  $('prompt-info').setAttribute('aria-expanded', String(open));
+});
 // The (i) by the Big World's name shows or hides what it is.
 let roundAboutOpen = false;
 $('round-info-button').addEventListener('click', () => {
@@ -668,6 +673,14 @@ function render(state) {
   if (state.prompt) {
     $('prompt-label').textContent = state.prompt.label;
     $('prompt-label').classList.toggle('long', state.prompt.label.length > 30); // Smaller, to fit one line.
+    // "About this list": the list's note on its quirks, closed again when the prompt changes.
+    if ($('prompt-note').dataset.promptId !== String(state.prompt.id)) {
+      $('prompt-note').dataset.promptId = String(state.prompt.id);
+      $('prompt-note').hidden = true;
+      $('prompt-info').setAttribute('aria-expanded', 'false');
+    }
+    $('prompt-info').hidden = !state.prompt.note;
+    $('prompt-note').textContent = state.prompt.note ?? '';
     $('remaining').textContent = state.prompt.remaining;
     // The meter fills towards the prompt's end, which comes before every answer is said.
     const toSay = Math.max(1, state.prompt.availableAtStart - state.prompt.endsWhenLeft);

@@ -16,6 +16,9 @@ sole
 ```
 
 - **label:** what the prompt says.
+- **note:** (optional) what the list does and doesn't include, in a sentence or two for
+  players: `note: Spiders, woodlice and other creepy-crawlies count as bugs.` The page shows
+  it under the prompt, behind "About this list". Use it for a list's quirks.
 - **Words before `also:`** are clear answers. They size prompts and are
   counted as "words left unsaid".
 - **Words after `also:`** are accepted but not counted: words that fit

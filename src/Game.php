@@ -1111,6 +1111,8 @@ final class Game
             'prompt' => $prompt ? [
                 'id' => (int) $prompt['id'],
                 'label' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary),
+                // The list's note on its quirks, if it has one (a "note:" line in its category file).
+                'note' => isset($prompt['spec']['cat']) ? $this->dictionary->categoryNote($prompt['spec']['cat']) : null,
                 'remaining' => (int) $prompt['remaining'],
                 'availableAtStart' => (int) $prompt['available_at_start'],
                 // It ends when this many answers are left, or at endsAt, whichever comes first.
