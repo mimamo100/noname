@@ -1,5 +1,5 @@
 label: A piece of furniture
-note: Lamps count. Rugs, curtains, kitchen appliances and bathroom fittings don't.
+note: Lamps count. Soft furnishings, kitchen appliances and bathroom fittings don't.
 
 armchair
 armoire

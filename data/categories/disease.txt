@@ -1,5 +1,5 @@
 label: An illness
-note: Everyday ailments count too: a cold, a headache, hiccups.
+note: Everyday ailments count too, not just serious illnesses.
 
 abscess
 acne

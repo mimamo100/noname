@@ -1,5 +1,5 @@
 label: A currency or coin
-note: Currencies and coins, from the pound to bitcoin. Cheques and cards don't count.
+note: Currencies and coins, old, new and digital. Cheques and cards don't count.
 
 baht
 balboa

@@ -1,5 +1,5 @@
 label: A rock, mineral or gem
-note: Gems from living things count too: pearl, amber and coral.
+note: Gems from living things count too.
 
 agate
 alabaster

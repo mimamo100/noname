@@ -1,5 +1,5 @@
 label: Something you wear
-note: Anything you wear counts: jewellery, watches, glasses, wigs and make-up as well as clothes. Bags don't.
+note: Anything you wear, including jewellery, glasses and make-up. Bags don't count.
 
 aba
 abaya

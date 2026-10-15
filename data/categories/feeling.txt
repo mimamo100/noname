@@ -1,5 +1,5 @@
 label: A feeling
-note: Emotions and moods. Hunger and tiredness don't count.
+note: Emotions and moods. Bodily states such as hunger and tiredness don't count.
 
 abandonment
 ache

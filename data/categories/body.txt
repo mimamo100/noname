@@ -1,5 +1,5 @@
 label: A part of the body
-note: Parts you could point to, inside or out, hair and bones included. Blood, sweat and tears don't count.
+note: Parts you could point to, inside or out. Body fluids don't count.
 
 abdomen
 abdominal

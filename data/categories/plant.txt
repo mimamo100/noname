@@ -1,5 +1,5 @@
 label: A plant or flower
-note: Trees, grasses, mosses, cacti and seaweed count. Mushrooms and other fungi don't.
+note: Trees, grasses, mosses, cacti and seaweed count. Fungi don't.
 
 acacia
 acer

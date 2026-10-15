@@ -1,5 +1,5 @@
 label: A fish
-note: Real fish only, sharks and seahorses included. Whales, dolphins, shellfish and jellyfish aren't fish: they're sea creatures.
+note: Real fish only: sea mammals, shellfish and jellyfish are sea creatures, not fish.
 
 albacore
 anchovy

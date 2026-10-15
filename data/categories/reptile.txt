@@ -1,5 +1,5 @@
 label: A reptile or amphibian
-note: Amphibians count too (frogs, toads and newts), and so do dinosaurs.
+note: Amphibians and dinosaurs count too.
 
 adder
 alligator

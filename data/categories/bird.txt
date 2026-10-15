@@ -1,5 +1,5 @@
 label: A bird
-note: Every kind of bird, extinct ones like the dodo included. Bats and pterodactyls aren't birds.
+note: Extinct birds count. Bats and flying reptiles aren't birds.
 
 albatross
 ani

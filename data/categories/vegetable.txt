@@ -1,5 +1,5 @@
 label: A vegetable
-note: Mushrooms, beans, lentils, garlic and sweetcorn count, and so do tomatoes. Herbs and grains don't.
+note: Fungi, pulses and sweetcorn count. Herbs and grains don't.
 
 artichoke
 arugula

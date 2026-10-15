@@ -1,5 +1,5 @@
 label: A musical instrument
-note: Whistles, bells and the triangle count. The voice doesn't.
+note: Anything played to make music. The voice doesn't count.
 
 accordion
 acoustic guitar

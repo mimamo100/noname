@@ -51,12 +51,12 @@ final class Prompts
         if (isset($spec['cat'])) {
             $note = $dictionary->categoryNote($spec['cat']);
             if (!$length) return $note;
-            return trim(($note ?? '') . ' Plurals count as their singular for length: “brothers” is 7 letters.');
+            return trim(($note ?? '') . ' Plurals count as their singular for length.');
         }
         return match (true) {
-            $length && $letters => "A verb's other forms count as the verb here, and plurals as their singular: “running” and “ran” are “run”, and “brothers” is 7 letters.",
-            $length => "Plurals count as their singular here, and a verb's other forms as the verb: “brothers” is 7 letters, and “running” is 3.",
-            $letters => "A verb's other forms count as the verb here: “running” and “ran” are “run”.",
+            $length && $letters => "A verb's other forms count as the verb here, and plurals as their singular.",
+            $length => "Plurals count as their singular here, and a verb's other forms as the verb.",
+            $letters => "A verb's other forms count as the verb here.",
             default => null,
         };
     }

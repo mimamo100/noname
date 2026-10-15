@@ -1,5 +1,5 @@
 label: A sea creature (not a fish)
-note: Sea creatures that aren't fish: whales, dolphins and seals, shellfish, starfish, jellyfish, octopuses and coral.
+note: Sea creatures that aren't fish, including sea mammals, shellfish and corals.
 
 abalone
 anemone

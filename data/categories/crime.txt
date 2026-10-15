@@ -1,5 +1,5 @@
 label: A crime
-note: Offences of every size count, from murder to speeding and littering.
+note: Offences of every size count, down to minor ones.
 
 abduction
 abductions

@@ -1,5 +1,5 @@
 label: A sport or game
-note: Games count too: chess, darts, card games, board games and playground games.
+note: Games count too: board, card and playground games as well as sports.
 
 abseiling
 acrobatics

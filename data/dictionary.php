@@ -152993,7 +152993,7 @@ return array (
         323 => 'walkingstick',
         324 => 'whiteant',
       ),
-      'note' => 'Any animal: mammals, birds, fish, insects, spiders, reptiles, sea creatures, worms and snails, and dinosaurs too.',
+      'note' => 'Any animal, including insects, spiders, sea creatures and extinct ones.',
     ),
     'bird' => 
     array (
@@ -153455,7 +153455,7 @@ return array (
         107 => 'woodwarbler',
         108 => 'yellowwagtail',
       ),
-      'note' => 'Every kind of bird, extinct ones like the dodo included. Bats and pterodactyls aren\'t birds.',
+      'note' => 'Extinct birds count. Bats and flying reptiles aren\'t birds.',
     ),
     'boat' => 
     array (
@@ -154507,7 +154507,7 @@ return array (
         342 => 'doublechin',
         343 => 'thyroidgland',
       ),
-      'note' => 'Parts you could point to, inside or out, hair and bones included. Blood, sweat and tears don\'t count.',
+      'note' => 'Parts you could point to, inside or out. Body fluids don\'t count.',
     ),
     'building' => 
     array (
@@ -155786,7 +155786,7 @@ return array (
         162 => 'trousersuit',
         163 => 'fancydress',
       ),
-      'note' => 'Anything you wear counts: jewellery, watches, glasses, wigs and make-up as well as clothes. Bags don\'t.',
+      'note' => 'Anything you wear, including jewellery, glasses and make-up. Bags don\'t count.',
     ),
     'colour' => 
     array (
@@ -156090,7 +156090,7 @@ return array (
         36 => 'mustardyellow',
         37 => 'burntumber',
       ),
-      'note' => 'Shades count (navy, crimson), and so do gold, silver and bronze.',
+      'note' => 'Shades count, and so do metallic colours.',
     ),
     'container' => 
     array (
@@ -156699,7 +156699,7 @@ return array (
         24 => 'drunkanddisorderly',
         25 => 'domesticviolence',
       ),
-      'note' => 'Offences of every size count, from murder to speeding and littering.',
+      'note' => 'Offences of every size count, down to minor ones.',
     ),
     'dessert' => 
     array (
@@ -157349,7 +157349,7 @@ return array (
         50 => 'spanishflu',
         51 => 'deepveinthrombosis',
       ),
-      'note' => 'Everyday ailments count too: a cold, a headache, hiccups.',
+      'note' => 'Everyday ailments count too, not just serious illnesses.',
     ),
     'dish' => 
     array (
@@ -157837,7 +157837,7 @@ return array (
         20 => 'scottishterrier',
         21 => 'toypoodle',
       ),
-      'note' => 'Breeds and kinds of dog, puppy and mongrel included. Wolves and foxes don\'t count; the dingo does, loosely.',
+      'note' => 'Breeds and kinds of dog. Wild relatives don\'t count, except loosely the dingo.',
     ),
     'drink' => 
     array (
@@ -158986,7 +158986,7 @@ return array (
         197 => 'cultureshock',
         198 => 'cabinfever',
       ),
-      'note' => 'Emotions and moods. Hunger and tiredness don\'t count.',
+      'note' => 'Emotions and moods. Bodily states such as hunger and tiredness don\'t count.',
     ),
     'fish' => 
     array (
@@ -159195,7 +159195,7 @@ return array (
         18 => 'nurseshark',
         19 => 'mirrorcarp',
       ),
-      'note' => 'Real fish only, sharks and seahorses included. Whales, dolphins, shellfish and jellyfish aren\'t fish: they\'re sea creatures.',
+      'note' => 'Real fish only: sea mammals, shellfish and jellyfish are sea creatures, not fish.',
     ),
     'flavouring' => 
     array (
@@ -161072,7 +161072,7 @@ return array (
         24 => 'wildstrawberry',
         25 => 'capegooseberry',
       ),
-      'note' => 'Fruit as people think of it, plus a few that are often called vegetables: tomato, avocado and rhubarb count. Nuts, olives, peppers and pumpkins don\'t.',
+      'note' => 'Fruit as people think of it, plus a few that are often called vegetables. Nuts don\'t count.',
     ),
     'furniture' => 
     array (
@@ -161261,7 +161261,7 @@ return array (
         31 => 'cornersofa',
         32 => 'breakfastbar',
       ),
-      'note' => 'Lamps count. Rugs, curtains, kitchen appliances and bathroom fittings don\'t.',
+      'note' => 'Lamps count. Soft furnishings, kitchen appliances and bathroom fittings don\'t.',
     ),
     'insect' => 
     array (
@@ -161626,7 +161626,7 @@ return array (
         30 => 'walkingstick',
         31 => 'whiteant',
       ),
-      'note' => 'Spiders, woodlice, centipedes and other creepy-crawlies count as bugs. Worms, slugs and snails don\'t.',
+      'note' => 'Spiders and other creepy-crawlies count as bugs, but worms, slugs and snails don\'t.',
     ),
     'instrument' => 
     array (
@@ -161827,7 +161827,7 @@ return array (
         22 => 'electricpiano',
         23 => 'drummachine',
       ),
-      'note' => 'Whistles, bells and the triangle count. The voice doesn\'t.',
+      'note' => 'Anything played to make music. The voice doesn\'t count.',
     ),
     'job' => 
     array (
@@ -163039,7 +163039,7 @@ return array (
         165 => 'lighthousekeeper',
         166 => 'fighterpilot',
       ),
-      'note' => 'Jobs people are paid for, from pope to plumber. Kings, queens, students and criminals don\'t count.',
+      'note' => 'Paid work of any kind. Titles, family roles, students and criminals don\'t count.',
     ),
     'kitchen' => 
     array (
@@ -164515,7 +164515,7 @@ return array (
         96 => 'scottishterrier',
         97 => 'toypoodle',
       ),
-      'note' => 'Every kind of mammal, including whales, dolphins, bats, humans and dog breeds.',
+      'note' => 'Every kind of mammal, including sea mammals, bats, humans and dog breeds.',
     ),
     'manmade' => 
     array (
@@ -164953,7 +164953,7 @@ return array (
         19 => 'silverdollar',
         20 => 'halfsovereign',
       ),
-      'note' => 'Currencies and coins, from the pound to bitcoin. Cheques and cards don\'t count.',
+      'note' => 'Currencies and coins, old, new and digital. Cheques and cards don\'t count.',
     ),
     'music' => 
     array (
@@ -165465,7 +165465,7 @@ return array (
         37 => 'flyingdutchman',
         38 => 'blackdog',
       ),
-      'note' => 'Monsters, spirits and creatures of folklore and fiction, including ghosts, vampires, witches and aliens. Gods and angels don\'t count.',
+      'note' => 'Monsters, spirits and creatures of folklore and fiction. Gods and angels don\'t count.',
     ),
     'natural' => 
     array (
@@ -166568,7 +166568,7 @@ return array (
         156 => 'christmascactus',
         157 => 'christmascacti',
       ),
-      'note' => 'Trees, grasses, mosses, cacti and seaweed count. Mushrooms and other fungi don\'t.',
+      'note' => 'Trees, grasses, mosses, cacti and seaweed count. Fungi don\'t.',
     ),
     'relative' => 
     array (
@@ -167010,7 +167010,7 @@ return array (
         13 => 'greenmamba',
         14 => 'spittingcobra',
       ),
-      'note' => 'Amphibians count too (frogs, toads and newts), and so do dinosaurs.',
+      'note' => 'Amphibians and dinosaurs count too.',
     ),
     'rock' => 
     array (
@@ -167173,7 +167173,7 @@ return array (
         23 => 'bluejohn',
         24 => 'pumicestone',
       ),
-      'note' => 'Gems from living things count too: pearl, amber and coral.',
+      'note' => 'Gems from living things count too.',
     ),
     'sea' => 
     array (
@@ -167311,7 +167311,7 @@ return array (
         12 => 'seasnail',
         13 => 'seasponge',
       ),
-      'note' => 'Sea creatures that aren\'t fish: whales, dolphins and seals, shellfish, starfish, jellyfish, octopuses and coral.',
+      'note' => 'Sea creatures that aren\'t fish, including sea mammals, shellfish and corals.',
     ),
     'sound' => 
     array (
@@ -168145,7 +168145,7 @@ return array (
         54 => 'sumowrestling',
         55 => 'eggandspoonrace',
       ),
-      'note' => 'Games count too: chess, darts, card games, board games and playground games.',
+      'note' => 'Games count too: board, card and playground games as well as sports.',
     ),
     'subject' => 
     array (
@@ -169398,7 +169398,7 @@ return array (
         25 => 'curlykale',
         26 => 'plumtomato',
       ),
-      'note' => 'Mushrooms, beans, lentils, garlic and sweetcorn count, and so do tomatoes. Herbs and grains don\'t.',
+      'note' => 'Fungi, pulses and sweetcorn count. Herbs and grains don\'t.',
     ),
     'vehicle' => 
     array (
@@ -169913,7 +169913,7 @@ return array (
         121 => 'mobilehome',
         122 => 'rubberdinghy',
       ),
-      'note' => 'Anything that carries people or goods: bikes, planes and rockets, with boats and ships as looser answers. Animals and lifts don\'t count.',
+      'note' => 'Anything that carries people or goods, with boats as looser answers. Animals and lifts don\'t count.',
     ),
     'weapon' => 
     array (
@@ -170380,7 +170380,7 @@ return array (
         33 => 'balllightning',
         34 => 'sunnyspell',
       ),
-      'note' => 'Rainbows, thunder and lightning count, and so do hot and cold. Earthquakes don\'t.',
+      'note' => 'Temperatures and rainbows count. Earthquakes don\'t.',
     ),
   ),
   'blocked' => 

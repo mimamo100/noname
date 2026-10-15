@@ -995,9 +995,9 @@ test("a verb's -ing and -ed forms are one answer with it, and letter prompts jud
 
 test('"About this prompt": a letter prompt says how forms are judged, a meaning prompt has its list note', function () {
     $d = Dictionary::load();
-    same("A verb's other forms count as the verb here: “running” and “ran” are “run”.", Prompts::note(['cat' => null, 'rules' => [['ends', 'g']]], $d));
+    same("A verb's other forms count as the verb here.", Prompts::note(['cat' => null, 'rules' => [['ends', 'g']]], $d));
     same(null, Prompts::note(['cat' => null, 'rules' => [['starts', 'b']]], $d), "A word's start needs no note");
-    check(str_contains(Prompts::note(['cat' => null, 'rules' => [['minLen', 8]]], $d), '“brothers” is 7 letters'));
+    check(str_contains(Prompts::note(['cat' => null, 'rules' => [['minLen', 8]]], $d), 'Plurals count as their singular'));
     same($d->categoryNote('insect'), Prompts::note(['cat' => 'insect', 'rules' => []], $d));
 });
 

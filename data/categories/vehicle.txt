@@ -1,6 +1,6 @@
 label: A vehicle
 includes: boat
-note: Anything that carries people or goods: bikes, planes and rockets, with boats and ships as looser answers. Animals and lifts don't count.
+note: Anything that carries people or goods, with boats as looser answers. Animals and lifts don't count.
 
 aeroplane
 aeroplanes

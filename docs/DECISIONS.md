@@ -6,6 +6,11 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**"About this list" and "About this prompt" give quirks and definitions, not examples**: what a
+list includes and leaves out ("Real fish only: sea mammals, shellfish and jellyfish are sea
+creatures, not fish"), and how a letter prompt judges forms ("A verb's other forms count as the
+verb here"), without lists of example words. *Owner, after the Music Night playtest.*
+
 **Missing plurals are added, and forms nobody uses are left out.** 1,714 plurals of dictionary
 words that the word lists lacked are in (*blurbs*): safe, as a plural is judged and scored as
 its singular and no prompt asks for an S. Added forms (plurals and -ing/-ed forms) must appear

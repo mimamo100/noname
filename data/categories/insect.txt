@@ -1,5 +1,5 @@
 label: An insect or bug
-note: Spiders, woodlice, centipedes and other creepy-crawlies count as bugs. Worms, slugs and snails don't.
+note: Spiders and other creepy-crawlies count as bugs, but worms, slugs and snails don't.
 
 alderfly
 ant
