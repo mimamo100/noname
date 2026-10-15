@@ -52,6 +52,8 @@ Shown under the word box; they fade after a few seconds (see section 13).
 
 ### Why a word doesn't fit (the {reason} above)
 
+On a letter prompt, a verb's form adds what it counts as: it doesn't end in G (“running” counts as “run”).
+
 | Reason | Where |
 |---|---|
 | it doesn't start with {letters} | Prompts.php · whyNot |

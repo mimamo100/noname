@@ -173,8 +173,14 @@ word-finder site. There are three kinds:
   adding an S can't stretch *brother* into an 8-letter answer or earn extra
   points. Spelling rules (*starts with*, *contains*) check the word as typed,
   and the game never sets letter rules an S would satisfy for free ("contains
-  S", "two Ss"). Only plurals: *-ing* and *-ed* words such as *building* and
-  *evening* are often words in their own right.
+  S", "two Ss").
+- **A verb's other forms count as the verb on a letter prompt** (`data/verb-forms.txt`, from
+  WordNet, and the verbs in `irregular-forms.txt`): *running*, *ran* and *runs* are *run* for
+  every letter rule and for points, so *running* doesn't end in G, and adding -ing earns
+  nothing. A meaning prompt judges a word as written, as its list names it (*swimming* for "A
+  sport"). The forms are one answer with the verb either way. Nouns that only look like forms
+  (*evening*, *morning*, *earring*) aren't in the file, and `family-breaks.txt` keeps them out
+  of the verb's family.
 - **The counter** shows distinct answers left, so saying *apple* (which also
   uses up *apples*) takes it down by one.
 

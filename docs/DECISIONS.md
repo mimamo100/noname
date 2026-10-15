@@ -6,6 +6,15 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**A verb's -ing and -ed forms count as the verb on letter prompts, and score as it**: *running*
+is *run*, so it doesn't end in G, isn't 7 letters, and scores as *run*; *wrote* is *write*. Like
+plurals, adding letters shouldn't earn points, and the root is what the player knew. A meaning
+prompt judges a word as written, as its list names it (*swimming* for "A sport"). The forms
+come from WordNet (`scripts/find-verb-forms.py`, `data/verb-forms.txt`), which also fixed links
+the ending rules got wrong (*browsed* was joined to *brow*, *earring* to *ear*), and 2,358
+missing forms of dictionary verbs were added (*creasing*, *heckled*), as rare as their verb.
+"Ends with G" prompts now have about 1,000 answers instead of 4,800. *Owner.*
+
 **Players see "room", never "world"**: The Big Room, public rooms (the 60-player ones), private
 rooms and competitions. The two words were used interchangeably; "room" is friendlier and
 familiar from other games. Only what players see changed: the code, database and links still

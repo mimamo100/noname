@@ -18,3899 +18,4051 @@ return array (
     10 => 'turn',
     11 => 'case',
     12 => 'second',
-    13 => 'hit',
-    14 => 'taking',
-    15 => 'body',
-    16 => 'set',
-    17 => 'number',
-    18 => 'rest',
-    19 => 'stand',
-    20 => 'cut',
-    21 => 'break',
-    22 => 'country',
-    23 => 'pick',
-    24 => 'taken',
-    25 => 'perfect',
-    26 => 'jack',
-    27 => 'air',
-    28 => 'dance',
-    29 => 'catch',
-    30 => 'master',
-    31 => 'voice',
-    32 => 'beat',
-    33 => 'date',
-    34 => 'takes',
-    35 => 'song',
-    36 => 'turned',
-    37 => 'drop',
-    38 => 'act',
-    39 => 'caught',
-    40 => 'round',
-    41 => 'blue',
-    42 => 'broke',
-    43 => 'rock',
-    44 => 'bill',
-    45 => 'lead',
-    46 => 'club',
-    47 => 'group',
-    48 => 'single',
-    49 => 'mike',
-    50 => 'radio',
-    51 => 'key',
-    52 => 'gold',
-    53 => 'bar',
-    54 => 'tom',
-    55 => 'cover',
-    56 => 'star',
-    57 => 'major',
-    58 => 'stick',
-    59 => 'record',
-    60 => 'stopped',
-    61 => 'soul',
-    62 => 'agent',
-    63 => 'standing',
-    64 => 'broken',
-    65 => 'third',
-    66 => 'stuck',
-    67 => 'support',
-    68 => 'seconds',
-    69 => 'cheers',
-    70 => 'turns',
-    71 => 'grand',
-    72 => 'press',
-    73 => 'picked',
-    74 => 'bell',
-    75 => 'legs',
-    76 => 'stage',
-    77 => 'kick',
-    78 => 'locked',
-    79 => 'track',
-    80 => 'lock',
-    81 => 'leg',
-    82 => 'video',
-    83 => 'applause',
-    84 => 'study',
-    85 => 'crowd',
-    86 => 'roll',
-    87 => 'acting',
-    88 => 'ray',
-    89 => 'band',
-    90 => 'pop',
-    91 => 'neck',
-    92 => 'showed',
-    93 => 'keys',
-    94 => 'skin',
-    95 => 'cheering',
-    96 => 'note',
-    97 => 'stars',
-    98 => 'folks',
-    99 => 'shows',
-    100 => 'leader',
-    101 => 'tape',
-    102 => 'manager',
-    103 => 'natural',
-    104 => 'crew',
-    105 => 'dropped',
-    106 => 'lied',
-    107 => 'bridge',
-    108 => 'breaking',
-    109 => 'records',
-    110 => 'numbers',
-    111 => 'fill',
-    112 => 'turning',
-    113 => 'heads',
-    114 => 'audience',
-    115 => 'release',
-    116 => 'ticket',
-    117 => 'noise',
-    118 => 'nuts',
-    119 => 'bodies',
-    120 => 'tie',
-    121 => 'desk',
-    122 => 'staff',
-    123 => 'fan',
-    124 => 'split',
-    125 => 'finger',
-    126 => 'flat',
-    127 => 'fingers',
-    128 => 'covered',
-    129 => 'heading',
-    130 => 'showing',
-    131 => 'contract',
-    132 => 'tickets',
-    133 => 'dating',
-    134 => 'cases',
-    135 => 'tour',
-    136 => 'bones',
-    137 => 'silver',
-    138 => 'romantic',
-    139 => 'filled',
-    140 => 'player',
-    141 => 'stops',
-    142 => 'repeat',
-    143 => 'led',
-    144 => 'horn',
-    145 => 'grave',
-    146 => 'trap',
-    147 => 'headed',
-    148 => 'picking',
-    149 => 'stood',
-    150 => 'kicked',
-    151 => 'march',
-    152 => 'aside',
-    153 => 'jerk',
-    154 => 'effect',
-    155 => 'piano',
-    156 => 'studio',
-    157 => 'songs',
-    158 => 'swim',
-    159 => 'hook',
-    160 => 'beating',
-    161 => 'metal',
-    162 => 'performance',
-    163 => 'ted',
-    164 => 'bone',
-    165 => 'boom',
-    166 => 'theme',
-    167 => 'notes',
-    168 => 'released',
-    169 => 'cab',
-    170 => 'houses',
-    171 => 'fourth',
-    172 => 'score',
-    173 => 'section',
-    174 => 'garage',
-    175 => 'mass',
-    176 => 'trapped',
-    177 => 'rocks',
-    178 => 'leading',
-    179 => 'sharp',
-    180 => 'passion',
-    181 => 'leads',
-    182 => 'movement',
-    183 => 'growling',
-    184 => 'hitting',
-    185 => 'studying',
-    186 => 'setting',
-    187 => 'theater',
-    188 => 'stands',
-    189 => 'belt',
-    190 => 'cutting',
-    191 => 'bow',
-    192 => 'guitar',
-    193 => 'swing',
-    194 => 'whistle',
-    195 => 'hits',
-    196 => 'mixed',
-    197 => 'agents',
-    198 => 'carol',
-    199 => 'stopping',
-    200 => 'swimming',
-    201 => 'cheer',
-    202 => 'rolling',
-    203 => 'tone',
-    204 => 'voices',
-    205 => 'breaks',
-    206 => 'accent',
-    207 => 'flag',
-    208 => 'version',
-    209 => 'concert',
-    210 => 'singer',
-    211 => 'bars',
-    212 => 'fifth',
-    213 => 'mix',
-    214 => 'classic',
-    215 => 'bills',
-    216 => 'beaten',
-    217 => 'deck',
-    218 => 'fans',
-    219 => 'sacred',
-    220 => 'robot',
-    221 => 'standard',
-    222 => 'players',
-    223 => 'jungle',
-    224 => 'tracks',
-    225 => 'outfit',
-    226 => 'recording',
-    227 => 'electric',
-    228 => 'western',
-    229 => 'interrupt',
-    230 => 'tune',
-    231 => 'booth',
-    232 => 'festival',
-    233 => 'effects',
-    234 => 'benefit',
-    235 => 'pipe',
-    236 => 'dropping',
-    237 => 'pit',
-    238 => 'sample',
-    239 => 'souls',
-    240 => 'punk',
-    241 => 'bells',
-    242 => 'sets',
-    243 => 'pulse',
-    244 => 'signature',
-    245 => 'monitor',
-    246 => 'countries',
-    247 => 'fantasy',
-    248 => 'pitch',
-    249 => 'hammer',
-    250 => 'slap',
-    251 => 'kit',
-    252 => 'producer',
-    253 => 'minor',
-    254 => 'theatre',
-    255 => 'session',
-    256 => 'dates',
-    257 => 'scale',
-    258 => 'beats',
-    259 => 'acts',
-    260 => 'engineer',
-    261 => 'studies',
-    262 => 'chamber',
-    263 => 'romance',
-    264 => 'groups',
-    265 => 'studied',
-    266 => 'drill',
-    267 => 'jazz',
-    268 => 'kicking',
-    269 => 'latin',
-    270 => 'album',
-    271 => 'sync',
-    272 => 'jet',
-    273 => 'humming',
-    274 => 'jam',
-    275 => 'opera',
-    276 => 'tap',
-    277 => 'development',
-    278 => 'string',
-    279 => 'tracking',
-    280 => 'bend',
-    281 => 'recorded',
-    282 => 'growls',
-    283 => 'covering',
-    284 => 'catching',
-    285 => 'tube',
-    286 => 'leaders',
-    287 => 'throne',
-    288 => 'cable',
-    289 => 'musical',
-    290 => 'slide',
-    291 => 'brush',
-    292 => 'delay',
-    293 => 'measure',
-    294 => 'sticks',
-    295 => 'twist',
-    296 => 'leak',
-    297 => 'drops',
-    298 => 'meters',
-    299 => 'gloria',
-    300 => 'sticking',
-    301 => 'cuts',
-    302 => 'pops',
-    303 => 'prom',
-    304 => 'whip',
-    305 => 'acted',
-    306 => 'smash',
-    307 => 'rounds',
-    308 => 'nut',
-    309 => 'needle',
-    310 => 'executive',
-    311 => 'audition',
-    312 => 'chanting',
-    313 => 'sheet',
-    314 => 'tag',
-    315 => 'hooked',
-    316 => 'root',
-    317 => 'harper',
-    318 => 'masters',
-    319 => 'spiritual',
-    320 => 'sheets',
-    321 => 'rehearsal',
-    322 => 'electronic',
-    323 => 'worlds',
-    324 => 'bump',
-    325 => 'gig',
-    326 => 'solo',
-    327 => 'suite',
-    328 => 'beam',
-    329 => 'samples',
-    330 => 'journalist',
-    331 => 'acid',
-    332 => 'sixth',
-    333 => 'dated',
-    334 => 'rap',
-    335 => 'scout',
-    336 => 'clubs',
-    337 => 'cabinet',
-    338 => 'speaker',
-    339 => 'alternative',
-    340 => 'folk',
-    341 => 'rhythm',
-    342 => 'drum',
-    343 => 'tapes',
-    344 => 'ties',
-    345 => 'instrumental',
-    346 => 'whistles',
-    347 => 'twisted',
-    348 => 'filling',
-    349 => 'sweep',
-    350 => 'worship',
-    351 => 'bass',
-    352 => 'idol',
-    353 => 'stream',
-    354 => 'organ',
-    355 => 'morris',
-    356 => 'strings',
-    357 => 'engineering',
-    358 => 'lick',
-    359 => 'rolls',
-    360 => 'backs',
-    361 => 'horns',
-    362 => 'reed',
-    363 => 'bonus',
-    364 => 'laser',
-    365 => 'roots',
-    366 => 'blues',
-    367 => 'pirate',
-    368 => 'smashed',
-    369 => 'phrase',
-    370 => 'benefits',
-    371 => 'chimes',
-    372 => 'brass',
-    373 => 'covers',
-    374 => 'label',
-    375 => 'worm',
-    376 => 'bent',
-    377 => 'noises',
-    378 => 'drums',
-    379 => 'seventh',
-    380 => 'rolled',
-    381 => 'ballet',
-    382 => 'pirates',
-    383 => 'piper',
-    384 => 'standards',
-    385 => 'bounce',
-    386 => 'pony',
-    387 => 'chambers',
-    388 => 'scores',
-    389 => 'doomed',
-    390 => 'upbeat',
-    391 => 'spoon',
-    392 => 'echo',
-    393 => 'manual',
-    394 => 'rig',
-    395 => 'resting',
-    396 => 'reunion',
-    397 => 'crowded',
-    398 => 'sequence',
-    399 => 'mode',
-    400 => 'locks',
-    401 => 'dot',
-    402 => 'choir',
-    403 => 'popped',
-    404 => 'industrial',
-    405 => 'musician',
-    406 => 'organs',
-    407 => 'melody',
-    408 => 'movements',
-    409 => 'picks',
-    410 => 'videos',
-    411 => 'measures',
-    412 => 'dip',
-    413 => 'interrupting',
-    414 => 'loop',
-    415 => 'wax',
-    416 => 'invention',
-    417 => 'kicks',
-    418 => 'classical',
-    419 => 'noodles',
-    420 => 'marching',
-    421 => 'metres',
-    422 => 'harmony',
-    423 => 'bands',
-    424 => 'supporting',
-    425 => 'cans',
-    426 => 'poster',
-    427 => 'peg',
-    428 => 'stadium',
-    429 => 'tracked',
-    430 => 'pressing',
-    431 => 'housing',
-    432 => 'robots',
-    433 => 'orchestra',
-    434 => 'chart',
-    435 => 'autograph',
-    436 => 'disco',
-    437 => 'violin',
-    438 => 'lounge',
-    439 => 'backing',
-    440 => 'pipes',
-    441 => 'backed',
-    442 => 'delayed',
-    443 => 'chorus',
-    444 => 'saddle',
-    445 => 'breakdown',
-    446 => 'contracts',
-    447 => 'worms',
-    448 => 'pressed',
-    449 => 'carnival',
-    450 => 'barrier',
-    451 => 'meter',
-    452 => 'lyrics',
-    453 => 'rider',
-    454 => 'stack',
-    455 => 'surf',
-    456 => 'bumped',
-    457 => 'scored',
-    458 => 'echoing',
-    459 => 'catches',
-    460 => 'dances',
-    461 => 'graves',
-    462 => 'popping',
-    463 => 'fade',
-    464 => 'supported',
-    465 => 'collector',
-    466 => 'traps',
-    467 => 'jingle',
-    468 => 'crook',
-    469 => 'swept',
-    470 => 'jammed',
-    471 => 'sleeve',
-    472 => 'engineers',
-    473 => 'musicians',
-    474 => 'doom',
-    475 => 'swinging',
-    476 => 'slapped',
-    477 => 'tapping',
-    478 => 'repeating',
-    479 => 'bridges',
-    480 => 'sponsor',
-    481 => 'noted',
-    482 => 'needles',
-    483 => 'arena',
-    484 => 'noel',
-    485 => 'whipped',
-    486 => 'starring',
-    487 => 'vibe',
-    488 => 'gong',
-    489 => 'tab',
-    490 => 'psych',
-    491 => 'producers',
-    492 => 'pickup',
-    493 => 'crooked',
-    494 => 'fundamental',
-    495 => 'interrupted',
-    496 => 'drone',
-    497 => 'tango',
-    498 => 'triangle',
-    499 => 'ninth',
-    500 => 'microphone',
-    501 => 'maestro',
-    502 => 'partial',
-    503 => 'scouts',
-    504 => 'sessions',
-    505 => 'hum',
-    506 => 'trumpet',
-    507 => 'monitoring',
-    508 => 'smashing',
-    509 => 'waltz',
-    510 => 'verse',
-    511 => 'recorder',
-    512 => 'tubes',
-    513 => 'posters',
-    514 => 'hustle',
-    515 => 'charts',
-    516 => 'merchandise',
-    517 => 'stroll',
-    518 => 'locking',
-    519 => 'dynamic',
-    520 => 'stereo',
-    521 => 'repeated',
-    522 => 'journalists',
-    523 => 'medieval',
-    524 => 'mediaeval',
-    525 => 'flute',
-    526 => 'rays',
-    527 => 'collective',
-    528 => 'fantasies',
-    529 => 'nightclub',
-    530 => 'introduction',
-    531 => 'strap',
-    532 => 'flags',
-    533 => 'suspension',
-    534 => 'mute',
-    535 => 'finale',
-    536 => 'crowds',
-    537 => 'jerks',
-    538 => 'rocking',
-    539 => 'stages',
-    540 => 'backstage',
-    541 => 'feedback',
-    542 => 'masses',
-    543 => 'mixing',
-    544 => 'splitting',
-    545 => 'curfew',
-    546 => 'experimental',
-    547 => 'keyboard',
-    548 => 'leaking',
-    549 => 'valve',
-    550 => 'publisher',
-    551 => 'karaoke',
-    552 => 'speakers',
-    553 => 'vocal',
-    554 => 'fades',
-    555 => 'suited',
-    556 => 'surfing',
-    557 => 'spotlight',
-    558 => 'headlines',
-    559 => 'releasing',
-    560 => 'disk',
-    561 => 'leaked',
-    562 => 'conductor',
-    563 => 'singers',
-    564 => 'download',
-    565 => 'sol',
-    566 => 'rigged',
-    567 => 'tuned',
-    568 => 'belts',
-    569 => 'crews',
-    570 => 'stem',
-    571 => 'fills',
-    572 => 'disc',
-    573 => 'resolution',
-    574 => 'tapped',
-    575 => 'punks',
-    576 => 'shredder',
-    577 => 'drilling',
-    578 => 'editing',
-    579 => 'manuscript',
-    580 => 'measured',
-    581 => 'dots',
-    582 => 'drummer',
-    583 => 'rattle',
-    584 => 'noodle',
-    585 => 'scales',
-    586 => 'royalty',
-    587 => 'auditions',
-    588 => 'demo',
-    589 => 'electronics',
-    590 => 'comeback',
-    591 => 'console',
-    592 => 'studios',
-    593 => 'countdown',
-    594 => 'headline',
-    595 => 'jets',
-    596 => 'serpent',
-    597 => 'fading',
-    598 => 'tonic',
-    599 => 'boogie',
-    600 => 'critics',
-    601 => 'accidental',
-    602 => 'fling',
-    603 => 'gospel',
-    604 => 'signatures',
-    605 => 'tunes',
-    606 => 'sweeping',
-    607 => 'upright',
-    608 => 'patron',
-    609 => 'reel',
-    610 => 'glee',
-    611 => 'groove',
-    612 => 'swings',
-    613 => 'performances',
-    614 => 'sleeves',
-    615 => 'necks',
-    616 => 'rests',
-    617 => 'debut',
-    618 => 'critic',
-    619 => 'supports',
-    620 => 'premiere',
-    621 => 'tours',
-    622 => 'bumps',
-    623 => 'outfits',
-    624 => 'fusion',
-    625 => 'taped',
-    626 => 'sliding',
-    627 => 'trance',
-    628 => 'symphony',
-    629 => 'fiddle',
-    630 => 'licking',
-    631 => 'funk',
-    632 => 'flats',
-    633 => 'flyer',
-    634 => 'riders',
-    635 => 'echoes',
-    636 => 'chiming',
-    637 => 'canned',
-    638 => 'cables',
-    639 => 'drones',
-    640 => 'staged',
-    641 => 'scroll',
-    642 => 'venue',
-    643 => 'beams',
-    644 => 'pits',
-    645 => 'crooks',
-    646 => 'sections',
-    647 => 'hooks',
-    648 => 'rehearsals',
-    649 => 'taps',
-    650 => 'pluck',
-    651 => 'pedal',
-    652 => 'knob',
-    653 => 'strapped',
-    654 => 'hippie',
-    655 => 'measuring',
-    656 => 'renaissance',
-    657 => 'chant',
-    658 => 'outlaw',
-    659 => 'hooking',
-    660 => 'texture',
-    661 => 'monitors',
-    662 => 'cluster',
-    663 => 'tags',
-    664 => 'faded',
-    665 => 'gala',
-    666 => 'contemporary',
-    667 => 'labels',
-    668 => 'salsa',
-    669 => 'shred',
-    670 => 'dominant',
-    671 => 'slides',
-    672 => 'technician',
-    673 => 'hums',
-    674 => 'composer',
-    675 => 'headphones',
-    676 => 'pitching',
-    677 => 'posse',
-    678 => 'toaster',
-    679 => 'edit',
-    680 => 'flyers',
-    681 => 'bending',
-    682 => 'albums',
-    683 => 'rattles',
-    684 => 'downloaded',
-    685 => 'harp',
-    686 => 'anthem',
-    687 => 'jacks',
-    688 => 'marched',
-    689 => 'aria',
-    690 => 'platinum',
-    691 => 'progressive',
-    692 => 'singles',
-    693 => 'leaks',
-    694 => 'sponsored',
-    695 => 'managers',
-    696 => 'rested',
-    697 => 'shuffle',
-    698 => 'edited',
-    699 => 'steward',
-    700 => 'jug',
-    701 => 'developments',
-    702 => 'growl',
-    703 => 'platter',
-    704 => 'charleston',
-    705 => 'skins',
-    706 => 'tones',
-    707 => 'raving',
-    708 => 'swam',
-    709 => 'fanfare',
-    710 => 'baton',
-    711 => 'lineup',
-    712 => 'ponies',
-    713 => 'twisting',
-    714 => 'strung',
-    715 => 'opener',
-    716 => 'tabs',
-    717 => 'controller',
-    718 => 'flop',
-    719 => 'jamming',
-    720 => 'slapping',
-    721 => 'rocked',
-    722 => 'licked',
-    723 => 'pianist',
-    724 => 'troupe',
-    725 => 'refrain',
-    726 => 'jerking',
-    727 => 'intro',
-    728 => 'concerts',
-    729 => 'booming',
-    730 => 'lullaby',
-    731 => 'recital',
-    732 => 'decks',
-    733 => 'casing',
-    734 => 'releases',
-    735 => 'whipping',
-    736 => 'pitched',
-    737 => 'wedge',
-    738 => 'lasers',
-    739 => 'banjo',
-    740 => 'rave',
-    741 => 'cassette',
-    742 => 'classics',
-    743 => 'touring',
-    744 => 'ledger',
-    745 => 'hammering',
-    746 => 'audiences',
-    747 => 'gigs',
-    748 => 'thrash',
-    749 => 'passions',
-    750 => 'versions',
-    751 => 'numbered',
-    752 => 'stacked',
-    753 => 'cabaret',
-    754 => 'triad',
-    755 => 'duo',
-    756 => 'rooting',
-    757 => 'chord',
-    758 => 'recordings',
-    759 => 'voluntary',
-    760 => 'radios',
-    761 => 'diva',
-    762 => 'verses',
-    763 => 'streams',
-    764 => 'sponsors',
-    765 => 'cello',
-    766 => 'jacked',
-    767 => 'rounded',
-    768 => 'executives',
-    769 => 'spoons',
-    770 => 'mastered',
-    771 => 'artwork',
-    772 => 'psyched',
-    773 => 'bumping',
-    774 => 'brushing',
-    775 => 'hammered',
-    776 => 'collectors',
-    777 => 'hardcore',
-    778 => 'inventions',
-    779 => 'fret',
-    780 => 'tempo',
-    781 => 'stomp',
-    782 => 'chime',
-    783 => 'brushed',
-    784 => 'encore',
-    785 => 'combo',
-    786 => 'bows',
-    787 => 'rocker',
-    788 => 'tagged',
-    789 => 'catalog',
-    790 => 'barriers',
-    791 => 'staging',
-    792 => 'rapping',
-    793 => 'monitored',
-    794 => 'contracted',
-    795 => 'swung',
-    796 => 'bugle',
-    797 => 'worshipped',
-    798 => 'tuning',
-    799 => 'catalogue',
-    800 => 'scoring',
-    801 => 'outlaws',
-    802 => 'showcase',
-    803 => 'drumming',
-    804 => 'slaps',
-    805 => 'phrases',
-    806 => 'novelty',
-    807 => 'techno',
-    808 => 'grimes',
-    809 => 'interface',
-    810 => 'metals',
-    811 => 'glitch',
-    812 => 'loco',
-    813 => 'bellows',
-    814 => 'hymn',
-    815 => 'samba',
-    816 => 'orchestral',
-    817 => 'stride',
-    818 => 'patrons',
-    819 => 'duet',
-    820 => 'shreds',
-    821 => 'mixer',
-    822 => 'deluxe',
-    823 => 'chords',
-    824 => 'engineered',
-    825 => 'harmonica',
-    826 => 'trumpets',
-    827 => 'brushes',
-    828 => 'accordion',
-    829 => 'streaming',
-    830 => 'bop',
-    831 => 'hippies',
-    832 => 'labeled',
-    833 => 'trio',
-    834 => 'limbo',
-    835 => 'bends',
-    836 => 'shredded',
-    837 => 'scouting',
-    838 => 'technicians',
-    839 => 'barred',
-    840 => 'ballad',
-    841 => 'mambo',
-    842 => 'amp',
-    843 => 'jukebox',
-    844 => 'minors',
-    845 => 'residency',
-    846 => 'floss',
-    847 => 'rapper',
-    848 => 'vogue',
-    849 => 'jingles',
-    850 => 'casings',
-    851 => 'delays',
-    852 => 'viola',
-    853 => 'presses',
-    854 => 'plucked',
-    855 => 'repeats',
-    856 => 'bouncer',
-    857 => 'taping',
-    858 => 'alternatives',
-    859 => 'dipped',
-    860 => 'acoustic',
-    861 => 'autographs',
-    862 => 'rooted',
-    863 => 'canon',
-    864 => 'theaters',
-    865 => 'billing',
-    866 => 'fuzz',
-    867 => 'settings',
-    868 => 'drills',
-    869 => 'dipping',
-    870 => 'splits',
-    871 => 'sweeps',
-    872 => 'auditorium',
-    873 => 'saxophone',
-    874 => 'perfected',
-    875 => 'stacks',
-    876 => 'unison',
-    877 => 'pegged',
-    878 => 'desks',
-    879 => 'tut',
-    880 => 'auditioning',
-    881 => 'thrashing',
-    882 => 'guitars',
-    883 => 'idols',
-    884 => 'stomping',
-    885 => 'airs',
-    886 => 'variation',
-    887 => 'thrashed',
-    888 => 'jams',
-    889 => 'drilled',
-    890 => 'slid',
-    891 => 'consort',
-    892 => 'vibes',
-    893 => 'prodigy',
-    894 => 'billings',
-    895 => 'straps',
-    896 => 'cabs',
-    897 => 'cheered',
-    898 => 'podium',
-    899 => 'rounding',
-    900 => 'whips',
-    901 => 'dynamics',
-    902 => 'diminished',
-    903 => 'riff',
-    904 => 'scrolls',
-    905 => 'fines',
-    906 => 'soprano',
-    907 => 'polka',
-    908 => 'hillbilly',
-    909 => 'clogged',
-    910 => 'twists',
-    911 => 'majors',
-    912 => 'skinned',
-    913 => 'ornament',
-    914 => 'temperament',
-    915 => 'trilling',
-    916 => 'beatings',
-    917 => 'valves',
-    918 => 'marches',
-    919 => 'variations',
-    920 => 'strolling',
-    921 => 'gothic',
-    922 => 'metre',
-    923 => 'indies',
-    924 => 'introductions',
-    925 => 'windmill',
-    926 => 'chants',
-    927 => 'distortion',
-    928 => 'publishers',
-    929 => 'rarity',
-    930 => 'ornaments',
-    931 => 'cartridge',
-    932 => 'booker',
-    933 => 'lyric',
-    934 => 'themes',
-    935 => 'downloading',
-    936 => 'imperfect',
-    937 => 'synced',
-    938 => 'synched',
-    939 => 'jive',
-    940 => 'hammers',
-    941 => 'imprint',
-    942 => 'publicist',
-    943 => 'accents',
-    944 => 'jig',
-    945 => 'vinyl',
-    946 => 'stems',
-    947 => 'soundtrack',
-    948 => 'strut',
-    949 => 'ensemble',
-    950 => 'loops',
-    951 => 'loudspeaker',
-    952 => 'tout',
-    953 => 'interval',
-    954 => 'quartet',
-    955 => 'festivals',
-    956 => 'flagged',
-    957 => 'pulses',
-    958 => 'barbershop',
-    959 => 'jungles',
-    960 => 'clarinet',
-    961 => 'smashes',
-    962 => 'cabinets',
-    963 => 'cartridges',
-    964 => 'bowed',
-    965 => 'vocals',
-    966 => 'scat',
-    967 => 'aired',
-    968 => 'delaying',
-    969 => 'stoner',
-    970 => 'mod',
-    971 => 'tagging',
-    972 => 'nightclubs',
-    973 => 'intervals',
-    974 => 'reggae',
-    975 => 'songwriter',
-    976 => 'waxed',
-    977 => 'bowing',
-    978 => 'fined',
-    979 => 'swims',
-    980 => 'sequences',
-    981 => 'improv',
-    982 => 'piping',
-    983 => 'pitches',
-    984 => 'concerto',
-    985 => 'unplug',
-    986 => 'reeling',
-    987 => 'flung',
-    988 => 'rigging',
-    989 => 'clusters',
-    990 => 'royalties',
-    991 => 'bonuses',
-    992 => 'promoter',
-    993 => 'rhythms',
-    994 => 'tenor',
-    995 => 'indie',
-    996 => 'shaker',
-    997 => 'sax',
-    998 => 'slurring',
-    999 => 'promenade',
-    1000 => 'clubbing',
-    1001 => 'guitarist',
-    1002 => 'trapping',
-    1003 => 'goth',
-    1004 => 'fliers',
-    1005 => 'bongo',
-    1006 => 'twirl',
-    1007 => 'kits',
-    1008 => 'ratchet',
-    1009 => 'dub',
-    1010 => 'bounces',
-    1011 => 'discord',
-    1012 => 'piccolo',
-    1013 => 'fiddler',
-    1014 => 'hula',
-    1015 => 'housed',
-    1016 => 'microphones',
-    1017 => 'dotted',
-    1018 => 'worships',
-    1019 => 'snare',
-    1020 => 'presto',
-    1021 => 'triplets',
-    1022 => 'dubbed',
-    1023 => 'licks',
-    1024 => 'disks',
-    1025 => 'groupie',
-    1026 => 'progression',
-    1027 => 'alto',
-    1028 => 'violinist',
-    1029 => 'playback',
-    1030 => 'hippy',
-    1031 => 'dab',
-    1032 => 'confetti',
-    1033 => 'manuscripts',
-    1034 => 'beaming',
-    1035 => 'suites',
-    1036 => 'bellowing',
-    1037 => 'forte',
-    1038 => 'discs',
-    1039 => 'trombone',
-    1040 => 'hymns',
-    1041 => 'rigs',
-    1042 => 'musicals',
-    1043 => 'presenter',
-    1044 => 'lindy',
-    1045 => 'droppings',
-    1046 => 'flier',
-    1047 => 'matinee',
-    1048 => 'violins',
-    1049 => 'jugs',
-    1050 => 'lament',
-    1051 => 'thrones',
-    1052 => 'acids',
-    1053 => 'scatting',
-    1054 => 'auditioned',
-    1055 => 'booms',
-    1056 => 'tuba',
-    1057 => 'waxing',
-    1058 => 'diminish',
-    1059 => 'canning',
-    1060 => 'theatres',
-    1061 => 'autographed',
-    1062 => 'jacking',
-    1063 => 'beamed',
-    1064 => 'serenade',
-    1065 => 'worshipping',
-    1066 => 'deejay',
-    1067 => 'foxtrot',
-    1068 => 'mixes',
-    1069 => 'choreographer',
-    1070 => 'fife',
-    1071 => 'bagpipes',
-    1072 => 'vocalist',
-    1073 => 'stacking',
-    1074 => 'jerked',
-    1075 => 'airing',
-    1076 => 'shimmy',
-    1077 => 'gramophone',
-    1078 => 'ambient',
-    1079 => 'bebop',
-    1080 => 'octave',
-    1081 => 'bard',
-    1082 => 'clogs',
-    1083 => 'vamp',
-    1084 => 'headset',
-    1085 => 'operas',
-    1086 => 'booths',
-    1087 => 'thirds',
-    1088 => 'baggy',
-    1089 => 'trumpeting',
-    1090 => 'ligature',
-    1091 => 'pegs',
-    1092 => 'rumba',
-    1093 => 'strides',
-    1094 => 'sonata',
-    1095 => 'freestyle',
-    1096 => 'groupies',
-    1097 => 'lute',
-    1098 => 'vaudeville',
-    1099 => 'buildup',
-    1100 => 'singsong',
-    1101 => 'benefited',
-    1102 => 'outlawed',
-    1103 => 'juju',
-    1104 => 'muted',
-    1105 => 'tambourine',
-    1106 => 'psychedelic',
-    1107 => 'triads',
-    1108 => 'clog',
-    1109 => 'stomped',
-    1110 => 'gospels',
-    1111 => 'pedals',
-    1112 => 'mallet',
-    1113 => 'strapping',
-    1114 => 'smooches',
-    1115 => 'boning',
-    1116 => 'melodies',
-    1117 => 'sludge',
-    1118 => 'cantor',
-    1119 => 'koto',
-    1120 => 'romances',
-    1121 => 'knobs',
-    1122 => 'barring',
-    1123 => 'mogul',
-    1124 => 'droning',
-    1125 => 'turnaround',
-    1126 => 'strumming',
-    1127 => 'banger',
-    1128 => 'ovation',
-    1129 => 'hipster',
-    1130 => 'reels',
-    1131 => 'triangles',
-    1132 => 'plucking',
-    1133 => 'toured',
-    1134 => 'phonograph',
-    1135 => 'mouthpiece',
-    1136 => 'sponsoring',
-    1137 => 'impromptu',
-    1138 => 'conga',
-    1139 => 'decked',
-    1140 => 'waltzing',
-    1141 => 'overture',
-    1142 => 'anvil',
-    1143 => 'baroque',
-    1144 => 'mariachi',
-    1145 => 'bestseller',
-    1146 => 'pickings',
-    1147 => 'reeds',
-    1148 => 'motif',
-    1149 => 'unplugged',
-    1150 => 'dips',
-    1151 => 'dolce',
-    1152 => 'oldie',
-    1153 => 'crowding',
-    1154 => 'flamenco',
-    1155 => 'manuals',
-    1156 => 'fingered',
-    1157 => 'serpents',
-    1158 => 'cadence',
-    1159 => 'starred',
-    1160 => 'rappers',
-    1161 => 'overdrive',
-    1162 => 'rockers',
-    1163 => 'largo',
-    1164 => 'drumroll',
-    1165 => 'stringing',
-    1166 => 'ode',
-    1167 => 'bootleg',
-    1168 => 'contracting',
-    1169 => 'caprice',
-    1170 => 'radioed',
-    1171 => 'prelude',
-    1172 => 'fundamentals',
-    1173 => 'exec',
-    1174 => 'strutting',
-    1175 => 'philharmonic',
-    1176 => 'percussion',
-    1177 => 'solos',
-    1178 => 'grooves',
-    1179 => 'blogger',
-    1180 => 'bangers',
-    1181 => 'emcee',
-    1182 => 'mikes',
-    1183 => 'fillings',
-    1184 => 'minstrel',
-    1185 => 'windmills',
-    1186 => 'soiree',
-    1187 => 'improvisation',
-    1188 => 'raps',
-    1189 => 'carols',
-    1190 => 'earplugs',
-    1191 => 'venues',
-    1192 => 'ukulele',
-    1193 => 'demos',
-    1194 => 'beater',
-    1195 => 'keyed',
-    1196 => 'smooch',
-    1197 => 'oldies',
-    1198 => 'tutti',
-    1199 => 'westerns',
-    1200 => 'synth',
-    1201 => 'pianos',
-    1202 => 'reunions',
-    1203 => 'composers',
-    1204 => 'echoed',
-    1205 => 'bubblegum',
-    1206 => 'marquee',
-    1207 => 'playlist',
-    1208 => 'garages',
-    1209 => 'fanning',
-    1210 => 'boned',
-    1211 => 'promo',
-    1212 => 'tubing',
-    1213 => 'skinhead',
-    1214 => 'majored',
-    1215 => 'synch',
-    1216 => 'billed',
-    1217 => 'amplifier',
-    1218 => 'falsetto',
-    1219 => 'compressor',
-    1220 => 'psalm',
-    1221 => 'cassettes',
-    1222 => 'tuts',
-    1223 => 'shredding',
-    1224 => 'ply',
-    1225 => 'pogo',
-    1226 => 'treble',
-    1227 => 'crossover',
-    1228 => 'labelled',
-    1229 => 'emo',
-    1230 => 'perfecting',
-    1231 => 'oboe',
-    1232 => 'cotillion',
-    1233 => 'acoustics',
-    1234 => 'evergreen',
-    1235 => 'damper',
-    1236 => 'remix',
-    1237 => 'worshiped',
-    1238 => 'shanty',
-    1239 => 'screamer',
-    1240 => 'noting',
-    1241 => 'roadie',
-    1242 => 'choral',
-    1243 => 'scaled',
-    1244 => 'conch',
-    1245 => 'medley',
-    1246 => 'textures',
-    1247 => 'consoling',
-    1248 => 'harping',
-    1249 => 'fretting',
-    1250 => 'skinheads',
-    1251 => 'horned',
-    1252 => 'imprinted',
-    1253 => 'amps',
-    1254 => 'requiem',
-    1255 => 'ragtime',
-    1256 => 'scouted',
-    1257 => 'cymbals',
-    1258 => 'smooching',
-    1259 => 'twirling',
-    1260 => 'fingering',
-    1261 => 'lyre',
-    1262 => 'saddles',
-    1263 => 'recorders',
-    1264 => 'drumstick',
-    1265 => 'resolutions',
-    1266 => 'diminishing',
-    1267 => 'ledgers',
-    1268 => 'calypso',
-    1269 => 'electro',
-    1270 => 'fugue',
-    1271 => 'baritone',
-    1272 => 'trappings',
-    1273 => 'broadcaster',
-    1274 => 'raves',
-    1275 => 'bluegrass',
-    1276 => 'gogo',
-    1277 => 'soloist',
-    1278 => 'bouncers',
-    1279 => 'controllers',
-    1280 => 'harmonic',
-    1281 => 'hora',
-    1282 => 'interlude',
-    1283 => 'exposition',
-    1284 => 'psalms',
-    1285 => 'calliope',
-    1286 => 'slurred',
-    1287 => 'harmonies',
-    1288 => 'sellout',
-    1289 => 'drummers',
-    1290 => 'ditty',
-    1291 => 'glam',
-    1292 => 'trills',
-    1293 => 'keyboards',
-    1294 => 'sixteenth',
-    1295 => 'flops',
-    1296 => 'slur',
-    1297 => 'toms',
-    1298 => 'songbird',
-    1299 => 'scaling',
-    1300 => 'jamboree',
-    1301 => 'arenas',
-    1302 => 'turntable',
-    1303 => 'contemporaries',
-    1304 => 'crescendo',
-    1305 => 'bellow',
-    1306 => 'hillbillies',
-    1307 => 'organist',
-    1308 => 'bandstand',
-    1309 => 'ballads',
-    1310 => 'pickups',
-    1311 => 'synthesizer',
-    1312 => 'synthesiser',
-    1313 => 'mastering',
-    1314 => 'retrograde',
-    1315 => 'capoeira',
-    1316 => 'americana',
-    1317 => 'beatboxing',
-    1318 => 'clogging',
-    1319 => 'phrasing',
-    1320 => 'grime',
-    1321 => 'merchandising',
-    1322 => 'pitted',
-    1323 => 'drumsticks',
-    1324 => 'fantasia',
-    1325 => 'breakdowns',
-    1326 => 'mandolin',
-    1327 => 'whammy',
-    1328 => 'virtuoso',
-    1329 => 'flopped',
-    1330 => 'hipsters',
-    1331 => 'strums',
-    1332 => 'spooning',
-    1333 => 'stadiums',
-    1334 => 'pirated',
-    1335 => 'wristband',
-    1336 => 'stewards',
-    1337 => 'clave',
-    1338 => 'charted',
-    1339 => 'consorting',
-    1340 => 'capo',
-    1341 => 'flutes',
-    1342 => 'grouping',
-    1343 => 'rhapsody',
-    1344 => 'truss',
-    1345 => 'takings',
-    1346 => 'snares',
-    1347 => 'cakewalk',
-    1348 => 'modes',
-    1349 => 'tabor',
-    1350 => 'romanticism',
-    1351 => 'downloads',
-    1352 => 'voiced',
-    1353 => 'necking',
-    1354 => 'flings',
-    1355 => 'dubbing',
-    1356 => 'shakers',
-    1357 => 'flopping',
-    1358 => 'struts',
-    1359 => 'vamps',
-    1360 => 'yodeling',
-    1361 => 'yodelling',
-    1362 => 'choirs',
-    1363 => 'consoled',
-    1364 => 'wedges',
-    1365 => 'sitar',
-    1366 => 'promoters',
-    1367 => 'seconded',
-    1368 => 'accompaniment',
-    1369 => 'looped',
-    1370 => 'harpsichord',
-    1371 => 'notation',
-    1372 => 'catalogued',
-    1373 => 'cataloged',
-    1374 => 'electrics',
-    1375 => 'troubadour',
-    1376 => 'openers',
-    1377 => 'tonics',
-    1378 => 'legged',
-    1379 => 'glitches',
-    1380 => 'riser',
-    1381 => 'catalogs',
-    1382 => 'conductors',
-    1383 => 'stave',
-    1384 => 'strolled',
-    1385 => 'grunge',
-    1386 => 'distortions',
-    1387 => 'toned',
-    1388 => 'masse',
-    1389 => 'bolero',
-    1390 => 'pitting',
-    1391 => 'romantics',
-    1392 => 'canons',
-    1393 => 'drumbeat',
-    1394 => 'waltzes',
-    1395 => 'jazzed',
-    1396 => 'leggings',
-    1397 => 'leggins',
-    1398 => 'majoring',
-    1399 => 'skinning',
-    1400 => 'headliner',
-    1401 => 'pedaling',
-    1402 => 'pedalling',
-    1403 => 'charting',
-    1404 => 'lullabies',
-    1405 => 'bugler',
-    1406 => 'muzak',
-    1407 => 'bagpipe',
-    1408 => 'kazoo',
-    1409 => 'execs',
-    1410 => 'yodel',
-    1411 => 'transcription',
-    1412 => 'segue',
-    1413 => 'staffed',
-    1414 => 'interrupts',
-    1415 => 'virginal',
-    1416 => 'strum',
-    1417 => 'sopranos',
-    1418 => 'potpourri',
-    1419 => 'laminated',
-    1420 => 'surfed',
-    1421 => 'impresario',
-    1422 => 'clubbed',
-    1423 => 'bloggers',
-    1424 => 'molto',
-    1425 => 'belted',
-    1426 => 'consoles',
-    1427 => 'cellist',
-    1428 => 'bended',
-    1429 => 'slurs',
-    1430 => 'staffs',
-    1431 => 'chacha',
-    1432 => 'flossing',
-    1433 => 'mods',
-    1434 => 'operetta',
-    1435 => 'trill',
-    1436 => 'bootlegger',
-    1437 => 'strobe',
-    1438 => 'arias',
-    1439 => 'cuttings',
-    1440 => 'flinging',
-    1441 => 'catalogues',
-    1442 => 'metronome',
-    1443 => 'drummed',
-    1444 => 'tuner',
-    1445 => 'lamenting',
-    1446 => 'fado',
-    1447 => 'caroling',
-    1448 => 'carolling',
-    1449 => 'grouped',
-    1450 => 'rockstar',
-    1451 => 'bongos',
-    1452 => 'posses',
-    1453 => 'reviewer',
-    1454 => 'kora',
-    1455 => 'banded',
-    1456 => 'cornet',
-    1457 => 'locos',
-    1458 => 'cymbal',
-    1459 => 'outfitted',
-    1460 => 'poco',
-    1461 => 'worshiping',
-    1462 => 'swum',
-    1463 => 'toasters',
-    1464 => 'strolls',
-    1465 => 'inversion',
-    1466 => 'fandango',
-    1467 => 'labeling',
-    1468 => 'labelling',
-    1469 => 'heckle',
-    1470 => 'discos',
-    1471 => 'warbler',
-    1472 => 'piped',
-    1473 => 'bottleneck',
-    1474 => 'waltzed',
-    1475 => 'sampler',
-    1476 => 'looping',
-    1477 => 'stereos',
-    1478 => 'minuet',
-    1479 => 'ravings',
-    1480 => 'counterpoint',
-    1481 => 'stomps',
-    1482 => 'benefiting',
-    1483 => 'songwriters',
-    1484 => 'duets',
-    1485 => 'headlining',
-    1486 => 'platters',
-    1487 => 'minstrels',
-    1488 => 'jitterbug',
-    1489 => 'divas',
-    1490 => 'flam',
-    1491 => 'diminishes',
-    1492 => 'mixers',
-    1493 => 'themed',
-    1494 => 'strode',
-    1495 => 'fanned',
-    1496 => 'volta',
-    1497 => 'grooving',
-    1498 => 'compilation',
-    1499 => 'effected',
-    1500 => 'choirboy',
-    1501 => 'spotlights',
-    1502 => 'chanted',
-    1503 => 'heckling',
-    1504 => 'pirouette',
-    1505 => 'batons',
-    1506 => 'riffs',
-    1507 => 'amphitheater',
-    1508 => 'amphitheatre',
-    1509 => 'grands',
-    1510 => 'cased',
-    1511 => 'massing',
-    1512 => 'orchestras',
-    1513 => 'comebacks',
-    1514 => 'sharps',
-    1515 => 'suiting',
-    1516 => 'staffing',
-    1517 => 'phrased',
-    1518 => 'harmonium',
-    1519 => 'imprints',
-    1520 => 'baggies',
-    1521 => 'raga',
-    1522 => 'bhangra',
-    1523 => 'veena',
-    1524 => 'plying',
-    1525 => 'dixieland',
-    1526 => 'wristbands',
-    1527 => 'augmented',
-    1528 => 'harps',
-    1529 => 'premieres',
-    1530 => 'croon',
-    1531 => 'rondo',
-    1532 => 'warblers',
-    1533 => 'pyrotechnics',
-    1534 => 'allegro',
-    1535 => 'sectioned',
-    1536 => 'lamented',
-    1537 => 'vibrato',
-    1538 => 'impressionism',
-    1539 => 'cancan',
-    1540 => 'augment',
-    1541 => 'overtures',
-    1542 => 'bootlegging',
-    1543 => 'artworks',
-    1544 => 'beatnik',
-    1545 => 'partials',
-    1546 => 'ska',
-    1547 => 'bassoon',
-    1548 => 'piu',
-    1549 => 'bassist',
-    1550 => 'edits',
-    1551 => 'promos',
-    1552 => 'heckler',
-    1553 => 'numbering',
-    1554 => 'scrolling',
-    1555 => 'bootleggers',
-    1556 => 'stemming',
-    1557 => 'symphonies',
-    1558 => 'concerted',
-    1559 => 'stoners',
-    1560 => 'tangos',
-    1561 => 'dissonance',
-    1562 => 'xylophone',
-    1563 => 'laminate',
-    1564 => 'belter',
-    1565 => 'trumpeter',
-    1566 => 'crooner',
-    1567 => 'belting',
-    1568 => 'mutes',
-    1569 => 'flagging',
-    1570 => 'recitals',
-    1571 => 'merengue',
-    1572 => 'silvers',
-    1573 => 'reeled',
-    1574 => 'striding',
-    1575 => 'golds',
-    1576 => 'loudspeakers',
-    1577 => 'washboard',
-    1578 => 'voicing',
-    1579 => 'clustered',
-    1580 => 'waxes',
-    1581 => 'symphonic',
-    1582 => 'modulation',
-    1583 => 'trussed',
-    1584 => 'bugles',
-    1585 => 'acetate',
-    1586 => 'wormed',
-    1587 => 'overtones',
-    1588 => 'plucks',
-    1589 => 'moonwalk',
-    1590 => 'roadies',
-    1591 => 'debuted',
-    1592 => 'beaters',
-    1593 => 'equalizer',
-    1594 => 'massed',
-    1595 => 'stanza',
-    1596 => 'premiered',
-    1597 => 'presenters',
-    1598 => 'novelties',
-    1599 => 'madrigal',
-    1600 => 'rapped',
-    1601 => 'carnivals',
-    1602 => 'concertina',
-    1603 => 'shamisen',
-    1604 => 'locomotion',
-    1605 => 'streamed',
-    1606 => 'headsets',
-    1607 => 'expressionism',
-    1608 => 'stemmed',
-    1609 => 'vocalists',
-    1610 => 'augmentation',
-    1611 => 'motifs',
-    1612 => 'frets',
-    1613 => 'maracas',
-    1614 => 'downbeat',
-    1615 => 'offbeat',
-    1616 => 'leaded',
-    1617 => 'snared',
-    1618 => 'simile',
-    1619 => 'nocturne',
-    1620 => 'fiddles',
-    1621 => 'carolers',
-    1622 => 'anthology',
-    1623 => 'dabs',
-    1624 => 'sequencer',
-    1625 => 'maypole',
-    1626 => 'proms',
-    1627 => 'intonation',
-    1628 => 'cataloguing',
-    1629 => 'harmonics',
-    1630 => 'didgeridoo',
-    1631 => 'reverb',
-    1632 => 'cataloging',
-    1633 => 'arabesque',
-    1634 => 'plied',
-    1635 => 'ticketed',
-    1636 => 'riffing',
-    1637 => 'consorts',
-    1638 => 'laments',
-    1639 => 'hummed',
-    1640 => 'suspensions',
-    1641 => 'quintet',
-    1642 => 'pipers',
-    1643 => 'moguls',
-    1644 => 'raved',
-    1645 => 'modernism',
-    1646 => 'sheeting',
-    1647 => 'amplifiers',
-    1648 => 'dirge',
-    1649 => 'scalper',
-    1650 => 'dampers',
-    1651 => 'reprise',
-    1652 => 'prodigies',
-    1653 => 'curfews',
-    1654 => 'tenors',
-    1655 => 'rosin',
-    1656 => 'cabarets',
-    1657 => 'standings',
-    1658 => 'lambada',
-    1659 => 'pianists',
-    1660 => 'gongs',
-    1661 => 'timbre',
-    1662 => 'selector',
-    1663 => 'growled',
-    1664 => 'decking',
-    1665 => 'turntables',
-    1666 => 'encores',
-    1667 => 'dubstep',
-    1668 => 'drumbeats',
-    1669 => 'cowbell',
-    1670 => 'trombones',
-    1671 => 'stagehand',
-    1672 => 'techie',
-    1673 => 'banjos',
-    1674 => 'bandleader',
-    1675 => 'pirating',
-    1676 => 'altos',
-    1677 => 'vina',
-    1678 => 'rockabilly',
-    1679 => 'coda',
-    1680 => 'textured',
-    1681 => 'imprinting',
-    1682 => 'jiving',
-    1683 => 'adagio',
-    1684 => 'hootenanny',
-    1685 => 'surfs',
-    1686 => 'serenading',
-    1687 => 'jetting',
-    1688 => 'psyching',
-    1689 => 'crooning',
-    1690 => 'anthems',
-    1691 => 'screamers',
-    1692 => 'ticketing',
-    1693 => 'mazurka',
-    1694 => 'risers',
-    1695 => 'naturals',
-    1696 => 'castanets',
-    1697 => 'guitarists',
-    1698 => 'rigger',
-    1699 => 'kyrie',
-    1700 => 'shuffles',
-    1701 => 'lyricist',
-    1702 => 'resonator',
-    1703 => 'showcases',
-    1704 => 'refrained',
-    1705 => 'boomed',
-    1706 => 'muezzin',
-    1707 => 'accompanist',
-    1708 => 'songbirds',
-    1709 => 'synths',
-    1710 => 'clef',
-    1711 => 'ratcheting',
-    1712 => 'showcasing',
-    1713 => 'notations',
-    1714 => 'carillon',
-    1715 => 'lounges',
-    1716 => 'publicists',
-    1717 => 'choreographers',
-    1718 => 'matinees',
-    1719 => 'arranger',
-    1720 => 'combos',
-    1721 => 'minored',
-    1722 => 'balalaika',
-    1723 => 'dancehall',
-    1724 => 'zither',
-    1725 => 'syncing',
-    1726 => 'effecting',
-    1727 => 'harpers',
-    1728 => 'kitted',
-    1729 => 'choruses',
-    1730 => 'quintuplets',
-    1731 => 'stagehands',
-    1732 => 'broadcasters',
-    1733 => 'horning',
-    1734 => 'dubs',
-    1735 => 'ballets',
-    1736 => 'beatniks',
-    1737 => 'debuting',
-    1738 => 'trances',
-    1739 => 'banding',
-    1740 => 'soirees',
-    1741 => 'gigging',
-    1742 => 'cantata',
-    1743 => 'uprights',
-    1744 => 'dotting',
-    1745 => 'reviewers',
-    1746 => 'octaves',
-    1747 => 'twirls',
-    1748 => 'interfaces',
-    1749 => 'unplugging',
-    1750 => 'touted',
-    1751 => 'lineups',
-    1752 => 'touting',
-    1753 => 'showings',
-    1754 => 'psychedelics',
-    1755 => 'benefitted',
-    1756 => 'consorted',
-    1757 => 'showcased',
-    1758 => 'toning',
-    1759 => 'stringed',
-    1760 => 'pirouettes',
-    1761 => 'jigs',
-    1762 => 'prog',
-    1763 => 'worming',
-    1764 => 'hustles',
-    1765 => 'synthesizers',
-    1766 => 'troupes',
-    1767 => 'headliners',
-    1768 => 'serenaded',
-    1769 => 'elegy',
-    1770 => 'basses',
-    1771 => 'keying',
-    1772 => 'tubed',
-    1773 => 'tutting',
-    1774 => 'triplet',
-    1775 => 'twirled',
-    1776 => 'galas',
-    1777 => 'bestsellers',
-    1778 => 'soloists',
-    1779 => 'looper',
-    1780 => 'troubadours',
-    1781 => 'duos',
-    1782 => 'groupings',
-    1783 => 'bopping',
-    1784 => 'polonaise',
-    1785 => 'clustering',
-    1786 => 'tarantella',
-    1787 => 'deejays',
-    1788 => 'staves',
-    1789 => 'bellowed',
-    1790 => 'flautist',
-    1791 => 'bagatelle',
-    1792 => 'intros',
-    1793 => 'interfacing',
-    1794 => 'crewed',
-    1795 => 'pianoforte',
-    1796 => 'electronica',
-    1797 => 'coverings',
-    1798 => 'belters',
-    1799 => 'choirboys',
-    1800 => 'glockenspiel',
-    1801 => 'heckles',
-    1802 => 'chimed',
-    1803 => 'bodied',
-    1804 => 'timpani',
-    1805 => 'theremin',
-    1806 => 'cellos',
-    1807 => 'fining',
-    1808 => 'grooved',
-    1809 => 'trusses',
-    1810 => 'crescendos',
-    1811 => 'ovations',
-    1812 => 'hecklers',
-    1813 => 'pipa',
-    1814 => 'rebec',
-    1815 => 'tambourines',
-    1816 => 'violinists',
-    1817 => 'tomtom',
-    1818 => 'mariachis',
-    1819 => 'choristers',
-    1820 => 'chanson',
-    1821 => 'jukeboxes',
-    1822 => 'chorister',
-    1823 => 'yodels',
-    1824 => 'choirmaster',
-    1825 => 'quickstep',
-    1826 => 'anvils',
-    1827 => 'bards',
-    1828 => 'clarinets',
-    1829 => 'necked',
-    1830 => 'miked',
-    1831 => 'progressives',
-    1832 => 'quadrille',
-    1833 => 'applauses',
-    1834 => 'headings',
-    1835 => 'noels',
-    1836 => 'playlists',
-    1837 => 'fifths',
-    1838 => 'fretted',
-    1839 => 'premiering',
-    1840 => 'breakdancing',
-    1841 => 'compressors',
-    1842 => 'dabbing',
-    1843 => 'bopped',
-    1844 => 'klezmer',
-    1845 => 'fiddlers',
-    1846 => 'serenades',
-    1847 => 'outlawing',
-    1848 => 'caprices',
-    1849 => 'dooms',
-    1850 => 'busker',
-    1851 => 'ceilidh',
-    1852 => 'ratchets',
-    1853 => 'flossed',
-    1854 => 'wassail',
-    1855 => 'legging',
-    1856 => 'pianola',
-    1857 => 'concertos',
-    1858 => 'harpist',
-    1859 => 'percussionist',
-    1860 => 'mallets',
-    1861 => 'uke',
-    1862 => 'breakdance',
-    1863 => 'gamelan',
-    1864 => 'chorale',
-    1865 => 'pegging',
-    1866 => 'syncs',
-    1867 => 'odes',
-    1868 => 'trios',
-    1869 => 'marimba',
-    1870 => 'tabla',
-    1871 => 'gavotte',
-    1872 => 'shanties',
-    1873 => 'plies',
-    1874 => 'accented',
-    1875 => 'temperaments',
-    1876 => 'belling',
-    1877 => 'interfaced',
-    1878 => 'benefitting',
-    1879 => 'reggaeton',
-    1880 => 'ligatures',
-    1881 => 'tempos',
-    1882 => 'strutted',
-    1883 => 'remixed',
-    1884 => 'plainsong',
-    1885 => 'sonatas',
-    1886 => 'stoped',
-    1887 => 'bootlegs',
-    1888 => 'scats',
-    1889 => 'cajon',
-    1890 => 'saxophones',
-    1891 => 'spooned',
-    1892 => 'sweepings',
-    1893 => 'improvisations',
-    1894 => 'popstar',
-    1895 => 'outfitting',
-    1896 => 'echos',
-    1897 => 'debuts',
-    1898 => 'brasses',
-    1899 => 'soloing',
-    1900 => 'quartets',
-    1901 => 'toccata',
-    1902 => 'tubas',
-    1903 => 'augments',
-    1904 => 'interludes',
-    1905 => 'spirituals',
-    1906 => 'vamping',
-    1907 => 'hornpipe',
-    1908 => 'thrashes',
-    1909 => 'touts',
-    1910 => 'dulcimer',
-    1911 => 'shofar',
-    1912 => 'oratorio',
-    1913 => 'zydeco',
-    1914 => 'sambas',
-    1915 => 'soundtracks',
-    1916 => 'saxophonist',
-    1917 => 'bouzouki',
-    1918 => 'viol',
-    1919 => 'woodblock',
-    1920 => 'accordions',
-    1921 => 'jigging',
-    1922 => 'ditties',
-    1923 => 'finessing',
-    1924 => 'chambered',
-    1925 => 'haka',
-    1926 => 'fourths',
-    1927 => 'whammies',
-    1928 => 'whippings',
-    1929 => 'compere',
-    1930 => 'etude',
-    1931 => 'cornets',
-    1932 => 'trumpeters',
-    1933 => 'remixes',
-    1934 => 'strummed',
-    1935 => 'bottlenecks',
-    1936 => 'capos',
-    1937 => 'collectives',
-    1938 => 'jetted',
-    1939 => 'sousaphone',
-    1940 => 'celesta',
-    1941 => 'madrigals',
-    1942 => 'shimmying',
-    1943 => 'augmenting',
-    1944 => 'rarities',
-    1945 => 'refrains',
-    1946 => 'cumbia',
-    1947 => 'intermezzo',
-    1948 => 'evergreens',
-    1949 => 'perfects',
-    1950 => 'jives',
-    1951 => 'cajones',
-    1952 => 'congas',
-    1953 => 'podiums',
-    1954 => 'sols',
-    1955 => 'pedaled',
-    1956 => 'headlined',
-    1957 => 'discords',
-    1958 => 'bookers',
-    1959 => 'tabes',
-    1960 => 'laminating',
-    1961 => 'djembe',
-    1962 => 'oud',
-    1963 => 'skiffle',
-    1964 => 'habanera',
-    1965 => 'progressions',
-    1966 => 'trebles',
-    1967 => 'staving',
-    1968 => 'finessed',
-    1969 => 'turnings',
-    1970 => 'sticked',
-    1971 => 'autographing',
-    1972 => 'maestros',
-    1973 => 'cowbells',
-    1974 => 'violas',
-    1975 => 'shredders',
-    1976 => 'crooners',
-    1977 => 'radioing',
-    1978 => 'trumpeted',
-    1979 => 'nutting',
-    1980 => 'texturing',
-    1981 => 'maraca',
-    1982 => 'keytar',
-    1983 => 'ensembles',
-    1984 => 'scrolled',
-    1985 => 'strobes',
-    1986 => 'transcriptions',
-    1987 => 'ponied',
-    1988 => 'nightclubbing',
-    1989 => 'bootlegged',
-    1990 => 'buskers',
-    1991 => 'bellringer',
-    1992 => 'soca',
-    1993 => 'baritones',
-    1994 => 'kazoos',
-    1995 => 'industrials',
-    1996 => 'synching',
-    1997 => 'sleeved',
-    1998 => 'polkas',
-    1999 => 'erhu',
-    2000 => 'residencies',
-    2001 => 'refraining',
-    2002 => 'ornamented',
-    2003 => 'metronomes',
-    2004 => 'sellouts',
-    2005 => 'spinet',
-    2006 => 'dooming',
-    2007 => 'crewing',
-    2008 => 'asides',
-    2009 => 'kettledrums',
-    2010 => 'vuvuzela',
-    2011 => 'oboes',
-    2012 => 'ukuleles',
-    2013 => 'segues',
-    2014 => 'barbershops',
-    2015 => 'staved',
-    2016 => 'sackbut',
-    2017 => 'mandolins',
-    2018 => 'housings',
-    2019 => 'shimmied',
-    2020 => 'instrumentals',
-    2021 => 'psaltery',
-    2022 => 'bassoons',
-    2023 => 'tuners',
-    2024 => 'droned',
-    2025 => 'tabbed',
-    2026 => 'snaring',
-    2027 => 'stopes',
-    2028 => 'vinyls',
-    2029 => 'voguing',
-    2030 => 'minuets',
-    2031 => 'jazzing',
-    2032 => 'samplers',
-    2033 => 'bachata',
-    2034 => 'harmonicas',
-    2035 => 'cadences',
-    2036 => 'ragas',
-    2037 => 'rollings',
-    2038 => 'funks',
-    2039 => 'preludes',
-    2040 => 'jitterbugs',
-    2041 => 'dabbed',
-    2042 => 'keyboarding',
-    2043 => 'emceeing',
-    2044 => 'sonatina',
-    2045 => 'scherzo',
-    2046 => 'cellists',
-    2047 => 'fifes',
-    2048 => 'lutes',
-    2049 => 'fluted',
-    2050 => 'virtuosos',
-    2051 => 'percussions',
-    2052 => 'nutted',
-    2053 => 'euphonium',
-    2054 => 'saxes',
-    2055 => 'operettas',
-    2056 => 'laminates',
-    2057 => 'sectioning',
-    2058 => 'vamped',
-    2059 => 'jugged',
-    2060 => 'horas',
-    2061 => 'fugues',
-    2062 => 'ocarina',
-    2063 => 'britpop',
-    2064 => 'funking',
-    2065 => 'boogies',
-    2066 => 'cotillions',
-    2067 => 'funked',
-    2068 => 'kettledrum',
-    2069 => 'mandola',
-    2070 => 'boleros',
-    2071 => 'marquees',
-    2072 => 'inversions',
-    2073 => 'morrises',
-    2074 => 'bluing',
-    2075 => 'cabbing',
-    2076 => 'shakuhachi',
-    2077 => 'ballade',
-    2078 => 'organists',
-    2079 => 'flosses',
-    2080 => 'segued',
-    2081 => 'finales',
-    2082 => 'fanfares',
-    2083 => 'soloed',
-    2084 => 'teds',
-    2085 => 'chansons',
-    2086 => 'cumbias',
-    2087 => 'agenting',
-    2088 => 'gonging',
-    2089 => 'remixing',
-    2090 => 'stoping',
-    2091 => 'arrangers',
-    2092 => 'clavichord',
-    2093 => 'psychs',
-    2094 => 'knobbed',
-    2095 => 'jitterbugging',
-    2096 => 'boogied',
-    2097 => 'turnarounds',
-    2098 => 'metered',
-    2099 => 'compilations',
-    2100 => 'smooched',
-    2101 => 'cantatas',
-    2102 => 'pasodoble',
-    2103 => 'galliard',
-    2104 => 'fortes',
-    2105 => 'thrashings',
-    2106 => 'fusions',
-    2107 => 'buglers',
-    2108 => 'emcees',
-    2109 => 'rockstars',
-    2110 => 'hiphop',
-    2111 => 'barcarolle',
-    2112 => 'auditoriums',
-    2113 => 'conches',
-    2114 => 'melodeon',
-    2115 => 'pavane',
-    2116 => 'lyres',
-    2117 => 'xylophones',
-    2118 => 'flugelhorn',
-    2119 => 'chorales',
-    2120 => 'popstars',
-    2121 => 'panpipes',
-    2122 => 'etudes',
-    2123 => 'tamtam',
-    2124 => 'synthpop',
-    2125 => 'amphitheaters',
-    2126 => 'percussionists',
-    2127 => 'drumkit',
-    2128 => 'guzheng',
-    2129 => 'melodica',
-    2130 => 'pennywhistle',
-    2131 => 'nocturnes',
-    2132 => 'afrobeat',
-    2133 => 'chillout',
-    2134 => 'dirges',
-    2135 => 'partita',
-    2136 => 'stagefright',
-    2137 => 'castanet',
-    2138 => 'balalaikas',
-    2139 => 'motets',
-    2140 => 'moonwalks',
-    2141 => 'marimbas',
-    2142 => 'vibraphone',
-    2143 => 'motet',
-    2144 => 'kalimba',
-    2145 => 'vuvuzelas',
-    2146 => 'elegies',
-    2147 => 'piccolos',
-    2148 => 'quintuplet',
-    2149 => 'didgeridoos',
-    2150 => 'sarod',
-    2151 => 'mazurkas',
-    2152 => 'sarabande',
-    2153 => 'quadrilles',
-    2154 => 'cantors',
-    2155 => 'sleighbells',
-    2156 => 'hardrock',
-    2157 => 'harpists',
-    2158 => 'lyricists',
-    2159 => 'washboards',
-    2160 => 'ukes',
-    2161 => 'claves',
-    2162 => 'guiro',
-    2163 => 'timbales',
-    2164 => 'plainchant',
-    2165 => 'leges',
-    2166 => 'virginals',
-    2167 => 'punkrock',
-    2168 => 'tapdance',
-    2169 => 'bellringers',
-    2170 => 'shawm',
-    2171 => 'autoharp',
-    2172 => 'fortepiano',
-    2173 => 'oratorios',
-    2174 => 'breakbeat',
-    2175 => 'doowop',
-    2176 => 'sitars',
-    2177 => 'teachest',
-    2178 => 'sousaphones',
-    2179 => 'tablas',
-    2180 => 'bodhran',
-    2181 => 'viols',
-    2182 => 'charlestons',
-    2183 => 'gavottes',
-    2184 => 'bassists',
-    2185 => 'kotos',
-    2186 => 'secondes',
-    2187 => 'tabors',
-    2188 => 'flageolet',
-    2189 => 'flautists',
-    2190 => 'glockenspiels',
-    2191 => 'euphoniums',
-    2192 => 'djembes',
-    2193 => 'alphorn',
-    2194 => 'duduk',
-    2195 => 'merengues',
-    2196 => 'kpop',
-    2197 => 'pasodobles',
-    2198 => 'harpsichords',
-    2199 => 'comperes',
-    2200 => 'choirmasters',
-    2201 => 'flugelhorns',
-    2202 => 'concertinas',
-    2203 => 'carillons',
-    2204 => 'ceilidhs',
-    2205 => 'bandstands',
-    2206 => 'harmoniums',
-    2207 => 'jetes',
-    2208 => 'linedancing',
-    2209 => 'chachas',
-    2210 => 'saxophonists',
-    2211 => 'bouzoukis',
-    2212 => 'sackbuts',
-    2213 => 'cittern',
-    2214 => 'contrabassoon',
-    2215 => 'ouds',
-    2216 => 'pipas',
-    2217 => 'quicksteps',
-    2218 => 'lambadas',
-    2219 => 'polonaises',
-    2220 => 'toccatas',
-    2221 => 'galliards',
-    2222 => 'veenas',
-    2223 => 'heavymetal',
-    2224 => 'flageolets',
-    2225 => 'wassails',
-    2226 => 'vibraphones',
-    2227 => 'zithers',
-    2228 => 'dulcimers',
-    2229 => 'ocarinas',
-    2230 => 'melodeons',
-    2231 => 'spinets',
-    2232 => 'crumhorns',
-    2233 => 'pianolas',
-    2234 => 'fortepianos',
-    2235 => 'psalteries',
-    2236 => 'rebecs',
-    2237 => 'theorbo',
-    2238 => 'breakdances',
-    2239 => 'ballades',
-    2240 => 'sarabandes',
-    2241 => 'intermezzos',
-    2242 => 'partitas',
-    2243 => 'barcarolles',
-    2244 => 'calliopes',
-    2245 => 'dressingroom',
-    2246 => 'mouthorgan',
-    2247 => 'rockandroll',
-    2248 => 'rocknroll',
-    2249 => 'softrock',
-    2250 => 'easylistening',
-    2251 => 'newwave',
-    2252 => 'bellydance',
-    2253 => 'barndance',
-    2254 => 'theremins',
-    2255 => 'bodhrans',
-    2256 => 'clavichords',
-    2257 => 'celestas',
-    2258 => 'crumhorn',
-    2259 => 'shawms',
-    2260 => 'autoharps',
-    2261 => 'kalimbas',
-    2262 => 'alphorns',
-    2263 => 'bansuri',
-    2264 => 'bansuris',
-    2265 => 'cabasa',
-    2266 => 'cabasas',
-    2267 => 'cajons',
-    2268 => 'citterns',
-    2269 => 'contrabassoons',
-    2270 => 'drumkits',
-    2271 => 'duduks',
-    2272 => 'erhus',
-    2273 => 'guiros',
-    2274 => 'guzhengs',
-    2275 => 'handpan',
-    2276 => 'handpans',
-    2277 => 'hihat',
-    2278 => 'hihats',
-    2279 => 'hurdygurdy',
-    2280 => 'hurdygurdies',
-    2281 => 'keytars',
-    2282 => 'koras',
-    2283 => 'mandolas',
-    2284 => 'mbira',
-    2285 => 'mbiras',
-    2286 => 'melodicas',
-    2287 => 'ophicleide',
-    2288 => 'ophicleides',
-    2289 => 'pennywhistles',
-    2290 => 'pianofortes',
-    2291 => 'sarods',
-    2292 => 'shakuhachis',
-    2293 => 'shamisens',
-    2294 => 'shofars',
-    2295 => 'steelpan',
-    2296 => 'steelpans',
-    2297 => 'tamtams',
-    2298 => 'theorbos',
-    2299 => 'tinwhistle',
-    2300 => 'tinwhistles',
-    2301 => 'tomtoms',
-    2302 => 'woodblocks',
-    2303 => 'hornpipes',
-    2304 => 'tarantellas',
-    2305 => 'shoegaze',
-    2306 => 'bachatas',
-    2307 => 'gamelans',
-    2308 => 'hakas',
-    2309 => 'pavanes',
-    2310 => 'sonatinas',
-    2311 => 'strathspey',
-    2312 => 'strathspeys',
-    2313 => 'scherzos',
-    2314 => 'habaneras',
-    2315 => 'bongoes',
-    2316 => 'sarodes',
-    2317 => 'mashedpotato',
-    2318 => 'mashedpotatoes',
-    2319 => 'operasinger',
-    2320 => 'operasingers',
-    2321 => 'concerthall',
-    2322 => 'concerthalls',
-    2323 => 'dressingrooms',
-    2324 => 'electricguitar',
-    2325 => 'electricguitars',
-    2326 => 'bassguitar',
-    2327 => 'bassguitars',
-    2328 => 'doublebass',
-    2329 => 'doublebasses',
-    2330 => 'frenchhorn',
-    2331 => 'frenchhorns',
-    2332 => 'coranglais',
-    2333 => 'bassdrum',
-    2334 => 'bassdrums',
-    2335 => 'steeldrum',
-    2336 => 'steeldrums',
-    2337 => 'mouthorgans',
-    2338 => 'jewsharp',
-    2339 => 'jewsharps',
-    2340 => 'barrelorgan',
-    2341 => 'barrelorgans',
-    2342 => 'tubularbells',
-    2343 => 'drummachine',
-    2344 => 'drummachines',
-    2345 => 'drumandbass',
-    2346 => 'glamrock',
-    2347 => 'acidhouse',
-    2348 => 'bigband',
-    2349 => 'bigbands',
-    2350 => 'northernsoul',
-    2351 => 'triphop',
-    2352 => 'tapdances',
-    2353 => 'bellydances',
-    2354 => 'squaredance',
-    2355 => 'squaredances',
-    2356 => 'barndances',
-    2357 => 'highlandfling',
-    2358 => 'highlandflings',
-    2359 => 'lindyhop',
-    2360 => 'lindyhops',
-    2361 => 'hokeycokey',
-    2362 => 'deathmetal',
-    2363 => 'sworddance',
-    2364 => 'sworddances',
-    2365 => 'teachests',
-    2366 => 'acapella',
-    2367 => 'acappella',
-    2368 => 'accelerando',
-    2369 => 'acciaccatura',
-    2370 => 'acciaccaturas',
-    2371 => 'accidentals',
-    2372 => 'accompaniments',
-    2373 => 'accompanists',
-    2374 => 'accordionist',
-    2375 => 'accordionists',
-    2376 => 'acetates',
-    2377 => 'acidjazz',
-    2378 => 'adagietto',
-    2379 => 'adagios',
-    2380 => 'adlib',
-    2381 => 'adlibs',
-    2382 => 'aeolian',
-    2383 => 'affettuoso',
-    2384 => 'afrobeats',
-    2385 => 'afroswing',
-    2386 => 'afterparties',
-    2387 => 'afterparty',
-    2388 => 'aftershow',
-    2389 => 'aftershows',
-    2390 => 'agitato',
-    2391 => 'agogo',
-    2392 => 'agogos',
-    2393 => 'airguitar',
-    2394 => 'airplay',
-    2395 => 'allabreve',
-    2396 => 'allargando',
-    2397 => 'allegretto',
-    2398 => 'allemande',
-    2399 => 'allemandes',
-    2400 => 'altosax',
-    2401 => 'altosaxes',
-    2402 => 'amapiano',
-    2403 => 'amoroso',
-    2404 => 'amphitheatres',
-    2405 => 'anacruses',
-    2406 => 'anacrusis',
-    2407 => 'ancora',
-    2408 => 'andante',
-    2409 => 'andantes',
-    2410 => 'andantino',
-    2411 => 'animato',
-    2412 => 'anthologies',
-    2413 => 'appassionato',
-    2414 => 'appoggiatura',
-    2415 => 'appoggiaturas',
-    2416 => 'arabesques',
-    2417 => 'arco',
-    2418 => 'arietta',
-    2419 => 'ariettas',
-    2420 => 'arioso',
-    2421 => 'ariosos',
-    2422 => 'arpeggio',
-    2423 => 'arpeggios',
-    2424 => 'artsong',
-    2425 => 'artsongs',
-    2426 => 'assai',
-    2427 => 'atempo',
-    2428 => 'atonality',
-    2429 => 'attacca',
-    2430 => 'aubade',
-    2431 => 'aubades',
-    2432 => 'audiophile',
-    2433 => 'audiophiles',
-    2434 => 'auditoria',
-    2435 => 'autotune',
-    2436 => 'avantgarde',
-    2437 => 'axeman',
-    2438 => 'axemen',
-    2439 => 'axman',
-    2440 => 'axmen',
-    2441 => 'backbeat',
-    2442 => 'backbeats',
-    2443 => 'backcatalog',
-    2444 => 'backcatalogue',
-    2445 => 'backingband',
-    2446 => 'backingbands',
-    2447 => 'backingsinger',
-    2448 => 'backingsingers',
-    2449 => 'backingvocalist',
-    2450 => 'backingvocalists',
-    2451 => 'backline',
-    2452 => 'bagatelles',
-    2453 => 'bagpiper',
-    2454 => 'bagpipers',
-    2455 => 'balafon',
-    2456 => 'balafons',
-    2457 => 'balladeer',
-    2458 => 'balladeers',
-    2459 => 'banda',
-    2460 => 'bandas',
-    2461 => 'bandleaders',
-    2462 => 'bandmaster',
-    2463 => 'bandmasters',
-    2464 => 'bandmate',
-    2465 => 'bandmates',
-    2466 => 'bandoneon',
-    2467 => 'bandoneons',
-    2468 => 'bandsman',
-    2469 => 'bandsmen',
-    2470 => 'banjoist',
-    2471 => 'banjoists',
-    2472 => 'banjolele',
-    2473 => 'banjoleles',
-    2474 => 'barline',
-    2475 => 'barlines',
-    2476 => 'bassbaritone',
-    2477 => 'bassbaritones',
-    2478 => 'bassclarinet',
-    2479 => 'bassclarinets',
-    2480 => 'bassline',
-    2481 => 'basslines',
-    2482 => 'basso',
-    2483 => 'bassoonist',
-    2484 => 'bassoonists',
-    2485 => 'bassos',
-    2486 => 'bassplayer',
-    2487 => 'bassplayers',
-    2488 => 'battement',
-    2489 => 'battements',
-    2490 => 'beatbox',
-    2491 => 'beatboxed',
-    2492 => 'beatboxer',
-    2493 => 'beatboxers',
-    2494 => 'beatboxes',
-    2495 => 'beatmaker',
-    2496 => 'beatmakers',
-    2497 => 'beguine',
-    2498 => 'beguines',
-    2499 => 'bellydancing',
-    2500 => 'berceuse',
-    2501 => 'berceuses',
-    2502 => 'berimbau',
-    2503 => 'berimbaus',
-    2504 => 'bestof',
-    2505 => 'bigbeat',
-    2506 => 'bitonality',
-    2507 => 'blackmetal',
-    2508 => 'blastbeat',
-    2509 => 'blastbeats',
-    2510 => 'bluenote',
-    2511 => 'bluenotes',
-    2512 => 'bluesman',
-    2513 => 'bluesmen',
-    2514 => 'bluesrock',
-    2515 => 'bollywood',
-    2516 => 'boogaloo',
-    2517 => 'boogaloos',
-    2518 => 'boogieing',
-    2519 => 'boogiewoogie',
-    2520 => 'boombap',
-    2521 => 'boombox',
-    2522 => 'boomboxes',
-    2523 => 'bops',
-    2524 => 'bossa',
-    2525 => 'bossanova',
-    2526 => 'bourree',
-    2527 => 'bourrees',
-    2528 => 'boxoffice',
-    2529 => 'boxoffices',
-    2530 => 'boxset',
-    2531 => 'boxsets',
-    2532 => 'boyband',
-    2533 => 'boybands',
-    2534 => 'boysoprano',
-    2535 => 'boysopranos',
-    2536 => 'branle',
-    2537 => 'branles',
-    2538 => 'brassband',
-    2539 => 'brassbands',
-    2540 => 'breakdanced',
-    2541 => 'breve',
-    2542 => 'breves',
-    2543 => 'brillante',
-    2544 => 'bside',
-    2545 => 'bsides',
-    2546 => 'buildups',
-    2547 => 'bunnyhop',
-    2548 => 'bunnyhops',
-    2549 => 'busk',
-    2550 => 'busked',
-    2551 => 'busking',
-    2552 => 'busks',
-    2553 => 'cabaletta',
-    2554 => 'cabalettas',
-    2555 => 'cadenza',
-    2556 => 'cadenzas',
-    2557 => 'cajun',
-    2558 => 'cakewalks',
-    2559 => 'calando',
-    2560 => 'callandresponse',
-    2561 => 'camerata',
-    2562 => 'cameratas',
-    2563 => 'campanologist',
-    2564 => 'campanologists',
-    2565 => 'cancans',
-    2566 => 'cantabile',
-    2567 => 'cantatrice',
-    2568 => 'cantatrices',
-    2569 => 'canticle',
-    2570 => 'canticles',
-    2571 => 'cantopop',
-    2572 => 'capriccio',
-    2573 => 'capriccios',
-    2574 => 'carillonneur',
-    2575 => 'carillonneurs',
-    2576 => 'carnatic',
-    2577 => 'caroler',
-    2578 => 'caroller',
-    2579 => 'carollers',
-    2580 => 'cassingle',
-    2581 => 'cassingles',
-    2582 => 'castrati',
-    2583 => 'castrato',
-    2584 => 'cavatina',
-    2585 => 'cavatinas',
-    2586 => 'celli',
-    2587 => 'celtic',
-    2588 => 'chachacha',
-    2589 => 'chaconne',
-    2590 => 'chaconnes',
-    2591 => 'chamberorchestra',
-    2592 => 'chamberorchestras',
-    2593 => 'chansonnier',
-    2594 => 'chansonniers',
-    2595 => 'chanter',
-    2596 => 'chanters',
-    2597 => 'chanteuse',
-    2598 => 'chanteuses',
-    2599 => 'charanga',
-    2600 => 'charangas',
-    2601 => 'charango',
-    2602 => 'charangos',
-    2603 => 'charttopper',
-    2604 => 'charttoppers',
-    2605 => 'chasse',
-    2606 => 'chasses',
-    2607 => 'chestvoice',
-    2608 => 'chillwave',
-    2609 => 'chinrest',
-    2610 => 'chinrests',
-    2611 => 'chiptune',
-    2612 => 'choirgirl',
-    2613 => 'choirgirls',
-    2614 => 'chorusmaster',
-    2615 => 'chorusmasters',
-    2616 => 'chromatic',
-    2617 => 'chromaticism',
-    2618 => 'cimbalom',
-    2619 => 'cimbaloms',
-    2620 => 'clarinetist',
-    2621 => 'clarinetists',
-    2622 => 'clarinettist',
-    2623 => 'clarinettists',
-    2624 => 'clavinet',
-    2625 => 'clavinets',
-    2626 => 'clefs',
-    2627 => 'clicktrack',
-    2628 => 'clicktracks',
-    2629 => 'clubber',
-    2630 => 'clubbers',
-    2631 => 'clubnight',
-    2632 => 'clubnights',
-    2633 => 'codas',
-    2634 => 'collegno',
-    2635 => 'coloratura',
-    2636 => 'coloraturas',
-    2637 => 'comodo',
-    2638 => 'compactdisc',
-    2639 => 'compactdiscs',
-    2640 => 'conbrio',
-    2641 => 'conceptalbum',
-    2642 => 'conceptalbums',
-    2643 => 'concertgoer',
-    2644 => 'concertgoers',
-    2645 => 'concerti',
-    2646 => 'concertigrossi',
-    2647 => 'concertino',
-    2648 => 'concertinos',
-    2649 => 'concertmaster',
-    2650 => 'concertmasters',
-    2651 => 'concertogrosso',
-    2652 => 'concertpitch',
-    2653 => 'conjunto',
-    2654 => 'conjuntos',
-    2655 => 'conmoto',
-    2656 => 'consonance',
-    2657 => 'consonances',
-    2658 => 'consordino',
-    2659 => 'continuo',
-    2660 => 'continuos',
-    2661 => 'contrabass',
-    2662 => 'contrabasses',
-    2663 => 'contrabassist',
-    2664 => 'contrabassists',
-    2665 => 'contralto',
-    2666 => 'contraltos',
-    2667 => 'cooljazz',
-    2668 => 'copyist',
-    2669 => 'copyists',
-    2670 => 'cornetist',
-    2671 => 'cornetists',
-    2672 => 'cornett',
-    2673 => 'cornettist',
-    2674 => 'cornettists',
-    2675 => 'cornetts',
-    2676 => 'corrido',
-    2677 => 'corsanglais',
-    2678 => 'countermelodies',
-    2679 => 'countermelody',
-    2680 => 'countertenor',
-    2681 => 'countertenors',
-    2682 => 'countin',
-    2683 => 'countins',
-    2684 => 'courante',
-    2685 => 'courantes',
-    2686 => 'coverband',
-    2687 => 'coverbands',
-    2688 => 'coversband',
-    2689 => 'coversbands',
-    2690 => 'cowpunk',
-    2691 => 'cratedigger',
-    2692 => 'cratediggers',
-    2693 => 'crescendi',
-    2694 => 'crooned',
-    2695 => 'croons',
-    2696 => 'crossfader',
-    2697 => 'crossfaders',
-    2698 => 'crotchet',
-    2699 => 'crotchets',
-    2700 => 'crowdsurf',
-    2701 => 'crowdsurfing',
-    2702 => 'crunk',
-    2703 => 'csardas',
-    2704 => 'cuica',
-    2705 => 'cuicas',
-    2706 => 'czardas',
-    2707 => 'dacapo',
-    2708 => 'dalsegno',
-    2709 => 'danceband',
-    2710 => 'dancebands',
-    2711 => 'darbuka',
-    2712 => 'darbukas',
-    2713 => 'darkwave',
-    2714 => 'deathcore',
-    2715 => 'deathrock',
-    2716 => 'deciso',
-    2717 => 'decrescendo',
-    2718 => 'decrescendos',
-    2719 => 'dectet',
-    2720 => 'dectets',
-    2721 => 'deepcut',
-    2722 => 'deepcuts',
-    2723 => 'deephouse',
-    2724 => 'delicato',
-    2725 => 'demisemiquaver',
-    2726 => 'demisemiquavers',
-    2727 => 'descant',
-    2728 => 'descants',
-    2729 => 'dhol',
-    2730 => 'dholak',
-    2731 => 'dholaks',
-    2732 => 'dhols',
-    2733 => 'diatonic',
-    2734 => 'didjeridu',
-    2735 => 'didjeridus',
-    2736 => 'diminuendo',
-    2737 => 'diminuendos',
-    2738 => 'diminution',
-    2739 => 'discographies',
-    2740 => 'discography',
-    2741 => 'dissonances',
-    2742 => 'divertimenti',
-    2743 => 'divertimento',
-    2744 => 'divertimentos',
-    2745 => 'djent',
-    2746 => 'dnb',
-    2747 => 'dodecaphony',
-    2748 => 'doh',
-    2749 => 'dolente',
-    2750 => 'doloroso',
-    2751 => 'dominants',
-    2752 => 'dorian',
-    2753 => 'doublealbum',
-    2754 => 'doublealbums',
-    2755 => 'doubleflat',
-    2756 => 'doubleflats',
-    2757 => 'doublesharp',
-    2758 => 'doublesharps',
-    2759 => 'doumbek',
-    2760 => 'doumbeks',
-    2761 => 'downbeats',
-    2762 => 'downtempo',
-    2763 => 'dreampop',
-    2764 => 'drinkingsong',
-    2765 => 'drinkingsongs',
-    2766 => 'drumhead',
-    2767 => 'drumheads',
-    2768 => 'drummajor',
-    2769 => 'drummajors',
-    2770 => 'drumnbass',
-    2771 => 'drumrolls',
-    2772 => 'dryice',
-    2773 => 'dubplate',
-    2774 => 'dubplates',
-    2775 => 'duckwalk',
-    2776 => 'duettist',
-    2777 => 'duettists',
-    2778 => 'duplet',
-    2779 => 'duplets',
-    2780 => 'earbud',
-    2781 => 'earbuds',
-    2782 => 'earplug',
-    2783 => 'earworm',
-    2784 => 'earworms',
-    2785 => 'edm',
-    2786 => 'eighttrack',
-    2787 => 'eighttracks',
-    2788 => 'eisteddfod',
-    2789 => 'eisteddfodau',
-    2790 => 'eisteddfods',
-    2791 => 'electroclash',
-    2792 => 'electropop',
-    2793 => 'emos',
-    2794 => 'endpin',
-    2795 => 'endpins',
-    2796 => 'energico',
-    2797 => 'englishhorn',
-    2798 => 'englishhorns',
-    2799 => 'enharmonic',
-    2800 => 'enka',
-    2801 => 'entracte',
-    2802 => 'entractes',
-    2803 => 'entrechat',
-    2804 => 'entrechats',
-    2805 => 'equaliser',
-    2806 => 'equalisers',
-    2807 => 'equalizers',
-    2808 => 'espressivo',
-    2809 => 'ethnomusicologist',
-    2810 => 'ethnomusicologists',
-    2811 => 'eurobeat',
-    2812 => 'eurodance',
-    2813 => 'europop',
-    2814 => 'exotica',
-    2815 => 'expositions',
-    2816 => 'fadeout',
-    2817 => 'fadeouts',
-    2818 => 'fader',
-    2819 => 'faders',
-    2820 => 'fah',
-    2821 => 'falsettos',
-    2822 => 'fanboy',
-    2823 => 'fanboys',
-    2824 => 'fandangos',
-    2825 => 'fangirl',
-    2826 => 'fangirls',
-    2827 => 'fantasias',
-    2828 => 'farandole',
-    2829 => 'farandoles',
-    2830 => 'feis',
-    2831 => 'feiseanna',
-    2832 => 'fermata',
-    2833 => 'fermatas',
-    2834 => 'fermate',
-    2835 => 'fest',
-    2836 => 'festivalgoer',
-    2837 => 'festivalgoers',
-    2838 => 'fests',
-    2839 => 'fifer',
-    2840 => 'fifers',
-    2841 => 'filmi',
-    2842 => 'fingerboard',
-    2843 => 'fingerboards',
-    2844 => 'fingerings',
-    2845 => 'fingerpick',
-    2846 => 'fingerpicking',
-    2847 => 'fingerpicks',
-    2848 => 'fingerstyle',
-    2849 => 'flams',
-    2850 => 'flanger',
-    2851 => 'flangers',
-    2852 => 'fleadh',
-    2853 => 'fleadhs',
-    2854 => 'flexidisc',
-    2855 => 'flexidiscs',
-    2856 => 'flightcase',
-    2857 => 'flightcases',
-    2858 => 'flutist',
-    2859 => 'flutists',
-    2860 => 'folkie',
-    2861 => 'folkies',
-    2862 => 'folkpunk',
-    2863 => 'folkrock',
-    2864 => 'folksong',
-    2865 => 'folksongs',
-    2866 => 'folktronica',
-    2867 => 'followup',
-    2868 => 'followups',
-    2869 => 'footswitch',
-    2870 => 'footswitches',
-    2871 => 'forro',
-    2872 => 'fortissimo',
-    2873 => 'fortississimo',
-    2874 => 'fortyfive',
-    2875 => 'fortyfives',
-    2876 => 'fouette',
-    2877 => 'fouettes',
-    2878 => 'foxtrots',
-    2879 => 'freakbeat',
-    2880 => 'freejazz',
-    2881 => 'fretboard',
-    2882 => 'fretboards',
-    2883 => 'frontman',
-    2884 => 'frontmen',
-    2885 => 'frontwoman',
-    2886 => 'frontwomen',
-    2887 => 'frug',
-    2888 => 'fughetta',
-    2889 => 'fughettas',
-    2890 => 'furioso',
-    2891 => 'fuzzbox',
-    2892 => 'fuzzboxes',
-    2893 => 'gabba',
-    2894 => 'gabber',
-    2895 => 'gangsta',
-    2896 => 'garagerock',
-    2897 => 'gatefold',
-    2898 => 'gatefolds',
-    2899 => 'ghettoblaster',
-    2900 => 'ghettoblasters',
-    2901 => 'gigbag',
-    2902 => 'gigbags',
-    2903 => 'gigged',
-    2904 => 'giggoer',
-    2905 => 'giggoers',
-    2906 => 'gigue',
-    2907 => 'gigues',
-    2908 => 'giocoso',
-    2909 => 'girlband',
-    2910 => 'girlbands',
-    2911 => 'girlgroup',
-    2912 => 'girlgroups',
-    2913 => 'gittern',
-    2914 => 'gitterns',
-    2915 => 'glassharmonica',
-    2916 => 'glassharmonicas',
-    2917 => 'gleeclub',
-    2918 => 'gleeclubs',
-    2919 => 'glees',
-    2920 => 'glissade',
-    2921 => 'glissades',
-    2922 => 'glissandi',
-    2923 => 'glissando',
-    2924 => 'glissandos',
-    2925 => 'glorias',
-    2926 => 'goths',
-    2927 => 'gracenote',
-    2928 => 'gracenotes',
-    2929 => 'gramophones',
-    2930 => 'grandioso',
-    2931 => 'grazioso',
-    2932 => 'greatesthits',
-    2933 => 'greenroom',
-    2934 => 'greenrooms',
-    2935 => 'gregorian',
-    2936 => 'grindcore',
-    2937 => 'griot',
-    2938 => 'griots',
-    2939 => 'growler',
-    2940 => 'growlers',
-    2941 => 'guestlist',
-    2942 => 'guestlists',
-    2943 => 'hairmetal',
-    2944 => 'halftone',
-    2945 => 'halftones',
-    2946 => 'hammeron',
-    2947 => 'hammerons',
-    2948 => 'handbell',
-    2949 => 'handbells',
-    2950 => 'handclap',
-    2951 => 'handclaps',
-    2952 => 'handjive',
-    2953 => 'happyhardcore',
-    2954 => 'hardbop',
-    2955 => 'hardstyle',
-    2956 => 'harmonicist',
-    2957 => 'harmonicists',
-    2958 => 'harpsichordist',
-    2959 => 'harpsichordists',
-    2960 => 'headbang',
-    2961 => 'headbanged',
-    2962 => 'headbanger',
-    2963 => 'headbangers',
-    2964 => 'headbanging',
-    2965 => 'headbangs',
-    2966 => 'headphone',
-    2967 => 'headstock',
-    2968 => 'headstocks',
-    2969 => 'headvoice',
-    2970 => 'heckelphone',
-    2971 => 'heckelphones',
-    2972 => 'heckled',
-    2973 => 'heldentenor',
-    2974 => 'heldentenors',
-    2975 => 'hemidemisemiquaver',
-    2976 => 'hemidemisemiquavers',
-    2977 => 'hemiola',
-    2978 => 'hemiolas',
-    2979 => 'hifi',
-    2980 => 'hifis',
-    2981 => 'highkick',
-    2982 => 'highkicks',
-    2983 => 'highlife',
-    2984 => 'hindustani',
-    2985 => 'hitmaker',
-    2986 => 'hitmakers',
-    2987 => 'hitparade',
-    2988 => 'hitparades',
-    2989 => 'hokeypokey',
-    2990 => 'homophony',
-    2991 => 'honkytonk',
-    2992 => 'hookline',
-    2993 => 'hooklines',
-    2994 => 'hootenannies',
-    2995 => 'hopak',
-    2996 => 'hopaks',
-    2997 => 'hornist',
-    2998 => 'hornists',
-    2999 => 'houseband',
-    3000 => 'housebands',
-    3001 => 'hulas',
-    3002 => 'humbucker',
-    3003 => 'humbuckers',
-    3004 => 'humoresque',
-    3005 => 'humoresques',
-    3006 => 'hyperpop',
-    3007 => 'impresarios',
-    3008 => 'impromptus',
-    3009 => 'improviser',
-    3010 => 'improvisers',
-    3011 => 'improvisor',
-    3012 => 'improvisors',
-    3013 => 'indietronica',
-    3014 => 'instrumentalist',
-    3015 => 'instrumentalists',
-    3016 => 'intermezzi',
-    3017 => 'ionian',
-    3018 => 'italodisco',
-    3019 => 'jamsession',
-    3020 => 'jamsessions',
-    3021 => 'jawharp',
-    3022 => 'jawharps',
-    3023 => 'jazzband',
-    3024 => 'jazzbands',
-    3025 => 'jazzer',
-    3026 => 'jazzers',
-    3027 => 'jazzman',
-    3028 => 'jazzmen',
-    3029 => 'jazzrock',
-    3030 => 'jete',
-    3031 => 'jived',
-    3032 => 'jongleur',
-    3033 => 'jongleurs',
-    3034 => 'jota',
-    3035 => 'jotas',
-    3036 => 'jpop',
-    3037 => 'jugband',
-    3038 => 'jugbands',
-    3039 => 'kantele',
-    3040 => 'kanteles',
-    3041 => 'kapellmeister',
-    3042 => 'kapellmeisters',
-    3043 => 'kathak',
-    3044 => 'kathaks',
-    3045 => 'kazachok',
-    3046 => 'kazachoks',
-    3047 => 'keyboardist',
-    3048 => 'keyboardists',
-    3049 => 'keychange',
-    3050 => 'keychanges',
-    3051 => 'keysignature',
-    3052 => 'keysignatures',
-    3053 => 'kickdrum',
-    3054 => 'kickdrums',
-    3055 => 'kizomba',
-    3056 => 'kizombas',
-    3057 => 'kolo',
-    3058 => 'kolos',
-    3059 => 'kompa',
-    3060 => 'krautrock',
-    3061 => 'krummhorn',
-    3062 => 'krummhorns',
-    3063 => 'krump',
-    3064 => 'krumping',
-    3065 => 'kwaito',
-    3066 => 'kyries',
-    3067 => 'lacrimoso',
-    3068 => 'lah',
-    3069 => 'lamentoso',
-    3070 => 'landler',
-    3071 => 'landlers',
-    3072 => 'lapsteel',
-    3073 => 'lapsteels',
-    3074 => 'largamente',
-    3075 => 'larghetto',
-    3076 => 'larghissimo',
-    3077 => 'largos',
-    3078 => 'lavolta',
-    3079 => 'leadguitarist',
-    3080 => 'leadguitarists',
-    3081 => 'leadingnote',
-    3082 => 'leadingnotes',
-    3083 => 'leadingtone',
-    3084 => 'leadingtones',
-    3085 => 'leadsinger',
-    3086 => 'leadsingers',
-    3087 => 'ledgerline',
-    3088 => 'ledgerlines',
-    3089 => 'legato',
-    3090 => 'leggero',
-    3091 => 'leggiero',
-    3092 => 'leitmotif',
-    3093 => 'leitmotifs',
-    3094 => 'lento',
-    3095 => 'librettist',
-    3096 => 'librettists',
-    3097 => 'lieder',
-    3098 => 'lightshow',
-    3099 => 'lightshows',
-    3100 => 'limbos',
-    3101 => 'limiter',
-    3102 => 'limiters',
-    3103 => 'linedance',
-    3104 => 'linedances',
-    3105 => 'linernotes',
-    3106 => 'livealbum',
-    3107 => 'livealbums',
-    3108 => 'livestream',
-    3109 => 'livestreams',
-    3110 => 'locrian',
-    3111 => 'lofi',
-    3112 => 'longplayer',
-    3113 => 'longplayers',
-    3114 => 'loopers',
-    3115 => 'loversrock',
-    3116 => 'lovesong',
-    3117 => 'lovesongs',
-    3118 => 'lunga',
-    3119 => 'lusingando',
-    3120 => 'lutanist',
-    3121 => 'lutanists',
-    3122 => 'lutenist',
-    3123 => 'lutenists',
-    3124 => 'luthier',
-    3125 => 'luthiers',
-    3126 => 'lutist',
-    3127 => 'lutists',
-    3128 => 'lydian',
-    3129 => 'madchester',
-    3130 => 'madison',
-    3131 => 'maestoso',
-    3132 => 'maestri',
-    3133 => 'magnificat',
-    3134 => 'magnificats',
-    3135 => 'mainstage',
-    3136 => 'mainstages',
-    3137 => 'mambos',
-    3138 => 'mandolinist',
-    3139 => 'mandolinists',
-    3140 => 'mandopop',
-    3141 => 'marcato',
-    3142 => 'marchingband',
-    3143 => 'marchingbands',
-    3144 => 'marimbist',
-    3145 => 'marimbists',
-    3146 => 'marziale',
-    3147 => 'mashup',
-    3148 => 'mashups',
-    3149 => 'masque',
-    3150 => 'masques',
-    3151 => 'masterclass',
-    3152 => 'masterclasses',
-    3153 => 'mathcore',
-    3154 => 'maypoles',
-    3155 => 'mediant',
-    3156 => 'mediants',
-    3157 => 'medleys',
-    3158 => 'meetandgreet',
-    3159 => 'meetandgreets',
-    3160 => 'megamix',
-    3161 => 'megamixes',
-    3162 => 'melisma',
-    3163 => 'melismas',
-    3164 => 'mellophone',
-    3165 => 'mellophones',
-    3166 => 'melodist',
-    3167 => 'melodists',
-    3168 => 'meno',
-    3169 => 'mento',
-    3170 => 'menuet',
-    3171 => 'menuets',
-    3172 => 'merch',
-    3173 => 'merseybeat',
-    3174 => 'mesto',
-    3175 => 'metalcore',
-    3176 => 'metalhead',
-    3177 => 'metalheads',
-    3178 => 'metaller',
-    3179 => 'metallers',
-    3180 => 'mezzo',
-    3181 => 'mezzoforte',
-    3182 => 'mezzopiano',
-    3183 => 'mezzos',
-    3184 => 'mezzosoprano',
-    3185 => 'mezzosopranos',
-    3186 => 'mic',
-    3187 => 'microtone',
-    3188 => 'microtones',
-    3189 => 'mics',
-    3190 => 'middleeight',
-    3191 => 'middleeights',
-    3192 => 'militaryband',
-    3193 => 'militarybands',
-    3194 => 'milonga',
-    3195 => 'milongas',
-    3196 => 'minidisc',
-    3197 => 'minidiscs',
-    3198 => 'minim',
-    3199 => 'minimalism',
-    3200 => 'minims',
-    3201 => 'misterioso',
-    3202 => 'mixdown',
-    3203 => 'mixdowns',
-    3204 => 'mixolydian',
-    3205 => 'mixtape',
-    3206 => 'mixtapes',
-    3207 => 'modal',
-    3208 => 'moderato',
-    3209 => 'modulations',
-    3210 => 'monophony',
-    3211 => 'mordent',
-    3212 => 'mordents',
-    3213 => 'morendo',
-    3214 => 'mosh',
-    3215 => 'moshed',
-    3216 => 'mosher',
-    3217 => 'moshers',
-    3218 => 'moshes',
-    3219 => 'moshing',
-    3220 => 'moshpit',
-    3221 => 'moshpits',
-    3222 => 'mosso',
-    3223 => 'mouthpieces',
-    3224 => 'mridangam',
-    3225 => 'mridangams',
-    3226 => 'muezzins',
-    3227 => 'multiinstrumentalist',
-    3228 => 'multiinstrumentalists',
-    3229 => 'multitrack',
-    3230 => 'multitracks',
-    3231 => 'musicalsaw',
-    3232 => 'musicalsaws',
-    3233 => 'musicbox',
-    3234 => 'musicboxes',
-    3235 => 'musichall',
-    3236 => 'musicologist',
-    3237 => 'musicologists',
-    3238 => 'musicstand',
-    3239 => 'musicstands',
-    3240 => 'neoclassical',
-    3241 => 'neoclassicism',
-    3242 => 'neosoul',
-    3243 => 'newage',
-    3244 => 'newromantic',
-    3245 => 'newromantics',
-    3246 => 'niente',
-    3247 => 'ninths',
-    3248 => 'nobilmente',
-    3249 => 'noisegate',
-    3250 => 'noisegates',
-    3251 => 'nonet',
-    3252 => 'nonets',
-    3253 => 'notehead',
-    3254 => 'noteheads',
-    3255 => 'nowave',
-    3256 => 'nudisco',
-    3257 => 'numberone',
-    3258 => 'numberones',
-    3259 => 'numetal',
-    3260 => 'nurseryrhyme',
-    3261 => 'nurseryrhymes',
-    3262 => 'nyckelharpa',
-    3263 => 'nyckelharpas',
-    3264 => 'obbligato',
-    3265 => 'obbligatos',
-    3266 => 'oboist',
-    3267 => 'oboists',
-    3268 => 'octet',
-    3269 => 'octets',
-    3270 => 'offbeats',
-    3271 => 'onehitwonder',
-    3272 => 'onehitwonders',
-    3273 => 'onemanband',
-    3274 => 'onemanbands',
-    3275 => 'openmic',
-    3276 => 'openmics',
-    3277 => 'operagoer',
-    3278 => 'operagoers',
-    3279 => 'operahouse',
-    3280 => 'operahouses',
-    3281 => 'orchestrator',
-    3282 => 'orchestrators',
-    3283 => 'organgrinder',
-    3284 => 'organgrinders',
-    3285 => 'ostinato',
-    3286 => 'ostinatos',
-    3287 => 'ottava',
-    3288 => 'outro',
-    3289 => 'outros',
-    3290 => 'outtake',
-    3291 => 'outtakes',
-    3292 => 'overdrives',
-    3293 => 'overdub',
-    3294 => 'overdubs',
-    3295 => 'overtone',
-    3296 => 'paean',
-    3297 => 'paeans',
-    3298 => 'palmmute',
-    3299 => 'palmmuting',
-    3300 => 'pandeiro',
-    3301 => 'pandeiros',
-    3302 => 'panflute',
-    3303 => 'panflutes',
-    3304 => 'panpipe',
-    3305 => 'paradiddle',
-    3306 => 'paradiddles',
-    3307 => 'partsong',
-    3308 => 'partsongs',
-    3309 => 'pasdedeux',
-    3310 => 'passacaglia',
-    3311 => 'passacaglias',
-    3312 => 'passepied',
-    3313 => 'passepieds',
-    3314 => 'pastorale',
-    3315 => 'pastorales',
-    3316 => 'pavan',
-    3317 => 'pavans',
-    3318 => 'pedalboard',
-    3319 => 'pedalboards',
-    3320 => 'pedalsteel',
-    3321 => 'pedalsteels',
-    3322 => 'pentatonic',
-    3323 => 'perdendosi',
-    3324 => 'perfectpitch',
-    3325 => 'pesante',
-    3326 => 'phaser',
-    3327 => 'phasers',
-    3328 => 'philharmonics',
-    3329 => 'phonk',
-    3330 => 'phonographs',
-    3331 => 'phrygian',
-    3332 => 'piacevole',
-    3333 => 'piangevole',
-    3334 => 'pianissimo',
-    3335 => 'pianississimo',
-    3336 => 'pianotuner',
-    3337 => 'pianotuners',
-    3338 => 'pickguard',
-    3339 => 'pickguards',
-    3340 => 'picturedisc',
-    3341 => 'picturediscs',
-    3342 => 'pipeband',
-    3343 => 'pipebands',
-    3344 => 'pitchpipe',
-    3345 => 'pitchpipes',
-    3346 => 'pizzicato',
-    3347 => 'plagal',
-    3348 => 'playbacks',
-    3349 => 'plectra',
-    3350 => 'plectrum',
-    3351 => 'plectrums',
-    3352 => 'plie',
-    3353 => 'plugger',
-    3354 => 'pluggers',
-    3355 => 'pogoed',
-    3356 => 'pogoing',
-    3357 => 'pogos',
-    3358 => 'polyphony',
-    3359 => 'polyrhythm',
-    3360 => 'polyrhythms',
-    3361 => 'polytonality',
-    3362 => 'ponticello',
-    3363 => 'popera',
-    3364 => 'popfilter',
-    3365 => 'popfilters',
-    3366 => 'poppunk',
-    3367 => 'popshield',
-    3368 => 'popshields',
-    3369 => 'portamento',
-    3370 => 'portato',
-    3371 => 'postchorus',
-    3372 => 'postchoruses',
-    3373 => 'posthardcore',
-    3374 => 'posthorn',
-    3375 => 'posthorns',
-    3376 => 'postlude',
-    3377 => 'postludes',
-    3378 => 'postpunk',
-    3379 => 'postrock',
-    3380 => 'powerballad',
-    3381 => 'powerballads',
-    3382 => 'powerchord',
-    3383 => 'powerchords',
-    3384 => 'powermetal',
-    3385 => 'powerpop',
-    3386 => 'preamp',
-    3387 => 'preamps',
-    3388 => 'precentor',
-    3389 => 'precentors',
-    3390 => 'prechorus',
-    3391 => 'prechoruses',
-    3392 => 'pressings',
-    3393 => 'prestissimo',
-    3394 => 'primadonna',
-    3395 => 'primadonnas',
-    3396 => 'promenader',
-    3397 => 'promenaders',
-    3398 => 'protopunk',
-    3399 => 'psychedelia',
-    3400 => 'psychobilly',
-    3401 => 'psytrance',
-    3402 => 'pubrock',
-    3403 => 'pulloff',
-    3404 => 'pulloffs',
-    3405 => 'pyro',
-    3406 => 'qawwali',
-    3407 => 'quartertone',
-    3408 => 'quartertones',
-    3409 => 'quaver',
-    3410 => 'quavers',
-    3411 => 'quintets',
-    3412 => 'quodlibet',
-    3413 => 'quodlibets',
-    3414 => 'ragga',
-    3415 => 'rai',
-    3416 => 'rainstick',
-    3417 => 'rainsticks',
-    3418 => 'rallentando',
-    3419 => 'ranchera',
-    3420 => 'randb',
-    3421 => 'rapcore',
-    3422 => 'raver',
-    3423 => 'ravers',
-    3424 => 'rebetiko',
-    3425 => 'recapitulation',
-    3426 => 'recapitulations',
-    3427 => 'recitative',
-    3428 => 'recitatives',
-    3429 => 'recordplayer',
-    3430 => 'recordplayers',
-    3431 => 'reeltoreel',
-    3432 => 'reeltoreels',
-    3433 => 'reissue',
-    3434 => 'reissues',
-    3435 => 'releve',
-    3436 => 'releves',
-    3437 => 'remaster',
-    3438 => 'remasters',
-    3439 => 'rembetiko',
-    3440 => 'remixer',
-    3441 => 'remixers',
-    3442 => 'repetiteur',
-    3443 => 'repetiteurs',
-    3444 => 'reprises',
-    3445 => 'requiems',
-    3446 => 'rerecord',
-    3447 => 'rerecords',
-    3448 => 'rerelease',
-    3449 => 'rereleases',
-    3450 => 'resonators',
-    3451 => 'reverbs',
-    3452 => 'rhapsodies',
-    3453 => 'rhythmsection',
-    3454 => 'rhythmsections',
-    3455 => 'ricercar',
-    3456 => 'ricercare',
-    3457 => 'ricercars',
-    3458 => 'rigadoon',
-    3459 => 'rigadoons',
-    3460 => 'rigaudon',
-    3461 => 'rigaudons',
-    3462 => 'riggers',
-    3463 => 'rimshot',
-    3464 => 'rimshots',
-    3465 => 'rinforzando',
-    3466 => 'ripieno',
-    3467 => 'risoluto',
-    3468 => 'ritardando',
-    3469 => 'ritenuto',
-    3470 => 'rnb',
-    3471 => 'roadmanager',
-    3472 => 'roadmanagers',
-    3473 => 'rockopera',
-    3474 => 'rockoperas',
-    3475 => 'rocksteady',
-    3476 => 'rondos',
-    3477 => 'rostra',
-    3478 => 'rostrum',
-    3479 => 'rostrums',
-    3480 => 'rubato',
-    3481 => 'rudeboy',
-    3482 => 'rudeboys',
-    3483 => 'rumbas',
-    3484 => 'sadcore',
-    3485 => 'salsas',
-    3486 => 'saltarello',
-    3487 => 'saltarellos',
-    3488 => 'santoor',
-    3489 => 'santoors',
-    3490 => 'santur',
-    3491 => 'santurs',
-    3492 => 'saraband',
-    3493 => 'sarabands',
-    3494 => 'sarangi',
-    3495 => 'sarangis',
-    3496 => 'sardana',
-    3497 => 'sardanas',
-    3498 => 'saxhorn',
-    3499 => 'saxhorns',
-    3500 => 'saz',
-    3501 => 'sazes',
-    3502 => 'scalpers',
-    3503 => 'scatted',
-    3504 => 'scherzando',
-    3505 => 'scherzi',
-    3506 => 'schlager',
-    3507 => 'schola',
-    3508 => 'scholas',
-    3509 => 'schottische',
-    3510 => 'schottisches',
-    3511 => 'scratchplate',
-    3512 => 'scratchplates',
-    3513 => 'screamo',
-    3514 => 'segno',
-    3515 => 'selectors',
-    3516 => 'semibreve',
-    3517 => 'semibreves',
-    3518 => 'semiquaver',
-    3519 => 'semiquavers',
-    3520 => 'semitone',
-    3521 => 'semitones',
-    3522 => 'semplice',
-    3523 => 'sempre',
-    3524 => 'septet',
-    3525 => 'septets',
-    3526 => 'sequencers',
-    3527 => 'serenader',
-    3528 => 'serenaders',
-    3529 => 'serialism',
-    3530 => 'sessionman',
-    3531 => 'sessionmen',
-    3532 => 'sessionmusician',
-    3533 => 'sessionmusicians',
-    3534 => 'setlist',
-    3535 => 'setlists',
-    3536 => 'seveninch',
-    3537 => 'seveninches',
-    3538 => 'sevenths',
-    3539 => 'seventyeight',
-    3540 => 'seventyeights',
-    3541 => 'sevillanas',
-    3542 => 'sextet',
-    3543 => 'sextets',
-    3544 => 'sforzando',
-    3545 => 'sforzato',
-    3546 => 'shehnai',
-    3547 => 'shehnais',
-    3548 => 'shellac',
-    3549 => 'shimmies',
-    3550 => 'shoegazing',
-    3551 => 'shoulderrest',
-    3552 => 'shoulderrests',
-    3553 => 'showband',
-    3554 => 'showbands',
-    3555 => 'showtune',
-    3556 => 'showtunes',
-    3557 => 'sideman',
-    3558 => 'sidemen',
-    3559 => 'silverband',
-    3560 => 'silverbands',
-    3561 => 'sinfonia',
-    3562 => 'sinfonias',
-    3563 => 'sinfonietta',
-    3564 => 'sinfoniettas',
-    3565 => 'singalong',
-    3566 => 'singalongs',
-    3567 => 'singersongwriter',
-    3568 => 'singersongwriters',
-    3569 => 'singsongs',
-    3570 => 'singspiel',
-    3571 => 'singspiels',
-    3572 => 'sirtaki',
-    3573 => 'sirtakis',
-    3574 => 'sissonne',
-    3575 => 'sissonnes',
-    3576 => 'sitarist',
-    3577 => 'sitarists',
-    3578 => 'sixteenths',
-    3579 => 'sixths',
-    3580 => 'skald',
-    3581 => 'skalds',
-    3582 => 'skank',
-    3583 => 'skanked',
-    3584 => 'skanking',
-    3585 => 'skanks',
-    3586 => 'skapunk',
-    3587 => 'slamdance',
-    3588 => 'slamdances',
-    3589 => 'slamdancing',
-    3590 => 'sleevenotes',
-    3591 => 'sleighbell',
-    3592 => 'slentando',
-    3593 => 'slidewhistle',
-    3594 => 'slidewhistles',
-    3595 => 'slipmat',
-    3596 => 'slipmats',
-    3597 => 'slowcore',
-    3598 => 'slowdance',
-    3599 => 'slowdances',
-    3600 => 'smoothjazz',
-    3601 => 'smorzando',
-    3602 => 'soh',
-    3603 => 'soldout',
-    3604 => 'solfa',
-    3605 => 'solfege',
-    3606 => 'solfeggio',
-    3607 => 'solmisation',
-    3608 => 'solmization',
-    3609 => 'songcycle',
-    3610 => 'songcycles',
-    3611 => 'songsmith',
-    3612 => 'songsmiths',
-    3613 => 'songstress',
-    3614 => 'songstresses',
-    3615 => 'sonoro',
-    3616 => 'sopranist',
-    3617 => 'sopranists',
-    3618 => 'sordini',
-    3619 => 'sordino',
-    3620 => 'sostenuto',
-    3621 => 'sottovoce',
-    3622 => 'soubrette',
-    3623 => 'soubrettes',
-    3624 => 'soukous',
-    3625 => 'soulboy',
-    3626 => 'soulboys',
-    3627 => 'soundboard',
-    3628 => 'soundboards',
-    3629 => 'soundcheck',
-    3630 => 'soundchecks',
-    3631 => 'soundengineer',
-    3632 => 'soundengineers',
-    3633 => 'soundhole',
-    3634 => 'soundholes',
-    3635 => 'soundman',
-    3636 => 'soundmen',
-    3637 => 'soundpost',
-    3638 => 'soundposts',
-    3639 => 'soundsystem',
-    3640 => 'soundsystems',
-    3641 => 'speedmetal',
-    3642 => 'spiccato',
-    3643 => 'spinto',
-    3644 => 'spintos',
-    3645 => 'spiritoso',
-    3646 => 'squeezebox',
-    3647 => 'squeezeboxes',
-    3648 => 'staccato',
-    3649 => 'stadia',
-    3650 => 'stagedive',
-    3651 => 'stagedives',
-    3652 => 'stagediving',
-    3653 => 'stagedoor',
-    3654 => 'stagedoors',
-    3655 => 'stagemanager',
-    3656 => 'stagemanagers',
-    3657 => 'stan',
-    3658 => 'stans',
-    3659 => 'stanzas',
-    3660 => 'steelband',
-    3661 => 'steelbands',
-    3662 => 'steelguitar',
-    3663 => 'steelguitars',
-    3664 => 'stepdance',
-    3665 => 'stepdances',
-    3666 => 'stepdancing',
-    3667 => 'sticksman',
-    3668 => 'sticksmen',
-    3669 => 'stompbox',
-    3670 => 'stompboxes',
-    3671 => 'stringendo',
-    3672 => 'styli',
-    3673 => 'stylus',
-    3674 => 'styluses',
-    3675 => 'subdominant',
-    3676 => 'subdominants',
-    3677 => 'subito',
-    3678 => 'submediant',
-    3679 => 'submediants',
-    3680 => 'subtonic',
-    3681 => 'subtonics',
-    3682 => 'subwoofer',
-    3683 => 'subwoofers',
-    3684 => 'sulponticello',
-    3685 => 'superfan',
-    3686 => 'superfans',
-    3687 => 'supergroup',
-    3688 => 'supergroups',
-    3689 => 'supertonic',
-    3690 => 'supertonics',
-    3691 => 'surdo',
-    3692 => 'surdos',
-    3693 => 'svengali',
-    3694 => 'svengalis',
-    3695 => 'swanee',
-    3696 => 'swanees',
-    3697 => 'swaneewhistle',
-    3698 => 'swaneewhistles',
-    3699 => 'symphonicpoem',
-    3700 => 'symphonicpoems',
-    3701 => 'symphonist',
-    3702 => 'symphonists',
-    3703 => 'syncopation',
-    3704 => 'syncopations',
-    3705 => 'synthesisers',
-    3706 => 'synthesist',
-    3707 => 'synthesists',
-    3708 => 'synthwave',
-    3709 => 'syrinx',
-    3710 => 'syrinxes',
-    3711 => 'tablature',
-    3712 => 'tablatures',
-    3713 => 'tacet',
-    3714 => 'taiko',
-    3715 => 'taikos',
-    3716 => 'tailpiece',
-    3717 => 'tailpieces',
-    3718 => 'talentscout',
-    3719 => 'talentscouts',
-    3720 => 'talentshow',
-    3721 => 'talentshows',
-    3722 => 'talkbox',
-    3723 => 'talkboxes',
-    3724 => 'tamboura',
-    3725 => 'tambouras',
-    3726 => 'tambura',
-    3727 => 'tamburas',
-    3728 => 'tanpura',
-    3729 => 'tanpuras',
-    3730 => 'tapdancing',
-    3731 => 'tarantelle',
-    3732 => 'tarantelles',
-    3733 => 'tech',
-    3734 => 'techies',
-    3735 => 'technopop',
-    3736 => 'techs',
-    3737 => 'teddyboy',
-    3738 => 'teddyboys',
-    3739 => 'tedeum',
-    3740 => 'tedeums',
-    3741 => 'teenybopper',
-    3742 => 'teenyboppers',
-    3743 => 'tejano',
-    3744 => 'tempestoso',
-    3745 => 'tempi',
-    3746 => 'tempoprimo',
-    3747 => 'teneramente',
-    3748 => 'tenorhorn',
-    3749 => 'tenorhorns',
-    3750 => 'tenorsax',
-    3751 => 'tenorsaxes',
-    3752 => 'tentet',
-    3753 => 'tentets',
-    3754 => 'tenuto',
-    3755 => 'threnodies',
-    3756 => 'threnody',
-    3757 => 'thumbpiano',
-    3758 => 'thumbpianos',
-    3759 => 'thumbpick',
-    3760 => 'thumbpicks',
-    3761 => 'timbal',
-    3762 => 'timbale',
-    3763 => 'timbals',
-    3764 => 'timbres',
-    3765 => 'timesignature',
-    3766 => 'timesignatures',
-    3767 => 'timpanist',
-    3768 => 'timpanists',
-    3769 => 'tonalities',
-    3770 => 'tonality',
-    3771 => 'tonepoem',
-    3772 => 'tonepoems',
-    3773 => 'tonicsolfa',
-    3774 => 'topforty',
-    3775 => 'topten',
-    3776 => 'toptens',
-    3777 => 'torchsinger',
-    3778 => 'torchsingers',
-    3779 => 'torchsong',
-    3780 => 'torchsongs',
-    3781 => 'tourbus',
-    3782 => 'tourbuses',
-    3783 => 'tourmanager',
-    3784 => 'tourmanagers',
-    3785 => 'tracklist',
-    3786 => 'tracklists',
-    3787 => 'trad',
-    3788 => 'tranquillo',
-    3789 => 'transposition',
-    3790 => 'transpositions',
-    3791 => 'tremolo',
-    3792 => 'tremolos',
-    3793 => 'tributeact',
-    3794 => 'tributeacts',
-    3795 => 'tributeband',
-    3796 => 'tributebands',
-    3797 => 'tritone',
-    3798 => 'tritones',
-    3799 => 'trombonist',
-    3800 => 'trombonists',
-    3801 => 'tropicalia',
-    3802 => 'troppo',
-    3803 => 'trouvere',
-    3804 => 'trouveres',
-    3805 => 'tubaist',
-    3806 => 'tubaists',
-    3807 => 'tubist',
-    3808 => 'tubists',
-    3809 => 'tunesmith',
-    3810 => 'tunesmiths',
-    3811 => 'tuningfork',
-    3812 => 'tuningforks',
-    3813 => 'tunings',
-    3814 => 'tuplet',
-    3815 => 'tuplets',
-    3816 => 'turntablist',
-    3817 => 'turntablists',
-    3818 => 'twee',
-    3819 => 'tweeter',
-    3820 => 'tweeters',
-    3821 => 'twelvebar',
-    3822 => 'twelveinch',
-    3823 => 'twelveinches',
-    3824 => 'twelvetone',
-    3825 => 'twerk',
-    3826 => 'twerked',
-    3827 => 'twerking',
-    3828 => 'twerks',
-    3829 => 'twostep',
-    3830 => 'twosteps',
-    3831 => 'twotone',
-    3832 => 'tympani',
-    3833 => 'tympanist',
-    3834 => 'tympanists',
-    3835 => 'uilleannpipes',
-    3836 => 'ukelele',
-    3837 => 'ukeleles',
-    3838 => 'ukgarage',
-    3839 => 'ukulelist',
-    3840 => 'ukulelists',
-    3841 => 'unisons',
-    3842 => 'upbeats',
-    3843 => 'vaporwave',
-    3844 => 'vibraphonist',
-    3845 => 'vibraphonists',
-    3846 => 'vibratos',
-    3847 => 'vigoroso',
-    3848 => 'vihuela',
-    3849 => 'vihuelas',
-    3850 => 'vinas',
-    3851 => 'violist',
-    3852 => 'violists',
-    3853 => 'violoncellist',
-    3854 => 'violoncellists',
-    3855 => 'violoncello',
-    3856 => 'violoncellos',
-    3857 => 'virtuosi',
-    3858 => 'vivace',
-    3859 => 'vivacissimo',
-    3860 => 'vivo',
-    3861 => 'vocalise',
-    3862 => 'vocalises',
-    3863 => 'vocoder',
-    3864 => 'vocoders',
-    3865 => 'vogueing',
-    3866 => 'voicings',
-    3867 => 'volante',
-    3868 => 'voltas',
-    3869 => 'waacking',
-    3870 => 'wah',
-    3871 => 'wahs',
-    3872 => 'wahwah',
-    3873 => 'wahwahs',
-    3874 => 'wannabe',
-    3875 => 'wannabes',
-    3876 => 'warmup',
-    3877 => 'warmups',
-    3878 => 'washtub',
-    3879 => 'washtubs',
-    3880 => 'wassailer',
-    3881 => 'wassailers',
-    3882 => 'watusi',
-    3883 => 'whammybar',
-    3884 => 'whammybars',
-    3885 => 'whitelabel',
-    3886 => 'whitelabels',
-    3887 => 'wholetone',
-    3888 => 'woodwind',
-    3889 => 'woodwinds',
-    3890 => 'woofer',
-    3891 => 'woofers',
-    3892 => 'worksong',
-    3893 => 'worksongs',
-    3894 => 'xylophonist',
-    3895 => 'xylophonists',
-    3896 => 'yachtrock',
-    3897 => 'yodeled',
-    3898 => 'yodeler',
-    3899 => 'yodelers',
-    3900 => 'yodelled',
-    3901 => 'yodeller',
-    3902 => 'yodellers',
-    3903 => 'zarzuela',
-    3904 => 'zarzuelas',
-    3905 => 'zouk',
+    13 => 'seconding',
+    14 => 'hit',
+    15 => 'taking',
+    16 => 'body',
+    17 => 'bodying',
+    18 => 'set',
+    19 => 'number',
+    20 => 'rest',
+    21 => 'stand',
+    22 => 'cut',
+    23 => 'break',
+    24 => 'country',
+    25 => 'pick',
+    26 => 'taken',
+    27 => 'perfect',
+    28 => 'jack',
+    29 => 'air',
+    30 => 'dance',
+    31 => 'catch',
+    32 => 'master',
+    33 => 'voice',
+    34 => 'beat',
+    35 => 'date',
+    36 => 'takes',
+    37 => 'song',
+    38 => 'turned',
+    39 => 'drop',
+    40 => 'act',
+    41 => 'caught',
+    42 => 'round',
+    43 => 'blue',
+    44 => 'blued',
+    45 => 'blueing',
+    46 => 'broke',
+    47 => 'rock',
+    48 => 'bill',
+    49 => 'lead',
+    50 => 'club',
+    51 => 'group',
+    52 => 'single',
+    53 => 'singling',
+    54 => 'mike',
+    55 => 'radio',
+    56 => 'key',
+    57 => 'gold',
+    58 => 'bar',
+    59 => 'tom',
+    60 => 'cover',
+    61 => 'star',
+    62 => 'major',
+    63 => 'stick',
+    64 => 'record',
+    65 => 'stopped',
+    66 => 'soul',
+    67 => 'agent',
+    68 => 'standing',
+    69 => 'broken',
+    70 => 'third',
+    71 => 'stuck',
+    72 => 'support',
+    73 => 'seconds',
+    74 => 'cheers',
+    75 => 'turns',
+    76 => 'grand',
+    77 => 'press',
+    78 => 'picked',
+    79 => 'bell',
+    80 => 'belled',
+    81 => 'legs',
+    82 => 'stage',
+    83 => 'kick',
+    84 => 'locked',
+    85 => 'track',
+    86 => 'lock',
+    87 => 'leg',
+    88 => 'video',
+    89 => 'applause',
+    90 => 'study',
+    91 => 'crowd',
+    92 => 'roll',
+    93 => 'acting',
+    94 => 'ray',
+    95 => 'rayed',
+    96 => 'raying',
+    97 => 'band',
+    98 => 'pop',
+    99 => 'neck',
+    100 => 'showed',
+    101 => 'keys',
+    102 => 'skin',
+    103 => 'cheering',
+    104 => 'note',
+    105 => 'stars',
+    106 => 'folks',
+    107 => 'shows',
+    108 => 'leader',
+    109 => 'tape',
+    110 => 'manager',
+    111 => 'natural',
+    112 => 'dancing',
+    113 => 'crew',
+    114 => 'dropped',
+    115 => 'lied',
+    116 => 'bridge',
+    117 => 'bridged',
+    118 => 'breaking',
+    119 => 'records',
+    120 => 'numbers',
+    121 => 'fill',
+    122 => 'turning',
+    123 => 'heads',
+    124 => 'audience',
+    125 => 'release',
+    126 => 'ticket',
+    127 => 'noise',
+    128 => 'noised',
+    129 => 'noising',
+    130 => 'nuts',
+    131 => 'bodies',
+    132 => 'tie',
+    133 => 'tieing',
+    134 => 'desk',
+    135 => 'staff',
+    136 => 'fan',
+    137 => 'split',
+    138 => 'finger',
+    139 => 'flat',
+    140 => 'fingers',
+    141 => 'covered',
+    142 => 'heading',
+    143 => 'showing',
+    144 => 'contract',
+    145 => 'tickets',
+    146 => 'dating',
+    147 => 'cases',
+    148 => 'tour',
+    149 => 'bones',
+    150 => 'silver',
+    151 => 'silvered',
+    152 => 'silvering',
+    153 => 'romantic',
+    154 => 'filled',
+    155 => 'player',
+    156 => 'stops',
+    157 => 'repeat',
+    158 => 'led',
+    159 => 'horn',
+    160 => 'grave',
+    161 => 'graved',
+    162 => 'graving',
+    163 => 'trap',
+    164 => 'headed',
+    165 => 'picking',
+    166 => 'stood',
+    167 => 'kicked',
+    168 => 'march',
+    169 => 'aside',
+    170 => 'jerk',
+    171 => 'effect',
+    172 => 'piano',
+    173 => 'studio',
+    174 => 'songs',
+    175 => 'swim',
+    176 => 'hook',
+    177 => 'beating',
+    178 => 'metal',
+    179 => 'metaled',
+    180 => 'metaling',
+    181 => 'metalled',
+    182 => 'metalling',
+    183 => 'performance',
+    184 => 'ted',
+    185 => 'bone',
+    186 => 'boom',
+    187 => 'theme',
+    188 => 'theming',
+    189 => 'notes',
+    190 => 'released',
+    191 => 'cab',
+    192 => 'houses',
+    193 => 'fourth',
+    194 => 'score',
+    195 => 'section',
+    196 => 'garage',
+    197 => 'garaged',
+    198 => 'garaging',
+    199 => 'mass',
+    200 => 'trapped',
+    201 => 'rocks',
+    202 => 'leading',
+    203 => 'sharp',
+    204 => 'passion',
+    205 => 'leads',
+    206 => 'movement',
+    207 => 'growling',
+    208 => 'hitting',
+    209 => 'studying',
+    210 => 'setting',
+    211 => 'theater',
+    212 => 'stands',
+    213 => 'belt',
+    214 => 'cutting',
+    215 => 'bow',
+    216 => 'guitar',
+    217 => 'swing',
+    218 => 'whistle',
+    219 => 'hits',
+    220 => 'mixed',
+    221 => 'agents',
+    222 => 'carol',
+    223 => 'caroled',
+    224 => 'carolled',
+    225 => 'stopping',
+    226 => 'swimming',
+    227 => 'cheer',
+    228 => 'rolling',
+    229 => 'tone',
+    230 => 'voices',
+    231 => 'breaks',
+    232 => 'accent',
+    233 => 'accenting',
+    234 => 'flag',
+    235 => 'version',
+    236 => 'concert',
+    237 => 'concerting',
+    238 => 'singer',
+    239 => 'bars',
+    240 => 'fifth',
+    241 => 'mix',
+    242 => 'classic',
+    243 => 'bills',
+    244 => 'beaten',
+    245 => 'deck',
+    246 => 'fans',
+    247 => 'sacred',
+    248 => 'robot',
+    249 => 'standard',
+    250 => 'players',
+    251 => 'jungle',
+    252 => 'tracks',
+    253 => 'outfit',
+    254 => 'recording',
+    255 => 'electric',
+    256 => 'western',
+    257 => 'interrupt',
+    258 => 'tune',
+    259 => 'booth',
+    260 => 'festival',
+    261 => 'effects',
+    262 => 'benefit',
+    263 => 'pipe',
+    264 => 'dropping',
+    265 => 'pit',
+    266 => 'sample',
+    267 => 'souls',
+    268 => 'punk',
+    269 => 'bells',
+    270 => 'sets',
+    271 => 'pulse',
+    272 => 'pulsed',
+    273 => 'signature',
+    274 => 'monitor',
+    275 => 'countries',
+    276 => 'fantasy',
+    277 => 'fantasied',
+    278 => 'fantasying',
+    279 => 'pitch',
+    280 => 'hammer',
+    281 => 'slap',
+    282 => 'kit',
+    283 => 'producer',
+    284 => 'minor',
+    285 => 'theatre',
+    286 => 'session',
+    287 => 'dates',
+    288 => 'scale',
+    289 => 'beats',
+    290 => 'acts',
+    291 => 'engineer',
+    292 => 'studies',
+    293 => 'chamber',
+    294 => 'chambering',
+    295 => 'romance',
+    296 => 'romanced',
+    297 => 'groups',
+    298 => 'studied',
+    299 => 'drill',
+    300 => 'jazz',
+    301 => 'kicking',
+    302 => 'latin',
+    303 => 'album',
+    304 => 'sync',
+    305 => 'jet',
+    306 => 'humming',
+    307 => 'jam',
+    308 => 'opera',
+    309 => 'tap',
+    310 => 'development',
+    311 => 'string',
+    312 => 'tracking',
+    313 => 'bend',
+    314 => 'recorded',
+    315 => 'growls',
+    316 => 'covering',
+    317 => 'catching',
+    318 => 'whistling',
+    319 => 'tube',
+    320 => 'leaders',
+    321 => 'throne',
+    322 => 'throned',
+    323 => 'throning',
+    324 => 'cable',
+    325 => 'cabling',
+    326 => 'musical',
+    327 => 'slide',
+    328 => 'brush',
+    329 => 'delay',
+    330 => 'measure',
+    331 => 'sticks',
+    332 => 'twist',
+    333 => 'leak',
+    334 => 'drops',
+    335 => 'meters',
+    336 => 'gloria',
+    337 => 'sticking',
+    338 => 'cuts',
+    339 => 'pops',
+    340 => 'prom',
+    341 => 'whip',
+    342 => 'acted',
+    343 => 'smash',
+    344 => 'rounds',
+    345 => 'nut',
+    346 => 'needle',
+    347 => 'needled',
+    348 => 'executive',
+    349 => 'audition',
+    350 => 'chanting',
+    351 => 'sheet',
+    352 => 'sheeted',
+    353 => 'tag',
+    354 => 'hooked',
+    355 => 'root',
+    356 => 'harper',
+    357 => 'masters',
+    358 => 'spiritual',
+    359 => 'sheets',
+    360 => 'rehearsal',
+    361 => 'electronic',
+    362 => 'worlds',
+    363 => 'bump',
+    364 => 'gig',
+    365 => 'solo',
+    366 => 'suite',
+    367 => 'beam',
+    368 => 'samples',
+    369 => 'journalist',
+    370 => 'acid',
+    371 => 'sixth',
+    372 => 'dated',
+    373 => 'rap',
+    374 => 'scout',
+    375 => 'clubs',
+    376 => 'cabinet',
+    377 => 'speaker',
+    378 => 'alternative',
+    379 => 'folk',
+    380 => 'rhythm',
+    381 => 'drum',
+    382 => 'tapes',
+    383 => 'ties',
+    384 => 'instrumental',
+    385 => 'whistles',
+    386 => 'twisted',
+    387 => 'filling',
+    388 => 'sweep',
+    389 => 'worship',
+    390 => 'bass',
+    391 => 'idol',
+    392 => 'stream',
+    393 => 'organ',
+    394 => 'morris',
+    395 => 'strings',
+    396 => 'engineering',
+    397 => 'lick',
+    398 => 'rolls',
+    399 => 'backs',
+    400 => 'horns',
+    401 => 'reed',
+    402 => 'bonus',
+    403 => 'laser',
+    404 => 'roots',
+    405 => 'blues',
+    406 => 'pirate',
+    407 => 'smashed',
+    408 => 'phrase',
+    409 => 'benefits',
+    410 => 'chimes',
+    411 => 'brass',
+    412 => 'covers',
+    413 => 'label',
+    414 => 'worm',
+    415 => 'bent',
+    416 => 'noises',
+    417 => 'drums',
+    418 => 'seventh',
+    419 => 'rolled',
+    420 => 'ballet',
+    421 => 'pirates',
+    422 => 'piper',
+    423 => 'standards',
+    424 => 'bounce',
+    425 => 'pony',
+    426 => 'chambers',
+    427 => 'scores',
+    428 => 'doomed',
+    429 => 'upbeat',
+    430 => 'spoon',
+    431 => 'echo',
+    432 => 'manual',
+    433 => 'rattling',
+    434 => 'rig',
+    435 => 'resting',
+    436 => 'reunion',
+    437 => 'danced',
+    438 => 'crowded',
+    439 => 'sequence',
+    440 => 'sequenced',
+    441 => 'mode',
+    442 => 'locks',
+    443 => 'dot',
+    444 => 'choir',
+    445 => 'choired',
+    446 => 'choiring',
+    447 => 'popped',
+    448 => 'industrial',
+    449 => 'musician',
+    450 => 'organs',
+    451 => 'melody',
+    452 => 'movements',
+    453 => 'picks',
+    454 => 'videos',
+    455 => 'measures',
+    456 => 'dip',
+    457 => 'interrupting',
+    458 => 'loop',
+    459 => 'wax',
+    460 => 'invention',
+    461 => 'kicks',
+    462 => 'classical',
+    463 => 'noodles',
+    464 => 'marching',
+    465 => 'metres',
+    466 => 'harmony',
+    467 => 'bands',
+    468 => 'supporting',
+    469 => 'cans',
+    470 => 'poster',
+    471 => 'peg',
+    472 => 'stadium',
+    473 => 'tracked',
+    474 => 'pressing',
+    475 => 'housing',
+    476 => 'robots',
+    477 => 'orchestra',
+    478 => 'chart',
+    479 => 'autograph',
+    480 => 'disco',
+    481 => 'discoed',
+    482 => 'discoing',
+    483 => 'violin',
+    484 => 'lounge',
+    485 => 'lounged',
+    486 => 'backing',
+    487 => 'pipes',
+    488 => 'backed',
+    489 => 'delayed',
+    490 => 'chorus',
+    491 => 'chorused',
+    492 => 'chorusing',
+    493 => 'saddle',
+    494 => 'saddling',
+    495 => 'breakdown',
+    496 => 'contracts',
+    497 => 'worms',
+    498 => 'pressed',
+    499 => 'carnival',
+    500 => 'barrier',
+    501 => 'meter',
+    502 => 'metering',
+    503 => 'lyrics',
+    504 => 'rider',
+    505 => 'stack',
+    506 => 'surf',
+    507 => 'bumped',
+    508 => 'scored',
+    509 => 'echoing',
+    510 => 'catches',
+    511 => 'dances',
+    512 => 'graves',
+    513 => 'popping',
+    514 => 'fade',
+    515 => 'supported',
+    516 => 'collector',
+    517 => 'traps',
+    518 => 'jingle',
+    519 => 'jingled',
+    520 => 'crook',
+    521 => 'crooking',
+    522 => 'swept',
+    523 => 'jammed',
+    524 => 'sleeve',
+    525 => 'engineers',
+    526 => 'musicians',
+    527 => 'doom',
+    528 => 'swinging',
+    529 => 'slapped',
+    530 => 'tapping',
+    531 => 'repeating',
+    532 => 'bridges',
+    533 => 'sponsor',
+    534 => 'noted',
+    535 => 'needles',
+    536 => 'arena',
+    537 => 'noel',
+    538 => 'whipped',
+    539 => 'starring',
+    540 => 'vibe',
+    541 => 'gong',
+    542 => 'gonged',
+    543 => 'tab',
+    544 => 'psych',
+    545 => 'producers',
+    546 => 'pickup',
+    547 => 'crooked',
+    548 => 'fundamental',
+    549 => 'interrupted',
+    550 => 'drone',
+    551 => 'tango',
+    552 => 'tangoed',
+    553 => 'tangoing',
+    554 => 'triangle',
+    555 => 'ninth',
+    556 => 'microphone',
+    557 => 'maestro',
+    558 => 'partial',
+    559 => 'scouts',
+    560 => 'sessions',
+    561 => 'hum',
+    562 => 'trumpet',
+    563 => 'monitoring',
+    564 => 'smashing',
+    565 => 'waltz',
+    566 => 'verse',
+    567 => 'versing',
+    568 => 'recorder',
+    569 => 'tubes',
+    570 => 'posters',
+    571 => 'hustle',
+    572 => 'charts',
+    573 => 'merchandise',
+    574 => 'merchandised',
+    575 => 'stroll',
+    576 => 'locking',
+    577 => 'dynamic',
+    578 => 'stereo',
+    579 => 'repeated',
+    580 => 'journalists',
+    581 => 'medieval',
+    582 => 'mediaeval',
+    583 => 'flute',
+    584 => 'fluting',
+    585 => 'rays',
+    586 => 'collective',
+    587 => 'fantasies',
+    588 => 'nightclub',
+    589 => 'introduction',
+    590 => 'strap',
+    591 => 'flags',
+    592 => 'suspension',
+    593 => 'mute',
+    594 => 'muting',
+    595 => 'finale',
+    596 => 'crowds',
+    597 => 'jerks',
+    598 => 'rocking',
+    599 => 'stages',
+    600 => 'backstage',
+    601 => 'feedback',
+    602 => 'masses',
+    603 => 'mixing',
+    604 => 'splitting',
+    605 => 'curfew',
+    606 => 'tying',
+    607 => 'experimental',
+    608 => 'keyboard',
+    609 => 'leaking',
+    610 => 'valve',
+    611 => 'publisher',
+    612 => 'karaoke',
+    613 => 'speakers',
+    614 => 'vocal',
+    615 => 'fades',
+    616 => 'surfing',
+    617 => 'spotlight',
+    618 => 'spotlighted',
+    619 => 'spotlighting',
+    620 => 'headlines',
+    621 => 'releasing',
+    622 => 'disk',
+    623 => 'disked',
+    624 => 'disking',
+    625 => 'leaked',
+    626 => 'conductor',
+    627 => 'singers',
+    628 => 'download',
+    629 => 'sol',
+    630 => 'rigged',
+    631 => 'tuned',
+    632 => 'belts',
+    633 => 'crews',
+    634 => 'stem',
+    635 => 'fills',
+    636 => 'disc',
+    637 => 'resolution',
+    638 => 'tapped',
+    639 => 'punks',
+    640 => 'shredder',
+    641 => 'bouncing',
+    642 => 'drilling',
+    643 => 'editing',
+    644 => 'manuscript',
+    645 => 'measured',
+    646 => 'dots',
+    647 => 'drummer',
+    648 => 'rattle',
+    649 => 'noodle',
+    650 => 'scales',
+    651 => 'royalty',
+    652 => 'auditions',
+    653 => 'demo',
+    654 => 'electronics',
+    655 => 'comeback',
+    656 => 'console',
+    657 => 'studios',
+    658 => 'countdown',
+    659 => 'headline',
+    660 => 'jets',
+    661 => 'serpent',
+    662 => 'fading',
+    663 => 'tonic',
+    664 => 'boogie',
+    665 => 'critics',
+    666 => 'accidental',
+    667 => 'fling',
+    668 => 'gospel',
+    669 => 'signatures',
+    670 => 'tunes',
+    671 => 'sweeping',
+    672 => 'upright',
+    673 => 'patron',
+    674 => 'reel',
+    675 => 'glee',
+    676 => 'groove',
+    677 => 'swings',
+    678 => 'performances',
+    679 => 'sleeves',
+    680 => 'necks',
+    681 => 'rests',
+    682 => 'debut',
+    683 => 'critic',
+    684 => 'supports',
+    685 => 'premiere',
+    686 => 'tours',
+    687 => 'bumps',
+    688 => 'outfits',
+    689 => 'fusion',
+    690 => 'taped',
+    691 => 'sliding',
+    692 => 'trance',
+    693 => 'tranced',
+    694 => 'trancing',
+    695 => 'symphony',
+    696 => 'fiddle',
+    697 => 'licking',
+    698 => 'funk',
+    699 => 'flats',
+    700 => 'flyer',
+    701 => 'riders',
+    702 => 'echoes',
+    703 => 'chiming',
+    704 => 'canned',
+    705 => 'cables',
+    706 => 'drones',
+    707 => 'staged',
+    708 => 'scroll',
+    709 => 'venue',
+    710 => 'beams',
+    711 => 'pits',
+    712 => 'crooks',
+    713 => 'sections',
+    714 => 'hooks',
+    715 => 'rehearsals',
+    716 => 'taps',
+    717 => 'pluck',
+    718 => 'pedal',
+    719 => 'pedalled',
+    720 => 'knob',
+    721 => 'strapped',
+    722 => 'hippie',
+    723 => 'measuring',
+    724 => 'renaissance',
+    725 => 'chant',
+    726 => 'outlaw',
+    727 => 'hooking',
+    728 => 'bounced',
+    729 => 'texture',
+    730 => 'monitors',
+    731 => 'cluster',
+    732 => 'tags',
+    733 => 'faded',
+    734 => 'gala',
+    735 => 'contemporary',
+    736 => 'labels',
+    737 => 'salsa',
+    738 => 'shred',
+    739 => 'dominant',
+    740 => 'slides',
+    741 => 'technician',
+    742 => 'hums',
+    743 => 'composer',
+    744 => 'headphones',
+    745 => 'pitching',
+    746 => 'posse',
+    747 => 'toaster',
+    748 => 'edit',
+    749 => 'flyers',
+    750 => 'bending',
+    751 => 'albums',
+    752 => 'rattles',
+    753 => 'downloaded',
+    754 => 'harp',
+    755 => 'harped',
+    756 => 'anthem',
+    757 => 'jacks',
+    758 => 'marched',
+    759 => 'aria',
+    760 => 'platinum',
+    761 => 'progressive',
+    762 => 'singles',
+    763 => 'leaks',
+    764 => 'sponsored',
+    765 => 'managers',
+    766 => 'rested',
+    767 => 'shuffle',
+    768 => 'edited',
+    769 => 'steward',
+    770 => 'jug',
+    771 => 'jugging',
+    772 => 'developments',
+    773 => 'growl',
+    774 => 'platter',
+    775 => 'charleston',
+    776 => 'skins',
+    777 => 'tones',
+    778 => 'raving',
+    779 => 'swam',
+    780 => 'fanfare',
+    781 => 'baton',
+    782 => 'lineup',
+    783 => 'ponies',
+    784 => 'twisting',
+    785 => 'strung',
+    786 => 'opener',
+    787 => 'tabs',
+    788 => 'controller',
+    789 => 'flop',
+    790 => 'jamming',
+    791 => 'slapping',
+    792 => 'rocked',
+    793 => 'licked',
+    794 => 'pianist',
+    795 => 'troupe',
+    796 => 'refrain',
+    797 => 'jerking',
+    798 => 'intro',
+    799 => 'concerts',
+    800 => 'booming',
+    801 => 'lullaby',
+    802 => 'recital',
+    803 => 'decks',
+    804 => 'casing',
+    805 => 'releases',
+    806 => 'whipping',
+    807 => 'pitched',
+    808 => 'wedge',
+    809 => 'wedging',
+    810 => 'lasers',
+    811 => 'banjo',
+    812 => 'rave',
+    813 => 'cassette',
+    814 => 'classics',
+    815 => 'touring',
+    816 => 'ledger',
+    817 => 'hammering',
+    818 => 'audiences',
+    819 => 'gigs',
+    820 => 'thrash',
+    821 => 'passions',
+    822 => 'versions',
+    823 => 'numbered',
+    824 => 'stacked',
+    825 => 'cabaret',
+    826 => 'triad',
+    827 => 'duo',
+    828 => 'rooting',
+    829 => 'chord',
+    830 => 'chorded',
+    831 => 'chording',
+    832 => 'recordings',
+    833 => 'voluntary',
+    834 => 'radios',
+    835 => 'diva',
+    836 => 'verses',
+    837 => 'streams',
+    838 => 'sponsors',
+    839 => 'cello',
+    840 => 'jacked',
+    841 => 'rounded',
+    842 => 'executives',
+    843 => 'spoons',
+    844 => 'mastered',
+    845 => 'artwork',
+    846 => 'psyched',
+    847 => 'bumping',
+    848 => 'brushing',
+    849 => 'hammered',
+    850 => 'collectors',
+    851 => 'hardcore',
+    852 => 'inventions',
+    853 => 'fret',
+    854 => 'tempo',
+    855 => 'stomp',
+    856 => 'chime',
+    857 => 'brushed',
+    858 => 'encore',
+    859 => 'encored',
+    860 => 'encoring',
+    861 => 'combo',
+    862 => 'bows',
+    863 => 'rocker',
+    864 => 'tagged',
+    865 => 'jingling',
+    866 => 'catalog',
+    867 => 'barriers',
+    868 => 'staging',
+    869 => 'rapping',
+    870 => 'monitored',
+    871 => 'contracted',
+    872 => 'swung',
+    873 => 'bugle',
+    874 => 'bugled',
+    875 => 'bugling',
+    876 => 'worshipped',
+    877 => 'tuning',
+    878 => 'catalogue',
+    879 => 'scoring',
+    880 => 'outlaws',
+    881 => 'showcase',
+    882 => 'drumming',
+    883 => 'slaps',
+    884 => 'phrases',
+    885 => 'novelty',
+    886 => 'techno',
+    887 => 'grimes',
+    888 => 'interface',
+    889 => 'metals',
+    890 => 'glitch',
+    891 => 'loco',
+    892 => 'bellows',
+    893 => 'hymn',
+    894 => 'hymned',
+    895 => 'hymning',
+    896 => 'samba',
+    897 => 'sambaed',
+    898 => 'sambaing',
+    899 => 'orchestral',
+    900 => 'stride',
+    901 => 'patrons',
+    902 => 'duet',
+    903 => 'shreds',
+    904 => 'mixer',
+    905 => 'deluxe',
+    906 => 'chords',
+    907 => 'engineered',
+    908 => 'harmonica',
+    909 => 'trumpets',
+    910 => 'brushes',
+    911 => 'accordion',
+    912 => 'streaming',
+    913 => 'bop',
+    914 => 'hippies',
+    915 => 'labeled',
+    916 => 'trio',
+    917 => 'limbo',
+    918 => 'bends',
+    919 => 'shredded',
+    920 => 'scouting',
+    921 => 'technicians',
+    922 => 'barred',
+    923 => 'ballad',
+    924 => 'mambo',
+    925 => 'mamboed',
+    926 => 'mamboing',
+    927 => 'amp',
+    928 => 'jukebox',
+    929 => 'minors',
+    930 => 'residency',
+    931 => 'floss',
+    932 => 'rapper',
+    933 => 'vogue',
+    934 => 'jingles',
+    935 => 'casings',
+    936 => 'delays',
+    937 => 'viola',
+    938 => 'presses',
+    939 => 'plucked',
+    940 => 'repeats',
+    941 => 'bouncer',
+    942 => 'taping',
+    943 => 'alternatives',
+    944 => 'dipped',
+    945 => 'acoustic',
+    946 => 'autographs',
+    947 => 'rooted',
+    948 => 'canon',
+    949 => 'theaters',
+    950 => 'billing',
+    951 => 'fuzz',
+    952 => 'settings',
+    953 => 'drills',
+    954 => 'dipping',
+    955 => 'splits',
+    956 => 'sweeps',
+    957 => 'auditorium',
+    958 => 'saxophone',
+    959 => 'rattled',
+    960 => 'perfected',
+    961 => 'stacks',
+    962 => 'unison',
+    963 => 'pegged',
+    964 => 'desks',
+    965 => 'tut',
+    966 => 'auditioning',
+    967 => 'thrashing',
+    968 => 'guitars',
+    969 => 'idols',
+    970 => 'stomping',
+    971 => 'airs',
+    972 => 'variation',
+    973 => 'thrashed',
+    974 => 'jams',
+    975 => 'drilled',
+    976 => 'slid',
+    977 => 'consort',
+    978 => 'vibes',
+    979 => 'prodigy',
+    980 => 'billings',
+    981 => 'straps',
+    982 => 'cabs',
+    983 => 'cheered',
+    984 => 'podium',
+    985 => 'rounding',
+    986 => 'whips',
+    987 => 'dynamics',
+    988 => 'diminished',
+    989 => 'riff',
+    990 => 'riffed',
+    991 => 'scrolls',
+    992 => 'fines',
+    993 => 'soprano',
+    994 => 'polka',
+    995 => 'polkaed',
+    996 => 'polkaing',
+    997 => 'hillbilly',
+    998 => 'clogged',
+    999 => 'twists',
+    1000 => 'majors',
+    1001 => 'skinned',
+    1002 => 'ornament',
+    1003 => 'ornamenting',
+    1004 => 'temperament',
+    1005 => 'trilling',
+    1006 => 'beatings',
+    1007 => 'valves',
+    1008 => 'marches',
+    1009 => 'variations',
+    1010 => 'strolling',
+    1011 => 'gothic',
+    1012 => 'metre',
+    1013 => 'indies',
+    1014 => 'introductions',
+    1015 => 'windmill',
+    1016 => 'chants',
+    1017 => 'distortion',
+    1018 => 'publishers',
+    1019 => 'rarity',
+    1020 => 'ornaments',
+    1021 => 'cartridge',
+    1022 => 'booker',
+    1023 => 'lyric',
+    1024 => 'themes',
+    1025 => 'downloading',
+    1026 => 'imperfect',
+    1027 => 'synced',
+    1028 => 'synched',
+    1029 => 'jive',
+    1030 => 'jived',
+    1031 => 'hammers',
+    1032 => 'imprint',
+    1033 => 'publicist',
+    1034 => 'accents',
+    1035 => 'jig',
+    1036 => 'jigged',
+    1037 => 'vinyl',
+    1038 => 'stems',
+    1039 => 'soundtrack',
+    1040 => 'strut',
+    1041 => 'ensemble',
+    1042 => 'loops',
+    1043 => 'loudspeaker',
+    1044 => 'tout',
+    1045 => 'interval',
+    1046 => 'quartet',
+    1047 => 'festivals',
+    1048 => 'flagged',
+    1049 => 'pulses',
+    1050 => 'barbershop',
+    1051 => 'jungles',
+    1052 => 'clarinet',
+    1053 => 'smashes',
+    1054 => 'hustling',
+    1055 => 'cabinets',
+    1056 => 'cartridges',
+    1057 => 'bowed',
+    1058 => 'vocals',
+    1059 => 'scat',
+    1060 => 'scatted',
+    1061 => 'aired',
+    1062 => 'delaying',
+    1063 => 'stoner',
+    1064 => 'mod',
+    1065 => 'tagging',
+    1066 => 'nightclubs',
+    1067 => 'intervals',
+    1068 => 'reggae',
+    1069 => 'songwriter',
+    1070 => 'waxed',
+    1071 => 'bowing',
+    1072 => 'fined',
+    1073 => 'swims',
+    1074 => 'sequences',
+    1075 => 'improv',
+    1076 => 'piping',
+    1077 => 'pitches',
+    1078 => 'concerto',
+    1079 => 'unplug',
+    1080 => 'reeling',
+    1081 => 'flung',
+    1082 => 'rigging',
+    1083 => 'clusters',
+    1084 => 'royalties',
+    1085 => 'bonuses',
+    1086 => 'promoter',
+    1087 => 'rhythms',
+    1088 => 'tenor',
+    1089 => 'indie',
+    1090 => 'shaker',
+    1091 => 'sax',
+    1092 => 'slurring',
+    1093 => 'promenade',
+    1094 => 'promenaded',
+    1095 => 'promenading',
+    1096 => 'clubbing',
+    1097 => 'guitarist',
+    1098 => 'trapping',
+    1099 => 'goth',
+    1100 => 'fliers',
+    1101 => 'shuffling',
+    1102 => 'bongo',
+    1103 => 'twirl',
+    1104 => 'kits',
+    1105 => 'ratchet',
+    1106 => 'ratcheted',
+    1107 => 'dub',
+    1108 => 'bounces',
+    1109 => 'discord',
+    1110 => 'discorded',
+    1111 => 'discording',
+    1112 => 'piccolo',
+    1113 => 'fiddler',
+    1114 => 'hula',
+    1115 => 'housed',
+    1116 => 'microphones',
+    1117 => 'dotted',
+    1118 => 'worships',
+    1119 => 'snare',
+    1120 => 'presto',
+    1121 => 'fiddling',
+    1122 => 'triplets',
+    1123 => 'dubbed',
+    1124 => 'licks',
+    1125 => 'disks',
+    1126 => 'groupie',
+    1127 => 'progression',
+    1128 => 'alto',
+    1129 => 'violinist',
+    1130 => 'playback',
+    1131 => 'hippy',
+    1132 => 'dab',
+    1133 => 'confetti',
+    1134 => 'manuscripts',
+    1135 => 'beaming',
+    1136 => 'suites',
+    1137 => 'bellowing',
+    1138 => 'forte',
+    1139 => 'discs',
+    1140 => 'trombone',
+    1141 => 'pulsing',
+    1142 => 'hymns',
+    1143 => 'rigs',
+    1144 => 'musicals',
+    1145 => 'presenter',
+    1146 => 'lindy',
+    1147 => 'droppings',
+    1148 => 'flier',
+    1149 => 'matinee',
+    1150 => 'violins',
+    1151 => 'jugs',
+    1152 => 'lament',
+    1153 => 'thrones',
+    1154 => 'acids',
+    1155 => 'scatting',
+    1156 => 'auditioned',
+    1157 => 'booms',
+    1158 => 'tuba',
+    1159 => 'waxing',
+    1160 => 'diminish',
+    1161 => 'canning',
+    1162 => 'theatres',
+    1163 => 'autographed',
+    1164 => 'jacking',
+    1165 => 'beamed',
+    1166 => 'serenade',
+    1167 => 'worshipping',
+    1168 => 'deejay',
+    1169 => 'foxtrot',
+    1170 => 'foxtrotted',
+    1171 => 'foxtrotting',
+    1172 => 'mixes',
+    1173 => 'choreographer',
+    1174 => 'fife',
+    1175 => 'bagpipes',
+    1176 => 'vocalist',
+    1177 => 'stacking',
+    1178 => 'jerked',
+    1179 => 'airing',
+    1180 => 'shimmy',
+    1181 => 'gramophone',
+    1182 => 'ambient',
+    1183 => 'bebop',
+    1184 => 'saddled',
+    1185 => 'octave',
+    1186 => 'bard',
+    1187 => 'clogs',
+    1188 => 'vamp',
+    1189 => 'headset',
+    1190 => 'operas',
+    1191 => 'booths',
+    1192 => 'thirds',
+    1193 => 'baggy',
+    1194 => 'trumpeting',
+    1195 => 'ligature',
+    1196 => 'pegs',
+    1197 => 'sampling',
+    1198 => 'rumba',
+    1199 => 'rumbaed',
+    1200 => 'rumbaing',
+    1201 => 'strides',
+    1202 => 'sonata',
+    1203 => 'freestyle',
+    1204 => 'groupies',
+    1205 => 'lute',
+    1206 => 'vaudeville',
+    1207 => 'buildup',
+    1208 => 'singsong',
+    1209 => 'benefited',
+    1210 => 'outlawed',
+    1211 => 'juju',
+    1212 => 'muted',
+    1213 => 'tambourine',
+    1214 => 'psychedelic',
+    1215 => 'triads',
+    1216 => 'clog',
+    1217 => 'stomped',
+    1218 => 'gospels',
+    1219 => 'wedged',
+    1220 => 'pedals',
+    1221 => 'mallet',
+    1222 => 'strapping',
+    1223 => 'smooches',
+    1224 => 'boning',
+    1225 => 'melodies',
+    1226 => 'sludge',
+    1227 => 'cantor',
+    1228 => 'koto',
+    1229 => 'romances',
+    1230 => 'knobs',
+    1231 => 'barring',
+    1232 => 'mogul',
+    1233 => 'droning',
+    1234 => 'turnaround',
+    1235 => 'strumming',
+    1236 => 'banger',
+    1237 => 'ovation',
+    1238 => 'hipster',
+    1239 => 'reels',
+    1240 => 'triangles',
+    1241 => 'plucking',
+    1242 => 'toured',
+    1243 => 'singled',
+    1244 => 'phonograph',
+    1245 => 'mouthpiece',
+    1246 => 'sponsoring',
+    1247 => 'impromptu',
+    1248 => 'conga',
+    1249 => 'congaed',
+    1250 => 'congaing',
+    1251 => 'decked',
+    1252 => 'waltzing',
+    1253 => 'overture',
+    1254 => 'anvil',
+    1255 => 'baroque',
+    1256 => 'mariachi',
+    1257 => 'bestseller',
+    1258 => 'pickings',
+    1259 => 'reeds',
+    1260 => 'motif',
+    1261 => 'unplugged',
+    1262 => 'dips',
+    1263 => 'dolce',
+    1264 => 'oldie',
+    1265 => 'crowding',
+    1266 => 'flamenco',
+    1267 => 'versed',
+    1268 => 'manuals',
+    1269 => 'fingered',
+    1270 => 'serpents',
+    1271 => 'cadence',
+    1272 => 'starred',
+    1273 => 'rappers',
+    1274 => 'overdrive',
+    1275 => 'overdriving',
+    1276 => 'rockers',
+    1277 => 'largo',
+    1278 => 'drumroll',
+    1279 => 'stringing',
+    1280 => 'ode',
+    1281 => 'bootleg',
+    1282 => 'contracting',
+    1283 => 'caprice',
+    1284 => 'radioed',
+    1285 => 'prelude',
+    1286 => 'preluded',
+    1287 => 'preluding',
+    1288 => 'fundamentals',
+    1289 => 'exec',
+    1290 => 'strutting',
+    1291 => 'philharmonic',
+    1292 => 'percussion',
+    1293 => 'solos',
+    1294 => 'grooves',
+    1295 => 'blogger',
+    1296 => 'bangers',
+    1297 => 'emcee',
+    1298 => 'emceed',
+    1299 => 'mikes',
+    1300 => 'fillings',
+    1301 => 'minstrel',
+    1302 => 'windmills',
+    1303 => 'soiree',
+    1304 => 'improvisation',
+    1305 => 'raps',
+    1306 => 'carols',
+    1307 => 'earplugs',
+    1308 => 'venues',
+    1309 => 'ukulele',
+    1310 => 'demos',
+    1311 => 'beater',
+    1312 => 'keyed',
+    1313 => 'smooch',
+    1314 => 'oldies',
+    1315 => 'tutti',
+    1316 => 'westerns',
+    1317 => 'whistled',
+    1318 => 'synth',
+    1319 => 'pianos',
+    1320 => 'reunions',
+    1321 => 'composers',
+    1322 => 'echoed',
+    1323 => 'bubblegum',
+    1324 => 'marquee',
+    1325 => 'playlist',
+    1326 => 'garages',
+    1327 => 'fanning',
+    1328 => 'boned',
+    1329 => 'promo',
+    1330 => 'tubing',
+    1331 => 'skinhead',
+    1332 => 'majored',
+    1333 => 'synch',
+    1334 => 'romancing',
+    1335 => 'billed',
+    1336 => 'amplifier',
+    1337 => 'falsetto',
+    1338 => 'compressor',
+    1339 => 'psalm',
+    1340 => 'psalmed',
+    1341 => 'psalming',
+    1342 => 'cassettes',
+    1343 => 'tuts',
+    1344 => 'shredding',
+    1345 => 'ply',
+    1346 => 'pogo',
+    1347 => 'treble',
+    1348 => 'trebled',
+    1349 => 'trebling',
+    1350 => 'crossover',
+    1351 => 'labelled',
+    1352 => 'hustled',
+    1353 => 'emo',
+    1354 => 'perfecting',
+    1355 => 'oboe',
+    1356 => 'cotillion',
+    1357 => 'acoustics',
+    1358 => 'evergreen',
+    1359 => 'damper',
+    1360 => 'remix',
+    1361 => 'worshiped',
+    1362 => 'shanty',
+    1363 => 'screamer',
+    1364 => 'noting',
+    1365 => 'roadie',
+    1366 => 'choral',
+    1367 => 'scaled',
+    1368 => 'conch',
+    1369 => 'medley',
+    1370 => 'textures',
+    1371 => 'consoling',
+    1372 => 'harping',
+    1373 => 'fretting',
+    1374 => 'skinheads',
+    1375 => 'horned',
+    1376 => 'imprinted',
+    1377 => 'amps',
+    1378 => 'requiem',
+    1379 => 'ragtime',
+    1380 => 'scouted',
+    1381 => 'cymbals',
+    1382 => 'smooching',
+    1383 => 'twirling',
+    1384 => 'fingering',
+    1385 => 'lyre',
+    1386 => 'saddles',
+    1387 => 'recorders',
+    1388 => 'drumstick',
+    1389 => 'resolutions',
+    1390 => 'diminishing',
+    1391 => 'ledgers',
+    1392 => 'calypso',
+    1393 => 'electro',
+    1394 => 'fugue',
+    1395 => 'baritone',
+    1396 => 'trappings',
+    1397 => 'broadcaster',
+    1398 => 'raves',
+    1399 => 'bluegrass',
+    1400 => 'gogo',
+    1401 => 'soloist',
+    1402 => 'bouncers',
+    1403 => 'controllers',
+    1404 => 'harmonic',
+    1405 => 'hora',
+    1406 => 'interlude',
+    1407 => 'exposition',
+    1408 => 'psalms',
+    1409 => 'calliope',
+    1410 => 'slurred',
+    1411 => 'harmonies',
+    1412 => 'sellout',
+    1413 => 'drummers',
+    1414 => 'ditty',
+    1415 => 'glam',
+    1416 => 'trills',
+    1417 => 'keyboards',
+    1418 => 'sixteenth',
+    1419 => 'flops',
+    1420 => 'slur',
+    1421 => 'toms',
+    1422 => 'songbird',
+    1423 => 'scaling',
+    1424 => 'jamboree',
+    1425 => 'arenas',
+    1426 => 'turntable',
+    1427 => 'contemporaries',
+    1428 => 'crescendo',
+    1429 => 'crescendoed',
+    1430 => 'crescendoing',
+    1431 => 'bellow',
+    1432 => 'hillbillies',
+    1433 => 'organist',
+    1434 => 'bandstand',
+    1435 => 'ballads',
+    1436 => 'pickups',
+    1437 => 'synthesizer',
+    1438 => 'synthesiser',
+    1439 => 'mastering',
+    1440 => 'retrograde',
+    1441 => 'retrograded',
+    1442 => 'retrograding',
+    1443 => 'capoeira',
+    1444 => 'americana',
+    1445 => 'beatboxing',
+    1446 => 'clogging',
+    1447 => 'phrasing',
+    1448 => 'grime',
+    1449 => 'grimed',
+    1450 => 'griming',
+    1451 => 'merchandising',
+    1452 => 'shuffled',
+    1453 => 'pitted',
+    1454 => 'drumsticks',
+    1455 => 'fantasia',
+    1456 => 'breakdowns',
+    1457 => 'mandolin',
+    1458 => 'whammy',
+    1459 => 'virtuoso',
+    1460 => 'flopped',
+    1461 => 'hipsters',
+    1462 => 'strums',
+    1463 => 'spooning',
+    1464 => 'stadiums',
+    1465 => 'pirated',
+    1466 => 'wristband',
+    1467 => 'lounging',
+    1468 => 'stewards',
+    1469 => 'clave',
+    1470 => 'charted',
+    1471 => 'consorting',
+    1472 => 'capo',
+    1473 => 'flutes',
+    1474 => 'grouping',
+    1475 => 'rhapsody',
+    1476 => 'truss',
+    1477 => 'trussing',
+    1478 => 'takings',
+    1479 => 'snares',
+    1480 => 'cakewalk',
+    1481 => 'cakewalked',
+    1482 => 'cakewalking',
+    1483 => 'modes',
+    1484 => 'tabor',
+    1485 => 'romanticism',
+    1486 => 'downloads',
+    1487 => 'voiced',
+    1488 => 'necking',
+    1489 => 'flings',
+    1490 => 'dubbing',
+    1491 => 'shakers',
+    1492 => 'flopping',
+    1493 => 'struts',
+    1494 => 'sampled',
+    1495 => 'vamps',
+    1496 => 'yodeling',
+    1497 => 'yodelling',
+    1498 => 'choirs',
+    1499 => 'consoled',
+    1500 => 'wedges',
+    1501 => 'sitar',
+    1502 => 'promoters',
+    1503 => 'seconded',
+    1504 => 'accompaniment',
+    1505 => 'looped',
+    1506 => 'harpsichord',
+    1507 => 'notation',
+    1508 => 'catalogued',
+    1509 => 'cataloged',
+    1510 => 'electrics',
+    1511 => 'troubadour',
+    1512 => 'openers',
+    1513 => 'tonics',
+    1514 => 'legged',
+    1515 => 'sequencing',
+    1516 => 'glitches',
+    1517 => 'riser',
+    1518 => 'catalogs',
+    1519 => 'conductors',
+    1520 => 'stave',
+    1521 => 'strolled',
+    1522 => 'grunge',
+    1523 => 'distortions',
+    1524 => 'toned',
+    1525 => 'masse',
+    1526 => 'bolero',
+    1527 => 'pitting',
+    1528 => 'romantics',
+    1529 => 'canons',
+    1530 => 'drumbeat',
+    1531 => 'waltzes',
+    1532 => 'jazzed',
+    1533 => 'majoring',
+    1534 => 'skinning',
+    1535 => 'headliner',
+    1536 => 'pedaling',
+    1537 => 'pedalling',
+    1538 => 'charting',
+    1539 => 'lullabies',
+    1540 => 'bugler',
+    1541 => 'muzak',
+    1542 => 'bagpipe',
+    1543 => 'kazoo',
+    1544 => 'execs',
+    1545 => 'yodel',
+    1546 => 'yodeled',
+    1547 => 'yodelled',
+    1548 => 'transcription',
+    1549 => 'segue',
+    1550 => 'segueing',
+    1551 => 'staffed',
+    1552 => 'interrupts',
+    1553 => 'virginal',
+    1554 => 'strum',
+    1555 => 'sopranos',
+    1556 => 'potpourri',
+    1557 => 'laminated',
+    1558 => 'surfed',
+    1559 => 'impresario',
+    1560 => 'clubbed',
+    1561 => 'bloggers',
+    1562 => 'molto',
+    1563 => 'belted',
+    1564 => 'consoles',
+    1565 => 'cellist',
+    1566 => 'bended',
+    1567 => 'slurs',
+    1568 => 'staffs',
+    1569 => 'chacha',
+    1570 => 'flossing',
+    1571 => 'mods',
+    1572 => 'operetta',
+    1573 => 'trill',
+    1574 => 'trilled',
+    1575 => 'bootlegger',
+    1576 => 'strobe',
+    1577 => 'arias',
+    1578 => 'cuttings',
+    1579 => 'flinging',
+    1580 => 'catalogues',
+    1581 => 'metronome',
+    1582 => 'drummed',
+    1583 => 'tuner',
+    1584 => 'lamenting',
+    1585 => 'fado',
+    1586 => 'caroling',
+    1587 => 'carolling',
+    1588 => 'grouped',
+    1589 => 'rockstar',
+    1590 => 'bongos',
+    1591 => 'posses',
+    1592 => 'reviewer',
+    1593 => 'kora',
+    1594 => 'banded',
+    1595 => 'cornet',
+    1596 => 'locos',
+    1597 => 'cymbal',
+    1598 => 'outfitted',
+    1599 => 'poco',
+    1600 => 'worshiping',
+    1601 => 'swum',
+    1602 => 'toasters',
+    1603 => 'strolls',
+    1604 => 'inversion',
+    1605 => 'fandango',
+    1606 => 'labeling',
+    1607 => 'labelling',
+    1608 => 'heckle',
+    1609 => 'heckled',
+    1610 => 'discos',
+    1611 => 'warbler',
+    1612 => 'piped',
+    1613 => 'bottleneck',
+    1614 => 'bottlenecked',
+    1615 => 'bottlenecking',
+    1616 => 'waltzed',
+    1617 => 'sampler',
+    1618 => 'looping',
+    1619 => 'stereos',
+    1620 => 'minuet',
+    1621 => 'ravings',
+    1622 => 'counterpoint',
+    1623 => 'counterpointed',
+    1624 => 'counterpointing',
+    1625 => 'stomps',
+    1626 => 'benefiting',
+    1627 => 'songwriters',
+    1628 => 'duets',
+    1629 => 'headlining',
+    1630 => 'platters',
+    1631 => 'minstrels',
+    1632 => 'jitterbug',
+    1633 => 'jitterbugged',
+    1634 => 'divas',
+    1635 => 'flam',
+    1636 => 'diminishes',
+    1637 => 'mixers',
+    1638 => 'themed',
+    1639 => 'strode',
+    1640 => 'fanned',
+    1641 => 'volta',
+    1642 => 'grooving',
+    1643 => 'compilation',
+    1644 => 'effected',
+    1645 => 'choirboy',
+    1646 => 'spotlights',
+    1647 => 'chanted',
+    1648 => 'heckling',
+    1649 => 'pirouette',
+    1650 => 'pirouetted',
+    1651 => 'pirouetting',
+    1652 => 'batons',
+    1653 => 'riffs',
+    1654 => 'amphitheater',
+    1655 => 'amphitheatre',
+    1656 => 'grands',
+    1657 => 'cased',
+    1658 => 'massing',
+    1659 => 'orchestras',
+    1660 => 'comebacks',
+    1661 => 'sharps',
+    1662 => 'staffing',
+    1663 => 'phrased',
+    1664 => 'harmonium',
+    1665 => 'imprints',
+    1666 => 'baggies',
+    1667 => 'raga',
+    1668 => 'bhangra',
+    1669 => 'veena',
+    1670 => 'plying',
+    1671 => 'dixieland',
+    1672 => 'wristbands',
+    1673 => 'augmented',
+    1674 => 'harps',
+    1675 => 'premieres',
+    1676 => 'croon',
+    1677 => 'crooned',
+    1678 => 'rondo',
+    1679 => 'warblers',
+    1680 => 'pyrotechnics',
+    1681 => 'allegro',
+    1682 => 'sectioned',
+    1683 => 'lamented',
+    1684 => 'vibrato',
+    1685 => 'impressionism',
+    1686 => 'cancan',
+    1687 => 'augment',
+    1688 => 'overtures',
+    1689 => 'bootlegging',
+    1690 => 'artworks',
+    1691 => 'beatnik',
+    1692 => 'partials',
+    1693 => 'ska',
+    1694 => 'bassoon',
+    1695 => 'piu',
+    1696 => 'bassist',
+    1697 => 'edits',
+    1698 => 'promos',
+    1699 => 'fiddled',
+    1700 => 'heckler',
+    1701 => 'numbering',
+    1702 => 'scrolling',
+    1703 => 'bootleggers',
+    1704 => 'stemming',
+    1705 => 'symphonies',
+    1706 => 'concerted',
+    1707 => 'cabled',
+    1708 => 'stoners',
+    1709 => 'tangos',
+    1710 => 'dissonance',
+    1711 => 'xylophone',
+    1712 => 'laminate',
+    1713 => 'belter',
+    1714 => 'trumpeter',
+    1715 => 'crooner',
+    1716 => 'belting',
+    1717 => 'mutes',
+    1718 => 'flagging',
+    1719 => 'recitals',
+    1720 => 'merengue',
+    1721 => 'silvers',
+    1722 => 'reeled',
+    1723 => 'striding',
+    1724 => 'golds',
+    1725 => 'loudspeakers',
+    1726 => 'washboard',
+    1727 => 'voicing',
+    1728 => 'clustered',
+    1729 => 'waxes',
+    1730 => 'symphonic',
+    1731 => 'modulation',
+    1732 => 'trussed',
+    1733 => 'bugles',
+    1734 => 'acetate',
+    1735 => 'wormed',
+    1736 => 'overtones',
+    1737 => 'plucks',
+    1738 => 'moonwalk',
+    1739 => 'roadies',
+    1740 => 'debuted',
+    1741 => 'beaters',
+    1742 => 'equalizer',
+    1743 => 'massed',
+    1744 => 'stanza',
+    1745 => 'premiered',
+    1746 => 'presenters',
+    1747 => 'novelties',
+    1748 => 'madrigal',
+    1749 => 'rapped',
+    1750 => 'carnivals',
+    1751 => 'concertina',
+    1752 => 'shamisen',
+    1753 => 'locomotion',
+    1754 => 'streamed',
+    1755 => 'headsets',
+    1756 => 'expressionism',
+    1757 => 'stemmed',
+    1758 => 'vocalists',
+    1759 => 'augmentation',
+    1760 => 'motifs',
+    1761 => 'frets',
+    1762 => 'maracas',
+    1763 => 'downbeat',
+    1764 => 'offbeat',
+    1765 => 'leaded',
+    1766 => 'snared',
+    1767 => 'simile',
+    1768 => 'nocturne',
+    1769 => 'fiddles',
+    1770 => 'carolers',
+    1771 => 'anthology',
+    1772 => 'dabs',
+    1773 => 'sequencer',
+    1774 => 'maypole',
+    1775 => 'proms',
+    1776 => 'intonation',
+    1777 => 'cataloguing',
+    1778 => 'harmonics',
+    1779 => 'didgeridoo',
+    1780 => 'bridging',
+    1781 => 'needling',
+    1782 => 'reverb',
+    1783 => 'cataloging',
+    1784 => 'arabesque',
+    1785 => 'plied',
+    1786 => 'ticketed',
+    1787 => 'riffing',
+    1788 => 'consorts',
+    1789 => 'laments',
+    1790 => 'hummed',
+    1791 => 'suspensions',
+    1792 => 'quintet',
+    1793 => 'pipers',
+    1794 => 'moguls',
+    1795 => 'raved',
+    1796 => 'modernism',
+    1797 => 'sheeting',
+    1798 => 'amplifiers',
+    1799 => 'dirge',
+    1800 => 'scalper',
+    1801 => 'dampers',
+    1802 => 'reprise',
+    1803 => 'reprised',
+    1804 => 'reprising',
+    1805 => 'prodigies',
+    1806 => 'curfews',
+    1807 => 'tenors',
+    1808 => 'rosin',
+    1809 => 'rosined',
+    1810 => 'rosining',
+    1811 => 'cabarets',
+    1812 => 'standings',
+    1813 => 'lambada',
+    1814 => 'pianists',
+    1815 => 'gongs',
+    1816 => 'timbre',
+    1817 => 'selector',
+    1818 => 'growled',
+    1819 => 'decking',
+    1820 => 'turntables',
+    1821 => 'encores',
+    1822 => 'dubstep',
+    1823 => 'drumbeats',
+    1824 => 'cowbell',
+    1825 => 'trombones',
+    1826 => 'stagehand',
+    1827 => 'techie',
+    1828 => 'banjos',
+    1829 => 'bandleader',
+    1830 => 'pirating',
+    1831 => 'altos',
+    1832 => 'vina',
+    1833 => 'rockabilly',
+    1834 => 'coda',
+    1835 => 'textured',
+    1836 => 'imprinting',
+    1837 => 'jiving',
+    1838 => 'adagio',
+    1839 => 'hootenanny',
+    1840 => 'surfs',
+    1841 => 'serenading',
+    1842 => 'jetting',
+    1843 => 'psyching',
+    1844 => 'crooning',
+    1845 => 'anthems',
+    1846 => 'screamers',
+    1847 => 'ticketing',
+    1848 => 'mazurka',
+    1849 => 'risers',
+    1850 => 'naturals',
+    1851 => 'castanets',
+    1852 => 'guitarists',
+    1853 => 'rigger',
+    1854 => 'kyrie',
+    1855 => 'shuffles',
+    1856 => 'lyricist',
+    1857 => 'resonator',
+    1858 => 'showcases',
+    1859 => 'refrained',
+    1860 => 'boomed',
+    1861 => 'muezzin',
+    1862 => 'accompanist',
+    1863 => 'songbirds',
+    1864 => 'synths',
+    1865 => 'clef',
+    1866 => 'ratcheting',
+    1867 => 'showcasing',
+    1868 => 'notations',
+    1869 => 'carillon',
+    1870 => 'lounges',
+    1871 => 'publicists',
+    1872 => 'choreographers',
+    1873 => 'matinees',
+    1874 => 'arranger',
+    1875 => 'combos',
+    1876 => 'minored',
+    1877 => 'balalaika',
+    1878 => 'dancehall',
+    1879 => 'zither',
+    1880 => 'syncing',
+    1881 => 'effecting',
+    1882 => 'harpers',
+    1883 => 'kitted',
+    1884 => 'choruses',
+    1885 => 'quintuplets',
+    1886 => 'stagehands',
+    1887 => 'broadcasters',
+    1888 => 'horning',
+    1889 => 'dubs',
+    1890 => 'ballets',
+    1891 => 'beatniks',
+    1892 => 'debuting',
+    1893 => 'trances',
+    1894 => 'banding',
+    1895 => 'soirees',
+    1896 => 'gigging',
+    1897 => 'cantata',
+    1898 => 'uprights',
+    1899 => 'dotting',
+    1900 => 'reviewers',
+    1901 => 'octaves',
+    1902 => 'twirls',
+    1903 => 'interfaces',
+    1904 => 'unplugging',
+    1905 => 'touted',
+    1906 => 'lineups',
+    1907 => 'touting',
+    1908 => 'showings',
+    1909 => 'psychedelics',
+    1910 => 'benefitted',
+    1911 => 'consorted',
+    1912 => 'showcased',
+    1913 => 'toning',
+    1914 => 'stringed',
+    1915 => 'pirouettes',
+    1916 => 'jigs',
+    1917 => 'prog',
+    1918 => 'worming',
+    1919 => 'hustles',
+    1920 => 'synthesizers',
+    1921 => 'troupes',
+    1922 => 'headliners',
+    1923 => 'serenaded',
+    1924 => 'elegy',
+    1925 => 'basses',
+    1926 => 'keying',
+    1927 => 'tubed',
+    1928 => 'tutting',
+    1929 => 'triplet',
+    1930 => 'twirled',
+    1931 => 'galas',
+    1932 => 'bestsellers',
+    1933 => 'soloists',
+    1934 => 'looper',
+    1935 => 'troubadours',
+    1936 => 'duos',
+    1937 => 'groupings',
+    1938 => 'bopping',
+    1939 => 'polonaise',
+    1940 => 'clustering',
+    1941 => 'tarantella',
+    1942 => 'deejays',
+    1943 => 'staves',
+    1944 => 'bellowed',
+    1945 => 'flautist',
+    1946 => 'bagatelle',
+    1947 => 'intros',
+    1948 => 'interfacing',
+    1949 => 'crewed',
+    1950 => 'pianoforte',
+    1951 => 'electronica',
+    1952 => 'coverings',
+    1953 => 'belters',
+    1954 => 'choirboys',
+    1955 => 'glockenspiel',
+    1956 => 'heckles',
+    1957 => 'chimed',
+    1958 => 'bodied',
+    1959 => 'timpani',
+    1960 => 'theremin',
+    1961 => 'cellos',
+    1962 => 'fining',
+    1963 => 'grooved',
+    1964 => 'trusses',
+    1965 => 'crescendos',
+    1966 => 'ovations',
+    1967 => 'hecklers',
+    1968 => 'pipa',
+    1969 => 'rebec',
+    1970 => 'tambourines',
+    1971 => 'violinists',
+    1972 => 'tomtom',
+    1973 => 'mariachis',
+    1974 => 'choristers',
+    1975 => 'chanson',
+    1976 => 'jukeboxes',
+    1977 => 'chorister',
+    1978 => 'yodels',
+    1979 => 'choirmaster',
+    1980 => 'quickstep',
+    1981 => 'anvils',
+    1982 => 'bards',
+    1983 => 'clarinets',
+    1984 => 'necked',
+    1985 => 'miked',
+    1986 => 'progressives',
+    1987 => 'quadrille',
+    1988 => 'applauses',
+    1989 => 'headings',
+    1990 => 'noels',
+    1991 => 'playlists',
+    1992 => 'fifths',
+    1993 => 'fretted',
+    1994 => 'premiering',
+    1995 => 'breakdancing',
+    1996 => 'compressors',
+    1997 => 'dabbing',
+    1998 => 'bopped',
+    1999 => 'klezmer',
+    2000 => 'fiddlers',
+    2001 => 'serenades',
+    2002 => 'outlawing',
+    2003 => 'caprices',
+    2004 => 'dooms',
+    2005 => 'busker',
+    2006 => 'ceilidh',
+    2007 => 'ratchets',
+    2008 => 'flossed',
+    2009 => 'wassail',
+    2010 => 'wassailed',
+    2011 => 'wassailing',
+    2012 => 'pianola',
+    2013 => 'concertos',
+    2014 => 'harpist',
+    2015 => 'percussionist',
+    2016 => 'mallets',
+    2017 => 'uke',
+    2018 => 'breakdance',
+    2019 => 'gamelan',
+    2020 => 'chorale',
+    2021 => 'pegging',
+    2022 => 'syncs',
+    2023 => 'odes',
+    2024 => 'trios',
+    2025 => 'marimba',
+    2026 => 'tabla',
+    2027 => 'gavotte',
+    2028 => 'shanties',
+    2029 => 'plies',
+    2030 => 'accented',
+    2031 => 'temperaments',
+    2032 => 'belling',
+    2033 => 'interfaced',
+    2034 => 'benefitting',
+    2035 => 'reggaeton',
+    2036 => 'ligatures',
+    2037 => 'tempos',
+    2038 => 'strutted',
+    2039 => 'remixed',
+    2040 => 'plainsong',
+    2041 => 'sonatas',
+    2042 => 'stoped',
+    2043 => 'bootlegs',
+    2044 => 'scats',
+    2045 => 'cajon',
+    2046 => 'saxophones',
+    2047 => 'spooned',
+    2048 => 'sweepings',
+    2049 => 'improvisations',
+    2050 => 'popstar',
+    2051 => 'outfitting',
+    2052 => 'echos',
+    2053 => 'debuts',
+    2054 => 'brasses',
+    2055 => 'soloing',
+    2056 => 'quartets',
+    2057 => 'toccata',
+    2058 => 'tubas',
+    2059 => 'augments',
+    2060 => 'interludes',
+    2061 => 'spirituals',
+    2062 => 'vamping',
+    2063 => 'hornpipe',
+    2064 => 'thrashes',
+    2065 => 'touts',
+    2066 => 'dulcimer',
+    2067 => 'shofar',
+    2068 => 'oratorio',
+    2069 => 'zydeco',
+    2070 => 'sambas',
+    2071 => 'soundtracks',
+    2072 => 'saxophonist',
+    2073 => 'bouzouki',
+    2074 => 'viol',
+    2075 => 'woodblock',
+    2076 => 'accordions',
+    2077 => 'jigging',
+    2078 => 'ditties',
+    2079 => 'finessing',
+    2080 => 'chambered',
+    2081 => 'haka',
+    2082 => 'fourths',
+    2083 => 'whammies',
+    2084 => 'whippings',
+    2085 => 'compere',
+    2086 => 'compered',
+    2087 => 'compering',
+    2088 => 'etude',
+    2089 => 'cornets',
+    2090 => 'trumpeters',
+    2091 => 'remixes',
+    2092 => 'strummed',
+    2093 => 'bottlenecks',
+    2094 => 'capos',
+    2095 => 'collectives',
+    2096 => 'jetted',
+    2097 => 'sousaphone',
+    2098 => 'celesta',
+    2099 => 'madrigals',
+    2100 => 'shimmying',
+    2101 => 'augmenting',
+    2102 => 'rarities',
+    2103 => 'refrains',
+    2104 => 'cumbia',
+    2105 => 'intermezzo',
+    2106 => 'evergreens',
+    2107 => 'perfects',
+    2108 => 'jives',
+    2109 => 'cajones',
+    2110 => 'congas',
+    2111 => 'podiums',
+    2112 => 'sols',
+    2113 => 'pedaled',
+    2114 => 'headlined',
+    2115 => 'discords',
+    2116 => 'bookers',
+    2117 => 'tabes',
+    2118 => 'laminating',
+    2119 => 'djembe',
+    2120 => 'oud',
+    2121 => 'skiffle',
+    2122 => 'habanera',
+    2123 => 'progressions',
+    2124 => 'trebles',
+    2125 => 'staving',
+    2126 => 'finessed',
+    2127 => 'turnings',
+    2128 => 'sticked',
+    2129 => 'autographing',
+    2130 => 'maestros',
+    2131 => 'cowbells',
+    2132 => 'violas',
+    2133 => 'shredders',
+    2134 => 'crooners',
+    2135 => 'radioing',
+    2136 => 'trumpeted',
+    2137 => 'nutting',
+    2138 => 'texturing',
+    2139 => 'maraca',
+    2140 => 'keytar',
+    2141 => 'ensembles',
+    2142 => 'scrolled',
+    2143 => 'strobes',
+    2144 => 'transcriptions',
+    2145 => 'ponied',
+    2146 => 'nightclubbing',
+    2147 => 'bootlegged',
+    2148 => 'buskers',
+    2149 => 'bellringer',
+    2150 => 'soca',
+    2151 => 'baritones',
+    2152 => 'kazoos',
+    2153 => 'industrials',
+    2154 => 'synching',
+    2155 => 'sleeved',
+    2156 => 'polkas',
+    2157 => 'erhu',
+    2158 => 'residencies',
+    2159 => 'refraining',
+    2160 => 'ornamented',
+    2161 => 'metronomes',
+    2162 => 'sellouts',
+    2163 => 'spinet',
+    2164 => 'dooming',
+    2165 => 'crewing',
+    2166 => 'asides',
+    2167 => 'kettledrums',
+    2168 => 'vuvuzela',
+    2169 => 'oboes',
+    2170 => 'ukuleles',
+    2171 => 'segues',
+    2172 => 'barbershops',
+    2173 => 'staved',
+    2174 => 'sackbut',
+    2175 => 'mandolins',
+    2176 => 'housings',
+    2177 => 'shimmied',
+    2178 => 'instrumentals',
+    2179 => 'psaltery',
+    2180 => 'bassoons',
+    2181 => 'tuners',
+    2182 => 'droned',
+    2183 => 'tabbed',
+    2184 => 'snaring',
+    2185 => 'stopes',
+    2186 => 'vinyls',
+    2187 => 'voguing',
+    2188 => 'minuets',
+    2189 => 'jazzing',
+    2190 => 'samplers',
+    2191 => 'bachata',
+    2192 => 'harmonicas',
+    2193 => 'cadences',
+    2194 => 'ragas',
+    2195 => 'rollings',
+    2196 => 'funks',
+    2197 => 'preludes',
+    2198 => 'jitterbugs',
+    2199 => 'dabbed',
+    2200 => 'keyboarding',
+    2201 => 'emceeing',
+    2202 => 'sonatina',
+    2203 => 'scherzo',
+    2204 => 'cellists',
+    2205 => 'fifes',
+    2206 => 'lutes',
+    2207 => 'fluted',
+    2208 => 'virtuosos',
+    2209 => 'percussions',
+    2210 => 'nutted',
+    2211 => 'euphonium',
+    2212 => 'saxes',
+    2213 => 'operettas',
+    2214 => 'laminates',
+    2215 => 'sectioning',
+    2216 => 'vamped',
+    2217 => 'jugged',
+    2218 => 'horas',
+    2219 => 'fugues',
+    2220 => 'ocarina',
+    2221 => 'britpop',
+    2222 => 'funking',
+    2223 => 'boogies',
+    2224 => 'cotillions',
+    2225 => 'funked',
+    2226 => 'kettledrum',
+    2227 => 'mandola',
+    2228 => 'boleros',
+    2229 => 'marquees',
+    2230 => 'inversions',
+    2231 => 'morrises',
+    2232 => 'bluing',
+    2233 => 'cabbing',
+    2234 => 'shakuhachi',
+    2235 => 'ballade',
+    2236 => 'organists',
+    2237 => 'flosses',
+    2238 => 'segued',
+    2239 => 'finales',
+    2240 => 'fanfares',
+    2241 => 'soloed',
+    2242 => 'teds',
+    2243 => 'chansons',
+    2244 => 'cumbias',
+    2245 => 'agenting',
+    2246 => 'gonging',
+    2247 => 'remixing',
+    2248 => 'stoping',
+    2249 => 'arrangers',
+    2250 => 'clavichord',
+    2251 => 'psychs',
+    2252 => 'knobbed',
+    2253 => 'jitterbugging',
+    2254 => 'boogied',
+    2255 => 'turnarounds',
+    2256 => 'metered',
+    2257 => 'compilations',
+    2258 => 'smooched',
+    2259 => 'cantatas',
+    2260 => 'pasodoble',
+    2261 => 'galliard',
+    2262 => 'fortes',
+    2263 => 'thrashings',
+    2264 => 'fusions',
+    2265 => 'buglers',
+    2266 => 'emcees',
+    2267 => 'rockstars',
+    2268 => 'hiphop',
+    2269 => 'barcarolle',
+    2270 => 'auditoriums',
+    2271 => 'conches',
+    2272 => 'melodeon',
+    2273 => 'pavane',
+    2274 => 'lyres',
+    2275 => 'xylophones',
+    2276 => 'flugelhorn',
+    2277 => 'chorales',
+    2278 => 'popstars',
+    2279 => 'panpipes',
+    2280 => 'etudes',
+    2281 => 'tamtam',
+    2282 => 'synthpop',
+    2283 => 'amphitheaters',
+    2284 => 'percussionists',
+    2285 => 'drumkit',
+    2286 => 'guzheng',
+    2287 => 'melodica',
+    2288 => 'pennywhistle',
+    2289 => 'nocturnes',
+    2290 => 'afrobeat',
+    2291 => 'chillout',
+    2292 => 'dirges',
+    2293 => 'partita',
+    2294 => 'stagefright',
+    2295 => 'castanet',
+    2296 => 'balalaikas',
+    2297 => 'motets',
+    2298 => 'moonwalks',
+    2299 => 'marimbas',
+    2300 => 'vibraphone',
+    2301 => 'motet',
+    2302 => 'kalimba',
+    2303 => 'vuvuzelas',
+    2304 => 'elegies',
+    2305 => 'piccolos',
+    2306 => 'quintuplet',
+    2307 => 'didgeridoos',
+    2308 => 'sarod',
+    2309 => 'mazurkas',
+    2310 => 'sarabande',
+    2311 => 'quadrilles',
+    2312 => 'cantors',
+    2313 => 'sleighbells',
+    2314 => 'hardrock',
+    2315 => 'harpists',
+    2316 => 'lyricists',
+    2317 => 'washboards',
+    2318 => 'ukes',
+    2319 => 'claves',
+    2320 => 'guiro',
+    2321 => 'timbales',
+    2322 => 'plainchant',
+    2323 => 'leges',
+    2324 => 'virginals',
+    2325 => 'punkrock',
+    2326 => 'tapdance',
+    2327 => 'bellringers',
+    2328 => 'shawm',
+    2329 => 'autoharp',
+    2330 => 'fortepiano',
+    2331 => 'oratorios',
+    2332 => 'breakbeat',
+    2333 => 'doowop',
+    2334 => 'sitars',
+    2335 => 'teachest',
+    2336 => 'sousaphones',
+    2337 => 'tablas',
+    2338 => 'bodhran',
+    2339 => 'viols',
+    2340 => 'charlestons',
+    2341 => 'gavottes',
+    2342 => 'bassists',
+    2343 => 'kotos',
+    2344 => 'secondes',
+    2345 => 'tabors',
+    2346 => 'flageolet',
+    2347 => 'flautists',
+    2348 => 'glockenspiels',
+    2349 => 'euphoniums',
+    2350 => 'djembes',
+    2351 => 'alphorn',
+    2352 => 'duduk',
+    2353 => 'merengues',
+    2354 => 'kpop',
+    2355 => 'pasodobles',
+    2356 => 'harpsichords',
+    2357 => 'comperes',
+    2358 => 'choirmasters',
+    2359 => 'flugelhorns',
+    2360 => 'concertinas',
+    2361 => 'carillons',
+    2362 => 'ceilidhs',
+    2363 => 'bandstands',
+    2364 => 'harmoniums',
+    2365 => 'jetes',
+    2366 => 'linedancing',
+    2367 => 'chachas',
+    2368 => 'saxophonists',
+    2369 => 'bouzoukis',
+    2370 => 'sackbuts',
+    2371 => 'cittern',
+    2372 => 'contrabassoon',
+    2373 => 'ouds',
+    2374 => 'pipas',
+    2375 => 'quicksteps',
+    2376 => 'lambadas',
+    2377 => 'polonaises',
+    2378 => 'toccatas',
+    2379 => 'galliards',
+    2380 => 'veenas',
+    2381 => 'heavymetal',
+    2382 => 'flageolets',
+    2383 => 'wassails',
+    2384 => 'vibraphones',
+    2385 => 'zithers',
+    2386 => 'dulcimers',
+    2387 => 'ocarinas',
+    2388 => 'melodeons',
+    2389 => 'spinets',
+    2390 => 'crumhorns',
+    2391 => 'pianolas',
+    2392 => 'fortepianos',
+    2393 => 'psalteries',
+    2394 => 'rebecs',
+    2395 => 'theorbo',
+    2396 => 'breakdances',
+    2397 => 'ballades',
+    2398 => 'sarabandes',
+    2399 => 'intermezzos',
+    2400 => 'partitas',
+    2401 => 'barcarolles',
+    2402 => 'calliopes',
+    2403 => 'dressingroom',
+    2404 => 'mouthorgan',
+    2405 => 'rockandroll',
+    2406 => 'rocknroll',
+    2407 => 'softrock',
+    2408 => 'easylistening',
+    2409 => 'newwave',
+    2410 => 'bellydance',
+    2411 => 'barndance',
+    2412 => 'theremins',
+    2413 => 'bodhrans',
+    2414 => 'clavichords',
+    2415 => 'celestas',
+    2416 => 'crumhorn',
+    2417 => 'shawms',
+    2418 => 'autoharps',
+    2419 => 'kalimbas',
+    2420 => 'alphorns',
+    2421 => 'bansuri',
+    2422 => 'bansuris',
+    2423 => 'cabasa',
+    2424 => 'cabasas',
+    2425 => 'cajons',
+    2426 => 'citterns',
+    2427 => 'contrabassoons',
+    2428 => 'drumkits',
+    2429 => 'duduks',
+    2430 => 'erhus',
+    2431 => 'guiros',
+    2432 => 'guzhengs',
+    2433 => 'handpan',
+    2434 => 'handpans',
+    2435 => 'hihat',
+    2436 => 'hihats',
+    2437 => 'hurdygurdy',
+    2438 => 'hurdygurdies',
+    2439 => 'keytars',
+    2440 => 'koras',
+    2441 => 'mandolas',
+    2442 => 'mbira',
+    2443 => 'mbiras',
+    2444 => 'melodicas',
+    2445 => 'ophicleide',
+    2446 => 'ophicleides',
+    2447 => 'pennywhistles',
+    2448 => 'pianofortes',
+    2449 => 'sarods',
+    2450 => 'shakuhachis',
+    2451 => 'shamisens',
+    2452 => 'shofars',
+    2453 => 'steelpan',
+    2454 => 'steelpans',
+    2455 => 'tamtams',
+    2456 => 'theorbos',
+    2457 => 'tinwhistle',
+    2458 => 'tinwhistles',
+    2459 => 'tomtoms',
+    2460 => 'woodblocks',
+    2461 => 'hornpipes',
+    2462 => 'tarantellas',
+    2463 => 'shoegaze',
+    2464 => 'bachatas',
+    2465 => 'gamelans',
+    2466 => 'hakas',
+    2467 => 'pavanes',
+    2468 => 'sonatinas',
+    2469 => 'strathspey',
+    2470 => 'strathspeys',
+    2471 => 'scherzos',
+    2472 => 'habaneras',
+    2473 => 'bongoes',
+    2474 => 'sarodes',
+    2475 => 'mashedpotato',
+    2476 => 'mashedpotatoes',
+    2477 => 'operasinger',
+    2478 => 'operasingers',
+    2479 => 'concerthall',
+    2480 => 'concerthalls',
+    2481 => 'dressingrooms',
+    2482 => 'electricguitar',
+    2483 => 'electricguitars',
+    2484 => 'bassguitar',
+    2485 => 'bassguitars',
+    2486 => 'doublebass',
+    2487 => 'doublebasses',
+    2488 => 'frenchhorn',
+    2489 => 'frenchhorns',
+    2490 => 'coranglais',
+    2491 => 'bassdrum',
+    2492 => 'bassdrums',
+    2493 => 'steeldrum',
+    2494 => 'steeldrums',
+    2495 => 'mouthorgans',
+    2496 => 'jewsharp',
+    2497 => 'jewsharps',
+    2498 => 'barrelorgan',
+    2499 => 'barrelorgans',
+    2500 => 'tubularbells',
+    2501 => 'drummachine',
+    2502 => 'drummachines',
+    2503 => 'drumandbass',
+    2504 => 'glamrock',
+    2505 => 'acidhouse',
+    2506 => 'bigband',
+    2507 => 'bigbands',
+    2508 => 'northernsoul',
+    2509 => 'triphop',
+    2510 => 'tapdances',
+    2511 => 'bellydances',
+    2512 => 'squaredance',
+    2513 => 'squaredances',
+    2514 => 'barndances',
+    2515 => 'highlandfling',
+    2516 => 'highlandflings',
+    2517 => 'lindyhop',
+    2518 => 'lindyhops',
+    2519 => 'hokeycokey',
+    2520 => 'deathmetal',
+    2521 => 'sworddance',
+    2522 => 'sworddances',
+    2523 => 'teachests',
+    2524 => 'acapella',
+    2525 => 'acappella',
+    2526 => 'accelerando',
+    2527 => 'acciaccatura',
+    2528 => 'acciaccaturas',
+    2529 => 'accidentals',
+    2530 => 'accompaniments',
+    2531 => 'accompanists',
+    2532 => 'accordionist',
+    2533 => 'accordionists',
+    2534 => 'acetates',
+    2535 => 'acidjazz',
+    2536 => 'adagietto',
+    2537 => 'adagios',
+    2538 => 'adlib',
+    2539 => 'adlibs',
+    2540 => 'aeolian',
+    2541 => 'affettuoso',
+    2542 => 'afrobeats',
+    2543 => 'afroswing',
+    2544 => 'afterparties',
+    2545 => 'afterparty',
+    2546 => 'aftershow',
+    2547 => 'aftershows',
+    2548 => 'agitato',
+    2549 => 'agogo',
+    2550 => 'agogos',
+    2551 => 'airguitar',
+    2552 => 'airplay',
+    2553 => 'allabreve',
+    2554 => 'allargando',
+    2555 => 'allegretto',
+    2556 => 'allemande',
+    2557 => 'allemandes',
+    2558 => 'altosax',
+    2559 => 'altosaxes',
+    2560 => 'amapiano',
+    2561 => 'amoroso',
+    2562 => 'amphitheatres',
+    2563 => 'anacruses',
+    2564 => 'anacrusis',
+    2565 => 'ancora',
+    2566 => 'andante',
+    2567 => 'andantes',
+    2568 => 'andantino',
+    2569 => 'animato',
+    2570 => 'anthologies',
+    2571 => 'appassionato',
+    2572 => 'appoggiatura',
+    2573 => 'appoggiaturas',
+    2574 => 'arabesques',
+    2575 => 'arco',
+    2576 => 'arietta',
+    2577 => 'ariettas',
+    2578 => 'arioso',
+    2579 => 'ariosos',
+    2580 => 'arpeggio',
+    2581 => 'arpeggios',
+    2582 => 'artsong',
+    2583 => 'artsongs',
+    2584 => 'assai',
+    2585 => 'atempo',
+    2586 => 'atonality',
+    2587 => 'attacca',
+    2588 => 'aubade',
+    2589 => 'aubades',
+    2590 => 'audiophile',
+    2591 => 'audiophiles',
+    2592 => 'auditoria',
+    2593 => 'autotune',
+    2594 => 'avantgarde',
+    2595 => 'axeman',
+    2596 => 'axemen',
+    2597 => 'axman',
+    2598 => 'axmen',
+    2599 => 'backbeat',
+    2600 => 'backbeats',
+    2601 => 'backcatalog',
+    2602 => 'backcatalogue',
+    2603 => 'backingband',
+    2604 => 'backingbands',
+    2605 => 'backingsinger',
+    2606 => 'backingsingers',
+    2607 => 'backingvocalist',
+    2608 => 'backingvocalists',
+    2609 => 'backline',
+    2610 => 'bagatelles',
+    2611 => 'bagpiper',
+    2612 => 'bagpipers',
+    2613 => 'balafon',
+    2614 => 'balafons',
+    2615 => 'balladeer',
+    2616 => 'balladeers',
+    2617 => 'banda',
+    2618 => 'bandas',
+    2619 => 'bandleaders',
+    2620 => 'bandmaster',
+    2621 => 'bandmasters',
+    2622 => 'bandmate',
+    2623 => 'bandmates',
+    2624 => 'bandoneon',
+    2625 => 'bandoneons',
+    2626 => 'bandsman',
+    2627 => 'bandsmen',
+    2628 => 'banjoist',
+    2629 => 'banjoists',
+    2630 => 'banjolele',
+    2631 => 'banjoleles',
+    2632 => 'barline',
+    2633 => 'barlines',
+    2634 => 'bassbaritone',
+    2635 => 'bassbaritones',
+    2636 => 'bassclarinet',
+    2637 => 'bassclarinets',
+    2638 => 'bassline',
+    2639 => 'basslines',
+    2640 => 'basso',
+    2641 => 'bassoonist',
+    2642 => 'bassoonists',
+    2643 => 'bassos',
+    2644 => 'bassplayer',
+    2645 => 'bassplayers',
+    2646 => 'battement',
+    2647 => 'battements',
+    2648 => 'beatbox',
+    2649 => 'beatboxed',
+    2650 => 'beatboxer',
+    2651 => 'beatboxers',
+    2652 => 'beatboxes',
+    2653 => 'beatmaker',
+    2654 => 'beatmakers',
+    2655 => 'beguine',
+    2656 => 'beguines',
+    2657 => 'bellydancing',
+    2658 => 'berceuse',
+    2659 => 'berceuses',
+    2660 => 'berimbau',
+    2661 => 'berimbaus',
+    2662 => 'bestof',
+    2663 => 'bigbeat',
+    2664 => 'bitonality',
+    2665 => 'blackmetal',
+    2666 => 'blastbeat',
+    2667 => 'blastbeats',
+    2668 => 'bluenote',
+    2669 => 'bluenotes',
+    2670 => 'bluesman',
+    2671 => 'bluesmen',
+    2672 => 'bluesrock',
+    2673 => 'bollywood',
+    2674 => 'boogaloo',
+    2675 => 'boogaloos',
+    2676 => 'boogieing',
+    2677 => 'boogiewoogie',
+    2678 => 'boombap',
+    2679 => 'boombox',
+    2680 => 'boomboxes',
+    2681 => 'bops',
+    2682 => 'bossa',
+    2683 => 'bossanova',
+    2684 => 'bourree',
+    2685 => 'bourrees',
+    2686 => 'boxoffice',
+    2687 => 'boxoffices',
+    2688 => 'boxset',
+    2689 => 'boxsets',
+    2690 => 'boyband',
+    2691 => 'boybands',
+    2692 => 'boysoprano',
+    2693 => 'boysopranos',
+    2694 => 'branle',
+    2695 => 'branles',
+    2696 => 'brassband',
+    2697 => 'brassbands',
+    2698 => 'breakdanced',
+    2699 => 'breve',
+    2700 => 'breves',
+    2701 => 'brillante',
+    2702 => 'bside',
+    2703 => 'bsides',
+    2704 => 'buildups',
+    2705 => 'bunnyhop',
+    2706 => 'bunnyhops',
+    2707 => 'busk',
+    2708 => 'busked',
+    2709 => 'busking',
+    2710 => 'busks',
+    2711 => 'cabaletta',
+    2712 => 'cabalettas',
+    2713 => 'cadenza',
+    2714 => 'cadenzas',
+    2715 => 'cajun',
+    2716 => 'cakewalks',
+    2717 => 'calando',
+    2718 => 'callandresponse',
+    2719 => 'camerata',
+    2720 => 'cameratas',
+    2721 => 'campanologist',
+    2722 => 'campanologists',
+    2723 => 'cancans',
+    2724 => 'cantabile',
+    2725 => 'cantatrice',
+    2726 => 'cantatrices',
+    2727 => 'canticle',
+    2728 => 'canticles',
+    2729 => 'cantopop',
+    2730 => 'capriccio',
+    2731 => 'capriccios',
+    2732 => 'carillonneur',
+    2733 => 'carillonneurs',
+    2734 => 'carnatic',
+    2735 => 'caroler',
+    2736 => 'caroller',
+    2737 => 'carollers',
+    2738 => 'cassingle',
+    2739 => 'cassingles',
+    2740 => 'castrati',
+    2741 => 'castrato',
+    2742 => 'cavatina',
+    2743 => 'cavatinas',
+    2744 => 'celli',
+    2745 => 'celtic',
+    2746 => 'chachacha',
+    2747 => 'chaconne',
+    2748 => 'chaconnes',
+    2749 => 'chamberorchestra',
+    2750 => 'chamberorchestras',
+    2751 => 'chansonnier',
+    2752 => 'chansonniers',
+    2753 => 'chanter',
+    2754 => 'chanters',
+    2755 => 'chanteuse',
+    2756 => 'chanteuses',
+    2757 => 'charanga',
+    2758 => 'charangas',
+    2759 => 'charango',
+    2760 => 'charangos',
+    2761 => 'charttopper',
+    2762 => 'charttoppers',
+    2763 => 'chasse',
+    2764 => 'chasses',
+    2765 => 'chestvoice',
+    2766 => 'chillwave',
+    2767 => 'chinrest',
+    2768 => 'chinrests',
+    2769 => 'chiptune',
+    2770 => 'choirgirl',
+    2771 => 'choirgirls',
+    2772 => 'chorusmaster',
+    2773 => 'chorusmasters',
+    2774 => 'chromatic',
+    2775 => 'chromaticism',
+    2776 => 'cimbalom',
+    2777 => 'cimbaloms',
+    2778 => 'clarinetist',
+    2779 => 'clarinetists',
+    2780 => 'clarinettist',
+    2781 => 'clarinettists',
+    2782 => 'clavinet',
+    2783 => 'clavinets',
+    2784 => 'clefs',
+    2785 => 'clicktrack',
+    2786 => 'clicktracks',
+    2787 => 'clubber',
+    2788 => 'clubbers',
+    2789 => 'clubnight',
+    2790 => 'clubnights',
+    2791 => 'codas',
+    2792 => 'collegno',
+    2793 => 'coloratura',
+    2794 => 'coloraturas',
+    2795 => 'comodo',
+    2796 => 'compactdisc',
+    2797 => 'compactdiscs',
+    2798 => 'conbrio',
+    2799 => 'conceptalbum',
+    2800 => 'conceptalbums',
+    2801 => 'concertgoer',
+    2802 => 'concertgoers',
+    2803 => 'concerti',
+    2804 => 'concertigrossi',
+    2805 => 'concertino',
+    2806 => 'concertinos',
+    2807 => 'concertmaster',
+    2808 => 'concertmasters',
+    2809 => 'concertogrosso',
+    2810 => 'concertpitch',
+    2811 => 'conjunto',
+    2812 => 'conjuntos',
+    2813 => 'conmoto',
+    2814 => 'consonance',
+    2815 => 'consonances',
+    2816 => 'consordino',
+    2817 => 'continuo',
+    2818 => 'continuos',
+    2819 => 'contrabass',
+    2820 => 'contrabasses',
+    2821 => 'contrabassist',
+    2822 => 'contrabassists',
+    2823 => 'contralto',
+    2824 => 'contraltos',
+    2825 => 'cooljazz',
+    2826 => 'copyist',
+    2827 => 'copyists',
+    2828 => 'cornetist',
+    2829 => 'cornetists',
+    2830 => 'cornett',
+    2831 => 'cornettist',
+    2832 => 'cornettists',
+    2833 => 'cornetts',
+    2834 => 'corrido',
+    2835 => 'corsanglais',
+    2836 => 'countermelodies',
+    2837 => 'countermelody',
+    2838 => 'countertenor',
+    2839 => 'countertenors',
+    2840 => 'countin',
+    2841 => 'countins',
+    2842 => 'courante',
+    2843 => 'courantes',
+    2844 => 'coverband',
+    2845 => 'coverbands',
+    2846 => 'coversband',
+    2847 => 'coversbands',
+    2848 => 'cowpunk',
+    2849 => 'cratedigger',
+    2850 => 'cratediggers',
+    2851 => 'crescendi',
+    2852 => 'croons',
+    2853 => 'crossfader',
+    2854 => 'crossfaders',
+    2855 => 'crotchet',
+    2856 => 'crotchets',
+    2857 => 'crowdsurf',
+    2858 => 'crowdsurfing',
+    2859 => 'crunk',
+    2860 => 'csardas',
+    2861 => 'cuica',
+    2862 => 'cuicas',
+    2863 => 'czardas',
+    2864 => 'dacapo',
+    2865 => 'dalsegno',
+    2866 => 'danceband',
+    2867 => 'dancebands',
+    2868 => 'darbuka',
+    2869 => 'darbukas',
+    2870 => 'darkwave',
+    2871 => 'deathcore',
+    2872 => 'deathrock',
+    2873 => 'deciso',
+    2874 => 'decrescendo',
+    2875 => 'decrescendos',
+    2876 => 'dectet',
+    2877 => 'dectets',
+    2878 => 'deepcut',
+    2879 => 'deepcuts',
+    2880 => 'deephouse',
+    2881 => 'delicato',
+    2882 => 'demisemiquaver',
+    2883 => 'demisemiquavers',
+    2884 => 'descant',
+    2885 => 'descants',
+    2886 => 'dhol',
+    2887 => 'dholak',
+    2888 => 'dholaks',
+    2889 => 'dhols',
+    2890 => 'diatonic',
+    2891 => 'didjeridu',
+    2892 => 'didjeridus',
+    2893 => 'diminuendo',
+    2894 => 'diminuendos',
+    2895 => 'diminution',
+    2896 => 'discographies',
+    2897 => 'discography',
+    2898 => 'dissonances',
+    2899 => 'divertimenti',
+    2900 => 'divertimento',
+    2901 => 'divertimentos',
+    2902 => 'djent',
+    2903 => 'dnb',
+    2904 => 'dodecaphony',
+    2905 => 'doh',
+    2906 => 'dolente',
+    2907 => 'doloroso',
+    2908 => 'dominants',
+    2909 => 'dorian',
+    2910 => 'doublealbum',
+    2911 => 'doublealbums',
+    2912 => 'doubleflat',
+    2913 => 'doubleflats',
+    2914 => 'doublesharp',
+    2915 => 'doublesharps',
+    2916 => 'doumbek',
+    2917 => 'doumbeks',
+    2918 => 'downbeats',
+    2919 => 'downtempo',
+    2920 => 'dreampop',
+    2921 => 'drinkingsong',
+    2922 => 'drinkingsongs',
+    2923 => 'drumhead',
+    2924 => 'drumheads',
+    2925 => 'drummajor',
+    2926 => 'drummajors',
+    2927 => 'drumnbass',
+    2928 => 'drumrolls',
+    2929 => 'dryice',
+    2930 => 'dubplate',
+    2931 => 'dubplates',
+    2932 => 'duckwalk',
+    2933 => 'duettist',
+    2934 => 'duettists',
+    2935 => 'duplet',
+    2936 => 'duplets',
+    2937 => 'earbud',
+    2938 => 'earbuds',
+    2939 => 'earplug',
+    2940 => 'earworm',
+    2941 => 'earworms',
+    2942 => 'edm',
+    2943 => 'eighttrack',
+    2944 => 'eighttracks',
+    2945 => 'eisteddfod',
+    2946 => 'eisteddfodau',
+    2947 => 'eisteddfods',
+    2948 => 'electroclash',
+    2949 => 'electropop',
+    2950 => 'emos',
+    2951 => 'endpin',
+    2952 => 'endpins',
+    2953 => 'energico',
+    2954 => 'englishhorn',
+    2955 => 'englishhorns',
+    2956 => 'enharmonic',
+    2957 => 'enka',
+    2958 => 'entracte',
+    2959 => 'entractes',
+    2960 => 'entrechat',
+    2961 => 'entrechats',
+    2962 => 'equaliser',
+    2963 => 'equalisers',
+    2964 => 'equalizers',
+    2965 => 'espressivo',
+    2966 => 'ethnomusicologist',
+    2967 => 'ethnomusicologists',
+    2968 => 'eurobeat',
+    2969 => 'eurodance',
+    2970 => 'europop',
+    2971 => 'exotica',
+    2972 => 'expositions',
+    2973 => 'fadeout',
+    2974 => 'fadeouts',
+    2975 => 'fader',
+    2976 => 'faders',
+    2977 => 'fah',
+    2978 => 'falsettos',
+    2979 => 'fanboy',
+    2980 => 'fanboys',
+    2981 => 'fandangos',
+    2982 => 'fangirl',
+    2983 => 'fangirls',
+    2984 => 'fantasias',
+    2985 => 'farandole',
+    2986 => 'farandoles',
+    2987 => 'feis',
+    2988 => 'feiseanna',
+    2989 => 'fermata',
+    2990 => 'fermatas',
+    2991 => 'fermate',
+    2992 => 'fest',
+    2993 => 'festivalgoer',
+    2994 => 'festivalgoers',
+    2995 => 'fests',
+    2996 => 'fifer',
+    2997 => 'fifers',
+    2998 => 'filmi',
+    2999 => 'fingerboard',
+    3000 => 'fingerboards',
+    3001 => 'fingerings',
+    3002 => 'fingerpick',
+    3003 => 'fingerpicking',
+    3004 => 'fingerpicks',
+    3005 => 'fingerstyle',
+    3006 => 'flams',
+    3007 => 'flanger',
+    3008 => 'flangers',
+    3009 => 'fleadh',
+    3010 => 'fleadhs',
+    3011 => 'flexidisc',
+    3012 => 'flexidiscs',
+    3013 => 'flightcase',
+    3014 => 'flightcases',
+    3015 => 'flutist',
+    3016 => 'flutists',
+    3017 => 'folkie',
+    3018 => 'folkies',
+    3019 => 'folkpunk',
+    3020 => 'folkrock',
+    3021 => 'folksong',
+    3022 => 'folksongs',
+    3023 => 'folktronica',
+    3024 => 'followup',
+    3025 => 'followups',
+    3026 => 'footswitch',
+    3027 => 'footswitches',
+    3028 => 'forro',
+    3029 => 'fortissimo',
+    3030 => 'fortississimo',
+    3031 => 'fortyfive',
+    3032 => 'fortyfives',
+    3033 => 'fouette',
+    3034 => 'fouettes',
+    3035 => 'foxtrots',
+    3036 => 'freakbeat',
+    3037 => 'freejazz',
+    3038 => 'fretboard',
+    3039 => 'fretboards',
+    3040 => 'frontman',
+    3041 => 'frontmen',
+    3042 => 'frontwoman',
+    3043 => 'frontwomen',
+    3044 => 'frug',
+    3045 => 'fughetta',
+    3046 => 'fughettas',
+    3047 => 'furioso',
+    3048 => 'fuzzbox',
+    3049 => 'fuzzboxes',
+    3050 => 'gabba',
+    3051 => 'gabber',
+    3052 => 'gangsta',
+    3053 => 'garagerock',
+    3054 => 'gatefold',
+    3055 => 'gatefolds',
+    3056 => 'ghettoblaster',
+    3057 => 'ghettoblasters',
+    3058 => 'gigbag',
+    3059 => 'gigbags',
+    3060 => 'gigged',
+    3061 => 'giggoer',
+    3062 => 'giggoers',
+    3063 => 'gigue',
+    3064 => 'gigues',
+    3065 => 'giocoso',
+    3066 => 'girlband',
+    3067 => 'girlbands',
+    3068 => 'girlgroup',
+    3069 => 'girlgroups',
+    3070 => 'gittern',
+    3071 => 'gitterns',
+    3072 => 'glassharmonica',
+    3073 => 'glassharmonicas',
+    3074 => 'gleeclub',
+    3075 => 'gleeclubs',
+    3076 => 'glees',
+    3077 => 'glissade',
+    3078 => 'glissades',
+    3079 => 'glissandi',
+    3080 => 'glissando',
+    3081 => 'glissandos',
+    3082 => 'glorias',
+    3083 => 'goths',
+    3084 => 'gracenote',
+    3085 => 'gracenotes',
+    3086 => 'gramophones',
+    3087 => 'grandioso',
+    3088 => 'grazioso',
+    3089 => 'greatesthits',
+    3090 => 'greenroom',
+    3091 => 'greenrooms',
+    3092 => 'gregorian',
+    3093 => 'grindcore',
+    3094 => 'griot',
+    3095 => 'griots',
+    3096 => 'growler',
+    3097 => 'growlers',
+    3098 => 'guestlist',
+    3099 => 'guestlists',
+    3100 => 'hairmetal',
+    3101 => 'halftone',
+    3102 => 'halftones',
+    3103 => 'hammeron',
+    3104 => 'hammerons',
+    3105 => 'handbell',
+    3106 => 'handbells',
+    3107 => 'handclap',
+    3108 => 'handclaps',
+    3109 => 'handjive',
+    3110 => 'happyhardcore',
+    3111 => 'hardbop',
+    3112 => 'hardstyle',
+    3113 => 'harmonicist',
+    3114 => 'harmonicists',
+    3115 => 'harpsichordist',
+    3116 => 'harpsichordists',
+    3117 => 'headbang',
+    3118 => 'headbanged',
+    3119 => 'headbanger',
+    3120 => 'headbangers',
+    3121 => 'headbanging',
+    3122 => 'headbangs',
+    3123 => 'headphone',
+    3124 => 'headstock',
+    3125 => 'headstocks',
+    3126 => 'headvoice',
+    3127 => 'heckelphone',
+    3128 => 'heckelphones',
+    3129 => 'heldentenor',
+    3130 => 'heldentenors',
+    3131 => 'hemidemisemiquaver',
+    3132 => 'hemidemisemiquavers',
+    3133 => 'hemiola',
+    3134 => 'hemiolas',
+    3135 => 'hifi',
+    3136 => 'hifis',
+    3137 => 'highkick',
+    3138 => 'highkicks',
+    3139 => 'highlife',
+    3140 => 'hindustani',
+    3141 => 'hitmaker',
+    3142 => 'hitmakers',
+    3143 => 'hitparade',
+    3144 => 'hitparades',
+    3145 => 'hokeypokey',
+    3146 => 'homophony',
+    3147 => 'honkytonk',
+    3148 => 'hookline',
+    3149 => 'hooklines',
+    3150 => 'hootenannies',
+    3151 => 'hopak',
+    3152 => 'hopaks',
+    3153 => 'hornist',
+    3154 => 'hornists',
+    3155 => 'houseband',
+    3156 => 'housebands',
+    3157 => 'hulas',
+    3158 => 'humbucker',
+    3159 => 'humbuckers',
+    3160 => 'humoresque',
+    3161 => 'humoresques',
+    3162 => 'hyperpop',
+    3163 => 'impresarios',
+    3164 => 'impromptus',
+    3165 => 'improviser',
+    3166 => 'improvisers',
+    3167 => 'improvisor',
+    3168 => 'improvisors',
+    3169 => 'indietronica',
+    3170 => 'instrumentalist',
+    3171 => 'instrumentalists',
+    3172 => 'intermezzi',
+    3173 => 'ionian',
+    3174 => 'italodisco',
+    3175 => 'jamsession',
+    3176 => 'jamsessions',
+    3177 => 'jawharp',
+    3178 => 'jawharps',
+    3179 => 'jazzband',
+    3180 => 'jazzbands',
+    3181 => 'jazzer',
+    3182 => 'jazzers',
+    3183 => 'jazzman',
+    3184 => 'jazzmen',
+    3185 => 'jazzrock',
+    3186 => 'jete',
+    3187 => 'jongleur',
+    3188 => 'jongleurs',
+    3189 => 'jota',
+    3190 => 'jotas',
+    3191 => 'jpop',
+    3192 => 'jugband',
+    3193 => 'jugbands',
+    3194 => 'kantele',
+    3195 => 'kanteles',
+    3196 => 'kapellmeister',
+    3197 => 'kapellmeisters',
+    3198 => 'kathak',
+    3199 => 'kathaks',
+    3200 => 'kazachok',
+    3201 => 'kazachoks',
+    3202 => 'keyboardist',
+    3203 => 'keyboardists',
+    3204 => 'keychange',
+    3205 => 'keychanges',
+    3206 => 'keysignature',
+    3207 => 'keysignatures',
+    3208 => 'kickdrum',
+    3209 => 'kickdrums',
+    3210 => 'kizomba',
+    3211 => 'kizombas',
+    3212 => 'kolo',
+    3213 => 'kolos',
+    3214 => 'kompa',
+    3215 => 'krautrock',
+    3216 => 'krummhorn',
+    3217 => 'krummhorns',
+    3218 => 'krump',
+    3219 => 'krumping',
+    3220 => 'kwaito',
+    3221 => 'kyries',
+    3222 => 'lacrimoso',
+    3223 => 'lah',
+    3224 => 'lamentoso',
+    3225 => 'landler',
+    3226 => 'landlers',
+    3227 => 'lapsteel',
+    3228 => 'lapsteels',
+    3229 => 'largamente',
+    3230 => 'larghetto',
+    3231 => 'larghissimo',
+    3232 => 'largos',
+    3233 => 'lavolta',
+    3234 => 'leadguitarist',
+    3235 => 'leadguitarists',
+    3236 => 'leadingnote',
+    3237 => 'leadingnotes',
+    3238 => 'leadingtone',
+    3239 => 'leadingtones',
+    3240 => 'leadsinger',
+    3241 => 'leadsingers',
+    3242 => 'ledgerline',
+    3243 => 'ledgerlines',
+    3244 => 'legato',
+    3245 => 'leggero',
+    3246 => 'leggiero',
+    3247 => 'leitmotif',
+    3248 => 'leitmotifs',
+    3249 => 'lento',
+    3250 => 'librettist',
+    3251 => 'librettists',
+    3252 => 'lieder',
+    3253 => 'lightshow',
+    3254 => 'lightshows',
+    3255 => 'limbos',
+    3256 => 'limiter',
+    3257 => 'limiters',
+    3258 => 'linedance',
+    3259 => 'linedances',
+    3260 => 'linernotes',
+    3261 => 'livealbum',
+    3262 => 'livealbums',
+    3263 => 'livestream',
+    3264 => 'livestreams',
+    3265 => 'locrian',
+    3266 => 'lofi',
+    3267 => 'longplayer',
+    3268 => 'longplayers',
+    3269 => 'loopers',
+    3270 => 'loversrock',
+    3271 => 'lovesong',
+    3272 => 'lovesongs',
+    3273 => 'lunga',
+    3274 => 'lusingando',
+    3275 => 'lutanist',
+    3276 => 'lutanists',
+    3277 => 'lutenist',
+    3278 => 'lutenists',
+    3279 => 'luthier',
+    3280 => 'luthiers',
+    3281 => 'lutist',
+    3282 => 'lutists',
+    3283 => 'lydian',
+    3284 => 'madchester',
+    3285 => 'madison',
+    3286 => 'maestoso',
+    3287 => 'maestri',
+    3288 => 'magnificat',
+    3289 => 'magnificats',
+    3290 => 'mainstage',
+    3291 => 'mainstages',
+    3292 => 'mambos',
+    3293 => 'mandolinist',
+    3294 => 'mandolinists',
+    3295 => 'mandopop',
+    3296 => 'marcato',
+    3297 => 'marchingband',
+    3298 => 'marchingbands',
+    3299 => 'marimbist',
+    3300 => 'marimbists',
+    3301 => 'marziale',
+    3302 => 'mashup',
+    3303 => 'mashups',
+    3304 => 'masque',
+    3305 => 'masques',
+    3306 => 'masterclass',
+    3307 => 'masterclasses',
+    3308 => 'mathcore',
+    3309 => 'maypoles',
+    3310 => 'mediant',
+    3311 => 'mediants',
+    3312 => 'medleys',
+    3313 => 'meetandgreet',
+    3314 => 'meetandgreets',
+    3315 => 'megamix',
+    3316 => 'megamixes',
+    3317 => 'melisma',
+    3318 => 'melismas',
+    3319 => 'mellophone',
+    3320 => 'mellophones',
+    3321 => 'melodist',
+    3322 => 'melodists',
+    3323 => 'meno',
+    3324 => 'mento',
+    3325 => 'menuet',
+    3326 => 'menuets',
+    3327 => 'merch',
+    3328 => 'merseybeat',
+    3329 => 'mesto',
+    3330 => 'metalcore',
+    3331 => 'metalhead',
+    3332 => 'metalheads',
+    3333 => 'metaller',
+    3334 => 'metallers',
+    3335 => 'mezzo',
+    3336 => 'mezzoforte',
+    3337 => 'mezzopiano',
+    3338 => 'mezzos',
+    3339 => 'mezzosoprano',
+    3340 => 'mezzosopranos',
+    3341 => 'mic',
+    3342 => 'microtone',
+    3343 => 'microtones',
+    3344 => 'mics',
+    3345 => 'middleeight',
+    3346 => 'middleeights',
+    3347 => 'militaryband',
+    3348 => 'militarybands',
+    3349 => 'milonga',
+    3350 => 'milongas',
+    3351 => 'minidisc',
+    3352 => 'minidiscs',
+    3353 => 'minim',
+    3354 => 'minimalism',
+    3355 => 'minims',
+    3356 => 'misterioso',
+    3357 => 'mixdown',
+    3358 => 'mixdowns',
+    3359 => 'mixolydian',
+    3360 => 'mixtape',
+    3361 => 'mixtapes',
+    3362 => 'modal',
+    3363 => 'moderato',
+    3364 => 'modulations',
+    3365 => 'monophony',
+    3366 => 'mordent',
+    3367 => 'mordents',
+    3368 => 'morendo',
+    3369 => 'mosh',
+    3370 => 'moshed',
+    3371 => 'mosher',
+    3372 => 'moshers',
+    3373 => 'moshes',
+    3374 => 'moshing',
+    3375 => 'moshpit',
+    3376 => 'moshpits',
+    3377 => 'mosso',
+    3378 => 'mouthpieces',
+    3379 => 'mridangam',
+    3380 => 'mridangams',
+    3381 => 'muezzins',
+    3382 => 'multiinstrumentalist',
+    3383 => 'multiinstrumentalists',
+    3384 => 'multitrack',
+    3385 => 'multitracks',
+    3386 => 'musicalsaw',
+    3387 => 'musicalsaws',
+    3388 => 'musicbox',
+    3389 => 'musicboxes',
+    3390 => 'musichall',
+    3391 => 'musicologist',
+    3392 => 'musicologists',
+    3393 => 'musicstand',
+    3394 => 'musicstands',
+    3395 => 'neoclassical',
+    3396 => 'neoclassicism',
+    3397 => 'neosoul',
+    3398 => 'newage',
+    3399 => 'newromantic',
+    3400 => 'newromantics',
+    3401 => 'niente',
+    3402 => 'ninths',
+    3403 => 'nobilmente',
+    3404 => 'noisegate',
+    3405 => 'noisegates',
+    3406 => 'nonet',
+    3407 => 'nonets',
+    3408 => 'notehead',
+    3409 => 'noteheads',
+    3410 => 'nowave',
+    3411 => 'nudisco',
+    3412 => 'numberone',
+    3413 => 'numberones',
+    3414 => 'numetal',
+    3415 => 'nurseryrhyme',
+    3416 => 'nurseryrhymes',
+    3417 => 'nyckelharpa',
+    3418 => 'nyckelharpas',
+    3419 => 'obbligato',
+    3420 => 'obbligatos',
+    3421 => 'oboist',
+    3422 => 'oboists',
+    3423 => 'octet',
+    3424 => 'octets',
+    3425 => 'offbeats',
+    3426 => 'onehitwonder',
+    3427 => 'onehitwonders',
+    3428 => 'onemanband',
+    3429 => 'onemanbands',
+    3430 => 'openmic',
+    3431 => 'openmics',
+    3432 => 'operagoer',
+    3433 => 'operagoers',
+    3434 => 'operahouse',
+    3435 => 'operahouses',
+    3436 => 'orchestrator',
+    3437 => 'orchestrators',
+    3438 => 'organgrinder',
+    3439 => 'organgrinders',
+    3440 => 'ostinato',
+    3441 => 'ostinatos',
+    3442 => 'ottava',
+    3443 => 'outro',
+    3444 => 'outros',
+    3445 => 'outtake',
+    3446 => 'outtakes',
+    3447 => 'overdrives',
+    3448 => 'overdub',
+    3449 => 'overdubs',
+    3450 => 'overtone',
+    3451 => 'paean',
+    3452 => 'paeans',
+    3453 => 'palmmute',
+    3454 => 'palmmuting',
+    3455 => 'pandeiro',
+    3456 => 'pandeiros',
+    3457 => 'panflute',
+    3458 => 'panflutes',
+    3459 => 'panpipe',
+    3460 => 'paradiddle',
+    3461 => 'paradiddles',
+    3462 => 'partsong',
+    3463 => 'partsongs',
+    3464 => 'pasdedeux',
+    3465 => 'passacaglia',
+    3466 => 'passacaglias',
+    3467 => 'passepied',
+    3468 => 'passepieds',
+    3469 => 'pastorale',
+    3470 => 'pastorales',
+    3471 => 'pavan',
+    3472 => 'pavans',
+    3473 => 'pedalboard',
+    3474 => 'pedalboards',
+    3475 => 'pedalsteel',
+    3476 => 'pedalsteels',
+    3477 => 'pentatonic',
+    3478 => 'perdendosi',
+    3479 => 'perfectpitch',
+    3480 => 'pesante',
+    3481 => 'phaser',
+    3482 => 'phasers',
+    3483 => 'philharmonics',
+    3484 => 'phonk',
+    3485 => 'phonographs',
+    3486 => 'phrygian',
+    3487 => 'piacevole',
+    3488 => 'piangevole',
+    3489 => 'pianissimo',
+    3490 => 'pianississimo',
+    3491 => 'pianotuner',
+    3492 => 'pianotuners',
+    3493 => 'pickguard',
+    3494 => 'pickguards',
+    3495 => 'picturedisc',
+    3496 => 'picturediscs',
+    3497 => 'pipeband',
+    3498 => 'pipebands',
+    3499 => 'pitchpipe',
+    3500 => 'pitchpipes',
+    3501 => 'pizzicato',
+    3502 => 'plagal',
+    3503 => 'playbacks',
+    3504 => 'plectra',
+    3505 => 'plectrum',
+    3506 => 'plectrums',
+    3507 => 'plie',
+    3508 => 'plugger',
+    3509 => 'pluggers',
+    3510 => 'pogoed',
+    3511 => 'pogoing',
+    3512 => 'pogos',
+    3513 => 'polyphony',
+    3514 => 'polyrhythm',
+    3515 => 'polyrhythms',
+    3516 => 'polytonality',
+    3517 => 'ponticello',
+    3518 => 'popera',
+    3519 => 'popfilter',
+    3520 => 'popfilters',
+    3521 => 'poppunk',
+    3522 => 'popshield',
+    3523 => 'popshields',
+    3524 => 'portamento',
+    3525 => 'portato',
+    3526 => 'postchorus',
+    3527 => 'postchoruses',
+    3528 => 'posthardcore',
+    3529 => 'posthorn',
+    3530 => 'posthorns',
+    3531 => 'postlude',
+    3532 => 'postludes',
+    3533 => 'postpunk',
+    3534 => 'postrock',
+    3535 => 'powerballad',
+    3536 => 'powerballads',
+    3537 => 'powerchord',
+    3538 => 'powerchords',
+    3539 => 'powermetal',
+    3540 => 'powerpop',
+    3541 => 'preamp',
+    3542 => 'preamps',
+    3543 => 'precentor',
+    3544 => 'precentors',
+    3545 => 'prechorus',
+    3546 => 'prechoruses',
+    3547 => 'pressings',
+    3548 => 'prestissimo',
+    3549 => 'primadonna',
+    3550 => 'primadonnas',
+    3551 => 'promenader',
+    3552 => 'promenaders',
+    3553 => 'protopunk',
+    3554 => 'psychedelia',
+    3555 => 'psychobilly',
+    3556 => 'psytrance',
+    3557 => 'pubrock',
+    3558 => 'pulloff',
+    3559 => 'pulloffs',
+    3560 => 'pyro',
+    3561 => 'qawwali',
+    3562 => 'quartertone',
+    3563 => 'quartertones',
+    3564 => 'quaver',
+    3565 => 'quavers',
+    3566 => 'quintets',
+    3567 => 'quodlibet',
+    3568 => 'quodlibets',
+    3569 => 'ragga',
+    3570 => 'rai',
+    3571 => 'rainstick',
+    3572 => 'rainsticks',
+    3573 => 'rallentando',
+    3574 => 'ranchera',
+    3575 => 'randb',
+    3576 => 'rapcore',
+    3577 => 'raver',
+    3578 => 'ravers',
+    3579 => 'rebetiko',
+    3580 => 'recapitulation',
+    3581 => 'recapitulations',
+    3582 => 'recitative',
+    3583 => 'recitatives',
+    3584 => 'recordplayer',
+    3585 => 'recordplayers',
+    3586 => 'reeltoreel',
+    3587 => 'reeltoreels',
+    3588 => 'reissue',
+    3589 => 'reissues',
+    3590 => 'releve',
+    3591 => 'releves',
+    3592 => 'remaster',
+    3593 => 'remasters',
+    3594 => 'rembetiko',
+    3595 => 'remixer',
+    3596 => 'remixers',
+    3597 => 'repetiteur',
+    3598 => 'repetiteurs',
+    3599 => 'reprises',
+    3600 => 'requiems',
+    3601 => 'rerecord',
+    3602 => 'rerecords',
+    3603 => 'rerelease',
+    3604 => 'rereleases',
+    3605 => 'resonators',
+    3606 => 'reverbs',
+    3607 => 'rhapsodies',
+    3608 => 'rhythmsection',
+    3609 => 'rhythmsections',
+    3610 => 'ricercar',
+    3611 => 'ricercare',
+    3612 => 'ricercars',
+    3613 => 'rigadoon',
+    3614 => 'rigadoons',
+    3615 => 'rigaudon',
+    3616 => 'rigaudons',
+    3617 => 'riggers',
+    3618 => 'rimshot',
+    3619 => 'rimshots',
+    3620 => 'rinforzando',
+    3621 => 'ripieno',
+    3622 => 'risoluto',
+    3623 => 'ritardando',
+    3624 => 'ritenuto',
+    3625 => 'rnb',
+    3626 => 'roadmanager',
+    3627 => 'roadmanagers',
+    3628 => 'rockopera',
+    3629 => 'rockoperas',
+    3630 => 'rocksteady',
+    3631 => 'rondos',
+    3632 => 'rostra',
+    3633 => 'rostrum',
+    3634 => 'rostrums',
+    3635 => 'rubato',
+    3636 => 'rudeboy',
+    3637 => 'rudeboys',
+    3638 => 'rumbas',
+    3639 => 'sadcore',
+    3640 => 'salsas',
+    3641 => 'saltarello',
+    3642 => 'saltarellos',
+    3643 => 'santoor',
+    3644 => 'santoors',
+    3645 => 'santur',
+    3646 => 'santurs',
+    3647 => 'saraband',
+    3648 => 'sarabands',
+    3649 => 'sarangi',
+    3650 => 'sarangis',
+    3651 => 'sardana',
+    3652 => 'sardanas',
+    3653 => 'saxhorn',
+    3654 => 'saxhorns',
+    3655 => 'saz',
+    3656 => 'sazes',
+    3657 => 'scalpers',
+    3658 => 'scherzando',
+    3659 => 'scherzi',
+    3660 => 'schlager',
+    3661 => 'schola',
+    3662 => 'scholas',
+    3663 => 'schottische',
+    3664 => 'schottisches',
+    3665 => 'scratchplate',
+    3666 => 'scratchplates',
+    3667 => 'screamo',
+    3668 => 'segno',
+    3669 => 'selectors',
+    3670 => 'semibreve',
+    3671 => 'semibreves',
+    3672 => 'semiquaver',
+    3673 => 'semiquavers',
+    3674 => 'semitone',
+    3675 => 'semitones',
+    3676 => 'semplice',
+    3677 => 'sempre',
+    3678 => 'septet',
+    3679 => 'septets',
+    3680 => 'sequencers',
+    3681 => 'serenader',
+    3682 => 'serenaders',
+    3683 => 'serialism',
+    3684 => 'sessionman',
+    3685 => 'sessionmen',
+    3686 => 'sessionmusician',
+    3687 => 'sessionmusicians',
+    3688 => 'setlist',
+    3689 => 'setlists',
+    3690 => 'seveninch',
+    3691 => 'seveninches',
+    3692 => 'sevenths',
+    3693 => 'seventyeight',
+    3694 => 'seventyeights',
+    3695 => 'sevillanas',
+    3696 => 'sextet',
+    3697 => 'sextets',
+    3698 => 'sforzando',
+    3699 => 'sforzato',
+    3700 => 'shehnai',
+    3701 => 'shehnais',
+    3702 => 'shellac',
+    3703 => 'shimmies',
+    3704 => 'shoegazing',
+    3705 => 'shoulderrest',
+    3706 => 'shoulderrests',
+    3707 => 'showband',
+    3708 => 'showbands',
+    3709 => 'showtune',
+    3710 => 'showtunes',
+    3711 => 'sideman',
+    3712 => 'sidemen',
+    3713 => 'silverband',
+    3714 => 'silverbands',
+    3715 => 'sinfonia',
+    3716 => 'sinfonias',
+    3717 => 'sinfonietta',
+    3718 => 'sinfoniettas',
+    3719 => 'singalong',
+    3720 => 'singalongs',
+    3721 => 'singersongwriter',
+    3722 => 'singersongwriters',
+    3723 => 'singsongs',
+    3724 => 'singspiel',
+    3725 => 'singspiels',
+    3726 => 'sirtaki',
+    3727 => 'sirtakis',
+    3728 => 'sissonne',
+    3729 => 'sissonnes',
+    3730 => 'sitarist',
+    3731 => 'sitarists',
+    3732 => 'sixteenths',
+    3733 => 'sixths',
+    3734 => 'skald',
+    3735 => 'skalds',
+    3736 => 'skank',
+    3737 => 'skanked',
+    3738 => 'skanking',
+    3739 => 'skanks',
+    3740 => 'skapunk',
+    3741 => 'slamdance',
+    3742 => 'slamdances',
+    3743 => 'slamdancing',
+    3744 => 'sleevenotes',
+    3745 => 'sleighbell',
+    3746 => 'slentando',
+    3747 => 'slidewhistle',
+    3748 => 'slidewhistles',
+    3749 => 'slipmat',
+    3750 => 'slipmats',
+    3751 => 'slowcore',
+    3752 => 'slowdance',
+    3753 => 'slowdances',
+    3754 => 'smoothjazz',
+    3755 => 'smorzando',
+    3756 => 'soh',
+    3757 => 'soldout',
+    3758 => 'solfa',
+    3759 => 'solfege',
+    3760 => 'solfeggio',
+    3761 => 'solmisation',
+    3762 => 'solmization',
+    3763 => 'songcycle',
+    3764 => 'songcycles',
+    3765 => 'songsmith',
+    3766 => 'songsmiths',
+    3767 => 'songstress',
+    3768 => 'songstresses',
+    3769 => 'sonoro',
+    3770 => 'sopranist',
+    3771 => 'sopranists',
+    3772 => 'sordini',
+    3773 => 'sordino',
+    3774 => 'sostenuto',
+    3775 => 'sottovoce',
+    3776 => 'soubrette',
+    3777 => 'soubrettes',
+    3778 => 'soukous',
+    3779 => 'soulboy',
+    3780 => 'soulboys',
+    3781 => 'soundboard',
+    3782 => 'soundboards',
+    3783 => 'soundcheck',
+    3784 => 'soundchecks',
+    3785 => 'soundengineer',
+    3786 => 'soundengineers',
+    3787 => 'soundhole',
+    3788 => 'soundholes',
+    3789 => 'soundman',
+    3790 => 'soundmen',
+    3791 => 'soundpost',
+    3792 => 'soundposts',
+    3793 => 'soundsystem',
+    3794 => 'soundsystems',
+    3795 => 'speedmetal',
+    3796 => 'spiccato',
+    3797 => 'spinto',
+    3798 => 'spintos',
+    3799 => 'spiritoso',
+    3800 => 'squeezebox',
+    3801 => 'squeezeboxes',
+    3802 => 'staccato',
+    3803 => 'stadia',
+    3804 => 'stagedive',
+    3805 => 'stagedives',
+    3806 => 'stagediving',
+    3807 => 'stagedoor',
+    3808 => 'stagedoors',
+    3809 => 'stagemanager',
+    3810 => 'stagemanagers',
+    3811 => 'stan',
+    3812 => 'stans',
+    3813 => 'stanzas',
+    3814 => 'steelband',
+    3815 => 'steelbands',
+    3816 => 'steelguitar',
+    3817 => 'steelguitars',
+    3818 => 'stepdance',
+    3819 => 'stepdances',
+    3820 => 'stepdancing',
+    3821 => 'sticksman',
+    3822 => 'sticksmen',
+    3823 => 'stompbox',
+    3824 => 'stompboxes',
+    3825 => 'stringendo',
+    3826 => 'styli',
+    3827 => 'stylus',
+    3828 => 'styluses',
+    3829 => 'subdominant',
+    3830 => 'subdominants',
+    3831 => 'subito',
+    3832 => 'submediant',
+    3833 => 'submediants',
+    3834 => 'subtonic',
+    3835 => 'subtonics',
+    3836 => 'subwoofer',
+    3837 => 'subwoofers',
+    3838 => 'sulponticello',
+    3839 => 'superfan',
+    3840 => 'superfans',
+    3841 => 'supergroup',
+    3842 => 'supergroups',
+    3843 => 'supertonic',
+    3844 => 'supertonics',
+    3845 => 'surdo',
+    3846 => 'surdos',
+    3847 => 'svengali',
+    3848 => 'svengalis',
+    3849 => 'swanee',
+    3850 => 'swanees',
+    3851 => 'swaneewhistle',
+    3852 => 'swaneewhistles',
+    3853 => 'symphonicpoem',
+    3854 => 'symphonicpoems',
+    3855 => 'symphonist',
+    3856 => 'symphonists',
+    3857 => 'syncopation',
+    3858 => 'syncopations',
+    3859 => 'synthesisers',
+    3860 => 'synthesist',
+    3861 => 'synthesists',
+    3862 => 'synthwave',
+    3863 => 'syrinx',
+    3864 => 'syrinxes',
+    3865 => 'tablature',
+    3866 => 'tablatures',
+    3867 => 'tacet',
+    3868 => 'taiko',
+    3869 => 'taikos',
+    3870 => 'tailpiece',
+    3871 => 'tailpieces',
+    3872 => 'talentscout',
+    3873 => 'talentscouts',
+    3874 => 'talentshow',
+    3875 => 'talentshows',
+    3876 => 'talkbox',
+    3877 => 'talkboxes',
+    3878 => 'tamboura',
+    3879 => 'tambouras',
+    3880 => 'tambura',
+    3881 => 'tamburas',
+    3882 => 'tanpura',
+    3883 => 'tanpuras',
+    3884 => 'tapdancing',
+    3885 => 'tarantelle',
+    3886 => 'tarantelles',
+    3887 => 'tech',
+    3888 => 'techies',
+    3889 => 'technopop',
+    3890 => 'techs',
+    3891 => 'teddyboy',
+    3892 => 'teddyboys',
+    3893 => 'tedeum',
+    3894 => 'tedeums',
+    3895 => 'teenybopper',
+    3896 => 'teenyboppers',
+    3897 => 'tejano',
+    3898 => 'tempestoso',
+    3899 => 'tempi',
+    3900 => 'tempoprimo',
+    3901 => 'teneramente',
+    3902 => 'tenorhorn',
+    3903 => 'tenorhorns',
+    3904 => 'tenorsax',
+    3905 => 'tenorsaxes',
+    3906 => 'tentet',
+    3907 => 'tentets',
+    3908 => 'tenuto',
+    3909 => 'threnodies',
+    3910 => 'threnody',
+    3911 => 'thumbpiano',
+    3912 => 'thumbpianos',
+    3913 => 'thumbpick',
+    3914 => 'thumbpicks',
+    3915 => 'timbal',
+    3916 => 'timbale',
+    3917 => 'timbals',
+    3918 => 'timbres',
+    3919 => 'timesignature',
+    3920 => 'timesignatures',
+    3921 => 'timpanist',
+    3922 => 'timpanists',
+    3923 => 'tonalities',
+    3924 => 'tonality',
+    3925 => 'tonepoem',
+    3926 => 'tonepoems',
+    3927 => 'tonicsolfa',
+    3928 => 'topforty',
+    3929 => 'topten',
+    3930 => 'toptens',
+    3931 => 'torchsinger',
+    3932 => 'torchsingers',
+    3933 => 'torchsong',
+    3934 => 'torchsongs',
+    3935 => 'tourbus',
+    3936 => 'tourbuses',
+    3937 => 'tourmanager',
+    3938 => 'tourmanagers',
+    3939 => 'tracklist',
+    3940 => 'tracklists',
+    3941 => 'trad',
+    3942 => 'tranquillo',
+    3943 => 'transposition',
+    3944 => 'transpositions',
+    3945 => 'tremolo',
+    3946 => 'tremolos',
+    3947 => 'tributeact',
+    3948 => 'tributeacts',
+    3949 => 'tributeband',
+    3950 => 'tributebands',
+    3951 => 'tritone',
+    3952 => 'tritones',
+    3953 => 'trombonist',
+    3954 => 'trombonists',
+    3955 => 'tropicalia',
+    3956 => 'troppo',
+    3957 => 'trouvere',
+    3958 => 'trouveres',
+    3959 => 'tubaist',
+    3960 => 'tubaists',
+    3961 => 'tubist',
+    3962 => 'tubists',
+    3963 => 'tunesmith',
+    3964 => 'tunesmiths',
+    3965 => 'tuningfork',
+    3966 => 'tuningforks',
+    3967 => 'tunings',
+    3968 => 'tuplet',
+    3969 => 'tuplets',
+    3970 => 'turntablist',
+    3971 => 'turntablists',
+    3972 => 'twee',
+    3973 => 'tweeter',
+    3974 => 'tweeters',
+    3975 => 'twelvebar',
+    3976 => 'twelveinch',
+    3977 => 'twelveinches',
+    3978 => 'twelvetone',
+    3979 => 'twerk',
+    3980 => 'twerked',
+    3981 => 'twerking',
+    3982 => 'twerks',
+    3983 => 'twostep',
+    3984 => 'twosteps',
+    3985 => 'twotone',
+    3986 => 'tympani',
+    3987 => 'tympanist',
+    3988 => 'tympanists',
+    3989 => 'uilleannpipes',
+    3990 => 'ukelele',
+    3991 => 'ukeleles',
+    3992 => 'ukgarage',
+    3993 => 'ukulelist',
+    3994 => 'ukulelists',
+    3995 => 'unisons',
+    3996 => 'upbeats',
+    3997 => 'vaporwave',
+    3998 => 'vibraphonist',
+    3999 => 'vibraphonists',
+    4000 => 'vibratos',
+    4001 => 'vigoroso',
+    4002 => 'vihuela',
+    4003 => 'vihuelas',
+    4004 => 'vinas',
+    4005 => 'violist',
+    4006 => 'violists',
+    4007 => 'violoncellist',
+    4008 => 'violoncellists',
+    4009 => 'violoncello',
+    4010 => 'violoncellos',
+    4011 => 'virtuosi',
+    4012 => 'vivace',
+    4013 => 'vivacissimo',
+    4014 => 'vivo',
+    4015 => 'vocalise',
+    4016 => 'vocalises',
+    4017 => 'vocoder',
+    4018 => 'vocoders',
+    4019 => 'vogueing',
+    4020 => 'voicings',
+    4021 => 'volante',
+    4022 => 'voltas',
+    4023 => 'waacking',
+    4024 => 'wah',
+    4025 => 'wahs',
+    4026 => 'wahwah',
+    4027 => 'wahwahs',
+    4028 => 'wannabe',
+    4029 => 'wannabes',
+    4030 => 'warmup',
+    4031 => 'warmups',
+    4032 => 'washtub',
+    4033 => 'washtubs',
+    4034 => 'wassailer',
+    4035 => 'wassailers',
+    4036 => 'watusi',
+    4037 => 'whammybar',
+    4038 => 'whammybars',
+    4039 => 'whitelabel',
+    4040 => 'whitelabels',
+    4041 => 'wholetone',
+    4042 => 'woodwind',
+    4043 => 'woodwinds',
+    4044 => 'woofer',
+    4045 => 'woofers',
+    4046 => 'worksong',
+    4047 => 'worksongs',
+    4048 => 'xylophonist',
+    4049 => 'xylophonists',
+    4050 => 'yachtrock',
+    4051 => 'yodeler',
+    4052 => 'yodelers',
+    4053 => 'yodeller',
+    4054 => 'yodellers',
+    4055 => 'zarzuela',
+    4056 => 'zarzuelas',
+    4057 => 'zouk',
   ),
   'families' => 
   array (
@@ -3959,6 +4111,8 @@ return array (
     array (
       0 => 'compere',
       1 => 'comperes',
+      2 => 'compered',
+      3 => 'compering',
     ),
     9 => 
     array (
@@ -4472,6 +4626,8 @@ return array (
     array (
       0 => 'cakewalk',
       1 => 'cakewalks',
+      2 => 'cakewalked',
+      3 => 'cakewalking',
     ),
     106 => 
     array (
@@ -4500,6 +4656,8 @@ return array (
     array (
       0 => 'conga',
       1 => 'congas',
+      2 => 'congaed',
+      3 => 'congaing',
     ),
     111 => 
     array (
@@ -4510,6 +4668,8 @@ return array (
     array (
       0 => 'foxtrot',
       1 => 'foxtrots',
+      2 => 'foxtrotted',
+      3 => 'foxtrotting',
     ),
     113 => 
     array (
@@ -4572,6 +4732,8 @@ return array (
     array (
       0 => 'hustle',
       1 => 'hustles',
+      2 => 'hustling',
+      3 => 'hustled',
     ),
     125 => 
     array (
@@ -4586,13 +4748,15 @@ return array (
     array (
       0 => 'jig',
       1 => 'jigs',
-      2 => 'jigging',
+      2 => 'jigged',
+      3 => 'jigging',
     ),
     127 => 
     array (
       0 => 'jitterbug',
       1 => 'jitterbugs',
-      2 => 'jitterbugging',
+      2 => 'jitterbugged',
+      3 => 'jitterbugging',
     ),
     128 => 
     array (
@@ -4631,6 +4795,8 @@ return array (
     array (
       0 => 'mambo',
       1 => 'mambos',
+      2 => 'mamboed',
+      3 => 'mamboing',
     ),
     135 => 
     array (
@@ -4676,7 +4842,9 @@ return array (
     142 => 
     array (
       0 => 'pirouette',
-      1 => 'pirouettes',
+      1 => 'pirouetted',
+      2 => 'pirouetting',
+      3 => 'pirouettes',
     ),
     143 => 
     array (
@@ -4697,6 +4865,8 @@ return array (
     array (
       0 => 'polka',
       1 => 'polkas',
+      2 => 'polkaed',
+      3 => 'polkaing',
     ),
     146 => 
     array (
@@ -4736,6 +4906,8 @@ return array (
     array (
       0 => 'rumba',
       1 => 'rumbas',
+      2 => 'rumbaed',
+      3 => 'rumbaing',
     ),
     153 => 
     array (
@@ -4746,6 +4918,8 @@ return array (
     array (
       0 => 'samba',
       1 => 'sambas',
+      2 => 'sambaed',
+      3 => 'sambaing',
     ),
     155 => 
     array (
@@ -4765,6 +4939,8 @@ return array (
     array (
       0 => 'shuffle',
       1 => 'shuffles',
+      2 => 'shuffling',
+      3 => 'shuffled',
     ),
     158 => 
     array (
@@ -4819,6 +4995,8 @@ return array (
     array (
       0 => 'tango',
       1 => 'tangos',
+      2 => 'tangoed',
+      3 => 'tangoing',
     ),
     167 => 
     array (
@@ -5068,68 +5246,74 @@ return array (
     ),
     210 => 
     array (
+      0 => 'promenade',
+      1 => 'promenaded',
+      2 => 'promenading',
+    ),
+    211 => 
+    array (
       0 => 'releve',
       1 => 'releves',
     ),
-    211 => 
+    212 => 
     array (
       0 => 'rigadoon',
       1 => 'rigadoons',
       2 => 'rigaudon',
       3 => 'rigaudons',
     ),
-    212 => 
+    213 => 
     array (
       0 => 'saltarello',
       1 => 'saltarellos',
     ),
-    213 => 
+    214 => 
     array (
       0 => 'sardana',
       1 => 'sardanas',
     ),
-    214 => 
+    215 => 
     array (
       0 => 'schottische',
       1 => 'schottisches',
     ),
-    215 => 
+    216 => 
     array (
       0 => 'sirtaki',
       1 => 'sirtakis',
     ),
-    216 => 
+    217 => 
     array (
       0 => 'sissonne',
       1 => 'sissonnes',
     ),
-    217 => 
+    218 => 
     array (
       0 => 'slamdance',
       1 => 'slamdances',
       2 => 'slamdancing',
     ),
-    218 => 
+    219 => 
     array (
       0 => 'smooch',
       1 => 'smooches',
       2 => 'smooching',
       3 => 'smooched',
     ),
-    219 => 
+    220 => 
     array (
       0 => 'stepdance',
       1 => 'stepdances',
       2 => 'stepdancing',
     ),
-    220 => 
+    221 => 
     array (
       0 => 'stroll',
       1 => 'strolling',
       2 => 'strolled',
       3 => 'strolls',
     ),
-    221 => 
+    222 => 
     array (
       0 => 'swim',
       1 => 'swimming',
@@ -5137,247 +5321,255 @@ return array (
       3 => 'swims',
       4 => 'swum',
     ),
-    222 => 
+    223 => 
     array (
       0 => 'sworddance',
       1 => 'sworddances',
     ),
-    223 => 
+    224 => 
     array (
       0 => 'tutting',
       1 => 'tut',
       2 => 'tuts',
     ),
-    224 => 
+    225 => 
     array (
       0 => 'volta',
       1 => 'voltas',
       2 => 'lavolta',
     ),
-    225 => 
+    226 => 
     array (
       0 => 'windmill',
       1 => 'windmills',
     ),
-    226 => 
+    227 => 
     array (
       0 => 'air',
       1 => 'airs',
       2 => 'aired',
       3 => 'airing',
     ),
-    227 => 
+    228 => 
     array (
       0 => 'anthem',
       1 => 'anthems',
     ),
-    228 => 
+    229 => 
     array (
       0 => 'aria',
       1 => 'arias',
     ),
-    229 => 
+    230 => 
     array (
       0 => 'bagatelle',
       1 => 'bagatelles',
     ),
-    230 => 
+    231 => 
     array (
       0 => 'ballad',
       1 => 'ballads',
     ),
-    231 => 
+    232 => 
     array (
       0 => 'ballade',
       1 => 'ballades',
     ),
-    232 => 
+    233 => 
     array (
       0 => 'barcarolle',
       1 => 'barcarolles',
     ),
-    233 => 
+    234 => 
     array (
       0 => 'canon',
       1 => 'canons',
     ),
-    234 => 
+    235 => 
     array (
       0 => 'cantata',
       1 => 'cantatas',
     ),
-    235 => 
+    236 => 
     array (
       0 => 'canticle',
       1 => 'canticles',
     ),
-    236 => 
+    237 => 
     array (
       0 => 'capriccio',
       1 => 'capriccios',
     ),
-    237 => 
+    238 => 
     array (
       0 => 'caprice',
       1 => 'caprices',
     ),
-    238 => 
+    239 => 
     array (
       0 => 'carol',
       1 => 'carols',
-      2 => 'caroling',
-      3 => 'carolling',
+      2 => 'caroled',
+      3 => 'carolled',
+      4 => 'caroling',
+      5 => 'carolling',
     ),
-    239 => 
+    240 => 
     array (
       0 => 'chaconne',
       1 => 'chaconnes',
     ),
-    240 => 
+    241 => 
     array (
       0 => 'chanson',
       1 => 'chansons',
     ),
-    241 => 
+    242 => 
     array (
       0 => 'chant',
       1 => 'chants',
       2 => 'chanting',
       3 => 'chanted',
     ),
-    242 => 
+    243 => 
     array (
       0 => 'chorale',
       1 => 'chorales',
     ),
-    243 => 
+    244 => 
     array (
       0 => 'concerto',
       1 => 'concertos',
       2 => 'concerti',
     ),
-    244 => 
+    245 => 
     array (
       0 => 'dirge',
       1 => 'dirges',
     ),
-    245 => 
+    246 => 
     array (
       0 => 'ditty',
       1 => 'ditties',
     ),
-    246 => 
+    247 => 
     array (
       0 => 'divertimento',
       1 => 'divertimentos',
       2 => 'divertimenti',
     ),
-    247 => 
+    248 => 
     array (
       0 => 'drinkingsong',
       1 => 'drinkingsongs',
     ),
-    248 => 
+    249 => 
     array (
       0 => 'elegy',
       1 => 'elegies',
     ),
-    249 => 
+    250 => 
     array (
       0 => 'etude',
       1 => 'etudes',
     ),
-    250 => 
+    251 => 
     array (
       0 => 'fanfare',
       1 => 'fanfares',
     ),
-    251 => 
+    252 => 
     array (
       0 => 'fantasia',
       1 => 'fantasias',
     ),
-    252 => 
+    253 => 
     array (
       0 => 'fantasy',
-      1 => 'fantasies',
+      1 => 'fantasied',
+      2 => 'fantasying',
+      3 => 'fantasies',
     ),
-    253 => 
+    254 => 
     array (
       0 => 'folksong',
       1 => 'folksongs',
     ),
-    254 => 
+    255 => 
     array (
       0 => 'fugue',
       1 => 'fugues',
     ),
-    255 => 
+    256 => 
     array (
       0 => 'humoresque',
       1 => 'humoresques',
     ),
-    256 => 
+    257 => 
     array (
       0 => 'hymn',
       1 => 'hymns',
+      2 => 'hymned',
+      3 => 'hymning',
     ),
-    257 => 
+    258 => 
     array (
       0 => 'impromptu',
       1 => 'impromptus',
     ),
-    258 => 
+    259 => 
     array (
       0 => 'intermezzo',
       1 => 'intermezzos',
       2 => 'intermezzi',
     ),
-    259 => 
+    260 => 
     array (
       0 => 'invention',
       1 => 'inventions',
     ),
-    260 => 
+    261 => 
     array (
       0 => 'jingle',
       1 => 'jingles',
+      2 => 'jingled',
+      3 => 'jingling',
     ),
-    261 => 
+    262 => 
     array (
       0 => 'lament',
       1 => 'laments',
       2 => 'lamenting',
       3 => 'lamented',
     ),
-    262 => 
+    263 => 
     array (
       0 => 'lied',
       1 => 'lieder',
     ),
-    263 => 
+    264 => 
     array (
       0 => 'lovesong',
       1 => 'lovesongs',
     ),
-    264 => 
+    265 => 
     array (
       0 => 'lullaby',
       1 => 'lullabies',
     ),
-    265 => 
+    266 => 
     array (
       0 => 'madrigal',
       1 => 'madrigals',
     ),
-    266 => 
+    267 => 
     array (
       0 => 'march',
       1 => 'marches',
       2 => 'marching',
       3 => 'marched',
     ),
-    267 => 
+    268 => 
     array (
       0 => 'mass',
       1 => 'masses',
@@ -5385,201 +5577,205 @@ return array (
       3 => 'massed',
       4 => 'masse',
     ),
-    268 => 
+    269 => 
     array (
       0 => 'motet',
       1 => 'motets',
     ),
-    269 => 
+    270 => 
     array (
       0 => 'musical',
       1 => 'musicals',
     ),
-    270 => 
+    271 => 
     array (
       0 => 'nocturne',
       1 => 'nocturnes',
     ),
-    271 => 
+    272 => 
     array (
       0 => 'nurseryrhyme',
       1 => 'nurseryrhymes',
     ),
-    272 => 
+    273 => 
     array (
       0 => 'ode',
       1 => 'odes',
     ),
-    273 => 
+    274 => 
     array (
       0 => 'opera',
       1 => 'operas',
     ),
-    274 => 
+    275 => 
     array (
       0 => 'operetta',
       1 => 'operettas',
     ),
-    275 => 
+    276 => 
     array (
       0 => 'oratorio',
       1 => 'oratorios',
     ),
-    276 => 
+    277 => 
     array (
       0 => 'overture',
       1 => 'overtures',
     ),
-    277 => 
+    278 => 
     array (
       0 => 'partita',
       1 => 'partitas',
     ),
-    278 => 
+    279 => 
     array (
       0 => 'passacaglia',
       1 => 'passacaglias',
     ),
-    279 => 
+    280 => 
     array (
       0 => 'pastorale',
       1 => 'pastorales',
     ),
-    280 => 
+    281 => 
     array (
       0 => 'postlude',
       1 => 'postludes',
     ),
-    281 => 
+    282 => 
     array (
       0 => 'powerballad',
       1 => 'powerballads',
     ),
-    282 => 
+    283 => 
     array (
       0 => 'prelude',
       1 => 'preludes',
+      2 => 'preluded',
+      3 => 'preluding',
     ),
-    283 => 
+    284 => 
     array (
       0 => 'psalm',
       1 => 'psalms',
+      2 => 'psalmed',
+      3 => 'psalming',
     ),
-    284 => 
+    285 => 
     array (
       0 => 'raga',
       1 => 'ragas',
     ),
-    285 => 
+    286 => 
     array (
       0 => 'recitative',
       1 => 'recitatives',
     ),
-    286 => 
+    287 => 
     array (
       0 => 'requiem',
       1 => 'requiems',
     ),
-    287 => 
+    288 => 
     array (
       0 => 'rhapsody',
       1 => 'rhapsodies',
     ),
-    288 => 
+    289 => 
     array (
       0 => 'rockopera',
       1 => 'rockoperas',
     ),
-    289 => 
+    290 => 
     array (
       0 => 'romance',
-      1 => 'romances',
+      1 => 'romanced',
+      2 => 'romances',
+      3 => 'romancing',
     ),
-    290 => 
+    291 => 
     array (
       0 => 'rondo',
       1 => 'rondos',
     ),
-    291 => 
+    292 => 
     array (
       0 => 'round',
       1 => 'rounds',
       2 => 'rounded',
       3 => 'rounding',
     ),
-    292 => 
+    293 => 
     array (
       0 => 'scherzo',
       1 => 'scherzos',
       2 => 'scherzi',
     ),
-    293 => 
+    294 => 
     array (
       0 => 'serenade',
       1 => 'serenades',
       2 => 'serenading',
       3 => 'serenaded',
     ),
-    294 => 
+    295 => 
     array (
       0 => 'shanty',
       1 => 'shanties',
     ),
-    295 => 
+    296 => 
     array (
       0 => 'showtune',
       1 => 'showtunes',
     ),
-    296 => 
+    297 => 
     array (
       0 => 'sinfonia',
       1 => 'sinfonias',
     ),
-    297 => 
+    298 => 
     array (
       0 => 'sonata',
       1 => 'sonatas',
     ),
-    298 => 
+    299 => 
     array (
       0 => 'sonatina',
       1 => 'sonatinas',
     ),
-    299 => 
+    300 => 
     array (
       0 => 'song',
       1 => 'songs',
     ),
-    300 => 
+    301 => 
     array (
       0 => 'spiritual',
       1 => 'spirituals',
     ),
-    301 => 
+    302 => 
     array (
       0 => 'study',
       1 => 'studying',
       2 => 'studies',
       3 => 'studied',
     ),
-    302 => 
+    303 => 
     array (
       0 => 'suite',
       1 => 'suites',
-      2 => 'suited',
-      3 => 'suiting',
     ),
-    303 => 
+    304 => 
     array (
       0 => 'symphony',
       1 => 'symphonies',
     ),
-    304 => 
+    305 => 
     array (
       0 => 'toccata',
       1 => 'toccatas',
     ),
-    305 => 
+    306 => 
     array (
       0 => 'tune',
       1 => 'tunes',
@@ -5587,263 +5783,271 @@ return array (
       3 => 'tuning',
       4 => 'tunings',
     ),
-    306 => 
+    307 => 
     array (
       0 => 'variation',
       1 => 'variations',
     ),
-    307 => 
+    308 => 
     array (
       0 => 'arietta',
       1 => 'ariettas',
     ),
-    308 => 
+    309 => 
     array (
       0 => 'arioso',
       1 => 'ariosos',
     ),
-    309 => 
+    310 => 
     array (
       0 => 'artsong',
       1 => 'artsongs',
     ),
-    310 => 
+    311 => 
     array (
       0 => 'aubade',
       1 => 'aubades',
     ),
-    311 => 
+    312 => 
     array (
       0 => 'berceuse',
       1 => 'berceuses',
     ),
-    312 => 
+    313 => 
     array (
       0 => 'cabaletta',
       1 => 'cabalettas',
     ),
-    313 => 
+    314 => 
     array (
       0 => 'catch',
       1 => 'caught',
       2 => 'catching',
       3 => 'catches',
     ),
-    314 => 
+    315 => 
     array (
       0 => 'cavatina',
       1 => 'cavatinas',
     ),
-    315 => 
+    316 => 
     array (
       0 => 'concertino',
       1 => 'concertinos',
     ),
-    316 => 
+    317 => 
     array (
       0 => 'concertogrosso',
       1 => 'concertigrossi',
     ),
-    317 => 
+    318 => 
     array (
       0 => 'entracte',
       1 => 'entractes',
     ),
-    318 => 
+    319 => 
     array (
       0 => 'fughetta',
       1 => 'fughettas',
     ),
-    319 => 
+    320 => 
     array (
       0 => 'glee',
       1 => 'glees',
     ),
-    320 => 
+    321 => 
     array (
       0 => 'gloria',
       1 => 'glorias',
     ),
-    321 => 
+    322 => 
     array (
       0 => 'kyrie',
       1 => 'kyries',
     ),
-    322 => 
+    323 => 
     array (
       0 => 'magnificat',
       1 => 'magnificats',
     ),
-    323 => 
+    324 => 
     array (
       0 => 'masque',
       1 => 'masques',
     ),
-    324 => 
+    325 => 
     array (
       0 => 'noel',
       1 => 'noels',
     ),
-    325 => 
+    326 => 
     array (
       0 => 'number',
       1 => 'numbers',
       2 => 'numbered',
       3 => 'numbering',
     ),
-    326 => 
+    327 => 
     array (
       0 => 'paean',
       1 => 'paeans',
     ),
-    327 => 
+    328 => 
     array (
       0 => 'partsong',
       1 => 'partsongs',
     ),
-    328 => 
+    329 => 
     array (
       0 => 'passion',
       1 => 'passions',
     ),
-    329 => 
+    330 => 
     array (
       0 => 'quodlibet',
       1 => 'quodlibets',
     ),
-    330 => 
+    331 => 
     array (
       0 => 'ricercar',
       1 => 'ricercars',
       2 => 'ricercare',
     ),
-    331 => 
+    332 => 
     array (
       0 => 'singspiel',
       1 => 'singspiels',
     ),
-    332 => 
+    333 => 
     array (
       0 => 'songcycle',
       1 => 'songcycles',
     ),
-    333 => 
+    334 => 
     array (
       0 => 'symphonicpoem',
       1 => 'symphonicpoems',
     ),
-    334 => 
+    335 => 
     array (
       0 => 'tedeum',
       1 => 'tedeums',
     ),
-    335 => 
+    336 => 
     array (
       0 => 'threnody',
       1 => 'threnodies',
     ),
-    336 => 
+    337 => 
     array (
       0 => 'tonepoem',
       1 => 'tonepoems',
     ),
-    337 => 
+    338 => 
     array (
       0 => 'torchsong',
       1 => 'torchsongs',
     ),
-    338 => 
+    339 => 
     array (
       0 => 'wassail',
-      1 => 'wassails',
+      1 => 'wassailed',
+      2 => 'wassailing',
+      3 => 'wassails',
     ),
-    339 => 
+    340 => 
     array (
       0 => 'worksong',
       1 => 'worksongs',
     ),
-    340 => 
+    341 => 
     array (
       0 => 'zarzuela',
       1 => 'zarzuelas',
     ),
-    341 => 
+    342 => 
     array (
       0 => 'amp',
       1 => 'amps',
     ),
-    342 => 
+    343 => 
     array (
       0 => 'amplifier',
       1 => 'amplifiers',
     ),
-    343 => 
+    344 => 
     array (
       0 => 'baton',
       1 => 'batons',
     ),
-    344 => 
+    345 => 
     array (
       0 => 'beater',
       1 => 'beaters',
     ),
-    345 => 
+    346 => 
     array (
       0 => 'bellows',
       1 => 'bellowing',
       2 => 'bellow',
       3 => 'bellowed',
     ),
-    346 => 
+    347 => 
     array (
       0 => 'boombox',
       1 => 'boomboxes',
     ),
-    347 => 
+    348 => 
     array (
       0 => 'bottleneck',
       1 => 'bottlenecks',
+      2 => 'bottlenecked',
+      3 => 'bottlenecking',
     ),
-    348 => 
+    349 => 
     array (
       0 => 'bow',
       1 => 'bows',
       2 => 'bowed',
       3 => 'bowing',
     ),
-    349 => 
+    350 => 
     array (
       0 => 'bridge',
-      1 => 'bridges',
+      1 => 'bridged',
+      2 => 'bridges',
+      3 => 'bridging',
     ),
-    350 => 
+    351 => 
     array (
       0 => 'brush',
       1 => 'brushes',
       2 => 'brushing',
       3 => 'brushed',
     ),
-    351 => 
+    352 => 
     array (
       0 => 'cabinet',
       1 => 'cabinets',
     ),
-    352 => 
+    353 => 
     array (
       0 => 'cable',
       1 => 'cables',
+      2 => 'cabling',
+      3 => 'cabled',
     ),
-    353 => 
+    354 => 
     array (
       0 => 'capo',
       1 => 'capos',
     ),
-    354 => 
+    355 => 
     array (
       0 => 'cartridge',
       1 => 'cartridges',
     ),
-    355 => 
+    356 => 
     array (
       0 => 'case',
       1 => 'cases',
@@ -5851,69 +6055,69 @@ return array (
       3 => 'casings',
       4 => 'cased',
     ),
-    356 => 
+    357 => 
     array (
       0 => 'chanter',
       1 => 'chanters',
     ),
-    357 => 
+    358 => 
     array (
       0 => 'chinrest',
       1 => 'chinrests',
     ),
-    358 => 
+    359 => 
     array (
       0 => 'compressor',
       1 => 'compressors',
     ),
-    359 => 
+    360 => 
     array (
       0 => 'controller',
       1 => 'controllers',
     ),
-    360 => 
+    361 => 
     array (
       0 => 'crossfader',
       1 => 'crossfaders',
     ),
-    361 => 
+    362 => 
     array (
       0 => 'delay',
       1 => 'delays',
       2 => 'delayed',
       3 => 'delaying',
     ),
-    362 => 
+    363 => 
     array (
       0 => 'distortion',
       1 => 'distortions',
     ),
-    363 => 
+    364 => 
     array (
       0 => 'drumkit',
       1 => 'drumkits',
     ),
-    364 => 
+    365 => 
     array (
       0 => 'drumhead',
       1 => 'drumheads',
     ),
-    365 => 
+    366 => 
     array (
       0 => 'drumstick',
       1 => 'drumsticks',
     ),
-    366 => 
+    367 => 
     array (
       0 => 'earbud',
       1 => 'earbuds',
     ),
-    367 => 
+    368 => 
     array (
       0 => 'earplug',
       1 => 'earplugs',
     ),
-    368 => 
+    369 => 
     array (
       0 => 'echo',
       1 => 'echoes',
@@ -5921,100 +6125,100 @@ return array (
       3 => 'echoed',
       4 => 'echos',
     ),
-    369 => 
+    370 => 
     array (
       0 => 'equaliser',
       1 => 'equalisers',
       2 => 'equalizer',
       3 => 'equalizers',
     ),
-    370 => 
+    371 => 
     array (
       0 => 'fader',
       1 => 'faders',
     ),
-    371 => 
+    372 => 
     array (
       0 => 'fingerboard',
       1 => 'fingerboards',
     ),
-    372 => 
+    373 => 
     array (
       0 => 'flanger',
       1 => 'flangers',
     ),
-    373 => 
+    374 => 
     array (
       0 => 'fret',
       1 => 'frets',
       2 => 'fretting',
       3 => 'fretted',
     ),
-    374 => 
+    375 => 
     array (
       0 => 'fretboard',
       1 => 'fretboards',
     ),
-    375 => 
+    376 => 
     array (
       0 => 'fuzzbox',
       1 => 'fuzzboxes',
     ),
-    376 => 
+    377 => 
     array (
       0 => 'ghettoblaster',
       1 => 'ghettoblasters',
     ),
-    377 => 
+    378 => 
     array (
       0 => 'gramophone',
       1 => 'gramophones',
     ),
-    378 => 
+    379 => 
     array (
       0 => 'hammer',
       1 => 'hammers',
       2 => 'hammering',
       3 => 'hammered',
     ),
-    379 => 
+    380 => 
     array (
       0 => 'headphone',
       1 => 'headphones',
     ),
-    380 => 
+    381 => 
     array (
       0 => 'headset',
       1 => 'headsets',
     ),
-    381 => 
+    382 => 
     array (
       0 => 'headstock',
       1 => 'headstocks',
     ),
-    382 => 
+    383 => 
     array (
       0 => 'hifi',
       1 => 'hifis',
     ),
-    383 => 
+    384 => 
     array (
       0 => 'humbucker',
       1 => 'humbuckers',
     ),
-    384 => 
+    385 => 
     array (
       0 => 'jukebox',
       1 => 'jukeboxes',
     ),
-    385 => 
+    386 => 
     array (
       0 => 'key',
       1 => 'keys',
       2 => 'keyed',
       3 => 'keying',
     ),
-    386 => 
+    387 => 
     array (
       0 => 'lead',
       1 => 'leads',
@@ -6022,32 +6226,32 @@ return array (
       3 => 'leading',
       4 => 'leaded',
     ),
-    387 => 
+    388 => 
     array (
       0 => 'ligature',
       1 => 'ligatures',
     ),
-    388 => 
+    389 => 
     array (
       0 => 'looper',
       1 => 'loopers',
     ),
-    389 => 
+    390 => 
     array (
       0 => 'loudspeaker',
       1 => 'loudspeakers',
     ),
-    390 => 
+    391 => 
     array (
       0 => 'mallet',
       1 => 'mallets',
     ),
-    391 => 
+    392 => 
     array (
       0 => 'metronome',
       1 => 'metronomes',
     ),
-    392 => 
+    393 => 
     array (
       0 => 'mic',
       1 => 'mics',
@@ -6055,89 +6259,92 @@ return array (
       3 => 'mikes',
       4 => 'miked',
     ),
-    393 => 
+    394 => 
     array (
       0 => 'microphone',
       1 => 'microphones',
     ),
-    394 => 
+    395 => 
     array (
       0 => 'mixer',
       1 => 'mixers',
     ),
-    395 => 
+    396 => 
     array (
       0 => 'monitor',
       1 => 'monitors',
       2 => 'monitoring',
       3 => 'monitored',
     ),
-    396 => 
+    397 => 
     array (
       0 => 'mouthpiece',
       1 => 'mouthpieces',
     ),
-    397 => 
+    398 => 
     array (
       0 => 'musicstand',
       1 => 'musicstands',
     ),
-    398 => 
+    399 => 
     array (
       0 => 'mute',
       1 => 'mutes',
-      2 => 'muted',
+      2 => 'muting',
+      3 => 'muted',
     ),
-    399 => 
+    400 => 
     array (
       0 => 'neck',
       1 => 'necks',
       2 => 'necking',
       3 => 'necked',
     ),
-    400 => 
+    401 => 
     array (
       0 => 'nut',
       1 => 'nuts',
       2 => 'nutting',
       3 => 'nutted',
     ),
-    401 => 
+    402 => 
     array (
       0 => 'overdrive',
       1 => 'overdrives',
+      2 => 'overdriving',
     ),
-    402 => 
+    403 => 
     array (
       0 => 'pedal',
       1 => 'pedals',
-      2 => 'pedaling',
-      3 => 'pedalling',
-      4 => 'pedaled',
+      2 => 'pedalled',
+      3 => 'pedaling',
+      4 => 'pedalling',
+      5 => 'pedaled',
     ),
-    403 => 
+    404 => 
     array (
       0 => 'pedalboard',
       1 => 'pedalboards',
     ),
-    404 => 
+    405 => 
     array (
       0 => 'peg',
       1 => 'pegs',
       2 => 'pegged',
       3 => 'pegging',
     ),
-    405 => 
+    406 => 
     array (
       0 => 'phaser',
       1 => 'phasers',
     ),
-    406 => 
+    407 => 
     array (
       0 => 'phonograph',
       1 => 'phonographs',
     ),
-    407 => 
+    408 => 
     array (
       0 => 'pick',
       1 => 'picks',
@@ -6145,92 +6352,102 @@ return array (
       3 => 'picking',
       4 => 'pickings',
     ),
-    408 => 
+    409 => 
     array (
       0 => 'pickup',
       1 => 'pickups',
     ),
-    409 => 
+    410 => 
     array (
       0 => 'plectrum',
       1 => 'plectrums',
       2 => 'plectra',
     ),
-    410 => 
+    411 => 
     array (
       0 => 'preamp',
       1 => 'preamps',
     ),
-    411 => 
+    412 => 
     array (
       0 => 'recordplayer',
       1 => 'recordplayers',
     ),
-    412 => 
+    413 => 
     array (
       0 => 'reed',
       1 => 'reeds',
     ),
-    413 => 
+    414 => 
     array (
       0 => 'reverb',
       1 => 'reverbs',
     ),
-    414 => 
+    415 => 
     array (
       0 => 'rig',
       1 => 'rigs',
       2 => 'rigged',
       3 => 'rigging',
     ),
-    415 => 
+    416 => 
     array (
       0 => 'riser',
       1 => 'risers',
     ),
-    416 => 
+    417 => 
+    array (
+      0 => 'rosin',
+      1 => 'rosined',
+      2 => 'rosining',
+    ),
+    418 => 
     array (
       0 => 'saddle',
-      1 => 'saddles',
+      1 => 'saddling',
+      2 => 'saddled',
+      3 => 'saddles',
     ),
-    417 => 
+    419 => 
     array (
       0 => 'sequencer',
       1 => 'sequencers',
     ),
-    418 => 
+    420 => 
     array (
       0 => 'slide',
       1 => 'slides',
       2 => 'sliding',
       3 => 'slid',
     ),
-    419 => 
+    421 => 
     array (
       0 => 'soundsystem',
       1 => 'soundsystems',
     ),
-    420 => 
+    422 => 
     array (
       0 => 'soundboard',
       1 => 'soundboards',
     ),
-    421 => 
+    423 => 
     array (
       0 => 'soundhole',
       1 => 'soundholes',
     ),
-    422 => 
+    424 => 
     array (
       0 => 'speaker',
       1 => 'speakers',
     ),
-    423 => 
+    425 => 
     array (
       0 => 'spotlight',
       1 => 'spotlights',
+      2 => 'spotlighted',
+      3 => 'spotlighting',
     ),
-    424 => 
+    426 => 
     array (
       0 => 'stand',
       1 => 'standing',
@@ -6238,12 +6455,12 @@ return array (
       3 => 'stands',
       4 => 'standings',
     ),
-    425 => 
+    427 => 
     array (
       0 => 'stereo',
       1 => 'stereos',
     ),
-    426 => 
+    428 => 
     array (
       0 => 'stick',
       1 => 'sticks',
@@ -6251,19 +6468,19 @@ return array (
       3 => 'sticking',
       4 => 'sticked',
     ),
-    427 => 
+    429 => 
     array (
       0 => 'stompbox',
       1 => 'stompboxes',
     ),
-    428 => 
+    430 => 
     array (
       0 => 'strap',
       1 => 'straps',
       2 => 'strapped',
       3 => 'strapping',
     ),
-    429 => 
+    431 => 
     array (
       0 => 'string',
       1 => 'strings',
@@ -6271,168 +6488,170 @@ return array (
       3 => 'stringing',
       4 => 'stringed',
     ),
-    430 => 
+    432 => 
     array (
       0 => 'strobe',
       1 => 'strobes',
     ),
-    431 => 
+    433 => 
     array (
       0 => 'stylus',
       1 => 'styli',
       2 => 'styluses',
     ),
-    432 => 
+    434 => 
     array (
       0 => 'subwoofer',
       1 => 'subwoofers',
     ),
-    433 => 
+    435 => 
     array (
       0 => 'tuner',
       1 => 'tuners',
     ),
-    434 => 
+    436 => 
     array (
       0 => 'tuningfork',
       1 => 'tuningforks',
     ),
-    435 => 
+    437 => 
     array (
       0 => 'turntable',
       1 => 'turntables',
     ),
-    436 => 
+    438 => 
     array (
       0 => 'tweeter',
       1 => 'tweeters',
     ),
-    437 => 
+    439 => 
     array (
       0 => 'valve',
       1 => 'valves',
     ),
-    438 => 
+    440 => 
     array (
       0 => 'vocoder',
       1 => 'vocoders',
     ),
-    439 => 
+    441 => 
     array (
       0 => 'wah',
       1 => 'wahs',
     ),
-    440 => 
+    442 => 
     array (
       0 => 'wahwah',
       1 => 'wahwahs',
     ),
-    441 => 
+    443 => 
     array (
       0 => 'woofer',
       1 => 'woofers',
     ),
-    442 => 
+    444 => 
     array (
       0 => 'body',
-      1 => 'bodies',
-      2 => 'bodied',
+      1 => 'bodying',
+      2 => 'bodies',
+      3 => 'bodied',
     ),
-    443 => 
+    445 => 
     array (
       0 => 'boom',
       1 => 'booming',
       2 => 'booms',
       3 => 'boomed',
     ),
-    444 => 
+    446 => 
     array (
       0 => 'cab',
       1 => 'cabs',
       2 => 'cabbing',
     ),
-    445 => 
+    447 => 
     array (
       0 => 'cans',
       1 => 'can',
       2 => 'canned',
       3 => 'canning',
     ),
-    446 => 
+    448 => 
     array (
       0 => 'clicktrack',
       1 => 'clicktracks',
     ),
-    447 => 
+    449 => 
     array (
       0 => 'console',
       1 => 'consoles',
       2 => 'consoling',
       3 => 'consoled',
     ),
-    448 => 
+    450 => 
     array (
       0 => 'crook',
-      1 => 'crooked',
-      2 => 'crooks',
+      1 => 'crooking',
+      2 => 'crooked',
+      3 => 'crooks',
     ),
-    449 => 
+    451 => 
     array (
       0 => 'damper',
       1 => 'dampers',
     ),
-    450 => 
+    452 => 
     array (
       0 => 'deck',
       1 => 'decks',
       2 => 'decked',
       3 => 'decking',
     ),
-    451 => 
+    453 => 
     array (
       0 => 'desk',
       1 => 'desks',
     ),
-    452 => 
+    454 => 
     array (
       0 => 'drone',
       1 => 'drones',
       2 => 'droning',
       3 => 'droned',
     ),
-    453 => 
+    455 => 
     array (
       0 => 'effect',
       1 => 'effects',
       2 => 'effected',
       3 => 'effecting',
     ),
-    454 => 
+    456 => 
     array (
       0 => 'endpin',
       1 => 'endpins',
     ),
-    455 => 
+    457 => 
     array (
       0 => 'fingerpick',
       1 => 'fingerpicks',
     ),
-    456 => 
+    458 => 
     array (
       0 => 'flightcase',
       1 => 'flightcases',
     ),
-    457 => 
+    459 => 
     array (
       0 => 'footswitch',
       1 => 'footswitches',
     ),
-    458 => 
+    460 => 
     array (
       0 => 'gigbag',
       1 => 'gigbags',
     ),
-    459 => 
+    461 => 
     array (
       0 => 'head',
       1 => 'heads',
@@ -6440,130 +6659,132 @@ return array (
       3 => 'headed',
       4 => 'headings',
     ),
-    460 => 
+    462 => 
     array (
       0 => 'interface',
       1 => 'interfaces',
       2 => 'interfacing',
       3 => 'interfaced',
     ),
-    461 => 
+    463 => 
     array (
       0 => 'jack',
       1 => 'jacks',
       2 => 'jacked',
       3 => 'jacking',
     ),
-    462 => 
+    464 => 
     array (
       0 => 'kit',
       1 => 'kits',
       2 => 'kitted',
     ),
-    463 => 
+    465 => 
     array (
       0 => 'knob',
       1 => 'knobs',
       2 => 'knobbed',
     ),
-    464 => 
+    466 => 
     array (
       0 => 'laser',
       1 => 'lasers',
     ),
-    465 => 
+    467 => 
     array (
       0 => 'limiter',
       1 => 'limiters',
     ),
-    466 => 
+    468 => 
     array (
       0 => 'manual',
       1 => 'manuals',
     ),
-    467 => 
+    469 => 
     array (
       0 => 'needle',
       1 => 'needles',
+      2 => 'needled',
+      3 => 'needling',
     ),
-    468 => 
+    470 => 
     array (
       0 => 'noisegate',
       1 => 'noisegates',
     ),
-    469 => 
+    471 => 
     array (
       0 => 'pickguard',
       1 => 'pickguards',
     ),
-    470 => 
+    472 => 
     array (
       0 => 'pitchpipe',
       1 => 'pitchpipes',
     ),
-    471 => 
+    473 => 
     array (
       0 => 'podium',
       1 => 'podiums',
     ),
-    472 => 
+    474 => 
     array (
       0 => 'popfilter',
       1 => 'popfilters',
     ),
-    473 => 
+    475 => 
     array (
       0 => 'popshield',
       1 => 'popshields',
     ),
-    474 => 
+    476 => 
     array (
       0 => 'rostrum',
       1 => 'rostrums',
       2 => 'rostra',
     ),
-    475 => 
+    477 => 
     array (
       0 => 'scratchplate',
       1 => 'scratchplates',
     ),
-    476 => 
+    478 => 
     array (
       0 => 'scroll',
       1 => 'scrolls',
       2 => 'scrolling',
       3 => 'scrolled',
     ),
-    477 => 
+    479 => 
     array (
       0 => 'shoulderrest',
       1 => 'shoulderrests',
     ),
-    478 => 
+    480 => 
     array (
       0 => 'skin',
       1 => 'skins',
       2 => 'skinned',
       3 => 'skinning',
     ),
-    479 => 
+    481 => 
     array (
       0 => 'slipmat',
       1 => 'slipmats',
     ),
-    480 => 
+    482 => 
     array (
       0 => 'soundpost',
       1 => 'soundposts',
     ),
-    481 => 
+    483 => 
     array (
       0 => 'stack',
       1 => 'stacks',
       2 => 'stacked',
       3 => 'stacking',
     ),
-    482 => 
+    484 => 
     array (
       0 => 'stop',
       1 => 'stops',
@@ -6573,163 +6794,176 @@ return array (
       5 => 'stopes',
       6 => 'stoping',
     ),
-    483 => 
+    485 => 
     array (
       0 => 'tailpiece',
       1 => 'tailpieces',
     ),
-    484 => 
+    486 => 
     array (
       0 => 'talkbox',
       1 => 'talkboxes',
     ),
-    485 => 
+    487 => 
     array (
       0 => 'throne',
       1 => 'thrones',
+      2 => 'throned',
+      3 => 'throning',
     ),
-    486 => 
+    488 => 
     array (
       0 => 'thumbpick',
       1 => 'thumbpicks',
     ),
-    487 => 
+    489 => 
     array (
       0 => 'truss',
       1 => 'trusses',
-      2 => 'trussed',
+      2 => 'trussing',
+      3 => 'trussed',
     ),
-    488 => 
+    490 => 
     array (
       0 => 'tube',
       1 => 'tubes',
       2 => 'tubing',
       3 => 'tubed',
     ),
-    489 => 
+    491 => 
     array (
       0 => 'wedge',
       1 => 'wedges',
+      2 => 'wedging',
+      3 => 'wedged',
     ),
-    490 => 
+    492 => 
     array (
       0 => 'whammy',
       1 => 'whammies',
     ),
-    491 => 
+    493 => 
     array (
       0 => 'whammybar',
       1 => 'whammybars',
     ),
-    492 => 
+    494 => 
     array (
       0 => 'acappella',
       1 => 'acapella',
     ),
-    493 => 
+    495 => 
     array (
       0 => 'alternative',
       1 => 'alternatives',
     ),
-    494 => 
+    496 => 
     array (
       0 => 'barbershop',
       1 => 'barbershops',
     ),
-    495 => 
+    497 => 
     array (
       0 => 'blues',
       1 => 'blue',
-      2 => 'bluing',
+      2 => 'blued',
+      3 => 'blueing',
+      4 => 'bluing',
     ),
-    496 => 
+    498 => 
     array (
       0 => 'bossanova',
       1 => 'bossa',
     ),
-    497 => 
+    499 => 
     array (
       0 => 'cabaret',
       1 => 'cabarets',
     ),
-    498 => 
+    500 => 
     array (
       0 => 'country',
       1 => 'countries',
     ),
-    499 => 
+    501 => 
     array (
       0 => 'cumbia',
       1 => 'cumbias',
     ),
-    500 => 
+    502 => 
     array (
       0 => 'disco',
-      1 => 'discos',
+      1 => 'discoed',
+      2 => 'discoing',
+      3 => 'discos',
     ),
-    501 => 
+    503 => 
     array (
       0 => 'drill',
       1 => 'drilling',
       2 => 'drills',
       3 => 'drilled',
     ),
-    502 => 
+    504 => 
     array (
       0 => 'drumandbass',
       1 => 'drumnbass',
       2 => 'dnb',
     ),
-    503 => 
+    505 => 
     array (
       0 => 'dub',
       1 => 'dubbed',
       2 => 'dubbing',
       3 => 'dubs',
     ),
-    504 => 
+    506 => 
     array (
       0 => 'electronic',
       1 => 'electronics',
     ),
-    505 => 
+    507 => 
     array (
       0 => 'folk',
       1 => 'folks',
     ),
-    506 => 
+    508 => 
     array (
       0 => 'funk',
       1 => 'funks',
       2 => 'funking',
       3 => 'funked',
     ),
-    507 => 
+    509 => 
     array (
       0 => 'fusion',
       1 => 'fusions',
     ),
-    508 => 
+    510 => 
     array (
       0 => 'gabba',
       1 => 'gabber',
     ),
-    509 => 
+    511 => 
     array (
       0 => 'garage',
-      1 => 'garages',
+      1 => 'garaged',
+      2 => 'garaging',
+      3 => 'garages',
     ),
-    510 => 
+    512 => 
     array (
       0 => 'gospel',
       1 => 'gospels',
     ),
-    511 => 
+    513 => 
     array (
       0 => 'grime',
       1 => 'grimes',
+      2 => 'grimed',
+      3 => 'griming',
     ),
-    512 => 
+    514 => 
     array (
       0 => 'house',
       1 => 'houses',
@@ -6737,54 +6971,60 @@ return array (
       3 => 'housed',
       4 => 'housings',
     ),
-    513 => 
+    515 => 
     array (
       0 => 'indie',
       1 => 'indies',
     ),
-    514 => 
+    516 => 
     array (
       0 => 'industrial',
       1 => 'industrials',
     ),
-    515 => 
+    517 => 
     array (
       0 => 'jazz',
       1 => 'jazzed',
       2 => 'jazzing',
     ),
-    516 => 
+    518 => 
     array (
       0 => 'jungle',
       1 => 'jungles',
     ),
-    517 => 
+    519 => 
     array (
       0 => 'lounge',
-      1 => 'lounges',
+      1 => 'lounged',
+      2 => 'lounging',
+      3 => 'lounges',
     ),
-    518 => 
+    520 => 
     array (
       0 => 'mariachi',
       1 => 'mariachis',
     ),
-    519 => 
+    521 => 
     array (
       0 => 'medieval',
       1 => 'mediaeval',
     ),
-    520 => 
+    522 => 
     array (
       0 => 'metal',
-      1 => 'metals',
+      1 => 'metaled',
+      2 => 'metaling',
+      3 => 'metalled',
+      4 => 'metalling',
+      5 => 'metals',
     ),
-    521 => 
+    523 => 
     array (
       0 => 'prog',
       1 => 'progressive',
       2 => 'progressives',
     ),
-    522 => 
+    524 => 
     array (
       0 => 'psychedelia',
       1 => 'psych',
@@ -6792,24 +7032,24 @@ return array (
       3 => 'psyching',
       4 => 'psychs',
     ),
-    523 => 
+    525 => 
     array (
       0 => 'psychedelic',
       1 => 'psychedelics',
     ),
-    524 => 
+    526 => 
     array (
       0 => 'randb',
       1 => 'rnb',
     ),
-    525 => 
+    527 => 
     array (
       0 => 'rap',
       1 => 'rapping',
       2 => 'raps',
       3 => 'rapped',
     ),
-    526 => 
+    528 => 
     array (
       0 => 'rave',
       1 => 'raving',
@@ -6817,36 +7057,36 @@ return array (
       3 => 'ravings',
       4 => 'raved',
     ),
-    527 => 
+    529 => 
     array (
       0 => 'rock',
       1 => 'rocks',
       2 => 'rocking',
       3 => 'rocked',
     ),
-    528 => 
+    530 => 
     array (
       0 => 'rockandroll',
       1 => 'rocknroll',
     ),
-    529 => 
+    531 => 
     array (
       0 => 'shoegaze',
       1 => 'shoegazing',
     ),
-    530 => 
+    532 => 
     array (
       0 => 'soul',
       1 => 'souls',
     ),
-    531 => 
+    533 => 
     array (
       0 => 'surf',
       1 => 'surfing',
       2 => 'surfed',
       3 => 'surfs',
     ),
-    532 => 
+    534 => 
     array (
       0 => 'thrash',
       1 => 'thrashing',
@@ -6854,12 +7094,14 @@ return array (
       3 => 'thrashes',
       4 => 'thrashings',
     ),
-    533 => 
+    535 => 
     array (
       0 => 'trance',
-      1 => 'trances',
+      1 => 'tranced',
+      2 => 'trancing',
+      3 => 'trances',
     ),
-    534 => 
+    536 => 
     array (
       0 => 'trap',
       1 => 'trapped',
@@ -6867,111 +7109,118 @@ return array (
       3 => 'trapping',
       4 => 'trappings',
     ),
-    535 => 
+    537 => 
     array (
       0 => 'acid',
       1 => 'acids',
     ),
-    536 => 
+    538 => 
     array (
       0 => 'baggy',
       1 => 'baggies',
     ),
-    537 => 
+    539 => 
     array (
       0 => 'bassline',
       1 => 'basslines',
     ),
-    538 => 
-    array (
-      0 => 'bounce',
-      1 => 'bounces',
-    ),
-    539 => 
-    array (
-      0 => 'chamber',
-      1 => 'chambers',
-      2 => 'chambered',
-    ),
     540 => 
     array (
-      0 => 'dance',
-      1 => 'dances',
+      0 => 'bounce',
+      1 => 'bouncing',
+      2 => 'bounced',
+      3 => 'bounces',
     ),
     541 => 
+    array (
+      0 => 'chamber',
+      1 => 'chambering',
+      2 => 'chambers',
+      3 => 'chambered',
+    ),
+    542 => 
+    array (
+      0 => 'dance',
+      1 => 'dancing',
+      2 => 'danced',
+      3 => 'dances',
+    ),
+    543 => 
     array (
       0 => 'doom',
       1 => 'doomed',
       2 => 'dooms',
       3 => 'dooming',
     ),
-    542 => 
+    544 => 
     array (
       0 => 'glitch',
       1 => 'glitches',
     ),
-    543 => 
+    545 => 
     array (
       0 => 'hillbilly',
       1 => 'hillbillies',
     ),
-    544 => 
+    546 => 
     array (
       0 => 'noise',
-      1 => 'noises',
+      1 => 'noised',
+      2 => 'noising',
+      3 => 'noises',
     ),
-    545 => 
+    547 => 
     array (
       0 => 'novelty',
       1 => 'novelties',
     ),
-    546 => 
+    548 => 
     array (
       0 => 'outlaw',
       1 => 'outlaws',
       2 => 'outlawed',
       3 => 'outlawing',
     ),
-    547 => 
+    549 => 
     array (
       0 => 'rebetiko',
       1 => 'rembetiko',
     ),
-    548 => 
+    550 => 
     array (
       0 => 'romantic',
       1 => 'romantics',
     ),
-    549 => 
+    551 => 
     array (
       0 => 'roots',
       1 => 'root',
       2 => 'rooting',
       3 => 'rooted',
     ),
-    550 => 
+    552 => 
     array (
       0 => 'stoner',
       1 => 'stoners',
     ),
-    551 => 
+    553 => 
     array (
       0 => 'stride',
       1 => 'strides',
       2 => 'strode',
       3 => 'striding',
     ),
-    552 => 
+    554 => 
     array (
       0 => 'western',
       1 => 'westerns',
     ),
-    553 => 
+    555 => 
     array (
       0 => 'world',
       1 => 'worlds',
     ),
-    554 => 
+    556 => 
     array (
       0 => 'worship',
       1 => 'worshipped',
@@ -6980,71 +7229,71 @@ return array (
       4 => 'worshiped',
       5 => 'worshiping',
     ),
-    555 => 
+    557 => 
     array (
       0 => 'act',
       1 => 'acts',
       2 => 'acting',
       3 => 'acted',
     ),
-    556 => 
+    558 => 
     array (
       0 => 'afterparty',
       1 => 'afterparties',
     ),
-    557 => 
+    559 => 
     array (
       0 => 'amphitheatre',
       1 => 'amphitheatres',
       2 => 'amphitheater',
       3 => 'amphitheaters',
     ),
-    558 => 
+    560 => 
     array (
       0 => 'applause',
       1 => 'applauses',
     ),
-    559 => 
+    561 => 
     array (
       0 => 'arena',
       1 => 'arenas',
     ),
-    560 => 
+    562 => 
     array (
       0 => 'audience',
       1 => 'audiences',
     ),
-    561 => 
+    563 => 
     array (
       0 => 'audition',
       1 => 'auditions',
       2 => 'auditioning',
       3 => 'auditioned',
     ),
-    562 => 
+    564 => 
     array (
       0 => 'auditorium',
       1 => 'auditoriums',
       2 => 'auditoria',
     ),
-    563 => 
+    565 => 
     array (
       0 => 'autograph',
       1 => 'autographs',
       2 => 'autographed',
       3 => 'autographing',
     ),
-    564 => 
+    566 => 
     array (
       0 => 'bandstand',
       1 => 'bandstands',
     ),
-    565 => 
+    567 => 
     array (
       0 => 'barrier',
       1 => 'barriers',
     ),
-    566 => 
+    568 => 
     array (
       0 => 'benefit',
       1 => 'benefits',
@@ -7053,7 +7302,7 @@ return array (
       4 => 'benefitted',
       5 => 'benefitting',
     ),
-    567 => 
+    569 => 
     array (
       0 => 'bill',
       1 => 'bills',
@@ -7061,304 +7310,308 @@ return array (
       3 => 'billings',
       4 => 'billed',
     ),
-    568 => 
+    570 => 
     array (
       0 => 'boxoffice',
       1 => 'boxoffices',
     ),
-    569 => 
+    571 => 
     array (
       0 => 'busk',
       1 => 'busks',
       2 => 'busking',
       3 => 'busked',
     ),
-    570 => 
+    572 => 
     array (
       0 => 'carnival',
       1 => 'carnivals',
     ),
-    571 => 
+    573 => 
     array (
       0 => 'ceilidh',
       1 => 'ceilidhs',
     ),
-    572 => 
+    574 => 
     array (
       0 => 'cheer',
       1 => 'cheers',
       2 => 'cheering',
       3 => 'cheered',
     ),
-    573 => 
+    575 => 
     array (
       0 => 'club',
       1 => 'clubs',
       2 => 'clubbing',
       3 => 'clubbed',
     ),
-    574 => 
+    576 => 
     array (
       0 => 'comeback',
       1 => 'comebacks',
     ),
-    575 => 
+    577 => 
     array (
       0 => 'concert',
       1 => 'concerts',
-      2 => 'concerted',
+      2 => 'concerting',
+      3 => 'concerted',
     ),
-    576 => 
+    578 => 
     array (
       0 => 'concerthall',
       1 => 'concerthalls',
     ),
-    577 => 
+    579 => 
     array (
       0 => 'crowd',
       1 => 'crowds',
       2 => 'crowded',
       3 => 'crowding',
     ),
-    578 => 
+    580 => 
     array (
       0 => 'crowdsurf',
       1 => 'crowdsurfing',
     ),
-    579 => 
+    581 => 
     array (
       0 => 'date',
       1 => 'dating',
       2 => 'dates',
       3 => 'dated',
     ),
-    580 => 
+    582 => 
     array (
       0 => 'dressingroom',
       1 => 'dressingrooms',
     ),
-    581 => 
+    583 => 
     array (
       0 => 'eisteddfod',
       1 => 'eisteddfods',
       2 => 'eisteddfodau',
     ),
-    582 => 
+    584 => 
     array (
       0 => 'encore',
       1 => 'encores',
+      2 => 'encored',
+      3 => 'encoring',
     ),
-    583 => 
+    585 => 
     array (
       0 => 'fest',
       1 => 'fests',
     ),
-    584 => 
+    586 => 
     array (
       0 => 'festival',
       1 => 'festivals',
     ),
-    585 => 
+    587 => 
     array (
       0 => 'flyer',
       1 => 'flyers',
       2 => 'fliers',
       3 => 'flier',
     ),
-    586 => 
+    588 => 
     array (
       0 => 'gala',
       1 => 'galas',
     ),
-    587 => 
+    589 => 
     array (
       0 => 'gig',
       1 => 'gigs',
       2 => 'gigging',
       3 => 'gigged',
     ),
-    588 => 
+    590 => 
     array (
       0 => 'greenroom',
       1 => 'greenrooms',
     ),
-    589 => 
+    591 => 
     array (
       0 => 'guestlist',
       1 => 'guestlists',
     ),
-    590 => 
+    592 => 
     array (
       0 => 'headline',
       1 => 'headlines',
       2 => 'headlining',
       3 => 'headlined',
     ),
-    591 => 
+    593 => 
     array (
       0 => 'headliner',
       1 => 'headliners',
     ),
-    592 => 
+    594 => 
     array (
       0 => 'heckle',
       1 => 'heckles',
       2 => 'heckling',
       3 => 'heckled',
     ),
-    593 => 
+    595 => 
     array (
       0 => 'heckler',
       1 => 'hecklers',
     ),
-    594 => 
+    596 => 
     array (
       0 => 'hootenanny',
       1 => 'hootenannies',
     ),
-    595 => 
+    597 => 
     array (
       0 => 'jam',
       1 => 'jams',
       2 => 'jamming',
       3 => 'jammed',
     ),
-    596 => 
+    598 => 
     array (
       0 => 'jamsession',
       1 => 'jamsessions',
     ),
-    597 => 
+    599 => 
     array (
       0 => 'lineup',
       1 => 'lineups',
     ),
-    598 => 
+    600 => 
     array (
       0 => 'livestream',
       1 => 'livestreams',
     ),
-    599 => 
+    601 => 
     array (
       0 => 'mainstage',
       1 => 'mainstages',
     ),
-    600 => 
+    602 => 
     array (
       0 => 'marquee',
       1 => 'marquees',
     ),
-    601 => 
+    603 => 
     array (
       0 => 'matinee',
       1 => 'matinees',
     ),
-    602 => 
+    604 => 
     array (
       0 => 'meetandgreet',
       1 => 'meetandgreets',
     ),
-    603 => 
+    605 => 
     array (
       0 => 'merchandise',
-      1 => 'merchandising',
+      1 => 'merchandised',
+      2 => 'merchandising',
     ),
-    604 => 
+    606 => 
     array (
       0 => 'moshpit',
       1 => 'moshpits',
     ),
-    605 => 
+    607 => 
     array (
       0 => 'nightclub',
       1 => 'nightclubs',
       2 => 'nightclubbing',
     ),
-    606 => 
+    608 => 
     array (
       0 => 'opener',
       1 => 'openers',
     ),
-    607 => 
+    609 => 
     array (
       0 => 'openmic',
       1 => 'openmics',
     ),
-    608 => 
+    610 => 
     array (
       0 => 'operahouse',
       1 => 'operahouses',
     ),
-    609 => 
+    611 => 
     array (
       0 => 'ovation',
       1 => 'ovations',
     ),
-    610 => 
+    612 => 
     array (
       0 => 'performance',
       1 => 'performances',
     ),
-    611 => 
+    613 => 
     array (
       0 => 'poster',
       1 => 'posters',
     ),
-    612 => 
+    614 => 
     array (
       0 => 'premiere',
       1 => 'premieres',
       2 => 'premiered',
       3 => 'premiering',
     ),
-    613 => 
+    615 => 
     array (
       0 => 'prom',
       1 => 'proms',
     ),
-    614 => 
+    616 => 
     array (
       0 => 'recital',
       1 => 'recitals',
     ),
-    615 => 
+    617 => 
     array (
       0 => 'rehearsal',
       1 => 'rehearsals',
     ),
-    616 => 
+    618 => 
     array (
       0 => 'residency',
       1 => 'residencies',
     ),
-    617 => 
+    619 => 
     array (
       0 => 'reunion',
       1 => 'reunions',
     ),
-    618 => 
+    620 => 
     array (
       0 => 'rider',
       1 => 'riders',
     ),
-    619 => 
+    621 => 
     array (
       0 => 'sellout',
       1 => 'sellouts',
     ),
-    620 => 
+    622 => 
     array (
       0 => 'set',
       1 => 'sets',
       2 => 'setting',
       3 => 'settings',
     ),
-    621 => 
+    623 => 
     array (
       0 => 'setlist',
       1 => 'setlists',
     ),
-    622 => 
+    624 => 
     array (
       0 => 'show',
       1 => 'shows',
@@ -7366,277 +7619,278 @@ return array (
       3 => 'showing',
       4 => 'showings',
     ),
-    623 => 
+    625 => 
     array (
       0 => 'showcase',
       1 => 'showcases',
       2 => 'showcasing',
       3 => 'showcased',
     ),
-    624 => 
+    626 => 
     array (
       0 => 'singsong',
       1 => 'singsongs',
     ),
-    625 => 
+    627 => 
     array (
       0 => 'soiree',
       1 => 'soirees',
     ),
-    626 => 
+    628 => 
     array (
       0 => 'soundcheck',
       1 => 'soundchecks',
     ),
-    627 => 
+    629 => 
     array (
       0 => 'stadium',
       1 => 'stadiums',
       2 => 'stadia',
     ),
-    628 => 
+    630 => 
     array (
       0 => 'stage',
       1 => 'stages',
       2 => 'staged',
       3 => 'staging',
     ),
-    629 => 
+    631 => 
     array (
       0 => 'stagedive',
       1 => 'stagedives',
       2 => 'stagediving',
     ),
-    630 => 
+    632 => 
     array (
       0 => 'support',
       1 => 'supporting',
       2 => 'supported',
       3 => 'supports',
     ),
-    631 => 
+    633 => 
     array (
       0 => 'talentshow',
       1 => 'talentshows',
     ),
-    632 => 
+    634 => 
     array (
       0 => 'theatre',
       1 => 'theater',
       2 => 'theatres',
       3 => 'theaters',
     ),
-    633 => 
+    635 => 
     array (
       0 => 'ticket',
       1 => 'tickets',
       2 => 'ticketed',
       3 => 'ticketing',
     ),
-    634 => 
+    636 => 
     array (
       0 => 'tour',
       1 => 'tours',
       2 => 'touring',
       3 => 'toured',
     ),
-    635 => 
+    637 => 
     array (
       0 => 'tourbus',
       1 => 'tourbuses',
     ),
-    636 => 
+    638 => 
     array (
       0 => 'tributeact',
       1 => 'tributeacts',
     ),
-    637 => 
+    639 => 
     array (
       0 => 'unplugged',
       1 => 'unplug',
       2 => 'unplugging',
     ),
-    638 => 
+    640 => 
     array (
       0 => 'venue',
       1 => 'venues',
     ),
-    639 => 
+    641 => 
     array (
       0 => 'wristband',
       1 => 'wristbands',
     ),
-    640 => 
+    642 => 
     array (
       0 => 'aftershow',
       1 => 'aftershows',
     ),
-    641 => 
+    643 => 
     array (
       0 => 'clubnight',
       1 => 'clubnights',
     ),
-    642 => 
+    644 => 
     array (
       0 => 'curfew',
       1 => 'curfews',
     ),
-    643 => 
+    645 => 
     array (
       0 => 'feis',
       1 => 'feiseanna',
     ),
-    644 => 
+    646 => 
     array (
       0 => 'fleadh',
       1 => 'fleadhs',
     ),
-    645 => 
+    647 => 
     array (
       0 => 'laminate',
       1 => 'laminated',
       2 => 'laminating',
       3 => 'laminates',
     ),
-    646 => 
+    648 => 
     array (
       0 => 'leg',
       1 => 'legs',
       2 => 'legged',
-      3 => 'leggings',
-      4 => 'leggins',
-      5 => 'legging',
-      6 => 'leges',
+      3 => 'leges',
     ),
-    647 => 
+    649 => 
     array (
       0 => 'lightshow',
       1 => 'lightshows',
     ),
-    648 => 
+    650 => 
     array (
       0 => 'masterclass',
       1 => 'masterclasses',
     ),
-    649 => 
+    651 => 
     array (
       0 => 'pit',
       1 => 'pits',
       2 => 'pitted',
       3 => 'pitting',
     ),
-    650 => 
+    652 => 
     array (
       0 => 'stagedoor',
       1 => 'stagedoors',
     ),
-    651 => 
+    653 => 
     array (
       0 => 'warmup',
       1 => 'warmups',
     ),
-    652 => 
+    654 => 
     array (
       0 => 'backingband',
       1 => 'backingbands',
     ),
-    653 => 
+    655 => 
     array (
       0 => 'band',
       1 => 'bands',
       2 => 'banded',
       3 => 'banding',
     ),
-    654 => 
+    656 => 
     array (
       0 => 'bigband',
       1 => 'bigbands',
     ),
-    655 => 
+    657 => 
     array (
       0 => 'boyband',
       1 => 'boybands',
     ),
-    656 => 
+    658 => 
     array (
       0 => 'brass',
       1 => 'brasses',
     ),
-    657 => 
+    659 => 
     array (
       0 => 'brassband',
       1 => 'brassbands',
     ),
-    658 => 
+    660 => 
     array (
       0 => 'chamberorchestra',
       1 => 'chamberorchestras',
     ),
-    659 => 
+    661 => 
     array (
       0 => 'choir',
       1 => 'choirs',
+      2 => 'choired',
+      3 => 'choiring',
     ),
-    660 => 
+    662 => 
     array (
       0 => 'chorus',
-      1 => 'choruses',
+      1 => 'chorused',
+      2 => 'chorusing',
+      3 => 'choruses',
     ),
-    661 => 
+    663 => 
     array (
       0 => 'combo',
       1 => 'combos',
     ),
-    662 => 
+    664 => 
     array (
       0 => 'consort',
       1 => 'consorts',
       2 => 'consorting',
       3 => 'consorted',
     ),
-    663 => 
+    665 => 
     array (
       0 => 'coverband',
       1 => 'coverbands',
       2 => 'coversband',
       3 => 'coversbands',
     ),
-    664 => 
+    666 => 
     array (
       0 => 'duet',
       1 => 'duets',
     ),
-    665 => 
+    667 => 
     array (
       0 => 'duo',
       1 => 'duos',
     ),
-    666 => 
+    668 => 
     array (
       0 => 'ensemble',
       1 => 'ensembles',
     ),
-    667 => 
+    669 => 
     array (
       0 => 'gamelan',
       1 => 'gamelans',
     ),
-    668 => 
+    670 => 
     array (
       0 => 'girlband',
       1 => 'girlbands',
     ),
-    669 => 
+    671 => 
     array (
       0 => 'girlgroup',
       1 => 'girlgroups',
     ),
-    670 => 
+    672 => 
     array (
       0 => 'gleeclub',
       1 => 'gleeclubs',
     ),
-    671 => 
+    673 => 
     array (
       0 => 'group',
       1 => 'groups',
@@ -7644,1286 +7898,1298 @@ return array (
       3 => 'grouped',
       4 => 'groupings',
     ),
-    672 => 
+    674 => 
     array (
       0 => 'houseband',
       1 => 'housebands',
     ),
-    673 => 
+    675 => 
     array (
       0 => 'jazzband',
       1 => 'jazzbands',
     ),
-    674 => 
+    676 => 
     array (
       0 => 'marchingband',
       1 => 'marchingbands',
     ),
-    675 => 
+    677 => 
     array (
       0 => 'militaryband',
       1 => 'militarybands',
     ),
-    676 => 
+    678 => 
     array (
       0 => 'nonet',
       1 => 'nonets',
     ),
-    677 => 
+    679 => 
     array (
       0 => 'octet',
       1 => 'octets',
     ),
-    678 => 
+    680 => 
     array (
       0 => 'onemanband',
       1 => 'onemanbands',
     ),
-    679 => 
+    681 => 
     array (
       0 => 'orchestra',
       1 => 'orchestras',
     ),
-    680 => 
+    682 => 
     array (
       0 => 'outfit',
       1 => 'outfits',
       2 => 'outfitted',
       3 => 'outfitting',
     ),
-    681 => 
+    683 => 
     array (
       0 => 'percussion',
       1 => 'percussions',
     ),
-    682 => 
+    684 => 
     array (
       0 => 'philharmonic',
       1 => 'philharmonics',
     ),
-    683 => 
+    685 => 
     array (
       0 => 'pipeband',
       1 => 'pipebands',
     ),
-    684 => 
+    686 => 
     array (
       0 => 'quartet',
       1 => 'quartets',
     ),
-    685 => 
+    687 => 
     array (
       0 => 'quintet',
       1 => 'quintets',
     ),
-    686 => 
+    688 => 
     array (
       0 => 'septet',
       1 => 'septets',
     ),
-    687 => 
+    689 => 
     array (
       0 => 'sextet',
       1 => 'sextets',
     ),
-    688 => 
+    690 => 
     array (
       0 => 'showband',
       1 => 'showbands',
     ),
-    689 => 
+    691 => 
     array (
       0 => 'sinfonietta',
       1 => 'sinfoniettas',
     ),
-    690 => 
+    692 => 
     array (
       0 => 'steelband',
       1 => 'steelbands',
     ),
-    691 => 
+    693 => 
     array (
       0 => 'supergroup',
       1 => 'supergroups',
     ),
-    692 => 
+    694 => 
     array (
       0 => 'tributeband',
       1 => 'tributebands',
     ),
-    693 => 
+    695 => 
     array (
       0 => 'trio',
       1 => 'trios',
     ),
-    694 => 
+    696 => 
     array (
       0 => 'troupe',
       1 => 'troupes',
     ),
-    695 => 
+    697 => 
     array (
       0 => 'woodwind',
       1 => 'woodwinds',
     ),
-    696 => 
+    698 => 
     array (
       0 => 'banda',
       1 => 'bandas',
     ),
-    697 => 
+    699 => 
     array (
       0 => 'camerata',
       1 => 'cameratas',
     ),
-    698 => 
+    700 => 
     array (
       0 => 'charanga',
       1 => 'charangas',
     ),
-    699 => 
+    701 => 
     array (
       0 => 'collective',
       1 => 'collectives',
     ),
-    700 => 
+    702 => 
     array (
       0 => 'conjunto',
       1 => 'conjuntos',
     ),
-    701 => 
+    703 => 
     array (
       0 => 'danceband',
       1 => 'dancebands',
     ),
-    702 => 
+    704 => 
     array (
       0 => 'dectet',
       1 => 'dectets',
     ),
-    703 => 
+    705 => 
     array (
       0 => 'horns',
       1 => 'horn',
       2 => 'horned',
       3 => 'horning',
     ),
-    704 => 
+    706 => 
     array (
       0 => 'jugband',
       1 => 'jugbands',
     ),
-    705 => 
+    707 => 
     array (
       0 => 'posse',
       1 => 'posses',
     ),
-    706 => 
+    708 => 
     array (
       0 => 'rhythmsection',
       1 => 'rhythmsections',
     ),
-    707 => 
+    709 => 
     array (
       0 => 'schola',
       1 => 'scholas',
     ),
-    708 => 
+    710 => 
     array (
       0 => 'section',
       1 => 'sections',
       2 => 'sectioned',
       3 => 'sectioning',
     ),
-    709 => 
+    711 => 
     array (
       0 => 'silverband',
       1 => 'silverbands',
     ),
-    710 => 
+    712 => 
     array (
       0 => 'tentet',
       1 => 'tentets',
     ),
-    711 => 
+    713 => 
     array (
       0 => 'accordion',
       1 => 'accordions',
     ),
-    712 => 
+    714 => 
     array (
       0 => 'alphorn',
       1 => 'alphorns',
     ),
-    713 => 
+    715 => 
     array (
       0 => 'altosax',
       1 => 'altosaxes',
     ),
-    714 => 
+    716 => 
     array (
       0 => 'autoharp',
       1 => 'autoharps',
     ),
-    715 => 
+    717 => 
     array (
       0 => 'bagpipe',
       1 => 'bagpipes',
     ),
-    716 => 
+    718 => 
     array (
       0 => 'balalaika',
       1 => 'balalaikas',
     ),
-    717 => 
+    719 => 
     array (
       0 => 'bandoneon',
       1 => 'bandoneons',
     ),
-    718 => 
+    720 => 
     array (
       0 => 'banjo',
       1 => 'banjos',
     ),
-    719 => 
+    721 => 
     array (
       0 => 'banjolele',
       1 => 'banjoleles',
     ),
-    720 => 
+    722 => 
     array (
       0 => 'barrelorgan',
       1 => 'barrelorgans',
     ),
-    721 => 
+    723 => 
     array (
       0 => 'bassdrum',
       1 => 'bassdrums',
     ),
-    722 => 
+    724 => 
     array (
       0 => 'bassguitar',
       1 => 'bassguitars',
     ),
-    723 => 
+    725 => 
     array (
       0 => 'bass',
       1 => 'basses',
     ),
-    724 => 
+    726 => 
     array (
       0 => 'bassoon',
       1 => 'bassoons',
     ),
-    725 => 
+    727 => 
     array (
       0 => 'bell',
       1 => 'bells',
-      2 => 'belling',
+      2 => 'belled',
+      3 => 'belling',
     ),
-    726 => 
+    728 => 
     array (
       0 => 'bodhran',
       1 => 'bodhrans',
     ),
-    727 => 
+    729 => 
     array (
       0 => 'bongo',
       1 => 'bongos',
       2 => 'bongoes',
     ),
-    728 => 
+    730 => 
     array (
       0 => 'bouzouki',
       1 => 'bouzoukis',
     ),
-    729 => 
+    731 => 
     array (
       0 => 'bugle',
       1 => 'bugles',
+      2 => 'bugled',
+      3 => 'bugling',
     ),
-    730 => 
+    732 => 
     array (
       0 => 'cajon',
       1 => 'cajons',
       2 => 'cajones',
     ),
-    731 => 
+    733 => 
     array (
       0 => 'calliope',
       1 => 'calliopes',
     ),
-    732 => 
+    734 => 
     array (
       0 => 'carillon',
       1 => 'carillons',
     ),
-    733 => 
+    735 => 
     array (
       0 => 'castanet',
       1 => 'castanets',
     ),
-    734 => 
+    736 => 
     array (
       0 => 'celesta',
       1 => 'celestas',
     ),
-    735 => 
+    737 => 
     array (
       0 => 'cello',
       1 => 'cellos',
       2 => 'celli',
     ),
-    736 => 
+    738 => 
     array (
       0 => 'charango',
       1 => 'charangos',
     ),
-    737 => 
+    739 => 
     array (
       0 => 'chime',
       1 => 'chimes',
       2 => 'chiming',
       3 => 'chimed',
     ),
-    738 => 
+    740 => 
     array (
       0 => 'cimbalom',
       1 => 'cimbaloms',
     ),
-    739 => 
+    741 => 
     array (
       0 => 'clarinet',
       1 => 'clarinets',
     ),
-    740 => 
+    742 => 
     array (
       0 => 'clave',
       1 => 'claves',
     ),
-    741 => 
+    743 => 
     array (
       0 => 'clavichord',
       1 => 'clavichords',
     ),
-    742 => 
+    744 => 
     array (
       0 => 'concertina',
       1 => 'concertinas',
     ),
-    743 => 
+    745 => 
     array (
       0 => 'conch',
       1 => 'conches',
     ),
-    744 => 
+    746 => 
     array (
       0 => 'contrabass',
       1 => 'contrabasses',
     ),
-    745 => 
+    747 => 
     array (
       0 => 'contrabassoon',
       1 => 'contrabassoons',
     ),
-    746 => 
+    748 => 
     array (
       0 => 'coranglais',
       1 => 'corsanglais',
     ),
-    747 => 
+    749 => 
     array (
       0 => 'cornet',
       1 => 'cornets',
     ),
-    748 => 
+    750 => 
     array (
       0 => 'cowbell',
       1 => 'cowbells',
     ),
-    749 => 
+    751 => 
     array (
       0 => 'crumhorn',
       1 => 'crumhorns',
       2 => 'krummhorn',
       3 => 'krummhorns',
     ),
-    750 => 
+    752 => 
     array (
       0 => 'cymbal',
       1 => 'cymbals',
     ),
-    751 => 
+    753 => 
     array (
       0 => 'didgeridoo',
       1 => 'didgeridoos',
       2 => 'didjeridu',
       3 => 'didjeridus',
     ),
-    752 => 
+    754 => 
     array (
       0 => 'djembe',
       1 => 'djembes',
     ),
-    753 => 
+    755 => 
     array (
       0 => 'doublebass',
       1 => 'doublebasses',
     ),
-    754 => 
+    756 => 
     array (
       0 => 'drummachine',
       1 => 'drummachines',
     ),
-    755 => 
+    757 => 
     array (
       0 => 'drum',
       1 => 'drums',
       2 => 'drumming',
       3 => 'drummed',
     ),
-    756 => 
+    758 => 
     array (
       0 => 'dulcimer',
       1 => 'dulcimers',
     ),
-    757 => 
+    759 => 
     array (
       0 => 'electricguitar',
       1 => 'electricguitars',
     ),
-    758 => 
+    760 => 
     array (
       0 => 'erhu',
       1 => 'erhus',
     ),
-    759 => 
+    761 => 
     array (
       0 => 'euphonium',
       1 => 'euphoniums',
     ),
-    760 => 
+    762 => 
     array (
       0 => 'fiddle',
       1 => 'fiddles',
+      2 => 'fiddling',
+      3 => 'fiddled',
     ),
-    761 => 
+    763 => 
     array (
       0 => 'fife',
       1 => 'fifes',
     ),
-    762 => 
+    764 => 
     array (
       0 => 'flageolet',
       1 => 'flageolets',
     ),
-    763 => 
+    765 => 
     array (
       0 => 'flugelhorn',
       1 => 'flugelhorns',
     ),
-    764 => 
+    766 => 
     array (
       0 => 'flute',
       1 => 'flutes',
-      2 => 'fluted',
+      2 => 'fluting',
+      3 => 'fluted',
     ),
-    765 => 
+    767 => 
     array (
       0 => 'fortepiano',
       1 => 'fortepianos',
     ),
-    766 => 
+    768 => 
     array (
       0 => 'frenchhorn',
       1 => 'frenchhorns',
     ),
-    767 => 
+    769 => 
     array (
       0 => 'glockenspiel',
       1 => 'glockenspiels',
     ),
-    768 => 
+    770 => 
     array (
       0 => 'gong',
       1 => 'gongs',
-      2 => 'gonging',
+      2 => 'gonged',
+      3 => 'gonging',
     ),
-    769 => 
+    771 => 
     array (
       0 => 'guitar',
       1 => 'guitars',
     ),
-    770 => 
+    772 => 
     array (
       0 => 'handbell',
       1 => 'handbells',
     ),
-    771 => 
+    773 => 
     array (
       0 => 'handpan',
       1 => 'handpans',
     ),
-    772 => 
+    774 => 
     array (
       0 => 'harmonica',
       1 => 'harmonicas',
     ),
-    773 => 
+    775 => 
     array (
       0 => 'harmonium',
       1 => 'harmoniums',
     ),
-    774 => 
+    776 => 
     array (
       0 => 'harp',
       1 => 'harps',
-      2 => 'harping',
+      2 => 'harped',
+      3 => 'harping',
     ),
-    775 => 
+    777 => 
     array (
       0 => 'harpsichord',
       1 => 'harpsichords',
     ),
-    776 => 
+    778 => 
     array (
       0 => 'hihat',
       1 => 'hihats',
     ),
-    777 => 
+    779 => 
     array (
       0 => 'hurdygurdy',
       1 => 'hurdygurdies',
     ),
-    778 => 
+    780 => 
     array (
       0 => 'jewsharp',
       1 => 'jewsharps',
       2 => 'jawharp',
       3 => 'jawharps',
     ),
-    779 => 
+    781 => 
     array (
       0 => 'kalimba',
       1 => 'kalimbas',
     ),
-    780 => 
+    782 => 
     array (
       0 => 'kazoo',
       1 => 'kazoos',
     ),
-    781 => 
+    783 => 
     array (
       0 => 'kettledrum',
       1 => 'kettledrums',
     ),
-    782 => 
+    784 => 
     array (
       0 => 'keyboard',
       1 => 'keyboards',
       2 => 'keyboarding',
     ),
-    783 => 
+    785 => 
     array (
       0 => 'keytar',
       1 => 'keytars',
     ),
-    784 => 
+    786 => 
     array (
       0 => 'kickdrum',
       1 => 'kickdrums',
     ),
-    785 => 
+    787 => 
     array (
       0 => 'kora',
       1 => 'koras',
     ),
-    786 => 
+    788 => 
     array (
       0 => 'koto',
       1 => 'kotos',
     ),
-    787 => 
+    789 => 
     array (
       0 => 'lute',
       1 => 'lutes',
     ),
-    788 => 
+    790 => 
     array (
       0 => 'lyre',
       1 => 'lyres',
     ),
-    789 => 
+    791 => 
     array (
       0 => 'mandolin',
       1 => 'mandolins',
     ),
-    790 => 
+    792 => 
     array (
       0 => 'maraca',
       1 => 'maracas',
     ),
-    791 => 
+    793 => 
     array (
       0 => 'marimba',
       1 => 'marimbas',
     ),
-    792 => 
+    794 => 
     array (
       0 => 'mbira',
       1 => 'mbiras',
     ),
-    793 => 
+    795 => 
     array (
       0 => 'melodeon',
       1 => 'melodeons',
     ),
-    794 => 
+    796 => 
     array (
       0 => 'melodica',
       1 => 'melodicas',
     ),
-    795 => 
+    797 => 
     array (
       0 => 'mouthorgan',
       1 => 'mouthorgans',
     ),
-    796 => 
+    798 => 
     array (
       0 => 'musicbox',
       1 => 'musicboxes',
     ),
-    797 => 
+    799 => 
     array (
       0 => 'oboe',
       1 => 'oboes',
     ),
-    798 => 
+    800 => 
     array (
       0 => 'ocarina',
       1 => 'ocarinas',
     ),
-    799 => 
+    801 => 
     array (
       0 => 'organ',
       1 => 'organs',
     ),
-    800 => 
+    802 => 
     array (
       0 => 'oud',
       1 => 'ouds',
     ),
-    801 => 
+    803 => 
     array (
       0 => 'panflute',
       1 => 'panflutes',
     ),
-    802 => 
+    804 => 
     array (
       0 => 'panpipe',
       1 => 'panpipes',
     ),
-    803 => 
+    805 => 
     array (
       0 => 'pennywhistle',
       1 => 'pennywhistles',
     ),
-    804 => 
+    806 => 
     array (
       0 => 'piano',
       1 => 'pianos',
     ),
-    805 => 
+    807 => 
     array (
       0 => 'pianoforte',
       1 => 'pianofortes',
     ),
-    806 => 
+    808 => 
     array (
       0 => 'pianola',
       1 => 'pianolas',
     ),
-    807 => 
+    809 => 
     array (
       0 => 'piccolo',
       1 => 'piccolos',
     ),
-    808 => 
+    810 => 
     array (
       0 => 'psaltery',
       1 => 'psalteries',
     ),
-    809 => 
+    811 => 
     array (
       0 => 'rainstick',
       1 => 'rainsticks',
     ),
-    810 => 
+    812 => 
     array (
       0 => 'rattle',
-      1 => 'rattles',
+      1 => 'rattling',
+      2 => 'rattles',
+      3 => 'rattled',
     ),
-    811 => 
+    813 => 
     array (
       0 => 'recorder',
       1 => 'recorders',
     ),
-    812 => 
+    814 => 
     array (
       0 => 'sackbut',
       1 => 'sackbuts',
     ),
-    813 => 
+    815 => 
     array (
       0 => 'sampler',
       1 => 'samplers',
     ),
-    814 => 
+    816 => 
     array (
       0 => 'sax',
       1 => 'saxes',
     ),
-    815 => 
+    817 => 
     array (
       0 => 'saxophone',
       1 => 'saxophones',
     ),
-    816 => 
+    818 => 
     array (
       0 => 'saz',
       1 => 'sazes',
     ),
-    817 => 
+    819 => 
     array (
       0 => 'serpent',
       1 => 'serpents',
     ),
-    818 => 
+    820 => 
     array (
       0 => 'shaker',
       1 => 'shakers',
     ),
-    819 => 
+    821 => 
     array (
       0 => 'shakuhachi',
       1 => 'shakuhachis',
     ),
-    820 => 
+    822 => 
     array (
       0 => 'shamisen',
       1 => 'shamisens',
     ),
-    821 => 
+    823 => 
     array (
       0 => 'shofar',
       1 => 'shofars',
     ),
-    822 => 
+    824 => 
     array (
       0 => 'sitar',
       1 => 'sitars',
     ),
-    823 => 
+    825 => 
     array (
       0 => 'sleighbell',
       1 => 'sleighbells',
     ),
-    824 => 
+    826 => 
     array (
       0 => 'snare',
       1 => 'snares',
       2 => 'snared',
       3 => 'snaring',
     ),
-    825 => 
+    827 => 
     array (
       0 => 'sousaphone',
       1 => 'sousaphones',
     ),
-    826 => 
+    828 => 
     array (
       0 => 'spinet',
       1 => 'spinets',
     ),
-    827 => 
+    829 => 
     array (
       0 => 'squeezebox',
       1 => 'squeezeboxes',
     ),
-    828 => 
+    830 => 
     array (
       0 => 'steeldrum',
       1 => 'steeldrums',
     ),
-    829 => 
+    831 => 
     array (
       0 => 'steelpan',
       1 => 'steelpans',
     ),
-    830 => 
+    832 => 
     array (
       0 => 'synth',
       1 => 'synths',
     ),
-    831 => 
+    833 => 
     array (
       0 => 'synthesiser',
       1 => 'synthesisers',
       2 => 'synthesizer',
       3 => 'synthesizers',
     ),
-    832 => 
+    834 => 
     array (
       0 => 'tabla',
       1 => 'tablas',
     ),
-    833 => 
+    835 => 
     array (
       0 => 'taiko',
       1 => 'taikos',
     ),
-    834 => 
+    836 => 
     array (
       0 => 'tambourine',
       1 => 'tambourines',
     ),
-    835 => 
+    837 => 
     array (
       0 => 'tenorsax',
       1 => 'tenorsaxes',
     ),
-    836 => 
+    838 => 
     array (
       0 => 'theremin',
       1 => 'theremins',
     ),
-    837 => 
+    839 => 
     array (
       0 => 'timbales',
       1 => 'timbale',
     ),
-    838 => 
+    840 => 
     array (
       0 => 'timpani',
       1 => 'tympani',
     ),
-    839 => 
+    841 => 
     array (
       0 => 'tinwhistle',
       1 => 'tinwhistles',
     ),
-    840 => 
+    842 => 
     array (
       0 => 'tom',
       1 => 'toms',
     ),
-    841 => 
+    843 => 
     array (
       0 => 'tomtom',
       1 => 'tomtoms',
     ),
-    842 => 
+    844 => 
     array (
       0 => 'triangle',
       1 => 'triangles',
     ),
-    843 => 
+    845 => 
     array (
       0 => 'trombone',
       1 => 'trombones',
     ),
-    844 => 
+    846 => 
     array (
       0 => 'trumpet',
       1 => 'trumpets',
       2 => 'trumpeting',
       3 => 'trumpeted',
     ),
-    845 => 
+    847 => 
     array (
       0 => 'tuba',
       1 => 'tubas',
     ),
-    846 => 
+    848 => 
     array (
       0 => 'uke',
       1 => 'ukes',
     ),
-    847 => 
+    849 => 
     array (
       0 => 'ukulele',
       1 => 'ukuleles',
       2 => 'ukelele',
       3 => 'ukeleles',
     ),
-    848 => 
+    850 => 
     array (
       0 => 'vibes',
       1 => 'vibe',
     ),
-    849 => 
+    851 => 
     array (
       0 => 'vibraphone',
       1 => 'vibraphones',
     ),
-    850 => 
+    852 => 
     array (
       0 => 'viol',
       1 => 'viols',
     ),
-    851 => 
+    853 => 
     array (
       0 => 'viola',
       1 => 'violas',
     ),
-    852 => 
+    854 => 
     array (
       0 => 'violin',
       1 => 'violins',
     ),
-    853 => 
+    855 => 
     array (
       0 => 'violoncello',
       1 => 'violoncellos',
     ),
-    854 => 
+    856 => 
     array (
       0 => 'virginal',
       1 => 'virginals',
     ),
-    855 => 
+    857 => 
     array (
       0 => 'vuvuzela',
       1 => 'vuvuzelas',
     ),
-    856 => 
+    858 => 
     array (
       0 => 'washboard',
       1 => 'washboards',
     ),
-    857 => 
+    859 => 
     array (
       0 => 'woodblock',
       1 => 'woodblocks',
     ),
-    858 => 
+    860 => 
     array (
       0 => 'xylophone',
       1 => 'xylophones',
     ),
-    859 => 
+    861 => 
     array (
       0 => 'zither',
       1 => 'zithers',
     ),
-    860 => 
+    862 => 
     array (
       0 => 'acoustic',
       1 => 'acoustics',
     ),
-    861 => 
+    863 => 
     array (
       0 => 'agogo',
       1 => 'agogos',
     ),
-    862 => 
+    864 => 
     array (
       0 => 'anvil',
       1 => 'anvils',
     ),
-    863 => 
+    865 => 
     array (
       0 => 'balafon',
       1 => 'balafons',
     ),
-    864 => 
+    866 => 
     array (
       0 => 'bansuri',
       1 => 'bansuris',
     ),
-    865 => 
+    867 => 
     array (
       0 => 'baritone',
       1 => 'baritones',
     ),
-    866 => 
+    868 => 
     array (
       0 => 'bassclarinet',
       1 => 'bassclarinets',
     ),
-    867 => 
+    869 => 
     array (
       0 => 'berimbau',
       1 => 'berimbaus',
     ),
-    868 => 
+    870 => 
     array (
       0 => 'bones',
       1 => 'bone',
       2 => 'boning',
       3 => 'boned',
     ),
-    869 => 
+    871 => 
     array (
       0 => 'cabasa',
       1 => 'cabasas',
     ),
-    870 => 
+    872 => 
     array (
       0 => 'cittern',
       1 => 'citterns',
     ),
-    871 => 
+    873 => 
     array (
       0 => 'clavinet',
       1 => 'clavinets',
     ),
-    872 => 
+    874 => 
     array (
       0 => 'cornett',
       1 => 'cornetts',
     ),
-    873 => 
+    875 => 
     array (
       0 => 'cuica',
       1 => 'cuicas',
     ),
-    874 => 
+    876 => 
     array (
       0 => 'darbuka',
       1 => 'darbukas',
       2 => 'doumbek',
       3 => 'doumbeks',
     ),
-    875 => 
+    877 => 
     array (
       0 => 'dhol',
       1 => 'dhols',
     ),
-    876 => 
+    878 => 
     array (
       0 => 'dholak',
       1 => 'dholaks',
     ),
-    877 => 
+    879 => 
     array (
       0 => 'duduk',
       1 => 'duduks',
     ),
-    878 => 
+    880 => 
     array (
       0 => 'electric',
       1 => 'electrics',
     ),
-    879 => 
+    881 => 
     array (
       0 => 'englishhorn',
       1 => 'englishhorns',
     ),
-    880 => 
+    882 => 
     array (
       0 => 'gittern',
       1 => 'gitterns',
     ),
-    881 => 
+    883 => 
     array (
       0 => 'glassharmonica',
       1 => 'glassharmonicas',
     ),
-    882 => 
+    884 => 
     array (
       0 => 'grand',
       1 => 'grands',
     ),
-    883 => 
+    885 => 
     array (
       0 => 'guiro',
       1 => 'guiros',
     ),
-    884 => 
+    886 => 
     array (
       0 => 'guzheng',
       1 => 'guzhengs',
     ),
-    885 => 
+    887 => 
     array (
       0 => 'heckelphone',
       1 => 'heckelphones',
     ),
-    886 => 
+    888 => 
     array (
       0 => 'jug',
       1 => 'jugs',
-      2 => 'jugged',
+      2 => 'jugging',
+      3 => 'jugged',
     ),
-    887 => 
+    889 => 
     array (
       0 => 'kantele',
       1 => 'kanteles',
     ),
-    888 => 
+    890 => 
     array (
       0 => 'kick',
       1 => 'kicks',
       2 => 'kicked',
       3 => 'kicking',
     ),
-    889 => 
+    891 => 
     array (
       0 => 'lapsteel',
       1 => 'lapsteels',
     ),
-    890 => 
+    892 => 
     array (
       0 => 'mandola',
       1 => 'mandolas',
     ),
-    891 => 
+    893 => 
     array (
       0 => 'mellophone',
       1 => 'mellophones',
     ),
-    892 => 
+    894 => 
     array (
       0 => 'mridangam',
       1 => 'mridangams',
     ),
-    893 => 
+    895 => 
     array (
       0 => 'musicalsaw',
       1 => 'musicalsaws',
     ),
-    894 => 
+    896 => 
     array (
       0 => 'nyckelharpa',
       1 => 'nyckelharpas',
     ),
-    895 => 
+    897 => 
     array (
       0 => 'ophicleide',
       1 => 'ophicleides',
     ),
-    896 => 
+    898 => 
     array (
       0 => 'pandeiro',
       1 => 'pandeiros',
     ),
-    897 => 
+    899 => 
     array (
       0 => 'pedalsteel',
       1 => 'pedalsteels',
     ),
-    898 => 
+    900 => 
     array (
       0 => 'pipa',
       1 => 'pipas',
     ),
-    899 => 
+    901 => 
     array (
       0 => 'pipe',
       1 => 'pipes',
       2 => 'piping',
       3 => 'piped',
     ),
-    900 => 
+    902 => 
     array (
       0 => 'posthorn',
       1 => 'posthorns',
     ),
-    901 => 
+    903 => 
     array (
       0 => 'ratchet',
-      1 => 'ratcheting',
-      2 => 'ratchets',
+      1 => 'ratcheted',
+      2 => 'ratcheting',
+      3 => 'ratchets',
     ),
-    902 => 
+    904 => 
     array (
       0 => 'rebec',
       1 => 'rebecs',
     ),
-    903 => 
+    905 => 
     array (
       0 => 'resonator',
       1 => 'resonators',
     ),
-    904 => 
+    906 => 
     array (
       0 => 'santoor',
       1 => 'santoors',
       2 => 'santur',
       3 => 'santurs',
     ),
-    905 => 
+    907 => 
     array (
       0 => 'sarangi',
       1 => 'sarangis',
     ),
-    906 => 
+    908 => 
     array (
       0 => 'sarod',
       1 => 'sarods',
       2 => 'sarodes',
     ),
-    907 => 
+    909 => 
     array (
       0 => 'saxhorn',
       1 => 'saxhorns',
     ),
-    908 => 
+    910 => 
     array (
       0 => 'shawm',
       1 => 'shawms',
     ),
-    909 => 
+    911 => 
     array (
       0 => 'shehnai',
       1 => 'shehnais',
     ),
-    910 => 
+    912 => 
     array (
       0 => 'slidewhistle',
       1 => 'slidewhistles',
     ),
-    911 => 
+    913 => 
     array (
       0 => 'spoons',
       1 => 'spoon',
       2 => 'spooning',
       3 => 'spooned',
     ),
-    912 => 
+    914 => 
     array (
       0 => 'steelguitar',
       1 => 'steelguitars',
     ),
-    913 => 
+    915 => 
     array (
       0 => 'surdo',
       1 => 'surdos',
     ),
-    914 => 
+    916 => 
     array (
       0 => 'swaneewhistle',
       1 => 'swaneewhistles',
       2 => 'swanee',
       3 => 'swanees',
     ),
-    915 => 
+    917 => 
     array (
       0 => 'syrinx',
       1 => 'syrinxes',
     ),
-    916 => 
+    918 => 
     array (
       0 => 'tabor',
       1 => 'tabors',
     ),
-    917 => 
+    919 => 
     array (
       0 => 'tamtam',
       1 => 'tamtams',
     ),
-    918 => 
+    920 => 
     array (
       0 => 'tanpura',
       1 => 'tanpuras',
@@ -8932,54 +9198,54 @@ return array (
       4 => 'tamboura',
       5 => 'tambouras',
     ),
-    919 => 
+    921 => 
     array (
       0 => 'teachest',
       1 => 'teachests',
     ),
-    920 => 
+    922 => 
     array (
       0 => 'tenorhorn',
       1 => 'tenorhorns',
     ),
-    921 => 
+    923 => 
     array (
       0 => 'theorbo',
       1 => 'theorbos',
     ),
-    922 => 
+    924 => 
     array (
       0 => 'thumbpiano',
       1 => 'thumbpianos',
     ),
-    923 => 
+    925 => 
     array (
       0 => 'timbal',
       1 => 'timbals',
     ),
-    924 => 
+    926 => 
     array (
       0 => 'upright',
       1 => 'uprights',
     ),
-    925 => 
+    927 => 
     array (
       0 => 'veena',
       1 => 'veenas',
       2 => 'vina',
       3 => 'vinas',
     ),
-    926 => 
+    928 => 
     array (
       0 => 'vihuela',
       1 => 'vihuelas',
     ),
-    927 => 
+    929 => 
     array (
       0 => 'washtub',
       1 => 'washtubs',
     ),
-    928 => 
+    930 => 
     array (
       0 => 'whip',
       1 => 'whipped',
@@ -8987,70 +9253,77 @@ return array (
       3 => 'whips',
       4 => 'whippings',
     ),
-    929 => 
+    931 => 
     array (
       0 => 'whistle',
       1 => 'whistles',
+      2 => 'whistling',
+      3 => 'whistled',
     ),
-    930 => 
+    932 => 
     array (
       0 => 'accent',
       1 => 'accents',
-      2 => 'accented',
+      2 => 'accenting',
+      3 => 'accented',
     ),
-    931 => 
+    933 => 
     array (
       0 => 'adagio',
       1 => 'adagios',
     ),
-    932 => 
+    934 => 
     array (
       0 => 'andante',
       1 => 'andantes',
     ),
-    933 => 
+    935 => 
     array (
       0 => 'crescendo',
       1 => 'crescendos',
       2 => 'crescendi',
+      3 => 'crescendoed',
+      4 => 'crescendoing',
     ),
-    934 => 
+    936 => 
     array (
       0 => 'decrescendo',
       1 => 'decrescendos',
     ),
-    935 => 
+    937 => 
     array (
       0 => 'diminuendo',
       1 => 'diminuendos',
     ),
-    936 => 
+    938 => 
     array (
       0 => 'fermata',
       1 => 'fermatas',
       2 => 'fermate',
     ),
-    937 => 
+    939 => 
     array (
       0 => 'forte',
       1 => 'fortes',
     ),
-    938 => 
+    940 => 
     array (
       0 => 'grave',
-      1 => 'graves',
+      1 => 'graved',
+      2 => 'graving',
+      3 => 'graves',
     ),
-    939 => 
+    941 => 
     array (
       0 => 'largo',
       1 => 'largos',
     ),
-    940 => 
+    942 => 
     array (
       0 => 'leggiero',
       1 => 'leggero',
     ),
-    941 => 
+    943 => 
     array (
       0 => 'fine',
       1 => 'fines',
@@ -9059,223 +9332,223 @@ return array (
       4 => 'finessing',
       5 => 'finessed',
     ),
-    942 => 
+    944 => 
     array (
       0 => 'loco',
       1 => 'locos',
     ),
-    943 => 
+    945 => 
     array (
       0 => 'ponticello',
       1 => 'sulponticello',
     ),
-    944 => 
+    946 => 
     array (
       0 => 'sordino',
       1 => 'sordini',
     ),
-    945 => 
+    947 => 
     array (
       0 => 'accompanist',
       1 => 'accompanists',
     ),
-    946 => 
+    948 => 
     array (
       0 => 'accordionist',
       1 => 'accordionists',
     ),
-    947 => 
+    949 => 
     array (
       0 => 'arranger',
       1 => 'arrangers',
     ),
-    948 => 
+    950 => 
     array (
       0 => 'axeman',
       1 => 'axemen',
       2 => 'axman',
       3 => 'axmen',
     ),
-    949 => 
+    951 => 
     array (
       0 => 'bagpiper',
       1 => 'bagpipers',
     ),
-    950 => 
+    952 => 
     array (
       0 => 'bandleader',
       1 => 'bandleaders',
     ),
-    951 => 
+    953 => 
     array (
       0 => 'bandmaster',
       1 => 'bandmasters',
     ),
-    952 => 
+    954 => 
     array (
       0 => 'bandmate',
       1 => 'bandmates',
     ),
-    953 => 
+    955 => 
     array (
       0 => 'banjoist',
       1 => 'banjoists',
     ),
-    954 => 
+    956 => 
     array (
       0 => 'bassplayer',
       1 => 'bassplayers',
     ),
-    955 => 
+    957 => 
     array (
       0 => 'bassist',
       1 => 'bassists',
     ),
-    956 => 
+    958 => 
     array (
       0 => 'bassoonist',
       1 => 'bassoonists',
     ),
-    957 => 
+    959 => 
     array (
       0 => 'bellringer',
       1 => 'bellringers',
     ),
-    958 => 
+    960 => 
     array (
       0 => 'bluesman',
       1 => 'bluesmen',
     ),
-    959 => 
+    961 => 
     array (
       0 => 'bugler',
       1 => 'buglers',
     ),
-    960 => 
+    962 => 
     array (
       0 => 'busker',
       1 => 'buskers',
     ),
-    961 => 
+    963 => 
     array (
       0 => 'campanologist',
       1 => 'campanologists',
     ),
-    962 => 
+    964 => 
     array (
       0 => 'cellist',
       1 => 'cellists',
     ),
-    963 => 
+    965 => 
     array (
       0 => 'choirmaster',
       1 => 'choirmasters',
     ),
-    964 => 
+    966 => 
     array (
       0 => 'clarinettist',
       1 => 'clarinettists',
       2 => 'clarinetist',
       3 => 'clarinetists',
     ),
-    965 => 
+    967 => 
     array (
       0 => 'composer',
       1 => 'composers',
     ),
-    966 => 
+    968 => 
     array (
       0 => 'concertmaster',
       1 => 'concertmasters',
     ),
-    967 => 
+    969 => 
     array (
       0 => 'conductor',
       1 => 'conductors',
     ),
-    968 => 
+    970 => 
     array (
       0 => 'deejay',
       1 => 'deejays',
     ),
-    969 => 
+    971 => 
     array (
       0 => 'drummer',
       1 => 'drummers',
     ),
-    970 => 
+    972 => 
     array (
       0 => 'fiddler',
       1 => 'fiddlers',
     ),
-    971 => 
+    973 => 
     array (
       0 => 'fifer',
       1 => 'fifers',
     ),
-    972 => 
+    974 => 
     array (
       0 => 'flautist',
       1 => 'flautists',
       2 => 'flutist',
       3 => 'flutists',
     ),
-    973 => 
+    975 => 
     array (
       0 => 'frontman',
       1 => 'frontmen',
     ),
-    974 => 
+    976 => 
     array (
       0 => 'frontwoman',
       1 => 'frontwomen',
     ),
-    975 => 
+    977 => 
     array (
       0 => 'guitarist',
       1 => 'guitarists',
     ),
-    976 => 
+    978 => 
     array (
       0 => 'harpist',
       1 => 'harpists',
     ),
-    977 => 
+    979 => 
     array (
       0 => 'harpsichordist',
       1 => 'harpsichordists',
     ),
-    978 => 
+    980 => 
     array (
       0 => 'idol',
       1 => 'idols',
     ),
-    979 => 
+    981 => 
     array (
       0 => 'instrumentalist',
       1 => 'instrumentalists',
     ),
-    980 => 
+    982 => 
     array (
       0 => 'jazzman',
       1 => 'jazzmen',
     ),
-    981 => 
+    983 => 
     array (
       0 => 'keyboardist',
       1 => 'keyboardists',
     ),
-    982 => 
+    984 => 
     array (
       0 => 'leadguitarist',
       1 => 'leadguitarists',
     ),
-    983 => 
+    985 => 
     array (
       0 => 'librettist',
       1 => 'librettists',
     ),
-    984 => 
+    986 => 
     array (
       0 => 'lutenist',
       1 => 'lutenists',
@@ -9284,416 +9557,416 @@ return array (
       4 => 'lutist',
       5 => 'lutists',
     ),
-    985 => 
+    987 => 
     array (
       0 => 'lyricist',
       1 => 'lyricists',
     ),
-    986 => 
+    988 => 
     array (
       0 => 'maestro',
       1 => 'maestros',
       2 => 'maestri',
     ),
-    987 => 
+    989 => 
     array (
       0 => 'minstrel',
       1 => 'minstrels',
     ),
-    988 => 
+    990 => 
     array (
       0 => 'multiinstrumentalist',
       1 => 'multiinstrumentalists',
     ),
-    989 => 
+    991 => 
     array (
       0 => 'musician',
       1 => 'musicians',
     ),
-    990 => 
+    992 => 
     array (
       0 => 'oboist',
       1 => 'oboists',
     ),
-    991 => 
+    993 => 
     array (
       0 => 'onehitwonder',
       1 => 'onehitwonders',
     ),
-    992 => 
+    994 => 
     array (
       0 => 'orchestrator',
       1 => 'orchestrators',
     ),
-    993 => 
+    995 => 
     array (
       0 => 'organist',
       1 => 'organists',
     ),
-    994 => 
+    996 => 
     array (
       0 => 'percussionist',
       1 => 'percussionists',
     ),
-    995 => 
+    997 => 
     array (
       0 => 'pianist',
       1 => 'pianists',
     ),
-    996 => 
+    998 => 
     array (
       0 => 'piper',
       1 => 'pipers',
     ),
-    997 => 
+    999 => 
     array (
       0 => 'popstar',
       1 => 'popstars',
     ),
-    998 => 
+    1000 => 
     array (
       0 => 'rapper',
       1 => 'rappers',
     ),
-    999 => 
+    1001 => 
     array (
       0 => 'rockstar',
       1 => 'rockstars',
     ),
-    1000 => 
+    1002 => 
     array (
       0 => 'saxophonist',
       1 => 'saxophonists',
     ),
-    1001 => 
+    1003 => 
     array (
       0 => 'sessionmusician',
       1 => 'sessionmusicians',
     ),
-    1002 => 
+    1004 => 
     array (
       0 => 'shredder',
       1 => 'shredders',
     ),
-    1003 => 
+    1005 => 
     array (
       0 => 'sideman',
       1 => 'sidemen',
     ),
-    1004 => 
+    1006 => 
     array (
       0 => 'singer',
       1 => 'singers',
     ),
-    1005 => 
+    1007 => 
     array (
       0 => 'singersongwriter',
       1 => 'singersongwriters',
     ),
-    1006 => 
+    1008 => 
     array (
       0 => 'sitarist',
       1 => 'sitarists',
     ),
-    1007 => 
+    1009 => 
     array (
       0 => 'soloist',
       1 => 'soloists',
     ),
-    1008 => 
+    1010 => 
     array (
       0 => 'songwriter',
       1 => 'songwriters',
     ),
-    1009 => 
+    1011 => 
     array (
       0 => 'sticksman',
       1 => 'sticksmen',
     ),
-    1010 => 
+    1012 => 
     array (
       0 => 'timpanist',
       1 => 'timpanists',
       2 => 'tympanist',
       3 => 'tympanists',
     ),
-    1011 => 
+    1013 => 
     array (
       0 => 'trombonist',
       1 => 'trombonists',
     ),
-    1012 => 
+    1014 => 
     array (
       0 => 'troubadour',
       1 => 'troubadours',
     ),
-    1013 => 
+    1015 => 
     array (
       0 => 'trumpeter',
       1 => 'trumpeters',
     ),
-    1014 => 
+    1016 => 
     array (
       0 => 'turntablist',
       1 => 'turntablists',
     ),
-    1015 => 
+    1017 => 
     array (
       0 => 'violinist',
       1 => 'violinists',
     ),
-    1016 => 
+    1018 => 
     array (
       0 => 'violist',
       1 => 'violists',
     ),
-    1017 => 
+    1019 => 
     array (
       0 => 'virtuoso',
       1 => 'virtuosos',
       2 => 'virtuosi',
     ),
-    1018 => 
+    1020 => 
     array (
       0 => 'vocalist',
       1 => 'vocalists',
     ),
-    1019 => 
+    1021 => 
     array (
       0 => 'bandsman',
       1 => 'bandsmen',
     ),
-    1020 => 
+    1022 => 
     array (
       0 => 'bard',
       1 => 'bards',
     ),
-    1021 => 
+    1023 => 
     array (
       0 => 'carillonneur',
       1 => 'carillonneurs',
     ),
-    1022 => 
+    1024 => 
     array (
       0 => 'chansonnier',
       1 => 'chansonniers',
     ),
-    1023 => 
+    1025 => 
     array (
       0 => 'chorusmaster',
       1 => 'chorusmasters',
     ),
-    1024 => 
+    1026 => 
     array (
       0 => 'contrabassist',
       1 => 'contrabassists',
     ),
-    1025 => 
+    1027 => 
     array (
       0 => 'cornetist',
       1 => 'cornetists',
       2 => 'cornettist',
       3 => 'cornettists',
     ),
-    1026 => 
+    1028 => 
     array (
       0 => 'drummajor',
       1 => 'drummajors',
     ),
-    1027 => 
+    1029 => 
     array (
       0 => 'duettist',
       1 => 'duettists',
     ),
-    1028 => 
+    1030 => 
     array (
       0 => 'griot',
       1 => 'griots',
     ),
-    1029 => 
+    1031 => 
     array (
       0 => 'harmonicist',
       1 => 'harmonicists',
     ),
-    1030 => 
+    1032 => 
     array (
       0 => 'harper',
       1 => 'harpers',
     ),
-    1031 => 
+    1033 => 
     array (
       0 => 'hornist',
       1 => 'hornists',
     ),
-    1032 => 
+    1034 => 
     array (
       0 => 'improviser',
       1 => 'improvisers',
       2 => 'improvisor',
       3 => 'improvisors',
     ),
-    1033 => 
+    1035 => 
     array (
       0 => 'jongleur',
       1 => 'jongleurs',
     ),
-    1034 => 
+    1036 => 
     array (
       0 => 'kapellmeister',
       1 => 'kapellmeisters',
     ),
-    1035 => 
+    1037 => 
     array (
       0 => 'leader',
       1 => 'leaders',
     ),
-    1036 => 
+    1038 => 
     array (
       0 => 'mandolinist',
       1 => 'mandolinists',
     ),
-    1037 => 
+    1039 => 
     array (
       0 => 'marimbist',
       1 => 'marimbists',
     ),
-    1038 => 
+    1040 => 
     array (
       0 => 'melodist',
       1 => 'melodists',
     ),
-    1039 => 
+    1041 => 
     array (
       0 => 'organgrinder',
       1 => 'organgrinders',
     ),
-    1040 => 
+    1042 => 
     array (
       0 => 'player',
       1 => 'players',
     ),
-    1041 => 
+    1043 => 
     array (
       0 => 'prodigy',
       1 => 'prodigies',
     ),
-    1042 => 
+    1044 => 
     array (
       0 => 'sessionman',
       1 => 'sessionmen',
     ),
-    1043 => 
+    1045 => 
     array (
       0 => 'skald',
       1 => 'skalds',
     ),
-    1044 => 
+    1046 => 
     array (
       0 => 'songsmith',
       1 => 'songsmiths',
     ),
-    1045 => 
+    1047 => 
     array (
       0 => 'star',
       1 => 'stars',
       2 => 'starring',
       3 => 'starred',
     ),
-    1046 => 
+    1048 => 
     array (
       0 => 'symphonist',
       1 => 'symphonists',
     ),
-    1047 => 
+    1049 => 
     array (
       0 => 'synthesist',
       1 => 'synthesists',
     ),
-    1048 => 
+    1050 => 
     array (
       0 => 'trouvere',
       1 => 'trouveres',
     ),
-    1049 => 
+    1051 => 
     array (
       0 => 'tubist',
       1 => 'tubists',
       2 => 'tubaist',
       3 => 'tubaists',
     ),
-    1050 => 
+    1052 => 
     array (
       0 => 'tunesmith',
       1 => 'tunesmiths',
     ),
-    1051 => 
+    1053 => 
     array (
       0 => 'ukulelist',
       1 => 'ukulelists',
     ),
-    1052 => 
+    1054 => 
     array (
       0 => 'vibraphonist',
       1 => 'vibraphonists',
     ),
-    1053 => 
+    1055 => 
     array (
       0 => 'violoncellist',
       1 => 'violoncellists',
     ),
-    1054 => 
+    1056 => 
     array (
       0 => 'xylophonist',
       1 => 'xylophonists',
     ),
-    1055 => 
+    1057 => 
     array (
       0 => 'album',
       1 => 'albums',
     ),
-    1056 => 
+    1058 => 
     array (
       0 => 'anthology',
       1 => 'anthologies',
     ),
-    1057 => 
+    1059 => 
     array (
       0 => 'artwork',
       1 => 'artworks',
     ),
-    1058 => 
+    1060 => 
     array (
       0 => 'banger',
       1 => 'bangers',
     ),
-    1059 => 
+    1061 => 
     array (
       0 => 'bootleg',
       1 => 'bootlegs',
       2 => 'bootlegging',
       3 => 'bootlegged',
     ),
-    1060 => 
+    1062 => 
     array (
       0 => 'boxset',
       1 => 'boxsets',
     ),
-    1061 => 
+    1063 => 
     array (
       0 => 'bside',
       1 => 'bsides',
     ),
-    1062 => 
+    1064 => 
     array (
       0 => 'cassette',
       1 => 'cassettes',
     ),
-    1063 => 
+    1065 => 
     array (
       0 => 'cassingle',
       1 => 'cassingles',
     ),
-    1064 => 
+    1066 => 
     array (
       0 => 'catalogue',
       1 => 'catalogues',
@@ -9704,39 +9977,39 @@ return array (
       6 => 'cataloguing',
       7 => 'cataloging',
     ),
-    1065 => 
+    1067 => 
     array (
       0 => 'chart',
       1 => 'charts',
       2 => 'charted',
       3 => 'charting',
     ),
-    1066 => 
+    1068 => 
     array (
       0 => 'charttopper',
       1 => 'charttoppers',
     ),
-    1067 => 
+    1069 => 
     array (
       0 => 'classic',
       1 => 'classics',
     ),
-    1068 => 
+    1070 => 
     array (
       0 => 'compactdisc',
       1 => 'compactdiscs',
     ),
-    1069 => 
+    1071 => 
     array (
       0 => 'compilation',
       1 => 'compilations',
     ),
-    1070 => 
+    1072 => 
     array (
       0 => 'conceptalbum',
       1 => 'conceptalbums',
     ),
-    1071 => 
+    1073 => 
     array (
       0 => 'cover',
       1 => 'covers',
@@ -9744,83 +10017,85 @@ return array (
       3 => 'covering',
       4 => 'coverings',
     ),
-    1072 => 
+    1074 => 
     array (
       0 => 'debut',
       1 => 'debuts',
       2 => 'debuted',
       3 => 'debuting',
     ),
-    1073 => 
+    1075 => 
     array (
       0 => 'demo',
       1 => 'demos',
     ),
-    1074 => 
+    1076 => 
     array (
       0 => 'disc',
       1 => 'discs',
       2 => 'disk',
       3 => 'disks',
+      4 => 'disked',
+      5 => 'disking',
     ),
-    1075 => 
+    1077 => 
     array (
       0 => 'discography',
       1 => 'discographies',
     ),
-    1076 => 
+    1078 => 
     array (
       0 => 'doublealbum',
       1 => 'doublealbums',
     ),
-    1077 => 
+    1079 => 
     array (
       0 => 'download',
       1 => 'downloads',
       2 => 'downloaded',
       3 => 'downloading',
     ),
-    1078 => 
+    1080 => 
     array (
       0 => 'earworm',
       1 => 'earworms',
     ),
-    1079 => 
+    1081 => 
     array (
       0 => 'edit',
       1 => 'edits',
       2 => 'editing',
       3 => 'edited',
     ),
-    1080 => 
+    1082 => 
     array (
       0 => 'flop',
       1 => 'flops',
       2 => 'flopped',
       3 => 'flopping',
     ),
-    1081 => 
+    1083 => 
     array (
       0 => 'gatefold',
       1 => 'gatefolds',
     ),
-    1082 => 
+    1084 => 
     array (
       0 => 'gold',
       1 => 'golds',
     ),
-    1083 => 
+    1085 => 
     array (
       0 => 'hit',
       1 => 'hits',
       2 => 'hitting',
     ),
-    1084 => 
+    1086 => 
     array (
       0 => 'instrumental',
       1 => 'instrumentals',
     ),
-    1085 => 
+    1087 => 
     array (
       0 => 'label',
       1 => 'labels',
@@ -9829,105 +10104,105 @@ return array (
       4 => 'labeling',
       5 => 'labelling',
     ),
-    1086 => 
+    1088 => 
     array (
       0 => 'leak',
       1 => 'leaking',
       2 => 'leaked',
       3 => 'leaks',
     ),
-    1087 => 
+    1089 => 
     array (
       0 => 'livealbum',
       1 => 'livealbums',
     ),
-    1088 => 
+    1090 => 
     array (
       0 => 'longplayer',
       1 => 'longplayers',
     ),
-    1089 => 
+    1091 => 
     array (
       0 => 'loop',
       1 => 'loops',
       2 => 'looped',
       3 => 'looping',
     ),
-    1090 => 
+    1092 => 
     array (
       0 => 'mashup',
       1 => 'mashups',
     ),
-    1091 => 
+    1093 => 
     array (
       0 => 'master',
       1 => 'masters',
       2 => 'mastered',
       3 => 'mastering',
     ),
-    1092 => 
+    1094 => 
     array (
       0 => 'medley',
       1 => 'medleys',
     ),
-    1093 => 
+    1095 => 
     array (
       0 => 'megamix',
       1 => 'megamixes',
     ),
-    1094 => 
+    1096 => 
     array (
       0 => 'minidisc',
       1 => 'minidiscs',
     ),
-    1095 => 
+    1097 => 
     array (
       0 => 'mix',
       1 => 'mixes',
       2 => 'mixed',
       3 => 'mixing',
     ),
-    1096 => 
+    1098 => 
     array (
       0 => 'mixdown',
       1 => 'mixdowns',
     ),
-    1097 => 
+    1099 => 
     array (
       0 => 'mixtape',
       1 => 'mixtapes',
     ),
-    1098 => 
+    1100 => 
     array (
       0 => 'numberone',
       1 => 'numberones',
     ),
-    1099 => 
+    1101 => 
     array (
       0 => 'oldie',
       1 => 'oldies',
     ),
-    1100 => 
+    1102 => 
     array (
       0 => 'outtake',
       1 => 'outtakes',
     ),
-    1101 => 
+    1103 => 
     array (
       0 => 'overdub',
       1 => 'overdubs',
     ),
-    1102 => 
+    1104 => 
     array (
       0 => 'playback',
       1 => 'playbacks',
     ),
-    1103 => 
+    1105 => 
     array (
       0 => 'playlist',
       1 => 'playlists',
     ),
-    1104 => 
+    1106 => 
     array (
       0 => 'pressing',
       1 => 'pressings',
@@ -9935,19 +10210,19 @@ return array (
       3 => 'pressed',
       4 => 'presses',
     ),
-    1105 => 
+    1107 => 
     array (
       0 => 'promo',
       1 => 'promos',
     ),
-    1106 => 
+    1108 => 
     array (
       0 => 'radio',
       1 => 'radios',
       2 => 'radioed',
       3 => 'radioing',
     ),
-    1107 => 
+    1109 => 
     array (
       0 => 'record',
       1 => 'records',
@@ -9955,98 +10230,102 @@ return array (
       3 => 'recorded',
       4 => 'recordings',
     ),
-    1108 => 
+    1110 => 
     array (
       0 => 'reissue',
       1 => 'reissues',
     ),
-    1109 => 
+    1111 => 
     array (
       0 => 'release',
       1 => 'releases',
       2 => 'released',
       3 => 'releasing',
     ),
-    1110 => 
+    1112 => 
     array (
       0 => 'remaster',
       1 => 'remasters',
     ),
-    1111 => 
+    1113 => 
     array (
       0 => 'remix',
       1 => 'remixes',
       2 => 'remixed',
       3 => 'remixing',
     ),
-    1112 => 
+    1114 => 
     array (
       0 => 'royalty',
       1 => 'royalties',
     ),
-    1113 => 
+    1115 => 
     array (
       0 => 'sample',
       1 => 'samples',
+      2 => 'sampling',
+      3 => 'sampled',
     ),
-    1114 => 
+    1116 => 
     array (
       0 => 'score',
       1 => 'scores',
       2 => 'scored',
       3 => 'scoring',
     ),
-    1115 => 
+    1117 => 
     array (
       0 => 'session',
       1 => 'sessions',
     ),
-    1116 => 
+    1118 => 
     array (
       0 => 'singalong',
       1 => 'singalongs',
     ),
-    1117 => 
+    1119 => 
     array (
       0 => 'single',
       1 => 'singles',
+      2 => 'singling',
+      3 => 'singled',
     ),
-    1118 => 
+    1120 => 
     array (
       0 => 'sleeve',
       1 => 'sleeves',
       2 => 'sleeved',
     ),
-    1119 => 
+    1121 => 
     array (
       0 => 'smash',
       1 => 'smashes',
       2 => 'smashed',
       3 => 'smashing',
     ),
-    1120 => 
+    1122 => 
     array (
       0 => 'soundtrack',
       1 => 'soundtracks',
     ),
-    1121 => 
+    1123 => 
     array (
       0 => 'standard',
       1 => 'standards',
     ),
-    1122 => 
+    1124 => 
     array (
       0 => 'stream',
       1 => 'streams',
       2 => 'streaming',
       3 => 'streamed',
     ),
-    1123 => 
+    1125 => 
     array (
       0 => 'studio',
       1 => 'studios',
     ),
-    1124 => 
+    1126 => 
     array (
       0 => 'take',
       1 => 'takes',
@@ -10055,194 +10334,196 @@ return array (
       4 => 'taken',
       5 => 'takings',
     ),
-    1125 => 
+    1127 => 
     array (
       0 => 'tape',
       1 => 'tapes',
       2 => 'taped',
       3 => 'taping',
     ),
-    1126 => 
+    1128 => 
     array (
       0 => 'topten',
       1 => 'toptens',
     ),
-    1127 => 
+    1129 => 
     array (
       0 => 'track',
       1 => 'tracks',
       2 => 'tracking',
       3 => 'tracked',
     ),
-    1128 => 
+    1130 => 
     array (
       0 => 'tracklist',
       1 => 'tracklists',
     ),
-    1129 => 
+    1131 => 
     array (
       0 => 'version',
       1 => 'versions',
     ),
-    1130 => 
+    1132 => 
     array (
       0 => 'video',
       1 => 'videos',
     ),
-    1131 => 
+    1133 => 
     array (
       0 => 'vinyl',
       1 => 'vinyls',
     ),
-    1132 => 
+    1134 => 
     array (
       0 => 'acetate',
       1 => 'acetates',
     ),
-    1133 => 
+    1135 => 
     array (
       0 => 'aside',
       1 => 'asides',
     ),
-    1134 => 
+    1136 => 
     array (
       0 => 'backcatalogue',
       1 => 'backcatalog',
     ),
-    1135 => 
+    1137 => 
     array (
       0 => 'bestseller',
       1 => 'bestsellers',
     ),
-    1136 => 
+    1138 => 
     array (
       0 => 'bonus',
       1 => 'bonuses',
     ),
-    1137 => 
+    1139 => 
     array (
       0 => 'booth',
       1 => 'booths',
     ),
-    1138 => 
+    1140 => 
     array (
       0 => 'contract',
       1 => 'contracts',
       2 => 'contracted',
       3 => 'contracting',
     ),
-    1139 => 
+    1141 => 
     array (
       0 => 'cut',
       1 => 'cutting',
       2 => 'cuts',
       3 => 'cuttings',
     ),
-    1140 => 
+    1142 => 
     array (
       0 => 'deepcut',
       1 => 'deepcuts',
     ),
-    1141 => 
+    1143 => 
     array (
       0 => 'dubplate',
       1 => 'dubplates',
     ),
-    1142 => 
+    1144 => 
     array (
       0 => 'eighttrack',
       1 => 'eighttracks',
     ),
-    1143 => 
+    1145 => 
     array (
       0 => 'evergreen',
       1 => 'evergreens',
     ),
-    1144 => 
+    1146 => 
     array (
       0 => 'flexidisc',
       1 => 'flexidiscs',
     ),
-    1145 => 
+    1147 => 
     array (
       0 => 'followup',
       1 => 'followups',
     ),
-    1146 => 
+    1148 => 
     array (
       0 => 'fortyfive',
       1 => 'fortyfives',
     ),
-    1147 => 
+    1149 => 
     array (
       0 => 'hitparade',
       1 => 'hitparades',
     ),
-    1148 => 
+    1150 => 
     array (
       0 => 'imprint',
       1 => 'imprinted',
       2 => 'imprints',
       3 => 'imprinting',
     ),
-    1149 => 
+    1151 => 
     array (
       0 => 'multitrack',
       1 => 'multitracks',
     ),
-    1150 => 
+    1152 => 
     array (
       0 => 'picturedisc',
       1 => 'picturediscs',
     ),
-    1151 => 
+    1153 => 
     array (
       0 => 'platter',
       1 => 'platters',
     ),
-    1152 => 
+    1154 => 
     array (
       0 => 'rarity',
       1 => 'rarities',
     ),
-    1153 => 
+    1155 => 
     array (
       0 => 'reeltoreel',
       1 => 'reeltoreels',
     ),
-    1154 => 
+    1156 => 
     array (
       0 => 'rerecord',
       1 => 'rerecords',
     ),
-    1155 => 
+    1157 => 
     array (
       0 => 'rerelease',
       1 => 'rereleases',
     ),
-    1156 => 
+    1158 => 
     array (
       0 => 'seveninch',
       1 => 'seveninches',
     ),
-    1157 => 
+    1159 => 
     array (
       0 => 'seventyeight',
       1 => 'seventyeights',
     ),
-    1158 => 
+    1160 => 
     array (
       0 => 'silver',
-      1 => 'silvers',
+      1 => 'silvered',
+      2 => 'silvering',
+      3 => 'silvers',
     ),
-    1159 => 
+    1161 => 
     array (
       0 => 'stem',
       1 => 'stems',
       2 => 'stemming',
       3 => 'stemmed',
     ),
-    1160 => 
+    1162 => 
     array (
       0 => 'sync',
       1 => 'synced',
@@ -10252,46 +10533,46 @@ return array (
       5 => 'syncs',
       6 => 'synching',
     ),
-    1161 => 
+    1163 => 
     array (
       0 => 'twelveinch',
       1 => 'twelveinches',
     ),
-    1162 => 
+    1164 => 
     array (
       0 => 'wax',
       1 => 'waxed',
       2 => 'waxing',
       3 => 'waxes',
     ),
-    1163 => 
+    1165 => 
     array (
       0 => 'whitelabel',
       1 => 'whitelabels',
     ),
-    1164 => 
+    1166 => 
     array (
       0 => 'accompaniment',
       1 => 'accompaniments',
     ),
-    1165 => 
+    1167 => 
     array (
       0 => 'adlib',
       1 => 'adlibs',
     ),
-    1166 => 
+    1168 => 
     array (
       0 => 'backbeat',
       1 => 'backbeats',
     ),
-    1167 => 
+    1169 => 
     array (
       0 => 'backing',
       1 => 'back',
       2 => 'backs',
       3 => 'backed',
     ),
-    1168 => 
+    1170 => 
     array (
       0 => 'beat',
       1 => 'beats',
@@ -10299,14 +10580,14 @@ return array (
       3 => 'beaten',
       4 => 'beatings',
     ),
-    1169 => 
+    1171 => 
     array (
       0 => 'beatbox',
       1 => 'beatboxes',
       2 => 'beatboxing',
       3 => 'beatboxed',
     ),
-    1170 => 
+    1172 => 
     array (
       0 => 'bend',
       1 => 'bends',
@@ -10314,49 +10595,49 @@ return array (
       3 => 'bending',
       4 => 'bended',
     ),
-    1171 => 
+    1173 => 
     array (
       0 => 'breakdown',
       1 => 'breakdowns',
     ),
-    1172 => 
+    1174 => 
     array (
       0 => 'buildup',
       1 => 'buildups',
     ),
-    1173 => 
+    1175 => 
     array (
       0 => 'cadenza',
       1 => 'cadenzas',
     ),
-    1174 => 
+    1176 => 
     array (
       0 => 'coda',
       1 => 'codas',
     ),
-    1175 => 
+    1177 => 
     array (
       0 => 'countin',
       1 => 'countins',
     ),
-    1176 => 
+    1178 => 
     array (
       0 => 'croon',
       1 => 'croons',
       2 => 'crooning',
       3 => 'crooned',
     ),
-    1177 => 
+    1179 => 
     array (
       0 => 'descant',
       1 => 'descants',
     ),
-    1178 => 
+    1180 => 
     array (
       0 => 'development',
       1 => 'developments',
     ),
-    1179 => 
+    1181 => 
     array (
       0 => 'drop',
       1 => 'drops',
@@ -10364,34 +10645,34 @@ return array (
       3 => 'dropping',
       4 => 'droppings',
     ),
-    1180 => 
+    1182 => 
     array (
       0 => 'drumbeat',
       1 => 'drumbeats',
     ),
-    1181 => 
+    1183 => 
     array (
       0 => 'drumroll',
       1 => 'drumrolls',
     ),
-    1182 => 
+    1184 => 
     array (
       0 => 'exposition',
       1 => 'expositions',
     ),
-    1183 => 
+    1185 => 
     array (
       0 => 'fade',
       1 => 'fades',
       2 => 'fading',
       3 => 'faded',
     ),
-    1184 => 
+    1186 => 
     array (
       0 => 'fadeout',
       1 => 'fadeouts',
     ),
-    1185 => 
+    1187 => 
     array (
       0 => 'fill',
       1 => 'fills',
@@ -10399,178 +10680,181 @@ return array (
       3 => 'filling',
       4 => 'fillings',
     ),
-    1186 => 
+    1188 => 
     array (
       0 => 'finale',
       1 => 'finales',
     ),
-    1187 => 
+    1189 => 
     array (
       0 => 'glissando',
       1 => 'glissandos',
       2 => 'glissandi',
     ),
-    1188 => 
+    1190 => 
     array (
       0 => 'groove',
       1 => 'grooves',
       2 => 'grooving',
       3 => 'grooved',
     ),
-    1189 => 
+    1191 => 
     array (
       0 => 'growl',
       1 => 'growls',
       2 => 'growling',
       3 => 'growled',
     ),
-    1190 => 
+    1192 => 
     array (
       0 => 'handclap',
       1 => 'handclaps',
     ),
-    1191 => 
+    1193 => 
     array (
       0 => 'harmony',
       1 => 'harmonies',
     ),
-    1192 => 
+    1194 => 
     array (
       0 => 'hook',
       1 => 'hooks',
       2 => 'hooked',
       3 => 'hooking',
     ),
-    1193 => 
+    1195 => 
     array (
       0 => 'hum',
       1 => 'humming',
       2 => 'hums',
       3 => 'hummed',
     ),
-    1194 => 
+    1196 => 
     array (
       0 => 'improvisation',
       1 => 'improvisations',
     ),
-    1195 => 
+    1197 => 
     array (
       0 => 'interlude',
       1 => 'interludes',
     ),
-    1196 => 
+    1198 => 
     array (
       0 => 'intro',
       1 => 'intros',
     ),
-    1197 => 
+    1199 => 
     array (
       0 => 'introduction',
       1 => 'introductions',
     ),
-    1198 => 
+    1200 => 
     array (
       0 => 'keychange',
       1 => 'keychanges',
     ),
-    1199 => 
+    1201 => 
     array (
       0 => 'leitmotif',
       1 => 'leitmotifs',
     ),
-    1200 => 
+    1202 => 
     array (
       0 => 'lick',
       1 => 'licks',
       2 => 'licking',
       3 => 'licked',
     ),
-    1201 => 
+    1203 => 
     array (
       0 => 'lyric',
       1 => 'lyrics',
     ),
-    1202 => 
+    1204 => 
     array (
       0 => 'melisma',
       1 => 'melismas',
     ),
-    1203 => 
+    1205 => 
     array (
       0 => 'middleeight',
       1 => 'middleeights',
     ),
-    1204 => 
+    1206 => 
     array (
       0 => 'motif',
       1 => 'motifs',
     ),
-    1205 => 
+    1207 => 
     array (
       0 => 'movement',
       1 => 'movements',
     ),
-    1206 => 
+    1208 => 
     array (
       0 => 'ostinato',
       1 => 'ostinatos',
     ),
-    1207 => 
+    1209 => 
     array (
       0 => 'outro',
       1 => 'outros',
     ),
-    1208 => 
+    1210 => 
     array (
       0 => 'paradiddle',
       1 => 'paradiddles',
     ),
-    1209 => 
+    1211 => 
     array (
       0 => 'pluck',
       1 => 'plucks',
       2 => 'plucking',
       3 => 'plucked',
     ),
-    1210 => 
+    1212 => 
     array (
       0 => 'powerchord',
       1 => 'powerchords',
     ),
-    1211 => 
+    1213 => 
     array (
       0 => 'prechorus',
       1 => 'prechoruses',
     ),
-    1212 => 
+    1214 => 
     array (
       0 => 'recapitulation',
       1 => 'recapitulations',
     ),
-    1213 => 
+    1215 => 
     array (
       0 => 'refrain',
       1 => 'refrains',
       2 => 'refrained',
       3 => 'refraining',
     ),
-    1214 => 
+    1216 => 
     array (
       0 => 'reprise',
       1 => 'reprises',
+      2 => 'reprised',
+      3 => 'reprising',
     ),
-    1215 => 
+    1217 => 
     array (
       0 => 'riff',
       1 => 'riffs',
-      2 => 'riffing',
+      2 => 'riffed',
+      3 => 'riffing',
     ),
-    1216 => 
+    1218 => 
     array (
       0 => 'rimshot',
       1 => 'rimshots',
     ),
-    1217 => 
+    1219 => 
     array (
       0 => 'roll',
       1 => 'rolling',
@@ -10578,91 +10862,95 @@ return array (
       3 => 'rolled',
       4 => 'rollings',
     ),
-    1218 => 
+    1220 => 
     array (
       0 => 'scat',
       1 => 'scats',
       2 => 'scatting',
       3 => 'scatted',
     ),
-    1219 => 
+    1221 => 
     array (
       0 => 'segue',
       1 => 'segues',
-      2 => 'segued',
+      2 => 'segueing',
+      3 => 'segued',
     ),
-    1220 => 
+    1222 => 
     array (
       0 => 'shred',
       1 => 'shreds',
       2 => 'shredding',
       3 => 'shredded',
     ),
-    1221 => 
+    1223 => 
     array (
       0 => 'slap',
       1 => 'slapped',
       2 => 'slapping',
       3 => 'slaps',
     ),
-    1222 => 
+    1224 => 
     array (
       0 => 'solo',
       1 => 'solos',
       2 => 'soloing',
       3 => 'soloed',
     ),
-    1223 => 
+    1225 => 
     array (
       0 => 'stanza',
       1 => 'stanzas',
     ),
-    1224 => 
+    1226 => 
     array (
       0 => 'strum',
       1 => 'strums',
       2 => 'strumming',
       3 => 'strummed',
     ),
-    1225 => 
+    1227 => 
     array (
       0 => 'theme',
       1 => 'themes',
-      2 => 'themed',
+      2 => 'theming',
+      3 => 'themed',
     ),
-    1226 => 
+    1228 => 
     array (
       0 => 'tremolo',
       1 => 'tremolos',
     ),
-    1227 => 
+    1229 => 
     array (
       0 => 'turnaround',
       1 => 'turnarounds',
     ),
-    1228 => 
+    1230 => 
     array (
       0 => 'vamp',
       1 => 'vamps',
       2 => 'vamping',
       3 => 'vamped',
     ),
-    1229 => 
+    1231 => 
     array (
       0 => 'verse',
       1 => 'verses',
+      2 => 'versing',
+      3 => 'versed',
     ),
-    1230 => 
+    1232 => 
     array (
       0 => 'vibrato',
       1 => 'vibratos',
     ),
-    1231 => 
+    1233 => 
     array (
       0 => 'vocal',
       1 => 'vocals',
     ),
-    1232 => 
+    1234 => 
     array (
       0 => 'yodel',
       1 => 'yodels',
@@ -10671,69 +10959,69 @@ return array (
       4 => 'yodeling',
       5 => 'yodeled',
     ),
-    1233 => 
+    1235 => 
     array (
       0 => 'belt',
       1 => 'belts',
       2 => 'belted',
       3 => 'belting',
     ),
-    1234 => 
+    1236 => 
     array (
       0 => 'blastbeat',
       1 => 'blastbeats',
     ),
-    1235 => 
+    1237 => 
     array (
       0 => 'continuo',
       1 => 'continuos',
     ),
-    1236 => 
+    1238 => 
     array (
       0 => 'countermelody',
       1 => 'countermelodies',
     ),
-    1237 => 
+    1239 => 
     array (
       0 => 'flam',
       1 => 'flams',
     ),
-    1238 => 
+    1240 => 
     array (
       0 => 'hammeron',
       1 => 'hammerons',
     ),
-    1239 => 
+    1241 => 
     array (
       0 => 'hookline',
       1 => 'hooklines',
     ),
-    1240 => 
+    1242 => 
     array (
       0 => 'noodle',
       1 => 'noodles',
     ),
-    1241 => 
+    1243 => 
     array (
       0 => 'obbligato',
       1 => 'obbligatos',
     ),
-    1242 => 
+    1244 => 
     array (
       0 => 'palmmute',
       1 => 'palmmuting',
     ),
-    1243 => 
+    1245 => 
     array (
       0 => 'postchorus',
       1 => 'postchoruses',
     ),
-    1244 => 
+    1246 => 
     array (
       0 => 'pulloff',
       1 => 'pulloffs',
     ),
-    1245 => 
+    1247 => 
     array (
       0 => 'sweep',
       1 => 'swept',
@@ -10741,142 +11029,152 @@ return array (
       3 => 'sweeps',
       4 => 'sweepings',
     ),
-    1246 => 
+    1248 => 
     array (
       0 => 'tag',
       1 => 'tags',
       2 => 'tagged',
       3 => 'tagging',
     ),
-    1247 => 
+    1249 => 
     array (
       0 => 'vocalise',
       1 => 'vocalises',
     ),
-    1248 => 
+    1250 => 
     array (
       0 => 'acciaccatura',
       1 => 'acciaccaturas',
     ),
-    1249 => 
+    1251 => 
     array (
       0 => 'accidental',
       1 => 'accidentals',
     ),
-    1250 => 
+    1252 => 
     array (
       0 => 'anacrusis',
       1 => 'anacruses',
     ),
-    1251 => 
+    1253 => 
     array (
       0 => 'appoggiatura',
       1 => 'appoggiaturas',
     ),
-    1252 => 
+    1254 => 
     array (
       0 => 'arpeggio',
       1 => 'arpeggios',
     ),
-    1253 => 
+    1255 => 
     array (
       0 => 'augmented',
       1 => 'augment',
       2 => 'augments',
       3 => 'augmenting',
     ),
-    1254 => 
+    1256 => 
     array (
       0 => 'bar',
       1 => 'bars',
       2 => 'barred',
       3 => 'barring',
     ),
-    1255 => 
+    1257 => 
     array (
       0 => 'barline',
       1 => 'barlines',
     ),
-    1256 => 
+    1258 => 
     array (
       0 => 'breve',
       1 => 'breves',
     ),
-    1257 => 
+    1259 => 
     array (
       0 => 'cadence',
       1 => 'cadences',
     ),
-    1258 => 
+    1260 => 
     array (
       0 => 'chord',
       1 => 'chords',
+      2 => 'chorded',
+      3 => 'chording',
     ),
-    1259 => 
+    1261 => 
     array (
       0 => 'clef',
       1 => 'clefs',
     ),
-    1260 => 
+    1262 => 
     array (
       0 => 'consonance',
       1 => 'consonances',
     ),
-    1261 => 
+    1263 => 
+    array (
+      0 => 'counterpoint',
+      1 => 'counterpointed',
+      2 => 'counterpointing',
+    ),
+    1264 => 
     array (
       0 => 'crotchet',
       1 => 'crotchets',
     ),
-    1262 => 
+    1265 => 
     array (
       0 => 'demisemiquaver',
       1 => 'demisemiquavers',
     ),
-    1263 => 
+    1266 => 
     array (
       0 => 'diminished',
       1 => 'diminish',
       2 => 'diminishing',
       3 => 'diminishes',
     ),
-    1264 => 
+    1267 => 
     array (
       0 => 'discord',
       1 => 'discords',
+      2 => 'discorded',
+      3 => 'discording',
     ),
-    1265 => 
+    1268 => 
     array (
       0 => 'dissonance',
       1 => 'dissonances',
     ),
-    1266 => 
+    1269 => 
     array (
       0 => 'dominant',
       1 => 'dominants',
     ),
-    1267 => 
+    1270 => 
     array (
       0 => 'dot',
       1 => 'dots',
       2 => 'dotted',
       3 => 'dotting',
     ),
-    1268 => 
+    1271 => 
     array (
       0 => 'downbeat',
       1 => 'downbeats',
     ),
-    1269 => 
+    1272 => 
     array (
       0 => 'dynamics',
       1 => 'dynamic',
     ),
-    1270 => 
+    1273 => 
     array (
       0 => 'fifth',
       1 => 'fifths',
     ),
-    1271 => 
+    1274 => 
     array (
       0 => 'fingering',
       1 => 'fingerings',
@@ -10884,574 +11182,593 @@ return array (
       3 => 'fingers',
       4 => 'fingered',
     ),
-    1272 => 
+    1275 => 
     array (
       0 => 'flat',
       1 => 'flats',
     ),
-    1273 => 
+    1276 => 
     array (
       0 => 'fourth',
       1 => 'fourths',
     ),
-    1274 => 
+    1277 => 
     array (
       0 => 'gracenote',
       1 => 'gracenotes',
     ),
-    1275 => 
+    1278 => 
     array (
       0 => 'harmonic',
       1 => 'harmonics',
     ),
-    1276 => 
+    1279 => 
     array (
       0 => 'hemidemisemiquaver',
       1 => 'hemidemisemiquavers',
     ),
-    1277 => 
+    1280 => 
     array (
       0 => 'interval',
       1 => 'intervals',
     ),
-    1278 => 
+    1281 => 
     array (
       0 => 'inversion',
       1 => 'inversions',
     ),
-    1279 => 
+    1282 => 
     array (
       0 => 'keysignature',
       1 => 'keysignatures',
     ),
-    1280 => 
+    1283 => 
     array (
       0 => 'major',
       1 => 'majors',
       2 => 'majored',
       3 => 'majoring',
     ),
-    1281 => 
+    1284 => 
     array (
       0 => 'measure',
       1 => 'measures',
       2 => 'measured',
       3 => 'measuring',
     ),
-    1282 => 
+    1285 => 
     array (
       0 => 'mediant',
       1 => 'mediants',
     ),
-    1283 => 
+    1286 => 
     array (
       0 => 'melody',
       1 => 'melodies',
     ),
-    1284 => 
+    1287 => 
     array (
       0 => 'metre',
       1 => 'metres',
       2 => 'meter',
       3 => 'meters',
-      4 => 'metered',
+      4 => 'metering',
+      5 => 'metered',
     ),
-    1285 => 
+    1288 => 
     array (
       0 => 'microtone',
       1 => 'microtones',
     ),
-    1286 => 
+    1289 => 
     array (
       0 => 'minim',
       1 => 'minims',
     ),
-    1287 => 
+    1290 => 
     array (
       0 => 'minor',
       1 => 'minors',
       2 => 'minored',
     ),
-    1288 => 
+    1291 => 
     array (
       0 => 'mode',
       1 => 'modes',
     ),
-    1289 => 
+    1292 => 
     array (
       0 => 'modulation',
       1 => 'modulations',
     ),
-    1290 => 
+    1293 => 
     array (
       0 => 'mordent',
       1 => 'mordents',
     ),
-    1291 => 
+    1294 => 
     array (
       0 => 'natural',
       1 => 'naturals',
     ),
-    1292 => 
+    1295 => 
     array (
       0 => 'ninth',
       1 => 'ninths',
     ),
-    1293 => 
+    1296 => 
     array (
       0 => 'notation',
       1 => 'notations',
     ),
-    1294 => 
+    1297 => 
     array (
       0 => 'note',
       1 => 'notes',
       2 => 'noted',
       3 => 'noting',
     ),
-    1295 => 
+    1298 => 
     array (
       0 => 'octave',
       1 => 'octaves',
     ),
-    1296 => 
+    1299 => 
     array (
       0 => 'offbeat',
       1 => 'offbeats',
     ),
-    1297 => 
+    1300 => 
     array (
       0 => 'ornament',
       1 => 'ornaments',
-      2 => 'ornamented',
+      2 => 'ornamenting',
+      3 => 'ornamented',
     ),
-    1298 => 
+    1301 => 
     array (
       0 => 'overtone',
       1 => 'overtones',
     ),
-    1299 => 
+    1302 => 
     array (
       0 => 'perfect',
       1 => 'perfected',
       2 => 'perfecting',
       3 => 'perfects',
     ),
-    1300 => 
+    1303 => 
     array (
       0 => 'phrase',
       1 => 'phrases',
       2 => 'phrasing',
       3 => 'phrased',
     ),
-    1301 => 
+    1304 => 
     array (
       0 => 'pitch',
       1 => 'pitches',
       2 => 'pitching',
       3 => 'pitched',
     ),
-    1302 => 
+    1305 => 
     array (
       0 => 'polyrhythm',
       1 => 'polyrhythms',
     ),
-    1303 => 
+    1306 => 
     array (
       0 => 'progression',
       1 => 'progressions',
     ),
-    1304 => 
+    1307 => 
     array (
       0 => 'pulse',
-      1 => 'pulses',
+      1 => 'pulsed',
+      2 => 'pulses',
+      3 => 'pulsing',
     ),
-    1305 => 
+    1308 => 
     array (
       0 => 'quaver',
       1 => 'quavers',
     ),
-    1306 => 
+    1309 => 
     array (
       0 => 'repeat',
       1 => 'repeats',
       2 => 'repeating',
       3 => 'repeated',
     ),
-    1307 => 
+    1310 => 
     array (
       0 => 'resolution',
       1 => 'resolutions',
     ),
-    1308 => 
+    1311 => 
     array (
       0 => 'rest',
       1 => 'rests',
       2 => 'resting',
       3 => 'rested',
     ),
-    1309 => 
+    1312 => 
     array (
       0 => 'rhythm',
       1 => 'rhythms',
     ),
-    1310 => 
+    1313 => 
     array (
       0 => 'scale',
       1 => 'scales',
       2 => 'scaled',
       3 => 'scaling',
     ),
-    1311 => 
+    1314 => 
     array (
       0 => 'second',
       1 => 'seconds',
-      2 => 'seconded',
-      3 => 'secondes',
+      2 => 'seconding',
+      3 => 'seconded',
+      4 => 'secondes',
     ),
-    1312 => 
+    1315 => 
     array (
       0 => 'semibreve',
       1 => 'semibreves',
     ),
-    1313 => 
+    1316 => 
     array (
       0 => 'semiquaver',
       1 => 'semiquavers',
     ),
-    1314 => 
+    1317 => 
     array (
       0 => 'semitone',
       1 => 'semitones',
     ),
-    1315 => 
+    1318 => 
     array (
       0 => 'sequence',
       1 => 'sequences',
+      2 => 'sequenced',
+      3 => 'sequencing',
     ),
-    1316 => 
+    1319 => 
     array (
       0 => 'seventh',
       1 => 'sevenths',
     ),
-    1317 => 
+    1320 => 
     array (
       0 => 'sharp',
       1 => 'sharps',
     ),
-    1318 => 
+    1321 => 
     array (
       0 => 'sixth',
       1 => 'sixths',
     ),
-    1319 => 
+    1322 => 
     array (
       0 => 'slur',
       1 => 'slurs',
       2 => 'slurring',
       3 => 'slurred',
     ),
-    1320 => 
+    1323 => 
     array (
       0 => 'solfege',
       1 => 'solfeggio',
     ),
-    1321 => 
+    1324 => 
     array (
       0 => 'staff',
       1 => 'staffs',
       2 => 'staffed',
       3 => 'staffing',
     ),
-    1322 => 
+    1325 => 
     array (
       0 => 'stave',
       1 => 'staves',
       2 => 'staving',
       3 => 'staved',
     ),
-    1323 => 
+    1326 => 
     array (
       0 => 'subdominant',
       1 => 'subdominants',
     ),
-    1324 => 
+    1327 => 
     array (
       0 => 'submediant',
       1 => 'submediants',
     ),
-    1325 => 
+    1328 => 
     array (
       0 => 'supertonic',
       1 => 'supertonics',
     ),
-    1326 => 
+    1329 => 
     array (
       0 => 'suspension',
       1 => 'suspensions',
     ),
-    1327 => 
+    1330 => 
     array (
       0 => 'syncopation',
       1 => 'syncopations',
     ),
-    1328 => 
+    1331 => 
     array (
       0 => 'tab',
       1 => 'tabs',
       2 => 'tabes',
       3 => 'tabbed',
     ),
-    1329 => 
+    1332 => 
     array (
       0 => 'tablature',
       1 => 'tablatures',
     ),
-    1330 => 
+    1333 => 
     array (
       0 => 'tempo',
       1 => 'tempos',
       2 => 'tempi',
     ),
-    1331 => 
+    1334 => 
     array (
       0 => 'texture',
       1 => 'textures',
       2 => 'textured',
       3 => 'texturing',
     ),
-    1332 => 
+    1335 => 
     array (
       0 => 'third',
       1 => 'thirds',
     ),
-    1333 => 
+    1336 => 
     array (
       0 => 'tie',
       1 => 'ties',
+      2 => 'tieing',
+      3 => 'tying',
     ),
-    1334 => 
+    1337 => 
     array (
       0 => 'timbre',
       1 => 'timbres',
     ),
-    1335 => 
+    1338 => 
     array (
       0 => 'timesignature',
       1 => 'timesignatures',
     ),
-    1336 => 
+    1339 => 
     array (
       0 => 'tonality',
       1 => 'tonalities',
     ),
-    1337 => 
+    1340 => 
     array (
       0 => 'tone',
       1 => 'tones',
       2 => 'toned',
       3 => 'toning',
     ),
-    1338 => 
+    1341 => 
     array (
       0 => 'tonic',
       1 => 'tonics',
     ),
-    1339 => 
+    1342 => 
     array (
       0 => 'transposition',
       1 => 'transpositions',
     ),
-    1340 => 
+    1343 => 
     array (
       0 => 'triad',
       1 => 'triads',
     ),
-    1341 => 
+    1344 => 
     array (
       0 => 'trill',
       1 => 'trills',
       2 => 'trilling',
+      3 => 'trilled',
     ),
-    1342 => 
+    1345 => 
     array (
       0 => 'triplet',
       1 => 'triplets',
     ),
-    1343 => 
+    1346 => 
     array (
       0 => 'tritone',
       1 => 'tritones',
     ),
-    1344 => 
+    1347 => 
     array (
       0 => 'unison',
       1 => 'unisons',
     ),
-    1345 => 
+    1348 => 
     array (
       0 => 'upbeat',
       1 => 'upbeats',
     ),
-    1346 => 
+    1349 => 
     array (
       0 => 'beam',
       1 => 'beams',
       2 => 'beaming',
       3 => 'beamed',
     ),
-    1347 => 
+    1350 => 
     array (
       0 => 'bluenote',
       1 => 'bluenotes',
     ),
-    1348 => 
+    1351 => 
     array (
       0 => 'cluster',
       1 => 'clusters',
       2 => 'clustered',
       3 => 'clustering',
     ),
-    1349 => 
+    1352 => 
     array (
       0 => 'doubleflat',
       1 => 'doubleflats',
     ),
-    1350 => 
+    1353 => 
     array (
       0 => 'doublesharp',
       1 => 'doublesharps',
     ),
-    1351 => 
+    1354 => 
     array (
       0 => 'duplet',
       1 => 'duplets',
     ),
-    1352 => 
+    1355 => 
     array (
       0 => 'flag',
       1 => 'flags',
       2 => 'flagged',
       3 => 'flagging',
     ),
-    1353 => 
+    1356 => 
     array (
       0 => 'fundamental',
       1 => 'fundamentals',
     ),
-    1354 => 
+    1357 => 
     array (
       0 => 'halftone',
       1 => 'halftones',
     ),
-    1355 => 
+    1358 => 
     array (
       0 => 'hemiola',
       1 => 'hemiolas',
     ),
-    1356 => 
+    1359 => 
     array (
       0 => 'interrupted',
       1 => 'interrupt',
       2 => 'interrupting',
       3 => 'interrupts',
     ),
-    1357 => 
+    1360 => 
     array (
       0 => 'leadingtone',
       1 => 'leadingtones',
       2 => 'leadingnote',
       3 => 'leadingnotes',
     ),
-    1358 => 
+    1361 => 
     array (
       0 => 'ledger',
       1 => 'ledgerline',
       2 => 'ledgerlines',
       3 => 'ledgers',
     ),
-    1359 => 
+    1362 => 
     array (
       0 => 'manuscript',
       1 => 'manuscripts',
     ),
-    1360 => 
+    1363 => 
     array (
       0 => 'notehead',
       1 => 'noteheads',
     ),
-    1361 => 
+    1364 => 
     array (
       0 => 'partial',
       1 => 'partials',
     ),
-    1362 => 
+    1365 => 
     array (
       0 => 'quartertone',
       1 => 'quartertones',
     ),
-    1363 => 
+    1366 => 
     array (
       0 => 'quintuplet',
       1 => 'quintuplets',
     ),
-    1364 => 
+    1367 => 
     array (
       0 => 'ray',
-      1 => 'rays',
+      1 => 'rayed',
+      2 => 'raying',
+      3 => 'rays',
     ),
-    1365 => 
+    1368 => 
+    array (
+      0 => 'retrograde',
+      1 => 'retrograded',
+      2 => 'retrograding',
+    ),
+    1369 => 
     array (
       0 => 'sheet',
-      1 => 'sheets',
-      2 => 'sheeting',
+      1 => 'sheeted',
+      2 => 'sheets',
+      3 => 'sheeting',
     ),
-    1366 => 
+    1370 => 
     array (
       0 => 'signature',
       1 => 'signatures',
     ),
-    1367 => 
+    1371 => 
     array (
       0 => 'sixteenth',
       1 => 'sixteenths',
     ),
-    1368 => 
+    1372 => 
     array (
       0 => 'sol',
       1 => 'sols',
     ),
-    1369 => 
+    1373 => 
     array (
       0 => 'solfa',
       1 => 'tonicsolfa',
     ),
-    1370 => 
+    1374 => 
     array (
       0 => 'solmization',
       1 => 'solmisation',
     ),
-    1371 => 
+    1375 => 
     array (
       0 => 'subtonic',
       1 => 'subtonics',
     ),
-    1372 => 
+    1376 => 
     array (
       0 => 'temperament',
       1 => 'temperaments',
     ),
-    1373 => 
+    1377 => 
     array (
       0 => 'transcription',
       1 => 'transcriptions',
     ),
-    1374 => 
+    1378 => 
     array (
       0 => 'tuplet',
       1 => 'tuplets',
     ),
-    1375 => 
+    1379 => 
     array (
       0 => 'turn',
       1 => 'turns',
@@ -11459,7 +11776,7 @@ return array (
       3 => 'turning',
       4 => 'turnings',
     ),
-    1376 => 
+    1380 => 
     array (
       0 => 'voicing',
       1 => 'voicings',
@@ -11467,247 +11784,250 @@ return array (
       3 => 'voices',
       4 => 'voiced',
     ),
-    1377 => 
+    1381 => 
     array (
       0 => 'alto',
       1 => 'altos',
     ),
-    1378 => 
+    1382 => 
     array (
       0 => 'backingsinger',
       1 => 'backingsingers',
     ),
-    1379 => 
+    1383 => 
     array (
       0 => 'balladeer',
       1 => 'balladeers',
     ),
-    1380 => 
+    1384 => 
     array (
       0 => 'basso',
       1 => 'bassos',
     ),
-    1381 => 
+    1385 => 
     array (
       0 => 'beatboxer',
       1 => 'beatboxers',
     ),
-    1382 => 
+    1386 => 
     array (
       0 => 'belter',
       1 => 'belters',
     ),
-    1383 => 
+    1387 => 
     array (
       0 => 'cantor',
       1 => 'cantors',
     ),
-    1384 => 
+    1388 => 
     array (
       0 => 'caroller',
       1 => 'carollers',
       2 => 'caroler',
       3 => 'carolers',
     ),
-    1385 => 
+    1389 => 
     array (
       0 => 'castrato',
       1 => 'castrati',
     ),
-    1386 => 
+    1390 => 
     array (
       0 => 'chanteuse',
       1 => 'chanteuses',
     ),
-    1387 => 
+    1391 => 
     array (
       0 => 'choirboy',
       1 => 'choirboys',
     ),
-    1388 => 
+    1392 => 
     array (
       0 => 'choirgirl',
       1 => 'choirgirls',
     ),
-    1389 => 
+    1393 => 
     array (
       0 => 'chorister',
       1 => 'choristers',
     ),
-    1390 => 
+    1394 => 
     array (
       0 => 'coloratura',
       1 => 'coloraturas',
     ),
-    1391 => 
+    1395 => 
     array (
       0 => 'contralto',
       1 => 'contraltos',
     ),
-    1392 => 
+    1396 => 
     array (
       0 => 'countertenor',
       1 => 'countertenors',
     ),
-    1393 => 
+    1397 => 
     array (
       0 => 'crooner',
       1 => 'crooners',
     ),
-    1394 => 
+    1398 => 
     array (
       0 => 'diva',
       1 => 'divas',
     ),
-    1395 => 
+    1399 => 
     array (
       0 => 'emcee',
       1 => 'emcees',
-      2 => 'emceeing',
+      2 => 'emceed',
+      3 => 'emceeing',
     ),
-    1396 => 
+    1400 => 
     array (
       0 => 'falsetto',
       1 => 'falsettos',
     ),
-    1397 => 
+    1401 => 
     array (
       0 => 'leadsinger',
       1 => 'leadsingers',
     ),
-    1398 => 
+    1402 => 
     array (
       0 => 'mezzo',
       1 => 'mezzos',
     ),
-    1399 => 
+    1403 => 
     array (
       0 => 'mezzosoprano',
       1 => 'mezzosopranos',
     ),
-    1400 => 
+    1404 => 
     array (
       0 => 'operasinger',
       1 => 'operasingers',
     ),
-    1401 => 
+    1405 => 
     array (
       0 => 'primadonna',
       1 => 'primadonnas',
     ),
-    1402 => 
+    1406 => 
     array (
       0 => 'songstress',
       1 => 'songstresses',
     ),
-    1403 => 
+    1407 => 
     array (
       0 => 'soprano',
       1 => 'sopranos',
     ),
-    1404 => 
+    1408 => 
     array (
       0 => 'soubrette',
       1 => 'soubrettes',
     ),
-    1405 => 
+    1409 => 
     array (
       0 => 'tenor',
       1 => 'tenors',
     ),
-    1406 => 
+    1410 => 
     array (
       0 => 'treble',
       1 => 'trebles',
+      2 => 'trebled',
+      3 => 'trebling',
     ),
-    1407 => 
+    1411 => 
     array (
       0 => 'yodeller',
       1 => 'yodellers',
       2 => 'yodeler',
       3 => 'yodelers',
     ),
-    1408 => 
+    1412 => 
     array (
       0 => 'backingvocalist',
       1 => 'backingvocalists',
     ),
-    1409 => 
+    1413 => 
     array (
       0 => 'bassbaritone',
       1 => 'bassbaritones',
     ),
-    1410 => 
+    1414 => 
     array (
       0 => 'boysoprano',
       1 => 'boysopranos',
     ),
-    1411 => 
+    1415 => 
     array (
       0 => 'cantatrice',
       1 => 'cantatrices',
     ),
-    1412 => 
+    1416 => 
     array (
       0 => 'growler',
       1 => 'growlers',
     ),
-    1413 => 
+    1417 => 
     array (
       0 => 'heldentenor',
       1 => 'heldentenors',
     ),
-    1414 => 
+    1418 => 
     array (
       0 => 'muezzin',
       1 => 'muezzins',
     ),
-    1415 => 
+    1419 => 
     array (
       0 => 'precentor',
       1 => 'precentors',
     ),
-    1416 => 
+    1420 => 
     array (
       0 => 'screamer',
       1 => 'screamers',
     ),
-    1417 => 
+    1421 => 
     array (
       0 => 'serenader',
       1 => 'serenaders',
     ),
-    1418 => 
+    1422 => 
     array (
       0 => 'songbird',
       1 => 'songbirds',
     ),
-    1419 => 
+    1423 => 
     array (
       0 => 'sopranist',
       1 => 'sopranists',
     ),
-    1420 => 
+    1424 => 
     array (
       0 => 'spinto',
       1 => 'spintos',
     ),
-    1421 => 
+    1425 => 
     array (
       0 => 'toaster',
       1 => 'toasters',
     ),
-    1422 => 
+    1426 => 
     array (
       0 => 'torchsinger',
       1 => 'torchsingers',
     ),
-    1423 => 
+    1427 => 
     array (
       0 => 'warbler',
       1 => 'warblers',
     ),
-    1424 => 
+    1428 => 
     array (
       0 => 'wassailer',
       1 => 'wassailers',
@@ -15816,1015 +16136,1009 @@ return array (
     86 => 'headbanged',
     87 => 'hulas',
     88 => 'jete',
-    89 => 'jived',
-    90 => 'krump',
-    91 => 'krumping',
-    92 => 'limbos',
-    93 => 'madison',
-    94 => 'mambos',
-    95 => 'menuet',
-    96 => 'menuets',
-    97 => 'mosh',
-    98 => 'moshes',
-    99 => 'moshing',
-    100 => 'moshed',
-    101 => 'pavan',
-    102 => 'pavans',
-    103 => 'plie',
-    104 => 'pogos',
-    105 => 'pogoing',
-    106 => 'pogoed',
-    107 => 'rumbas',
-    108 => 'salsas',
-    109 => 'saraband',
-    110 => 'sarabands',
-    111 => 'shimmies',
-    112 => 'skank',
-    113 => 'skanks',
-    114 => 'skanking',
-    115 => 'skanked',
-    116 => 'tarantelle',
-    117 => 'tarantelles',
-    118 => 'twerk',
-    119 => 'twerks',
-    120 => 'twerking',
-    121 => 'twerked',
-    122 => 'vogueing',
-    123 => 'allemande',
-    124 => 'allemandes',
-    125 => 'battement',
-    126 => 'battements',
-    127 => 'beguine',
-    128 => 'beguines',
-    129 => 'branle',
-    130 => 'branles',
-    131 => 'chasse',
-    132 => 'chasses',
-    133 => 'courante',
-    134 => 'courantes',
-    135 => 'czardas',
-    136 => 'csardas',
-    137 => 'entrechat',
-    138 => 'entrechats',
-    139 => 'farandole',
-    140 => 'farandoles',
-    141 => 'fouette',
-    142 => 'fouettes',
-    143 => 'frug',
-    144 => 'glissade',
-    145 => 'glissades',
-    146 => 'hopak',
-    147 => 'hopaks',
-    148 => 'jota',
-    149 => 'jotas',
-    150 => 'kathak',
-    151 => 'kathaks',
-    152 => 'kazachok',
-    153 => 'kazachoks',
-    154 => 'kizomba',
-    155 => 'kizombas',
-    156 => 'kolo',
-    157 => 'kolos',
-    158 => 'landler',
-    159 => 'landlers',
-    160 => 'maypoles',
-    161 => 'milonga',
-    162 => 'milongas',
-    163 => 'passepied',
-    164 => 'passepieds',
-    165 => 'releve',
-    166 => 'releves',
-    167 => 'rigadoon',
-    168 => 'rigadoons',
-    169 => 'rigaudon',
-    170 => 'rigaudons',
-    171 => 'saltarello',
-    172 => 'saltarellos',
-    173 => 'sardana',
-    174 => 'sardanas',
-    175 => 'schottische',
-    176 => 'schottisches',
-    177 => 'sevillanas',
-    178 => 'sirtaki',
-    179 => 'sirtakis',
-    180 => 'sissonne',
-    181 => 'sissonnes',
-    182 => 'voltas',
-    183 => 'waacking',
-    184 => 'watusi',
-    185 => 'bagatelles',
-    186 => 'canticle',
-    187 => 'canticles',
-    188 => 'capriccio',
-    189 => 'capriccios',
-    190 => 'chaconne',
-    191 => 'chaconnes',
-    192 => 'concerti',
-    193 => 'divertimento',
-    194 => 'divertimentos',
-    195 => 'divertimenti',
-    196 => 'fantasias',
-    197 => 'humoresque',
-    198 => 'humoresques',
-    199 => 'impromptus',
-    200 => 'intermezzi',
-    201 => 'lieder',
-    202 => 'passacaglia',
-    203 => 'passacaglias',
-    204 => 'pastorale',
-    205 => 'pastorales',
-    206 => 'postlude',
-    207 => 'postludes',
-    208 => 'recitative',
-    209 => 'recitatives',
-    210 => 'requiems',
-    211 => 'rhapsodies',
-    212 => 'rondos',
-    213 => 'scherzi',
-    214 => 'sinfonia',
-    215 => 'sinfonias',
-    216 => 'arietta',
-    217 => 'ariettas',
-    218 => 'arioso',
-    219 => 'ariosos',
-    220 => 'aubade',
-    221 => 'aubades',
-    222 => 'berceuse',
-    223 => 'berceuses',
-    224 => 'cabaletta',
-    225 => 'cabalettas',
-    226 => 'cavatina',
-    227 => 'cavatinas',
-    228 => 'concertino',
-    229 => 'concertinos',
-    230 => 'fughetta',
-    231 => 'fughettas',
-    232 => 'glees',
-    233 => 'glorias',
-    234 => 'kyries',
-    235 => 'magnificat',
-    236 => 'magnificats',
-    237 => 'masque',
-    238 => 'masques',
-    239 => 'paean',
-    240 => 'paeans',
-    241 => 'quodlibet',
-    242 => 'quodlibets',
-    243 => 'ricercar',
-    244 => 'ricercars',
-    245 => 'ricercare',
-    246 => 'singspiel',
-    247 => 'singspiels',
-    248 => 'threnody',
-    249 => 'threnodies',
-    250 => 'zarzuela',
-    251 => 'zarzuelas',
-    252 => 'boombox',
-    253 => 'boomboxes',
-    254 => 'chanter',
-    255 => 'chanters',
-    256 => 'chinrest',
-    257 => 'chinrests',
-    258 => 'crossfader',
-    259 => 'crossfaders',
-    260 => 'drumhead',
-    261 => 'drumheads',
-    262 => 'earbud',
-    263 => 'earbuds',
-    264 => 'earplug',
-    265 => 'equaliser',
-    266 => 'equalisers',
-    267 => 'equalizers',
-    268 => 'fader',
-    269 => 'faders',
-    270 => 'fingerboard',
-    271 => 'fingerboards',
-    272 => 'flanger',
-    273 => 'flangers',
-    274 => 'fretboard',
-    275 => 'fretboards',
-    276 => 'fuzzbox',
-    277 => 'fuzzboxes',
-    278 => 'gramophones',
-    279 => 'headphone',
-    280 => 'headstock',
-    281 => 'headstocks',
-    282 => 'humbucker',
-    283 => 'humbuckers',
-    284 => 'loopers',
-    285 => 'mic',
-    286 => 'mics',
-    287 => 'mouthpieces',
-    288 => 'overdrives',
-    289 => 'pedalboard',
-    290 => 'pedalboards',
-    291 => 'phaser',
-    292 => 'phasers',
-    293 => 'phonographs',
-    294 => 'plectrum',
-    295 => 'plectrums',
-    296 => 'plectra',
-    297 => 'preamp',
-    298 => 'preamps',
-    299 => 'reverbs',
-    300 => 'sequencers',
-    301 => 'soundboard',
-    302 => 'soundboards',
-    303 => 'soundhole',
-    304 => 'soundholes',
-    305 => 'stompbox',
-    306 => 'stompboxes',
-    307 => 'stylus',
-    308 => 'styli',
-    309 => 'styluses',
-    310 => 'subwoofer',
-    311 => 'subwoofers',
-    312 => 'tweeter',
-    313 => 'tweeters',
-    314 => 'vocoder',
-    315 => 'vocoders',
-    316 => 'wah',
-    317 => 'wahs',
-    318 => 'woofer',
-    319 => 'woofers',
-    320 => 'backline',
-    321 => 'endpin',
-    322 => 'endpins',
-    323 => 'fingerpick',
-    324 => 'fingerpicks',
-    325 => 'footswitch',
-    326 => 'footswitches',
-    327 => 'limiter',
-    328 => 'limiters',
-    329 => 'pickguard',
-    330 => 'pickguards',
-    331 => 'rostrum',
-    332 => 'rostrums',
-    333 => 'rostra',
-    334 => 'scratchplate',
-    335 => 'scratchplates',
-    336 => 'slipmat',
-    337 => 'slipmats',
-    338 => 'soundpost',
-    339 => 'soundposts',
-    340 => 'tailpiece',
-    341 => 'tailpieces',
-    342 => 'thumbpick',
-    343 => 'thumbpicks',
-    344 => 'afrobeats',
-    345 => 'amapiano',
-    346 => 'bossa',
-    347 => 'cajun',
-    348 => 'cantopop',
-    349 => 'celtic',
-    350 => 'chillwave',
-    351 => 'chiptune',
-    352 => 'crunk',
-    353 => 'darkwave',
-    354 => 'deathcore',
-    355 => 'djent',
-    356 => 'downtempo',
-    357 => 'dnb',
-    358 => 'electropop',
-    359 => 'eurobeat',
-    360 => 'eurodance',
-    361 => 'europop',
-    362 => 'exotica',
-    363 => 'folktronica',
-    364 => 'gabba',
-    365 => 'gabber',
-    366 => 'grindcore',
-    367 => 'hardstyle',
-    368 => 'highlife',
-    369 => 'hyperpop',
-    370 => 'krautrock',
-    371 => 'madchester',
-    372 => 'mandopop',
-    373 => 'merseybeat',
-    374 => 'metalcore',
-    375 => 'minimalism',
-    376 => 'neoclassicism',
-    377 => 'psychedelia',
-    378 => 'psychobilly',
-    379 => 'qawwali',
-    380 => 'rnb',
-    381 => 'ragga',
-    382 => 'rocksteady',
-    383 => 'schlager',
-    384 => 'screamo',
-    385 => 'serialism',
-    386 => 'shoegazing',
-    387 => 'slowcore',
-    388 => 'synthwave',
-    389 => 'tejano',
-    390 => 'vaporwave',
-    391 => 'zouk',
-    392 => 'afroswing',
-    393 => 'bassline',
-    394 => 'bollywood',
-    395 => 'carnatic',
-    396 => 'corrido',
-    397 => 'cowpunk',
-    398 => 'deathrock',
-    399 => 'edm',
-    400 => 'electroclash',
-    401 => 'enka',
-    402 => 'filmi',
-    403 => 'forro',
-    404 => 'freakbeat',
-    405 => 'gangsta',
-    406 => 'gregorian',
-    407 => 'hindustani',
-    408 => 'indietronica',
-    409 => 'kompa',
-    410 => 'kwaito',
-    411 => 'mathcore',
-    412 => 'mento',
-    413 => 'modal',
-    414 => 'neoclassical',
-    415 => 'phonk',
-    416 => 'popera',
-    417 => 'psytrance',
-    418 => 'rai',
-    419 => 'ranchera',
-    420 => 'rapcore',
-    421 => 'rebetiko',
-    422 => 'rembetiko',
-    423 => 'sadcore',
-    424 => 'soukous',
-    425 => 'technopop',
-    426 => 'trad',
-    427 => 'tropicalia',
-    428 => 'twee',
-    429 => 'afterparty',
-    430 => 'afterparties',
-    431 => 'amphitheatres',
-    432 => 'auditoria',
-    433 => 'busk',
-    434 => 'busks',
-    435 => 'busking',
-    436 => 'busked',
-    437 => 'eisteddfod',
-    438 => 'eisteddfods',
-    439 => 'eisteddfodau',
-    440 => 'fest',
-    441 => 'fests',
-    442 => 'gigged',
-    443 => 'guestlist',
-    444 => 'guestlists',
-    445 => 'heckled',
-    446 => 'hootenannies',
-    447 => 'livestream',
-    448 => 'livestreams',
-    449 => 'merch',
-    450 => 'pyro',
-    451 => 'setlist',
-    452 => 'setlists',
-    453 => 'singsongs',
-    454 => 'soundcheck',
-    455 => 'soundchecks',
-    456 => 'stadia',
-    457 => 'aftershow',
-    458 => 'aftershows',
-    459 => 'feis',
-    460 => 'feiseanna',
-    461 => 'fleadh',
-    462 => 'fleadhs',
-    463 => 'masterclass',
-    464 => 'masterclasses',
-    465 => 'nonet',
-    466 => 'nonets',
-    467 => 'octet',
-    468 => 'octets',
-    469 => 'philharmonics',
-    470 => 'quintets',
-    471 => 'septet',
-    472 => 'septets',
-    473 => 'sextet',
-    474 => 'sextets',
-    475 => 'showband',
-    476 => 'showbands',
-    477 => 'sinfonietta',
-    478 => 'sinfoniettas',
-    479 => 'supergroup',
-    480 => 'supergroups',
-    481 => 'woodwind',
-    482 => 'woodwinds',
-    483 => 'banda',
-    484 => 'bandas',
-    485 => 'camerata',
-    486 => 'cameratas',
-    487 => 'charanga',
-    488 => 'charangas',
-    489 => 'conjunto',
-    490 => 'conjuntos',
-    491 => 'dectet',
-    492 => 'dectets',
-    493 => 'ripieno',
-    494 => 'schola',
-    495 => 'scholas',
-    496 => 'tentet',
-    497 => 'tentets',
-    498 => 'bandoneon',
-    499 => 'bandoneons',
-    500 => 'banjolele',
-    501 => 'banjoleles',
-    502 => 'celli',
-    503 => 'charango',
-    504 => 'charangos',
-    505 => 'cimbalom',
-    506 => 'cimbaloms',
-    507 => 'contrabass',
-    508 => 'contrabasses',
-    509 => 'krummhorn',
-    510 => 'krummhorns',
-    511 => 'didjeridu',
-    512 => 'didjeridus',
-    513 => 'handbell',
-    514 => 'handbells',
-    515 => 'panpipe',
-    516 => 'rainstick',
-    517 => 'rainsticks',
-    518 => 'saz',
-    519 => 'sazes',
-    520 => 'squeezebox',
-    521 => 'squeezeboxes',
-    522 => 'synthesisers',
-    523 => 'taiko',
-    524 => 'taikos',
-    525 => 'timbale',
-    526 => 'tympani',
-    527 => 'ukelele',
-    528 => 'ukeleles',
-    529 => 'violoncello',
-    530 => 'violoncellos',
-    531 => 'agogo',
-    532 => 'agogos',
-    533 => 'balafon',
-    534 => 'balafons',
-    535 => 'berimbau',
-    536 => 'berimbaus',
-    537 => 'clavinet',
-    538 => 'clavinets',
-    539 => 'cornett',
-    540 => 'cornetts',
-    541 => 'cuica',
-    542 => 'cuicas',
-    543 => 'darbuka',
-    544 => 'darbukas',
-    545 => 'doumbek',
-    546 => 'doumbeks',
-    547 => 'dhol',
-    548 => 'dhols',
-    549 => 'dholak',
-    550 => 'dholaks',
-    551 => 'gittern',
-    552 => 'gitterns',
-    553 => 'heckelphone',
-    554 => 'heckelphones',
-    555 => 'kantele',
-    556 => 'kanteles',
-    557 => 'mellophone',
-    558 => 'mellophones',
-    559 => 'mridangam',
-    560 => 'mridangams',
-    561 => 'nyckelharpa',
-    562 => 'nyckelharpas',
-    563 => 'pandeiro',
-    564 => 'pandeiros',
-    565 => 'resonators',
-    566 => 'santoor',
-    567 => 'santoors',
-    568 => 'santur',
-    569 => 'santurs',
-    570 => 'sarangi',
-    571 => 'sarangis',
-    572 => 'saxhorn',
-    573 => 'saxhorns',
-    574 => 'shehnai',
-    575 => 'shehnais',
-    576 => 'surdo',
-    577 => 'surdos',
-    578 => 'swanee',
-    579 => 'swanees',
-    580 => 'syrinx',
-    581 => 'syrinxes',
-    582 => 'tanpura',
-    583 => 'tanpuras',
-    584 => 'tambura',
-    585 => 'tamburas',
-    586 => 'tamboura',
-    587 => 'tambouras',
-    588 => 'timbal',
-    589 => 'timbals',
-    590 => 'vinas',
-    591 => 'vihuela',
-    592 => 'vihuelas',
-    593 => 'washtub',
-    594 => 'washtubs',
-    595 => 'accelerando',
-    596 => 'adagietto',
-    597 => 'adagios',
-    598 => 'affettuoso',
-    599 => 'agitato',
-    600 => 'allargando',
-    601 => 'allegretto',
-    602 => 'amoroso',
-    603 => 'andante',
-    604 => 'andantes',
-    605 => 'andantino',
-    606 => 'animato',
-    607 => 'appassionato',
-    608 => 'arco',
-    609 => 'brillante',
-    610 => 'calando',
-    611 => 'cantabile',
-    612 => 'crescendi',
-    613 => 'deciso',
-    614 => 'decrescendo',
-    615 => 'decrescendos',
-    616 => 'delicato',
-    617 => 'diminuendo',
-    618 => 'diminuendos',
-    619 => 'dolente',
-    620 => 'energico',
-    621 => 'espressivo',
-    622 => 'fermata',
-    623 => 'fermatas',
-    624 => 'fermate',
-    625 => 'fortissimo',
-    626 => 'fortississimo',
-    627 => 'giocoso',
-    628 => 'grandioso',
-    629 => 'grazioso',
-    630 => 'larghetto',
-    631 => 'larghissimo',
-    632 => 'largos',
-    633 => 'legato',
-    634 => 'leggiero',
-    635 => 'leggero',
-    636 => 'lento',
-    637 => 'maestoso',
-    638 => 'marcato',
-    639 => 'marziale',
-    640 => 'misterioso',
-    641 => 'moderato',
-    642 => 'morendo',
-    643 => 'pesante',
-    644 => 'pianissimo',
-    645 => 'pianississimo',
-    646 => 'pizzicato',
-    647 => 'prestissimo',
-    648 => 'rallentando',
-    649 => 'rinforzando',
-    650 => 'risoluto',
-    651 => 'ritardando',
-    652 => 'ritenuto',
-    653 => 'rubato',
-    654 => 'scherzando',
-    655 => 'segno',
-    656 => 'semplice',
-    657 => 'sforzando',
-    658 => 'sonoro',
-    659 => 'sostenuto',
-    660 => 'spiccato',
-    661 => 'spiritoso',
-    662 => 'staccato',
-    663 => 'stringendo',
-    664 => 'tacet',
-    665 => 'tenuto',
-    666 => 'tranquillo',
-    667 => 'vigoroso',
-    668 => 'vivace',
-    669 => 'vivacissimo',
-    670 => 'vivo',
-    671 => 'ancora',
-    672 => 'assai',
-    673 => 'attacca',
-    674 => 'comodo',
-    675 => 'doloroso',
-    676 => 'furioso',
-    677 => 'lacrimoso',
-    678 => 'lamentoso',
-    679 => 'largamente',
-    680 => 'lunga',
-    681 => 'lusingando',
-    682 => 'meno',
-    683 => 'mesto',
-    684 => 'mosso',
-    685 => 'niente',
-    686 => 'nobilmente',
-    687 => 'ottava',
-    688 => 'perdendosi',
-    689 => 'piacevole',
-    690 => 'piangevole',
-    691 => 'ponticello',
-    692 => 'portato',
-    693 => 'sempre',
-    694 => 'sforzato',
-    695 => 'slentando',
-    696 => 'smorzando',
-    697 => 'sordino',
-    698 => 'sordini',
-    699 => 'subito',
-    700 => 'tempestoso',
-    701 => 'teneramente',
-    702 => 'troppo',
-    703 => 'volante',
-    704 => 'accompanists',
-    705 => 'accordionist',
-    706 => 'accordionists',
-    707 => 'axeman',
-    708 => 'axemen',
-    709 => 'axman',
-    710 => 'axmen',
-    711 => 'bagpiper',
-    712 => 'bagpipers',
-    713 => 'bandleaders',
-    714 => 'bandmaster',
-    715 => 'bandmasters',
-    716 => 'bandmate',
-    717 => 'bandmates',
-    718 => 'banjoist',
-    719 => 'banjoists',
-    720 => 'bassoonist',
-    721 => 'bassoonists',
-    722 => 'bluesman',
-    723 => 'bluesmen',
-    724 => 'campanologist',
-    725 => 'campanologists',
-    726 => 'clarinettist',
-    727 => 'clarinettists',
-    728 => 'clarinetist',
-    729 => 'clarinetists',
-    730 => 'concertmaster',
-    731 => 'concertmasters',
-    732 => 'fifer',
-    733 => 'fifers',
-    734 => 'flutist',
-    735 => 'flutists',
-    736 => 'frontman',
-    737 => 'frontmen',
-    738 => 'frontwoman',
-    739 => 'frontwomen',
-    740 => 'harpsichordist',
-    741 => 'harpsichordists',
-    742 => 'instrumentalist',
-    743 => 'instrumentalists',
-    744 => 'jazzman',
-    745 => 'jazzmen',
-    746 => 'keyboardist',
-    747 => 'keyboardists',
-    748 => 'librettist',
-    749 => 'librettists',
-    750 => 'lutenist',
-    751 => 'lutenists',
-    752 => 'lutanist',
-    753 => 'lutanists',
-    754 => 'lutist',
-    755 => 'lutists',
-    756 => 'maestri',
-    757 => 'oboist',
-    758 => 'oboists',
-    759 => 'orchestrator',
-    760 => 'orchestrators',
-    761 => 'sideman',
-    762 => 'sidemen',
-    763 => 'sitarist',
-    764 => 'sitarists',
-    765 => 'sticksman',
-    766 => 'sticksmen',
-    767 => 'timpanist',
-    768 => 'timpanists',
-    769 => 'tympanist',
-    770 => 'tympanists',
-    771 => 'trombonist',
-    772 => 'trombonists',
-    773 => 'turntablist',
-    774 => 'turntablists',
-    775 => 'violist',
-    776 => 'violists',
-    777 => 'virtuosi',
-    778 => 'bandsman',
-    779 => 'bandsmen',
-    780 => 'carillonneur',
-    781 => 'carillonneurs',
-    782 => 'chansonnier',
-    783 => 'chansonniers',
-    784 => 'contrabassist',
-    785 => 'contrabassists',
-    786 => 'cornetist',
-    787 => 'cornetists',
-    788 => 'cornettist',
-    789 => 'cornettists',
-    790 => 'duettist',
-    791 => 'duettists',
-    792 => 'griot',
-    793 => 'griots',
-    794 => 'harmonicist',
-    795 => 'harmonicists',
-    796 => 'hornist',
-    797 => 'hornists',
-    798 => 'improviser',
-    799 => 'improvisers',
-    800 => 'improvisor',
-    801 => 'improvisors',
-    802 => 'jongleur',
-    803 => 'jongleurs',
-    804 => 'kapellmeister',
-    805 => 'kapellmeisters',
-    806 => 'mandolinist',
-    807 => 'mandolinists',
-    808 => 'marimbist',
-    809 => 'marimbists',
-    810 => 'melodist',
-    811 => 'melodists',
-    812 => 'skald',
-    813 => 'skalds',
-    814 => 'songsmith',
-    815 => 'songsmiths',
-    816 => 'symphonist',
-    817 => 'symphonists',
-    818 => 'synthesist',
-    819 => 'synthesists',
-    820 => 'trouvere',
-    821 => 'trouveres',
-    822 => 'tubist',
-    823 => 'tubists',
-    824 => 'tubaist',
-    825 => 'tubaists',
-    826 => 'tunesmith',
-    827 => 'tunesmiths',
-    828 => 'ukulelist',
-    829 => 'ukulelists',
-    830 => 'vibraphonist',
-    831 => 'vibraphonists',
-    832 => 'violoncellist',
-    833 => 'violoncellists',
-    834 => 'xylophonist',
-    835 => 'xylophonists',
-    836 => 'acapella',
-    837 => 'airplay',
-    838 => 'anthologies',
-    839 => 'cassingle',
-    840 => 'cassingles',
-    841 => 'discography',
-    842 => 'discographies',
-    843 => 'earworm',
-    844 => 'earworms',
-    845 => 'gatefold',
-    846 => 'gatefolds',
-    847 => 'longplayer',
-    848 => 'longplayers',
-    849 => 'mashup',
-    850 => 'mashups',
-    851 => 'medleys',
-    852 => 'megamix',
-    853 => 'megamixes',
-    854 => 'minidisc',
-    855 => 'minidiscs',
-    856 => 'mixdown',
-    857 => 'mixdowns',
-    858 => 'mixtape',
-    859 => 'mixtapes',
-    860 => 'outtake',
-    861 => 'outtakes',
-    862 => 'overdub',
-    863 => 'overdubs',
-    864 => 'playbacks',
-    865 => 'pressings',
-    866 => 'reissue',
-    867 => 'reissues',
-    868 => 'remaster',
-    869 => 'remasters',
-    870 => 'singalong',
-    871 => 'singalongs',
-    872 => 'tracklist',
-    873 => 'tracklists',
-    874 => 'acetates',
-    875 => 'dubplate',
-    876 => 'dubplates',
-    877 => 'multitrack',
-    878 => 'multitracks',
-    879 => 'shellac',
-    880 => 'accompaniments',
-    881 => 'backbeat',
-    882 => 'backbeats',
-    883 => 'basslines',
-    884 => 'beatbox',
-    885 => 'beatboxes',
-    886 => 'beatboxed',
-    887 => 'cadenza',
-    888 => 'cadenzas',
-    889 => 'codas',
-    890 => 'croons',
-    891 => 'crooned',
-    892 => 'descant',
-    893 => 'descants',
-    894 => 'drumrolls',
-    895 => 'expositions',
-    896 => 'fingerpicking',
-    897 => 'glissando',
-    898 => 'glissandos',
-    899 => 'glissandi',
-    900 => 'handclap',
-    901 => 'handclaps',
-    902 => 'leitmotif',
-    903 => 'leitmotifs',
-    904 => 'melisma',
-    905 => 'melismas',
-    906 => 'ostinato',
-    907 => 'ostinatos',
-    908 => 'outro',
-    909 => 'outros',
-    910 => 'paradiddle',
-    911 => 'paradiddles',
-    912 => 'portamento',
-    913 => 'recapitulation',
-    914 => 'recapitulations',
-    915 => 'reprises',
-    916 => 'rimshot',
-    917 => 'rimshots',
-    918 => 'scatted',
-    919 => 'stanzas',
-    920 => 'tremolo',
-    921 => 'tremolos',
-    922 => 'vibratos',
-    923 => 'yodelled',
-    924 => 'yodeled',
-    925 => 'continuo',
-    926 => 'continuos',
-    927 => 'countermelody',
-    928 => 'countermelodies',
-    929 => 'fingerstyle',
-    930 => 'flams',
-    931 => 'obbligato',
-    932 => 'obbligatos',
-    933 => 'vocalise',
-    934 => 'vocalises',
-    935 => 'acciaccatura',
-    936 => 'acciaccaturas',
-    937 => 'accidentals',
-    938 => 'anacrusis',
-    939 => 'anacruses',
-    940 => 'appoggiatura',
-    941 => 'appoggiaturas',
-    942 => 'arpeggio',
-    943 => 'arpeggios',
-    944 => 'atonality',
-    945 => 'barline',
-    946 => 'barlines',
-    947 => 'breve',
-    948 => 'breves',
-    949 => 'chromatic',
-    950 => 'chromaticism',
-    951 => 'clefs',
-    952 => 'consonance',
-    953 => 'consonances',
-    954 => 'crotchet',
-    955 => 'crotchets',
-    956 => 'demisemiquaver',
-    957 => 'demisemiquavers',
-    958 => 'diatonic',
-    959 => 'dissonances',
-    960 => 'dominants',
-    961 => 'downbeats',
-    962 => 'enharmonic',
-    963 => 'fingerings',
-    964 => 'hemidemisemiquaver',
-    965 => 'hemidemisemiquavers',
-    966 => 'homophony',
-    967 => 'mediant',
-    968 => 'mediants',
-    969 => 'microtone',
-    970 => 'microtones',
-    971 => 'minim',
-    972 => 'minims',
-    973 => 'modulations',
-    974 => 'monophony',
-    975 => 'mordent',
-    976 => 'mordents',
-    977 => 'ninths',
-    978 => 'offbeats',
-    979 => 'overtone',
-    980 => 'pentatonic',
-    981 => 'polyphony',
-    982 => 'polyrhythm',
-    983 => 'polyrhythms',
-    984 => 'quaver',
-    985 => 'quavers',
-    986 => 'semibreve',
-    987 => 'semibreves',
-    988 => 'semiquaver',
-    989 => 'semiquavers',
-    990 => 'semitone',
-    991 => 'semitones',
-    992 => 'sevenths',
-    993 => 'sixths',
-    994 => 'solfege',
-    995 => 'solfeggio',
-    996 => 'subdominant',
-    997 => 'subdominants',
-    998 => 'submediant',
-    999 => 'submediants',
-    1000 => 'supertonic',
-    1001 => 'supertonics',
-    1002 => 'syncopation',
-    1003 => 'syncopations',
-    1004 => 'tablature',
-    1005 => 'tablatures',
-    1006 => 'tempi',
-    1007 => 'timbres',
-    1008 => 'tonality',
-    1009 => 'tonalities',
-    1010 => 'transposition',
-    1011 => 'transpositions',
-    1012 => 'tritone',
-    1013 => 'tritones',
-    1014 => 'tunings',
-    1015 => 'unisons',
-    1016 => 'upbeats',
-    1017 => 'aeolian',
-    1018 => 'bitonality',
-    1019 => 'diminution',
-    1020 => 'dodecaphony',
-    1021 => 'doh',
-    1022 => 'dorian',
-    1023 => 'duplet',
-    1024 => 'duplets',
-    1025 => 'fah',
-    1026 => 'halftone',
-    1027 => 'halftones',
-    1028 => 'hemiola',
-    1029 => 'hemiolas',
-    1030 => 'ionian',
-    1031 => 'lah',
-    1032 => 'locrian',
-    1033 => 'lydian',
-    1034 => 'mixolydian',
-    1035 => 'notehead',
-    1036 => 'noteheads',
-    1037 => 'phrygian',
-    1038 => 'plagal',
-    1039 => 'polytonality',
-    1040 => 'sixteenths',
-    1041 => 'soh',
-    1042 => 'solfa',
-    1043 => 'solmization',
-    1044 => 'solmisation',
-    1045 => 'subtonic',
-    1046 => 'subtonics',
-    1047 => 'tuplet',
-    1048 => 'tuplets',
-    1049 => 'voicings',
-    1050 => 'balladeer',
-    1051 => 'balladeers',
-    1052 => 'basso',
-    1053 => 'bassos',
-    1054 => 'beatboxer',
-    1055 => 'beatboxers',
-    1056 => 'caroller',
-    1057 => 'carollers',
-    1058 => 'caroler',
-    1059 => 'castrato',
-    1060 => 'castrati',
-    1061 => 'chanteuse',
-    1062 => 'chanteuses',
-    1063 => 'choirgirl',
-    1064 => 'choirgirls',
-    1065 => 'coloratura',
-    1066 => 'coloraturas',
-    1067 => 'contralto',
-    1068 => 'contraltos',
-    1069 => 'countertenor',
-    1070 => 'countertenors',
-    1071 => 'falsettos',
-    1072 => 'mezzo',
-    1073 => 'mezzos',
-    1074 => 'songstress',
-    1075 => 'songstresses',
-    1076 => 'soubrette',
-    1077 => 'soubrettes',
-    1078 => 'yodeller',
-    1079 => 'yodellers',
-    1080 => 'yodeler',
-    1081 => 'yodelers',
-    1082 => 'cantatrice',
-    1083 => 'cantatrices',
-    1084 => 'growler',
-    1085 => 'growlers',
-    1086 => 'heldentenor',
-    1087 => 'heldentenors',
-    1088 => 'muezzins',
-    1089 => 'precentor',
-    1090 => 'precentors',
-    1091 => 'serenader',
-    1092 => 'serenaders',
-    1093 => 'sopranist',
-    1094 => 'sopranists',
-    1095 => 'spinto',
-    1096 => 'spintos',
-    1097 => 'wassailer',
-    1098 => 'wassailers',
+    89 => 'krump',
+    90 => 'krumping',
+    91 => 'limbos',
+    92 => 'madison',
+    93 => 'mambos',
+    94 => 'menuet',
+    95 => 'menuets',
+    96 => 'mosh',
+    97 => 'moshes',
+    98 => 'moshing',
+    99 => 'moshed',
+    100 => 'pavan',
+    101 => 'pavans',
+    102 => 'plie',
+    103 => 'pogos',
+    104 => 'pogoing',
+    105 => 'pogoed',
+    106 => 'rumbas',
+    107 => 'salsas',
+    108 => 'saraband',
+    109 => 'sarabands',
+    110 => 'shimmies',
+    111 => 'skank',
+    112 => 'skanks',
+    113 => 'skanking',
+    114 => 'skanked',
+    115 => 'tarantelle',
+    116 => 'tarantelles',
+    117 => 'twerk',
+    118 => 'twerks',
+    119 => 'twerking',
+    120 => 'twerked',
+    121 => 'vogueing',
+    122 => 'allemande',
+    123 => 'allemandes',
+    124 => 'battement',
+    125 => 'battements',
+    126 => 'beguine',
+    127 => 'beguines',
+    128 => 'branle',
+    129 => 'branles',
+    130 => 'chasse',
+    131 => 'chasses',
+    132 => 'courante',
+    133 => 'courantes',
+    134 => 'czardas',
+    135 => 'csardas',
+    136 => 'entrechat',
+    137 => 'entrechats',
+    138 => 'farandole',
+    139 => 'farandoles',
+    140 => 'fouette',
+    141 => 'fouettes',
+    142 => 'frug',
+    143 => 'glissade',
+    144 => 'glissades',
+    145 => 'hopak',
+    146 => 'hopaks',
+    147 => 'jota',
+    148 => 'jotas',
+    149 => 'kathak',
+    150 => 'kathaks',
+    151 => 'kazachok',
+    152 => 'kazachoks',
+    153 => 'kizomba',
+    154 => 'kizombas',
+    155 => 'kolo',
+    156 => 'kolos',
+    157 => 'landler',
+    158 => 'landlers',
+    159 => 'maypoles',
+    160 => 'milonga',
+    161 => 'milongas',
+    162 => 'passepied',
+    163 => 'passepieds',
+    164 => 'releve',
+    165 => 'releves',
+    166 => 'rigadoon',
+    167 => 'rigadoons',
+    168 => 'rigaudon',
+    169 => 'rigaudons',
+    170 => 'saltarello',
+    171 => 'saltarellos',
+    172 => 'sardana',
+    173 => 'sardanas',
+    174 => 'schottische',
+    175 => 'schottisches',
+    176 => 'sevillanas',
+    177 => 'sirtaki',
+    178 => 'sirtakis',
+    179 => 'sissonne',
+    180 => 'sissonnes',
+    181 => 'voltas',
+    182 => 'waacking',
+    183 => 'watusi',
+    184 => 'bagatelles',
+    185 => 'canticle',
+    186 => 'canticles',
+    187 => 'capriccio',
+    188 => 'capriccios',
+    189 => 'chaconne',
+    190 => 'chaconnes',
+    191 => 'concerti',
+    192 => 'divertimento',
+    193 => 'divertimentos',
+    194 => 'divertimenti',
+    195 => 'fantasias',
+    196 => 'humoresque',
+    197 => 'humoresques',
+    198 => 'impromptus',
+    199 => 'intermezzi',
+    200 => 'lieder',
+    201 => 'passacaglia',
+    202 => 'passacaglias',
+    203 => 'pastorale',
+    204 => 'pastorales',
+    205 => 'postlude',
+    206 => 'postludes',
+    207 => 'recitative',
+    208 => 'recitatives',
+    209 => 'requiems',
+    210 => 'rhapsodies',
+    211 => 'rondos',
+    212 => 'scherzi',
+    213 => 'sinfonia',
+    214 => 'sinfonias',
+    215 => 'arietta',
+    216 => 'ariettas',
+    217 => 'arioso',
+    218 => 'ariosos',
+    219 => 'aubade',
+    220 => 'aubades',
+    221 => 'berceuse',
+    222 => 'berceuses',
+    223 => 'cabaletta',
+    224 => 'cabalettas',
+    225 => 'cavatina',
+    226 => 'cavatinas',
+    227 => 'concertino',
+    228 => 'concertinos',
+    229 => 'fughetta',
+    230 => 'fughettas',
+    231 => 'glees',
+    232 => 'glorias',
+    233 => 'kyries',
+    234 => 'magnificat',
+    235 => 'magnificats',
+    236 => 'masque',
+    237 => 'masques',
+    238 => 'paean',
+    239 => 'paeans',
+    240 => 'quodlibet',
+    241 => 'quodlibets',
+    242 => 'ricercar',
+    243 => 'ricercars',
+    244 => 'ricercare',
+    245 => 'singspiel',
+    246 => 'singspiels',
+    247 => 'threnody',
+    248 => 'threnodies',
+    249 => 'zarzuela',
+    250 => 'zarzuelas',
+    251 => 'boombox',
+    252 => 'boomboxes',
+    253 => 'chanter',
+    254 => 'chanters',
+    255 => 'chinrest',
+    256 => 'chinrests',
+    257 => 'crossfader',
+    258 => 'crossfaders',
+    259 => 'drumhead',
+    260 => 'drumheads',
+    261 => 'earbud',
+    262 => 'earbuds',
+    263 => 'earplug',
+    264 => 'equaliser',
+    265 => 'equalisers',
+    266 => 'equalizers',
+    267 => 'fader',
+    268 => 'faders',
+    269 => 'fingerboard',
+    270 => 'fingerboards',
+    271 => 'flanger',
+    272 => 'flangers',
+    273 => 'fretboard',
+    274 => 'fretboards',
+    275 => 'fuzzbox',
+    276 => 'fuzzboxes',
+    277 => 'gramophones',
+    278 => 'headphone',
+    279 => 'headstock',
+    280 => 'headstocks',
+    281 => 'humbucker',
+    282 => 'humbuckers',
+    283 => 'loopers',
+    284 => 'mic',
+    285 => 'mics',
+    286 => 'mouthpieces',
+    287 => 'overdrives',
+    288 => 'pedalboard',
+    289 => 'pedalboards',
+    290 => 'phaser',
+    291 => 'phasers',
+    292 => 'phonographs',
+    293 => 'plectrum',
+    294 => 'plectrums',
+    295 => 'plectra',
+    296 => 'preamp',
+    297 => 'preamps',
+    298 => 'reverbs',
+    299 => 'sequencers',
+    300 => 'soundboard',
+    301 => 'soundboards',
+    302 => 'soundhole',
+    303 => 'soundholes',
+    304 => 'stompbox',
+    305 => 'stompboxes',
+    306 => 'stylus',
+    307 => 'styli',
+    308 => 'styluses',
+    309 => 'subwoofer',
+    310 => 'subwoofers',
+    311 => 'tweeter',
+    312 => 'tweeters',
+    313 => 'vocoder',
+    314 => 'vocoders',
+    315 => 'wah',
+    316 => 'wahs',
+    317 => 'woofer',
+    318 => 'woofers',
+    319 => 'backline',
+    320 => 'endpin',
+    321 => 'endpins',
+    322 => 'fingerpick',
+    323 => 'fingerpicks',
+    324 => 'footswitch',
+    325 => 'footswitches',
+    326 => 'limiter',
+    327 => 'limiters',
+    328 => 'pickguard',
+    329 => 'pickguards',
+    330 => 'rostrum',
+    331 => 'rostrums',
+    332 => 'rostra',
+    333 => 'scratchplate',
+    334 => 'scratchplates',
+    335 => 'slipmat',
+    336 => 'slipmats',
+    337 => 'soundpost',
+    338 => 'soundposts',
+    339 => 'tailpiece',
+    340 => 'tailpieces',
+    341 => 'thumbpick',
+    342 => 'thumbpicks',
+    343 => 'afrobeats',
+    344 => 'amapiano',
+    345 => 'bossa',
+    346 => 'cajun',
+    347 => 'cantopop',
+    348 => 'celtic',
+    349 => 'chillwave',
+    350 => 'chiptune',
+    351 => 'crunk',
+    352 => 'darkwave',
+    353 => 'deathcore',
+    354 => 'djent',
+    355 => 'downtempo',
+    356 => 'dnb',
+    357 => 'electropop',
+    358 => 'eurobeat',
+    359 => 'eurodance',
+    360 => 'europop',
+    361 => 'exotica',
+    362 => 'folktronica',
+    363 => 'gabba',
+    364 => 'gabber',
+    365 => 'grindcore',
+    366 => 'hardstyle',
+    367 => 'highlife',
+    368 => 'hyperpop',
+    369 => 'krautrock',
+    370 => 'madchester',
+    371 => 'mandopop',
+    372 => 'merseybeat',
+    373 => 'metalcore',
+    374 => 'minimalism',
+    375 => 'neoclassicism',
+    376 => 'psychedelia',
+    377 => 'psychobilly',
+    378 => 'qawwali',
+    379 => 'rnb',
+    380 => 'ragga',
+    381 => 'rocksteady',
+    382 => 'schlager',
+    383 => 'screamo',
+    384 => 'serialism',
+    385 => 'shoegazing',
+    386 => 'slowcore',
+    387 => 'synthwave',
+    388 => 'tejano',
+    389 => 'vaporwave',
+    390 => 'zouk',
+    391 => 'afroswing',
+    392 => 'bassline',
+    393 => 'bollywood',
+    394 => 'carnatic',
+    395 => 'corrido',
+    396 => 'cowpunk',
+    397 => 'deathrock',
+    398 => 'edm',
+    399 => 'electroclash',
+    400 => 'enka',
+    401 => 'filmi',
+    402 => 'forro',
+    403 => 'freakbeat',
+    404 => 'gangsta',
+    405 => 'gregorian',
+    406 => 'hindustani',
+    407 => 'indietronica',
+    408 => 'kompa',
+    409 => 'kwaito',
+    410 => 'mathcore',
+    411 => 'mento',
+    412 => 'modal',
+    413 => 'neoclassical',
+    414 => 'phonk',
+    415 => 'popera',
+    416 => 'psytrance',
+    417 => 'rai',
+    418 => 'ranchera',
+    419 => 'rapcore',
+    420 => 'rebetiko',
+    421 => 'rembetiko',
+    422 => 'sadcore',
+    423 => 'soukous',
+    424 => 'technopop',
+    425 => 'trad',
+    426 => 'tropicalia',
+    427 => 'twee',
+    428 => 'afterparty',
+    429 => 'afterparties',
+    430 => 'amphitheatres',
+    431 => 'auditoria',
+    432 => 'busk',
+    433 => 'busks',
+    434 => 'busking',
+    435 => 'busked',
+    436 => 'eisteddfod',
+    437 => 'eisteddfods',
+    438 => 'eisteddfodau',
+    439 => 'fest',
+    440 => 'fests',
+    441 => 'gigged',
+    442 => 'guestlist',
+    443 => 'guestlists',
+    444 => 'hootenannies',
+    445 => 'livestream',
+    446 => 'livestreams',
+    447 => 'merch',
+    448 => 'pyro',
+    449 => 'setlist',
+    450 => 'setlists',
+    451 => 'singsongs',
+    452 => 'soundcheck',
+    453 => 'soundchecks',
+    454 => 'stadia',
+    455 => 'aftershow',
+    456 => 'aftershows',
+    457 => 'feis',
+    458 => 'feiseanna',
+    459 => 'fleadh',
+    460 => 'fleadhs',
+    461 => 'masterclass',
+    462 => 'masterclasses',
+    463 => 'nonet',
+    464 => 'nonets',
+    465 => 'octet',
+    466 => 'octets',
+    467 => 'philharmonics',
+    468 => 'quintets',
+    469 => 'septet',
+    470 => 'septets',
+    471 => 'sextet',
+    472 => 'sextets',
+    473 => 'showband',
+    474 => 'showbands',
+    475 => 'sinfonietta',
+    476 => 'sinfoniettas',
+    477 => 'supergroup',
+    478 => 'supergroups',
+    479 => 'woodwind',
+    480 => 'woodwinds',
+    481 => 'banda',
+    482 => 'bandas',
+    483 => 'camerata',
+    484 => 'cameratas',
+    485 => 'charanga',
+    486 => 'charangas',
+    487 => 'conjunto',
+    488 => 'conjuntos',
+    489 => 'dectet',
+    490 => 'dectets',
+    491 => 'ripieno',
+    492 => 'schola',
+    493 => 'scholas',
+    494 => 'tentet',
+    495 => 'tentets',
+    496 => 'bandoneon',
+    497 => 'bandoneons',
+    498 => 'banjolele',
+    499 => 'banjoleles',
+    500 => 'celli',
+    501 => 'charango',
+    502 => 'charangos',
+    503 => 'cimbalom',
+    504 => 'cimbaloms',
+    505 => 'contrabass',
+    506 => 'contrabasses',
+    507 => 'krummhorn',
+    508 => 'krummhorns',
+    509 => 'didjeridu',
+    510 => 'didjeridus',
+    511 => 'handbell',
+    512 => 'handbells',
+    513 => 'panpipe',
+    514 => 'rainstick',
+    515 => 'rainsticks',
+    516 => 'saz',
+    517 => 'sazes',
+    518 => 'squeezebox',
+    519 => 'squeezeboxes',
+    520 => 'synthesisers',
+    521 => 'taiko',
+    522 => 'taikos',
+    523 => 'timbale',
+    524 => 'tympani',
+    525 => 'ukelele',
+    526 => 'ukeleles',
+    527 => 'violoncello',
+    528 => 'violoncellos',
+    529 => 'agogo',
+    530 => 'agogos',
+    531 => 'balafon',
+    532 => 'balafons',
+    533 => 'berimbau',
+    534 => 'berimbaus',
+    535 => 'clavinet',
+    536 => 'clavinets',
+    537 => 'cornett',
+    538 => 'cornetts',
+    539 => 'cuica',
+    540 => 'cuicas',
+    541 => 'darbuka',
+    542 => 'darbukas',
+    543 => 'doumbek',
+    544 => 'doumbeks',
+    545 => 'dhol',
+    546 => 'dhols',
+    547 => 'dholak',
+    548 => 'dholaks',
+    549 => 'gittern',
+    550 => 'gitterns',
+    551 => 'heckelphone',
+    552 => 'heckelphones',
+    553 => 'kantele',
+    554 => 'kanteles',
+    555 => 'mellophone',
+    556 => 'mellophones',
+    557 => 'mridangam',
+    558 => 'mridangams',
+    559 => 'nyckelharpa',
+    560 => 'nyckelharpas',
+    561 => 'pandeiro',
+    562 => 'pandeiros',
+    563 => 'resonators',
+    564 => 'santoor',
+    565 => 'santoors',
+    566 => 'santur',
+    567 => 'santurs',
+    568 => 'sarangi',
+    569 => 'sarangis',
+    570 => 'saxhorn',
+    571 => 'saxhorns',
+    572 => 'shehnai',
+    573 => 'shehnais',
+    574 => 'surdo',
+    575 => 'surdos',
+    576 => 'swanee',
+    577 => 'swanees',
+    578 => 'syrinx',
+    579 => 'syrinxes',
+    580 => 'tanpura',
+    581 => 'tanpuras',
+    582 => 'tambura',
+    583 => 'tamburas',
+    584 => 'tamboura',
+    585 => 'tambouras',
+    586 => 'timbal',
+    587 => 'timbals',
+    588 => 'vinas',
+    589 => 'vihuela',
+    590 => 'vihuelas',
+    591 => 'washtub',
+    592 => 'washtubs',
+    593 => 'accelerando',
+    594 => 'adagietto',
+    595 => 'adagios',
+    596 => 'affettuoso',
+    597 => 'agitato',
+    598 => 'allargando',
+    599 => 'allegretto',
+    600 => 'amoroso',
+    601 => 'andante',
+    602 => 'andantes',
+    603 => 'andantino',
+    604 => 'animato',
+    605 => 'appassionato',
+    606 => 'arco',
+    607 => 'brillante',
+    608 => 'calando',
+    609 => 'cantabile',
+    610 => 'crescendi',
+    611 => 'deciso',
+    612 => 'decrescendo',
+    613 => 'decrescendos',
+    614 => 'delicato',
+    615 => 'diminuendo',
+    616 => 'diminuendos',
+    617 => 'dolente',
+    618 => 'energico',
+    619 => 'espressivo',
+    620 => 'fermata',
+    621 => 'fermatas',
+    622 => 'fermate',
+    623 => 'fortissimo',
+    624 => 'fortississimo',
+    625 => 'giocoso',
+    626 => 'grandioso',
+    627 => 'grazioso',
+    628 => 'larghetto',
+    629 => 'larghissimo',
+    630 => 'largos',
+    631 => 'legato',
+    632 => 'leggiero',
+    633 => 'leggero',
+    634 => 'lento',
+    635 => 'maestoso',
+    636 => 'marcato',
+    637 => 'marziale',
+    638 => 'misterioso',
+    639 => 'moderato',
+    640 => 'morendo',
+    641 => 'pesante',
+    642 => 'pianissimo',
+    643 => 'pianississimo',
+    644 => 'pizzicato',
+    645 => 'prestissimo',
+    646 => 'rallentando',
+    647 => 'rinforzando',
+    648 => 'risoluto',
+    649 => 'ritardando',
+    650 => 'ritenuto',
+    651 => 'rubato',
+    652 => 'scherzando',
+    653 => 'segno',
+    654 => 'semplice',
+    655 => 'sforzando',
+    656 => 'sonoro',
+    657 => 'sostenuto',
+    658 => 'spiccato',
+    659 => 'spiritoso',
+    660 => 'staccato',
+    661 => 'stringendo',
+    662 => 'tacet',
+    663 => 'tenuto',
+    664 => 'tranquillo',
+    665 => 'vigoroso',
+    666 => 'vivace',
+    667 => 'vivacissimo',
+    668 => 'vivo',
+    669 => 'ancora',
+    670 => 'assai',
+    671 => 'attacca',
+    672 => 'comodo',
+    673 => 'doloroso',
+    674 => 'furioso',
+    675 => 'lacrimoso',
+    676 => 'lamentoso',
+    677 => 'largamente',
+    678 => 'lunga',
+    679 => 'lusingando',
+    680 => 'meno',
+    681 => 'mesto',
+    682 => 'mosso',
+    683 => 'niente',
+    684 => 'nobilmente',
+    685 => 'ottava',
+    686 => 'perdendosi',
+    687 => 'piacevole',
+    688 => 'piangevole',
+    689 => 'ponticello',
+    690 => 'portato',
+    691 => 'sempre',
+    692 => 'sforzato',
+    693 => 'slentando',
+    694 => 'smorzando',
+    695 => 'sordino',
+    696 => 'sordini',
+    697 => 'subito',
+    698 => 'tempestoso',
+    699 => 'teneramente',
+    700 => 'troppo',
+    701 => 'volante',
+    702 => 'accompanists',
+    703 => 'accordionist',
+    704 => 'accordionists',
+    705 => 'axeman',
+    706 => 'axemen',
+    707 => 'axman',
+    708 => 'axmen',
+    709 => 'bagpiper',
+    710 => 'bagpipers',
+    711 => 'bandleaders',
+    712 => 'bandmaster',
+    713 => 'bandmasters',
+    714 => 'bandmate',
+    715 => 'bandmates',
+    716 => 'banjoist',
+    717 => 'banjoists',
+    718 => 'bassoonist',
+    719 => 'bassoonists',
+    720 => 'bluesman',
+    721 => 'bluesmen',
+    722 => 'campanologist',
+    723 => 'campanologists',
+    724 => 'clarinettist',
+    725 => 'clarinettists',
+    726 => 'clarinetist',
+    727 => 'clarinetists',
+    728 => 'concertmaster',
+    729 => 'concertmasters',
+    730 => 'fifer',
+    731 => 'fifers',
+    732 => 'flutist',
+    733 => 'flutists',
+    734 => 'frontman',
+    735 => 'frontmen',
+    736 => 'frontwoman',
+    737 => 'frontwomen',
+    738 => 'harpsichordist',
+    739 => 'harpsichordists',
+    740 => 'instrumentalist',
+    741 => 'instrumentalists',
+    742 => 'jazzman',
+    743 => 'jazzmen',
+    744 => 'keyboardist',
+    745 => 'keyboardists',
+    746 => 'librettist',
+    747 => 'librettists',
+    748 => 'lutenist',
+    749 => 'lutenists',
+    750 => 'lutanist',
+    751 => 'lutanists',
+    752 => 'lutist',
+    753 => 'lutists',
+    754 => 'maestri',
+    755 => 'oboist',
+    756 => 'oboists',
+    757 => 'orchestrator',
+    758 => 'orchestrators',
+    759 => 'sideman',
+    760 => 'sidemen',
+    761 => 'sitarist',
+    762 => 'sitarists',
+    763 => 'sticksman',
+    764 => 'sticksmen',
+    765 => 'timpanist',
+    766 => 'timpanists',
+    767 => 'tympanist',
+    768 => 'tympanists',
+    769 => 'trombonist',
+    770 => 'trombonists',
+    771 => 'turntablist',
+    772 => 'turntablists',
+    773 => 'violist',
+    774 => 'violists',
+    775 => 'virtuosi',
+    776 => 'bandsman',
+    777 => 'bandsmen',
+    778 => 'carillonneur',
+    779 => 'carillonneurs',
+    780 => 'chansonnier',
+    781 => 'chansonniers',
+    782 => 'contrabassist',
+    783 => 'contrabassists',
+    784 => 'cornetist',
+    785 => 'cornetists',
+    786 => 'cornettist',
+    787 => 'cornettists',
+    788 => 'duettist',
+    789 => 'duettists',
+    790 => 'griot',
+    791 => 'griots',
+    792 => 'harmonicist',
+    793 => 'harmonicists',
+    794 => 'hornist',
+    795 => 'hornists',
+    796 => 'improviser',
+    797 => 'improvisers',
+    798 => 'improvisor',
+    799 => 'improvisors',
+    800 => 'jongleur',
+    801 => 'jongleurs',
+    802 => 'kapellmeister',
+    803 => 'kapellmeisters',
+    804 => 'mandolinist',
+    805 => 'mandolinists',
+    806 => 'marimbist',
+    807 => 'marimbists',
+    808 => 'melodist',
+    809 => 'melodists',
+    810 => 'skald',
+    811 => 'skalds',
+    812 => 'songsmith',
+    813 => 'songsmiths',
+    814 => 'symphonist',
+    815 => 'symphonists',
+    816 => 'synthesist',
+    817 => 'synthesists',
+    818 => 'trouvere',
+    819 => 'trouveres',
+    820 => 'tubist',
+    821 => 'tubists',
+    822 => 'tubaist',
+    823 => 'tubaists',
+    824 => 'tunesmith',
+    825 => 'tunesmiths',
+    826 => 'ukulelist',
+    827 => 'ukulelists',
+    828 => 'vibraphonist',
+    829 => 'vibraphonists',
+    830 => 'violoncellist',
+    831 => 'violoncellists',
+    832 => 'xylophonist',
+    833 => 'xylophonists',
+    834 => 'acapella',
+    835 => 'airplay',
+    836 => 'anthologies',
+    837 => 'cassingle',
+    838 => 'cassingles',
+    839 => 'discography',
+    840 => 'discographies',
+    841 => 'earworm',
+    842 => 'earworms',
+    843 => 'gatefold',
+    844 => 'gatefolds',
+    845 => 'longplayer',
+    846 => 'longplayers',
+    847 => 'mashup',
+    848 => 'mashups',
+    849 => 'medleys',
+    850 => 'megamix',
+    851 => 'megamixes',
+    852 => 'minidisc',
+    853 => 'minidiscs',
+    854 => 'mixdown',
+    855 => 'mixdowns',
+    856 => 'mixtape',
+    857 => 'mixtapes',
+    858 => 'outtake',
+    859 => 'outtakes',
+    860 => 'overdub',
+    861 => 'overdubs',
+    862 => 'playbacks',
+    863 => 'pressings',
+    864 => 'reissue',
+    865 => 'reissues',
+    866 => 'remaster',
+    867 => 'remasters',
+    868 => 'singalong',
+    869 => 'singalongs',
+    870 => 'tracklist',
+    871 => 'tracklists',
+    872 => 'acetates',
+    873 => 'dubplate',
+    874 => 'dubplates',
+    875 => 'multitrack',
+    876 => 'multitracks',
+    877 => 'shellac',
+    878 => 'accompaniments',
+    879 => 'backbeat',
+    880 => 'backbeats',
+    881 => 'basslines',
+    882 => 'beatbox',
+    883 => 'beatboxes',
+    884 => 'beatboxed',
+    885 => 'cadenza',
+    886 => 'cadenzas',
+    887 => 'codas',
+    888 => 'croons',
+    889 => 'descant',
+    890 => 'descants',
+    891 => 'drumrolls',
+    892 => 'expositions',
+    893 => 'fingerpicking',
+    894 => 'glissando',
+    895 => 'glissandos',
+    896 => 'glissandi',
+    897 => 'handclap',
+    898 => 'handclaps',
+    899 => 'leitmotif',
+    900 => 'leitmotifs',
+    901 => 'melisma',
+    902 => 'melismas',
+    903 => 'ostinato',
+    904 => 'ostinatos',
+    905 => 'outro',
+    906 => 'outros',
+    907 => 'paradiddle',
+    908 => 'paradiddles',
+    909 => 'portamento',
+    910 => 'recapitulation',
+    911 => 'recapitulations',
+    912 => 'reprises',
+    913 => 'rimshot',
+    914 => 'rimshots',
+    915 => 'stanzas',
+    916 => 'tremolo',
+    917 => 'tremolos',
+    918 => 'vibratos',
+    919 => 'continuo',
+    920 => 'continuos',
+    921 => 'countermelody',
+    922 => 'countermelodies',
+    923 => 'fingerstyle',
+    924 => 'flams',
+    925 => 'obbligato',
+    926 => 'obbligatos',
+    927 => 'vocalise',
+    928 => 'vocalises',
+    929 => 'acciaccatura',
+    930 => 'acciaccaturas',
+    931 => 'accidentals',
+    932 => 'anacrusis',
+    933 => 'anacruses',
+    934 => 'appoggiatura',
+    935 => 'appoggiaturas',
+    936 => 'arpeggio',
+    937 => 'arpeggios',
+    938 => 'atonality',
+    939 => 'barline',
+    940 => 'barlines',
+    941 => 'breve',
+    942 => 'breves',
+    943 => 'chromatic',
+    944 => 'chromaticism',
+    945 => 'clefs',
+    946 => 'consonance',
+    947 => 'consonances',
+    948 => 'crotchet',
+    949 => 'crotchets',
+    950 => 'demisemiquaver',
+    951 => 'demisemiquavers',
+    952 => 'diatonic',
+    953 => 'dissonances',
+    954 => 'dominants',
+    955 => 'downbeats',
+    956 => 'enharmonic',
+    957 => 'fingerings',
+    958 => 'hemidemisemiquaver',
+    959 => 'hemidemisemiquavers',
+    960 => 'homophony',
+    961 => 'mediant',
+    962 => 'mediants',
+    963 => 'microtone',
+    964 => 'microtones',
+    965 => 'minim',
+    966 => 'minims',
+    967 => 'modulations',
+    968 => 'monophony',
+    969 => 'mordent',
+    970 => 'mordents',
+    971 => 'ninths',
+    972 => 'offbeats',
+    973 => 'overtone',
+    974 => 'pentatonic',
+    975 => 'polyphony',
+    976 => 'polyrhythm',
+    977 => 'polyrhythms',
+    978 => 'quaver',
+    979 => 'quavers',
+    980 => 'semibreve',
+    981 => 'semibreves',
+    982 => 'semiquaver',
+    983 => 'semiquavers',
+    984 => 'semitone',
+    985 => 'semitones',
+    986 => 'sevenths',
+    987 => 'sixths',
+    988 => 'solfege',
+    989 => 'solfeggio',
+    990 => 'subdominant',
+    991 => 'subdominants',
+    992 => 'submediant',
+    993 => 'submediants',
+    994 => 'supertonic',
+    995 => 'supertonics',
+    996 => 'syncopation',
+    997 => 'syncopations',
+    998 => 'tablature',
+    999 => 'tablatures',
+    1000 => 'tempi',
+    1001 => 'timbres',
+    1002 => 'tonality',
+    1003 => 'tonalities',
+    1004 => 'transposition',
+    1005 => 'transpositions',
+    1006 => 'tritone',
+    1007 => 'tritones',
+    1008 => 'tunings',
+    1009 => 'unisons',
+    1010 => 'upbeats',
+    1011 => 'aeolian',
+    1012 => 'bitonality',
+    1013 => 'diminution',
+    1014 => 'dodecaphony',
+    1015 => 'doh',
+    1016 => 'dorian',
+    1017 => 'duplet',
+    1018 => 'duplets',
+    1019 => 'fah',
+    1020 => 'halftone',
+    1021 => 'halftones',
+    1022 => 'hemiola',
+    1023 => 'hemiolas',
+    1024 => 'ionian',
+    1025 => 'lah',
+    1026 => 'locrian',
+    1027 => 'lydian',
+    1028 => 'mixolydian',
+    1029 => 'notehead',
+    1030 => 'noteheads',
+    1031 => 'phrygian',
+    1032 => 'plagal',
+    1033 => 'polytonality',
+    1034 => 'sixteenths',
+    1035 => 'soh',
+    1036 => 'solfa',
+    1037 => 'solmization',
+    1038 => 'solmisation',
+    1039 => 'subtonic',
+    1040 => 'subtonics',
+    1041 => 'tuplet',
+    1042 => 'tuplets',
+    1043 => 'voicings',
+    1044 => 'balladeer',
+    1045 => 'balladeers',
+    1046 => 'basso',
+    1047 => 'bassos',
+    1048 => 'beatboxer',
+    1049 => 'beatboxers',
+    1050 => 'caroller',
+    1051 => 'carollers',
+    1052 => 'caroler',
+    1053 => 'castrato',
+    1054 => 'castrati',
+    1055 => 'chanteuse',
+    1056 => 'chanteuses',
+    1057 => 'choirgirl',
+    1058 => 'choirgirls',
+    1059 => 'coloratura',
+    1060 => 'coloraturas',
+    1061 => 'contralto',
+    1062 => 'contraltos',
+    1063 => 'countertenor',
+    1064 => 'countertenors',
+    1065 => 'falsettos',
+    1066 => 'mezzo',
+    1067 => 'mezzos',
+    1068 => 'songstress',
+    1069 => 'songstresses',
+    1070 => 'soubrette',
+    1071 => 'soubrettes',
+    1072 => 'yodeller',
+    1073 => 'yodellers',
+    1074 => 'yodeler',
+    1075 => 'yodelers',
+    1076 => 'cantatrice',
+    1077 => 'cantatrices',
+    1078 => 'growler',
+    1079 => 'growlers',
+    1080 => 'heldentenor',
+    1081 => 'heldentenors',
+    1082 => 'muezzins',
+    1083 => 'precentor',
+    1084 => 'precentors',
+    1085 => 'serenader',
+    1086 => 'serenaders',
+    1087 => 'sopranist',
+    1088 => 'sopranists',
+    1089 => 'spinto',
+    1090 => 'spintos',
+    1091 => 'wassailer',
+    1092 => 'wassailers',
   ),
 );

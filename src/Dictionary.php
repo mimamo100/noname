@@ -62,6 +62,7 @@ final class Dictionary
         $dictionary = new self($data['words'], $data['families'], $data['categories'] ?? [], $data['blocked'] ?? [], $data['spelling'] ?? [], $data['masked'] ?? [],
             $data['display'] ?? [], [], $data['pluralWords'] ?? []);
         $dictionary->irregular = $data['irregular'] ?? [];
+        $dictionary->verbForms = $data['verbForms'] ?? [];
         return $dictionary;
     }
 
@@ -143,6 +144,7 @@ final class Dictionary
             ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? [], array_keys($this->pluralWords));
         $only->everyday = $this;
         $only->irregular = $this->irregular;
+        $only->verbForms = $this->verbForms;
         return $only;
     }
 
@@ -154,6 +156,8 @@ final class Dictionary
     private ?Dictionary $everyday = null;
     /** @var array<string, string> irregular form => its singular or base word ("mice" => "mouse") */
     private array $irregular = [];
+    /** @var array<string, string> a verb's -ing, -ed or irregular form => the verb ("running" => "run") */
+    private array $verbForms = [];
     /** How rare a pack word that isn't an everyday word counts: fairly rare (×2.2), not the rarest. */
     public const PACK_WORD_RARITY = 0.77;
 
@@ -183,6 +187,7 @@ final class Dictionary
         $with = new self($words, $families, $pack['categories'], array_keys($this->blocked), $this->spelling, array_keys($this->masked),
             ($pack['display'] ?? []) + $this->display, $pack['blocked'] ?? [], array_keys($this->pluralWords));
         $with->irregular = $this->irregular;
+        $with->verbForms = $this->verbForms;
         return $with;
     }
 
@@ -320,6 +325,20 @@ final class Dictionary
         if (str_ends_with($word, 'ies')) $candidates[] = substr($word, 0, -3) . 'y';
         foreach ($candidates as $candidate) {
             if ($this->has($candidate) && $this->familyRoot($candidate) === $this->familyRoot($word)) return $candidate;
+        }
+        return $word;
+    }
+
+    /**
+     * The verb a word is a form of ("running", "wrote" and "paintings" are run, write and paint),
+     * or the word itself. Letter prompts judge -ing and -ed forms as their verb, and they score
+     * as it, so adding -ing earns nothing extra; meaning prompts judge words as written.
+     */
+    public function verbRoot(string $word): string
+    {
+        foreach ([$word, $this->singular($word)] as $form) {
+            $verb = $this->verbForms[$form] ?? null;
+            if ($verb !== null && $this->has($verb)) return $verb;
         }
         return $word;
     }

@@ -17,3 +17,16 @@ pants
 
 # Would join have (through had)
 hades
+
+# Joined by their ending to a word they don't come from (checked with WordNet, 15 October)
+earring
+gruelling
+grueling
+herring
+inning
+morning
+pudding
+rugged
+legging
+wigging
+witting

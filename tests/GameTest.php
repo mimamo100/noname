@@ -972,10 +972,23 @@ test('irregular plurals are one answer with their singular, judged as it (data/i
     same('mouse', $d->singular('mice'));
     same('woodlouse', $d->singular('woodlice'));
     check(in_array('knives', $d->family('knife'), true), 'Saying knife uses up knives');
-    // A verb's irregular forms are one answer too, but each is judged as typed.
+    // A verb's irregular forms are one answer too, judged as the verb on a letter prompt.
     check(in_array('written', $d->family('write'), true) && in_array('went', $d->family('going'), true), 'Saying write uses up written');
-    same('written', $d->singular('written'));
+    same('write', $d->verbRoot('written'));
     check(!in_array('doe', $d->family('did'), true), "did doesn't use up doe");
+});
+
+test("a verb's -ing and -ed forms are one answer with it, and letter prompts judge them as it (data/verb-forms.txt)", function () {
+    $d = Dictionary::load();
+    same('crease', $d->verbRoot('creasing'), 'Added from ENABLE, beside its verb');
+    check(in_array('browsed', $d->family('browse'), true) && !in_array('browsed', $d->family('brow'), true), 'browsed is browse, not brow');
+    $endsG = ['cat' => null, 'rules' => [['ends', 'g']]];
+    same(false, Prompts::matches($endsG, $d, 'running'));
+    same("it doesn't end in G (“running” counts as “run”)", Prompts::whyNot($endsG, $d, 'running'));
+    same(true, Prompts::matches($endsG, $d, 'string'));
+    same("it's 6 letters (“creasing” counts as “crease”), not 8 or more", Prompts::whyNot(['cat' => null, 'rules' => [['minLen', 8]]], $d, 'creasing'));
+    same(true, Prompts::matches(['cat' => 'sport', 'rules' => [['minLen', 8]]], $d, 'swimming'), 'A list answer is judged as written');
+    check(!in_array('earring', $d->family('ear'), true), "earring isn't ear's");
 });
 
 test('words placed by hand take the multiplier written (data/rarity-overrides.txt)', function () {

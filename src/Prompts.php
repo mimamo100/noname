@@ -29,9 +29,20 @@ final class Prompts
         $cat = $spec['cat'] ?? null;
         return function (string $word) use ($tests, $cat, $dictionary): bool {
             if ($cat !== null && !$dictionary->inCategory($cat, $word)) return false;
-            foreach ($tests as $test) if (!$test($word)) return false;
+            $judged = $cat !== null ? $word : $dictionary->verbRoot($word); // As judged() does.
+            foreach ($tests as $test) if (!$test($judged)) return false;
             return true;
         };
+    }
+
+    /**
+     * The word a prompt's letter rules look at: on a letter prompt, a verb's -ing or -ed form is
+     * judged as the verb ("running" is run: 3 letters, and it doesn't end in G). A meaning prompt
+     * judges the word as written, as its list names it ("swimming" for A sport).
+     */
+    public static function judged(array $spec, Dictionary $dictionary, string $word): string
+    {
+        return isset($spec['cat']) ? $word : $dictionary->verbRoot($word);
     }
 
     public static function matches(array $spec, Dictionary $dictionary, string $word): bool
@@ -65,16 +76,20 @@ final class Prompts
      */
     public static function whyNot(array $spec, Dictionary $dictionary, string $word): ?string
     {
+        $typed = $word;
+        $word = self::judged($spec, $dictionary, $word);
         $singular = $dictionary->singular($word);
         $length = fn (string $w) => strlen($dictionary->singular($w));
-        // Length rules judge a plural as its singular: say so, or "flasks" being 5 letters is a mystery.
-        $asSingular = $singular !== $word ? " (“{$word}” counts as “{$singular}”)" : '';
+        // Length rules judge a plural as its singular, and letter prompts a verb's form as the verb:
+        // say so, or "flasks" being 5 letters, or "running" not ending in G, is a mystery.
+        $asSingular = $singular !== $typed ? " (“{$typed}” counts as “{$singular}”)" : '';
+        $asVerb = $word !== $typed ? " (“{$typed}” counts as “{$word}”)" : '';
         foreach ($spec['rules'] ?? [] as $rule) {
             if (self::ruleTest($rule, $length)($word)) continue;
             [$type, $a, $b] = $rule + [null, null, null];
             $upper = is_string($a) ? strtoupper($a) : $a;
             $n = $length($word);
-            return match ($type) {
+            $why = match ($type) {
                 'starts' => "it doesn't start with $upper",
                 'ends' => "it doesn't end in $upper",
                 'contains' => "it has no $upper",
@@ -90,6 +105,8 @@ final class Prompts
                 'onlyVowel' => str_contains($word, (string) $a) ? "it has vowels other than $upper" : "it has no $upper",
                 default => null,
             };
+            // Length messages already say what the word counts as.
+            return $why === null || in_array($type, ['minLen', 'maxLen', 'len'], true) ? $why : $why . $asVerb;
         }
         return null;
     }

@@ -102,7 +102,8 @@ oasis, oases
 diagnosis, diagnoses
 hypothesis, hypotheses
 
-# Verbs: each line's forms are one answer, but each is judged as typed (written is 7 letters).
+# Verbs: each line's forms are one answer, judged and scored as the first word when it's in the
+# dictionary (written as write), like regular -ing and -ed forms (verb-forms.txt).
 # Left out where a form has an everyday meaning of its own: saw, found, left, felt, fell, rose,
 # spoke, stole, shot, won, wound, ground, bound, lay, smelt, spelt, rung, tear, bit, drove;
 # and rang, which the family rules join to ranged and ranging.
