@@ -6,6 +6,21 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**Spiders and other creepy-crawlies count as bugs, but worms, slugs and snails don't.** The owner
+decided spiders count; where to stop was Claude's call: a person might call a woodlouse or a
+centipede a bug, but hardly an earthworm or a slug. The list's note says so. *Proposed by
+Claude, open to change.*
+
+**A verb's irregular forms are one answer** (go, went, gone; write, wrote, written), like
+irregular plurals, but each is judged as typed, as regular forms are: *written* is 7 letters,
+not *write*'s 5. Forms with an everyday meaning of their own are left out (*saw*, *found*,
+*left*, *felt*, *rose*, *spoke*), so saying *saw* doesn't use up *see*. *Claude, following the
+room playtest.*
+
+**Lists' notes** ("About this list") are written for 30 lists, saying what's in and out where
+players could reasonably differ (tomato is a fruit here; whales aren't fish; games count as
+sports). Drafted by Claude for the owner to check.
+
 **Repeats are free, unless a host or organiser chooses to charge.** Saying a word someone else
 already said used to cost 2 points (unless it was said in the last minute). Every agent in the
 room playtest found it unfair ("nothing tells you the word is old"), and in a room words stay

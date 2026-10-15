@@ -5084,6 +5084,7 @@ preemie 103
 acclimate 103
 venerate 103
 insuring 103
+junebug 103
 egotism 103
 rappelling 103
 bootstraps 103
@@ -6103,6 +6104,7 @@ detentions 90
 restocked 89
 tunneled 89
 brooches 89
+chairmen 89
 luncheons 89
 commemorated 89
 captained 89
@@ -6333,6 +6335,7 @@ chimichanga 86
 footed 86
 driveways 86
 railed 86
+oases 86
 goofs 86
 gullies 86
 incurring 86
@@ -6980,6 +6983,7 @@ soloists 76
 papayas 76
 brogue 76
 pinking 76
+looper 76
 islet 76
 motes 76
 disclosures 76
@@ -6998,6 +7002,7 @@ glimmers 75
 reveling 75
 slingshots 75
 dirties 75
+mantid 75
 renounces 75
 composting 75
 airheads 75
@@ -7008,6 +7013,7 @@ exaggerations 75
 mediating 75
 shooing 75
 bathhouses 75
+frogmen 75
 crisscrossed 75
 rattlers 75
 shimmers 75
@@ -7026,6 +7032,7 @@ milled 75
 groupings 75
 paintbrushes 75
 napped 75
+spokesmen 75
 minimums 75
 bopping 75
 cowered 75
@@ -7534,6 +7541,7 @@ repossessing 68
 ejaculating 68
 grimacing 68
 lotteries 68
+genera 68
 chaplains 68
 bettered 68
 frolics 68
@@ -8343,6 +8351,7 @@ dooms 58
 minting 58
 sapping 58
 spiritualists 58
+handymen 58
 abided 58
 dyers 58
 franchisees 58
@@ -8375,6 +8384,7 @@ lettuces 57
 sparred 57
 adversities 57
 archbishops 57
+milkmen 57
 raita 57
 hydrofoil 57
 taxicabs 57
@@ -8448,6 +8458,7 @@ recuperated 57
 pagodas 57
 scribblings 57
 tempering 57
+weta 57
 mugwort 57
 palanquins 57
 forays 57
@@ -8772,11 +8783,13 @@ scratchers 53
 blinkered 53
 terminators 53
 wowing 53
+vertex 53
 hibernated 53
 deutschmarks 53
 radicchio 53
 telegraphs 53
 marimba 53
+breadcrumb 53
 bullfrogs 53
 steadied 53
 interfaced 53
@@ -8887,6 +8900,7 @@ whippets 52
 modifies 52
 giveaways 52
 gashed 52
+whirligig 52
 agitates 52
 rucksacks 52
 paves 52
@@ -8897,6 +8911,7 @@ structuring 52
 deeming 52
 dishcloth 52
 twelves 52
+stratum 52
 roofed 52
 merino 51
 casters 51
@@ -9148,6 +9163,7 @@ dispelling 49
 alveoli 49
 earing 49
 sandbank 49
+businesswomen 49
 affinities 49
 thrushes 49
 gies 49
@@ -9223,6 +9239,7 @@ snoopers 48
 orals 48
 corrals 48
 jewelled 48
+indices 48
 humanists 48
 subdivisions 48
 lapsang 48
@@ -9288,6 +9305,7 @@ interceptions 48
 summonses 48
 thwacks 48
 oinks 48
+memoranda 48
 chaffinch 48
 cakehole 48
 fishmongers 48
@@ -9650,6 +9668,7 @@ instants 44
 realizations 44
 putters 44
 moderns 44
+wharves 44
 pierogies 44
 rinses 44
 ministered 44
@@ -10483,6 +10502,7 @@ clickers 37
 woolens 37
 pulpits 37
 trumpeted 37
+redback 37
 advantaged 37
 interlocks 37
 violas 37
@@ -10926,6 +10946,7 @@ cricketing 34
 terrestrials 34
 rimming 34
 multimillionaires 34
+vertices 34
 karting 34
 dryad 34
 pulped 34
@@ -11266,6 +11287,7 @@ crediting 31
 cottonwoods 31
 ileum 31
 luckies 31
+radii 31
 titis 31
 tarting 31
 lifejacket 31
@@ -11331,6 +11353,7 @@ dolma 31
 rustics 31
 collies 31
 captaining 31
+datum 31
 sarnies 31
 squirmed 31
 sahibs 31
@@ -12714,6 +12737,7 @@ crabbed 22
 disdains 22
 wronging 22
 pollocks 22
+curricula 22
 joyfulness 22
 equips 22
 boxwood 22
@@ -12746,6 +12770,7 @@ supernaturals 22
 macadamias 22
 woks 22
 rissole 22
+schoolchild 22
 gobbed 22
 lyrebird 22
 lofting 22
@@ -13292,6 +13317,7 @@ lamingtons 18
 cichlids 18
 ristretto 18
 hornbills 18
+appendices 18
 ridgeback 18
 sculling 18
 barbels 18
@@ -13462,6 +13488,7 @@ chars 16
 bustards 16
 seabreeze 16
 sawfish 16
+syllabi 16
 flintlocks 16
 coulomb 16
 ichthyosaur 16
@@ -13926,6 +13953,7 @@ riyal 11
 shinty 11
 busdriver 11
 palominos 11
+ringlet 11
 tradewinds 11
 monkeypox 11
 thyroids 11
@@ -14169,6 +14197,7 @@ wolds 9
 earmuff 9
 raclette 9
 silversmiths 9
+hornworm 9
 acers 9
 biryanis 9
 footlockers 9
@@ -14185,6 +14214,7 @@ oatcakes 9
 darkrooms 9
 quarryman 9
 nailpolish 9
+penknives 9
 scandium 9
 knuckleduster 9
 mushes 9
@@ -14698,6 +14728,7 @@ ptarmigans 5
 trews 5
 bloodred 5
 chamberpots 5
+birdwing 5
 carambola 5
 yarrows 5
 kotos 5
@@ -14980,6 +15011,8 @@ daphnes 4
 breccias 4
 bluetit 4
 stinkbomb 4
+horntail 4
+pillbug 4
 tswana 4
 carbomb 4
 fruitbat 4
@@ -15245,6 +15278,7 @@ handcarts 3
 biathlons 3
 fricassees 3
 hickories 3
+cutworm 3
 thalami 3
 horchatas 3
 bandstands 3
@@ -15372,6 +15406,7 @@ winklepickers 2
 stonechats 2
 wintergreens 2
 bullmastiffs 2
+lacebug 2
 boomslangs 2
 fratricides 2
 jamjar 2
@@ -15414,6 +15449,7 @@ firestation 2
 saxifrage 2
 bouzoukis 2
 bayleaf 2
+bagworm 2
 coypu 2
 boxwoods 2
 daphnia 2
@@ -15454,6 +15490,7 @@ lexicographers 2
 testiness 2
 cityhall 2
 circlets 2
+alderfly 2
 schoolmistresses 2
 hairbands 2
 slaughtermen 2
@@ -15461,6 +15498,7 @@ soursops 2
 korfball 2
 platy 2
 bothies 2
+crablouse 2
 ericas 2
 magnetites 2
 fieldmice 2
@@ -15707,6 +15745,7 @@ cheeseboards 1
 cliffface 1
 oldersister 1
 glandularfever 1
+treehopper 1
 seaserpent 1
 cavas 1
 pinnipeds 1
@@ -15752,6 +15791,7 @@ kippahs 1
 highboys 1
 dibbers 1
 mahoganies 1
+chigoe 1
 maxillas 1
 mangonels 1
 lowpressure 1
@@ -15760,6 +15800,7 @@ sunrooms 1
 wherries 1
 rabbies 1
 leatherettes 1
+bushcricket 1
 pipistrelles 1
 coronaviruses 1
 hitandrun 1
@@ -15886,6 +15927,7 @@ seasides 1
 upperlip 1
 genevers 1
 fennecs 1
+deerfly 1
 jetplanes 1
 sourcream 1
 andesites 1
@@ -16033,6 +16075,7 @@ stinkbombs 1
 granadilla 1
 charladies 1
 churchbell 1
+spiderwasp 1
 diplodocuses 1
 stationwagon 1
 jicamas 1

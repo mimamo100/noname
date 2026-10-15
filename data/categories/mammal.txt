@@ -1,5 +1,6 @@
 label: A mammal
 includes: dog
+note: Every kind of mammal, including whales, dolphins, bats, humans and dog breeds.
 
 aardvark
 aardwolf

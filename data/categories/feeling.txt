@@ -1,4 +1,5 @@
 label: A feeling
+note: Emotions and moods. Hunger and tiredness don't count.
 
 abandonment
 ache

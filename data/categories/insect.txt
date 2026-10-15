@@ -1,5 +1,7 @@
 label: An insect or bug
+note: Spiders, woodlice, centipedes and other creepy-crawlies count as bugs. Worms, slugs and snails don't.
 
+alderfly
 ant
 antlion
 ants
@@ -7,99 +9,200 @@ aphid
 aphids
 arachnid
 army ant
+armyworm
+asian hornet
+assassin bug
+atlas moth
+backswimmer
+bagworm
+bark beetle
 bedbug
 bedbugs
 bee
+bee fly
 bees
 beetle
 beetles
+bird-eating spider
+birdwing
+biting midge
 black ant
-blackfly
+black garden ant
 black widow
+blackfly
+blister beetle
 blowfly
+blue morpho
 bluebottle
+boll weevil
+booklouse
 botfly
+bristletail
+brown recluse
+bullet ant
 bumblebee
+burnet moth
+burying beetle
+bush cricket
 butterfly
 cabbage white
 caddis
 caddisfly
+camberwell beauty
+camel spider
+carpenter ant
+carpenter bee
+carpet beetle
 caterpillar
+cave cricket
+cellar spider
 centipede
 chafer
 chigger
+chigoe
 chrysalis
 cicada
 cicadas
+cinnabar moth
+cleg
+click beetle
 clothes moth
+clouded yellow
 cockchafer
 cockroach
 cockroaches
+codling moth
+colorado beetle
+common blue
 cootie
+crab louse
+crab spider
 crane fly
 cricket
 crickets
+cutworm
 daddy-long-legs
 damselfly
+death watch beetle
+death's-head hawkmoth
+deer fly
+digger wasp
+diving beetle
+dobsonfly
+dor beetle
 dragonflies
 dragonfly
+driver ant
 drone
 drones
 dung beetle
 dust mite
 earwig
+elephant hawkmoth
 emmet
+emperor moth
+ermine moth
+field cricket
 fire ant
+firebrat
 fireflies
 firefly
 flea
+flea beetle
 fleas
+flesh fly
 fly
 flying ant
 fritillary
 froghopper
 fruit fly
+fungus gnat
+funnel-web spider
+furniture beetle
 gadfly
+gall wasp
+garden spider
+garden tiger
+giant water bug
 glowworm
 gnat
+grain weevil
 grasshopper
 grasshoppers
+great diving beetle
+green-veined white
 greenbottle
 greenfly
+ground beetle
 grub
+gypsy moth
 hairstreak
+harvest mite
 harvestman
+hawkmoth
+head louse
+holly blue
 honeybee
+honeypot ant
 hornet
 hornets
+horntail
+hornworm
 horsefly
-housefly
+house cricket
 house spider
+housefly
 hoverfly
+hummingbird hawkmoth
+huntsman spider
 ichneumon
+ichneumon wasp
 inchworm
+jewel beetle
+jumping spider
+june bug
 katydid
+killer bee
+kissing bug
+lace bug
 lacewing
+lady beetle
 ladybird
+ladybird beetle
 ladybug
+lanternfly
+large white
 larva
+leaf beetle
+leaf insect
 leafcutter ant
+leafcutter bee
 leafhopper
 leatherjacket
 lice
+lightning bug
 locust
 locusts
+longhorn beetle
 louse
+luna moth
 maggot
+magpie moth
+mantid
 mantis
+marbled white
+mason bee
 maybug
 mayfly
+meadow brown
 mealworm
 mealybug
 midge
 millipede
 minibeast
+mining bee
 mite
+mole cricket
 monarch
 monarch butterfly
 money spider
@@ -109,50 +212,116 @@ mosquitoes
 mosquitos
 moth
 moths
+mud dauber
+murder hornet
 nit
 nymph
+oil beetle
+orange tip
+orb weaver
 painted lady
+paper wasp
+parasitic wasp
+peacock butterfly
+peppered moth
+pharaoh ant
+pill bug
+planthopper
+plume moth
 pond skater
+potato beetle
+potter wasp
 praying mantis
+pseudoscorpion
 pupa
+purple emperor
+puss moth
 queen bee
+raft spider
 red admiral
 red ant
+red spider mite
+redback
+rhinoceros beetle
 roach
+robber fly
+rose chafer
+rove beetle
+sand flea
 sandfly
 sawfly
+scale insect
 scarab
+scarab beetle
 scorpion
+scorpionfly
+sexton beetle
 shield bug
+silk moth
 silkworm
 silverfish
+small copper
+small tortoiseshell
+small white
+snakefly
+soldier beetle
+sow bug
+speckled wood
 spider
+spider mite
+spider wasp
 spiders
 spittlebug
 springtail
+squash bug
 stag beetle
 stick insect
+stinkbug
 stonefly
 swallowtail
+sweat bee
+swift moth
 tarantula
+tarantula hawk
 termite
 termites
 thrips
 tick
+tiger beetle
 tiger moth
 tortoiseshell
 trapdoor spider
+treehopper
 tsetse
 tsetse fly
+velvet ant
+vine weevil
+warble fly
 wasp
+water beetle
 water boatman
+water scorpion
+water spider
+water strider
+weaver ant
 weevil
+weta
+whip scorpion
+whirligig beetle
+white admiral
 whitefly
+widow spider
 wireworm
+wolf spider
+wood ant
+wood wasp
 woodlouse
 woodworm
+woolly bear
 worker bee
+yellow underwing
 yellowjacket
+zebra spider
 
 also:
 admiral
@@ -166,23 +335,24 @@ coppers
 emperor
 emperors
 flies
-garden spider
-hawkmoth
+gatekeeper
 hopper
 jigger
-killer bee
+looper
 mites
 monarchs
-peacock butterfly
+ringlet
 roaches
 scorpions
+skipper
+slater
 soldier
 soldiers
-stinkbug
 ticks
 viceroy
+walking stick
 wasps
-water beetle
-wolf spider
+whirligig
+white ant
 worker
 workers

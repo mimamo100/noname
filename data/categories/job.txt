@@ -1,4 +1,5 @@
 label: A job
+note: Jobs people are paid for, from pope to plumber. Kings, queens, students and criminals don't count.
 
 abbess
 abbot

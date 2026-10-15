@@ -1,4 +1,5 @@
 label: A building or room
+note: Buildings and rooms. Tents, caravans and caves don't count.
 
 abattoir
 abbey

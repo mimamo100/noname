@@ -14,3 +14,6 @@ shilling
 boxing
 bowling
 pants
+
+# Would join have (through had)
+hades

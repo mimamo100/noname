@@ -1,4 +1,5 @@
 label: A kind of weather
+note: Rainbows, thunder and lightning count, and so do hot and cold. Earthquakes don't.
 
 acid rain
 anticyclone

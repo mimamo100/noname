@@ -955,6 +955,10 @@ test('irregular plurals are one answer with their singular, judged as it (data/i
     same('mouse', $d->singular('mice'));
     same('woodlouse', $d->singular('woodlice'));
     check(in_array('knives', $d->family('knife'), true), 'Saying knife uses up knives');
+    // A verb's irregular forms are one answer too, but each is judged as typed.
+    check(in_array('written', $d->family('write'), true) && in_array('went', $d->family('going'), true), 'Saying write uses up written');
+    same('written', $d->singular('written'));
+    check(!in_array('doe', $d->family('did'), true), "did doesn't use up doe");
 });
 
 test("a list's note is read from its file and shown with its prompt", function () {

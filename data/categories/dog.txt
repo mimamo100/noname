@@ -1,4 +1,5 @@
 label: A kind of dog
+note: Breeds and kinds of dog, puppy and mongrel included. Wolves and foxes don't count; the dingo does, loosely.
 
 afghan
 afghan hound

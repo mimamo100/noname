@@ -1,5 +1,6 @@
 label: An animal
 includes: mammal bird fish insect reptile sea
+note: Any animal: mammals, birds, fish, insects, spiders, reptiles, sea creatures, worms and snails, and dinosaurs too.
 
 ammonite
 basilisk

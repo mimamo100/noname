@@ -1,4 +1,5 @@
 label: A colour
+note: Shades count (navy, crimson), and so do gold, silver and bronze.
 
 alabaster
 amber

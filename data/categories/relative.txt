@@ -1,4 +1,5 @@
 label: A family member
+note: In-laws, step-relatives and godparents count. Friends and pets don't.
 
 ancestor
 ancestors

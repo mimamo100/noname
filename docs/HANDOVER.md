@@ -96,20 +96,13 @@ deletes its packs (the owner may want to revisit those two calls).
 
 ## Open items
 
-0. **Next, for the CLI session (word lists and rarity):**
-   - **Insects:** add the missing two-word insects from the room report (bark beetle, emperor
-     moth, carpenter bee and the rest, and planthopper, backswimmer, bristletail, cutworm,
-     firebrat); add spiders and other creepy-crawlies (the owner's decision), treating house
-     spider, wolf spider and garden spider alike; write a `note:` for the list (for example
-     "Spiders, woodlice and other creepy-crawlies count as bugs").
-   - **Notes:** write `note:` lines for other lists with quirks (see `data/categories/README.md`).
-   - **Irregular forms:** extend `data/irregular-forms.txt` (verb forms such as go, went;
-     run, ran; and ox, radius and datum, skipped as one of each pair is missing from the
-     dictionary), then rebuild.
-   - **Rarity:** British words and closed compounds still score high (housefly, woodlouse,
-     greenfly, bluebottle, courgette). Try a British frequency list, and placing a closed
-     compound by its spaced form's count ("house fly"); see `dictionary-review/RARITY-REVIEW.md`.
-   - Add *breadcrumb*.
+0. **Next: rarity** for British words and closed compounds (housefly, woodlouse, greenfly,
+   bluebottle, courgette), which still score high. Try placing a closed compound by its spaced
+   form ("house fly"), and a British frequency list; see `dictionary-review/RARITY-REVIEW.md`.
+   Done on 15 October: the insect list (about 160 names added, spiders and other
+   creepy-crawlies, a note), notes on 30 lists for the owner to check, irregular verb forms
+   (`verbs:` in `data/irregular-forms.txt`: one answer, each judged as typed), more irregular
+   plurals, *breadcrumb*.
 
 1. **Messages:** the owner is reviewing `docs/MESSAGES.md` and will send wording changes.
    If they want to change wording often, the next step (already discussed) is moving the
@@ -135,8 +128,8 @@ deletes its packs (the owner may want to revisit those two calls).
      huge prompt, the countdown, team scores rising live, the closing word and "Nobody said"
      with some ceremony, and no word box.
    - **A first-game walkthrough:** a practice prompt on a first visit, costing nothing, that
-     shows the key rules as they happen: words stay said, someone else's word costs 2 points,
-     Who said it? is free. (Ada lost about 50 points to repeats in the Kitchen Cup.)
+     shows the key rules as they happen: words stay said, Who said it? is free, a word that doesn't fit
+     costs 2 points. (Ada lost about 50 points to repeats in the Kitchen Cup.)
    - **A weekly league for the big world:** your best 5 rounds of the week, reset on Mondays, so
      there's a reason to come back; it pairs with streaks and the daily email.
    - **A better end-of-round share:** a picture-style card with your place, best word and one

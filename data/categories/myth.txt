@@ -1,4 +1,5 @@
 label: A mythical creature
+note: Monsters, spirits and creatures of folklore and fiction, including ghosts, vampires, witches and aliens. Gods and angels don't count.
 
 abominable snowman
 abominable snowmen

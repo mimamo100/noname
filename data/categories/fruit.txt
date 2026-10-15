@@ -1,4 +1,5 @@
 label: A fruit
+note: Fruit as people think of it, plus a few that are often called vegetables: tomato, avocado and rhubarb count. Nuts, olives, peppers and pumpkins don't.
 
 acai
 ackee

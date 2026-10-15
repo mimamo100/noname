@@ -181,18 +181,25 @@ $find = function (string $w) use (&$union, &$find): string {
     return $union[$w] = $find($union[$w]);
 };
 // Irregular forms join their word's family the same way (data/irregular-forms.txt); a plural
-// there is judged and scored as its singular.
+// there is judged and scored as its singular. Lines after "verbs:" only join the family: a
+// verb's forms are judged as typed, like regular ones (written is 7 letters, not write's 5).
 $irregular = []; // form => its singular or base word
 $irregularClusters = [];
+$verbs = false;
 foreach (readList("$dataDir/irregular-forms.txt") as $line) {
+    if (strtolower(trim($line)) === 'verbs:') {
+        $verbs = true;
+        continue;
+    }
     $forms = array_values(array_filter(array_map('trim', explode(',', strtolower($line))), 'strlen'));
     $present = array_values(array_filter($forms, fn ($w) => in_array($w, $words, true)));
-    if (count($present) < 2 || $present[0] !== $forms[0]) {
-        fwrite(STDERR, "irregular-forms.txt: \"$line\" needs its first word and another in the dictionary\n");
+    // A verb's base form may be too short to be a word here (go, went, gone).
+    if (count($present) < 2 || (!$verbs && $present[0] !== $forms[0])) {
+        fwrite(STDERR, "irregular-forms.txt: \"$line\" needs " . ($verbs ? 'two of its words' : 'its first word and another') . " in the dictionary\n");
         continue;
     }
     $irregularClusters[] = $present;
-    foreach (array_slice($present, 1) as $form) $irregular[$form] = $present[0];
+    if (!$verbs) foreach (array_slice($present, 1) as $form) $irregular[$form] = $present[0];
 }
 foreach ([...$clustersInDictionary, ...$irregularClusters] as $cluster) {
     $roots = [];

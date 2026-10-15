@@ -1,4 +1,5 @@
 label: A unit of measurement
+note: Units of anything count: time, volume, energy and data as well as length and weight.
 
 acre
 amp

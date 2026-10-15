@@ -49,3 +49,180 @@ medium, media
 datum, data
 die, dice
 penny, pence
+grandchild, grandchildren
+stepchild, stepchildren
+godchild, godchildren
+schoolchild, schoolchildren
+chairman, chairmen
+businessman, businessmen
+businesswoman, businesswomen
+salesman, salesmen
+workman, workmen
+craftsman, craftsmen
+spokesman, spokesmen
+sportsman, sportsmen
+milkman, milkmen
+dustman, dustmen
+caveman, cavemen
+frogman, frogmen
+horseman, horsemen
+nobleman, noblemen
+clergyman, clergymen
+layman, laymen
+madman, madmen
+doorman, doormen
+footman, footmen
+handyman, handymen
+henchman, henchmen
+policewoman, policewomen
+fieldmouse, fieldmice
+booklouse, booklice
+housewife, housewives
+midwife, midwives
+penknife, penknives
+werewolf, werewolves
+bookshelf, bookshelves
+dwarf, dwarves
+wharf, wharves
+larva, larvae
+antenna, antennae
+formula, formulae
+alumnus, alumni
+syllabus, syllabi
+curriculum, curricula
+millennium, millennia
+memorandum, memoranda
+stratum, strata
+genus, genera
+appendix, appendices
+index, indices
+matrix, matrices
+vertex, vertices
+oasis, oases
+diagnosis, diagnoses
+hypothesis, hypotheses
+
+# Verbs: each line's forms are one answer, but each is judged as typed (written is 7 letters).
+# Left out where a form has an everyday meaning of its own: saw, found, left, felt, fell, rose,
+# spoke, stole, shot, won, wound, ground, bound, lay, smelt, spelt, rung, tear, bit, drove;
+# and rang, which the family rules join to ranged and ranging.
+verbs:
+arise, arose, arisen
+awake, awoke, awoken
+beat, beaten
+become, became
+begin, began, begun
+bend, bent
+bite, bitten
+bleed, bled
+blow, blew, blown
+break, broke, broken
+breed, bred
+bring, brought
+build, built
+burn, burnt
+buy, bought
+catch, caught
+choose, chose, chosen
+cling, clung
+come, came
+creep, crept
+deal, dealt
+dig, dug
+do, doing, did, done
+draw, drew, drawn
+dream, dreamt
+drink, drank, drunk
+drive, driven
+eat, ate, eaten
+fall, fallen
+feed, fed
+fight, fought
+flee, fled
+fling, flung
+fly, flew, flown
+forbid, forbade, forbidden
+forget, forgot, forgotten
+forgive, forgave, forgiven
+freeze, froze, frozen
+get, got, gotten
+give, gave, given
+go, goes, going, went, gone
+grow, grew, grown
+hang, hung
+have, had
+hear, heard
+hide, hid, hidden
+hold, held
+keep, kept
+kneel, knelt
+know, knew, known
+lead, led
+lean, leant
+leap, leapt
+learn, learnt
+lend, lent
+lose, lost
+make, made
+mean, meant
+meet, met
+pay, paid
+ride, rode, ridden
+rise, risen
+run, ran
+say, said
+see, seen
+seek, sought
+sell, sold
+send, sent
+shake, shook, shaken
+shine, shone
+shrink, shrank, shrunk
+sing, sang, sung
+sink, sank, sunk
+sit, sat
+sleep, slept
+slide, slid
+sling, slung
+speak, spoken
+speed, sped
+spend, spent
+spin, spun
+spit, spat
+spring, sprang, sprung
+stand, stood
+steal, stolen
+stick, stuck
+sting, stung
+stink, stank, stunk
+stride, strode
+strike, struck, stricken
+string, strung
+strive, strove, striven
+swear, swore, sworn
+sweep, swept
+swim, swam, swum
+swing, swung
+take, took, taken
+teach, taught
+tell, told
+think, thought
+throw, threw, thrown
+tread, trod, trodden
+understand, understood
+wake, woke, woken
+wear, wore, worn
+weave, wove, woven
+weep, wept
+withdraw, withdrew, withdrawn
+wring, wrung
+write, wrote, written
+undertake, undertook, undertaken
+overtake, overtook, overtaken
+mistake, mistook, mistaken
+overcome, overcame
+oversleep, overslept
+uphold, upheld
+withhold, withheld
+mislead, misled
+misunderstand, misunderstood
