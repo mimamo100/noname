@@ -149,6 +149,11 @@ final class Game
                 ADD COLUMN pack_mode VARCHAR(8) CHARACTER SET ascii NULL');
             $db->exec('ALTER TABLE reports MODIFY category VARCHAR(64) CHARACTER SET ascii NOT NULL');
         }
+        // When a player left a public room of their own accord: their seat is free at once, and
+        // they're never put back in it (owner's decision, 15 October).
+        if (!$db->query("SHOW COLUMNS FROM players LIKE 'left_at'")->fetch()) {
+            $db->exec('ALTER TABLE players ADD COLUMN left_at BIGINT NULL');
+        }
         // Whether repeating a word someone else said costs points: free unless a host or organiser
         // chooses otherwise for their world (owner's decision after the room playtest).
         if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'repeat_penalty'")->fetch()) {
@@ -1096,7 +1101,7 @@ final class Game
 
         // Scores include penalties for wrong guesses. Kept as running totals on each player.
         $stmt = $this->db->prepare('
-            SELECT nickname, score, words, last_active_at, team_id FROM players WHERE world_id = ? AND removed = 0
+            SELECT nickname, score, words, last_active_at, left_at, team_id FROM players WHERE world_id = ? AND removed = 0
             ORDER BY score DESC, words DESC, nickname LIMIT 50');
         $stmt->execute([$worldId]);
         // In rooms, players who've stopped playing show as away: their seat is free for someone new.
@@ -1105,7 +1110,7 @@ final class Game
             'nickname' => $r['nickname'], 'total' => (int) $r['score'], 'words' => (int) $r['words'],
             // When they last said or tried a word, so the page can mark who's playing now.
             'lastActive' => (int) $r['last_active_at'],
-        ] + ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : []), $r['team_id']), $stmt->fetchAll());
+        ] + ($r['left_at'] !== null ? ['left' => true] : ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : [])), $r['team_id']), $stmt->fetchAll());
 
         // The same, ranked by the current prompt alone, so late arrivals can top something.
         // Only players who have said a word or lost points in this prompt are listed (free misses don't count).

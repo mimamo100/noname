@@ -159,16 +159,20 @@ function renderLobby(state) {
   // A finished world: say why, and where to play next. Rooms are also only for their own players.
   const room = state.world.kind === 'room';
   const ended = state.world.ended;
-  const notMine = room && !ended && !state.me;
+  const left = room && !ended && Boolean(state.leftRoom);
+  const notMine = room && !ended && (!state.me || left);
   // A finished private world or competition has its results card; rooms and big world rounds
   // also say where to play next.
   $('ended').hidden = !(ended && ['room', 'public'].includes(state.world.kind)) && !notMine;
+  $('leave-room').hidden = !room || ended || !state.me || left;
   if (ended) {
     $('ended-message').textContent = state.world.endedMessage;
     $('ended-button').textContent = room ? 'Join a new public room' : 'Go to the big room';
     $('ended-button').onclick = room ? joinRoom : () => { location.href = '/'; };
   } else if (notMine) {
-    $('ended-message').textContent = "You can watch this room, but only its own players can say words. Join a public room to play.";
+    $('ended-message').textContent = left
+      ? 'You left this room. Your words and points stay on its leaderboard, and it will be in your Games when it finishes.'
+      : "You can watch this room, but only its own players can say words. Join a public room to play.";
     $('ended-button').textContent = 'Join a public room';
     $('ended-button').onclick = joinRoom;
   }
@@ -611,6 +615,21 @@ async function joinRoom(e) {
   }
 }
 $('room-button').addEventListener('click', joinRoom);
+
+// Leaving a public room frees the seat at once; the words and points stay.
+async function leaveRoom(room) {
+  if (!confirm(`Leave ${room.name}? Your words and points stay, and your seat goes to someone new. You can't come back to this room: Join a public room will find you another.`)) return false;
+  try {
+    await rootApi(`/rooms/${encodeURIComponent(room.id)}/leave`, { method: 'POST' });
+    return true;
+  } catch (err) {
+    feedback(err.message, 'bad');
+    return false;
+  }
+}
+$('leave-room').addEventListener('click', async () => {
+  if (await leaveRoom(lastState.world)) { feedback('You left the room.', 'good'); refresh(); }
+});
 $('prompt-info').addEventListener('click', () => {
   const open = $('prompt-note').hidden;
   $('prompt-note').hidden = !open;
@@ -720,7 +739,7 @@ function render(state) {
   renderAccount(state.account, state.admin);
   // In a competition, only team members (or someone who opened a team's link) can play.
   const watching = state.world.kind === 'competition' && !state.myTeam && !state.joiningTeam;
-  $('play-form').hidden = !signedIn || !state.prompt || (state.world.kind === 'room' && !joined) || watching;
+  $('play-form').hidden = !signedIn || !state.prompt || (state.world.kind === 'room' && (!joined || state.leftRoom)) || watching;
   // In a world playing only a word pack, words soon run short: a reminder that they stay said.
   $('pack-reminder').hidden = state.pack?.mode !== 'only' || !state.prompt || $('play-form').hidden;
   $('signin').hidden = signedIn;
@@ -769,7 +788,7 @@ function boardRows(players, scoreKey, me, standing = null, playingSince = Infini
     ? [el('span', { className: 'playing-dot', title: 'Playing now', ariaLabel: 'Playing now' })] : [];
   const row = (p, place) => el('tr', { className: p.nickname === me ? 'me' : '' },
     el('td', { className: 'rank', textContent: place }),
-    el('td', {}, ...teamDot(p.team), p.nickname, ...playing(p), ...(p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
+    el('td', {}, ...teamDot(p.team), p.nickname, ...playing(p), ...(p.left || p.away ? [' ', el('span', { className: 'away', textContent: p.left ? '(left)' : '(away)' })] : [])),
     el('td', { textContent: p.words }),
     el('td', { textContent: p[scoreKey] }),
   );
@@ -1474,7 +1493,15 @@ function worldCard(w) {
       el('p', { className: 'kind' }, KIND_NAMES[w.kind] ?? 'World', w.packName ? ' · ' : '',
         ...(w.packName ? [el('span', { className: 'pack-tag', textContent: w.packName })] : []))),
     ...(facts.length ? [el('div', { className: 'facts' }, ...facts)] : []),
-    el('div', { className: 'foot' }, el('p', { textContent: when }), el('a', { className: 'open', href: `/w/${encodeURIComponent(w.id)}`, textContent: 'Open' })));
+    el('div', { className: 'foot' }, el('p', { textContent: when }), ...(w.kind === 'room' && !w.ended ? [leaveButton(w)] : []),
+      el('a', { className: 'open', href: `/w/${encodeURIComponent(w.id)}`, textContent: 'Open' })));
+}
+
+// A public room's card can leave it, like the room's own page.
+function leaveButton(w) {
+  const button = el('button', { type: 'button', className: 'link small', textContent: 'Leave' });
+  button.addEventListener('click', async () => { if (await leaveRoom(w)) renderMyWorlds(); });
+  return button;
 }
 
 async function renderMyWorlds() {

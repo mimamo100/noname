@@ -6,6 +6,11 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**Players can leave a public room**: the seat is free at once, their words and points stay
+(marked "left"), and they're never put back in that room, so leaving is a fresh start rather than
+a way to dodge a full room's rules. Until now the only way out was a week away. A room more than
+three quarters used up still takes no newcomers, freed seat or not. *Owner.*
+
 **A verb's -ing and -ed forms count as the verb on letter prompts, and score as it**: *running*
 is *run*, so it doesn't end in G, isn't 7 letters, and scores as *run*; *wrote* is *write*. Like
 plurals, adding letters shouldn't earn points, and the root is what the player knew. A meaning

@@ -37,7 +37,10 @@ language shrinks, players hunt for rarer words, and those words are worth more.
   is free for someone new; their words and points stay. If they come back and
   there's still a seat, they carry on; if not, they're offered a new room. A
   room finishes when it runs out of words, and its players move on to new
-  rooms. Rooms can only be joined this way, not by link.
+  rooms. Rooms can only be joined this way, not by link. A player can **leave** a
+  room (a link on its page and on its card in Your account): the seat is free at once, their
+  words and points stay (marked "left" on the leaderboard, and in their Games when it
+  finishes), and "Join a public room" never puts them back in it.
 - **Finished worlds and Games.** When a round or room finishes, every
   player who said a word or lost points gets a results row: place (shared on
   equal scores), out of how many, score, words and best word. The **Games**

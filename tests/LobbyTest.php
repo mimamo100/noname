@@ -103,6 +103,22 @@ test('rooms fill up, then a new one opens', function () {
     throwsStatus(503, fn () => $lobby->joinRoom($e)); // Both rooms full, and no more allowed.
 });
 
+test('leaving a public room frees the seat at once, and never goes back to it', function () {
+    $clock = ms('2026-10-12 10:00 UTC');
+    [$db, $game, $lobby] = makeLobby($clock, ['rooms' => ['size' => 2]]);
+    [$a, $b, $c] = array_map(fn ($n) => makeUser($db, $n), ['Ann', 'Ben', 'Cy']);
+    $room1 = $lobby->joinRoom($a);
+    $lobby->joinRoom($b); // Room 1 is full.
+    $lobby->leaveRoom($room1['id'], $a);
+    same($room1, $lobby->joinRoom($c), "Ann's seat is free at once");
+    same(null, $lobby->myRoom($a['id']));
+    same('Public room 2', $lobby->joinRoom($a)['name'], 'Ann is never put back in the room she left');
+    throwsStatus(403, fn () => $lobby->playerFor($room1['id'], $a));
+    $board = array_column($game->state($room1['id'], null)['leaderboard'], null, 'nickname');
+    same(true, $board['Ann']['left'] ?? false, 'Her row stays, marked as left');
+    throwsStatus(400, fn () => $lobby->leaveRoom($game->createWorld('Friends')['id'], $a)); // Only public rooms.
+});
+
 test('players away for a week give up their seat', function () {
     $clock = ms('2026-10-12 10:00 UTC');
     [$db, $game, $lobby] = makeLobby($clock, ['rooms' => ['size' => 2]]);

@@ -192,6 +192,12 @@ On a letter prompt, a verb's form adds what it counts as: it doesn't end in G (�
 | Play in a public room of up to 60 players, for weeks *(its own box)* | index.html |
 | Join a public room / Back to {room} *(button)* | app.js · renderLobby |
 | Finding you a room… *(the button while joining)* | app.js · joinRoom |
+| Leave room *(a room's header)* / Leave *(its card in Your account)* | index.html, app.js · leaveButton |
+| Leave {room}? Your words and points stay, and your seat goes to someone new. You can't come back to this room: Join a public room will find you another. *(confirm)* | app.js · leaveRoom |
+| You left the room. | app.js · leave-room |
+| You left this room. Your words and points stay on its leaderboard, and it will be in your Games when it finishes. | app.js · renderLobby |
+| {name} (left) *(on the leaderboard)* | app.js · boardRows |
+| You left this room. Join a public room from the home page. / Only a public room can be left. / This room has already finished. / You're not in this room. | Lobby.php · playerFor, leaveRoom |
 | Create your own room *(link by the date)* | index.html |
 | Public room {n} *(a public room's name)* | Lobby.php · newRoom |
 | You can watch this room, but only its own players can say words. Join a public room to play. | app.js · renderLobby |

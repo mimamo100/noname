@@ -262,7 +262,7 @@ final class PrivateWorlds
         $stmt = $this->db->prepare("
             SELECT w.*, p.score, p.words, t.name AS team_name FROM players p JOIN worlds w ON w.id = p.world_id
             LEFT JOIN teams t ON t.id = p.team_id
-            WHERE p.user_id = ? AND p.removed = 0 AND w.kind IN ('room', 'private', 'competition') AND w.ended_at IS NULL");
+            WHERE p.user_id = ? AND p.removed = 0 AND p.left_at IS NULL AND w.kind IN ('room', 'private', 'competition') AND w.ended_at IS NULL");
         $stmt->execute([$user['id']]);
         $worlds = [];
         foreach ($stmt->fetchAll() as $w) $worlds[$w['id']] = $w;

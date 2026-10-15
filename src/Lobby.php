@@ -121,10 +121,10 @@ final class Lobby
 
     // --- Rooms ---
 
-    /** Players in the room who've guessed recently enough to hold a seat. */
+    /** Players in the room who've guessed recently enough to hold a seat, and haven't left. */
     private function seatsTaken(string $roomId): int
     {
-        $stmt = $this->db->prepare('SELECT COUNT(*) FROM players WHERE world_id = ? AND last_active_at >= ?');
+        $stmt = $this->db->prepare('SELECT COUNT(*) FROM players WHERE world_id = ? AND last_active_at >= ? AND left_at IS NULL');
         $stmt->execute([$roomId, $this->now() - $this->game->awayAfterMs]);
         return (int) $stmt->fetchColumn();
     }
@@ -134,7 +134,7 @@ final class Lobby
     {
         $stmt = $this->db->prepare("
             SELECT w.id, w.name, p.last_active_at FROM players p JOIN worlds w ON w.id = p.world_id
-            WHERE p.user_id = ? AND w.kind = 'room' AND w.ended_at IS NULL
+            WHERE p.user_id = ? AND w.kind = 'room' AND w.ended_at IS NULL AND p.left_at IS NULL
             ORDER BY p.last_active_at DESC LIMIT 1");
         $stmt->execute([$userId]);
         $room = $stmt->fetch();
@@ -156,7 +156,7 @@ final class Lobby
             throw new GameError(503, 'The rooms are busy. Please try again.');
         }
         try {
-            $room = $this->myRoom((int) $user['id']) ?? $this->roomWithSeat() ?? $this->newRoom();
+            $room = $this->myRoom((int) $user['id']) ?? $this->roomWithSeat((int) $user['id']) ?? $this->newRoom();
             $player = $this->game->joinAsUser($room['id'], $user);
             // Back from being away: holding a seat again.
             $this->db->prepare('UPDATE players SET last_active_at = ? WHERE id = ?')->execute([$this->now(), $player['id']]);
@@ -166,17 +166,21 @@ final class Lobby
         }
     }
 
-    /** The busiest unfinished room with a free seat, skipping rooms that are nearly out of words. */
-    private function roomWithSeat(): ?array
+    /**
+     * The busiest unfinished room with a free seat, skipping rooms that are nearly out of words
+     * and any the account has left.
+     */
+    private function roomWithSeat(int $userId): ?array
     {
         $since = $this->now() - $this->game->awayAfterMs;
         $stmt = $this->db->prepare("
             SELECT w.id, w.name,
-              (SELECT COUNT(*) FROM players p WHERE p.world_id = w.id AND p.last_active_at >= ?) AS seats,
+              (SELECT COUNT(*) FROM players p WHERE p.world_id = w.id AND p.last_active_at >= ? AND p.left_at IS NULL) AS seats,
               (SELECT COUNT(*) FROM burns b WHERE b.world_id = w.id) AS burned
             FROM worlds w WHERE w.kind = 'room' AND w.ended_at IS NULL
+              AND NOT EXISTS (SELECT 1 FROM players l WHERE l.world_id = w.id AND l.user_id = ? AND l.left_at IS NOT NULL)
             ORDER BY seats DESC, w.created_at");
-        $stmt->execute([$since]);
+        $stmt->execute([$since, $userId]);
         foreach ($stmt->fetchAll() as $room) {
             if ((int) $room['seats'] >= $this->roomSize) continue;
             // A newcomer would find little left to say once three quarters are gone.
@@ -207,11 +211,28 @@ final class Lobby
         if (($world['kind'] ?? 'private') !== 'room') return $this->game->joinAsUser($worldId, $user);
         $player = $this->game->playerForUser($worldId, (int) $user['id'])
             ?? throw new GameError(403, 'This room is for its own players. Join a public room from the home page.');
+        if ($player['left_at'] !== null) throw new GameError(403, 'You left this room. Join a public room from the home page.');
         $away = (int) $player['last_active_at'] < $this->now() - $this->game->awayAfterMs;
         if ($away && !$world['ended_at'] && $this->seatsTaken($worldId) >= $this->roomSize) {
             throw new GameError(403, 'Your seat in this room went to someone new while you were away. Join a new public room from the home page.');
         }
         return $player;
+    }
+
+    /**
+     * Leaves a public room: the seat is free at once, the player's words and points stay (and
+     * the room still comes into their Games when it finishes), and they're never put back in it.
+     */
+    public function leaveRoom(string $worldId, array $user): void
+    {
+        $world = $this->game->world($worldId);
+        if (($world['kind'] ?? '') !== 'room') throw new GameError(400, 'Only a public room can be left.');
+        if ($world['ended_at']) throw new GameError(400, 'This room has already finished.');
+        $player = $this->game->playerForUser($worldId, (int) $user['id']) ?? throw new GameError(404, "You're not in this room.");
+        if ($player['left_at'] === null) {
+            $this->db->prepare('UPDATE players SET left_at = ? WHERE id = ?')->execute([$this->now(), $player['id']]);
+            $this->game->changed($worldId);
+        }
     }
 
     // --- My games ---

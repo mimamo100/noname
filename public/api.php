@@ -15,6 +15,7 @@
 //   POST /api/reminders/stop              {token}                  stop the daily email, from its link
 //
 //   POST /api/rooms                                         join a room: your own, or one with a free seat (account needed)
+//   POST /api/rooms/{id}/leave                              leave a public room: its seat is freed, your words and points stay
 //   GET  /api/packs                                         word packs this account may use: {curated, custom}
 //   GET  /api/me/packs                                      the account's own word packs, with their text (Organiser plan)
 //   POST /api/packs                       {name, description, text}  make a word pack (Organiser plan)
@@ -197,6 +198,10 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
     if ($resource === 'rooms' && $method === 'POST' && $worldId === null) {
         respond(200, $lobby->joinRoom($needUser()));
     }
+    if ($resource === 'rooms' && $method === 'POST' && $worldId !== null && $action === 'leave') {
+        $lobby->leaveRoom($worldId, $needUser());
+        respond(200, ['ok' => true]);
+    }
     if ($resource !== 'worlds') throw new GameError(404, 'Not found');
     $isBigWorld = $worldId === Lobby::BIG_WORLD_ALIAS;
     if ($isBigWorld) $worldId = $lobby->bigWorldId();
@@ -267,6 +272,8 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         if (!empty($world['pack'])) {
             $state['pack'] = ['name' => $packs->name($world['pack'], $game->dictionary()) ?? 'a removed pack', 'mode' => $world['pack_mode'] ?? 'only'];
         }
+        // A public room the viewer has left: they can watch it, but not play.
+        if (($world['kind'] ?? '') === 'room' && $player && $player['left_at'] !== null) $state['leftRoom'] = true;
         // How the viewer finished, to share.
         if ($user && !empty($state['world']['ended'])) $state['myResult'] = $lobby->result($world['id'], (int) $user['id']);
         if ($isBigWorld) {
