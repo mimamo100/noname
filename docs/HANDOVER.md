@@ -69,7 +69,7 @@ deletes its packs (the owner may want to revisit those two calls).
 
 ## On the owner's server
 
-- The last zip sent was built from commit `4231775` (14 October), without `.htaccess` files.
+- The last zip sent was built from commit `a7b46c1` (15 October), without `.htaccess` files.
   The owner was told to add `RewriteRule ^account$ index.html [L]` to `public/.htaccess`,
   after the `^w/` line; without it, Your account says "Not found". Whether it's all
   uploaded is the owner's to confirm. `admin_path` must not be `account`.
