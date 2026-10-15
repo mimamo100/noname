@@ -115,7 +115,7 @@ test('leaving a public room frees the seat at once, and never goes back to it', 
     same('Public room 2', $lobby->joinRoom($a)['name'], 'Ann is never put back in the room she left');
     throwsStatus(403, fn () => $lobby->playerFor($room1['id'], $a));
     $board = array_column($game->state($room1['id'], null)['leaderboard'], null, 'nickname');
-    same(true, $board['Ann']['left'] ?? false, 'Her row stays, marked as left');
+    same($clock, $board['Ann']['left'] ?? null, 'Her row stays, marked with when she left');
     throwsStatus(400, fn () => $lobby->leaveRoom($game->createWorld('Friends')['id'], $a)); // Only public rooms.
 });
 

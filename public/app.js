@@ -754,6 +754,7 @@ function render(state) {
 
   // Who's playing now: a dot by anyone who said or tried a word in the last few minutes.
   const playingSince = state.world.ended ? Infinity : state.now - PLAYING_NOW_MS;
+  justLeftSince = state.now - JUST_LEFT_MS;
   $('leaderboard').replaceChildren(...boardRows(state.leaderboard, 'total', state.me, state.myStanding, playingSince));
   const promptBoard = state.promptBoard ?? [];
   $('prompt-board').replaceChildren(...boardRows(promptBoard, 'points', state.me, null, playingSince));
@@ -781,6 +782,9 @@ const teamDot = (position) => (position === undefined || position === null ? [] 
 // list if they're in it, or from their standing (overall only) if they're beyond it.
 const BOARD_TOP = 10;
 const PLAYING_NOW_MS = 5 * 60_000;
+// Someone who left a public room shows as "just left" for an hour; after that, no dot says enough.
+const JUST_LEFT_MS = 60 * 60_000;
+let justLeftSince = 0;
 
 function boardRows(players, scoreKey, me, standing = null, playingSince = Infinity) {
   let rank = 0;
@@ -788,7 +792,8 @@ function boardRows(players, scoreKey, me, standing = null, playingSince = Infini
     ? [el('span', { className: 'playing-dot', title: 'Playing now', ariaLabel: 'Playing now' })] : [];
   const row = (p, place) => el('tr', { className: p.nickname === me ? 'me' : '' },
     el('td', { className: 'rank', textContent: place }),
-    el('td', {}, ...teamDot(p.team), p.nickname, ...playing(p), ...(p.left || p.away ? [' ', el('span', { className: 'away', textContent: p.left ? '(left)' : '(away)' })] : [])),
+    el('td', {}, ...teamDot(p.team), p.nickname, ...playing(p), ...(p.left ? (p.left >= justLeftSince ? [' ', el('span', { className: 'away', textContent: '(just left)' })] : [])
+      : p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
     el('td', { textContent: p.words }),
     el('td', { textContent: p[scoreKey] }),
   );

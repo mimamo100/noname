@@ -68380,12 +68380,6 @@ return array (
       0 => 'potatoes',
       1 => 'potato',
     ),
-    'wick' => 
-    array (
-      0 => 'wicked',
-      1 => 'wick',
-      2 => 'wicks',
-    ),
     'resource' => 
     array (
       0 => 'resources',
@@ -76795,12 +76789,6 @@ return array (
       0 => 'burton',
       1 => 'burtons',
     ),
-    'wretch' => 
-    array (
-      0 => 'wretched',
-      1 => 'wretch',
-      2 => 'wretches',
-    ),
     'exhibition' => 
     array (
       0 => 'exhibition',
@@ -82330,6 +82318,11 @@ return array (
     array (
       0 => 'hangover',
       1 => 'hangovers',
+    ),
+    'wretch' => 
+    array (
+      0 => 'wretch',
+      1 => 'wretches',
     ),
     'weasel' => 
     array (
@@ -94866,6 +94859,11 @@ return array (
     array (
       0 => 'latino',
       1 => 'latinos',
+    ),
+    'wick' => 
+    array (
+      0 => 'wick',
+      1 => 'wicks',
     ),
     'smoothie' => 
     array (
@@ -124493,8 +124491,7 @@ return array (
     'anise' => 
     array (
       0 => 'anise',
-      1 => 'aniseed',
-      2 => 'anises',
+      1 => 'anises',
     ),
     'squall' => 
     array (
@@ -135035,8 +135032,7 @@ return array (
     'scree' => 
     array (
       0 => 'scree',
-      1 => 'screed',
-      2 => 'screes',
+      1 => 'screes',
     ),
     'calcite' => 
     array (

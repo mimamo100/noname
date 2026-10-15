@@ -1110,7 +1110,7 @@ final class Game
             'nickname' => $r['nickname'], 'total' => (int) $r['score'], 'words' => (int) $r['words'],
             // When they last said or tried a word, so the page can mark who's playing now.
             'lastActive' => (int) $r['last_active_at'],
-        ] + ($r['left_at'] !== null ? ['left' => true] : ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : [])), $r['team_id']), $stmt->fetchAll());
+        ] + ($r['left_at'] !== null ? ['left' => (int) $r['left_at']] : ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : [])), $r['team_id']), $stmt->fetchAll());
 
         // The same, ranked by the current prompt alone, so late arrivals can top something.
         // Only players who have said a word or lost points in this prompt are listed (free misses don't count).
