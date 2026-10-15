@@ -75,7 +75,14 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Only words of 3 to 30 letters can be reported | Game.php · report |
 | That word is already in the dictionary | Game.php · report |
 
-## 2. My misses
+## 2. My words and My misses
+
+| Message | Where |
+|---|---|
+| My words *(tab)* | index.html |
+| Only you can see these. {n} words (the latest), {n} points before penalties. | app.js · renderWords |
+| No words yet. | app.js · renderWords |
+
 
 | Message | Where |
 |---|---|
@@ -108,6 +115,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Nothing said yet. Be the first. | app.js · renderSaid |
 | Show all {n} / Show fewer | app.js · renderSaid |
 | Earlier prompts *(three that had words; early in a new round, made up from the last round's)* · {prompt} · {n} said · last round | app.js · renderSaid |
+| Earlier prompts · the last {n} of {n} *(when there were more)* | app.js · renderSaid |
 | Nothing was said. | app.js · renderSaid |
 | {name} (+{n} family) *(in the feed)* | app.js · saidList |
 | Tap to show the word *(a masked word, p\*\*\*s)* | app.js · saidWord |
@@ -119,6 +127,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 |---|---|
 | Scores include 2 points off for each wrong guess, so they can go down. | index.html |
 | Nobody has tried this prompt yet. First in leads. | index.html |
+| Playing now *(the green dot by a name, on hover: said or tried a word in the last 5 minutes)* | app.js · boardRows |
 | {name} said “{word}” {when}, for “{prompt}”. | app.js · lookup-form |
 | {name} said “{word}” {when} (with “{played}”), for “{prompt}”. | app.js · lookup-form |
 | “{word}” is still unsaid. | app.js · lookup-form |
@@ -169,6 +178,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | You came {place} of {n} with {n} points. Share your result | app.js · renderLobby |
 | Play in a room of up to 60 players, its own world for weeks *(its own box)* | index.html |
 | Join a room / Back to {room} *(button)* | app.js · renderLobby |
+| Finding you a room… *(the button while joining)* | app.js · joinRoom |
 | Create your own world *(link by the date)* | index.html |
 | Room {n} *(a room's name)* | Lobby.php · newRoom |
 | You can watch this room, but only its own players can say words. Join a room to play. | app.js · renderLobby |

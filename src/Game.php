@@ -860,6 +860,13 @@ final class Game
      * The words said in the world's latest prompts (the current one first), each with all
      * its words, newest first. Older prompts' words can still be found with lookup().
      */
+    private function promptsPlayed(string $worldId): int
+    {
+        $stmt = $this->db->prepare('SELECT COUNT(DISTINCT prompt_id) FROM burns WHERE world_id = ?');
+        $stmt->execute([$worldId]);
+        return (int) $stmt->fetchColumn();
+    }
+
     private function saidByPrompt(string $worldId, int $prompts = 4, array $teamOf = [], ?array $onlyPromptIds = null): array
     {
         // The current prompt and the latest ones that had words: prompts nobody played aren't
@@ -918,6 +925,24 @@ final class Game
         $stmt->execute([$worldId]);
         $ids = $stmt->fetchAll(PDO::FETCH_COLUMN);
         return $ids ? $this->saidByPrompt($worldId, count($ids), $teamOf, $ids) : [];
+    }
+
+    /** The words a player has said, newest first, with the prompt each was for and its points. */
+    private function wordsOf(int $playerId, int $limit = 300): array
+    {
+        $stmt = $this->db->prepare("
+            SELECT b.played_word, b.points, b.burned_at, b.prompt_id, p.spec, p.label, p.type, p.letters
+            FROM burns b JOIN prompts p ON p.id = b.prompt_id
+            WHERE b.player_id = ? AND b.word = b.played_word
+            ORDER BY b.id DESC LIMIT $limit");
+        $stmt->execute([$playerId]);
+        return array_map(fn ($r) => [
+            'word' => $this->dictionary->display($r['played_word']),
+            'points' => (int) $r['points'],
+            'at' => (int) $r['burned_at'],
+            'promptId' => (int) $r['prompt_id'],
+            'prompt' => $r['label'] ?? Prompts::describe(self::specOf($r), $this->dictionary),
+        ], $stmt->fetchAll());
     }
 
     /** A player's most recent wrong guesses, newest first, with the prompt each was for. */
@@ -1014,6 +1039,7 @@ final class Game
 
         $me = null;
         $myMisses = [];
+        $myWords = [];
         $myStanding = null;
         if ($token) {
             $stmt = $this->db->prepare('SELECT id, nickname FROM players WHERE world_id = ? AND token = ? AND removed = 0');
@@ -1021,6 +1047,7 @@ final class Game
             if ($player = $stmt->fetch()) {
                 $me = $player['nickname'];
                 $myMisses = $this->missesOf((int) $player['id']);
+                $myWords = $this->wordsOf((int) $player['id']);
                 $myStanding = $this->standing($worldId, (int) $player['id']);
             }
         }
@@ -1030,6 +1057,9 @@ final class Game
             'myStanding' => $myStanding,
             // Only the player's own misses: other players never see them.
             'myMisses' => $myMisses,
+            // Every word the player has said here (the latest 300), with its prompt: Just said only
+            // shows the last few prompts.
+            'myWords' => $myWords,
         ] + $shared + ['now' => $this->now()];
     }
 
@@ -1072,12 +1102,14 @@ final class Game
         $awaySince = ($world['kind'] ?? '') === 'room' && !$world['ended_at'] ? $this->now() - $this->awayAfterMs : null;
         $leaderboard = array_map(fn ($r) => $withTeam([
             'nickname' => $r['nickname'], 'total' => (int) $r['score'], 'words' => (int) $r['words'],
+            // When they last said or tried a word, so the page can mark who's playing now.
+            'lastActive' => (int) $r['last_active_at'],
         ] + ($awaySince !== null && (int) $r['last_active_at'] < $awaySince ? ['away' => true] : []), $r['team_id']), $stmt->fetchAll());
 
         // The same, ranked by the current prompt alone, so late arrivals can top something.
         // Only players who have said a word or lost points in this prompt are listed (free misses don't count).
         $stmt = $this->db->prepare('
-            SELECT p.nickname, p.team_id, COALESCE(b.words, 0) AS words, COALESCE(b.points, 0) + COALESCE(m.points, 0) AS points
+            SELECT p.nickname, p.team_id, p.last_active_at, COALESCE(b.words, 0) AS words, COALESCE(b.points, 0) + COALESCE(m.points, 0) AS points
             FROM players p
             LEFT JOIN (
               SELECT player_id, COUNT(CASE WHEN word = played_word THEN 1 END) AS words, SUM(points) AS points
@@ -1092,6 +1124,7 @@ final class Game
         $stmt->execute([$promptId, $promptId, $worldId]);
         $promptBoard = array_map(fn ($r) => $withTeam([
             'nickname' => $r['nickname'], 'points' => (int) $r['points'], 'words' => (int) $r['words'],
+            'lastActive' => (int) $r['last_active_at'],
         ], $r['team_id']), $stmt->fetchAll());
 
         return [
@@ -1123,6 +1156,8 @@ final class Game
             'dictionary' => ['size' => $this->dictionary->size(), 'burned' => count($this->burned($worldId))],
             // Every word said in the current prompt and the few before it, newest prompt first.
             'said' => $this->saidByPrompt($worldId, teamOf: $teamOf),
+            // How many prompts had words in all, so the page can say Just said shows only the latest.
+            'promptsPlayed' => $this->promptsPlayed($worldId),
             // The latest finished prompt someone played, however far back, for the Recent prompt box.
             'recentPrompt' => $this->recentPrompt($worldId, $teamOf),
             'leaderboard' => $leaderboard,

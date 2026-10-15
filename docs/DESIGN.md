@@ -247,7 +247,12 @@ word-finder site. There are three kinds:
   feed. A new prompt avoids the meaning list just asked about when another
   list fits, so a small pack's "Nobody said" answers aren't the next prompt's.
   The feed shows three earlier prompts that had words; early in the big world's new round
-  it makes them up with the last round's, marked "last round".
+  it makes them up with the last round's, marked "last round". When there were more, it
+  says so ("the last 3 of 99").
+- **My words** lists every word a player has said in the world (the latest 300), by prompt,
+  with its points: a word said long ago is easy to find, on a finished world too.
+- **Playing now:** a green dot on the leaderboards by anyone who said or tried a word (or
+  joined) in the last 5 minutes.
 - **My misses** lists a player's own wrong guesses (with the prompt, the
   reason and any penalty, plus what happened to any report: waiting,
   accepted or dismissed. An accepted word that has since been used up, for

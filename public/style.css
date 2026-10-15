@@ -181,6 +181,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--ember); }
 .lobby-rooms { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
 .lobby-rooms p { margin: 0; flex: 1 1 200px; font-weight: 600; }
 .leaderboard .away { color: var(--muted); font-weight: 400; font-size: 13px; }
+.playing-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--good); margin-left: 6px; vertical-align: middle; }
 .history-list { list-style: none; padding: 0; margin: 0; }
 .history-list li { padding: 8px 0; border-bottom: 1px solid var(--border); }
 .history-list a { color: var(--text); font-weight: 700; }

@@ -261,6 +261,23 @@ test('playing a word uses it and its family up for everyone', function () {
     same($played['points'], $state['leaderboard'][0]['total']);
 });
 
+test("a player's own words, how many prompts had words, and when each player last played", function () {
+    $game = makeGame(fn () => 5_000);
+    $world = $game->createWorld('Test');
+    setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+    $alice = $game->join($world['id'], 'Alice');
+    $bob = $game->join($world['id'], 'Bob');
+    $moon = $game->play($world['id'], $alice['token'], 'moon');
+    $game->play($world['id'], $bob['token'], 'moons'); // Already said: not one of Bob's words.
+
+    $state = $game->state($world['id'], $alice['token']);
+    same(1, count($state['myWords']));
+    same(['moon', $moon['points'], 'Contains OO'], [$state['myWords'][0]['word'], $state['myWords'][0]['points'], $state['myWords'][0]['prompt']]);
+    same([], $game->state($world['id'], $bob['token'])['myWords']);
+    same(1, $state['promptsPlayed']);
+    same(5_000, $state['leaderboard'][0]['lastActive'], 'When Alice last said or tried a word');
+});
+
 test('meaning prompts accept only words in the category', function () {
     $game = makeGame();
     $world = $game->createWorld('Birds');
@@ -520,7 +537,7 @@ test('the prompt leaderboard ranks the current prompt alone', function () {
     same([
         ['nickname' => 'Late', 'points' => $points, 'words' => 1],
         ['nickname' => 'Early', 'points' => -Game::PENALTY, 'words' => 0],
-    ], $state['promptBoard']);
+    ], array_map(fn ($r) => array_diff_key($r, ['lastActive' => 0]), $state['promptBoard']));
 });
 
 test('running score totals match a full recount', function () {

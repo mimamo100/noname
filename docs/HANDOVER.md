@@ -96,12 +96,16 @@ deletes its packs (the owner may want to revisit those two calls).
 
 ## Open items
 
-0. **Next: the room report's remaining items** (`playtests/2026-10-14-room.md`, "Still to do").
-   Done on 15 October: the insect list (about 160 names, spiders and other creepy-crawlies, a
-   note), notes on 30 lists for the owner to check, irregular verb forms (`verbs:` in
-   `data/irregular-forms.txt`), more irregular plurals, *breadcrumb*, and rarity placed by hand
-   for 47 familiar words (`data/rarity-overrides.txt`; add to it when players find a word that
-   scores too high or too low).
+0. **Done on 15 October (CLI session):** the room report is finished. Word lists: the insect
+   list (about 160 names, spiders and other creepy-crawlies, a note), notes on 30 lists for the
+   owner to check, irregular verb forms (`verbs:` in `data/irregular-forms.txt`), more irregular
+   plurals, *breadcrumb*, rarity placed by hand for 47 familiar words
+   (`data/rarity-overrides.txt`; add to it when players find a word that scores too high or too
+   low). Page: the "playing now" dot, My words, "the last 3 of 6", judging a word against the
+   prompt showing when typing started, "Finding you a room…", clearing an old miss message.
+   Local browser checks: `config.php` (git-ignored) points at an `unsaid_dev` database in XAMPP
+   with sign-in codes written to a log file; Playwright for Python drives the installed Chrome
+   (`channel="chrome"`).
 
 1. **Messages:** the owner is reviewing `docs/MESSAGES.md` and will send wording changes.
    If they want to change wording often, the next step (already discussed) is moving the

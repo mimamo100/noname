@@ -590,7 +590,8 @@ $('pack-delete').addEventListener('click', async () => {
   }
 });
 
-async function joinRoom() {
+async function joinRoom(e) {
+  const button = e?.currentTarget instanceof HTMLButtonElement ? e.currentTarget : null;
   if (!session) {
     feedback('Sign in first to join a room.', 'bad');
     showSigninStep('email');
@@ -598,10 +599,14 @@ async function joinRoom() {
     $('signin').scrollIntoView({ block: 'center' });
     return;
   }
+  // Finding a room can take a few seconds: say so, and stop a second press.
+  const label = button?.textContent;
+  if (button) { button.disabled = true; button.textContent = 'Finding you a room…'; }
   try {
     const room = await rootApi('/rooms', { method: 'POST' });
     location.href = `/w/${encodeURIComponent(room.id)}`;
   } catch (err) {
+    if (button) { button.disabled = false; button.textContent = label; }
     feedback(err.message, 'bad');
   }
 }
@@ -673,6 +678,13 @@ function render(state) {
   if (state.prompt) {
     $('prompt-label').textContent = state.prompt.label;
     $('prompt-label').classList.toggle('long', state.prompt.label.length > 30); // Smaller, to fit one line.
+    // A new prompt: a miss message about the last one would only confuse.
+    if (shownPromptId !== null && shownPromptId !== state.prompt.id && $('feedback').classList.contains('bad')) {
+      clearTimeout(feedbackTimer);
+      $('feedback').textContent = '';
+      $('feedback').className = 'feedback';
+    }
+    shownPromptId = state.prompt.id;
     // "About this list": the list's note on its quirks, closed again when the prompt changes.
     if ($('prompt-note').dataset.promptId !== String(state.prompt.id)) {
       $('prompt-note').dataset.promptId = String(state.prompt.id);
@@ -712,15 +724,19 @@ function render(state) {
   $('pack-reminder').hidden = state.pack?.mode !== 'only' || !state.prompt || $('play-form').hidden;
   $('signin').hidden = signedIn;
 
-  renderSaid(state.said ?? [], state.prompt?.id);
+  renderSaid(state.said ?? [], state.prompt?.id, state.promptsPlayed ?? 0);
   renderLastUnsaid(state.recentPrompt);
 
   $('tab-misses').hidden = !joined;
+  $('tab-words').hidden = !joined;
   renderMisses(state.myMisses ?? [], state.prompt?.id);
+  renderWords(state.myWords ?? []);
 
-  $('leaderboard').replaceChildren(...boardRows(state.leaderboard, 'total', state.me, state.myStanding));
+  // Who's playing now: a dot by anyone who said or tried a word in the last few minutes.
+  const playingSince = state.world.ended ? Infinity : state.now - PLAYING_NOW_MS;
+  $('leaderboard').replaceChildren(...boardRows(state.leaderboard, 'total', state.me, state.myStanding, playingSince));
   const promptBoard = state.promptBoard ?? [];
-  $('prompt-board').replaceChildren(...boardRows(promptBoard, 'points', state.me));
+  $('prompt-board').replaceChildren(...boardRows(promptBoard, 'points', state.me, null, playingSince));
   $('prompt-board-empty').hidden = promptBoard.length > 0;
   if (state.teams) {
     let rank = 0;
@@ -744,12 +760,15 @@ const teamDot = (position) => (position === undefined || position === null ? [] 
 // A board shows its top ten. A player further down sees a gap, then their own row: from the
 // list if they're in it, or from their standing (overall only) if they're beyond it.
 const BOARD_TOP = 10;
+const PLAYING_NOW_MS = 5 * 60_000;
 
-function boardRows(players, scoreKey, me, standing = null) {
+function boardRows(players, scoreKey, me, standing = null, playingSince = Infinity) {
   let rank = 0;
+  const playing = (p) => p.lastActive >= playingSince
+    ? [el('span', { className: 'playing-dot', title: 'Playing now', ariaLabel: 'Playing now' })] : [];
   const row = (p, place) => el('tr', { className: p.nickname === me ? 'me' : '' },
     el('td', { className: 'rank', textContent: place }),
-    el('td', {}, ...teamDot(p.team), p.nickname, ...(p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
+    el('td', {}, ...teamDot(p.team), p.nickname, ...playing(p), ...(p.away ? [' ', el('span', { className: 'away', textContent: '(away)' })] : [])),
     el('td', { textContent: p.words }),
     el('td', { textContent: p[scoreKey] }),
   );
@@ -828,7 +847,7 @@ function renderLastUnsaid(last) {
 const SAID_SHOWN = 10;
 let showAllSaid = false;
 
-function renderSaid(groups, currentPromptId) {
+function renderSaid(groups, currentPromptId, promptsPlayed = 0) {
   const parts = [];
   for (const group of groups) {
     if (group.promptId === currentPromptId) {
@@ -837,7 +856,7 @@ function renderSaid(groups, currentPromptId) {
       parts.push(saidList(hidden > 0 ? group.words.slice(0, SAID_SHOWN) : group.words, 'Nothing said yet. Be the first.'));
       if (hidden > 0 || (showAllSaid && group.words.length > SAID_SHOWN)) {
         const more = el('button', { type: 'button', className: 'link small', textContent: showAllSaid ? 'Show fewer' : `Show all ${group.words.length}` });
-        more.addEventListener('click', () => { showAllSaid = !showAllSaid; renderSaid(groups, currentPromptId); });
+        more.addEventListener('click', () => { showAllSaid = !showAllSaid; renderSaid(groups, currentPromptId, promptsPlayed); });
         parts.push(more);
       }
     } else if (!group.words.length) {
@@ -852,7 +871,12 @@ function renderSaid(groups, currentPromptId) {
     }
   }
   const firstEarlier = parts.findIndex((part) => part.tagName === 'DETAILS');
-  if (firstEarlier >= 0) parts.splice(firstEarlier, 0, el('p', { className: 'group-title earlier-title', textContent: 'Earlier prompts' }));
+  // Only the latest few earlier prompts come: say so when there were more, so a word said
+  // long ago isn't thought lost (My words has them all).
+  const earlierShown = parts.filter((part) => part.tagName === 'DETAILS').length;
+  const earlierAll = promptsPlayed - groups.filter((g) => g.promptId === currentPromptId && g.words.length).length;
+  const earlierTitle = earlierAll > earlierShown ? `Earlier prompts · the last ${earlierShown} of ${earlierAll.toLocaleString()}` : 'Earlier prompts';
+  if (firstEarlier >= 0) parts.splice(firstEarlier, 0, el('p', { className: 'group-title earlier-title', textContent: earlierTitle }));
   $('recent').replaceChildren(...parts);
 }
 
@@ -909,13 +933,39 @@ function renderMisses(misses, currentPromptId) {
   $('misses-list').replaceChildren(...rows);
 }
 
+// Every word the player has said here, by prompt, newest first.
+function renderWords(words) {
+  const total = words.reduce((sum, w) => sum + w.points, 0);
+  $('words-summary').textContent = words.length
+    ? `Only you can see these. ${plural(words.length, 'word')}${words.length >= 300 ? ' (the latest)' : ''}, ${total.toLocaleString()} points before penalties.`
+    : 'Only you can see these.';
+  if (!words.length) {
+    $('words-list').replaceChildren(el('li', { className: 'muted', textContent: 'No words yet.' }));
+    return;
+  }
+  const rows = [];
+  let lastPrompt = null;
+  for (const w of words) {
+    if (w.promptId !== lastPrompt) {
+      rows.push(el('li', { className: 'miss-prompt', textContent: w.prompt }));
+      lastPrompt = w.promptId;
+    }
+    rows.push(el('li', {},
+      el('span', { className: 'miss-word', textContent: w.word }),
+      el('span', { className: 'points', textContent: `+${w.points}` }),
+    ));
+  }
+  $('words-list').replaceChildren(...rows);
+}
+
+const SAID_TABS = ['recent', 'words', 'misses'];
 function showTab(name) {
-  const misses = name === 'misses' && !$('tab-misses').hidden;
-  $('tab-recent').setAttribute('aria-selected', String(!misses));
-  $('tab-misses').setAttribute('aria-selected', String(misses));
-  $('recent').hidden = misses;
-  $('misses').hidden = !misses;
-  try { localStorage.setItem('unsaid:tab', misses ? 'misses' : 'recent'); } catch { /* not saved: fine */ }
+  if (!SAID_TABS.includes(name) || $(`tab-${name}`).hidden) name = 'recent';
+  for (const t of SAID_TABS) {
+    $(`tab-${t}`).setAttribute('aria-selected', String(t === name));
+    $(t).hidden = t !== name;
+  }
+  try { localStorage.setItem('unsaid:tab', name); } catch { /* not saved: fine */ }
 }
 // Leaderboard tabs: Teams (competitions only), Overall and This prompt.
 let board = 'overall';
@@ -934,6 +984,7 @@ try { if (localStorage.getItem('unsaid:board') === 'prompt') showBoard('prompt',
 
 $('tab-recent').addEventListener('click', () => showTab('recent'));
 $('tab-misses').addEventListener('click', () => showTab('misses'));
+$('tab-words').addEventListener('click', () => showTab('words'));
 
 // The last full state, and how many polls in a row have found nothing new.
 let lastState = null;
@@ -975,6 +1026,7 @@ async function refresh() {
 // focus is on the message, so it can still be read or used.
 const FEEDBACK_MS = { good: 6000, bad: 10000 };
 let feedbackTimer = null;
+let shownPromptId = null; // The prompt last shown, to clear a miss message when it changes.
 
 function feedback(text, kind) {
   const box = $('feedback');
@@ -1023,16 +1075,26 @@ const REASONS = {
     : `“${w}” has already been said.${penaltyText(r)}`,
 };
 
+// The prompt on screen when the player started typing: if it changes while they type, the word
+// is still judged against the one they were answering (the server allows 30 seconds).
+let typingPromptId = null;
+$('word').addEventListener('input', () => {
+  if (!$('word').value) typingPromptId = null;
+  else typingPromptId ??= lastState?.prompt?.id ?? null;
+});
+
 $('play-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const input = $('word');
   const word = input.value.trim();
   if (!word) return;
+  const promptId = typingPromptId ?? lastState?.prompt?.id;
+  typingPromptId = null;
   try {
     let result;
     try {
-      // The prompt on screen: if it changed a moment ago, the word still counts for it.
-      result = await api(`/${encodeURIComponent(worldId)}/words`, { method: 'POST', body: { word, promptId: lastState?.prompt?.id } });
+      // If the prompt changed a moment ago, the word still counts for the one it was typed for.
+      result = await api(`/${encodeURIComponent(worldId)}/words`, { method: 'POST', body: { word, promptId } });
     } catch (err) {
       if (err.status === 401) { setSession(null); refresh(); } // Signed out elsewhere: show the sign-in box.
       if (err.status === 410) { refresh(); throw new Error(`${err.message} The result is at the top.`); } // It just finished.
