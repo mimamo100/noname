@@ -90,12 +90,14 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .bad { color: var(--bad); }
 .muted { color: var(--muted); }
 
-/* Two columns: the big world's boxes, Recent prompt and Just said on the left, the leaderboard
-   on the right. On a phone, one column, with the leaderboard before the long list of words. */
+/* Two columns: Just said first on the left (it's what's happening now), then the big world's
+   boxes and Recent prompt; the leaderboard on the right. On a phone, one column: Just said
+   straight under the word box, then the leaderboard. */
 .columns {
   display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; margin-top: 16px; align-items: start;
-  grid-template-areas: "big board" "recent board" "rooms board" "said board"; grid-template-rows: auto auto auto 1fr;
+  grid-template-areas: "said board" "big board" "recent board" "rooms board"; grid-template-rows: auto auto auto 1fr;
 }
+.columns > .said { margin-bottom: 16px; }
 .columns > .notice { margin: 0 0 16px; }
 .columns > .board { grid-area: board; }
 .columns > .said { grid-area: said; }
@@ -103,7 +105,7 @@ input:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
 .columns > #last-unsaid { grid-area: recent; }
 .columns > #lobby-rooms { grid-area: rooms; }
 @media (max-width: 700px) {
-  .columns { grid-template-columns: 1fr; grid-template-areas: "big" "recent" "rooms" "board" "said"; grid-template-rows: none; }
+  .columns { grid-template-columns: 1fr; grid-template-areas: "said" "board" "big" "recent" "rooms"; grid-template-rows: none; }
   .columns > .board { margin-bottom: 24px; }
 }
 .tabs { display: flex; gap: 16px; margin-bottom: 8px; border-bottom: 1px solid var(--border); }

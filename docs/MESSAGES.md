@@ -167,7 +167,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | This round ends in {time} *(in the banner)* | index.html, app.js · renderClock |
 | Last round *(the box's title)*, then {medal} {name} · {n} points for the top three | app.js · renderLobby |
 | You came {place} of {n} with {n} points. Share your result | app.js · renderLobby |
-| Play with 60 others in a separate world *(its own box)* | index.html |
+| Play in a room of up to 60 players, its own world for weeks *(its own box)* | index.html |
 | Join a room / Back to {room} *(button)* | app.js · renderLobby |
 | Create your own world *(link by the date)* | index.html |
 | Room {n} *(a room's name)* | Lobby.php · newRoom |
