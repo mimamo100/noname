@@ -35,6 +35,32 @@ final class Prompts
         };
     }
 
+    private const LENGTH_RULES = ['minLen', 'maxLen', 'len'];
+
+    /**
+     * "About this prompt": what a player might not expect. A meaning prompt has its list's note
+     * (a "note:" line in its category file); a letter prompt says how forms of a word are judged,
+     * as players reach for -ing words and plurals first. A rule that only looks at a word's
+     * start needs no note: a verb's forms start as it does.
+     */
+    public static function note(array $spec, Dictionary $dictionary): ?string
+    {
+        $types = array_map(fn ($rule) => $rule[0], $spec['rules'] ?? []);
+        $length = (bool) array_intersect($types, self::LENGTH_RULES);
+        $letters = (bool) array_diff($types, [...self::LENGTH_RULES, 'starts']);
+        if (isset($spec['cat'])) {
+            $note = $dictionary->categoryNote($spec['cat']);
+            if (!$length) return $note;
+            return trim(($note ?? '') . ' Plurals count as their singular for length: “brothers” is 7 letters.');
+        }
+        return match (true) {
+            $length && $letters => "A verb's other forms count as the verb here, and plurals as their singular: “running” and “ran” are “run”, and “brothers” is 7 letters.",
+            $length => "Plurals count as their singular here, and a verb's other forms as the verb: “brothers” is 7 letters, and “running” is 3.",
+            $letters => "A verb's other forms count as the verb here: “running” and “ran” are “run”.",
+            default => null,
+        };
+    }
+
     /**
      * The word a prompt's letter rules look at: on a letter prompt, a verb's -ing or -ed form is
      * judged as the verb ("running" is run: 3 letters, and it doesn't end in G). A meaning prompt

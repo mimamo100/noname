@@ -685,13 +685,14 @@ function render(state) {
       $('feedback').className = 'feedback';
     }
     shownPromptId = state.prompt.id;
-    // "About this list": the list's note on its quirks, closed again when the prompt changes.
+    // "About this list" (or prompt): what a player might not expect, closed again when the prompt changes.
     if ($('prompt-note').dataset.promptId !== String(state.prompt.id)) {
       $('prompt-note').dataset.promptId = String(state.prompt.id);
       $('prompt-note').hidden = true;
       $('prompt-info').setAttribute('aria-expanded', 'false');
     }
     $('prompt-info').hidden = !state.prompt.note;
+    $('prompt-info').textContent = state.prompt.noteFor === 'prompt' ? 'About this prompt' : 'About this list';
     $('prompt-note').textContent = state.prompt.note ?? '';
     $('remaining').textContent = state.prompt.remaining;
     // The meter fills towards the prompt's end, which comes before every answer is said.

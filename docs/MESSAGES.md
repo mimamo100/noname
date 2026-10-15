@@ -54,6 +54,15 @@ Shown under the word box; they fade after a few seconds (see section 13).
 
 On a letter prompt, a verb's form adds what it counts as: it doesn't end in G (“running” counts as “run”).
 
+### About this list / About this prompt (under the prompt)
+
+| Message | Where |
+|---|---|
+| {the list's note} *(a meaning prompt: the note: line in its category file)*, plus “Plurals count as their singular for length: “brothers” is 7 letters.” when it has a length rule | Prompts.php · note |
+| A verb's other forms count as the verb here: “running” and “ran” are “run”. *(a letter prompt)* | Prompts.php · note |
+| Plurals count as their singular here, and a verb's other forms as the verb: “brothers” is 7 letters, and “running” is 3. *(a length prompt)* | Prompts.php · note |
+| A verb's other forms count as the verb here, and plurals as their singular: “running” and “ran” are “run”, and “brothers” is 7 letters. *(both)* | Prompts.php · note |
+
 | Reason | Where |
 |---|---|
 | it doesn't start with {letters} | Prompts.php · whyNot |

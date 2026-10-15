@@ -180,7 +180,8 @@ word-finder site. There are three kinds:
   nothing. A meaning prompt judges a word as written, as its list names it (*swimming* for "A
   sport"). The forms are one answer with the verb either way. Nouns that only look like forms
   (*evening*, *morning*, *earring*) aren't in the file, and `family-breaks.txt` keeps them out
-  of the verb's family.
+  of the verb's family. **About this prompt** under a letter prompt says so; a meaning prompt
+  has **About this list**, its list's note (a `note:` line in its category file).
 - **The counter** shows distinct answers left, so saying *apple* (which also
   uses up *apples*) takes it down by one.
 
