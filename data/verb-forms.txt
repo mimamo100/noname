@@ -4915,6 +4915,8 @@ multiplied multiply
 multiplying multiply
 mumbled mumble
 mumbling mumble
+mummified mummify
+mummifying mummify
 munched munch
 munching munch
 murdered murder

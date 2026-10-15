@@ -1056,7 +1056,8 @@ final class Game
         $myWords = [];
         $myStanding = null;
         if ($token) {
-            $stmt = $this->db->prepare('SELECT id, nickname FROM players WHERE world_id = ? AND token = ? AND removed = 0');
+            // Removed but kept in the results: they still see their own words and misses (not removed completely).
+            $stmt = $this->db->prepare('SELECT id, nickname FROM players WHERE world_id = ? AND token = ? AND removed <> 1');
             $stmt->execute([$worldId, $token]);
             if ($player = $stmt->fetch()) {
                 $me = $player['nickname'];

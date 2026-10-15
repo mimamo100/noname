@@ -5551,6 +5551,7 @@ frisking 99
 shekel 99
 forking 99
 strived 99
+mermen 99
 lemonades 99
 remarrying 99
 damask 99
@@ -9412,6 +9413,7 @@ bight 47
 rimmed 47
 outwitting 47
 persuasions 47
+mummify 47
 laureates 47
 zinging 47
 phonetics 47
@@ -11726,6 +11728,7 @@ nymphos 28
 aggregates 28
 affronts 28
 scepters 28
+alumna 28
 flailed 28
 feeing 28
 fontanelle 28
@@ -14079,6 +14082,7 @@ peninsulas 11
 galahs 10
 drumlins 10
 fermata 10
+alumnae 10
 ceramicist 10
 neptunium 10
 birdflu 10

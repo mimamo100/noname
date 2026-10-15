@@ -19614,3 +19614,9 @@ cymbalist
 lilt
 fermata
 andante
+
+# Night Cup playtest, 15 October
+mummify
+mermen
+alumna
+alumnae

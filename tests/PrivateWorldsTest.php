@@ -85,6 +85,7 @@ test('a host can remove a player but keep them in the standings and results, mar
     $board = $game->state($made['id'], null)['leaderboard'];
     same(['Ann', true], [$board[0]['nickname'], $board[0]['removed'] ?? false], 'Still on the leaderboard, marked removed');
     $private->checkCanView($world(), $ann, null); // May still watch, without the link.
+    same(['moon'], array_column($game->state($made['id'], $token)['myWords'], 'word'), 'Their own words, still');
     throwsStatus(403, fn () => $private->playerFor($world(), $ann, $made['invite']));
     throwsStatus(403, fn () => $game->play($made['id'], $token, 'book'));
     $private->end($made['id'], $host);

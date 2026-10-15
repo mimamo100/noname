@@ -110,6 +110,9 @@ hypothesis, hypotheses
 cumulus, cumuli
 succubus, succubi
 
+merman, mermen
+alumna, alumnae
+
 verbs:
 arise, arose, arisen
 awake, awoke, awoken
