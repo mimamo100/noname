@@ -31,6 +31,12 @@ final class Competitions
         $this->clock = $clock ?? fn () => (int) floor(microtime(true) * 1000);
     }
 
+    /** The same, for a game with another dictionary: a competition playing a word pack uses the pack's. */
+    public function withGame(Game $game): self
+    {
+        return new self($this->db, $game, $this->clock);
+    }
+
     private function now(): int
     {
         return ($this->clock)();

@@ -720,7 +720,7 @@ function render(state) {
     $('meter-fill').style.width = `${Math.round(used * 100)}%`;
     renderClock(state);
   } else {
-    $('prompt-label').textContent = state.world.ended ? 'Finished' : waiting ? 'The first prompt appears at the start' : 'This world has run out of words';
+    $('prompt-label').textContent = state.world.ended ? 'Finished' : waiting ? 'The first prompt appears at the start' : 'This room has run out of words';
     $('remaining').textContent = '0';
     $('ends-text').replaceChildren('Ends in ', el('b', { textContent: '–' }));
   }

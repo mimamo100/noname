@@ -71,6 +71,13 @@ test('a world with a pack plays the pack: its prompts, its words, and its size',
     same('not-a-word', $game->play($world['id'], $p['token'], 'cat')['reason'], 'Everyday words are not in a pack-only world');
     same($game->dictionary()->size(), $state['dictionary']['size']);
 
+    // Ending it with the pack's game notes what was left unsaid on the pack's list; the
+    // everyday game knows no such list, and found nothing (Music Night, round 7).
+    $private->withGame($game)->end($world['id'], $org);
+    $ended = $game->state($world['id'], null);
+    check($ended['said'][0]['unsaid']['count'] > 0, 'Nobody said: the pack list words left');
+    same('This room has finished.', $ended['world']['endedMessage']);
+
     throwsStatus(400, fn () => $private->create($org, ['name' => 'X', 'pack' => $made['id'], 'packMode' => 'half']));
 });
 

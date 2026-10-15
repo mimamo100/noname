@@ -816,7 +816,8 @@ final class Game
             'public' => $playing ? 'This round has finished. Reload the page for the new one.' : 'This round of the big room has finished.',
             'room' => 'This room has run out of words. Join a new public room from the home page.',
             'competition' => 'This competition has finished.',
-            default => 'This room has run out of words',
+            // A private room ends when its words run out or its host ends it.
+            default => 'This room has finished.',
         };
     }
 

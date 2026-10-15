@@ -163,7 +163,7 @@ On a letter prompt, a verb's form adds what it counts as: it doesn't end in G (�
 | This round of the big room has finished. *(looking)* | Game.php · endedMessage |
 | This room has run out of words. Join a new public room from the home page. | Game.php · endedMessage |
 | This competition has finished. | Game.php · endedMessage |
-| This room has run out of words | Game.php · endedMessage |
+| This room has finished. *(a private room: its words ran out, or its host ended it)* | Game.php · endedMessage |
 | Join a new public room / Go to the big room *(button)* | app.js · renderLobby |
 
 ## 6. Sharing a result

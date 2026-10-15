@@ -214,8 +214,13 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
     if ($worldId === null) throw new GameError(404, 'Not found');
     $world = $game->world($worldId);
     $isCompetition = ($world['kind'] ?? '') === 'competition';
-    // A world with a word pack plays with that pack's dictionary.
-    if (!empty($world['pack'])) $game = $gameWith($packs->dictionary($world['pack'], $world['pack_mode'] ?? 'only', $game->dictionary()));
+    // A world with a word pack plays with that pack's dictionary, and so do its owner's controls:
+    // ending it notes each open prompt's unsaid answers, which only the pack's lists know.
+    if (!empty($world['pack'])) {
+        $game = $gameWith($packs->dictionary($world['pack'], $world['pack_mode'] ?? 'only', $game->dictionary()));
+        $private = $private->withGame($game);
+        $competitions = $competitions->withGame($game);
+    }
 
     // Owner controls: for private worlds and competitions.
     $owned = $isCompetition ? $competitions : $private;

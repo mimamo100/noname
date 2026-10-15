@@ -22,6 +22,12 @@ final class PrivateWorlds
     {
     }
 
+    /** The same, for a game with another dictionary: a room playing a word pack uses the pack's. */
+    public function withGame(Game $game): self
+    {
+        return new self($this->db, $game);
+    }
+
     public static function canHost(?array $user): bool
     {
         return in_array($user['plan'] ?? 'free', ['host', 'organiser'], true);
