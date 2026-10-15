@@ -242,6 +242,8 @@ button.link.nudge { color: var(--ember); font-size: 14px; }
 body[data-kind="private"] { --ember-dim: #0e4a52; --band: #3cc2cf; }
 body[data-kind="competition"] { --ember-dim: #3d2a6e; --band: #a58bff; }
 body[data-kind="room"] { --ember-dim: #1d4d2a; --band: #6fcf7f; }
+/* A room still loading, before its kind is known (kind.js): no colour rather than the wrong one. */
+body[data-kind="loading"] { --ember-dim: #2a241e; --band: var(--border); }
 .world-banner {
   display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap;
   margin-top: 8px; padding: 10px 14px; background: var(--surface);

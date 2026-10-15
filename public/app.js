@@ -653,6 +653,7 @@ function renderBanner(state) {
   const kind = state.world.kind;
   const big = kind === 'public';
   document.body.dataset.kind = kind;
+  try { localStorage.setItem(`unsaid:kind:${state.world.id}`, kind); } catch { /* not saved: neutral next time */ }
   $('world-banner').hidden = false;
   $('round-info-button').hidden = !big;
   $('round-clock').hidden = !big;
