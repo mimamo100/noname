@@ -105,6 +105,9 @@ test('owners can end and delete worlds, and My worlds lists them', function () {
     $mine = array_column($private->myWorlds($ann), null, 'name');
     same([false, 1, 1], [$mine['Shared']['isOwner'], $mine['Shared']['words'], $mine['Shared']['players']]);
     check(!isset($mine['Solo']));
+    $cards = array_column($private->myWorlds($host), null, 'name');
+    check($cards['Shared']['lastPlayed'] !== null, 'Ann said a word in Shared');
+    same(null, $cards['Solo']['lastPlayed'], 'Nobody has said a word in Solo: no "Last word just now"');
 
     throwsStatus(409, fn () => $private->delete($shared['id'], $host)); // Ann has played: end it first.
     $private->delete($solo['id'], $host);

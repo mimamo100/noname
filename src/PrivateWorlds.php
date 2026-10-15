@@ -274,16 +274,18 @@ final class PrivateWorlds
             if (!isset($worlds[$w['id']])) $worlds[$w['id']] = $w;
         }
 
-        $players = $this->db->prepare('SELECT COUNT(*), COALESCE(MAX(last_active_at), 0) FROM players WHERE world_id = ? AND removed = 0');
-        $burned = $this->db->prepare('SELECT COUNT(*) FROM burns WHERE world_id = ?');
+        $players = $this->db->prepare('SELECT COUNT(*) FROM players WHERE world_id = ? AND removed = 0');
+        // When anyone last said a word there: joining or a wrong guess isn't a word.
+        $burned = $this->db->prepare('SELECT COUNT(*), COALESCE(MAX(burned_at), 0) FROM burns WHERE world_id = ?');
         // The account's place among those who've played, as on the leaderboard (shared on equal scores).
         $ahead = $this->db->prepare('SELECT COUNT(*) FROM players WHERE world_id = ? AND removed = 0 AND (words > 0 OR score <> 0) AND score > ?');
         $teamResults = $this->db->prepare('SELECT name, place, score FROM team_results WHERE world_id = ? ORDER BY place, name LIMIT 3');
         $out = [];
         foreach ($worlds as $w) {
             $players->execute([$w['id']]);
-            [$count, $lastPlayed] = $players->fetch(PDO::FETCH_NUM);
+            $count = $players->fetchColumn();
             $burned->execute([$w['id']]);
+            [$burnedCount, $lastPlayed] = $burned->fetch(PDO::FETCH_NUM);
             $out[] = [
                 'id' => $w['id'], 'name' => $w['name'], 'kind' => $w['kind'],
                 'isOwner' => (int) $w['owner_user_id'] === (int) $user['id'],
@@ -299,7 +301,7 @@ final class PrivateWorlds
                 'words' => $w['words'] === null ? null : (int) $w['words'],
                 'players' => (int) $count,
                 'lastPlayed' => (int) $lastPlayed ?: null,
-                'burned' => $burnedCount = (int) $burned->fetchColumn(),
+                'burned' => (int) $burnedCount,
                 'left' => max(0, 1 - $burnedCount / $this->game->dictionarySize()),
                 'pack' => $w['pack'] ?? null,
                 'packMode' => $w['pack_mode'] ?? null,
