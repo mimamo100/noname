@@ -22,14 +22,19 @@ final class Prompts
     // --- Matching ---
 
     /** @return callable(string): bool */
-    public static function compile(array $spec, Dictionary $dictionary): callable
+    /**
+     * $verbForms: whether a verb's forms are judged as the verb (see judged()); by default, on a
+     * letter prompt. The game checks a meaning prompt's letter rules on their own, as written.
+     */
+    public static function compile(array $spec, Dictionary $dictionary, ?bool $verbForms = null): callable
     {
         $length = fn (string $w) => strlen($dictionary->singular($w));
         $tests = array_map(fn (array $rule) => self::ruleTest($rule, $length), $spec['rules'] ?? []);
         $cat = $spec['cat'] ?? null;
-        return function (string $word) use ($tests, $cat, $dictionary): bool {
+        $verbForms ??= $cat === null;
+        return function (string $word) use ($tests, $cat, $dictionary, $verbForms): bool {
             if ($cat !== null && !$dictionary->inCategory($cat, $word)) return false;
-            $judged = $cat !== null ? $word : $dictionary->verbRoot($word); // As judged() does.
+            $judged = $verbForms ? $dictionary->verbRoot($word) : $word; // As judged() does.
             foreach ($tests as $test) if (!$test($judged)) return false;
             return true;
         };
@@ -66,14 +71,14 @@ final class Prompts
      * judged as the verb ("running" is run: 3 letters, and it doesn't end in G). A meaning prompt
      * judges the word as written, as its list names it ("swimming" for A sport).
      */
-    public static function judged(array $spec, Dictionary $dictionary, string $word): string
+    public static function judged(array $spec, Dictionary $dictionary, string $word, ?bool $verbForms = null): string
     {
-        return isset($spec['cat']) ? $word : $dictionary->verbRoot($word);
+        return ($verbForms ?? !isset($spec['cat'])) ? $dictionary->verbRoot($word) : $word;
     }
 
-    public static function matches(array $spec, Dictionary $dictionary, string $word): bool
+    public static function matches(array $spec, Dictionary $dictionary, string $word, ?bool $verbForms = null): bool
     {
-        return self::compile($spec, $dictionary)($word);
+        return self::compile($spec, $dictionary, $verbForms)($word);
     }
 
     private static function ruleTest(array $rule, callable $length): callable
@@ -100,10 +105,10 @@ final class Prompts
      * Why a word breaks the prompt's letter rules, in a few words for the player ("it has an E",
      * "it's 4 letters, not 5+"), or null if it keeps them all. Only the first broken rule is named.
      */
-    public static function whyNot(array $spec, Dictionary $dictionary, string $word): ?string
+    public static function whyNot(array $spec, Dictionary $dictionary, string $word, ?bool $verbForms = null): ?string
     {
         $typed = $word;
-        $word = self::judged($spec, $dictionary, $word);
+        $word = self::judged($spec, $dictionary, $word, $verbForms);
         $singular = $dictionary->singular($word);
         $length = fn (string $w) => strlen($dictionary->singular($w));
         // Length rules judge a plural as its singular, and letter prompts a verb's form as the verb:

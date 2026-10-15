@@ -181,7 +181,8 @@ word-finder site. There are three kinds:
   WordNet, and the verbs in `irregular-forms.txt`): *running*, *ran* and *runs* are *run* for
   every letter rule and for points, so *running* doesn't end in G, and adding -ing earns
   nothing. A meaning prompt judges a word as written, as its list names it (*swimming* for "A
-  sport"). The forms are one answer with the verb either way. Nouns that only look like forms
+  sport"). The forms are one answer with the verb either way. A word refused only because of
+  this rule (it would fit as typed) costs nothing; other words that don't fit cost 2. Nouns that only look like forms
   (*evening*, *morning*, *earring*) aren't in the file, and `family-breaks.txt` keeps them out
   of the verb's family. Plurals the word lists lack are added from ENABLE (`plural-forms.txt`),
   and added forms of either kind must appear at least 10 times in film subtitles

@@ -682,9 +682,15 @@ final class Game
                 ]);
             }
             // The letter rules first, so a word that breaks them is told why, even if it's used up.
+            // A meaning prompt's letter rules judge the word as written; a letter prompt judges a
+            // verb's forms as the verb, and a word that fits only as written is refused for free
+            // (the owner's decision after the Night Cup: the rule, not the player, is at fault).
             $letters = ['cat' => null] + $prompt['spec'];
-            if (!Prompts::matches($letters, $this->dictionary, $word)) {
-                return $miss('doesnt-fit', self::PENALTY, ['why' => Prompts::whyNot($letters, $this->dictionary, $word)]);
+            $verbForms = !isset($prompt['spec']['cat']);
+            if (!Prompts::matches($letters, $this->dictionary, $word, $verbForms)) {
+                $asWritten = $verbForms && Prompts::matches($letters, $this->dictionary, $word, false);
+                return $miss('doesnt-fit', $asWritten ? 0 : self::PENALTY, ['why' => Prompts::whyNot($letters, $this->dictionary, $word, $verbForms)]
+                    + ($asWritten ? ['verbForm' => true] : []));
             }
             // Already said comes before the meaning, so nobody is told to report a word that's used
             // up anyway. A repeat is free unless the world's host chose to charge for it; even then,

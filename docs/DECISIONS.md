@@ -6,6 +6,12 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**The verb rule stays, without its penalty**: a word refused only because a verb's form counts
+as the verb (it would fit as typed) costs nothing. *programming* and *swimming* are nouns to most
+people, and in the Night Cup most penalties were such words. A hand-kept list of -ing nouns that
+count as themselves was considered and set aside: almost every -ing word is also a noun.
+*Owner.*
+
 **A host chooses how to remove a player**: "Remove" keeps them in the standings and results,
 marked "(removed)", and lets them watch; "Remove completely" takes them off and stops them seeing
 the room (as before). Either way they can't play again and their words stay said. In Music

@@ -1009,6 +1009,19 @@ test("a verb's -ing and -ed forms are one answer with it, and letter prompts jud
     same([false, false], [$d->has('plained'), $d->has('heliums')], 'Forms the subtitles hardly use are left out');
 });
 
+test("a word refused only by the verb rule is free; a meaning prompt judges words as written", function () {
+    $game = makeGameOn(testDb(), Dictionary::load());
+    $world = $game->createWorld('Forms');
+    setPrompt($game, $world['id'], spec(null, ['ends', 'g']));
+    $p = $game->join($world['id'], 'Ann');
+    $running = $game->play($world['id'], $p['token'], 'running');
+    same(['doesnt-fit', 0, true], [$running['reason'], $running['penalty'], $running['verbForm'] ?? false], 'Ends in G as written: free');
+    same(2, $game->play($world['id'], $p['token'], 'cat')['penalty'], "A word that doesn't fit at all still costs 2");
+
+    setPrompt($game, $world['id'], ['cat' => 'sport', 'rules' => [['minLen', 8]]]);
+    same(true, $game->play($world['id'], $p['token'], 'swimming')['ok'], 'A sport of 8 letters, as written');
+});
+
 test('"About this prompt": a letter prompt says how forms are judged, a meaning prompt has its list note', function () {
     $d = Dictionary::load();
     same("A verb's other forms count as the verb here.", Prompts::note(['cat' => null, 'rules' => [['ends', 'g']]], $d));
