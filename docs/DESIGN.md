@@ -175,10 +175,13 @@ word-finder site. There are three kinds:
 
 ## Penalties and limits
 
-- A guess that **doesn't fit** the prompt, or has **already been said** by
-  someone else, costs 2 points. Pasting a list from a word-finder site mostly
-  hits words that are already said, so it loses points.
-- **Repeating your own word is free.** "Already said" is checked before the
+- A guess that **doesn't fit** the prompt costs 2 points.
+- **A word already said is free to try again**, unless the host of a private
+  world or the organiser of a competition ticks "Repeating a word someone else
+  said costs 2 points" (`worlds.repeat_penalty`, off by default; see
+  DECISIONS.md, 15 October). Then someone else's word costs 2, as it used to
+  everywhere, which makes pasting a word-finder list a losing game.
+- **Repeating your own word is always free.** "Already said" is checked before the
   meaning and letters, and the message says when the word was said and for
   which prompt, since that may be several prompts ago and out of sight.
 - **A prompt ends once 80% of its answers are said** (`Game::END_SHARE`), or

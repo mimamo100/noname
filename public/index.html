@@ -152,7 +152,7 @@
           </ul>
           The two multiply together, so later answers are worth a little more, but knowing rare words matters most.</li>
         <li>You can save a word for later when it's worth more, but someone else might say it first.</li>
-        <li>Careful: a word that doesn't fit, or that someone else has already said, costs 2 points, and the message says why. Repeating your own word is free, and so is a word someone else said in the last minute, or that your own team said. Typos are free, and so is a real answer missing from our lists: report it so we can add it. If the prompt changes just as you send a word, it's judged against the prompt you saw.</li>
+        <li>Careful: a word that doesn't fit costs 2 points, and the message says why. A word that's already been said costs nothing, though the host of a private world or competition can choose to charge 2 points for someone else's (never for your own, your team's, or one said in the last minute). Typos are free, and so is a real answer missing from our lists: report it so we can add it. If the prompt changes just as you send a word, it's judged against the prompt you saw.</li>
         <li>Two-word answers can be typed either way: “tea towel”, “tea-towel” and “teatowel” are the same.</li>
         <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
         <li>A prompt ends once <b>80% of its answers</b> are said, or when its time runs out. Whoever says the answer that ends it gets <b>10 bonus points</b> 🏁. Then <b>Recent prompt</b> shows what nobody said: the commonest answers left.</li>
@@ -269,6 +269,7 @@
       <label class="field">Player limit <span class="muted small">(optional)</span>
         <input id="new-world-max" type="number" min="2" max="500" placeholder="No limit">
       </label>
+      <label class="check"><input type="checkbox" id="new-world-repeat"> Repeating a word someone else said costs 2 points <span class="muted small">(it's free otherwise)</span></label>
       <p class="muted small">You'll get a link to share with friends. You can change these later.</p>
       <div class="dialog-buttons">
         <button type="button" class="link" id="new-world-cancel">Cancel</button>
@@ -323,6 +324,7 @@ Foxes</textarea>
         <label><input type="radio" name="comp-spelling" value="uk"><span>UK only</span></label>
         <label><input type="radio" name="comp-spelling" value="us"><span>US only</span></label>
       </fieldset>
+      <label class="check"><input type="checkbox" id="comp-repeat"> Repeating a word someone else said costs 2 points <span class="muted small">(it's free otherwise)</span></label>
       <p class="muted small">Each team gets its own invite link. You can change all this until it starts.</p>
       <div class="dialog-buttons">
         <button type="button" class="link" id="comp-cancel">Cancel</button>
@@ -344,6 +346,7 @@ Foxes</textarea>
         </select>
       </label>
       <label class="field">Players per team <input id="cs-size" type="number" min="1" max="50" placeholder="No limit"></label>
+      <label class="check"><input type="checkbox" id="cs-repeat"> Repeating a word someone else said costs 2 points <span class="muted small">(it's free otherwise)</span></label>
       <p class="muted small" id="cs-started-note" hidden>It has started: only the name and the end can change now.</p>
       <div class="dialog-buttons"><button type="submit">Save</button></div>
     </form>
@@ -408,6 +411,7 @@ Foxes</textarea>
         <input id="settings-max" type="number" min="2" max="500" placeholder="No limit">
       </label>
       <label class="check"><input type="checkbox" id="settings-closed"> Closed to new players</label>
+      <label class="check"><input type="checkbox" id="settings-repeat"> Repeating a word someone else said costs 2 points <span class="muted small">(it's free otherwise)</span></label>
       <div class="dialog-buttons">
         <button type="submit">Save</button>
       </div>

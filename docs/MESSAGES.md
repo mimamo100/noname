@@ -341,6 +341,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | No finished games yet. Big world rounds finish at the end of each round, and rooms when their words run out. So far you've said {n} words. | app.js · renderMyGames |
 | **Word packs:** Your own themed words for your private worlds and competitions: a topic you teach, your company's products, a quiz theme. · {pack} · {n} words · Players suggested {n} words · Edit · New pack | index.html, app.js · renderPacks |
 | **Settings:** Name · {name} · what other players see · Change | index.html |
+| Repeating a word someone else said costs 2 points (it's free otherwise) *(a tick box when creating a private world or competition, and in their settings)* | index.html |
 | Daily email · Each morning, when the big world starts afresh, a reminder if you haven't played yet *(an on/off switch)* | index.html |
 | Daily email on: each morning we'll email you unless you've already played. Turn it off here, or from the link in any email. / Daily email off. | app.js · acct-reminders |
 | Plan · Free: the big world, rooms, and worlds you're invited to / Host: also your own private worlds / Organiser: also competitions with teams, and your own word packs | app.js · PLAN_NAMES |

@@ -390,6 +390,7 @@ $('comp-form').addEventListener('submit', async (e) => {
       promptMinutes: Number($('comp-pace').value),
       teams: $('comp-teams').value.split('\n'),
       teamSize: $('comp-size').value ? Number($('comp-size').value) : null,
+      repeatPenalty: $('comp-repeat').checked,
       spelling: new FormData(e.target).get('comp-spelling'),
       ...packChoice('cp'),
     } });
@@ -424,6 +425,8 @@ async function loadCompSettings() {
   $('cs-ends').value = toLocalInput(c.endsAt);
   $('cs-pace').value = String(c.promptMinutes);
   $('cs-size').value = c.teamSize ?? '';
+  $('cs-repeat').checked = c.repeatPenalty;
+  $('cs-repeat').disabled = c.started;
   for (const id of ['cs-starts', 'cs-pace', 'cs-size']) $(id).disabled = c.started;
   $('cs-started-note').hidden = !c.started;
   $('cs-add-team').hidden = c.started || c.ended;
@@ -469,7 +472,7 @@ $('comp-settings-form').addEventListener('submit', (e) => {
   const body = { name: $('cs-name').value, endsAt: fromLocalInput($('cs-ends').value) };
   if (!compSettings.started) {
     Object.assign(body, { startsAt: fromLocalInput($('cs-starts').value), promptMinutes: Number($('cs-pace').value),
-      teamSize: $('cs-size').value ? Number($('cs-size').value) : null });
+      teamSize: $('cs-size').value ? Number($('cs-size').value) : null, repeatPenalty: $('cs-repeat').checked });
   }
   compAction('settings', body, 'Settings saved.');
 });
@@ -1129,6 +1132,7 @@ async function loadSettings() {
   for (const radio of document.querySelectorAll('input[name="settings-pace"]')) radio.checked = Number(radio.value) === settings.promptHours;
   $('settings-max').value = settings.maxPlayers ?? '';
   $('settings-closed').checked = settings.closed;
+  $('settings-repeat').checked = settings.repeatPenalty;
   $('settings-invite').textContent = inviteUrl(settings.invite);
   $('settings-end').disabled = settings.ended;
   $('settings-delete').disabled = !settings.canDelete;
@@ -1181,6 +1185,7 @@ $('settings-form').addEventListener('submit', async (e) => {
     promptHours: Number(pace.value),
     maxPlayers: $('settings-max').value ? Number($('settings-max').value) : null,
     closed: $('settings-closed').checked,
+    repeatPenalty: $('settings-repeat').checked,
   }, 'Settings saved.');
 });
 $('settings-copy').addEventListener('click', () => copyText(inviteUrl(settings.invite), 'Invite link copied.'));
@@ -1279,7 +1284,7 @@ $('new-world-form').addEventListener('submit', async (e) => {
   try {
     const promptHours = Number(new FormData(e.target).get('pace'));
     const maxPlayers = $('new-world-max').value ? Number($('new-world-max').value) : null;
-    const world = await api('', { method: 'POST', body: { name: $('new-world-name').value, spelling, promptHours, maxPlayers, ...packChoice('nw') } });
+    const world = await api('', { method: 'POST', body: { name: $('new-world-name').value, spelling, promptHours, maxPlayers, repeatPenalty: $('new-world-repeat').checked, ...packChoice('nw') } });
     location.href = `/w/${encodeURIComponent(world.id)}`;
   } catch (err) {
     $('new-world-dialog').close();

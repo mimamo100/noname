@@ -44,7 +44,8 @@ final class PrivateWorlds
             $this->paceMs($input['promptHours'] ?? 24),
             (string) ($input['spelling'] ?? 'both'),
             (int) $user['id'],
-            ['kind' => 'private', 'maxPlayers' => $this->maxPlayers($input['maxPlayers'] ?? null)] + self::packOptions($input),
+            ['kind' => 'private', 'maxPlayers' => $this->maxPlayers($input['maxPlayers'] ?? null), 'repeatPenalty' => !empty($input['repeatPenalty'])]
+                + self::packOptions($input),
         );
         return ['id' => $world['id'], 'name' => $world['name'], 'invite' => $world['invite_code']];
     }
@@ -172,6 +173,7 @@ final class PrivateWorlds
             'promptHours' => intdiv((int) $world['prompt_duration_ms'], 3_600_000),
             'maxPlayers' => $world['max_players'] === null ? null : (int) $world['max_players'],
             'closed' => (bool) $world['closed'],
+            'repeatPenalty' => (bool) ($world['repeat_penalty'] ?? false),
             'invite' => $world['invite_code'],
             'ended' => $world['ended_at'] !== null,
             'canDelete' => $this->canDelete($world, $user),
@@ -187,8 +189,9 @@ final class PrivateWorlds
         $pace = array_key_exists('promptHours', $input) ? $this->paceMs($input['promptHours']) : (int) $world['prompt_duration_ms'];
         $max = array_key_exists('maxPlayers', $input) ? $this->maxPlayers($input['maxPlayers']) : $world['max_players'];
         $closed = array_key_exists('closed', $input) ? (int) (bool) $input['closed'] : (int) $world['closed'];
-        $this->db->prepare('UPDATE worlds SET name = ?, prompt_duration_ms = ?, max_players = ?, closed = ? WHERE id = ?')
-            ->execute([$name, $pace, $max, $closed, $worldId]);
+        $repeat = array_key_exists('repeatPenalty', $input) ? (int) (bool) $input['repeatPenalty'] : (int) ($world['repeat_penalty'] ?? 0);
+        $this->db->prepare('UPDATE worlds SET name = ?, prompt_duration_ms = ?, max_players = ?, closed = ?, repeat_penalty = ? WHERE id = ?')
+            ->execute([$name, $pace, $max, $closed, $repeat, $worldId]);
         $this->game->changed($worldId);
         return $this->settings($worldId, $user);
     }

@@ -64,6 +64,7 @@ final class Competitions
             PrivateWorlds::packOptions($input) + [
                 'kind' => 'competition', 'startsAt' => $startsAt, 'endsAt' => $endsAt,
                 'teamSize' => $this->teamSize($input['teamSize'] ?? null),
+                'repeatPenalty' => !empty($input['repeatPenalty']),
                 // Short prompts for a live event get more answers, so a busy room doesn't empty them at once.
                 'promptMin' => $minutes <= 15 ? 30 : null, 'promptMax' => $minutes <= 15 ? 200 : null,
             ],
@@ -252,6 +253,7 @@ final class Competitions
             'endsAt' => (int) $world['ends_at'],
             'promptMinutes' => intdiv((int) $world['prompt_duration_ms'], 60_000),
             'teamSize' => $world['team_size'] === null ? null : (int) $world['team_size'],
+            'repeatPenalty' => (bool) ($world['repeat_penalty'] ?? false),
             'watchInvite' => $world['invite_code'],
             'started' => $this->started($world),
             'ended' => $world['ended_at'] !== null,
@@ -286,12 +288,14 @@ final class Competitions
         }
         $pace = (int) $world['prompt_duration_ms'];
         $teamSize = $world['team_size'];
+        $repeat = (int) ($world['repeat_penalty'] ?? 0);
         if (!$started) {
+            if (array_key_exists('repeatPenalty', $input)) $repeat = (int) (bool) $input['repeatPenalty'];
             if (array_key_exists('promptMinutes', $input)) $pace = $this->pace($input['promptMinutes']) * 60_000;
             if (array_key_exists('teamSize', $input)) $teamSize = $this->teamSize($input['teamSize']);
         }
-        $this->db->prepare('UPDATE worlds SET name = ?, starts_at = ?, ends_at = ?, prompt_duration_ms = ?, team_size = ? WHERE id = ?')
-            ->execute([$name, $startsAt, $endsAt, $pace, $teamSize, $worldId]);
+        $this->db->prepare('UPDATE worlds SET name = ?, starts_at = ?, ends_at = ?, prompt_duration_ms = ?, team_size = ?, repeat_penalty = ? WHERE id = ?')
+            ->execute([$name, $startsAt, $endsAt, $pace, $teamSize, $repeat, $worldId]);
         // The running prompt stops at the new end.
         $this->db->prepare('UPDATE prompts SET ends_at = LEAST(ends_at, ?) WHERE world_id = ? AND ended_at IS NULL')->execute([$endsAt, $worldId]);
         $this->game->changed($worldId);

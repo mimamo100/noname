@@ -411,7 +411,7 @@ test('an already-said word is reported as such before the meaning is checked', f
     // The "fencing" case: said for a sport, then tried for a meaning it isn't listed under.
     $clock = 1_000;
     $game = makeGame(function () use (&$clock) { return $clock; });
-    $world = $game->createWorld('Fencing', null, 60_000);
+    $world = $game->createWorld('Fencing', null, 60_000, options: ['repeatPenalty' => true]);
     setPrompt($game, $world['id'], spec('sport'));
     $me = $game->join($world['id'], 'Me');
     $other = $game->join($world['id'], 'Other');
@@ -476,7 +476,7 @@ test('my misses say when an accepted word was used up elsewhere', function () {
 test('wrong guesses cost points, typos are free', function () {
     $clock = 1_000;
     $game = makeGame(function () use (&$clock) { return $clock; });
-    $world = $game->createWorld('Penalties');
+    $world = $game->createWorld('Penalties', options: ['repeatPenalty' => true]);
     setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
     $a = $game->join($world['id'], 'Ann');
     $b = $game->join($world['id'], 'Ben');
@@ -499,7 +499,7 @@ test('wrong guesses cost points, typos are free', function () {
 test('the prompt leaderboard ranks the current prompt alone', function () {
     $clock = 1_000;
     $game = makeGame(function () use (&$clock) { return $clock; });
-    $world = $game->createWorld('Late', null, 600_000);
+    $world = $game->createWorld('Late', null, 600_000, options: ['repeatPenalty' => true]);
     setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
     $early = $game->join($world['id'], 'Early');
     $before = $game->play($world['id'], $early['token'], 'moon')['points']
@@ -933,5 +933,19 @@ test('the next prompt avoids the list just asked about when another fits', funct
     for ($i = 0; $i < 30; $i++) {
         $next = Prompts::pick($d, [], [], 1, 1000, avoidCat: $cats[0]);
         check(($next['spec']['cat'] ?? null) !== $cats[0], 'Not the same list twice running');
+    }
+});
+
+test('repeating a word someone else said is free, unless the host chooses to charge for it', function () {
+    $game = makeGame();
+    foreach ([[false, 0], [true, 2]] as [$charge, $penalty]) {
+        $world = $game->createWorld('Repeats', options: ['repeatPenalty' => $charge]);
+        setPrompt($game, $world['id'], spec(null, ['contains', 'oo']));
+        $a = $game->join($world['id'], 'Ann');
+        $b = $game->join($world['id'], 'Bob');
+        $game->play($world['id'], $a['token'], 'moon');
+        gameDb($game)->exec("UPDATE burns SET burned_at = burned_at - 120000 WHERE world_id = '{$world['id']}'"); // Not moments ago.
+        same($penalty, $game->play($world['id'], $b['token'], 'moon')['penalty'], $charge ? 'Charged' : 'Free by default');
+        same($charge, $game->state($world['id'], null)['world']['repeatPenalty']);
     }
 });

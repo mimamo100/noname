@@ -6,6 +6,17 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**Repeats are free, unless a host or organiser chooses to charge.** Saying a word someone else
+already said used to cost 2 points (unless it was said in the last minute). Every agent in the
+room playtest found it unfair ("nothing tells you the word is old"), and in a room words stay
+said for weeks. Now it's free everywhere by default; a private world's host or a competition's
+organiser can tick "Repeating a word someone else said costs 2 points" for a sharper game
+(never for your own word, a team-mate's, or one said in the last minute). Words that don't fit
+still cost 2. *Owner.*
+
+**"An insect or bug" includes spiders** (and other creepy-crawlies a person would call a bug).
+*Owner.* The word-list review adds them (`dictionary-review/NEXT-REVIEWS.md`).
+
 **Rooms' prompts have 40 to 200 answers** (other private worlds 10 to 80, the big world 60 to
 400). A room holds up to 60 players, and in the room playtest a 10-answer prompt went in about
 a minute with six: a slower player never got a turn. *Owner, after the room playtest.*

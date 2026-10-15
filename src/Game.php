@@ -149,6 +149,11 @@ final class Game
                 ADD COLUMN pack_mode VARCHAR(8) CHARACTER SET ascii NULL');
             $db->exec('ALTER TABLE reports MODIFY category VARCHAR(64) CHARACTER SET ascii NOT NULL');
         }
+        // Whether repeating a word someone else said costs points: free unless a host or organiser
+        // chooses otherwise for their world (owner's decision after the room playtest).
+        if (!$db->query("SHOW COLUMNS FROM worlds LIKE 'repeat_penalty'")->fetch()) {
+            $db->exec('ALTER TABLE worlds ADD COLUMN repeat_penalty TINYINT NOT NULL DEFAULT 0');
+        }
         // Organisers' packs written before one answer per line (format 2): their lines without a
         // comma were split on spaces ("quark quarks"), and keep that meaning.
         if (!$db->query("SHOW COLUMNS FROM packs LIKE 'format'")->fetch()) {
@@ -271,6 +276,7 @@ final class Game
             $this->db->prepare('UPDATE worlds SET pack = ?, pack_mode = ? WHERE id = ?')
                 ->execute([$options['pack'], $options['packMode'] ?? 'only', $id]);
         }
+        if (!empty($options['repeatPenalty'])) $this->db->prepare('UPDATE worlds SET repeat_penalty = 1 WHERE id = ?')->execute([$id]);
         if (isset($options['startsAt']) || isset($options['teamSize'])) {
             $this->db->prepare('UPDATE worlds SET starts_at = ?, team_size = ? WHERE id = ?')
                 ->execute([$options['startsAt'] ?? null, $options['teamSize'] ?? null, $id]);
@@ -674,8 +680,9 @@ final class Game
                 return $miss('doesnt-fit', self::PENALTY, ['why' => Prompts::whyNot($letters, $this->dictionary, $word)]);
             }
             // Already said comes before the meaning, so nobody is told to report a word that's used
-            // up anyway. Repeating your own word is an honest slip, so it's free; so is repeating a
-            // masked word, which others only saw as p***s, and a word someone said moments ago.
+            // up anyway. A repeat is free unless the world's host chose to charge for it; even then,
+            // your own word is an honest slip, so it's free; so is a masked word, which others only
+            // saw as p***s, and a word someone said moments ago.
             $burned = $this->burned($worldId);
             if (isset($burned[$word])) {
                 $said = $this->lookup($worldId, $word)['burned'];
@@ -687,7 +694,8 @@ final class Game
                 // The other spelling of a word already said ("aluminum" after "aluminium") is the same answer.
                 $playedJoined = self::typed($said['playedWord'] ?? '');
                 $otherSpelling = $said && in_array($playedJoined, $this->dictionary->otherSpellings($word), true);
-                return $miss('already-burned', $mine || $masked || $justNow || $teamMate ? 0 : self::PENALTY,
+                $charged = !empty($this->world($worldId)['repeat_penalty']);
+                return $miss('already-burned', !$charged || $mine || $masked || $justNow || $teamMate ? 0 : self::PENALTY,
                     ['burned' => $said, 'byYou' => $mine]
                     + ($justNow && !$mine ? ['justNow' => true] : [])
                     + ($teamMate ? ['teamMate' => true] : [])
@@ -1091,6 +1099,8 @@ final class Game
                 'id' => $world['id'], 'name' => $world['name'], 'spelling' => $world['spelling'] ?? 'both',
                 'kind' => $world['kind'] ?? 'private',
                 'closed' => (bool) ($world['closed'] ?? false),
+                // Whether repeating someone else's word costs points here (free unless the host chose).
+                'repeatPenalty' => (bool) ($world['repeat_penalty'] ?? false),
                 'endsAt' => isset($world['ends_at']) ? (int) $world['ends_at'] : null,
                 'startsAt' => isset($world['starts_at']) ? (int) $world['starts_at'] : null,
                 'teamSize' => isset($world['team_size']) ? (int) $world['team_size'] : null,

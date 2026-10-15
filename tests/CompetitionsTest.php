@@ -151,7 +151,7 @@ test('housekeeping records competitions that ended unseen', function () {
 test('a team-mate\'s word is free; players are told about another team\'s link and being moved', function () {
     $clock = 1_000 * HOUR_MS;
     [$db, $game, $comps, $org] = makeCompetitions($clock);
-    $made = $comps->create($org, ['name' => 'Quiz', 'startsAt' => $clock + HOUR_MS, 'endsAt' => $clock + 3 * HOUR_MS,
+    $made = $comps->create($org, ['repeatPenalty' => true, 'name' => 'Quiz', 'startsAt' => $clock + HOUR_MS, 'endsAt' => $clock + 3 * HOUR_MS,
         'promptMinutes' => 60, 'teams' => ['Owls', 'Foxes']]);
     $id = $made['id'];
     $world = fn () => $game->world($id);
