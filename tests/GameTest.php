@@ -965,6 +965,16 @@ test('repeating a word someone else said is free, unless the host chooses to cha
         same($penalty, $game->play($world['id'], $b['token'], 'moon')['penalty'], $charge ? 'Charged' : 'Free by default');
         same($charge, $game->state($world['id'], null)['world']['repeatPenalty']);
     }
+    // Another spelling of a word said is free even where repeats are charged, as the other
+    // side's spelling is in a one-spelling world.
+    $world = $game->createWorld('Spellings', options: ['repeatPenalty' => true]);
+    setPrompt($game, $world['id'], spec(null, ['contains', 'o']));
+    $a = $game->join($world['id'], 'Ann');
+    $b = $game->join($world['id'], 'Bob');
+    $game->play($world['id'], $a['token'], 'colour');
+    gameDb($game)->exec("UPDATE burns SET burned_at = burned_at - 120000 WHERE world_id = '{$world['id']}'");
+    $other = $game->play($world['id'], $b['token'], 'color');
+    same(['already-burned', 0, true, true], [$other['reason'], $other['penalty'], $other['otherSpelling'] ?? false, $other['charged'] ?? false]);
 });
 
 test('irregular plurals are one answer with their singular, judged as it (data/irregular-forms.txt)', function () {

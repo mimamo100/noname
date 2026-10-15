@@ -7,3 +7,9 @@
 grey gray
 greys grays
 greyish grayish
+
+# Musicians: the US words (Music Night playtest, 15 October)
+flautist flutist
+flautists flutists
+lutenist lutist
+lutenists lutists

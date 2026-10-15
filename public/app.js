@@ -1080,6 +1080,17 @@ function saidAt(ms) {
 
 const penaltyText = (r) => (r.penalty ? ` −${r.penalty} ${r.penalty === 1 ? 'point' : 'points'}.` : '');
 
+// What repeating someone else's word cost, and why: repeats are free unless the room charges
+// for them, and even then some are free.
+function repeatCost(r) {
+  if (r.penalty) return `${penaltyText(r)} This room charges for repeats.`;
+  if (!r.charged) return ' No penalty.';
+  if (r.teamMate) return ' No penalty, as it was your team-mate.';
+  if (r.otherSpelling) return " No penalty, as it's another spelling.";
+  if (r.justNow) return ' No penalty, as it was moments ago.';
+  return r.masked ? ' No penalty, as it was hidden.' : ' No penalty.';
+}
+
 // A pack-only world knows only its pack's words: say so, or everyday words look like a fault.
 const notAWord = (w) => (lastState?.pack?.mode === 'only'
   ? `“${w}” isn't in this room's ${lastState.pack.name} words. No penalty.`
@@ -1095,8 +1106,7 @@ const REASONS = {
       ? `You already said “${r.burned.playedWord}”${r.burned.playedWord !== w ? ` (which uses up “${w}”)` : ''} ${saidAt(r.burned.at)}, for “${r.burned.prompt}”. No penalty.`
       : `${r.otherSpelling ? `“${w}” is the same answer as “${r.burned.playedWord}”, which ${r.burned.by} said`
         : r.burned.playedWord !== w ? `${r.burned.by} used up “${w}” by saying “${r.burned.playedWord}”`
-        : `${r.burned.by} already said “${w}”`} ${saidAt(r.burned.at)}, for “${r.burned.prompt}”.${r.penalty ? penaltyText(r)
-        : r.teamMate ? ' No penalty, as it was your team-mate.' : r.justNow ? ' No penalty, as it was moments ago.' : ' No penalty, as it was hidden.'}`)
+        : `${r.burned.by} already said “${w}”`} ${saidAt(r.burned.at)}, for “${r.burned.prompt}”.${repeatCost(r)}`)
     : `“${w}” has already been said.${penaltyText(r)}`,
 };
 

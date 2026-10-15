@@ -41,10 +41,10 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | This room uses UK spelling: try “{other spelling}”. No penalty. *(or US)* | app.js · REASONS |
 | You already said “{word}” {when}, for “{prompt}”. No penalty. | app.js · REASONS |
 | You already said “{played}” (which uses up “{word}”) {when}, for “{prompt}”. No penalty. | app.js · REASONS |
-| {name} already said “{word}” {when}, for “{prompt}”. −2 points. | app.js · REASONS |
-| {name} used up “{word}” by saying “{played}” {when}, for “{prompt}”. −2 points. | app.js · REASONS |
-| “{word}” is the same answer as “{played}”, which {name} said {when}, for “{prompt}”. −2 points. | app.js · REASONS |
-| …instead of −2 points when it's free: ` No penalty, as it was your team-mate.` / ` No penalty, as it was moments ago.` / ` No penalty, as it was hidden.` | app.js · REASONS |
+| {name} already said “{word}” {when}, for “{prompt}”. No penalty. | app.js · REASONS |
+| {name} used up “{word}” by saying “{played}” {when}, for “{prompt}”. No penalty. | app.js · REASONS |
+| “{word}” is the same answer as “{played}”, which {name} said {when}, for “{prompt}”. No penalty. | app.js · REASONS |
+| …in a room that charges for repeats: ` −2 points. This room charges for repeats.`, or when it's free there: ` No penalty, as it was your team-mate.` / ` No penalty, as it's another spelling.` / ` No penalty, as it was moments ago.` / ` No penalty, as it was hidden.` | app.js · repeatCost |
 | ` (Judged against the last prompt, “{prompt}”, as it had only just changed.)` *(added)* | app.js · play-form |
 | {when}: “at 14:05” today, “on 13 Oct, 14:05” before | app.js · saidAt |
 | Slow down! You can make 20 guesses a minute. | Game.php · checkRateLimit |

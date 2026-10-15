@@ -6,6 +6,12 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**Another spelling of a word already said is free**, even in a room that charges for repeats:
+the other side's spelling (*color* in a UK room) is let off, so *flutist* after *flautist* should
+be too. *flutist* and *lutist* are marked as the US words. A charged repeat now says "This room
+charges for repeats.", and a free one no longer says "as it was hidden" unless it was.
+*Owner, after the Music Night playtest.*
+
 **"About this list" and "About this prompt" give quirks and definitions, not examples**: what a
 list includes and leaves out ("Real fish only: sea mammals, shellfish and jellyfish are sea
 creatures, not fish"), and how a letter prompt judges forms ("A verb's other forms count as the

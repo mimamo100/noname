@@ -700,10 +700,14 @@ final class Game
                 $playedJoined = self::typed($said['playedWord'] ?? '');
                 $otherSpelling = $said && in_array($playedJoined, $this->dictionary->otherSpellings($word), true);
                 $charged = !empty($this->world($worldId)['repeat_penalty']);
-                return $miss('already-burned', !$charged || $mine || $masked || $justNow || $teamMate ? 0 : self::PENALTY,
+                // Another spelling of a word said is free, as the other side's spelling is in a
+                // one-spelling world (owner's decision, 15 October).
+                return $miss('already-burned', !$charged || $mine || $masked || $justNow || $teamMate || $otherSpelling ? 0 : self::PENALTY,
                     ['burned' => $said, 'byYou' => $mine]
+                    + ($charged ? ['charged' => true] : [])
                     + ($justNow && !$mine ? ['justNow' => true] : [])
                     + ($teamMate ? ['teamMate' => true] : [])
+                    + ($masked && !$mine ? ['masked' => true] : [])
                     + ($otherSpelling ? ['otherSpelling' => true] : []));
             }
             // Right letters but not on our list for the meaning: our lists have gaps, so no penalty,

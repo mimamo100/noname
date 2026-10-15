@@ -11,6 +11,9 @@ Two prompts: "A musician with no R" (26 answers; ended on its own) and "Part of 
 - **Players' reports** (the owner's download of 15 October): *cumulus*, *uncurl*, *overwrite*, *bestride* and others added; *devil's coach horse*; *chanteuse* (counted), *psalmist*, *kazooist*, *flugelhornist*, *cymbalist* (accepted) on "A musician"; and on "Part of a song, or how it's played", the theory and marking words it invites (*rhythm*, *cadence*, *bar*, *measure*, *rest*, *slur*, *trill*, *fermata*, *andante*, *tune*…) are accepted. Details in `chat/word-decisions.md`.
 - **Plurals in -es only after s, x, z, ch, sh or o**: the plural finder had made *filles* a form of *fill* (Cal saw it under "Gone with it"), and *rapes* of *rap*, *examinees* of *examine*: 18 such dropped.
 - **4-letter verb forms** (*hoed*, *toed*) are found now.
+- **A charged repeat says why** ("−2 points. This room charges for repeats."), and a free one gives the right reason: it said "as it was hidden" for any free repeat.
+- **Another spelling of a word said is free**, even where repeats are charged (the owner's decision), and *flutist* and *lutist* are marked as US spellings, so a UK-only room tells you to use *flautist*.
+- **About this list / prompt** rewritten as quirks and definitions, without examples (the owner's note).
 
 ## What worked
 
