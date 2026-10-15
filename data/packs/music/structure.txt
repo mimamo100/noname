@@ -84,20 +84,34 @@ whistle
 yodel, yodels, yodelling, yodelled, yodeling, yodeled
 
 also:
+andante, andantes
+bar, bars
+bass
 belt
 blast beat, blast beats
+cadence, cadences
 call and response
 continuo, continuos
 countermelody, countermelodies
+fermata, fermatas, fermate
 fingerstyle
 flam, flams
 hammer-on, hammer-ons
 hook line, hook lines
+lilt, lilts
+measure, measures
 noodle
 obbligato, obbligatos
 palm mute, palm muting
 post-chorus, post-choruses
 pull-off, pull-offs
+rest, rests
+rhythm, rhythms
+slur, slurs
+sustain
 sweep
 tag
+texture, textures
+trill, trills
+tune, tunes
 vocalise, vocalises

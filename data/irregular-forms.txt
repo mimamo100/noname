@@ -107,6 +107,9 @@ hypothesis, hypotheses
 # Left out where a form has an everyday meaning of its own: saw, found, left, felt, fell, rose,
 # spoke, stole, shot, won, wound, ground, bound, lay, smelt, spelt, rung, tear, bit, drove;
 # and rang, which the family rules join to ranged and ranging.
+cumulus, cumuli
+succubus, succubi
+
 verbs:
 arise, arose, arisen
 awake, awoke, awoken
@@ -227,3 +230,7 @@ uphold, upheld
 withhold, withheld
 mislead, misled
 misunderstand, misunderstood
+bestride, bestrode, bestridden
+overwrite, overwrote, overwritten
+tarmac, tarmacked, tarmacking
+dib, dibbed, dibbing

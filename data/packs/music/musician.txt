@@ -18,6 +18,7 @@ bugler, buglers
 busker, buskers
 campanologist, campanologists
 cellist, cellists
+chanteuse, chanteuses
 choirmaster, choirmasters
 clarinettist, clarinettists, clarinetist, clarinetists
 composer, composers
@@ -84,8 +85,10 @@ chansonnier, chansonniers
 chorus master, chorus masters
 contrabassist, contrabassists
 cornetist, cornetists, cornettist, cornettists
+cymbalist, cymbalists
 drum major, drum majors
 duettist, duettists
+flugelhornist, flugelhornists
 folkie, folkies
 griot, griots
 harmonicist, harmonicists
@@ -94,6 +97,7 @@ hornist, hornists
 improviser, improvisers, improvisor, improvisors
 jongleur, jongleurs
 kapellmeister, kapellmeisters
+kazooist, kazooists
 leader, leaders
 mandolinist, mandolinists
 marimbist, marimbists
@@ -101,6 +105,7 @@ melodist, melodists
 organ grinder, organ grinders
 player, players
 prodigy, prodigies
+psalmist, psalmists
 repetiteur, repetiteurs
 selector, selectors
 session man, session men

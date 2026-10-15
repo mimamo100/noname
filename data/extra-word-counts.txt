@@ -4931,6 +4931,7 @@ manes 105
 secretes 105
 moisturizing 105
 alp 105
+glowy 105
 conical 105
 blotting 105
 embellishment 105
@@ -6107,6 +6108,7 @@ brooches 89
 chairmen 89
 luncheons 89
 commemorated 89
+lilt 89
 captained 89
 auger 89
 verifies 89
@@ -6489,6 +6491,7 @@ shouldered 83
 disquiet 83
 trainings 83
 blockades 83
+cumulus 83
 habanero 83
 lacing 83
 transposed 83
@@ -6875,6 +6878,7 @@ dropsy 77
 pageboy 77
 triplet 77
 granaries 77
+overwritten 77
 tinkered 77
 hesitations 77
 groins 77
@@ -8041,6 +8045,7 @@ applauses 61
 retailing 61
 accelerants 61
 estuaries 61
+flowy 61
 correlations 61
 megabytes 61
 rompers 61
@@ -8344,6 +8349,7 @@ quartering 58
 yetis 58
 manhattans 58
 prerequisites 58
+chanteuse 58
 curated 58
 boycotts 58
 blanketing 58
@@ -8551,6 +8557,7 @@ cads 56
 epiphanies 56
 chevrons 55
 jockstraps 55
+succubi 55
 rhododendrons 55
 kudu 55
 livened 55
@@ -8643,6 +8650,7 @@ plaice 54
 pegging 54
 lengthening 54
 fakirs 54
+andante 54
 goby 54
 dippers 54
 retracts 54
@@ -8735,6 +8743,7 @@ scampered 53
 interrogates 53
 masseurs 53
 hampering 53
+overwrite 53
 scrunchies 53
 sicked 53
 pensioned 53
@@ -8794,6 +8803,7 @@ bullfrogs 53
 steadied 53
 interfaced 53
 choses 53
+blowy 53
 cameos 53
 offloaded 53
 understudies 53
@@ -9929,6 +9939,7 @@ chimneysweep 42
 stepmothers 42
 lurches 42
 writhes 42
+upturn 42
 salesgirls 42
 whatnots 42
 capos 42
@@ -12963,6 +12974,7 @@ viaducts 21
 tokes 21
 tridents 21
 quashing 21
+bestride 21
 engravers 21
 aptitudes 21
 yucks 21
@@ -13249,6 +13261,7 @@ virologists 19
 axolotl 19
 sommeliers 19
 carpals 19
+uncurl 19
 vestibules 19
 radiographer 19
 wishbones 19
@@ -13666,6 +13679,7 @@ birdcages 14
 haddocks 14
 ploughmen 14
 ferryboats 14
+overwrote 14
 garlics 14
 dachas 14
 tarsier 14
@@ -13787,6 +13801,7 @@ peppermill 13
 dredgers 13
 kirks 13
 basa 13
+psalmist 13
 mascaras 13
 chipolata 13
 falsifications 13
@@ -13897,6 +13912,7 @@ ganders 12
 granita 12
 megalosaurus 12
 ankylosaurus 12
+bestrode 12
 infirmaries 12
 lammergeier 12
 highboy 12
@@ -14062,6 +14078,7 @@ filberts 11
 peninsulas 11
 galahs 10
 drumlins 10
+fermata 10
 ceramicist 10
 neptunium 10
 birdflu 10
@@ -14425,6 +14442,7 @@ cupronickel 8
 minkes 8
 lacewing 8
 luggers 8
+tarmacked 8
 sleighbells 8
 softdrink 8
 brents 7
@@ -14758,6 +14776,7 @@ urethras 5
 wadis 5
 fritillary 5
 internes 5
+cumuli 5
 snuffboxes 5
 sporrans 5
 pannacotta 5
@@ -14992,6 +15011,7 @@ affrays 4
 trilbies 4
 agaves 4
 ciabattas 4
+sunstruck 4
 mizzle 4
 passata 4
 chasubles 4
@@ -15325,6 +15345,7 @@ fenlands 3
 filos 3
 southwind 3
 sealions 3
+tarmacking 3
 flugelhorns 3
 lexicography 3
 warhammers 3
@@ -15423,6 +15444,7 @@ martialarts 2
 borzois 2
 icehockey 2
 hyoids 2
+dibbed 2
 samoyed 2
 serins 2
 pepperpots 2
@@ -15889,6 +15911,7 @@ sedums 1
 winklepicker 1
 stepgrandson 1
 bridleways 1
+cymbalist 1
 millwrights 1
 seaturtles 1
 squarefoot 1

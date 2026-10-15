@@ -63,6 +63,7 @@ accumulated accumulate
 accumulating accumulate
 accused accuse
 accusing accuse
+aced ace
 ached ache
 achieved achieve
 achieving achieve
@@ -129,6 +130,7 @@ afflicting afflict
 afforded afford
 affording afford
 affronted affront
+aged age
 ageing age
 aggravated aggravate
 aggravating aggravate
@@ -238,6 +240,7 @@ anted ante
 anticipated anticipate
 anticipating anticipate
 antiquing antique
+aped ape
 aping ape
 apologised apologise
 apologising apologise
@@ -400,6 +403,8 @@ awakening awaken
 awaking awake
 awarded award
 awarding award
+awed awe
+axed axe
 axing axe
 baaing baa
 babbled babble
@@ -1859,6 +1864,7 @@ cuckolding cuckold
 cuckooing cuckoo
 cuddled cuddle
 cuddling cuddle
+cued cue
 cueing cue
 cuffed cuff
 cuffing cuff
@@ -2189,6 +2195,7 @@ dictated dictate
 dictating dictate
 diddled diddle
 diddling diddle
+died die
 dieing die
 dieted diet
 dieting diet
@@ -2540,6 +2547,7 @@ dwelled dwell
 dwelling dwell
 dwindled dwindle
 dwindling dwindle
+dyed dye
 dyeing dye
 dying die
 dynamited dynamite
@@ -2903,6 +2911,7 @@ exuded exude
 exuding exude
 eyeballed eyeball
 eyeballing eyeball
+eyed eye
 eyeing eye
 eying eye
 fabricated fabricate
@@ -3771,6 +3780,7 @@ hobnobbed hobnob
 hobnobbing hobnob
 hocked hock
 hocking hock
+hoed hoe
 hoeing hoe
 hogged hog
 hogging hog
@@ -3836,6 +3846,7 @@ howled howl
 howling howl
 huddled huddle
 huddling huddle
+hued hue
 huffed huff
 huffing huff
 hugged hug
@@ -3886,6 +3897,7 @@ hyping hype
 hypnotised hypnotise
 hypnotized hypnotize
 hypnotizing hypnotize
+iced ice
 icing ice
 identified identify
 identifying identify
@@ -4446,6 +4458,7 @@ licensed license
 licensing license
 licked lick
 licking lick
+lied lie
 lifted lift
 lifting lift
 lighted light
@@ -4456,6 +4469,7 @@ liked like
 likened liken
 likening liken
 liking like
+lilting lilt
 limbered limber
 limbering limber
 limed lime
@@ -5193,6 +5207,8 @@ overwhelmed overwhelm
 overwhelming overwhelm
 overworked overwork
 overworking overwork
+overwriting overwrite
+owed owe
 owing owe
 owned own
 owning own
@@ -5327,6 +5343,7 @@ pedalled pedal
 pedalling pedal
 peddled peddle
 peddling peddle
+peed pee
 peeing pee
 peeked peek
 peeking peek
@@ -6584,6 +6601,7 @@ rowing row
 rubbed rub
 rubbing rub
 rucked ruck
+rued rue
 ruffed ruff
 ruffled ruffle
 ruffling ruffle
@@ -7702,6 +7720,7 @@ suckled suckle
 suckling suckle
 suctioned suction
 suctioning suction
+sued sue
 suffered suffer
 suffering suffer
 sufficed suffice
@@ -7917,6 +7936,7 @@ teared tear
 tearing tear
 teased tease
 teasing tease
+teed tee
 teeing tee
 telecasted telecast
 telecasting telecast
@@ -8015,6 +8035,7 @@ tided tide
 tidied tidy
 tiding tide
 tidying tidy
+tied tie
 tightened tighten
 tightening tighten
 tiled tile
@@ -8053,6 +8074,7 @@ toasting toast
 tobogganing toboggan
 toddled toddle
 toddling toddle
+toed toe
 toeing toe
 togged tog
 toggling toggle
@@ -8300,6 +8322,7 @@ uncorked uncork
 uncorking uncork
 uncovered uncover
 uncovering uncover
+uncurled uncurl
 undercutting undercut
 underestimated underestimate
 underestimating underestimate
@@ -8393,6 +8416,7 @@ urged urge
 urging urge
 urinated urinate
 urinating urinate
+used use
 ushered usher
 ushering usher
 using use
@@ -8468,6 +8492,7 @@ vibrated vibrate
 vibrating vibrate
 videotaped videotape
 videotaping videotape
+vied vie
 viewed view
 viewing view
 vindicated vindicate

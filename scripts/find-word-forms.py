@@ -102,7 +102,7 @@ def main():
 
     verb_forms = {}
     for form in sorted(words | new):
-        if form in breaks or len(form) < 5 or not (form.endswith("ing") or form.endswith("ed")) or not common(form):
+        if form in breaks or len(form) < 4 or not (form.endswith("ing") or form.endswith("ed")) or not common(form):
             continue
         root = wn.morphy(form, wn.VERB)
         if root and root != form and root in words and form in regular_forms(root):
