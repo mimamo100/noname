@@ -76,7 +76,7 @@ final class Reminders
         $count = 0;
         $refused = false;
         foreach ($users as $u) {
-            $lines = ["Hi {$u['name']},", '', 'The big world has started afresh: every word is unsaid again, and everyone starts level.'];
+            $lines = ["Hi {$u['name']},", '', 'The big room has started afresh: every word is unsaid again, and everyone starts level.'];
             $streak = $this->streaks->of((int) $u['id'])['streak'];
             if ($streak > 1) $lines[] = "You've played $streak days in a row. Say a word today to keep it going.";
             if ($lastRound) {

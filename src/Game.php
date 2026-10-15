@@ -261,7 +261,7 @@ final class Game
     public function createWorld(string $name, ?string $id = null, int $promptDurationMs = self::DEFAULT_PROMPT_DURATION_MS, string $spelling = 'both', ?int $ownerUserId = null, array $options = []): array
     {
         $id ??= bin2hex(random_bytes(4));
-        $name = mb_substr(trim($name), 0, 40) ?: 'Unnamed world';
+        $name = mb_substr(trim($name), 0, 40) ?: 'Unnamed room';
         if (!in_array($spelling, self::SPELLINGS, true)) throw new GameError(400, 'Spelling must be uk, us or both');
         $this->db->prepare('
             INSERT INTO worlds (id, name, kind, prompt_duration_ms, spelling, owner_user_id, prompt_min, prompt_max, ends_at,
@@ -290,7 +290,7 @@ final class Game
     {
         $stmt = $this->db->prepare('SELECT * FROM worlds WHERE id = ?');
         $stmt->execute([$id]);
-        return $stmt->fetch() ?: throw new GameError(404, 'World not found');
+        return $stmt->fetch() ?: throw new GameError(404, 'Room not found');
     }
 
     public function join(string $worldId, string $nickname): array
@@ -307,7 +307,7 @@ final class Game
                 ->execute([$worldId, $name, $token, $this->now(), $this->now()]);
         } catch (PDOException $e) {
             // The nickname column is case-insensitive, so "robin" clashes with "Robin".
-            if ($e->getCode() === '23000') throw new GameError(409, 'That nickname is taken in this world');
+            if ($e->getCode() === '23000') throw new GameError(409, 'That nickname is taken in this room');
             throw $e;
         }
         return ['playerId' => (int) $this->db->lastInsertId(), 'nickname' => $name, 'token' => $token];
@@ -341,7 +341,7 @@ final class Game
                 if ($player = $this->playerForUser($worldId, (int) $user['id'])) return $player; // Joined in another request.
             }
         }
-        throw new GameError(409, 'Could not join this world');
+        throw new GameError(409, 'Could not join this room');
     }
 
     /** Gives a player a new name, with a number if someone in the world already has it. Returns the name given. */
@@ -365,8 +365,8 @@ final class Game
     {
         $stmt = $this->db->prepare('SELECT * FROM players WHERE world_id = ? AND token = ?');
         $stmt->execute([$worldId, (string) $token]);
-        $player = $stmt->fetch() ?: throw new GameError(401, 'Join this world first');
-        if ($player['removed']) throw new GameError(403, "You've been removed from this world");
+        $player = $stmt->fetch() ?: throw new GameError(401, 'Join this room first');
+        if ($player['removed']) throw new GameError(403, "You've been removed from this room");
         return $player;
     }
 
@@ -807,10 +807,10 @@ final class Game
     public function endedMessage(array $world, bool $playing = true): string
     {
         return match ($world['kind'] ?? 'private') {
-            'public' => $playing ? 'This round has finished. Reload the page for the new one.' : 'This round of the big world has finished.',
-            'room' => 'This room has run out of words. Join a new room from the home page.',
+            'public' => $playing ? 'This round has finished. Reload the page for the new one.' : 'This round of the big room has finished.',
+            'room' => 'This room has run out of words. Join a new public room from the home page.',
             'competition' => 'This competition has finished.',
-            default => 'This world has run out of words',
+            default => 'This room has run out of words',
         };
     }
 

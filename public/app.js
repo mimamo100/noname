@@ -153,7 +153,7 @@ function renderLobby(state) {
         ...(last.mine ? [el('p', { className: 'small' }, `You came ${resultLine(last.mine)}. `, shareButton(last.mine, 'Share your result'))] : []),
       );
     }
-    $('room-button').textContent = state.myRoom ? `Back to ${state.myRoom.name}` : 'Join a room';
+    $('room-button').textContent = state.myRoom ? `Back to ${state.myRoom.name}` : 'Join a public room';
   }
 
   // A finished world: say why, and where to play next. Rooms are also only for their own players.
@@ -165,11 +165,11 @@ function renderLobby(state) {
   $('ended').hidden = !(ended && ['room', 'public'].includes(state.world.kind)) && !notMine;
   if (ended) {
     $('ended-message').textContent = state.world.endedMessage;
-    $('ended-button').textContent = room ? 'Join a new room' : 'Go to the big world';
+    $('ended-button').textContent = room ? 'Join a new public room' : 'Go to the big room';
     $('ended-button').onclick = room ? joinRoom : () => { location.href = '/'; };
   } else if (notMine) {
-    $('ended-message').textContent = "You can watch this room, but only its own players can say words. Join a room to play.";
-    $('ended-button').textContent = 'Join a room';
+    $('ended-message').textContent = "You can watch this room, but only its own players can say words. Join a public room to play.";
+    $('ended-button').textContent = 'Join a public room';
     $('ended-button').onclick = joinRoom;
   }
 }
@@ -539,7 +539,7 @@ async function renderPacks() {
         el('div', {}, el('b', { textContent: p.name }), el('span', { className: 'muted', textContent: ` · ${p.words.toLocaleString()} words` }),
           ...(p.description || suggested ? [el('p', { textContent: [p.description, suggested].filter(Boolean).join(' · ') })] : [])),
         edit);
-    }) : [el('p', { className: 'empty', textContent: "No packs yet. Make one with New pack: a few lists of words on a theme, and it's ready to use in a private world or competition." })]));
+    }) : [el('p', { className: 'empty', textContent: "No packs yet. Make one with New pack: a few lists of words on a theme, and it's ready to use in a private room or competition." })]));
   } catch (err) {
     $('packs-list').replaceChildren(el('p', { className: 'bad', textContent: err.message }));
   }
@@ -593,7 +593,7 @@ $('pack-delete').addEventListener('click', async () => {
 async function joinRoom(e) {
   const button = e?.currentTarget instanceof HTMLButtonElement ? e.currentTarget : null;
   if (!session) {
-    feedback('Sign in first to join a room.', 'bad');
+    feedback('Sign in first to join a public room.', 'bad');
     showSigninStep('email');
     $('signin').hidden = false;
     $('signin').scrollIntoView({ block: 'center' });
@@ -636,7 +636,7 @@ function renderBanner(state) {
   $('back-link').hidden = big;
   if (big) {
     const hours = state.roundHours ?? 24;
-    // The round's name is "The Big World, 14 Oct": the date goes in grey after the title.
+    // The round's name is "The Big Room, 14 Oct": the date goes in grey after the title.
     const [title, when] = state.world.name.split(/, (.+)/);
     $('banner-name').replaceChildren(title, ...(when ? [el('span', { className: 'banner-when', textContent: ` · ${when}` })] : []));
     $('banner-about').textContent = `Everyone signed in plays here, and it starts afresh ${hours === 24 ? 'every day' : `every ${hours} ${hours === 1 ? 'hour' : 'hours'}`}.`;
@@ -649,7 +649,7 @@ function renderBanner(state) {
   const spelling = { uk: 'UK spelling', us: 'US spelling' }[state.world.spelling];
   // A word pack's name as a tag by the world's name, so a Science world is obvious at a glance.
   $('banner-name').replaceChildren(state.world.name, ...(pack ? [' ', el('span', { className: 'pack-tag', textContent: pack.name })] : []));
-  $('banner-about').textContent = [{ private: 'Private world', room: 'Room', competition: 'Competition' }[kind] ?? 'World', words, spelling].filter(Boolean).join(' · ');
+  $('banner-about').textContent = [{ private: 'Private room', room: 'Public room', competition: 'Competition' }[kind] ?? 'Room', words, spelling].filter(Boolean).join(' · ');
 }
 
 // The team this page last showed the player on, to tell them if the organiser moves them.
@@ -707,7 +707,7 @@ function render(state) {
   const competition = state.world.kind === 'competition';
   $('copy-link').hidden = !state.invite;
   $('world-settings').hidden = !state.isOwner;
-  $('world-settings').textContent = competition ? 'Competition settings' : 'World settings';
+  $('world-settings').textContent = competition ? 'Competition settings' : 'Room settings';
   renderCompetition(state);
   // On the big world, a nudge towards private worlds for anyone who can't make one yet.
   $('create-own').hidden = state.world.kind !== 'public' || ['host', 'organiser'].includes(state.account?.plan);
@@ -1015,8 +1015,8 @@ async function refresh() {
     lastStateLoaded = true;
   } catch (err) {
     if (lastStateLoaded) return; // A brief hiccup while playing: keep showing the game and retry on the next poll.
-    $('prompt-label').textContent = err.status === 404 && err.message === 'World not found' ? 'World not found'
-      : err.status === 403 ? 'Private world' : 'Something went wrong';
+    $('prompt-label').textContent = err.status === 404 && err.message === 'Room not found' ? 'Room not found'
+      : err.status === 403 ? 'Private room' : 'Something went wrong';
     feedback(err.message, 'bad');
   }
 }
@@ -1057,14 +1057,14 @@ const penaltyText = (r) => (r.penalty ? ` −${r.penalty} ${r.penalty === 1 ? 'p
 
 // A pack-only world knows only its pack's words: say so, or everyday words look like a fault.
 const notAWord = (w) => (lastState?.pack?.mode === 'only'
-  ? `“${w}” isn't in this world's ${lastState.pack.name} words. No penalty.`
+  ? `“${w}” isn't in this room's ${lastState.pack.name} words. No penalty.`
   : `We don't know “${w}”. No penalty.`);
 
 const REASONS = {
   'not-a-word': (w) => notAWord(w),
   'doesnt-fit': (w, r) => `“${w}” doesn't fit${r.why ? `: ${r.why}` : ' the prompt'}.${r.penalty ? penaltyText(r) : ' No penalty.'}`,
   'not-in-category': (w, r) => `“${w}” isn't on our list for “${r.category}”. No penalty.`,
-  'wrong-spelling': (w, r) => `This world uses ${r.spelling === 'uk' ? 'UK' : 'US'} spelling${r.suggestions?.length ? `: try “${r.suggestions[0]}”` : ''}. No penalty.`,
+  'wrong-spelling': (w, r) => `This room uses ${r.spelling === 'uk' ? 'UK' : 'US'} spelling${r.suggestions?.length ? `: try “${r.suggestions[0]}”` : ''}. No penalty.`,
   'already-burned': (w, r) => r.burned
     ? (r.byYou
       ? `You already said “${r.burned.playedWord}”${r.burned.playedWord !== w ? ` (which uses up “${w}”)` : ''} ${saidAt(r.burned.at)}, for “${r.burned.prompt}”. No penalty.`
@@ -1265,8 +1265,8 @@ $('settings-form').addEventListener('submit', async (e) => {
 });
 $('settings-copy').addEventListener('click', () => copyText(inviteUrl(settings.invite), 'Invite link copied.'));
 $('settings-new-invite').addEventListener('click', () => settingsAction('Make a new invite link? The old one will stop working.', 'invite', {}, 'New invite link made. Send it to anyone still to join.'));
-$('settings-end').addEventListener('click', () => settingsAction('End this world for everyone? Final standings go into everyone\'s Games, under Your account. This can\'t be undone.', 'end', {}, 'The world has ended.'));
-$('settings-delete').addEventListener('click', () => settingsAction('Delete this world and everything in it? This can\'t be undone.', 'delete', {}, ''));
+$('settings-end').addEventListener('click', () => settingsAction('End this room for everyone? Final standings go into everyone\'s Games, under Your account. This can\'t be undone.', 'end', {}, 'The room has ended.'));
+$('settings-delete').addEventListener('click', () => settingsAction('Delete this room and everything in it? This can\'t be undone.', 'delete', {}, ''));
 
 
 $('signin-email').addEventListener('submit', async (e) => {
@@ -1316,7 +1316,7 @@ $('lookup-form').addEventListener('submit', async (e) => {
   if (!word) return;
   try {
     const r = await api(`/${encodeURIComponent(worldId)}/words/${encodeURIComponent(word)}`);
-    $('lookup-result').textContent = !r.inDictionary ? (lastState?.pack?.mode === 'only' ? `“${r.word}” isn't in this world's ${lastState.pack.name} words.` : `We don't know “${r.word}”.`)
+    $('lookup-result').textContent = !r.inDictionary ? (lastState?.pack?.mode === 'only' ? `“${r.word}” isn't in this room's ${lastState.pack.name} words.` : `We don't know “${r.word}”.`)
       : r.burned ? `${r.burned.by} said “${r.word}” ${saidAt(r.burned.at)}${r.burned.playedWord !== r.word ? ` (with “${r.burned.playedWord}”)` : ''}, for “${r.burned.prompt}”.`
       : `“${r.word}” is still unsaid.`;
   } catch (err) {
@@ -1339,11 +1339,11 @@ $('copy-link').addEventListener('click', () => copyText(inviteUrl(lastState.invi
 $('create-own').addEventListener('click', () => $('new-world').click());
 $('new-world').addEventListener('click', () => {
   if (session && lastState?.account && lastState.account.plan === 'free') {
-    feedback('Private worlds, for you and the friends you invite, come with the Host plan. Meanwhile you can join anyone\'s private world with their invite link.', '');
+    feedback('Private rooms, for you and the friends you invite, come with the Host plan. Meanwhile you can join anyone\'s private room with their invite link.', '');
     return;
   }
   if (!session) {
-    feedback('Sign in first: private worlds are for you and the friends you invite.', '');
+    feedback('Sign in first: private rooms are for you and the friends you invite.', '');
     showSigninStep('email');
     $('signin').hidden = false;
     $('signin').scrollIntoView({ block: 'center' });
@@ -1416,10 +1416,10 @@ for (const dialog of document.querySelectorAll('dialog')) {
 const accountPage = location.pathname === '/account';
 let account = null;
 
-const KIND_NAMES = { public: 'The Big World', room: 'Room', private: 'Private world', competition: 'Competition' };
+const KIND_NAMES = { public: 'The Big Room', room: 'Public room', private: 'Private room', competition: 'Competition' };
 const PLAN_NAMES = {
-  free: "Free: the big world, rooms, and worlds you're invited to",
-  host: 'Host: also your own private worlds',
+  free: "Free: the big room, public rooms, and rooms you're invited to",
+  host: 'Host: also your own private rooms',
   organiser: 'Organiser: also competitions with teams, and your own word packs',
 };
 const dayMonth = (ms) => new Date(ms).toLocaleDateString(undefined, { day: 'numeric', month: 'short' });
@@ -1489,8 +1489,8 @@ async function renderMyWorlds() {
       el('h2', { className: 'section-title', textContent: 'Playing now' }),
       running.length ? el('div', { className: 'cards' }, ...running.map(worldCard))
         : el('div', { className: 'empty' },
-          el('p', { textContent: "You're not in any rooms, private worlds or competitions yet. Rooms are worlds of 60 players that last for weeks; private worlds and competitions need an invite link from whoever runs them." }),
-          el('a', { className: 'button-link', href: '/', textContent: 'Play the Big World' })),
+          el('p', { textContent: "You're not in any public rooms, private rooms or competitions yet. Public rooms hold up to 60 players and last for weeks; private rooms and competitions need an invite link from whoever runs them." }),
+          el('a', { className: 'button-link', href: '/', textContent: 'Play the Big Room' })),
       ...(ended.length ? [
         el('h2', { className: 'section-title', textContent: 'Ended: yours to keep or delete' }),
         el('div', { className: 'cards' }, ...ended.map(worldCard)),
@@ -1551,7 +1551,7 @@ async function renderMyGames() {
           ...(g.kind === 'public' ? [] : [`ended ${dayMonth(g.endedAt)}`]),
         ].join(' · ')),
       ))) : el('div', { className: 'empty' }, el('p', { textContent:
-        `No finished games yet. Big world rounds finish at the end of each round, and rooms when their words run out.${bests.wordsSaid ? ` So far you've said ${plural(bests.wordsSaid, 'word')}.` : ''}` })),
+        `No finished games yet. Big room rounds finish at the end of each round, and public rooms when their words run out.${bests.wordsSaid ? ` So far you've said ${plural(bests.wordsSaid, 'word')}.` : ''}` })),
     );
   } catch (err) {
     box.replaceChildren(el('p', { className: 'bad', textContent: err.message }));

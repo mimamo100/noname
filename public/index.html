@@ -10,9 +10,9 @@
 <body>
   <header class="top">
     <a class="brand" href="/">Unsaid</a>
-    <button class="link nudge" id="create-own" hidden>Create your own world</button>
+    <button class="link nudge" id="create-own" hidden>Create your own room</button>
     <button class="link" id="copy-link" hidden>Copy invite link</button>
-    <button class="link" id="world-settings" hidden>World settings</button>
+    <button class="link" id="world-settings" hidden>Room settings</button>
     <span class="account-area">
       <button class="link" id="signin-link" hidden>Sign in</button>
       <a class="admin-link" id="admin-link" hidden>Admin</a>
@@ -20,7 +20,7 @@
         <button type="button" class="account-button" id="account-button" aria-haspopup="menu" aria-expanded="false" aria-controls="account-menu"></button>
         <span class="menu" id="account-menu" role="menu" hidden>
           <a role="menuitem" href="/account">Your account</a>
-          <button type="button" role="menuitem" id="new-world">New private world</button>
+          <button type="button" role="menuitem" id="new-world">New private room</button>
           <button type="button" role="menuitem" id="new-competition" hidden>New competition</button>
           <a role="menuitem" id="menu-admin" hidden>Admin</a>
           <button type="button" role="menuitem" id="menu-signout">Sign out</button>
@@ -32,10 +32,10 @@
   <main id="game">
     <section id="world-banner" class="world-banner" hidden>
       <div>
-        <h2><span id="banner-name"></span><button type="button" class="info" id="round-info-button" aria-expanded="false" aria-controls="banner-about" aria-label="About the Big World" title="About the Big World" hidden>i</button></h2>
+        <h2><span id="banner-name"></span><button type="button" class="info" id="round-info-button" aria-expanded="false" aria-controls="banner-about" aria-label="About the Big Room" title="About the Big Room" hidden>i</button></h2>
         <p id="banner-about" class="muted small"></p>
       </div>
-      <a href="/" class="back-link" id="back-link">Back to the big world</a>
+      <a href="/" class="back-link" id="back-link">Back to the big room</a>
       <p class="round-clock" id="round-clock" hidden>This round ends in <b id="round-ends">–</b></p>
     </section>
 
@@ -48,7 +48,7 @@
       <div class="counter"><span class="muted">At least</span> <span id="remaining">–</span> <span class="muted">words left unsaid</span></div>
       <div class="meter"><div id="meter-fill"></div></div>
       <div class="stats">
-        <span title="Rises as more of the dictionary is said">World ×<b id="world-mult">1.0</b></span>
+        <span title="Rises as more of the dictionary is said">Room ×<b id="world-mult">1.0</b></span>
         <span title="Rises as this prompt runs dry">Prompt ×<b id="prompt-mult">1.0</b></span>
         <span id="ends-text">Ends in <b>–</b></span>
       </div>
@@ -65,7 +65,7 @@
       <input id="word" name="word" placeholder="Type a word…" maxlength="30" autocapitalize="off" spellcheck="false" required>
       <button type="submit">Say it</button>
     </form>
-    <p id="pack-reminder" class="muted small pack-reminder" hidden>Every word stays said for the rest of this world, so a word from an earlier prompt can't be said again. Not sure? Try it in Who said it? first: it's free.</p>
+    <p id="pack-reminder" class="muted small pack-reminder" hidden>Every word stays said for the rest of this room, so a word from an earlier prompt can't be said again. Not sure? Try it in Who said it? first: it's free.</p>
     <p id="feedback" class="feedback" role="status"></p>
 
     <section id="signin" class="signin" hidden>
@@ -81,7 +81,7 @@
         <p class="small"><button type="button" class="link" id="signin-back">Use a different email</button></p>
       </form>
       <form id="signin-name" class="join" hidden>
-        <p><b>Welcome!</b> Choose the name other players will see. It's yours in every world.</p>
+        <p><b>Welcome!</b> Choose the name other players will see. It's yours in every room.</p>
         <input id="signin-name-input" maxlength="20" placeholder="Your name" autocomplete="nickname" required>
         <button type="submit">Start playing</button>
       </form>
@@ -91,8 +91,8 @@
       <section class="notice" id="last-round" hidden></section>
       <section id="last-unsaid" class="notice reveal" hidden></section>
       <section class="notice lobby-rooms" id="lobby-rooms" hidden>
-        <p>Play in a room of up to 60 players, its own world for weeks</p>
-        <button type="button" id="room-button">Join a room</button>
+        <p>Play in a public room of up to 60 players, for weeks</p>
+        <button type="button" id="room-button">Join a public room</button>
       </section>
       <section class="said">
         <div class="tabs" role="tablist">
@@ -150,36 +150,36 @@
       <summary>How to play</summary>
       <ul>
         <li>Type words that fit the current prompt. Some prompts are about meaning (“A bird”), some about letters (“Starts and ends with N”), and some both (“An animal starting with B”).</li>
-        <li>Once a word is said, <b>nobody in this world can say it again, ever</b>. Its family goes with it: say <i>cat</i> and <i>cats</i> is gone too.</li>
+        <li>Once a word is said, <b>nobody in this room can say it again, ever</b>. Its family goes with it: say <i>cat</i> and <i>cats</i> is gone too.</li>
         <li>Plurals count as their singular: <i>brothers</i> is judged and scored as <i>brother</i>, so it doesn't fit “8+ letters”. Words normally used in the plural (<i>trousers</i>, <i>leggings</i>) count as written.</li>
         <li><b>Scoring.</b> A word's points are its length minus 2 (at least 1; a two-word answer scores its longest word, plus 1 for each other word), times up to ×3 for rarer words (familiar words stay close to ×1), times two scarcity multipliers shown under the prompt:
           <ul>
-            <li><b>World ×</b> rises as this world's dictionary gets used up: ×1.0 when it's new, ×2.0 when half the words are said, ×4.0 at three quarters, up to ×10. Only rooms and private worlds have one, as they're played over weeks: the big world's daily rounds, competitions and worlds playing a word pack on its own don't. In a word-pack world, a word scores as rare as it is in everyday English.</li>
+            <li><b>Room ×</b> rises as this room's dictionary gets used up: ×1.0 when it's new, ×2.0 when half the words are said, ×4.0 at three quarters, up to ×10. Only public and private rooms have one, as they're played over weeks: the big room's daily rounds, competitions and rooms playing a word pack on its own don't. In a word-pack room, a word scores as rare as it is in everyday English.</li>
             <li><b>Prompt ×</b> rises gently as the current prompt runs dry: ×1.0 at the start, ×1.5 when half its answers are said, up to ×2. It goes back to ×1.0 with each new prompt. Looser answers that don't bring the count down (the count says “at least”) score without it.</li>
           </ul>
           The two multiply together, so later answers are worth a little more, but knowing rare words matters most.</li>
         <li>You can save a word for later when it's worth more, but someone else might say it first.</li>
-        <li>Careful: a word that doesn't fit costs 2 points, and the message says why. A word that's already been said costs nothing, though the host of a private world or competition can choose to charge 2 points for someone else's (never for your own, your team's, or one said in the last minute). Typos are free, and so is a real answer missing from our lists: report it so we can add it. If the prompt changes just as you send a word, it's judged against the prompt you saw.</li>
+        <li>Careful: a word that doesn't fit costs 2 points, and the message says why. A word that's already been said costs nothing, though the host of a private room or competition can choose to charge 2 points for someone else's (never for your own, your team's, or one said in the last minute). Typos are free, and so is a real answer missing from our lists: report it so we can add it. If the prompt changes just as you send a word, it's judged against the prompt you saw.</li>
         <li>Two-word answers can be typed either way: “tea towel”, “tea-towel” and “teatowel” are the same.</li>
-        <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private worlds accept only one of them.</li>
+        <li>UK and US spellings of a word (<i>colour</i>, <i>color</i>) count as one answer. Some private rooms accept only one of them.</li>
         <li>A prompt ends once <b>80% of its answers</b> are said, or when its time runs out. Whoever says the answer that ends it gets <b>10 bonus points</b> 🏁. Then <b>Recent prompt</b> shows what nobody said: the commonest answers left.</li>
-        <li><b>Where to play.</b> The big world is open to everyone signed in and starts afresh every day, with quick prompts. <b>Rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private worlds</b> are for you and the friends you invite: anyone can join one with its invite link, and creating one needs the Host plan. Private worlds and competitions can use a <b>word pack</b> (Science, Law, Music…) instead of everyday words. <b>Competitions</b> pit teams against each other between a start and an end time: open your team's link to join it, and every point you score counts for your team. Running one needs the Organiser plan.</li>
-        <li><b>Your account</b> (under your name, top right) lists the rooms, private worlds and competitions you're in, how you finished in past games, your personal bests and your <b>streak</b>: the days in a row you've said a word. Its settings turn on a <b>daily email</b> that reminds you each morning if you haven't played yet.</li>
+        <li><b>Where to play.</b> The big room is open to everyone signed in and starts afresh every day, with quick prompts. <b>Public rooms</b> hold up to 60 players and last until their words run out, which takes weeks. If you stop playing for a week your seat goes to someone new, but your words and points stay. <b>Private rooms</b> are for you and the friends you invite: anyone can join one with its invite link, and creating one needs the Host plan. Private rooms and competitions can use a <b>word pack</b> (Science, Law, Music…) instead of everyday words. <b>Competitions</b> pit teams against each other between a start and an end time: open your team's link to join it, and every point you score counts for your team. Running one needs the Organiser plan.</li>
+        <li><b>Your account</b> (under your name, top right) lists the public rooms, private rooms and competitions you're in, how you finished in past games, your personal bests and your <b>streak</b>: the days in a row you've said a word. Its settings turn on a <b>daily email</b> that reminds you each morning if you haven't played yet.</li>
       </ul>
-      <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words said in this world.</p>
+      <p class="muted"><span id="dict-burned">0</span> of <span id="dict-size">0</span> words said in this room.</p>
     </details>
   </main>
 
   <!-- Your account (/account): worlds, games, word packs and settings, in tabs. -->
   <main id="account-page" hidden>
-    <a href="/" class="back-link">← Back to the big world</a>
+    <a href="/" class="back-link">← Back to the big room</a>
     <div class="page-head">
       <h1>Your account</h1>
       <span class="muted" id="acct-about"></span>
     </div>
     <p id="account-feedback-slot"></p>
     <nav class="acct-tabs" role="tablist">
-      <a href="#worlds" role="tab" data-tab="worlds">Worlds</a>
+      <a href="#worlds" role="tab" data-tab="worlds">Rooms</a>
       <a href="#games" role="tab" data-tab="games">Games</a>
       <a href="#packs" role="tab" data-tab="packs" id="acct-tab-packs" hidden>Word packs</a>
       <a href="#settings" role="tab" data-tab="settings">Settings</a>
@@ -187,7 +187,7 @@
     <section class="acct-panel" id="acct-worlds" role="tabpanel"></section>
     <section class="acct-panel" id="acct-games" role="tabpanel" hidden></section>
     <section class="acct-panel" id="acct-packs" role="tabpanel" hidden>
-      <p class="muted">Your own themed words for your private worlds and competitions: a topic you teach, your company's products, a quiz theme.</p>
+      <p class="muted">Your own themed words for your private rooms and competitions: a topic you teach, your company's products, a quiz theme.</p>
       <p><button type="button" id="pack-new">New pack</button></p>
       <div id="packs-list"></div>
     </section>
@@ -197,7 +197,7 @@
         <button type="button" class="secondary" id="acct-rename">Change</button>
       </div>
       <div class="setting">
-        <div><b>Daily email</b><p>Each morning, when the big world starts afresh, a reminder if you haven't played yet</p></div>
+        <div><b>Daily email</b><p>Each morning, when the big room starts afresh, a reminder if you haven't played yet</p></div>
         <button type="button" class="switch" role="switch" aria-checked="false" aria-label="Daily email" id="acct-reminders"></button>
       </div>
       <div class="setting">
@@ -220,7 +220,7 @@
       <label class="field">Name
         <input id="name-input" maxlength="20" required autocomplete="nickname">
       </label>
-      <p class="muted small">It changes in the worlds you're playing now. Finished games keep the name you finished with.</p>
+      <p class="muted small">It changes in the rooms you're playing now. Finished games keep the name you finished with.</p>
       <div class="dialog-buttons">
         <button type="button" class="link" id="name-cancel">Cancel</button>
         <button type="submit">Save name</button>
@@ -234,7 +234,7 @@
       <ul class="small-list">
         <li>Your email address and name are removed, and you're signed out everywhere.</li>
         <li>Words you said stay said, and your scores stay on leaderboards as “Former player”.</li>
-        <li id="delete-owned">Private worlds and competitions you run end now, and your word packs are deleted.</li>
+        <li id="delete-owned">Private rooms and competitions you run end now, and your word packs are deleted.</li>
         <li>This can't be undone. You can sign up again with the same email, as a new player.</li>
       </ul>
       <label class="field"><span>Type <b>delete</b> to confirm</span>
@@ -249,7 +249,7 @@
 
   <dialog id="new-world-dialog">
     <form id="new-world-form" method="dialog">
-      <h2>New private world</h2>
+      <h2>New private room</h2>
       <label class="field">Name
         <input id="new-world-name" maxlength="40" placeholder="e.g. Friday quiz" required>
       </label>
@@ -280,7 +280,7 @@
       <p class="muted small">You'll get a link to share with friends. You can change these later.</p>
       <div class="dialog-buttons">
         <button type="button" class="link" id="new-world-cancel">Cancel</button>
-        <button type="submit">Create world</button>
+        <button type="submit">Create room</button>
       </div>
     </form>
   </dialog>
@@ -404,7 +404,7 @@ Foxes</textarea>
 
   <dialog id="settings-dialog">
     <form id="settings-form">
-      <h2>World settings</h2>
+      <h2>Room settings</h2>
       <label class="field">Name
         <input id="settings-name" maxlength="40" required>
       </label>
@@ -433,10 +433,10 @@ Foxes</textarea>
     <h3>Players</h3>
     <ul id="settings-players" class="history-list"></ul>
     <h3>End or delete</h3>
-    <p class="muted small">Ending finishes the world for everyone, with final standings. You can delete a world once it has ended, or if nobody else has joined.</p>
+    <p class="muted small">Ending finishes the room for everyone, with final standings. You can delete a room once it has ended, or if nobody else has joined.</p>
     <p class="small">
-      <button type="button" class="secondary" id="settings-end">End world</button>
-      <button type="button" class="secondary danger" id="settings-delete">Delete world</button>
+      <button type="button" class="secondary" id="settings-end">End room</button>
+      <button type="button" class="secondary danger" id="settings-delete">Delete room</button>
     </p>
     <div class="dialog-buttons">
       <button type="button" class="link" id="settings-close">Close</button>

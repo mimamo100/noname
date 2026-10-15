@@ -29,12 +29,12 @@ test('big world rounds start at midnight UK time, or every few hours', function 
     [, , $daily] = makeLobby($clock);
     $round = $daily->currentRound();
     same('p202610120000', $round['id']);
-    same('The Big World, 12 Oct', $round['name']);
+    same('The Big Room, 12 Oct', $round['name']);
     same(ms('2026-10-11 23:00 UTC'), $round['start']);
     same(ms('2026-10-12 23:00 UTC'), $round['end']);
 
     [, , $sixHourly] = makeLobby($clock, ['big_world' => ['round_hours' => 6, 'prompt_answers' => [1, 1000]]]);
-    same(['p202610120600', 'The Big World, 12 Oct, 06:00'], [$sixHourly->currentRound()['id'], $sixHourly->currentRound()['name']]);
+    same(['p202610120600', 'The Big Room, 12 Oct, 06:00'], [$sixHourly->currentRound()['id'], $sixHourly->currentRound()['name']]);
 
     $clock = ms('2026-10-25 12:00 UTC'); // The clocks go back that night: a 25-hour day.
     same(25 * 3_600_000, $daily->currentRound()['end'] - $daily->currentRound()['start']);
@@ -62,7 +62,7 @@ test('a finished round records everyone\'s results, shown in My games', function
     throwsStatus(410, fn () => $game->play($first, $lobby->playerFor($first, $ann)['token'], 'cool'));
 
     $last = $lobby->lastRound();
-    same('The Big World, 12 Oct', $last['name']);
+    same('The Big Room, 12 Oct', $last['name']);
     same([['nickname' => 'Ann', 'place' => 1, 'score' => $moon + $book], ['nickname' => 'Ben', 'place' => 2, 'score' => -Game::PENALTY]], $last['winners']);
 
     $history = $lobby->history($ann['id']);
@@ -70,7 +70,7 @@ test('a finished round records everyone\'s results, shown in My games', function
     same(1, $history['bests']['wins']);
     same(2, $history['bests']['wordsSaid']);
     $game1 = $history['games'][0];
-    same(['The Big World, 12 Oct', 1, 2, 2], [$game1['name'], $game1['place'], $game1['players'], $game1['words']]);
+    same(['The Big Room, 12 Oct', 1, 2, 2], [$game1['name'], $game1['place'], $game1['players'], $game1['words']]);
     same(max($moon, $book), $game1['bestPoints']);
     same([], $lobby->history(makeUser($db, 'Dee')['id'])['games']);
     same($game1, $lobby->result($first, $ann['id']), 'One result, to share');
@@ -90,11 +90,11 @@ test('rooms fill up, then a new one opens', function () {
     [$db, $game, $lobby] = makeLobby($clock, ['rooms' => ['size' => 2, 'max' => 2]]);
     [$a, $b, $c, $d, $e] = array_map(fn ($n) => makeUser($db, $n), ['Ann', 'Ben', 'Cy', 'Dee', 'Eve']);
     $room1 = $lobby->joinRoom($a);
-    same('Room 1', $room1['name']);
+    same('Public room 1', $room1['name']);
     same($room1, $lobby->joinRoom($a), 'Joining again goes back to the same room');
     same($room1, $lobby->joinRoom($b));
     $room2 = $lobby->joinRoom($c);
-    same('Room 2', $room2['name']);
+    same('Public room 2', $room2['name']);
     same($room1, $lobby->myRoom($a['id']));
     same('room', $game->state($room1['id'], null)['world']['kind']);
 

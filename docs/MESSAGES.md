@@ -1,5 +1,7 @@
 # The game's messages
 
+Players see **room** for every place to play: **The Big Room** (everyone, daily rounds), **public rooms** (up to 60 players, placed automatically, for weeks), **private rooms** and **competitions**. The code, database and links still say *world* (`worlds`, `/w/`, `{world}` below), which players never see.
+
 Every message players (and organisers) see, grouped by where it appears, for reviewing the
 wording. Mark up what you'd like changed and it'll be edited in the code.
 
@@ -33,10 +35,10 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Message | Where |
 |---|---|
 | We don't know “{word}”. No penalty. | app.js · notAWord |
-| “{word}” isn't in this world's {pack} words. No penalty. *(a pack-only world)* | app.js · notAWord |
+| “{word}” isn't in this room's {pack} words. No penalty. *(a pack-only world)* | app.js · notAWord |
 | “{word}” doesn't fit: {reason}. −2 points. *(reasons below)* | app.js · REASONS |
 | “{word}” isn't on our list for “{category}”. No penalty. | app.js · REASONS |
-| This world uses UK spelling: try “{other spelling}”. No penalty. *(or US)* | app.js · REASONS |
+| This room uses UK spelling: try “{other spelling}”. No penalty. *(or US)* | app.js · REASONS |
 | You already said “{word}” {when}, for “{prompt}”. No penalty. | app.js · REASONS |
 | You already said “{played}” (which uses up “{word}”) {when}, for “{prompt}”. No penalty. | app.js · REASONS |
 | {name} already said “{word}” {when}, for “{prompt}”. −2 points. | app.js · REASONS |
@@ -103,10 +105,10 @@ Shown under the word box; they fade after a few seconds (see section 13).
 |---|---|
 | Current prompt | index.html |
 | At least {n} words left unsaid | index.html |
-| World ×{n} · Prompt ×{n} | index.html |
+| Room ×{n} · Prompt ×{n} | index.html |
 | Ends after {n} more or in {time} | app.js · renderClock |
 | The first prompt appears at the start *(a competition before it starts)* | app.js · render |
-| This world has run out of words | app.js · render |
+| This room has run out of words | app.js · render |
 | Recent prompt *(box: the latest earlier prompt someone played; “Recent prompt · last round” early in a new round)* · {prompt} · {n} said | app.js · renderLastUnsaid |
 | Nobody said: {words} and {n} more | app.js · unsaidText |
 | Every answer was said! | app.js · unsaidText |
@@ -131,7 +133,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | {name} said “{word}” {when}, for “{prompt}”. | app.js · lookup-form |
 | {name} said “{word}” {when} (with “{played}”), for “{prompt}”. | app.js · lookup-form |
 | “{word}” is still unsaid. | app.js · lookup-form |
-| We don't know “{word}”. / “{word}” isn't in this world's {pack} words. | app.js · lookup-form |
+| We don't know “{word}”. / “{word}” isn't in this room's {pack} words. | app.js · lookup-form |
 
 ## 5. When a world finishes (the results card)
 
@@ -147,11 +149,11 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | You finished {medal} {place} of {n} with {n} points. {team} came {place} of {n}. | app.js · renderResults, resultLine |
 | Share your result *(button)* | app.js · renderResults |
 | This round has finished. Reload the page for the new one. *(playing)* | Game.php · endedMessage |
-| This round of the big world has finished. *(looking)* | Game.php · endedMessage |
-| This room has run out of words. Join a new room from the home page. | Game.php · endedMessage |
+| This round of the big room has finished. *(looking)* | Game.php · endedMessage |
+| This room has run out of words. Join a new public room from the home page. | Game.php · endedMessage |
 | This competition has finished. | Game.php · endedMessage |
-| This world has run out of words | Game.php · endedMessage |
-| Join a new room / Go to the big world *(button)* | app.js · renderLobby |
+| This room has run out of words | Game.php · endedMessage |
+| Join a new public room / Go to the big room *(button)* | app.js · renderLobby |
 
 ## 6. Sharing a result
 
@@ -166,42 +168,42 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Copied: paste it anywhere *(the button, after copying)* | app.js · shareResult |
 | Copy your result: *(when copying isn't possible)* | app.js · shareResult |
 
-## 7. The big world and rooms
+## 7. The big room and rooms
 
 | Message | Where |
 |---|---|
-| The Big World, {date} *(the round's name; the banner shows it as “The Big World · {date}”)* | Lobby.php · currentRound, app.js · renderBanner |
-| The Big World *(the banner's title)* | app.js · renderBanner |
+| The Big Room, {date} *(the round's name; the banner shows it as “The Big Room · {date}”)* | Lobby.php · currentRound, app.js · renderBanner |
+| The Big Room *(the banner's title)* | app.js · renderBanner |
 | Everyone signed in plays here, and it starts afresh every day. *(or every {n} hours; shown with the (i) by the title)* | app.js · renderBanner |
 | This round ends in {time} *(in the banner)* | index.html, app.js · renderClock |
 | Last round *(the box's title)*, then {medal} {name} · {n} points for the top three | app.js · renderLobby |
 | You came {place} of {n} with {n} points. Share your result | app.js · renderLobby |
-| Play in a room of up to 60 players, its own world for weeks *(its own box)* | index.html |
-| Join a room / Back to {room} *(button)* | app.js · renderLobby |
+| Play in a public room of up to 60 players, for weeks *(its own box)* | index.html |
+| Join a public room / Back to {room} *(button)* | app.js · renderLobby |
 | Finding you a room… *(the button while joining)* | app.js · joinRoom |
-| Create your own world *(link by the date)* | index.html |
-| Room {n} *(a room's name)* | Lobby.php · newRoom |
-| You can watch this room, but only its own players can say words. Join a room to play. | app.js · renderLobby |
+| Create your own room *(link by the date)* | index.html |
+| Public room {n} *(a public room's name)* | Lobby.php · newRoom |
+| You can watch this room, but only its own players can say words. Join a public room to play. | app.js · renderLobby |
 | Sign in first to join a room. | app.js · joinRoom |
 | The rooms are busy. Please try again. | Lobby.php · joinRoom |
-| All the rooms are full right now. Try the big world, or come back later. | Lobby.php · newRoom |
-| This room is for its own players. Join a room from the home page. | Lobby.php · playerFor |
-| Your seat in this room went to someone new while you were away. Join a new room from the home page. | Lobby.php · playerFor |
+| All the public rooms are full right now. Try the big room, or come back later. | Lobby.php · newRoom |
+| This room is for its own players. Join a public room from the home page. | Lobby.php · playerFor |
+| Your seat in this room went to someone new while you were away. Join a new public room from the home page. | Lobby.php · playerFor |
 
-## 8. Private worlds
+## 8. Private rooms
 
 ### The page
 
 | Message | Where |
 |---|---|
-| {world} · Private world · Everyday words · UK spelling *(the banner; also “{pack} words only”, “Everyday and {pack} words”, Room, Competition)* | app.js · renderBanner |
-| Back to the big world | index.html |
-| Copy invite link / World settings *(header links)* | app.js · render |
+| {world} · Private room · Everyday words · UK spelling *(the banner; also “{pack} words only”, “Everyday and {pack} words”, Public room, Competition)* | app.js · renderBanner |
+| Back to the big room | index.html |
+| Copy invite link / Room settings *(header links)* | app.js · render |
 | Invite link copied. Send it to your friends! | app.js · copy-link |
-| Private worlds, for you and the friends you invite, come with the Host plan. Meanwhile you can join anyone's private world with their invite link. | app.js · new-world |
-| Sign in first: private worlds are for you and the friends you invite. | app.js · new-world |
+| Private rooms, for you and the friends you invite, come with the Host plan. Meanwhile you can join anyone's private room with their invite link. | app.js · new-world |
+| Sign in first: private rooms are for you and the friends you invite. | app.js · new-world |
 
-### World settings (the owner)
+### Room settings (the owner)
 
 | Message | Where |
 |---|---|
@@ -209,8 +211,8 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Invite link copied. | app.js · settings-copy |
 | Make a new invite link? The old one will stop working. | app.js · settings-new-invite |
 | New invite link made. Send it to anyone still to join. | app.js · settings-new-invite |
-| End this world for everyone? Final standings go into everyone's Games, under Your account. This can't be undone. | app.js · settings-end |
-| The world has ended. | app.js · settings-end |
+| End this room for everyone? Final standings go into everyone's Games, under Your account. This can't be undone. | app.js · settings-end |
+| The room has ended. | app.js · settings-end |
 | Remove {name}? Their words stay used up, but they leave the leaderboard and can't come back. | app.js · loadSettings |
 | {name} has been removed. | app.js · loadSettings |
 
@@ -218,22 +220,22 @@ Shown under the word box; they fade after a few seconds (see section 13).
 
 | Message | Where |
 |---|---|
-| Creating private worlds needs the Host plan. | PrivateWorlds.php · create |
-| You have {n} open private worlds, the most at once. End one to start another. | PrivateWorlds.php · create |
+| Creating private rooms needs the Host plan. | PrivateWorlds.php · create |
+| You have {n} open private rooms, the most at once. End one to start another. | PrivateWorlds.php · create |
 | Choose the pack only, or the pack with everyday words | PrivateWorlds.php · packOptions |
 | Prompts can last 1, 4 or 24 hours | PrivateWorlds.php · paceMs |
 | The player limit must be between 2 and {n} | PrivateWorlds.php · maxPlayers |
-| This is a private world. You need an invite link from one of its players. | PrivateWorlds.php · checkCanView |
-| This invite link doesn't work any more: the world's owner may have made a new one. Ask one of its players for the latest link. | PrivateWorlds.php · checkCanView |
+| This is a private room. You need an invite link from one of its players. | PrivateWorlds.php · checkCanView |
+| This invite link doesn't work any more: the room's owner may have made a new one. Ask one of its players for the latest link. | PrivateWorlds.php · checkCanView |
 | This invite link has been replaced. Ask one of the players for the new one. | PrivateWorlds.php · playerFor |
-| This world is closed to new players. | PrivateWorlds.php · playerFor |
-| This world is full. | PrivateWorlds.php · playerFor |
-| You've been removed from this world. | PrivateWorlds.php · checkCanView, playerFor |
-| Only the owner can change this world. | PrivateWorlds.php · ownedWorld |
+| This room is closed to new players. | PrivateWorlds.php · playerFor |
+| This room is full. | PrivateWorlds.php · playerFor |
+| You've been removed from this room. | PrivateWorlds.php · checkCanView, playerFor |
+| Only the owner can change this room. | PrivateWorlds.php · ownedWorld |
 | No player of that name here. | PrivateWorlds.php · removePlayer |
-| You can't remove yourself from your own world. | PrivateWorlds.php · removePlayer |
-| This world has already ended. | PrivateWorlds.php · end |
-| Other players have joined, so end the world before deleting it. | PrivateWorlds.php · delete |
+| You can't remove yourself from your own room. | PrivateWorlds.php · removePlayer |
+| This room has already ended. | PrivateWorlds.php · end |
+| Other players have joined, so end the room before deleting it. | PrivateWorlds.php · delete |
 
 ## 9. Competitions
 
@@ -243,7 +245,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 |---|---|
 | Starts **{time}** · Ends **{time}** *(with the day, “Thu 15 Oct, 20:00”, when it isn't today)* | app.js · drawCompetitionClock |
 | Starts in **{m:ss}** / LIVE **{m:ss}** left *(a countdown, ticking every second; “3 days” when far off)* | app.js · drawCompetitionClock |
-| Every word stays said for the rest of this world, so a word from an earlier prompt can't be said again. Not sure? Try it in Who said it? first: it's free. *(under the word box, in pack-only worlds)* | index.html |
+| Every word stays said for the rest of this room, so a word from an earlier prompt can't be said again. Not sure? Try it in Who said it? first: it's free. *(under the word box, in pack-only worlds)* | index.html |
 | The organiser has moved you to {team}. | app.js · render |
 | You're in {team}. Every point you score will count for your team. *(before the start; “counts” after)* | app.js · renderCompetition |
 | The organiser moved you here from {team}. | app.js · renderCompetition |
@@ -302,7 +304,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 |---|---|
 | Everyday words / Word packs / Your packs *(the Words menu)* | app.js · loadPackChoices |
 | {pack} ({n} words) | app.js · loadPackChoices |
-| No packs yet. Make one with New pack: a few lists of words on a theme, and it's ready to use in a private world or competition. | app.js · renderPacks |
+| No packs yet. Make one with New pack: a few lists of words on a theme, and it's ready to use in a private room or competition. | app.js · renderPacks |
 | New word pack / Edit “{pack}” *(the editor's title)* | app.js · editPack |
 | Players suggested: {words}. Add any that should count to a list above. Mark as seen | app.js · editPack |
 | Saved “{pack}”: {list}, {n} answers; {list}, {n} answers. (Not in our everyday dictionary, so check the spelling: {words}.) | app.js · pack-form |
@@ -316,7 +318,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Please fix: {problems} | Packs.php · check |
 | A pack needs at least {n} words / A pack can have up to {n} words | Packs.php · check |
 | “{word}” isn't a word of 3–30 letters a to z / “{word}” is on the blocklist *(problems)* | Packs.php · build |
-| A world that is still running uses this pack. End it first. | Packs.php · delete |
+| A room that is still running uses this pack. End it first. | Packs.php · delete |
 | No such pack of yours | Packs.php · owned |
 
 ## 11. Signing in, and Your account
@@ -333,33 +335,33 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | Welcome, {name}! Start saying words. | app.js · verify |
 | Please sign in to play | api.php · route |
 | Signed out. | app.js · menu-signout |
-| Your account / New private world / New competition / Sign out *(the menu under your name)* | index.html |
+| Your account / New private room / New competition / Sign out *(the menu under your name)* | index.html |
 | Done: we won't send you the daily email any more. *(from the email's link)* | app.js · (on opening the page) |
 | That link has expired. *(an old stop-email link)* | api.php · route |
-| ← Back to the big world · Your account · {email} · {Plan} plan · Worlds / Games / Word packs / Settings | index.html, app.js · renderSettings |
-| **Worlds:** Playing now · Ended: yours to keep or delete | app.js · renderMyWorlds |
-| {world} Yours · Room / Private world / Competition · {pack} *(a card)* | app.js · worldCard |
+| ← Back to the big room · Your account · {email} · {Plan} plan · Rooms / Games / Word packs / Settings | index.html, app.js · renderSettings |
+| **Rooms:** Playing now · Ended: yours to keep or delete | app.js · renderMyWorlds |
+| {world} Yours · The Big Room / Public room / Private room / Competition · {pack} *(a card)* | app.js · worldCard |
 | {place} of {n} / Team {team} / – not played yet · {n} your points / {n} players · {n} words said (· {n}% left, once below 100%) | app.js · worldCard |
 | Last word {time} ago / No words yet / Starts {when} / Ends in {time} · {n} players / Ended. Open it to delete it. · Open | app.js · worldCard |
 | {team} won, {n} to {n} / {team} won with {n} / A draw, {n} each *(an ended competition's result, on its card and in Past games)* | app.js · teamsResult |
 | Ran · You ran this competition · {result} · ended {date} *(Past games, for a competition you ran without playing)* | app.js · renderMyGames |
-| You're not in any rooms, private worlds or competitions yet. Rooms are worlds of 60 players that last for weeks; private worlds and competitions need an invite link from whoever runs them. · Play the Big World | app.js · renderMyWorlds |
+| You're not in any public rooms, private rooms or competitions yet. Public rooms hold up to 60 players and last for weeks; private rooms and competitions need an invite link from whoever runs them. · Play the Big Room | app.js · renderMyWorlds |
 | **Games:** {n} days in a row / day in a row | app.js · renderMyGames |
 | Say a word today to start a new run. Your best is {n} days. / You've played today. Your best is {n} days. / Say a word today to make it {n}. Your best is {n} days. | app.js · renderMyGames |
 | Your bests: {medal} {place} best finish · {n} wins / {n} best score / {word} best word (+{n}) / {n} words said in all | app.js · renderMyGames |
 | Past games: {name} · {place} of {n} · Team {team} ({place} of {n}) · {n} words · best: {word} (+{n}) · ended {date} · {n} points | app.js · renderMyGames |
-| No finished games yet. Big world rounds finish at the end of each round, and rooms when their words run out. So far you've said {n} words. | app.js · renderMyGames |
-| **Word packs:** Your own themed words for your private worlds and competitions: a topic you teach, your company's products, a quiz theme. · {pack} · {n} words · Players suggested {n} words · Edit · New pack | index.html, app.js · renderPacks |
+| No finished games yet. Big room rounds finish at the end of each round, and public rooms when their words run out. So far you've said {n} words. | app.js · renderMyGames |
+| **Word packs:** Your own themed words for your private rooms and competitions: a topic you teach, your company's products, a quiz theme. · {pack} · {n} words · Players suggested {n} words · Edit · New pack | index.html, app.js · renderPacks |
 | **Settings:** Name · {name} · what other players see · Change | index.html |
-| Repeating a word someone else said costs 2 points (it's free otherwise) *(a tick box when creating a private world or competition, and in their settings)* | index.html |
-| Daily email · Each morning, when the big world starts afresh, a reminder if you haven't played yet *(an on/off switch)* | index.html |
+| Repeating a word someone else said costs 2 points (it's free otherwise) *(a tick box when creating a private room or competition, and in their settings)* | index.html |
+| Daily email · Each morning, when the big room starts afresh, a reminder if you haven't played yet *(an on/off switch)* | index.html |
 | Daily email on: each morning we'll email you unless you've already played. Turn it off here, or from the link in any email. / Daily email off. | app.js · acct-reminders |
-| Plan · Free: the big world, rooms, and worlds you're invited to / Host: also your own private worlds / Organiser: also competitions with teams, and your own word packs | app.js · PLAN_NAMES |
+| Plan · Free: the big room, public rooms, and rooms you're invited to / Host: also your own private rooms / Organiser: also competitions with teams, and your own word packs | app.js · PLAN_NAMES |
 | Sign out · On this device | index.html |
 | Delete account · Your email and name are removed. Your words stay said, as a former player. · Delete… | index.html |
-| Change your name · It changes in the worlds you're playing now. Finished games keep the name you finished with. · Save name | index.html |
+| Change your name · It changes in the rooms you're playing now. Finished games keep the name you finished with. · Save name | index.html |
 | Your name is now {name}. | app.js · name-form |
-| Delete your account? · Your email address and name are removed, and you're signed out everywhere. · Words you said stay said, and your scores stay on leaderboards as “Former player”. · Private worlds and competitions you run end now, and your word packs are deleted. *(paid plans)* · This can't be undone. You can sign up again with the same email, as a new player. · Type delete to confirm · Delete my account | index.html |
+| Delete your account? · Your email address and name are removed, and you're signed out everywhere. · Words you said stay said, and your scores stay on leaderboards as “Former player”. · Private rooms and competitions you run end now, and your word packs are deleted. *(paid plans)* · This can't be undone. You can sign up again with the same email, as a new player. · Type delete to confirm · Delete my account | index.html |
 | Confirm that you want to delete your account | api.php · route |
 | Your account has been deleted. Thanks for playing. | app.js · (after deleting) |
 | Former player *(a deleted account's name in worlds, with a number if needed)* | Auth.php · deleteAccount |
@@ -371,7 +373,7 @@ Shown under the word box; they fade after a few seconds (see section 13).
 | **Sign-in:** subject “Your Unsaid code: {code}” | Auth.php · start |
 | Your code for Unsaid is: {code} / Type it into the game to sign in. It works for 15 minutes. / If you didn't ask for this, you can ignore this email: nobody can sign in without the code. | Auth.php · start |
 | **Daily email:** subject “Unsaid: a new day of words” | Reminders.php · send |
-| Hi {name}, / The big world has started afresh: every word is unsaid again, and everyone starts level. | Reminders.php · send |
+| Hi {name}, / The big room has started afresh: every word is unsaid again, and everyone starts level. | Reminders.php · send |
 | You've played {n} days in a row. Say a word today to keep it going. | Reminders.php · send |
 | Last round you came {place} of {n} with {n} points. | Reminders.php · send |
 | Play: {site} / You asked for this daily email. To stop it: {link} | Reminders.php · send |
@@ -386,9 +388,9 @@ times are `FEEDBACK_MS` and `keepFeedback(20000)` in app.js.
 
 | Message | Where |
 |---|---|
-| Something went wrong *(the prompt card, when the page can't load)* / World not found / Private world | app.js · refresh |
+| Something went wrong *(the prompt card, when the page can't load)* / Room not found / Private room | app.js · refresh |
 | The game's server isn't responding properly (HTTP {n}). Visit /check.php to find out why. | app.js · request |
 | Something went wrong on the server. Visit /check.php, or see the error_log file. | api.php |
 | Missing config.php: copy config.example.php and fill in your database details. Visit /check.php for help. | api.php |
-| Join this world first / You've been removed from this world / Could not join this world | Game.php · playerByToken, joinAsUser |
-| Nicknames are 1–20 letters, numbers, spaces, - or _ / Please choose a different nickname / That nickname is taken in this world *(from before accounts)* | Game.php · join |
+| Join this room first / You've been removed from this room / Could not join this room | Game.php · playerByToken, joinAsUser |
+| Nicknames are 1–20 letters, numbers, spaces, - or _ / Please choose a different nickname / That nickname is taken in this room *(from before accounts)* | Game.php · join |

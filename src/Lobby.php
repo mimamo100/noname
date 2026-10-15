@@ -62,7 +62,7 @@ final class Lobby
         $end = $start->setTime((int) $start->format('G') + $this->roundHours, 0);
         return [
             'id' => 'p' . $start->format('YmdHi'),
-            'name' => 'The Big World, ' . $start->format($this->roundHours === 24 ? 'j M' : 'j M, H:i'),
+            'name' => 'The Big Room, ' . $start->format($this->roundHours === 24 ? 'j M' : 'j M, H:i'),
             'start' => $start->getTimestamp() * 1000,
             'end' => $end->getTimestamp() * 1000,
         ];
@@ -190,10 +190,10 @@ final class Lobby
     {
         $open = (int) $this->db->query("SELECT COUNT(*) FROM worlds WHERE kind = 'room' AND ended_at IS NULL")->fetchColumn();
         if ($open >= $this->maxRooms) {
-            throw new GameError(503, 'All the rooms are full right now. Try the big world, or come back later.');
+            throw new GameError(503, 'All the public rooms are full right now. Try the big room, or come back later.');
         }
         $number = 1 + (int) $this->db->query("SELECT COUNT(*) FROM worlds WHERE kind = 'room'")->fetchColumn();
-        $world = $this->game->createWorld("Room $number", null, Game::DEFAULT_PROMPT_DURATION_MS, 'both', null, ['kind' => 'room']);
+        $world = $this->game->createWorld("Public room $number", null, Game::DEFAULT_PROMPT_DURATION_MS, 'both', null, ['kind' => 'room']);
         return ['id' => $world['id'], 'name' => $world['name']];
     }
 
@@ -206,10 +206,10 @@ final class Lobby
         $world = $this->game->world($worldId);
         if (($world['kind'] ?? 'private') !== 'room') return $this->game->joinAsUser($worldId, $user);
         $player = $this->game->playerForUser($worldId, (int) $user['id'])
-            ?? throw new GameError(403, 'This room is for its own players. Join a room from the home page.');
+            ?? throw new GameError(403, 'This room is for its own players. Join a public room from the home page.');
         $away = (int) $player['last_active_at'] < $this->now() - $this->game->awayAfterMs;
         if ($away && !$world['ended_at'] && $this->seatsTaken($worldId) >= $this->roomSize) {
-            throw new GameError(403, 'Your seat in this room went to someone new while you were away. Join a new room from the home page.');
+            throw new GameError(403, 'Your seat in this room went to someone new while you were away. Join a new public room from the home page.');
         }
         return $player;
     }

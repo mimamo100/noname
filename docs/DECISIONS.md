@@ -6,6 +6,12 @@ are at the top of each report in `playtests/`.
 
 ## 15 October 2026
 
+**Players see "room", never "world"**: The Big Room, public rooms (the 60-player ones), private
+rooms and competitions. The two words were used interchangeably; "room" is friendlier and
+familiar from other games. Only what players see changed: the code, database and links still
+say *world*. Names stored before the change ("Room 1", "The Big World, 14 Oct") were renamed
+with one SQL statement on the server (see HANDOVER). *Owner.*
+
 **Familiar words that subtitles under-count are placed by hand** (`data/rarity-overrides.txt`:
 a word and the multiplier it should have). 47 so far: the rarity review's words still out under
 the curve, the room playtest's (*housefly*, *woodlouse*, *bluebottle*) and everyday British

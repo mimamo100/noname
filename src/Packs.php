@@ -239,7 +239,7 @@ final class Packs
         $this->owned($user, $id);
         $stmt = $this->db->prepare('SELECT COUNT(*) FROM worlds WHERE pack = ? AND ended_at IS NULL');
         $stmt->execute([$id]);
-        if ((int) $stmt->fetchColumn()) throw new GameError(409, 'A world that is still running uses this pack. End it first.');
+        if ((int) $stmt->fetchColumn()) throw new GameError(409, 'A room that is still running uses this pack. End it first.');
         $this->db->prepare('DELETE FROM packs WHERE id = ?')->execute([$id]);
     }
 

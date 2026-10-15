@@ -69,6 +69,9 @@ deletes its packs (the owner may want to revisit those two calls).
 
 ## On the owner's server
 
+- **Once, after uploading the "room" wording** (15 October): rename the names already stored, in
+  phpMyAdmin:
+  `UPDATE worlds SET name = REPLACE(name, 'The Big World', 'The Big Room') WHERE kind = 'public' AND name LIKE 'The Big World%'; UPDATE worlds SET name = CONCAT('Public room ', SUBSTRING(name, 6)) WHERE kind = 'room' AND name REGEXP '^Room [0-9]+$';`
 - The last zip sent was built from commit `a7b46c1` (15 October), without `.htaccess` files.
   The owner was told to add `RewriteRule ^account$ index.html [L]` to `public/.htaccess`,
   after the `^w/` line; without it, Your account says "Not found". Whether it's all
@@ -96,7 +99,8 @@ deletes its packs (the owner may want to revisit those two calls).
 
 ## Open items
 
-0. **Done on 15 October (CLI session):** the room report is finished. Word lists: the insect
+0. **Players see "room"** (The Big Room, public rooms, private rooms, competitions); code and docs say *world*. See `DECISIONS.md`.
+   **Done on 15 October (CLI session):** the room report is finished. Word lists: the insect
    list (about 160 names, spiders and other creepy-crawlies, a note), notes on 30 lists for the
    owner to check, irregular verb forms (`verbs:` in `data/irregular-forms.txt`), more irregular
    plurals, *breadcrumb*, rarity placed by hand for 47 familiar words

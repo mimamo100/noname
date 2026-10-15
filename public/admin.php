@@ -139,7 +139,7 @@ try {
                 break;
             case 'removepack':
                 $packs->remove((string) ($_POST['pack'] ?? ''));
-                $_SESSION['flash'] = 'Pack removed. Worlds that used it now play everyday words.';
+                $_SESSION['flash'] = 'Pack removed. Rooms that used it now play everyday words.';
                 break;
             case 'recount':
                 Game::recountScores($db);
@@ -190,7 +190,7 @@ $html .= '<div class="admin-head"><h1>Admin</h1>' . button($csrf, 'logout', 'Log
 $html .= '<div class="stat-row">';
 foreach ([
     'Accounts' => $stats['accounts'], 'Active today' => $stats['activeToday'], 'Active this week' => $stats['activeWeek'],
-    'Worlds' => $stats['worlds'], 'Words said (24h)' => $stats['saidToday'],
+    'Rooms' => $stats['worlds'], 'Words said (24h)' => $stats['saidToday'],
     'Misses (24h)' => $stats['missesToday'], 'Open reports' => $stats['openReports'],
 ] as $label => $value) {
     $html .= '<div class="stat"><b>' . number_format($value) . '</b><span>' . h($label) . '</span></div>';
@@ -238,7 +238,7 @@ $html .= '<h2>Scores</h2><p class="muted">Each player\'s total is kept as a runn
 // Plans: set by hand until payments are added.
 $search = trim((string) ($_GET['account'] ?? ''));
 $accounts = $admin->accounts($search);
-$planNames = ['free' => 'Free', 'host' => 'Host: private worlds', 'organiser' => 'Organiser: private worlds and competitions'];
+$planNames = ['free' => 'Free', 'host' => 'Host: private rooms', 'organiser' => 'Organiser: private rooms and competitions'];
 $html .= '<h2>Accounts and plans</h2>'
     . '<form method="get" class="admin-add" id="account-search"><input name="account" value="' . h($search) . '" placeholder="Name or email">'
     . '<button type="submit">Find</button></form>'
@@ -313,8 +313,8 @@ if ($lastRun) {
     $labels = [
         'signInCodes' => 'old sign-in codes', 'sessions' => 'expired sessions', 'freeMisses' => 'old free misses',
         'reviewedReports' => 'old reviewed reports',
-        'finishedWorlds' => 'finished worlds tidied', 'words' => 'their words', 'misses' => 'their misses', 'cacheFiles' => 'cache files',
-        'idleWorldsEnded' => 'idle private worlds ended', 'overdueWorldsFinished' => 'finished competitions and rounds recorded',
+        'finishedWorlds' => 'finished rooms tidied', 'words' => 'their words', 'misses' => 'their misses', 'cacheFiles' => 'cache files',
+        'idleWorldsEnded' => 'idle private rooms ended', 'overdueWorldsFinished' => 'finished competitions and rounds recorded',
     ];
     $parts = [];
     foreach ($lastRun['done'] as $key => $count) $parts[] = $count . ' ' . ($labels[$key] ?? $key);

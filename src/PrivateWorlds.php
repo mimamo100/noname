@@ -32,11 +32,11 @@ final class PrivateWorlds
     /** @param array{name?: string, spelling?: string, promptHours?: int, maxPlayers?: ?int} $input */
     public function create(array $user, array $input): array
     {
-        if (!self::canHost($user)) throw new GameError(403, 'Creating private worlds needs the Host plan.');
+        if (!self::canHost($user)) throw new GameError(403, 'Creating private rooms needs the Host plan.');
         $stmt = $this->db->prepare("SELECT COUNT(*) FROM worlds WHERE owner_user_id = ? AND kind = 'private' AND ended_at IS NULL");
         $stmt->execute([$user['id']]);
         if ((int) $stmt->fetchColumn() >= self::MAX_OPEN) {
-            throw new GameError(403, 'You have ' . self::MAX_OPEN . ' open private worlds, the most at once. End one to start another.');
+            throw new GameError(403, 'You have ' . self::MAX_OPEN . ' open private rooms, the most at once. End one to start another.');
         }
         $world = $this->game->createWorld(
             (string) ($input['name'] ?? ''),
@@ -97,12 +97,12 @@ final class PrivateWorlds
     {
         if (($world['kind'] ?? 'private') !== 'private' || $this->isOwner($world, $user)) return;
         $player = $user ? $this->game->playerForUser($world['id'], (int) $user['id']) : null;
-        if ($player && $player['removed']) throw new GameError(403, "You've been removed from this world.");
+        if ($player && $player['removed']) throw new GameError(403, "You've been removed from this room.");
         if ($player || $this->validInvite($world, $invite)) return;
         if ($invite !== null && $invite !== '') {
-            throw new GameError(403, "This invite link doesn't work any more: the world's owner may have made a new one. Ask one of its players for the latest link.");
+            throw new GameError(403, "This invite link doesn't work any more: the room's owner may have made a new one. Ask one of its players for the latest link.");
         }
-        throw new GameError(403, 'This is a private world. You need an invite link from one of its players.');
+        throw new GameError(403, 'This is a private room. You need an invite link from one of its players.');
     }
 
     /** The account's player in a private world, joining it if the invite link, limit and owner allow. */
@@ -110,16 +110,16 @@ final class PrivateWorlds
     {
         $player = $this->game->playerForUser($world['id'], (int) $user['id']);
         if ($player) {
-            if ($player['removed']) throw new GameError(403, "You've been removed from this world.");
+            if ($player['removed']) throw new GameError(403, "You've been removed from this room.");
             return $player;
         }
         if (!$this->isOwner($world, $user)) {
             if (!$this->validInvite($world, $invite)) {
                 throw new GameError(403, 'This invite link has been replaced. Ask one of the players for the new one.');
             }
-            if ($world['closed']) throw new GameError(403, 'This world is closed to new players.');
+            if ($world['closed']) throw new GameError(403, 'This room is closed to new players.');
             if ($world['max_players'] !== null && $this->playerCount($world['id']) >= (int) $world['max_players']) {
-                throw new GameError(403, 'This world is full.');
+                throw new GameError(403, 'This room is full.');
             }
         }
         return $this->game->joinAsUser($world['id'], $user);
@@ -152,7 +152,7 @@ final class PrivateWorlds
     {
         $world = $this->game->world($worldId);
         if (($world['kind'] ?? '') !== 'private' || !$this->isOwner($world, $user)) {
-            throw new GameError(403, 'Only the owner can change this world.');
+            throw new GameError(403, 'Only the owner can change this room.');
         }
         return $world;
     }
@@ -212,7 +212,7 @@ final class PrivateWorlds
         $stmt = $this->db->prepare('SELECT id, user_id FROM players WHERE world_id = ? AND nickname = ? AND removed = 0');
         $stmt->execute([$worldId, $nickname]);
         $player = $stmt->fetch() ?: throw new GameError(404, 'No player of that name here.');
-        if ((int) $player['user_id'] === (int) $user['id']) throw new GameError(400, "You can't remove yourself from your own world.");
+        if ((int) $player['user_id'] === (int) $user['id']) throw new GameError(400, "You can't remove yourself from your own room.");
         $this->db->prepare('UPDATE players SET removed = 1 WHERE id = ?')->execute([$player['id']]);
         $this->game->changed($worldId);
     }
@@ -220,7 +220,7 @@ final class PrivateWorlds
     public function end(string $worldId, array $user): void
     {
         $world = $this->ownedWorld($worldId, $user);
-        if ($world['ended_at'] !== null) throw new GameError(400, 'This world has already ended.');
+        if ($world['ended_at'] !== null) throw new GameError(400, 'This room has already ended.');
         $this->game->finishWorld($worldId);
     }
 
@@ -236,7 +236,7 @@ final class PrivateWorlds
     public function delete(string $worldId, array $user): void
     {
         $world = $this->ownedWorld($worldId, $user);
-        if (!$this->canDelete($world, $user)) throw new GameError(409, 'Other players have joined, so end the world before deleting it.');
+        if (!$this->canDelete($world, $user)) throw new GameError(409, 'Other players have joined, so end the room before deleting it.');
         $this->db->beginTransaction();
         try {
             foreach (['results', 'misses', 'burns', 'reports', 'prompts', 'players'] as $table) {

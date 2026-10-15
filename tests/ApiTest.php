@@ -100,7 +100,7 @@ test('HTTP API: sign in, create, play, look up', function () {
         same(401, $call('POST', "/api/worlds/$id/reports?invite={$created['body']['invite']}", ['word' => 'sofa'])['status'], 'Reports need an account.');
 
         $room = $call('POST', '/api/rooms', null, $session)['body'];
-        same('Room 1', $room['name']);
+        same('Public room 1', $room['name']);
         same($room, $call('GET', '/api/worlds/big', null, $session)['body']['myRoom']);
         same(true, $call('POST', "/api/worlds/{$room['id']}/join", null, $session)['status'] === 201);
         same(401, $call('POST', '/api/rooms')['status']);
@@ -120,7 +120,7 @@ test('HTTP API: sign in, create, play, look up', function () {
 
         same(404, $call('GET', '/api/worlds/nope')['status']);
         $big = $call('GET', '/api/worlds/big', null, $session)['body'];
-        check(str_starts_with($big['world']['name'], 'The Big World, '), 'The big world');
+        check(str_starts_with($big['world']['name'], 'The Big Room, '), 'The big world');
         same(['public', null, null], [$big['world']['kind'], $big['lastRound'], $big['myRoom']]);
         check(str_contains($call('GET', "/w/$id")['raw'], 'Unsaid'), 'World page should serve index.html');
 

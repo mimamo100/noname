@@ -1,5 +1,7 @@
 # Unsaid: design
 
+**Words:** players see *room* for every place to play: **The Big Room** (the daily rounds), **public rooms** (`kind = 'room'`), **private rooms** (`'private'`) and **competitions**. This document and the code say *world* for all of them, as the database and links do (`worlds`, `/w/`).
+
 > Every word you play, no one can say again.
 
 A word game where each world starts with the same dictionary, and every word a
