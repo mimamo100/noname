@@ -4,6 +4,15 @@ Why the game is the way it is: one entry per decision, newest first, with the re
 where it came from. `DESIGN.md` says what the rules are; this says why. Earlier decisions
 are at the top of each report in `playtests/`.
 
+## 17 October 2026
+
+**Verb forms that are words in their own right count as written**: the verb rule stays (*tempted*
+counts as *tempt*, so it fits "6 letters or fewer"), but a hand-kept list of -ing and -ed forms
+that have become words of their own (*building*, *wedding*, *crooked*) count as themselves on
+letter prompts. They still use up their verb and its forms. This takes up the list set aside on
+15 October; the draft, in groups for the owner to mark, is `chat/standalone-forms-draft.md`.
+*Owner.*
+
 ## 15 October 2026
 
 **The verb rule stays, without its penalty**: a word refused only because a verb's form counts
