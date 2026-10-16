@@ -34,3 +34,7 @@ screed
 wicked
 wretched
 aniseed
+
+# To spruce up, not the tree (17 October)
+spruced
+sprucing

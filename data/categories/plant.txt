@@ -1,5 +1,5 @@
 label: A plant or flower
-note: Trees, grasses, mosses, cacti and seaweed count. Fungi don't.
+note: Trees, grasses, mosses, lichens, cacti and seaweed count. Fungi don't.
 
 acacia
 acer
@@ -138,6 +138,7 @@ coca
 collard
 coltsfoot
 columbine
+colza
 comfrey
 coneflower
 conifer
@@ -199,6 +200,7 @@ evergreen
 fennel
 fern
 ferns
+fescue
 feverfew
 ficus
 filbert
@@ -444,6 +446,7 @@ sarsaparilla
 satsuma
 saxifrage
 scabious
+sea kale
 seaweed
 sedge
 sedum
@@ -463,6 +466,7 @@ sorghum
 sorrel
 soya
 speedwell
+sphagnum
 spider plant
 spinach
 spindle

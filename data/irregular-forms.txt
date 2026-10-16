@@ -237,3 +237,4 @@ bestride, bestrode, bestridden
 overwrite, overwrote, overwritten
 tarmac, tarmacked, tarmacking
 dib, dibbed, dibbing
+spruceup, sprucedup, sprucingup, sprucesup

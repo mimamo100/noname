@@ -1000,7 +1000,7 @@ test("a verb's -ing and -ed forms are one answer with it, and letter prompts jud
     check(in_array('browsed', $d->family('browse'), true) && !in_array('browsed', $d->family('brow'), true), 'browsed is browse, not brow');
     $endsG = ['cat' => null, 'rules' => [['ends', 'g']]];
     same(false, Prompts::matches($endsG, $d, 'running'));
-    same("it doesn't end in G (“running” counts as “run”)", Prompts::whyNot($endsG, $d, 'running'));
+    same("“running” counts as “run”, which doesn't end in G", Prompts::whyNot($endsG, $d, 'running'));
     same(true, Prompts::matches($endsG, $d, 'string'));
     same("it's 6 letters (“creasing” counts as “crease”), not 8 or more", Prompts::whyNot(['cat' => null, 'rules' => [['minLen', 8]]], $d, 'creasing'));
     same(true, Prompts::matches(['cat' => 'sport', 'rules' => [['minLen', 8]]], $d, 'swimming'), 'A list answer is judged as written');

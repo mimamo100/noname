@@ -114,7 +114,6 @@ final class Prompts
         // Length rules judge a plural as its singular, and letter prompts a verb's form as the verb:
         // say so, or "flasks" being 5 letters, or "running" not ending in G, is a mystery.
         $asSingular = $singular !== $typed ? " (“{$typed}” counts as “{$singular}”)" : '';
-        $asVerb = $word !== $typed ? " (“{$typed}” counts as “{$word}”)" : '';
         foreach ($spec['rules'] ?? [] as $rule) {
             if (self::ruleTest($rule, $length)($word)) continue;
             [$type, $a, $b] = $rule + [null, null, null];
@@ -136,8 +135,10 @@ final class Prompts
                 'onlyVowel' => str_contains($word, (string) $a) ? "it has vowels other than $upper" : "it has no $upper",
                 default => null,
             };
-            // Length messages already say what the word counts as.
-            return $why === null || in_array($type, ['minLen', 'maxLen', 'len'], true) ? $why : $why . $asVerb;
+            // Length messages already say what the word counts as. Others name the verb first, as
+            // "it has no T (“dreamt” counts as “dream”)" reads wrong: dreamt plainly has a T.
+            if ($why === null || $word === $typed || in_array($type, ['minLen', 'maxLen', 'len'], true)) return $why;
+            return "“{$typed}” counts as “{$word}”, " . preg_replace(['/^it /', '/^its /'], ['which ', 'whose '], $why);
         }
         return null;
     }
