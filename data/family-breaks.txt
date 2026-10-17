@@ -38,3 +38,28 @@ aniseed
 # To spruce up, not the tree (17 October)
 spruced
 sprucing
+
+# Look like comparatives but are other words (17 October): a broker isn't more broke
+berserker
+broker
+bronzer
+buffer
+bustier
+butcher
+doner
+fiver
+flatter
+flyer
+freelancer
+furrier
+gamer
+highlander
+hinder
+mater
+outer
+stoner
+tanner
+wester
+westerner
+# The cloth, not worst (now part of bad)
+worsted

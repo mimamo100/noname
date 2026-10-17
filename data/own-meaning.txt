@@ -1,6 +1,7 @@
 # Verb forms that are words in their own right. On letter prompts a verb's -ing, -ed and other
 # forms count as the verb ("running" is "run"); these count as written instead, so "building"
 # satisfies "Ends with G" and scores as itself. They still use up their verb and its forms.
+# Comparatives too (bigger counts as big): a stranger, a cleaner, a lighter, the latest.
 # The test (owner, 17 October 2026): the word means something other than doing the verb or
 # having done it. A building is a thing, crooked teeth weren't crooked by anyone; swimming is
 # just swimming, and married is having married. One lowercase word per line; plurals follow.
@@ -18,6 +19,7 @@ becoming
 bedding
 beginning
 blessing
+blinder
 booking
 briefing
 building
@@ -27,16 +29,20 @@ celebrated
 challenging
 civilized
 classified
+cleaner
 clipping
 clothing
 coating
+commoner
 complicated
+cooler
 cramped
 crazed
 crooked
 crossing
 cutting
 damned
+damper
 dashing
 decking
 dedicated
@@ -44,12 +50,14 @@ demanding
 detailed
 determined
 devoted
+dimmer
 disabled
 distinguished
 doomed
 drawing
 dressing
 drunk
+dryer
 dwelling
 earning
 ending
@@ -58,10 +66,12 @@ feeling
 filing
 filling
 finding
+fitter
 fitting
 flawed
 fleeting
 flooring
+fresher
 frosting
 funding
 gathering
@@ -78,7 +88,9 @@ housing
 icing
 involved
 landing
+latest
 learned
+lighter
 lighting
 limited
 lining
@@ -118,20 +130,25 @@ seating
 serving
 setting
 shaving
+slacker
+slicker
 sporting
 standing
 stoned
+stranger
 stricken
 striking
 stuffing
 stunning
 supposed
+thinner
 tiling
 topping
 tubing
 understanding
 undertaking
 used
+warmer
 warning
 wedding
 willing

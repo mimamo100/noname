@@ -6,6 +6,13 @@ are at the top of each report in `playtests/`.
 
 ## 17 October 2026
 
+**Comparatives and superlatives are forms of their adjective**, as -ing and -ed forms are of their
+verb: *bigger* and *biggest* are one answer with *big*, and count as *big* on letter prompts.
+Irregular ones join too (*good, better, best*; *bad, worse, worst*; *far, further, farther*).
+*more*, *most*, *less* and *least* stay words of their own. Words that only look like
+comparatives stand alone (*broker*, *butcher*, *number*, *outer*, *gamer*); ones that are both
+(*stranger*, *cleaner*, *lighter*, *the latest*) are on the own-meaning list. *Owner.*
+
 **Verb forms that are words in their own right count as written**: the verb rule stays (*tempted*
 counts as *tempt*, so it fits "6 letters or fewer"), but a hand-kept list of -ing and -ed forms
 that have become words of their own (*building*, *wedding*, *crooked*) count as themselves on

@@ -1021,6 +1021,16 @@ test('a verb form with a meaning of its own counts as written, but still uses up
     same(['show', 'swell', 'melt'], [$d->verbRoot('shown'), $d->verbRoot('swollen'), $d->verbRoot('molten')], '-en forms are their verb');
 });
 
+test("comparatives and superlatives are one answer with their adjective, and letter prompts judge them as it (data/comparative-forms.txt)", function () {
+    $d = Dictionary::load();
+    same(['big', 'big', 'happy', 'good', 'bad', 'far'], array_map([$d, 'verbRoot'], ['bigger', 'biggest', 'happiest', 'best', 'worse', 'further']));
+    check(in_array('biggest', $d->family('big'), true) && in_array('best', $d->family('good'), true), 'Saying big uses up biggest; good uses up best');
+    same("it's 3 letters (“biggest” counts as “big”), not 6 or more", Prompts::whyNot(['cat' => null, 'rules' => [['minLen', 6]]], $d, 'biggest'));
+    same(['number', 'broker', 'stranger'], array_map([$d, 'verbRoot'], ['number', 'broker', 'stranger']), "A number isn't more numb; a stranger has a meaning of its own");
+    check(!in_array('broker', $d->family('broke'), true) && in_array('strange', $d->family('stranger'), true), 'broker stands alone; stranger still uses up strange');
+    check(!in_array('worsted', $d->family('bad'), true), "Saying bad doesn't use up worsted, the cloth");
+});
+
 test("a word refused only by the verb rule is free; a meaning prompt judges words as written", function () {
     $game = makeGameOn(testDb(), Dictionary::load());
     $world = $game->createWorld('Forms');
@@ -1036,7 +1046,7 @@ test("a word refused only by the verb rule is free; a meaning prompt judges word
 
 test('"About this prompt": a letter prompt says how forms are judged, a meaning prompt has its list note', function () {
     $d = Dictionary::load();
-    same("A verb's other forms count as the verb here.", Prompts::note(['cat' => null, 'rules' => [['ends', 'g']]], $d));
+    same("A verb's other forms count as the verb here, and -er and -est forms as their adjective.", Prompts::note(['cat' => null, 'rules' => [['ends', 'g']]], $d));
     same(null, Prompts::note(['cat' => null, 'rules' => [['starts', 'b']]], $d), "A word's start needs no note");
     check(str_contains(Prompts::note(['cat' => null, 'rules' => [['minLen', 8]]], $d), 'Plurals count as their singular'));
     same($d->categoryNote('insect'), Prompts::note(['cat' => 'insect', 'rules' => []], $d));

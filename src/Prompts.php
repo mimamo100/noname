@@ -59,9 +59,9 @@ final class Prompts
             return trim(($note ?? '') . ' Plurals count as their singular for length.');
         }
         return match (true) {
-            $length && $letters => "A verb's other forms count as the verb here, and plurals as their singular.",
-            $length => "Plurals count as their singular here, and a verb's other forms as the verb.",
-            $letters => "A verb's other forms count as the verb here.",
+            $length && $letters => "A verb's other forms count as the verb here, -er and -est forms as their adjective, and plurals as their singular.",
+            $length => "Plurals count as their singular here, a verb's other forms as the verb, and -er and -est forms as their adjective.",
+            $letters => "A verb's other forms count as the verb here, and -er and -est forms as their adjective.",
             default => null,
         };
     }

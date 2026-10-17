@@ -8751,7 +8751,6 @@ worshiped worship
 worshiping worship
 worshipped worship
 worshipping worship
-worsted worst
 wounded wound
 wounding wound
 wowed wow

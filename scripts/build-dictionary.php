@@ -179,7 +179,9 @@ $words = $withSpellings;
 $verbForms = []; // form => its verb
 $breaks = array_flip($standalone);
 $known = array_flip($words);
-foreach (readList("$dataDir/verb-forms.txt") as $line) {
+// Comparatives (data/comparative-forms.txt: bigger, biggest) are treated the same, as forms of
+// their adjective.
+foreach ([...readList("$dataDir/verb-forms.txt"), ...readList("$dataDir/comparative-forms.txt")] as $line) {
     [$form, $verb] = preg_split('/\s+/', $line) + [null, null];
     if (!$verb || !isset($known[$verb]) || isset($breaks[$form]) || isset($blocked[$form])) continue;
     $verbForms[$form] = $verb;
@@ -268,7 +270,7 @@ foreach ([...$verbForms, ...$pluralForms] as $form => $root) $irregularClusters[
 // judged and scored as written ("building" ends in G), so they leave the map the game judges by.
 $judgedAsVerb = $verbForms;
 foreach (readList("$dataDir/own-meaning.txt") as $form) {
-    if (!isset($verbForms[$form])) fwrite(STDERR, "own-meaning.txt: \"$form\" isn't a verb's form\n");
+    if (!isset($verbForms[$form])) fwrite(STDERR, "own-meaning.txt: \"$form\" isn't a verb's form or a comparative\n");
     unset($judgedAsVerb[$form]);
 }
 foreach ([...$clustersInDictionary, ...$irregularClusters] as $cluster) {

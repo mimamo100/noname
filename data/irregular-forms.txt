@@ -246,3 +246,8 @@ outgrow, outgrew, outgrown
 beget, begat, begotten
 swell, swollen
 melt, molten
+
+# Comparatives and superlatives that don't follow the rules (regular ones: comparative-forms.txt)
+good, better, best
+bad, worse, worst, worser
+far, farther, farthest, further, furthest
