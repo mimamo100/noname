@@ -509,16 +509,16 @@ final class Game
             $stmt = $this->db->prepare('SELECT spec, type, letters FROM prompts WHERE world_id = ? ORDER BY id');
             $stmt->execute([$worldId]);
             $used = [];
-            $lastCat = null;
+            $recent = [];
             foreach ($stmt->fetchAll() as $row) {
                 $used[Prompts::key($spec = self::specOf($row))] = true;
-                $lastCat = $spec['cat'] ?? null;
+                $recent = [...array_slice($recent, 1 - Prompts::RECENT), $spec];
             }
             $next = Prompts::pick(
                 $this->dictionary, $this->unavailable($worldId), $used,
                 (int) ($world['prompt_min'] ?? ($world['kind'] === 'room' ? self::ROOM_PROMPT_ANSWERS[0] : $this->promptMin)),
                 (int) ($world['prompt_max'] ?? ($world['kind'] === 'room' ? self::ROOM_PROMPT_ANSWERS[1] : $this->promptMax)),
-                avoidCat: $lastCat,
+                recent: $recent,
             );
             if (!$next) {
                 $this->finishWorld($worldId); // Out of words.

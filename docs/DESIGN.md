@@ -166,6 +166,10 @@ word-finder site. There are three kinds:
   count as written, and a meaning prompt judges every word as written. The full rules are in
   `WORDS.md`. **About this prompt** under a letter prompt says so; a meaning prompt has
   **About this list**, its list's note (a `note:` line in its category file).
+- **Variety.** A prompt is never repeated in a world, and a new one keeps clear of the last 10
+  prompts' meaning lists, letter rules ("starts with B", in any combination) and letters-only
+  shapes ("Has a double F" and "Has a double D"). If nothing fits, it only avoids the last
+  prompt's, then nothing, so a world late on or a small pack still gets a prompt.
 - **The counter** shows distinct answers left, so saying *apple* (which also
   uses up *apples*) takes it down by one.
 

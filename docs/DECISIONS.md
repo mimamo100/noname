@@ -6,6 +6,11 @@ words; this says why. Earlier decisions are at the top of each report in `playte
 
 ## 17 October 2026
 
+**Prompts keep clear of the last 10**: their meaning lists, letter rules and letters-only
+shapes. Before, only the exact prompt and the list just before were avoided, so "A plant or
+flower of exactly 6 letters" and "A plant or flower of 9+ letters" came within a few prompts of
+each other in The Big Room. A repeat is still allowed when nothing else fits. *Owner.*
+
 **Comparatives and superlatives are forms of their adjective**, as -ing and -ed forms are of their
 verb: *bigger* and *biggest* are one answer with *big*, and count as *big* on letter prompts.
 Irregular ones (*better*, *best*, *worse*, *more*, *least*, *further*) stay words of their own:

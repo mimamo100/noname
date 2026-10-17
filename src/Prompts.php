@@ -270,29 +270,55 @@ final class Prompts
      * @param array<string, true> $used prompt keys already used in this world
      * @return array{spec: array, available: int}|null null when no words are left at all
      */
+    /** How many recent prompts a new one keeps clear of: their lists and their letter rules. */
+    public const RECENT = 10;
+
     /**
-     * @param ?string $avoidCat the last prompt's meaning list: another list is chosen if one fits,
-     *   so a small pack doesn't ask about the same list twice running (its "Nobody said" answers
-     *   would still be fresh)
+     * @param array[] $recent the world's last few prompts' specs (up to RECENT), oldest first. A new
+     *   prompt avoids their meaning lists and letter rules ("starts with B", in any combination),
+     *   so "A plant of exactly 6 letters" isn't followed soon by "A plant of 9+ letters". If nothing
+     *   fits, it only avoids the last prompt's, then nothing: late in a world, or in a small pack,
+     *   a repeat beats running out.
      */
-    public static function pick(Dictionary $dictionary, array $burned, array $used = [], int $min = 10, int $max = 80, int $attempts = 40, ?string $avoidCat = null): ?array
+    public static function pick(Dictionary $dictionary, array $burned, array $used = [], int $min = 10, int $max = 80, int $attempts = 40, array $recent = []): ?array
     {
-        if (count($dictionary->categoryIds()) < 2) $avoidCat = null;
+        $avoidCats = count($dictionary->categoryIds()) < 2 ? [] : array_flip(array_filter(array_map(fn ($s) => $s['cat'] ?? null, $recent)));
+        $avoidRules = array_flip(array_merge([], ...array_map([self::class, 'ruleSignatures'], $recent)));
         // Choose the kind first, so kinds that rarely land in range still come up as often as intended.
         $kinds = $dictionary->categoryIds() ? self::weightedOrder(['meaningAndLetters' => 50, 'meaning' => 20, 'letters' => 30]) : ['letters'];
         $best = null;
         foreach ($kinds as $kind) {
-            for ($i = 0; $i < $attempts; $i++) {
+            // Only real tries count towards the attempts, so avoiding recent lists doesn't use them up.
+            for ($i = 0, $tries = 0; $i < $attempts && $tries < $attempts * 10; $tries++) {
                 $spec = self::randomSpec($dictionary, $kind);
-                if (isset($used[self::key($spec)]) || ($avoidCat !== null && ($spec['cat'] ?? null) === $avoidCat)) continue;
+                if (isset($used[self::key($spec)]) || isset($avoidCats[$spec['cat'] ?? ''])) continue;
+                if (array_intersect_key(array_flip(self::ruleSignatures($spec)), $avoidRules)) continue;
+                $i++;
                 $count = self::countUnsaid($spec, $dictionary, $burned);
                 if ($count >= $min && $count <= $max) return ['spec' => $spec, 'available' => $count];
                 if ($count > 0 && ($best === null || $count > $best['available'])) $best = ['spec' => $spec, 'available' => $count];
             }
         }
-        // Nothing else fits: the same list will do after all.
-        if ($avoidCat !== null) return self::pick($dictionary, $burned, $used, $min, $max, $attempts);
+        // Nothing else fits: keep clear of the last prompt only, then of nothing.
+        if ($recent) return self::pick($dictionary, $burned, $used, $min, $max, $attempts, count($recent) > 1 ? [end($recent)] : []);
         return $best ?? self::simplePrompt($dictionary, $burned, $used);
+    }
+
+    /**
+     * A spec's letter rules, without their lengths ("starts:b", "lacks:e"), and for a letters-only
+     * prompt its shape too ("shape:double", "shape:starts lacks"), so "Has a double F" isn't soon
+     * followed by "Has a double D".
+     */
+    private static function ruleSignatures(array $spec): array
+    {
+        $rules = array_filter($spec['rules'] ?? [], fn ($rule) => !in_array($rule[0], self::LENGTH_RULES, true));
+        $signatures = array_values(array_map(fn ($rule) => $rule[0] . ':' . ($rule[1] ?? ''), $rules));
+        if (!isset($spec['cat']) && $rules) {
+            $types = array_unique(array_column($rules, 0));
+            sort($types);
+            $signatures[] = 'shape:' . implode(' ', $types);
+        }
+        return $signatures;
     }
 
     public static function key(array $spec): string

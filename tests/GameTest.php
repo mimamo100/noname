@@ -945,14 +945,26 @@ test('accented letters count as plain ones, and odd characters in a miss never b
     check(count($misses) >= 1, 'The page still loads, misses and all');
 });
 
-test('the next prompt avoids the list just asked about when another fits', function () {
+test('the next prompt keeps clear of the recent prompts\' lists and letter rules when another fits', function () {
     $d = testDictionary();
     $cats = $d->categoryIds();
     check(count($cats) > 1);
     for ($i = 0; $i < 30; $i++) {
-        $next = Prompts::pick($d, [], [], 1, 1000, avoidCat: $cats[0]);
+        $next = Prompts::pick($d, [], [], 1, 1000, recent: [spec($cats[0])]);
         check(($next['spec']['cat'] ?? null) !== $cats[0], 'Not the same list twice running');
     }
+    // The real dictionary: a list or a letter rule from the last few prompts doesn't come back.
+    $d = Dictionary::load();
+    $recent = [spec('plant', ['len', 6]), spec(null, ['starts', 'b'], ['minLen', 8], ['lacks', 'e']), spec('bird', ['contains', 'r'])];
+    for ($i = 0; $i < 30; $i++) {
+        $spec = Prompts::pick($d, [], [], 10, 80, recent: $recent)['spec'];
+        check(!in_array($spec['cat'] ?? null, ['plant', 'bird'], true), 'Not a recent list: ' . Prompts::key($spec));
+        foreach ($spec['rules'] as $rule) {
+            check(!in_array([$rule[0], $rule[1] ?? null], [['starts', 'b'], ['lacks', 'e'], ['contains', 'r']], true), 'Not a recent letter rule: ' . Prompts::key($spec));
+        }
+    }
+    $all = array_map(fn ($c) => spec($c), $d->categoryIds());
+    check(Prompts::pick($d, [], [], 10, 80, recent: $all) !== null, 'With every list recent, a prompt is still found');
 });
 
 test('repeating a word someone else said is free, unless the host chooses to charge for it', function () {
