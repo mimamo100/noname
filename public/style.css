@@ -76,6 +76,7 @@ p.prompt-note.small { color: var(--muted); max-width: 520px; margin: 0 auto 10px
 .meter div { height: 100%; width: 0; background: var(--ember); transition: width 0.4s; }
 .stats { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
 .stats b { color: var(--text); }
+.stats .mult-button { color: inherit; font-size: inherit; text-decoration: underline dotted; text-underline-offset: 3px; }
 
 .play, .join, .lookup { display: flex; gap: 8px; margin-top: 16px; }
 /* The big world's round time, on the right of its banner. */

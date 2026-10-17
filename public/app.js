@@ -640,6 +640,20 @@ async function leaveRoom(room) {
 $('leave-room').addEventListener('click', async () => {
   if (await leaveRoom(lastState.world)) { feedback('You left the room.', 'good'); refresh(); }
 });
+// Tapping Room × or Points × under the prompt says what it is (a tooltip never shows on a phone).
+const MULT_NOTES = {
+  points: "Points for an answer are multiplied by this: ×1 when the prompt starts, rising to ×2 as its answers are said. It goes back to ×1 with each new prompt.",
+  room: "Points are also multiplied by this, which rises as this room's words are used up: ×2 when half are said.",
+};
+for (const button of document.querySelectorAll('.mult-button')) {
+  button.addEventListener('click', () => {
+    const open = $('mult-note').hidden || $('mult-note').dataset.note !== button.dataset.note;
+    $('mult-note').hidden = !open;
+    $('mult-note').dataset.note = button.dataset.note;
+    $('mult-note').textContent = MULT_NOTES[button.dataset.note];
+    for (const b of document.querySelectorAll('.mult-button')) b.setAttribute('aria-expanded', String(open && b === button));
+  });
+}
 $('prompt-info').addEventListener('click', () => {
   const open = $('prompt-note').hidden;
   $('prompt-note').hidden = !open;
@@ -694,7 +708,7 @@ function render(state) {
   $('dict-size').textContent = state.dictionary.size.toLocaleString();
   $('dict-burned').textContent = state.dictionary.burned.toLocaleString();
   // Pack-only worlds have no world multiplier.
-  $('world-mult').parentElement.hidden = state.multipliers.world === null;
+  $('world-mult').closest('.stats > span').hidden = state.multipliers.world === null;
   if (state.multipliers.world !== null) $('world-mult').textContent = state.multipliers.world.toFixed(1);
   $('prompt-mult').textContent = state.multipliers.prompt.toFixed(2).replace(/0$/, '');
 
@@ -756,7 +770,10 @@ function render(state) {
   $('signin').hidden = signedIn;
 
   renderSaid(state.said ?? [], state.prompt?.id, state.promptsPlayed ?? 0);
-  renderLastUnsaid(state.recentPrompt);
+  // Not when that prompt is already under Earlier prompts, which shows the same and more (the
+  // owner, 17 October); it's kept for a new round, when last round's prompt isn't listed.
+  const listed = (state.said ?? []).some((g) => g.promptId === state.recentPrompt?.promptId && g.promptId !== state.prompt?.id && g.words.length);
+  renderLastUnsaid(listed ? null : state.recentPrompt);
 
   $('tab-misses').hidden = !joined;
   $('tab-words').hidden = !joined;
