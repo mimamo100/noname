@@ -152,7 +152,7 @@ crossbreed
 dingo
 english bulldog
 fox terrier
-greatdane
+great dane
 harrier
 harriers
 labrador retriever

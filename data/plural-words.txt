@@ -31,6 +31,7 @@ headphones
 earphones
 
 # Others
+blues
 clothes
 belongings
 outskirts

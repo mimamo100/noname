@@ -262,6 +262,7 @@ yodel
 zydeco
 
 also:
+mosh
 allegro
 canons
 carols

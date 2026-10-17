@@ -823,6 +823,7 @@ palaver 151
 objector 151
 tilde 151
 snark 151
+mosh 151
 preferring 151
 ballplayers 151
 defecting 151
@@ -13257,6 +13258,7 @@ blacksmithing 20
 marabous 20
 jubilees 20
 cyberstalking 19
+spurge 19
 tankini 19
 bluebottles 19
 pomeranians 19
@@ -15183,6 +15185,7 @@ highpressure 3
 houmous 3
 busbies 3
 sharpei 3
+snowberry 3
 taprooms 3
 whiteflies 3
 bunkbeds 3
@@ -16145,6 +16148,7 @@ youngerbrother 1
 ocarinas 1
 baldricks 1
 dulcimers 1
+spurges 1
 hyssops 1
 rebecs 1
 stilettoes 1

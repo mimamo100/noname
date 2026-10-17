@@ -868,7 +868,8 @@ final class Game
         if ($penalty) {
             // Trying the same wrong word again on the same prompt (or pressing Say it twice) is free:
             // it was paid for once (the owner, 17 October).
-            $again = $this->db->prepare('SELECT 1 FROM misses WHERE player_id = ? AND prompt_id = ? AND word = ? AND points < 0 LIMIT 1');
+            // (Or let off, just after the prompt changed: that one counts as tried too.)
+            $again = $this->db->prepare('SELECT 1 FROM misses WHERE player_id = ? AND prompt_id = ? AND word = ? AND (points < 0 OR reason = "doesnt-fit") LIMIT 1');
             $again->execute([$player['id'], $prompt['id'], $word]);
             if ($again->fetchColumn()) $penalty = 0;
         }

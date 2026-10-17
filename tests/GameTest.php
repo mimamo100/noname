@@ -791,6 +791,7 @@ test("a player's first wrong word in the minute after a prompt changes is free, 
     $game->play($world['id'], $p['token'], 'qwzx'); // A typo doesn't use the grace up.
     $first = $game->play($world['id'], $p['token'], 'moon');
     same([0, 'Starts with ZO'], [$first['penalty'], $first['promptChanged'] ?? null], 'Free, and told the prompt changed');
+    same(0, $game->play($world['id'], $p['token'], 'moon')['penalty'], 'The same word again: it was tried (Evening Cup)');
     same(2, $game->play($world['id'], $p['token'], 'cat')['penalty'], 'Only the first one');
 
     $q = $game->join($world['id'], 'Quin');
@@ -1094,9 +1095,9 @@ test("a word refused only by the verb rule is free; a meaning prompt judges word
 
     // A word that wouldn't fit as written either is told why as written, and pays once.
     setPrompt($game, $world['id'], spec(null, ['bookends', 'r']));
-    $running = $game->play($world['id'], $p['token'], 'running');
-    same(["it doesn't start and end with R", 2], [$running['why'], $running['penalty']], 'No "counts as run": that is not why');
-    same(0, $game->play($world['id'], $p['token'], 'running')['penalty'], 'The same wrong word again is free');
+    $rowing = $game->play($world['id'], $p['token'], 'rowing');
+    same(["it doesn't start and end with R", 2], [$rowing['why'], $rowing['penalty']], 'No "counts as row": that is not why');
+    same(0, $game->play($world['id'], $p['token'], 'rowing')['penalty'], 'The same wrong word again is free');
     same(2, $game->play($world['id'], $p['token'], 'racing')['penalty'], 'Another wrong word still costs 2');
 });
 

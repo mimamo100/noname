@@ -446,6 +446,7 @@ sarsaparilla
 satsuma
 saxifrage
 scabious
+sea holly
 sea kale
 seaweed
 sedge
@@ -459,8 +460,10 @@ shamrock
 shrub
 shrubs
 sisal
+skunk cabbage
 sloe
 snapdragon
+snowberry
 snowdrop
 sorghum
 sorrel
@@ -471,6 +474,7 @@ spider plant
 spinach
 spindle
 spruce
+spurge
 statice
 stevia
 stinging nettle

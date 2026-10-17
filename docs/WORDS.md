@@ -190,6 +190,7 @@ The same rules, plus:
 
 Words added or settled one at a time, newest first. Rule changes go in the sections above.
 
+- **17 October** (Evening Cup): added *sea holly*, *skunk cabbage*, *snowberry*, *spurge* (plants), *mosh* (music, also), *lamia* to the mythical creatures; *great dane* written as two words; *blues* counts as written (5 letters).
 - **17 October** (local Big Room playtest): added *rafter*, *referrer*, *rubberneck*, *rhymer*.
 - **17 October** (Big Room playtest): added *fescue*, *sphagnum*, *colza*, *sea kale* (plants),
   *maltose*, *spruce up* (*spruced up*, *sprucing up*), *mown*; *lichen* counts as a plant.

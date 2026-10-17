@@ -85,6 +85,7 @@ kelpie
 kelpies
 kobold
 kraken
+lamia
 leprechaun
 leprechauns
 leviathan
