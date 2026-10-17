@@ -1158,7 +1158,10 @@ $('play-form').addEventListener('submit', async (e) => {
       input.value = '';
     } else {
       const forOld = result.previousPrompt ? ` (Judged against the last prompt, “${result.previousPrompt}”, as it had only just changed.)` : '';
-      feedback(REASONS[result.reason](result.word, result) + forOld, 'bad');
+      // The first wrong word just after the prompt changed is free: say so, as they may have missed it.
+      const switched = result.promptChanged ? ` The prompt has just changed to “${result.promptChanged}”, so no penalty this time.` : '';
+      const reply = REASONS[result.reason](result.word, result);
+      feedback((switched ? reply.replace(/ No penalty\.$/, '') : reply) + forOld + switched, 'bad');
       if (isReportable(result)) {
         $('feedback').append(' ', reportButton(result.word, result.reason, result.promptId));
         keepFeedback(20000); // Time to decide whether to report it.

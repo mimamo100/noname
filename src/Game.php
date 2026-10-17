@@ -28,6 +28,11 @@ final class Game
     /** For this long after a prompt changes, a word sent for the old one is judged against it. */
     public const PROMPT_GRACE_MS = 30_000;
     /**
+     * For this long after a prompt starts, a player's first wrong word on it is free, with a warning
+     * that the prompt has changed: they may still be thinking of the last one (the owner, 17 October).
+     */
+    public const SWITCH_GRACE_MS = 60_000;
+    /**
      * In a world with an end time (a competition, a big world round), no prompt starts this close
      * to the end: the one before runs on to the end instead, and doesn't stop at END_SHARE.
      */
@@ -867,6 +872,16 @@ final class Game
             $again->execute([$player['id'], $prompt['id'], $word]);
             if ($again->fetchColumn()) $penalty = 0;
         }
+        $switched = false;
+        if ($penalty && (int) $prompt['started_at'] > $this->now() - self::SWITCH_GRACE_MS) {
+            // Only after a change (a world's first prompt didn't follow one), and only the first wrong
+            // word that would cost points: free typos and list gaps don't use it up.
+            $tried = $this->db->prepare('SELECT EXISTS (SELECT 1 FROM misses WHERE player_id = ? AND prompt_id = ? AND (points < 0 OR reason = "doesnt-fit")),
+                EXISTS (SELECT 1 FROM prompts WHERE world_id = ? AND id < ?)');
+            $tried->execute([$player['id'], $prompt['id'], $player['world_id'], $prompt['id']]);
+            [$missedHere, $changed] = array_map('intval', $tried->fetch(PDO::FETCH_NUM));
+            if ($changed && !$missedHere) [$penalty, $switched] = [0, true];
+        }
         $this->db->prepare('
             INSERT INTO misses (world_id, player_id, prompt_id, word, written, reason, points, missed_at)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)')
@@ -876,7 +891,8 @@ final class Game
         // Penalties show on the leaderboards; free misses are private.
         if ($penalty) $this->changed($player['world_id']);
         // promptId: the prompt it was judged against, which a report of it should be about.
-        return ['ok' => false, 'word' => $this->dictionary->display($word), 'reason' => $reason, 'penalty' => $penalty, 'promptId' => (int) $prompt['id']];
+        return ['ok' => false, 'word' => $this->dictionary->display($word), 'reason' => $reason, 'penalty' => $penalty, 'promptId' => (int) $prompt['id']]
+            + ($switched ? ['promptChanged' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary)] : []);
     }
 
     /**

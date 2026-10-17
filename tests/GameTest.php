@@ -430,12 +430,12 @@ test('an already-said word is reported as such before the meaning is checked', f
     // The "fencing" case: said for a sport, then tried for a meaning it isn't listed under.
     $clock = 1_000;
     $game = makeGame(function () use (&$clock) { return $clock; });
-    $world = $game->createWorld('Fencing', null, 60_000, options: ['repeatPenalty' => true]);
+    $world = $game->createWorld('Fencing', null, 300_000, options: ['repeatPenalty' => true]);
     setPrompt($game, $world['id'], spec('sport'));
     $me = $game->join($world['id'], 'Me');
     $other = $game->join($world['id'], 'Other');
     check($game->play($world['id'], $me['token'], 'chess')['ok']);
-    $clock += 61_000;
+    $clock += 301_000;
     $game->state($world['id'], null); // Let the game move on to a new prompt.
     setPrompt($game, $world['id'], spec('bird'));
 
@@ -445,6 +445,7 @@ test('an already-said word is reported as such before the meaning is checked', f
     same(true, $mine['byYou']);
     same('A sport or game', $mine['burned']['prompt'], 'Says which prompt it was said for');
 
+    $clock += Game::SWITCH_GRACE_MS; // Past the free first miss after a prompt changes.
     $theirs = $game->play($world['id'], $other['token'], 'chess');
     same(Game::PENALTY, $theirs['penalty'], "Someone else's word still costs points");
     same(false, $theirs['byYou']);
@@ -773,6 +774,29 @@ test('a word sent just as the prompt changed is judged against the old one', fun
     same(['doesnt-fit', 0], [$miss['reason'], $miss['penalty']], "A miss for the old prompt is free");
     $clock += Game::PROMPT_GRACE_MS;
     same('doesnt-fit', $game->play($world['id'], $p['token'], 'book', $old)['reason'], 'Too late: judged against the new prompt');
+});
+
+test("a player's first wrong word in the minute after a prompt changes is free, with a warning", function () {
+    $clock = 1_000;
+    $game = makeGame(function () use (&$clock) { return $clock; });
+    $world = $game->createWorld('Switch', null, 300_000);
+    $p = $game->join($world['id'], 'Pat');
+    $game->state($world['id'], null);
+    setPrompt($game, $world['id'], spec(null, ['starts', 'zo']));
+    same(2, $game->play($world['id'], $p['token'], 'cat')['penalty'], "The world's first prompt didn't follow one");
+    $clock += 301_000;
+    $game->state($world['id'], null); // A new prompt starts.
+    setPrompt($game, $world['id'], spec(null, ['starts', 'zo']));
+    $clock += 20_000;
+    $game->play($world['id'], $p['token'], 'qwzx'); // A typo doesn't use the grace up.
+    $first = $game->play($world['id'], $p['token'], 'moon');
+    same([0, 'Starts with ZO'], [$first['penalty'], $first['promptChanged'] ?? null], 'Free, and told the prompt changed');
+    same(2, $game->play($world['id'], $p['token'], 'cat')['penalty'], 'Only the first one');
+
+    $q = $game->join($world['id'], 'Quin');
+    $clock += Game::SWITCH_GRACE_MS;
+    $late = $game->play($world['id'], $q['token'], 'book');
+    same([2, null], [$late['penalty'], $late['promptChanged'] ?? null], 'After the first minute it costs as usual');
 });
 
 test('nicknames are validated, unique per world and not offensive', function () {
