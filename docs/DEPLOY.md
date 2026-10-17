@@ -165,8 +165,10 @@ and scores.
 
 ## The admin page
 
-The admin page shows reported words, accounts and plans, and a few stats. To turn it on, add two
-lines to `config.php`: a long password, and the page's address.
+The admin pages show reported words, accounts and plans, organisers' word packs and a few stats,
+in tabs (Overview, Reports, Accounts, Word packs, Helpers). To turn them on, add two lines to
+`config.php`: a long password, and the pages' address. Whoever logs in with the password is the
+**super-admin** and can do everything.
 
 ```php
 'admin_password' => 'choose-a-long-password',
@@ -178,7 +180,15 @@ own `admin_path` that nobody would guess (4–64 letters, numbers, `-` or `_`).
 Every other address, including `/admin`, says "Not found", so people trying the
 obvious learn nothing. Without an `admin_path`, the page is at `/admin`.
 
-On the page you can:
+**Helpers.** To bring people in to help, open the **Helpers** tab, find their game account
+(they need one) and press **Make helper**, then tick what they may do: see the overview, see and
+download reports, mark reports reviewed, find accounts by name, see emails, change plans, remove
+word packs, recount scores and run housekeeping. They open **Admin** from their account menu in
+the game, with no password, and see only the tabs their ticks allow. Removing a helper or a tick
+takes effect at once; only the super-admin can manage helpers. The `admin_helpers` table is
+created by itself the first time the admin pages or the game need it.
+
+On the pages you can:
 - **See reported words**: words players say should count, with how many
   players reported each and for which prompts. Reports never change the game
   by themselves; the word files are the only source of truth. To act on them:

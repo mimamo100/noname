@@ -154,3 +154,23 @@ test('the admin finds accounts and sets their plan', function () {
     throwsStatus(400, fn () => $admin->setPlan($ann['id'], 'gold'));
     same([], $admin->accounts('100%_'), 'Wildcards are matched literally');
 });
+
+test('the admin adds helpers with their own permissions; helpers may not search by email', function () {
+    [$db] = makePrivate();
+    $admin = new Admin($db, testDictionary());
+    $ann = makeUser($db, 'Ann');
+    same(null, Admin::helperPermissions($db, $ann['id']), 'Not a helper yet');
+    same('Ann', $admin->addHelper($ann['id']));
+    same(Admin::NEW_HELPER, Admin::helperPermissions($db, $ann['id']));
+    $admin->setHelperPermissions($ann['id'], ['packs', 'overview', 'made-up']);
+    same(['overview', 'packs'], Admin::helperPermissions($db, $ann['id']), 'Only known permissions, in order');
+    same([['Ann', ['overview', 'packs']]], array_map(fn ($hp) => [$hp['name'], $hp['permissions']], $admin->helpers()));
+    $admin->setHelperPermissions($ann['id'], []);
+    same([], Admin::helperPermissions($db, $ann['id']), 'Still a helper, with nothing ticked');
+    $admin->removeHelper($ann['id']);
+    same(null, Admin::helperPermissions($db, $ann['id']));
+    throwsStatus(404, fn () => $admin->addHelper(999_999));
+    $email = $db->query("SELECT email FROM users WHERE id = {$ann['id']}")->fetchColumn();
+    same(['Ann'], array_column($admin->accounts($email), 'name'), 'The super-admin finds by email');
+    same([], $admin->accounts($email, byEmail: false), 'A helper without emails finds by name only');
+});

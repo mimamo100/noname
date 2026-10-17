@@ -1220,6 +1220,22 @@ $('account-menu').addEventListener('click', closeMenu);
 document.addEventListener('click', (e) => { if (!$('account').contains(e.target)) closeMenu(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('account-menu').hidden) { closeMenu(); $('account-button').focus(); } });
 $('signin-link').addEventListener('click', () => { showSigninStep('email'); $('signin').hidden = false; $('signin').scrollIntoView({ block: 'center' }); });
+// Opening Admin while signed in hands the admin pages this account's sign-in (in a POST, not the
+// address), so a helper's account lets them in without a password.
+$('menu-admin').addEventListener('click', (e) => {
+  if (!session) return;
+  e.preventDefault();
+  const form = document.createElement('form');
+  form.method = 'post';
+  form.action = $('menu-admin').getAttribute('href');
+  for (const [name, value] of [['action', 'account'], ['token', session]]) {
+    const input = document.createElement('input');
+    Object.assign(input, { type: 'hidden', name, value });
+    form.append(input);
+  }
+  document.body.append(form);
+  form.submit();
+});
 $('menu-signout').addEventListener('click', async () => {
   try { await authApi('/logout', { method: 'POST' }); } catch { /* signed out locally anyway */ }
   setSession(null);

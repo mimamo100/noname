@@ -6,6 +6,12 @@ words; this says why. Earlier decisions are at the top of each report in `playte
 
 ## 17 October 2026
 
+**Admin helpers**: the admin pages are split into tabs, and besides the super-admin (config.php's
+password) there can be helpers: game accounts the super-admin adds, each with permissions
+ticked one by one, since what helpers should do isn't settled yet. They get in through their
+game account (an Admin link in their menu), so there are no shared passwords to change when one
+leaves. Managing helpers stays with the super-admin. *Owner.*
+
 **Prompts keep clear of the last 10**: their meaning lists, letter rules and letters-only
 shapes. Before, only the exact prompt and the list just before were avoided, so "A plant or
 flower of exactly 6 letters" and "A plant or flower of 9+ letters" came within a few prompts of

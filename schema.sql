@@ -202,3 +202,11 @@ CREATE TABLE IF NOT EXISTS packs (
   updated_at BIGINT NOT NULL,
   KEY idx_owner (owner_user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Admin helpers: game accounts the super-admin (who signs in with config.php's password) lets
+-- into the admin pages, each with its own permissions (Admin::PERMISSIONS), comma-separated.
+CREATE TABLE IF NOT EXISTS admin_helpers (
+  user_id INT UNSIGNED NOT NULL PRIMARY KEY,
+  permissions VARCHAR(255) CHARACTER SET ascii NOT NULL DEFAULT '',
+  added_at BIGINT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

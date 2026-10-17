@@ -14,6 +14,23 @@ final class Admin
     /** Category used for reports about the dictionary itself, not a meaning. */
     public const DICTIONARY_ONLY = '';
 
+    /**
+     * What a helper may be allowed to do, as the super-admin ticks them in the Helpers tab. The
+     * super-admin can do all of these, and is the only one who can manage helpers.
+     */
+    public const PERMISSIONS = [
+        'overview' => 'See the overview: stats, emails and housekeeping',
+        'reports' => 'See and download reported words',
+        'review' => 'Mark reports reviewed',
+        'accounts' => 'Find accounts by name',
+        'emails' => 'See account emails, and find accounts by email',
+        'plans' => 'Change account plans',
+        'packs' => "Remove organisers' word packs",
+        'maintenance' => 'Recount scores and run housekeeping',
+    ];
+    /** A new helper's permissions, until the super-admin changes them. */
+    public const NEW_HELPER = ['overview', 'reports', 'accounts'];
+
     public function __construct(private readonly PDO $db, private readonly Dictionary $dictionary, private $clock = null, private readonly ?Packs $packs = null)
     {
         $this->clock ??= fn () => (int) floor(microtime(true) * 1000);
@@ -179,17 +196,18 @@ final class Admin
 
     /**
      * Accounts matching a name or email (part of either), or with no search, every account on
-     * a paid plan. Newest first, at most 50.
+     * a paid plan. Newest first, at most 50. Without $byEmail only names are searched, for
+     * helpers who may not see emails.
      */
-    public function accounts(string $search = ''): array
+    public function accounts(string $search = '', bool $byEmail = true): array
     {
         $search = trim($search);
         if ($search === '') {
             $stmt = $this->db->query("SELECT id, name, email, plan FROM users WHERE plan <> 'free' ORDER BY id DESC LIMIT 50");
         } else {
             $like = '%' . addcslashes($search, '%_\\') . '%';
-            $stmt = $this->db->prepare('SELECT id, name, email, plan FROM users WHERE name LIKE ? OR email LIKE ? ORDER BY id DESC LIMIT 50');
-            $stmt->execute([$like, $like]);
+            $stmt = $this->db->prepare('SELECT id, name, email, plan FROM users WHERE name LIKE ?' . ($byEmail ? ' OR email LIKE ?' : '') . ' ORDER BY id DESC LIMIT 50');
+            $stmt->execute($byEmail ? [$like, $like] : [$like]);
         }
         return array_map(fn ($u) => [
             'id' => (int) $u['id'], 'name' => $u['name'], 'email' => $u['email'], 'plan' => $u['plan'],
@@ -205,6 +223,55 @@ final class Admin
         $name = $this->db->prepare('SELECT name FROM users WHERE id = ?');
         $name->execute([$userId]);
         return $name->fetchColumn() ?: throw new GameError(404, 'No such account');
+    }
+
+    /** A helper's permissions, or null if the account isn't a helper. */
+    public static function helperPermissions(PDO $db, int $userId): ?array
+    {
+        $stmt = $db->prepare('SELECT permissions FROM admin_helpers WHERE user_id = ?');
+        $stmt->execute([$userId]);
+        $permissions = $stmt->fetchColumn();
+        return $permissions === false ? null : self::validPermissions(explode(',', (string) $permissions));
+    }
+
+    /** The helpers, in the order they were added, with their names, emails and permissions. */
+    public function helpers(): array
+    {
+        $rows = $this->db->query('SELECT h.user_id, h.permissions, h.added_at, u.name, u.email
+            FROM admin_helpers h JOIN users u ON u.id = h.user_id ORDER BY h.added_at, h.user_id')->fetchAll(PDO::FETCH_ASSOC);
+        return array_map(fn ($r) => [
+            'id' => (int) $r['user_id'], 'name' => $r['name'], 'email' => $r['email'], 'addedAt' => (int) $r['added_at'],
+            'permissions' => self::validPermissions(explode(',', $r['permissions'])),
+        ], $rows);
+    }
+
+    /** Makes an account a helper, with NEW_HELPER's permissions; returns its name. */
+    public function addHelper(int $userId): string
+    {
+        $stmt = $this->db->prepare('SELECT name FROM users WHERE id = ?');
+        $stmt->execute([$userId]);
+        $name = $stmt->fetchColumn() ?: throw new GameError(404, 'No such account');
+        $this->db->prepare('INSERT IGNORE INTO admin_helpers (user_id, permissions, added_at) VALUES (?, ?, ?)')
+            ->execute([$userId, implode(',', self::NEW_HELPER), $this->now()]);
+        return $name;
+    }
+
+    /** @param string[] $permissions keys of PERMISSIONS; others are ignored */
+    public function setHelperPermissions(int $userId, array $permissions): void
+    {
+        $this->db->prepare('UPDATE admin_helpers SET permissions = ? WHERE user_id = ?')
+            ->execute([implode(',', self::validPermissions($permissions)), $userId]);
+    }
+
+    public function removeHelper(int $userId): void
+    {
+        $this->db->prepare('DELETE FROM admin_helpers WHERE user_id = ?')->execute([$userId]);
+    }
+
+    /** @return string[] the known permissions among these, in PERMISSIONS' order */
+    private static function validPermissions(array $permissions): array
+    {
+        return array_values(array_intersect(array_keys(self::PERMISSIONS), $permissions));
     }
 
     private function promptLabel(int $id): string

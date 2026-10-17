@@ -23,3 +23,11 @@
 .admin-table .actions { white-space: nowrap; text-align: right; }
 .admin code { background: var(--surface); padding: 2px 6px; border-radius: 4px; }
 a.button-link { display: inline-block; background: var(--ember); color: #1b0f05; border-radius: 8px; padding: 10px 16px; font-weight: 700; text-decoration: none; margin-right: 8px; }
+.admin-tabs { margin: 8px 0 4px; flex-wrap: wrap; }
+.admin-tabs a.tab { text-decoration: none; }
+.helper { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; margin: 12px 0; }
+.helper-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 8px; }
+.helper-head form { margin-left: auto; }
+.perm-list { display: grid; gap: 6px; }
+.perm-list label { display: flex; gap: 8px; align-items: baseline; }
+.perm-list button { justify-self: start; margin-top: 6px; }

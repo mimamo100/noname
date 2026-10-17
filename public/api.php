@@ -74,18 +74,21 @@ function respond(int $status, array $body): never
 }
 
 /**
- * The admin page's address, if this browser is logged in to it, for an Admin link next to the
- * player's name. Only looked at when the admin cookie is present, and read without locking the
- * session, so ordinary polls cost nothing.
+ * The admin pages' address, for an Admin link next to the player's name: if this browser is
+ * logged in to them, or the signed-in account is a helper (see Admin::PERMISSIONS). The admin
+ * session is only looked at when its cookie is present, and read without locking the session.
  */
-function adminLink(array $config): ?string
+function adminLink(array $config, ?array $user = null, ?Closure $isHelper = null): ?string
 {
-    if (empty($_COOKIE['unsaid_admin']) || empty($config['admin_password'])) return null;
+    if (empty($config['admin_password'])) return null; // The admin pages are off.
+    $link = '/' . trim((string) ($config['admin_path'] ?? 'admin'), '/');
+    if ($user && $isHelper && $isHelper((int) $user['id'])) return $link;
+    if (empty($_COOKIE['unsaid_admin'])) return null;
     session_name('unsaid_admin');
     if (!@session_start(['read_and_close' => true])) return null;
-    $isAdmin = !empty($_SESSION['admin']);
+    $isAdmin = !empty($_SESSION['admin']) || !empty($_SESSION['helper']);
     $_SESSION = [];
-    return $isAdmin ? '/' . trim((string) ($config['admin_path'] ?? 'admin'), '/') : null;
+    return $isAdmin ? $link : null;
 }
 
 /** Logs this browser out of the admin page too, when its game account signs out. */
@@ -109,7 +112,7 @@ function body(): array
     return $data;
 }
 
-function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Competitions $competitions, Packs $packs, Closure $gameWith, array $config, Streaks $streaks, Reminders $reminders): never
+function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Competitions $competitions, Packs $packs, Closure $gameWith, array $config, Streaks $streaks, Reminders $reminders, Closure $isHelper): never
 {
     $method = $_SERVER['REQUEST_METHOD'];
     $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -137,7 +140,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
             endAdminSession();
             respond(200, ['ok' => true]);
         }
-        if ($method === 'GET' && $authAction === 'me') respond(200, ['user' => $user, 'admin' => adminLink($config)]);
+        if ($method === 'GET' && $authAction === 'me') respond(200, ['user' => $user, 'admin' => adminLink($config, $user, $isHelper)]);
         throw new GameError(404, 'Not found');
     }
 
@@ -273,7 +276,7 @@ function route(Game $game, Auth $auth, Lobby $lobby, PrivateWorlds $private, Com
         $player = $user ? $game->playerForUser($worldId, $user['id']) : null;
         $state = $game->state($worldId, $player['token'] ?? null)
             + ['account' => $user ? ['name' => $user['name'], 'plan' => $user['plan'], 'reminders' => $user['reminders']] : null]
-            + ['admin' => adminLink($config)]
+            + ['admin' => adminLink($config, $user, $isHelper)]
             + ($isCompetition ? $competitions->personal($world, $user, $invite) : $private->personal($world, $user));
         if (!empty($world['pack'])) {
             $state['pack'] = ['name' => $packs->name($world['pack'], $game->dictionary()) ?? 'a removed pack', 'mode' => $world['pack_mode'] ?? 'only'];
@@ -344,14 +347,15 @@ try {
     $private = new PrivateWorlds($db, $game);
     $competitions = new Competitions($db, $game);
     $auth = new Auth($db, new Mailer($config['mail'] ?? []), $dictionary);
+    $isHelper = fn (int $userId) => Admin::helperPermissions($db, $userId) !== null;
     try {
-        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config, $streaks, $reminders);
+        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config, $streaks, $reminders, $isHelper);
     } catch (PDOException $e) {
         // A missing table or column means a new install or an older database: set up or upgrade, then retry.
         if (!in_array($e->getCode(), ['42S02', '42S22'], true)) throw $e;
         if ($db->inTransaction()) $db->rollBack();
         Game::installSchema($db);
-        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config, $streaks, $reminders);
+        route($game, $auth, $lobby, $private, $competitions, $packs, $gameWith, $config, $streaks, $reminders, $isHelper);
     }
 } catch (GameError $e) {
     respond($e->status, ['error' => $e->getMessage()]);

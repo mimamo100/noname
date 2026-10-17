@@ -190,6 +190,7 @@ final class Auth
         $this->db->prepare('UPDATE worlds SET owner_user_id = NULL WHERE owner_user_id = ?')->execute([$userId]);
         $this->db->prepare('DELETE FROM packs WHERE owner_user_id = ?')->execute([$userId]);
         $this->db->prepare('DELETE FROM sessions WHERE user_id = ?')->execute([$userId]);
+        $this->db->prepare('DELETE FROM admin_helpers WHERE user_id = ?')->execute([$userId]);
         $this->db->prepare('DELETE FROM login_codes WHERE email = ?')->execute([$user['email']]);
         $this->db->prepare('DELETE FROM users WHERE id = ?')->execute([$userId]);
     }
