@@ -246,10 +246,23 @@ final class Packs
         $this->db->prepare('DELETE FROM packs WHERE id = ?')->execute([$id]);
     }
 
-    /** The admin can take down any custom pack (worlds using it fall back to everyday words). */
-    public function remove(string $id): void
+    /**
+     * The admin can take down any custom pack. Worlds playing it fall back to everyday words; each
+     * one's current prompt is ended first (it may be one of the pack's lists, which would accept
+     * nothing), using a Game made by $gameWith from the pack's dictionary.
+     *
+     * @param Closure(Dictionary): Game $gameWith
+     * @return int how many unfinished worlds were playing it
+     */
+    public function remove(string $id, Dictionary $everyday, Closure $gameWith): int
     {
+        $stmt = $this->db->prepare('SELECT id, pack_mode FROM worlds WHERE pack = ? AND ended_at IS NULL');
+        $stmt->execute([$id]);
+        $worlds = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($worlds as $w) $gameWith($this->dictionary($id, $w['pack_mode'] ?? 'only', $everyday))->endPrompt($w['id']);
         $this->db->prepare('DELETE FROM packs WHERE id = ?')->execute([$id]);
+        unset($this->built[$id]);
+        return count($worlds);
     }
 
     private function check(string $name, string $description, string $text, Dictionary $everyday): array
@@ -329,7 +342,7 @@ final class Packs
      */
     public function details(string $id): ?array
     {
-        $stmt = $this->db->prepare('SELECT p.*, u.name AS owner FROM packs p LEFT JOIN users u ON u.id = p.owner_user_id WHERE p.id = ?');
+        $stmt = $this->db->prepare('SELECT p.*, u.name AS owner, u.email AS owner_email FROM packs p LEFT JOIN users u ON u.id = p.owner_user_id WHERE p.id = ?');
         $stmt->execute([$id]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!$row) return null;
@@ -337,7 +350,7 @@ final class Packs
         $stmt = $this->db->prepare('SELECT COUNT(*) FROM worlds WHERE pack = ? AND ended_at IS NULL');
         $stmt->execute([$id]);
         return [
-            'id' => $row['id'], 'name' => $row['name'], 'description' => $row['description'], 'owner' => $row['owner'],
+            'id' => $row['id'], 'name' => $row['name'], 'description' => $row['description'], 'owner' => $row['owner'], 'ownerEmail' => $row['owner_email'],
             'words' => (int) $row['words'], 'updatedAt' => (int) $row['updated_at'], 'playing' => (int) $stmt->fetchColumn(),
             'lists' => array_values(self::parseText($row['source'], (int) ($row['format'] ?? 1) === 1)),
         ];

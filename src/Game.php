@@ -545,6 +545,19 @@ final class Game
     public const UNSAID_SHOWN = 12;
 
     /**
+     * Ends the world's prompt now, so the next one is chosen afresh: when the admin removes the
+     * word pack it plays, whose lists the prompt may be from. Call it on a Game with the pack's
+     * dictionary, before the pack goes, so "Nobody said" is noted from the pack's words.
+     */
+    public function endPrompt(string $worldId): void
+    {
+        $this->withWorldLock($worldId, function () use ($worldId) {
+            $this->endOpenPrompts($worldId);
+            $this->changed($worldId);
+        });
+    }
+
+    /**
      * Ends the world's open prompt, noting what was left unsaid: the number of answers, and
      * the commonest few (one word per family; masked words are counted but not shown), for
      * the "Nobody said" reveal. Noted now, as later prompts use words up too.

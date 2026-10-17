@@ -35,3 +35,6 @@ a.button-link { display: inline-block; background: var(--ember); color: #1b0f05;
 .admin h3 { margin: 20px 0 4px; font-size: 16px; }
 .admin-table a, .back-link { color: var(--text); }
 a.button-link.secondary-link { background: var(--surface); color: var(--text); border: 1px solid var(--border); font-weight: 400; padding: 6px 12px; }
+.remove-form { max-width: 560px; }
+.remove-form label { display: grid; gap: 6px; color: var(--muted); font-size: 14px; }
+.remove-form textarea { background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font: inherit; }

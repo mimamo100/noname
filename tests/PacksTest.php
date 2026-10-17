@@ -86,6 +86,32 @@ test('a world with a pack plays the pack: its prompts, its words, and its size',
     throwsStatus(400, fn () => $private->create($org, ['name' => 'X', 'pack' => $made['id'], 'packMode' => 'half']));
 });
 
+test("removing a pack ends the current prompt of the games playing it; they go on with everyday words", function () {
+    $db = testDb();
+    $packs = new Packs($db);
+    $org = withPlan($db, makeUser($db, 'Org'), 'organiser');
+    $made = $packs->create($org, 'Space', '', PLANETS, testDictionary());
+    $private = new PrivateWorlds($db, makeGameOn($db, testDictionary()));
+    $world = $private->create($org, ['name' => 'Space club', 'pack' => $made['id'], 'packMode' => 'only']);
+    $game = makeGameOn($db, $packs->dictionary($made['id'], 'only', testDictionary()));
+    $game->state($world['id'], null); // Its first prompt, for setPrompt to change.
+    setPrompt($game, $world['id'], ['cat' => "{$made['id']}.c1", 'rules' => []]);
+    $p = $private->playerFor($game->world($world['id']), $org, null);
+    $said = $game->play($world['id'], $p['token'], 'mars');
+    same(true, $said['ok'], json_encode($said));
+    same(1, $packs->details($made['id'])['playing']);
+
+    same(1, $packs->remove($made['id'], testDictionary(), fn (Dictionary $d) => makeGameOn($db, $d)), 'One game was playing it');
+    same(null, $packs->details($made['id']));
+    $everyday = makeGameOn($db, $packs->dictionary($made['id'], 'only', testDictionary()));
+    same(testDictionary()->size(), $everyday->dictionary()->size(), 'The world falls back to everyday words');
+    $state = $everyday->state($world['id'], $p['token']);
+    check(!str_contains(json_encode($state['prompt']['spec'] ?? $state['prompt']), $made['id']), 'A new, everyday prompt: ' . $state['prompt']['label']);
+    $ended = array_values(array_filter($state['said'], fn ($p) => isset($p['unsaid'])));
+    check(($ended[0]['unsaid']['count'] ?? 0) > 0, "The pack prompt's Nobody said was noted from the pack's words");
+    same(['mars'], array_column($state['myWords'], 'word'), 'Words said stay');
+});
+
 test('reports on curated pack categories reach the admin; custom pack reports stay with the organiser', function () {
     $db = testDb();
     $game = makeGameOn($db, testDictionary());

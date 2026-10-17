@@ -211,8 +211,28 @@ try {
                 break;
             case 'removepack':
                 $can('packs') || $denied();
-                $packs->remove((string) ($_POST['pack'] ?? ''));
-                $_SESSION['flash'] = 'Pack removed. Rooms that used it now play everyday words.';
+                $removed = $packs->details((string) ($_POST['pack'] ?? '')) ?? throw new GameError(404, 'That pack has already gone.');
+                $playing = $packs->remove($removed['id'], $dictionary, fn (Dictionary $d) => new Game($db, $d));
+                $_SESSION['flash'] = "“{$removed['name']}” removed." . ($playing
+                    ? " $playing " . ($playing === 1 ? 'game' : 'games') . ' playing it now use everyday words, with a new prompt.' : '');
+                // The organiser hears why, from the admin's reason if one was given.
+                if ($removed['ownerEmail']) {
+                    $reason = trim(mb_substr((string) ($_POST['reason'] ?? ''), 0, 1000));
+                    $lines = [
+                        "Hello {$removed['owner']},", '',
+                        "Your word pack “{$removed['name']}” has been removed from Unsaid by the site's admin team.",
+                    ];
+                    if ($reason !== '') array_push($lines, '', "The reason: $reason");
+                    if ($playing) array_push($lines, '', ($playing === 1 ? 'The game' : "The $playing games") . ' that were playing it carry on with everyday words.');
+                    array_push($lines, '', 'The Unsaid team');
+                    try {
+                        (new Mailer($config['mail'] ?? []))->send($removed['ownerEmail'], "Unsaid: your word pack “{$removed['name']}” was removed", implode("\n", $lines) . "\n");
+                        $_SESSION['flash'] .= " {$removed['owner']} has been emailed.";
+                    } catch (Throwable $e) {
+                        error_log('Unsaid admin: pack removal email: ' . $e->getMessage());
+                        $_SESSION['flash'] .= " The email to {$removed['owner']} couldn't be sent.";
+                    }
+                }
                 break;
             case 'addhelper':
                 $super || $denied();
@@ -419,13 +439,17 @@ if ($pack && isset($_GET['remove']) && $can('packs')) {
     // Removing can't be undone, so it takes a second press here, saying what it does.
     $playing = $pack['playing'];
     $html .= '<h2>Remove “' . h($pack['name']) . '”?</h2>'
-        . '<p>The pack is deleted for good, from these pages and from ' . h((string) ($pack['owner'] ?? 'its organiser')) . '\'s own packs. '
-        . 'They aren\'t told.</p>'
+        . '<p>The pack is deleted for good, from these pages and from ' . h((string) ($pack['owner'] ?? 'its organiser')) . '\'s own packs.'
+        . ($pack['ownerEmail'] ? ' They\'re emailed to say so, with your reason if you give one.' : '') . '</p>'
         . '<p' . ($playing ? ' class="bad"' : '') . '>' . ($playing
-            ? $playing . ($playing === 1 ? ' room or competition is' : ' rooms or competitions are') . ' playing it now, and would switch to everyday words at once.'
+            ? $playing . ($playing === 1 ? ' room or competition is' : ' rooms or competitions are') . ' playing it now. '
+                . ($playing === 1 ? 'It switches' : 'They switch') . ' to everyday words at once, with a new prompt; words already said and scores stay.'
             : 'No room or competition is playing it now.') . '</p>'
-        . '<p>' . $button('removepack', 'Remove for good', ['pack' => $pack['id']], 'danger-solid')
-        . ' <a class="back-link" href="' . h($tabUrl('packs', ['pack' => $pack['id']])) . '">Cancel</a></p>';
+        . '<form method="post" class="remove-form">' . hidden(['csrf' => $csrf, 'action' => 'removepack', 'tab' => 'packs', 'pack' => $pack['id']])
+        . ($pack['ownerEmail'] ? '<label>Reason, for the email to ' . h((string) $pack['owner']) . ' (optional)'
+            . '<textarea name="reason" rows="3" maxlength="1000" placeholder="For example: some lists are offensive"></textarea></label>' : '')
+        . '<p><button type="submit" class="danger-solid">Remove for good</button> '
+        . '<a class="back-link" href="' . h($tabUrl('packs', ['pack' => $pack['id']])) . '">Cancel</a></p></form>';
 } elseif ($pack) {
     // One pack's lists and words, to judge whether it should stay.
     $html .= '<p><a class="back-link" href="' . h($tabUrl('packs')) . '">← All word packs</a></p>'
