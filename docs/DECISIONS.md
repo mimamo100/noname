@@ -9,7 +9,7 @@ are at the top of each report in `playtests/`.
 **Comparatives and superlatives are forms of their adjective**, as -ing and -ed forms are of their
 verb: *bigger* and *biggest* are one answer with *big*, and count as *big* on letter prompts.
 Irregular ones join too (*good, better, best*; *bad, worse, worst*; *far, further, farther*).
-*more*, *most*, *less* and *least* stay words of their own. Words that only look like
+So do *much, many, more, most* (one answer: *many* uses up *much*) and *little, less, least*. Words that only look like
 comparatives stand alone (*broker*, *butcher*, *number*, *outer*, *gamer*); ones that are both
 (*stranger*, *cleaner*, *lighter*, *the latest*) are on the own-meaning list. *Owner.*
 

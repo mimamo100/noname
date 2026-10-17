@@ -251,3 +251,6 @@ melt, molten
 good, better, best
 bad, worse, worst, worser
 far, farther, farthest, further, furthest
+much, more, most
+many, more, most
+little, less, least, lesser
