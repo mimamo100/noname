@@ -247,6 +247,23 @@ final class Packs
     }
 
     /**
+     * The admin's first step with a pack that shouldn't stay as it is: it can't start new games
+     * (games already playing it carry on), and its organiser sees the reason in the pack editor,
+     * to change it. The admin restores it once it's put right.
+     */
+    public function suspend(string $id, string $reason): void
+    {
+        $reason = trim(mb_substr($reason, 0, 1000));
+        if ($reason === '') throw new GameError(400, 'Say what needs changing: the organiser sees it.');
+        $this->db->prepare('UPDATE packs SET suspended_at = ?, suspended_reason = ? WHERE id = ?')->execute([(int) floor(microtime(true) * 1000), $reason, $id]);
+    }
+
+    public function restore(string $id): void
+    {
+        $this->db->prepare('UPDATE packs SET suspended_at = NULL, suspended_reason = NULL WHERE id = ?')->execute([$id]);
+    }
+
+    /**
      * The admin can take down any custom pack. Worlds playing it fall back to everyday words; each
      * one's current prompt is ended first (it may be one of the pack's lists, which would accept
      * nothing), using a Game made by $gameWith from the pack's dictionary.
@@ -304,7 +321,7 @@ final class Packs
     /** The account's own custom packs, with their text, for the pack editor. */
     public function mine(array $user): array
     {
-        $stmt = $this->db->prepare('SELECT id, name, description, source, format, words FROM packs WHERE owner_user_id = ? ORDER BY name');
+        $stmt = $this->db->prepare('SELECT id, name, description, source, format, words, suspended_at, suspended_reason FROM packs WHERE owner_user_id = ? ORDER BY name');
         $stmt->execute([$user['id']]);
         $reported = $this->db->prepare("
             SELECT word, COUNT(DISTINCT player_id) AS players FROM reports
@@ -314,6 +331,8 @@ final class Packs
             return [
                 'id' => $p['id'], 'name' => $p['name'], 'description' => $p['description'], 'text' => (int) $p['format'] === 1 ? self::convertOldText($p['source']) : $p['source'],
                 'words' => (int) $p['words'],
+                // Suspended by the admin: why, so the organiser can put it right.
+                'suspended' => $p['suspended_at'] !== null ? ['at' => (int) $p['suspended_at'], 'reason' => (string) $p['suspended_reason']] : null,
                 // Words players in its worlds said should count: the organiser's to add, or not.
                 'reported' => array_map(fn ($r) => ['word' => $r['word'], 'players' => (int) $r['players']], $reported->fetchAll(PDO::FETCH_ASSOC)),
             ];
@@ -332,7 +351,7 @@ final class Packs
     public function all(): array
     {
         return $this->db->query('
-            SELECT p.id, p.name, p.words, p.updated_at, u.name AS owner FROM packs p LEFT JOIN users u ON u.id = p.owner_user_id
+            SELECT p.id, p.name, p.words, p.updated_at, p.suspended_at, u.name AS owner FROM packs p LEFT JOIN users u ON u.id = p.owner_user_id
             ORDER BY p.updated_at DESC')->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -352,6 +371,7 @@ final class Packs
         return [
             'id' => $row['id'], 'name' => $row['name'], 'description' => $row['description'], 'owner' => $row['owner'], 'ownerEmail' => $row['owner_email'],
             'words' => (int) $row['words'], 'updatedAt' => (int) $row['updated_at'], 'playing' => (int) $stmt->fetchColumn(),
+            'suspendedAt' => $row['suspended_at'] !== null ? (int) $row['suspended_at'] : null, 'suspendedReason' => (string) $row['suspended_reason'],
             'lists' => array_values(self::parseText($row['source'], (int) ($row['format'] ?? 1) === 1)),
         ];
     }
@@ -364,7 +384,8 @@ final class Packs
         $custom = $plan === 'organiser' ? $this->mine($user) : [];
         return [
             'curated' => array_map(fn ($id, $p) => ['id' => $id] + $p, array_keys($curated), $curated),
-            'custom' => array_map(fn ($p) => ['id' => $p['id'], 'name' => $p['name'], 'description' => $p['description'], 'words' => $p['words']], $custom),
+            // A suspended pack can't start a game until the admin restores it.
+            'custom' => array_values(array_map(fn ($p) => ['id' => $p['id'], 'name' => $p['name'], 'description' => $p['description'], 'words' => $p['words']], array_filter($custom, fn ($p) => !$p['suspended']))),
         ];
     }
 
@@ -378,7 +399,9 @@ final class Packs
             return $curated[$id]['name'];
         }
         if ($plan !== 'organiser') throw new GameError(403, 'Your own word packs come with the Organiser plan.');
-        return $this->owned($user, $id)['name'];
+        $pack = $this->owned($user, $id);
+        if ($pack['suspended_at'] !== null) throw new GameError(403, "“{$pack['name']}” is suspended, so it can't start a new game. See Your account, Word packs.");
+        return $pack['name'];
     }
 
     // --- Using a pack ---

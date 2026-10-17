@@ -166,6 +166,11 @@ final class Game
         if (!$db->query("SHOW COLUMNS FROM packs LIKE 'format'")->fetch()) {
             $db->exec('ALTER TABLE packs ADD COLUMN format TINYINT UNSIGNED NOT NULL DEFAULT 1');
         }
+        // A pack the admin suspended: it can't start new games until the admin restores it, and its
+        // organiser sees why in the pack editor (owner's decision, 17 October).
+        if (!$db->query("SHOW COLUMNS FROM packs LIKE 'suspended_at'")->fetch()) {
+            $db->exec('ALTER TABLE packs ADD COLUMN suspended_at BIGINT NULL, ADD COLUMN suspended_reason VARCHAR(1000) NULL');
+        }
         // Running totals for the overall leaderboard, so polls don't re-add every word and miss.
         if (!$db->query("SHOW COLUMNS FROM players LIKE 'score'")->fetch()) {
             $db->exec('ALTER TABLE players

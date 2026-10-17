@@ -164,6 +164,22 @@ $packs = new Packs($db, $cacheDir ?: null);
 $admin = new Admin($db, $dictionary, packs: $packs);
 $denied = fn () => throw new GameError(403, 'You don\'t have permission to do that.');
 
+/**
+ * Emails a pack's organiser about it ("Unsaid: your word pack “Space” was suspended"), and says
+ * on the page whether it went. Paragraphs go between "Hello" and "The Unsaid team".
+ */
+$emailOrganiser = function (array $pack, string $what, array $paragraphs) use ($config): string {
+    if (!$pack['ownerEmail']) return '';
+    try {
+        (new Mailer($config['mail'] ?? []))->send($pack['ownerEmail'], "Unsaid: your word pack “{$pack['name']}” $what",
+            implode("\n\n", ["Hello {$pack['owner']},", ...array_values($paragraphs), 'The Unsaid team']) . "\n");
+        return " {$pack['owner']} has been emailed.";
+    } catch (Throwable $e) {
+        error_log('Unsaid admin: pack email: ' . $e->getMessage());
+        return " The email to {$pack['owner']} couldn't be sent.";
+    }
+};
+
 try {
     // The open reports as a text file, to work through and fold into the word files.
     if (($_GET['download'] ?? '') === 'reports') {
@@ -209,30 +225,38 @@ try {
                 $name = $admin->setPlan($userId, $plan);
                 $_SESSION['flash'] = "$name is now on the " . ucfirst($plan) . ' plan.';
                 break;
+            case 'suspendpack':
+                $can('packs') || $denied();
+                $pack = $packs->details((string) ($_POST['pack'] ?? '')) ?? throw new GameError(404, 'That pack has gone.');
+                $reason = trim((string) ($_POST['reason'] ?? ''));
+                $packs->suspend($pack['id'], $reason);
+                $_SESSION['flash'] = "“{$pack['name']}” suspended." . $emailOrganiser($pack, 'was suspended', [
+                    "Your word pack “{$pack['name']}” has been suspended by the site's admin team, so it can't start a new game for now. Games already playing it carry on.",
+                    "What needs changing: $reason",
+                    'You can change it in Your account, Word packs' . (!empty($config['site_url']) ? ' (' . rtrim($config['site_url'], '/') . '/account)' : '')
+                        . '. Once you have saved your changes, we will look at it again.',
+                ]);
+                break;
+            case 'restorepack':
+                $can('packs') || $denied();
+                $pack = $packs->details((string) ($_POST['pack'] ?? '')) ?? throw new GameError(404, 'That pack has gone.');
+                $packs->restore($pack['id']);
+                $_SESSION['flash'] = "“{$pack['name']}” restored." . $emailOrganiser($pack, 'is back', [
+                    "Your word pack “{$pack['name']}” has been restored, and can be used for new games again. Thank you for the changes.",
+                ]);
+                break;
             case 'removepack':
                 $can('packs') || $denied();
-                $removed = $packs->details((string) ($_POST['pack'] ?? '')) ?? throw new GameError(404, 'That pack has already gone.');
-                $playing = $packs->remove($removed['id'], $dictionary, fn (Dictionary $d) => new Game($db, $d));
-                $_SESSION['flash'] = "“{$removed['name']}” removed." . ($playing
-                    ? " $playing " . ($playing === 1 ? 'game' : 'games') . ' playing it now use everyday words, with a new prompt.' : '');
-                // The organiser hears why, from the admin's reason if one was given.
-                if ($removed['ownerEmail']) {
-                    $reason = trim(mb_substr((string) ($_POST['reason'] ?? ''), 0, 1000));
-                    $lines = [
-                        "Hello {$removed['owner']},", '',
-                        "Your word pack “{$removed['name']}” has been removed from Unsaid by the site's admin team.",
-                    ];
-                    if ($reason !== '') array_push($lines, '', "The reason: $reason");
-                    if ($playing) array_push($lines, '', ($playing === 1 ? 'The game' : "The $playing games") . ' that were playing it carry on with everyday words.');
-                    array_push($lines, '', 'The Unsaid team');
-                    try {
-                        (new Mailer($config['mail'] ?? []))->send($removed['ownerEmail'], "Unsaid: your word pack “{$removed['name']}” was removed", implode("\n", $lines) . "\n");
-                        $_SESSION['flash'] .= " {$removed['owner']} has been emailed.";
-                    } catch (Throwable $e) {
-                        error_log('Unsaid admin: pack removal email: ' . $e->getMessage());
-                        $_SESSION['flash'] .= " The email to {$removed['owner']} couldn't be sent.";
-                    }
-                }
+                $pack = $packs->details((string) ($_POST['pack'] ?? '')) ?? throw new GameError(404, 'That pack has already gone.');
+                $playing = $packs->remove($pack['id'], $dictionary, fn (Dictionary $d) => new Game($db, $d));
+                $reason = trim(mb_substr((string) ($_POST['reason'] ?? ''), 0, 1000));
+                $_SESSION['flash'] = "“{$pack['name']}” removed." . ($playing
+                    ? " $playing " . ($playing === 1 ? 'game' : 'games') . ' playing it now use everyday words, with a new prompt.' : '')
+                    . $emailOrganiser($pack, 'was removed', array_filter([
+                        "Your word pack “{$pack['name']}” has been removed from Unsaid by the site's admin team.",
+                        $reason !== '' ? "The reason: $reason" : null,
+                        $playing ? ($playing === 1 ? 'The game' : "The $playing games") . ' that were playing it carry on with everyday words.' : null,
+                    ]));
                 break;
             case 'addhelper':
                 $super || $denied();
@@ -435,7 +459,21 @@ if ($tab === 'accounts') {
 }
 
 $pack = $tab === 'packs' && isset($_GET['pack']) ? $packs->details((string) $_GET['pack']) : null;
-if ($pack && isset($_GET['remove']) && $can('packs')) {
+if ($pack && isset($_GET['suspend']) && $can('packs') && $pack['suspendedAt'] === null) {
+    // The usual first step: the organiser is told what to change, and the pack waits for it.
+    $playing = $pack['playing'];
+    $html .= '<h2>Suspend “' . h($pack['name']) . '”?</h2>'
+        . '<p>It can\'t start a new room or competition until you restore it.'
+        . ($playing ? ' The ' . ($playing === 1 ? 'game' : "$playing games") . ' playing it now carry on.' : '') . '</p>'
+        . '<p>' . h((string) ($pack['owner'] ?? 'Its organiser')) . ' sees your reason in their pack editor'
+        . ($pack['ownerEmail'] ? ', and is emailed it,' : '') . ' so they can change the pack. Once they have, it shows here as '
+        . '“changed since”, for you to look at again and restore.</p>'
+        . '<form method="post" class="remove-form">' . hidden(['csrf' => $csrf, 'action' => 'suspendpack', 'tab' => 'packs', 'pack' => $pack['id']])
+        . '<label>What needs changing (they see this)'
+        . '<textarea name="reason" rows="3" maxlength="1000" required placeholder="For example: the list “Things my boss is” is about a real person"></textarea></label>'
+        . '<p><button type="submit">Suspend</button> '
+        . '<a class="back-link" href="' . h($tabUrl('packs', ['pack' => $pack['id']])) . '">Cancel</a></p></form>';
+} elseif ($pack && isset($_GET['remove']) && $can('packs')) {
     // Removing can't be undone, so it takes a second press here, saying what it does.
     $playing = $pack['playing'];
     $html .= '<h2>Remove “' . h($pack['name']) . '”?</h2>'
@@ -457,25 +495,35 @@ if ($pack && isset($_GET['remove']) && $can('packs')) {
         . '<p class="muted">By ' . h((string) ($pack['owner'] ?? 'a deleted account')) . ' · ' . number_format($pack['words']) . ' words · changed '
         . h($when($pack['updatedAt'])) . '</p>'
         . ($pack['description'] !== '' ? '<p>' . h($pack['description']) . '</p>' : '');
+    $changed = $pack['suspendedAt'] !== null && $pack['updatedAt'] > $pack['suspendedAt'];
+    if ($pack['suspendedAt'] !== null) {
+        $html .= '<p class="flash ' . ($changed ? 'good' : 'bad') . '">Suspended ' . h($when($pack['suspendedAt'])) . ': “' . h($pack['suspendedReason']) . '” '
+            . ($changed ? 'Changed since, so worth another look.' : 'Not changed since.') . '</p>';
+    }
     foreach ($pack['lists'] as $list) {
         $html .= '<h3>' . h($list['label']) . ' <span class="muted small">' . count($list['words']) . '</span></h3>'
             . '<p class="pack-words">' . implode(' · ', array_map(fn ($forms) => h(implode(', ', $forms)), $list['words'])) . '</p>';
     }
     if ($can('packs')) {
-        $html .= '<p><a class="button-link secondary-link" href="' . h($tabUrl('packs', ['pack' => $pack['id'], 'remove' => 1])) . '">Remove this pack…</a></p>';
+        $html .= '<p class="pack-actions">' . ($pack['suspendedAt'] !== null
+                ? $button('restorepack', 'Restore', ['pack' => $pack['id']])
+                : '<a class="button-link" href="' . h($tabUrl('packs', ['pack' => $pack['id'], 'suspend' => 1])) . '">Suspend…</a>')
+            . ' <a class="button-link secondary-link" href="' . h($tabUrl('packs', ['pack' => $pack['id'], 'remove' => 1])) . '">Remove for good…</a></p>'
+            . '<p class="muted small">Suspend first, so the organiser can put it right; remove only for clear abuse, or a pack left unchanged.</p>';
     }
 } elseif ($tab === 'packs') {
-    // Organisers' own word packs, so a bad one can be taken down.
+    // Organisers' own word packs, so one that shouldn't stay as it is can be suspended or removed.
     $customPacks = $packs->all();
     $html .= '<h2>Organisers\' word packs</h2>';
     if (!$customPacks) {
         $html .= '<p class="muted">None yet.</p>';
     } else {
-        $html .= '<div class="table-wrap"><table class="admin-table"><thead><tr><th>Pack</th><th>Owner</th><th>Words</th><th>Changed</th><th></th></tr></thead><tbody>';
+        $html .= '<div class="table-wrap"><table class="admin-table"><thead><tr><th>Pack</th><th>Owner</th><th>Words</th><th>Changed</th><th>Status</th></tr></thead><tbody>';
         foreach ($customPacks as $pk) {
             $html .= '<tr><td><a href="' . h($tabUrl('packs', ['pack' => $pk['id']])) . '"><b>' . h($pk['name']) . '</b></a></td><td>' . h((string) $pk['owner']) . '</td><td>' . (int) $pk['words'] . '</td>'
                 . '<td class="muted small">' . h($when((int) $pk['updated_at'])) . '</td>'
-                . '<td class="actions"><a class="back-link" href="' . h($tabUrl('packs', ['pack' => $pk['id'], 'remove' => 1])) . '">Remove…</a></td></tr>';
+                . '<td class="small">' . ($pk['suspended_at'] === null ? '<span class="muted">In use</span>'
+                    : ((int) $pk['updated_at'] > (int) $pk['suspended_at'] ? '<span class="good">Suspended, changed since</span>' : '<span class="bad">Suspended</span>')) . '</td></tr>';
         }
         $html .= '</tbody></table></div>';
     }

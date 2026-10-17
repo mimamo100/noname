@@ -6,6 +6,13 @@ words; this says why. Earlier decisions are at the top of each report in `playte
 
 ## 17 October 2026
 
+**A pack that shouldn't stay as it is is suspended first, not removed**: the organiser is told
+what to change (by email and in their pack editor), it can't start new games meanwhile, and the
+admin restores it once it's changed. Removing for good is kept for clear abuse or a pack left
+unchanged, and also emails the organiser. Pack words needn't be everyday words and the labels
+and descriptions are free text, so the checks can't catch everything; most problems won't be
+deliberate, so the organiser gets the chance to put it right. *Owner.*
+
 **Admin helpers**: the admin pages are split into tabs, and besides the super-admin (config.php's
 password) there can be helpers: game accounts the super-admin adds, each with permissions
 ticked one by one, since what helpers should do isn't settled yet. They get in through their

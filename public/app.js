@@ -545,7 +545,8 @@ async function renderPacks() {
       const suggested = p.reported.length ? `Players suggested ${p.reported.length} ${p.reported.length === 1 ? 'word' : 'words'}` : '';
       return el('div', { className: 'pack-row' },
         el('div', {}, el('b', { textContent: p.name }), el('span', { className: 'muted', textContent: ` · ${p.words.toLocaleString()} words` }),
-          ...(p.description || suggested ? [el('p', { textContent: [p.description, suggested].filter(Boolean).join(' · ') })] : [])),
+          ...(p.description || suggested ? [el('p', { textContent: [p.description, suggested].filter(Boolean).join(' · ') })] : []),
+          ...(p.suspended ? [el('p', { className: 'bad', textContent: `Suspended by the admin: “${p.suspended.reason}”` })] : [])),
         edit);
     }) : [el('p', { className: 'empty', textContent: "No packs yet. Make one with New pack: a few lists of words on a theme, and it's ready to use in a private room or competition." })]));
   } catch (err) {
@@ -560,6 +561,11 @@ function editPack(pack) {
   $('pack-description').value = pack?.description ?? '';
   $('pack-text').value = pack?.text ?? '';
   $('pack-delete').hidden = !pack;
+  // Suspended by the admin: what needs changing. Saving the changes lets the admin look again.
+  $('pack-suspended').hidden = !pack?.suspended;
+  $('pack-suspended').textContent = pack?.suspended
+    ? `Suspended by the admin, so it can't start a new game: “${pack.suspended.reason}” Change it here and save, and the admin will look at it again.`
+    : '';
   const reported = pack?.reported ?? [];
   const seen = el('button', { type: 'button', className: 'link', textContent: 'Mark as seen' });
   seen.addEventListener('click', async () => {

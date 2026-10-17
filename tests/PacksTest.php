@@ -51,6 +51,17 @@ test('organisers make, change and delete their own packs; hosts get curated pack
     same(['sun'], $details['lists'][3]['words'][0]);
     same(0, $details['playing'], 'No world plays it yet');
     same(null, $packs->details('nope'));
+
+    // Suspended: the organiser sees why, and it can't start a game until the admin restores it.
+    throwsStatus(400, fn () => $packs->suspend($made['id'], ' '), 'A reason is needed');
+    $packs->suspend($made['id'], 'The star list is too short');
+    same('The star list is too short', $packs->mine($org)[0]['suspended']['reason']);
+    same([], $packs->available($org)['custom'], 'Not offered for new games');
+    throwsStatus(403, fn () => $packs->checkUsable($org, $made['id']));
+    check($packs->details($made['id'])['suspendedAt'] !== null);
+    $packs->restore($made['id']);
+    same(null, $packs->mine($org)[0]['suspended']);
+    same('Space 2', $packs->checkUsable($org, $made['id']));
     $packs->delete($org, $made['id']);
     same([], $packs->mine($org));
 });

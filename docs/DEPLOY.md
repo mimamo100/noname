@@ -205,9 +205,12 @@ On the pages you can:
   payments are added, this is how accounts get private worlds. With nothing
   searched, the list shows every account on a paid plan.
 - **Check organisers' word packs** under **Word packs**: a pack's name opens its lists and
-  words as the organiser wrote them, with **Remove this pack** if it shouldn't stay. Removing asks first, saying how many rooms and
-  competitions are playing it: they switch to everyday words with a fresh prompt (words said and
-  scores stay). The organiser is emailed, with your reason if you give one. It can't be undone.
+  words as the organiser wrote them. If one shouldn't stay as it is, **Suspend** it with a reason:
+  it can't start new games (games playing it carry on), and the organiser is emailed the reason and
+  sees it in their pack editor. When they've changed it, the list shows "Suspended, changed
+  since"; look again and **Restore** it (they're emailed). **Remove for good** is for clear abuse
+  or a pack left unchanged: it asks first, games playing it switch to everyday words with a fresh
+  prompt (words said and scores stay), the organiser is emailed, and it can't be undone.
 - **Recount scores**, and see when **housekeeping** last ran or run it now.
 
 Words accepted on this page before reports became a queue were stored in the
