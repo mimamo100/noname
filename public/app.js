@@ -1152,7 +1152,9 @@ $('play-form').addEventListener('submit', async (e) => {
       const closing = result.closing ? ' That finished the prompt: 10 bonus points!' : '';
       const loose = result.uncounted ? " It's a rarer answer, so it doesn't bring the count down or get the prompt bonus." : '';
       const forOld = result.previousPrompt ? ` It counted for the last prompt, “${result.previousPrompt}”.` : '';
-      feedback(`You said “${result.word}” for ${result.points} ${result.points === 1 ? 'point' : 'points'}.${forOld}${closing}${loose} Nobody can say it again.${family}${streak}`, 'good');
+      // A form that counts as its word ("hugging" as "hug") is said as that word.
+      const typed = result.typed ? `“${result.typed}”, which counts as “${result.word}”,` : `“${result.word}”`;
+      feedback(`You said ${typed} for ${result.points} ${result.points === 1 ? 'point' : 'points'}.${forOld}${closing}${loose} Nobody can say it again.${family}${streak}`, 'good');
       input.value = '';
     } else {
       const forOld = result.previousPrompt ? ` (Judged against the last prompt, “${result.previousPrompt}”, as it had only just changed.)` : '';

@@ -743,6 +743,11 @@ final class Game
             }
 
             $family = array_values(array_filter($this->dictionary->family($word), fn ($w) => !isset($burned[$w])));
+            // On a letter prompt a verb's form or a comparative counts as its word, and is said as it:
+            // "hugging" on "5 letters or fewer" is listed as "hug", which is what fitted and scored
+            // (the owner, 17 October). The reply says what was typed.
+            $judged = Prompts::judged($prompt['spec'], $this->dictionary, $word);
+            $played = in_array($judged, $family, true) ? $judged : $word;
             // Does it count towards the prompt's answers? Answers a category accepts without counting
             // ("also" words) score without the prompt bonus, as at the start: they don't bring the
             // count down, so they'd otherwise ride the top bonus for as long as the count stays put.
@@ -764,14 +769,14 @@ final class Game
             $closing = !$previous && $counted && $after <= ($this->inLastMinutes($worldId) ? 0 : self::endsWhenLeft((int) $prompt['available_at_start']));
             if ($closing) {
                 $points += Scoring::CLOSING_BONUS;
-                $this->db->prepare('UPDATE prompts SET closing_word = ? WHERE id = ?')->execute([$word, $prompt['id']]);
+                $this->db->prepare('UPDATE prompts SET closing_word = ? WHERE id = ?')->execute([$played, $prompt['id']]);
             }
             $insert = $this->db->prepare('
                 INSERT INTO burns (world_id, word, played_word, player_id, prompt_id, points, burned_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?)');
             $at = $this->now();
             foreach ($family as $w) {
-                $insert->execute([$worldId, $w, $word, $player['id'], $prompt['id'], $w === $word ? $points : 0, $at]);
+                $insert->execute([$worldId, $w, $played, $player['id'], $prompt['id'], $w === $played ? $points : 0, $at]);
                 $this->burnedCache[$worldId][$w] = true;
             }
             $this->db->prepare('UPDATE players SET score = score + ?, words = words + 1, last_active_at = ? WHERE id = ?')
@@ -781,12 +786,13 @@ final class Game
             $streak = $player['user_id'] !== null ? $this->streaks?->played((int) $player['user_id']) : null;
             return [
                 'ok' => true,
-                'word' => $this->dictionary->display($word),
+                'word' => $this->dictionary->display($played),
                 'points' => $points,
                 // Not the other side's spelling in a one-spelling world: it was never playable here.
-                'alsoBurned' => array_map([$this->dictionary, 'display'], array_values(array_filter($family, fn ($w) => $w !== $word && !isset($wrong[$w])))),
+                'alsoBurned' => array_map([$this->dictionary, 'display'], array_values(array_filter($family, fn ($w) => $w !== $played && !isset($wrong[$w])))),
                 'multipliers' => $mult,
-            ] + ($counted ? [] : ['uncounted' => true]) + ($closing ? ['closing' => true] : [])
+            ] + ($played !== $word ? ['typed' => $this->dictionary->display($word)] : [])
+              + ($counted ? [] : ['uncounted' => true]) + ($closing ? ['closing' => true] : [])
               + ($previous ? ['previousPrompt' => $prompt['label'] ?? Prompts::describe($prompt['spec'], $this->dictionary)] : [])
               + ($streak !== null ? ['streak' => $streak] : []);
         });

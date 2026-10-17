@@ -1055,6 +1055,15 @@ test("a word refused only by the verb rule is free; a meaning prompt judges word
 
     setPrompt($game, $world['id'], ['cat' => 'sport', 'rules' => [['minLen', 8]]]);
     same(true, $game->play($world['id'], $p['token'], 'swimming')['ok'], 'A sport of 8 letters, as written');
+
+    // A form that fits as its word is said as it: "hugging" is listed as "hug".
+    setPrompt($game, $world['id'], spec(null, ['contains', 'u'], ['maxLen', 5]));
+    $hug = $game->play($world['id'], $p['token'], 'hugging');
+    same([true, 'hug', 'hugging'], [$hug['ok'], $hug['word'], $hug['typed'] ?? null]);
+    check(in_array('hugging', $hug['alsoBurned'], true), 'What was typed goes with it');
+    same('hug', $game->state($world['id'], $p['token'])['myWords'][0]['word'], 'Listed as hug');
+    $bus = $game->play($world['id'], $p['token'], 'bus');
+    same([true, 'bus', null], [$bus['ok'], $bus['word'], $bus['typed'] ?? null], 'A word said as itself has no typed');
 });
 
 test('"About this prompt": a letter prompt says how forms are judged, a meaning prompt has its list note', function () {
