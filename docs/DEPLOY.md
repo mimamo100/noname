@@ -204,6 +204,8 @@ On the pages you can:
   plans**: find the account by name or email, pick the plan, Save. Until
   payments are added, this is how accounts get private worlds. With nothing
   searched, the list shows every account on a paid plan.
+- **Check organisers' word packs** under **Word packs**: a pack's name opens its lists and
+  words as the organiser wrote them, with **Remove this pack** if it shouldn't stay.
 - **Recount scores**, and see when **housekeeping** last ran or run it now.
 
 Words accepted on this page before reports became a queue were stored in the

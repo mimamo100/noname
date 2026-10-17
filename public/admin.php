@@ -414,7 +414,20 @@ if ($tab === 'accounts') {
     }
 }
 
-if ($tab === 'packs') {
+$pack = $tab === 'packs' && isset($_GET['pack']) ? $packs->details((string) $_GET['pack']) : null;
+if ($pack) {
+    // One pack's lists and words, to judge whether it should stay.
+    $html .= '<p><a class="back-link" href="' . h($tabUrl('packs')) . '">← All word packs</a></p>'
+        . '<h2>' . h($pack['name']) . '</h2>'
+        . '<p class="muted">By ' . h((string) ($pack['owner'] ?? 'a deleted account')) . ' · ' . number_format($pack['words']) . ' words · changed '
+        . h($when($pack['updatedAt'])) . '</p>'
+        . ($pack['description'] !== '' ? '<p>' . h($pack['description']) . '</p>' : '');
+    foreach ($pack['lists'] as $list) {
+        $html .= '<h3>' . h($list['label']) . ' <span class="muted small">' . count($list['words']) . '</span></h3>'
+            . '<p class="pack-words">' . implode(' · ', array_map(fn ($forms) => h(implode(', ', $forms)), $list['words'])) . '</p>';
+    }
+    $html .= '<p>' . $button('removepack', 'Remove this pack', ['pack' => $pack['id']], 'secondary') . '</p>';
+} elseif ($tab === 'packs') {
     // Organisers' own word packs, so a bad one can be taken down.
     $customPacks = $packs->all();
     $html .= '<h2>Organisers\' word packs</h2>';
@@ -423,7 +436,7 @@ if ($tab === 'packs') {
     } else {
         $html .= '<div class="table-wrap"><table class="admin-table"><thead><tr><th>Pack</th><th>Owner</th><th>Words</th><th>Changed</th><th></th></tr></thead><tbody>';
         foreach ($customPacks as $pk) {
-            $html .= '<tr><td><b>' . h($pk['name']) . '</b></td><td>' . h((string) $pk['owner']) . '</td><td>' . (int) $pk['words'] . '</td>'
+            $html .= '<tr><td><a href="' . h($tabUrl('packs', ['pack' => $pk['id']])) . '"><b>' . h($pk['name']) . '</b></a></td><td>' . h((string) $pk['owner']) . '</td><td>' . (int) $pk['words'] . '</td>'
                 . '<td class="muted small">' . h($when((int) $pk['updated_at'])) . '</td>'
                 . '<td class="actions">' . $button('removepack', 'Remove', ['pack' => $pk['id']], 'link') . '</td></tr>';
         }

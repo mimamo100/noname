@@ -46,6 +46,10 @@ test('organisers make, change and delete their own packs; hosts get curated pack
     throwsStatus(404, fn () => $packs->checkUsable(withPlan($db, makeUser($db, 'Other'), 'organiser'), $made['id']), "Someone else's pack");
     $packs->update($org, $made['id'], 'Space 2', '', PLANETS . "\n\nA star\nsun\nvega\nsirius\nrigel\n", testDictionary());
     same('Space 2', $packs->mine($org)[0]['name']);
+    $details = $packs->details($made['id']);
+    same(['Space 2', 'Org', ['A planet', 'A moon', 'A particle', 'A star']], [$details['name'], $details['owner'], array_column($details['lists'], 'label')], 'The admin sees a pack as written');
+    same(['sun'], $details['lists'][3]['words'][0]);
+    same(null, $packs->details('nope'));
     $packs->delete($org, $made['id']);
     same([], $packs->mine($org));
 });

@@ -323,6 +323,23 @@ final class Packs
             ORDER BY p.updated_at DESC')->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * A custom pack as its owner wrote it, for the admin pages: its name, description, owner and
+     * lists (label, then answers, each with its forms), or null if there's no such pack.
+     */
+    public function details(string $id): ?array
+    {
+        $stmt = $this->db->prepare('SELECT p.*, u.name AS owner FROM packs p LEFT JOIN users u ON u.id = p.owner_user_id WHERE p.id = ?');
+        $stmt->execute([$id]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!$row) return null;
+        return [
+            'id' => $row['id'], 'name' => $row['name'], 'description' => $row['description'], 'owner' => $row['owner'],
+            'words' => (int) $row['words'], 'updatedAt' => (int) $row['updated_at'],
+            'lists' => array_values(self::parseText($row['source'], (int) ($row['format'] ?? 1) === 1)),
+        ];
+    }
+
     /** The packs this account may use when creating a world: curated for Host and Organiser, its own custom packs for Organiser. */
     public function available(?array $user): array
     {
