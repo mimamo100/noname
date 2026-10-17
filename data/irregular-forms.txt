@@ -103,9 +103,10 @@ oasis, oases
 diagnosis, diagnoses
 hypothesis, hypotheses
 
-# Verbs: each line's forms are one answer, but irregular forms count as written (wrote, written),
-# unlike regular -ing and -ed forms (verb-forms.txt), which count as the verb. A regular form
-# listed here by hand (dibbed) counts as the verb too.
+# Verbs: irregular forms are words of their own (sang, sung, wrote, written: the owner, 17 October),
+# so saying one doesn't use up the verb for the rest of the round, and they count as written. A
+# regular form listed here by hand (dibbed) is one answer with its verb and counts as it, like
+# those in verb-forms.txt. A line still ties the forms to their verb for the rules that need it.
 # Left out where a form has an everyday meaning of its own: saw, found, left, felt, fell, rose,
 # spoke, stole, shot, won, wound, ground, bound, lay, smelt, spelt, rung, tear, bit, drove;
 # and rang, which the family rules join to ranged and ranging.

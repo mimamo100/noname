@@ -6,6 +6,15 @@ words; this says why. Earlier decisions are at the top of each report in `playte
 
 ## 17 October 2026
 
+**Irregular verb forms are words of their own** (*sing*, *sang*, *sung*; *write*, *wrote*,
+*written*): a word goes for the whole round, so *sung* on "Contains U" was taking *sing* and
+*sang* away from every later prompt, though none of them fitted it. They already count as
+written, as they don't stretch a word; now they aren't tied to it either. Irregular plurals stay
+with their singular (*mice* is *mouse*). Also from the local playtest: a reply says why a word
+failed as written when the form isn't the reason; trying the same wrong word again on a prompt
+is free; an accepted form is listed as its word (*hugging* as *hug*), and so is "Nobody said".
+*Owner.*
+
 **A pack that shouldn't stay as it is is suspended first, not removed**: the organiser is told
 what to change (by email and in their pack editor), it can't start new games meanwhile, and the
 admin restores it once it's changed. Removing for good is kept for clear abuse or a pack left

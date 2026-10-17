@@ -860,6 +860,13 @@ final class Game
 
     private function miss(array $player, array $prompt, string $word, string $reason, int $penalty, ?string $written = null): array
     {
+        if ($penalty) {
+            // Trying the same wrong word again on the same prompt (or pressing Say it twice) is free:
+            // it was paid for once (the owner, 17 October).
+            $again = $this->db->prepare('SELECT 1 FROM misses WHERE player_id = ? AND prompt_id = ? AND word = ? AND points < 0 LIMIT 1');
+            $again->execute([$player['id'], $prompt['id'], $word]);
+            if ($again->fetchColumn()) $penalty = 0;
+        }
         $this->db->prepare('
             INSERT INTO misses (world_id, player_id, prompt_id, word, written, reason, points, missed_at)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)')

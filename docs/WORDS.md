@@ -37,16 +37,18 @@ and the file formats in the READMEs in `data/categories/` and `data/packs/`.
   and *limping*, *big* uses up *bigger* and *biggest*. A family counts once in "words left
   unsaid".
 - **Families come from**: suffix rules (plurals, -ed, -ing); the lists of forms below, which
-  join a form to its word where the suffix rules can't; irregular forms
-  (`data/irregular-forms.txt`: *mouse, mice*; *write, wrote, written*); and UK and US
-  spellings.
+  join a form to its word where the suffix rules can't; irregular plurals
+  (`data/irregular-forms.txt`: *mouse, mice*; *child, children*); and UK and US spellings.
 - **Words that only look related stand alone** (`data/family-breaks.txt`): *bunting* isn't
   from *bunt*, nor *railing* from *rail*, *earring* from *ear*, *morning* from *morn*, *broker*
   from *broke*, *butcher* from *butch*, *doner* from *done*, *gamer* from *game*, *outer* from
   *out*, *flatter* from *flat*, *hinder* from *hind*. *worsted* (the cloth) isn't *worst*'s, and
   *spruced* and *sprucing* (from *spruce up*) aren't the tree's.
-- **Irregular comparatives are words of their own**: *good* doesn't use up *better* or
-  *best*, nor *much* *more* and *most*, nor *little* *less* and *least*.
+- **Irregular verb forms and comparatives are words of their own**: *sing*, *sang* and *sung*
+  are three answers, as are *write*, *wrote* and *written*, and *good*, *better* and *best*.
+  Saying one doesn't use up the others for the rest of the round. Regular forms stay with their
+  word (*singing* with *sing*), and so do irregular plurals (*mice* with *mouse*): a plural is the
+  same thing.
 
 ## Forms: how a word is judged
 
@@ -64,16 +66,18 @@ that word, for every letter rule and for points, so adding letters earns nothing
   (`data/comparative-forms.txt`, from WordNet). WordNet decides here too, so *number* isn't more
   *numb*.
 - **A word refused only because of this** (it would fit as typed) costs nothing; other words
-  that don't fit cost 2.
+  that don't fit cost 2, and the reply says why as written (*running* on "Starts and ends with
+  R": "it doesn't start and end with R"). Trying the same wrong word again on the same prompt
+  is free.
+- **Accepted, a form is said as its word**: *hugging* on "5 letters or fewer" is listed as *hug*
+  (the reply says "You said “hugging”, which counts as “hug”"), and "Nobody said" lists *register*,
+  not *registered*.
 
 These count **as written** instead:
 
 - **Irregular forms**, as they don't stretch a word: *wrote*, *written*, *ran*, *broken*,
-  *mice*, *children*, *better*, *more*. Irregular verbs and plurals are still one answer with
-  their word (*write* uses up *written*), and *mice* still counts as *mouse* for "A small
-  animal". Most -en forms are irregular verb forms (*shown*, *swollen*, *molten*, *mown*);
-  *torn* stands alone (*tear*, the teardrop, would otherwise join it), as do *drunken* and
-  *laden*.
+  *mice*, *children*, *better*, *more*. Most -en forms are irregular verb forms (*shown*,
+  *swollen*, *molten*, *mown*, *torn*). *mice* still counts as *mouse* for "A small animal".
 - **Forms with a meaning of their own** (`data/own-meaning.txt`, 146 words): things and events
   (*a building*, *a wedding*, *icing*, *savings*), adjectives whose meaning has moved
   (*crooked*, *learned*, *amazing*) and comparatives that are also nouns (*a stranger*,
@@ -186,6 +190,7 @@ The same rules, plus:
 
 Words added or settled one at a time, newest first. Rule changes go in the sections above.
 
+- **17 October** (local Big Room playtest): added *rafter*, *referrer*, *rubberneck*, *rhymer*.
 - **17 October** (Big Room playtest): added *fescue*, *sphagnum*, *colza*, *sea kale* (plants),
   *maltose*, *spruce up* (*spruced up*, *sprucing up*), *mown*; *lichen* counts as a plant.
 - **15 October** (players' reports): added *cumulus* (*cumuli*), *succubi*, *uncurl*,

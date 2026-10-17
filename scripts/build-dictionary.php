@@ -260,14 +260,21 @@ foreach (readList("$dataDir/irregular-forms.txt") as $line) {
         fwrite(STDERR, "irregular-forms.txt: \"$line\" needs " . ($verbs ? 'two of its words' : 'its first word and another') . " in the dictionary\n");
         continue;
     }
-    $irregularClusters[] = $present;
+    // An irregular plural is one answer with its singular (mice and mouse are the same thing). An
+    // irregular verb form is a word of its own (sang, sung, wrote: the owner, 17 October), as
+    // saying one would otherwise use up the verb for the rest of the round; only the regular
+    // forms listed by hand (dibbed) join their verb.
+    if (!$verbs) $irregularClusters[] = $present;
     if (!$verbs) foreach (array_slice($present, 1) as $form) $irregular[$form] = $present[0];
     // Irregular forms are one answer with their word but count as written (the owner, 17 October:
     // they don't stretch a word as -ing and -ed do). Only regular forms listed here by hand
     // (dibbed, tarmacked) are judged as the verb, like those in verb-forms.txt.
     elseif ($present[0] === $forms[0]) foreach (array_slice($present, 1) as $form) {
         $verb = $present[0];
-        if (in_array($verb, WordFamilies::rootCandidates($form), true) || in_array($form, ["{$verb}ked", "{$verb}king"], true)) $verbForms[$form] = $verb;
+        if (in_array($verb, WordFamilies::rootCandidates($form), true) || in_array($form, ["{$verb}ked", "{$verb}king"], true)) {
+            $verbForms[$form] = $verb;
+            $irregularClusters[] = [$verb, $form];
+        }
     }
 }
 foreach ([...$verbForms, ...$pluralForms] as $form => $root) $irregularClusters[] = [$root, $form];

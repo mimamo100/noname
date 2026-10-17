@@ -109,6 +109,11 @@ final class Prompts
     {
         $typed = $word;
         $word = self::judged($spec, $dictionary, $word, $verbForms);
+        // A word that wouldn't fit as written either is told why as written: "running" on "Starts and
+        // ends with R" doesn't end in R, whatever it counts as, so "counts as run" would mislead.
+        if ($word !== $typed && !self::matches(['cat' => null] + $spec, $dictionary, $typed, false)) {
+            return self::whyNot($spec, $dictionary, $typed, false);
+        }
         $singular = $dictionary->singular($word, false);
         $length = fn (string $w) => strlen($dictionary->singular($w, false));
         // Length rules judge a plural as its singular, and letter prompts a verb's form as the verb:
@@ -192,7 +197,8 @@ final class Prompts
         $found = [];
         foreach ($pool as $word) {
             if (isset($burned[$word]) || !$dictionary->has($word) || !$test($word)) continue;
-            $found[$dictionary->familyRoot($word)] ??= $word;
+            // On a letter prompt, the word it counts as: "register", not "registered".
+            $found[$dictionary->familyRoot($word)] ??= isset($spec['cat']) ? $word : self::judged($spec, $dictionary, $word);
         }
         $words = array_values($found);
         usort($words, fn ($a, $b) => $dictionary->rarity($a) <=> $dictionary->rarity($b));

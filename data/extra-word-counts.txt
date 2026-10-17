@@ -7739,6 +7739,7 @@ banishes 65
 wolfed 65
 aerosols 65
 idioms 65
+rafter 65
 insurances 65
 commonalities 65
 soaping 65
@@ -11057,6 +11058,7 @@ parfaits 33
 ichthyosaurs 33
 phenomenons 33
 fetlock 33
+rubberneck 33
 potholder 33
 vetch 33
 daybed 33
@@ -12183,6 +12185,7 @@ citrine 25
 wheats 25
 paneled 25
 ocarina 25
+rhymer 25
 geographers 25
 shylocks 25
 recollecting 25
@@ -14300,6 +14303,7 @@ pinnies 9
 ibexes 9
 codpieces 9
 weimaraners 9
+rubbernecks 9
 stepsons 9
 divans 9
 halftrack 9
@@ -15068,6 +15072,7 @@ velds 4
 fluorspar 4
 lyrebirds 4
 goddaughters 4
+rhymers 4
 challahs 4
 tilers 4
 redwine 4
@@ -15915,6 +15920,7 @@ ragdolls 1
 greatuncles 1
 orangejuices 1
 nilgai 1
+referrer 1
 alliums 1
 sedums 1
 winklepicker 1

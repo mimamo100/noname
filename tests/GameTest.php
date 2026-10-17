@@ -1002,8 +1002,9 @@ test('irregular plurals are one answer with their singular, judged as it (data/i
     same('mouse', $d->singular('mice'));
     same('woodlouse', $d->singular('woodlice'));
     check(in_array('knives', $d->family('knife'), true), 'Saying knife uses up knives');
-    // A verb's irregular forms are one answer too, judged as the verb on a letter prompt.
-    check(in_array('written', $d->family('write'), true) && in_array('went', $d->family('going'), true), 'Saying write uses up written');
+    // A verb's irregular forms are words of their own (the owner, 17 October): saying one doesn't
+    // use up the verb for the rest of the round.
+    check(!in_array('written', $d->family('write'), true) && !in_array('sing', $d->family('sung'), true), "Saying write doesn't use up written"); 
     same('written', $d->verbRoot('written'), "Irregular forms count as written: they don't stretch a word");
     same([4, 'mice'], [strlen($d->singular('mice', false)), $d->singular('mice', false)], 'mice is 4 letters, but mouse for a meaning list');
     check(!in_array('doe', $d->family('did'), true), "did doesn't use up doe");
@@ -1022,6 +1023,8 @@ test("a verb's -ing and -ed forms are one answer with it, and letter prompts jud
     check(!in_array('earring', $d->family('ear'), true), "earring isn't ear's");
     same([true, 'blurb'], [$d->has('blurbs'), $d->singular('blurbs')], 'A plural the word lists lacked (data/plural-forms.txt)');
     same([false, false], [$d->has('plained'), $d->has('heliums')], 'Forms the subtitles hardly use are left out');
+    $unsaid = Prompts::unsaid(spec(null, ['bookends', 'r']), $d, []);
+    check(in_array('register', $unsaid, true) && !in_array('registered', $unsaid, true), 'Nobody said shows the word a form counts as');
 });
 
 test('a verb form with a meaning of its own counts as written, but still uses up its verb (data/own-meaning.txt)', function () {
@@ -1031,7 +1034,7 @@ test('a verb form with a meaning of its own counts as written, but still uses up
     check(in_array('build', $d->family('building'), true), 'Saying building uses up build');
     same(['savings', 'crooked'], [$d->verbRoot('savings'), $d->verbRoot('crooked')]);
     same(['swim', 'marry'], [$d->verbRoot('swimming'), $d->verbRoot('married')], 'Doing the verb, or having done it, is still the verb');
-    check(in_array('shown', $d->family('show'), true) && in_array('molten', $d->family('melt'), true), '-en forms are one answer with their verb');
+    same(['shown'], $d->family('shown'), '-en forms are irregular forms: words of their own');
 });
 
 test("comparatives and superlatives are one answer with their adjective, and letter prompts judge them as it (data/comparative-forms.txt)", function () {
@@ -1064,6 +1067,13 @@ test("a word refused only by the verb rule is free; a meaning prompt judges word
     same('hug', $game->state($world['id'], $p['token'])['myWords'][0]['word'], 'Listed as hug');
     $bus = $game->play($world['id'], $p['token'], 'bus');
     same([true, 'bus', null], [$bus['ok'], $bus['word'], $bus['typed'] ?? null], 'A word said as itself has no typed');
+
+    // A word that wouldn't fit as written either is told why as written, and pays once.
+    setPrompt($game, $world['id'], spec(null, ['bookends', 'r']));
+    $running = $game->play($world['id'], $p['token'], 'running');
+    same(["it doesn't start and end with R", 2], [$running['why'], $running['penalty']], 'No "counts as run": that is not why');
+    same(0, $game->play($world['id'], $p['token'], 'running')['penalty'], 'The same wrong word again is free');
+    same(2, $game->play($world['id'], $p['token'], 'racing')['penalty'], 'Another wrong word still costs 2');
 });
 
 test('"About this prompt": a letter prompt says how forms are judged, a meaning prompt has its list note', function () {

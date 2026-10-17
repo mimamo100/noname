@@ -16,6 +16,8 @@ The first round on the local copy (http://localhost:8082, XAMPP). Ada and Eve pl
 
 ## Findings
 
+All but 6 and 7 done the same evening: findings 1 to 4 as suggested (for 3, **the owner chose to make irregular verb forms words of their own**, as words go for the whole round), and the missing words added.
+
 1. **Not a bug, but a misleading message.** Ben and Cal reported penalties on *running*, *rowing*, *rated*, *rarest*, *digging*, *bigger* as breaking "refused only for the form: free". Each fails **as written** too (*running* doesn't end in R), so the 2 points are right; *rarer*, which fits as written, was free. But the reply adds "(“running” counts as “run”)" even when that isn't why it failed, so players blame the rule. **Suggested**: mention what a word counts as only when that's the reason.
 2. **A repeated wrong guess costs again** (Ada, Eve): *racing*, *rollers*, *rhubarb* each charged 2 every time. A player who taps Say it twice, or tries a word again, pays twice. **Suggested**: repeating your own miss on the same prompt is free.
 3. **Irregular forms use up their word** (Dee): *sung* used up *sing*, *singing*, *sang*; *hung* used up *hang*, *hanged*. As decided today they stay one answer while counting as written; worth confirming now it's been seen in play.
