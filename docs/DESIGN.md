@@ -10,12 +10,9 @@ language shrinks, players hunt for rarer words, and those words are worth more.
 
 ## The dictionary
 
-- Every world starts with the same fixed list: about 39,600 common English
-  words (3+ letters), built by `scripts/build-dictionary.php`.
-- A word must be in both the ENABLE word list (no proper nouns, no
-  abbreviations) and a large frequency list from film subtitles, so obscure
-  word-list junk is excluded.
-- Words are ranked by how common they are. The rank drives the rarity bonus.
+Every world starts with the same fixed list of about 55,400 words. What's in it, what
+counts as the same answer, and how forms, spellings and offensive words are judged are in
+`WORDS.md`.
 
 ## Worlds
 
@@ -132,14 +129,8 @@ day of early play. The caps above are the first lever to adjust.
 
 ## Word families
 
-A word's family is found with simple suffix rules: plurals (*-s*, *-es*,
-*-ies*), *-ed*, *-d* and *-ing*, including doubled consonants (*running* →
-*run*). A family is only formed when the root is also in the dictionary.
-Words the rules would join to an unrelated word (*bunting* the bird isn't
-formed from *bunt*) are listed in `data/family-breaks.txt` and start their own
-family.
-The rules are approximate. Some odd pairs will be grouped together and some
-real pairs missed. That's acceptable for the prototype.
+See `WORDS.md`: suffix rules, the form lists and irregular forms join a word's family, and
+`data/family-breaks.txt` keeps apart words that only look related.
 
 ## Prompts
 
@@ -152,7 +143,7 @@ word-finder site. There are three kinds:
 | Meaning only | about a fifth | *A bird*, *A musical instrument*, *Weather* |
 | Letters only | the rest | *Letters in alphabetical order, 6+ letters*, *Starts and ends with N*, *Two Ys, no L* |
 
-- **Meanings** come from 46 categories (animals, foods, jobs, feelings,
+- **Meanings** come from 48 categories (animals, foods, jobs, feelings,
   colours and so on), kept by hand in `data/categories/`, one file each.
   They were first drafted from WordNet (`scripts/build-categories.py` still
   drafts new ones) and then reviewed. A word counts when its main meaning
@@ -169,32 +160,12 @@ word-finder site. There are three kinds:
 - **Size.** A new prompt is only chosen if it has 10–80 distinct answers still
   unsaid (rooms 40–200, the big world 60–400), counting a word family once. Late in a world, when nothing fits
   that range, the game takes the richest prompt it can find.
-- **Irregular forms** (`data/irregular-forms.txt`: *mouse, mice*; *knife, knives*; *child,
-  children*) are one answer with their word, and an irregular plural is judged and scored as
-  its singular, so *woodlice* counts for "An insect or bug".
-- **Plurals count as their singular** for length rules and points, so
-  adding an S can't stretch *brother* into an 8-letter answer or earn extra
-  points. Spelling rules (*starts with*, *contains*) check the word as typed,
-  and the game never sets letter rules an S would satisfy for free ("contains
-  S", "two Ss").
-- **A verb's -ing and -ed forms count as the verb on a letter prompt** (`data/verb-forms.txt`, from
-  WordNet): *running* and *runs* are *run* for
-  every letter rule and for points, so *running* doesn't end in G, and adding -ing earns
-  nothing. A meaning prompt judges a word as written, as its list names it (*swimming* for "A
-  sport"). The forms are one answer with the verb either way. A word refused only because of
-  this rule (it would fit as typed) costs nothing; other words that don't fit cost 2. Nouns that only look like forms
-  (*evening*, *morning*, *earring*) aren't in the file, and `family-breaks.txt` keeps them out
-  of the verb's family. Comparatives and superlatives are treated the same way, as forms of
-  their adjective (`data/comparative-forms.txt`, from WordNet): *biggest* is *big*. Irregular
-  forms don't stretch a word, so they count as written: comparatives (*better*, *worst*, *more*)
-  are words of their own, and the verbs and plurals in `irregular-forms.txt` (*wrote*, *written*,
-  *mice*) are one answer with their word but judged and scored as written, though *mice* still
-  counts as *mouse* for a meaning list. Forms with a meaning of their
-  own (`data/own-meaning.txt`: *a building*, *crooked*, *a stranger*) count as written
-  everywhere but still use up their verb or adjective. Plurals the word lists lack are added from ENABLE (`plural-forms.txt`),
-  and added forms of either kind must appear at least 10 times in film subtitles
-  (`scripts/find-word-forms.py`). **About this prompt** under a letter prompt says so; a meaning prompt
-  has **About this list**, its list's note (a `note:` line in its category file).
+- **Forms on a letter prompt**: a plural, or a verb's -ing or -ed form, or a comparative,
+  counts as its word for letter rules and points, so adding letters earns nothing (*running*
+  doesn't end in G); irregular forms and a hand-kept list of forms with a meaning of their own
+  count as written, and a meaning prompt judges every word as written. The full rules are in
+  `WORDS.md`. **About this prompt** under a letter prompt says so; a meaning prompt has
+  **About this list**, its list's note (a `note:` line in its category file).
 - **The counter** shows distinct answers left, so saying *apple* (which also
   uses up *apples*) takes it down by one.
 
@@ -310,48 +281,9 @@ word-finder site. There are three kinds:
 - Not yet: a "prove you're human" check (Cloudflare Turnstile) at sign-up,
   if bot sign-ups appear.
 
-## UK and US spelling
+## UK and US spelling, and offensive words
 
-- **One answer, either spelling.** *Colour* and *color* (with *colours*,
-  *colored* and so on) are one answer: saying one uses up the other. The pairs
-  come from VarCon (`scripts/build-spellings.php` makes `data/spellings.json`),
-  and whichever spelling the word list lacks is added (about 400 words).
-- **Not every pair is linked.** Spellings that are also everyday words on both
-  sides stay separate, so *tired* doesn't use up *tyre* and *check* doesn't use
-  up *cheque*. Extra links, like *grey*/*gray*, go in `data/spelling-links.txt`.
-- **A choice per private world:** UK and US (the default, and the public
-  world), UK only, or US only. In a UK-only world, *color* gets a free
-  "This world uses UK spelling: try 'colour'". Counters leave out spellings
-  the world doesn't accept.
-- **Missing spellings** can be reported like any missing word.
-
-## Offensive words
-
-Two lists, both hand-kept:
-
-- **Blocked** (`data/blocklist.txt`): slurs, strong swearing, sexual crimes
-  and the most explicit acts. Blocked words, and the words formed from them
-  (*fucking*), are removed from the dictionary, so they can never be played,
-  appear in a prompt or show in the feed. One exception: a **curated pack**
-  may list blocked words it needs (the law pack's crimes, such as *rape* and
-  *incest*). They're playable in that pack's worlds only, and nowhere else.
-  Organisers' own packs can't list them, and no world lets one into a
-  nickname.
-- **Masked** (`data/masked.txt`): milder rude words, body and sex terms and
-  sex work (*arse*, *bitch*, *penis*, *nipple*, *porn*, *whore*). They're
-  ordinary answers: playable, scoring as usual, counted in "words left
-  unsaid" and listed in categories where they fit (*penis* in "A part of the
-  body"). But other players see them as *p\*\*\*s* in Just said, with a
-  dotted underline: tapping shows the word. Who said it? answers normally
-  (you typed the word). Saying a masked word someone else has already said is
-  free, as they only saw it masked. Innocent words formed from a masked one
-  stay visible with a `!` line (*!cocked*, *!pricked*).
-
-Both lists cover the words formed from a listed word, but never go the other
-way: *pubes* doesn't block or mask *pub*. Neither kind can appear in a name,
-and the fallback prompt never picks a letter string that is one ("Contains
-ASS"). Words that are innocent in their main meaning (*spade*, *queen*,
-*pansy*, *hoe*, *bimbo*) are ordinary words.
+See `WORDS.md`.
 
 ## Prototype scope
 
@@ -498,12 +430,8 @@ a music quiz.
   **with everyday words** (prompts come from the pack's categories, letter
   prompts from all the words). The world's name shows the pack ("Chambers ·
   Law words").
-- **No names** of people (bands, composers, scientists), nor open-ended sets
-  of named things (stars, moons, constellations): the lists would never end,
-  and there'd be no fair way to choose. Units named after people (*newton*)
-  are ordinary words, and the planets are a small closed set, so they're in.
-- **Obscure terms go in a category's `also:` list**: accepted and scoring, but
-  not counted in the prompt's size or the words left unsaid.
+- **What packs may list** (abbreviations, no names, *also* answers, blocked words a curated
+  pack needs): see `WORDS.md`.
 
 ## Ideas for later
 

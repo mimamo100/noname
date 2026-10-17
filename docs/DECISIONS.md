@@ -1,8 +1,8 @@
 # Decisions
 
 Why the game is the way it is: one entry per decision, newest first, with the reason and
-where it came from. `DESIGN.md` says what the rules are; this says why. Earlier decisions
-are at the top of each report in `playtests/`.
+where it came from. `DESIGN.md` says what the rules are, and `WORDS.md` everything about the
+words; this says why. Earlier decisions are at the top of each report in `playtests/`.
 
 ## 17 October 2026
 
@@ -26,7 +26,7 @@ activities (*swimming*, *walking*) and states (*married*, *bored*) stay the verb
 *given*, *mistaken*, *stricken* and *drunk* came off, as irregular forms count as written anyway).
 -en forms are one answer with their verb (*shown*, *swollen*, *molten*), except *torn* (tear, the
 teardrop, would join it), *drunken* and *laden*. This takes up the list set aside on
-15 October; the draft, in groups for the owner to mark, is `chat/standalone-forms-draft.md`.
+15 October; the owner marked a draft in groups.
 *Owner.*
 
 ## 15 October 2026
