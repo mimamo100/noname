@@ -205,7 +205,8 @@ On the pages you can:
   payments are added, this is how accounts get private worlds. With nothing
   searched, the list shows every account on a paid plan.
 - **Check organisers' word packs** under **Word packs**: a pack's name opens its lists and
-  words as the organiser wrote them, with **Remove this pack** if it shouldn't stay.
+  words as the organiser wrote them, with **Remove this pack** if it shouldn't stay. Removing asks first, saying how many rooms and
+  competitions are playing it (they switch to everyday words); it can't be undone.
 - **Recount scores**, and see when **housekeeping** last ran or run it now.
 
 Words accepted on this page before reports became a queue were stored in the

@@ -333,9 +333,12 @@ final class Packs
         $stmt->execute([$id]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!$row) return null;
+        // The rooms and competitions playing it, which would switch to everyday words without it.
+        $stmt = $this->db->prepare('SELECT COUNT(*) FROM worlds WHERE pack = ? AND ended_at IS NULL');
+        $stmt->execute([$id]);
         return [
             'id' => $row['id'], 'name' => $row['name'], 'description' => $row['description'], 'owner' => $row['owner'],
-            'words' => (int) $row['words'], 'updatedAt' => (int) $row['updated_at'],
+            'words' => (int) $row['words'], 'updatedAt' => (int) $row['updated_at'], 'playing' => (int) $stmt->fetchColumn(),
             'lists' => array_values(self::parseText($row['source'], (int) ($row['format'] ?? 1) === 1)),
         ];
     }

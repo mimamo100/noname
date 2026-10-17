@@ -415,7 +415,18 @@ if ($tab === 'accounts') {
 }
 
 $pack = $tab === 'packs' && isset($_GET['pack']) ? $packs->details((string) $_GET['pack']) : null;
-if ($pack) {
+if ($pack && isset($_GET['remove']) && $can('packs')) {
+    // Removing can't be undone, so it takes a second press here, saying what it does.
+    $playing = $pack['playing'];
+    $html .= '<h2>Remove “' . h($pack['name']) . '”?</h2>'
+        . '<p>The pack is deleted for good, from these pages and from ' . h((string) ($pack['owner'] ?? 'its organiser')) . '\'s own packs. '
+        . 'They aren\'t told.</p>'
+        . '<p' . ($playing ? ' class="bad"' : '') . '>' . ($playing
+            ? $playing . ($playing === 1 ? ' room or competition is' : ' rooms or competitions are') . ' playing it now, and would switch to everyday words at once.'
+            : 'No room or competition is playing it now.') . '</p>'
+        . '<p>' . $button('removepack', 'Remove for good', ['pack' => $pack['id']], 'danger-solid')
+        . ' <a class="back-link" href="' . h($tabUrl('packs', ['pack' => $pack['id']])) . '">Cancel</a></p>';
+} elseif ($pack) {
     // One pack's lists and words, to judge whether it should stay.
     $html .= '<p><a class="back-link" href="' . h($tabUrl('packs')) . '">← All word packs</a></p>'
         . '<h2>' . h($pack['name']) . '</h2>'
@@ -426,7 +437,9 @@ if ($pack) {
         $html .= '<h3>' . h($list['label']) . ' <span class="muted small">' . count($list['words']) . '</span></h3>'
             . '<p class="pack-words">' . implode(' · ', array_map(fn ($forms) => h(implode(', ', $forms)), $list['words'])) . '</p>';
     }
-    $html .= '<p>' . $button('removepack', 'Remove this pack', ['pack' => $pack['id']], 'secondary') . '</p>';
+    if ($can('packs')) {
+        $html .= '<p><a class="button-link secondary-link" href="' . h($tabUrl('packs', ['pack' => $pack['id'], 'remove' => 1])) . '">Remove this pack…</a></p>';
+    }
 } elseif ($tab === 'packs') {
     // Organisers' own word packs, so a bad one can be taken down.
     $customPacks = $packs->all();
@@ -438,7 +451,7 @@ if ($pack) {
         foreach ($customPacks as $pk) {
             $html .= '<tr><td><a href="' . h($tabUrl('packs', ['pack' => $pk['id']])) . '"><b>' . h($pk['name']) . '</b></a></td><td>' . h((string) $pk['owner']) . '</td><td>' . (int) $pk['words'] . '</td>'
                 . '<td class="muted small">' . h($when((int) $pk['updated_at'])) . '</td>'
-                . '<td class="actions">' . $button('removepack', 'Remove', ['pack' => $pk['id']], 'link') . '</td></tr>';
+                . '<td class="actions"><a class="back-link" href="' . h($tabUrl('packs', ['pack' => $pk['id'], 'remove' => 1])) . '">Remove…</a></td></tr>';
         }
         $html .= '</tbody></table></div>';
     }

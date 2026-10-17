@@ -49,6 +49,7 @@ test('organisers make, change and delete their own packs; hosts get curated pack
     $details = $packs->details($made['id']);
     same(['Space 2', 'Org', ['A planet', 'A moon', 'A particle', 'A star']], [$details['name'], $details['owner'], array_column($details['lists'], 'label')], 'The admin sees a pack as written');
     same(['sun'], $details['lists'][3]['words'][0]);
+    same(0, $details['playing'], 'No world plays it yet');
     same(null, $packs->details('nope'));
     $packs->delete($org, $made['id']);
     same([], $packs->mine($org));

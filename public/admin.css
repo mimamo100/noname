@@ -34,3 +34,4 @@ a.button-link { display: inline-block; background: var(--ember); color: #1b0f05;
 .pack-words { line-height: 1.7; }
 .admin h3 { margin: 20px 0 4px; font-size: 16px; }
 .admin-table a, .back-link { color: var(--text); }
+a.button-link.secondary-link { background: var(--surface); color: var(--text); border: 1px solid var(--border); font-weight: 400; padding: 6px 12px; }
