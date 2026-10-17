@@ -55677,13 +55677,10 @@ return array (
       2 => 'needed',
       3 => 'needing',
     ),
-    'many' => 
+    'more' => 
     array (
       0 => 'more',
-      1 => 'much',
-      2 => 'many',
-      3 => 'most',
-      4 => 'mores',
+      1 => 'mores',
     ),
     'way' => 
     array (
@@ -55722,12 +55719,9 @@ return array (
     'little' => 
     array (
       0 => 'little',
-      1 => 'least',
-      2 => 'less',
-      3 => 'lesser',
-      4 => 'littlest',
-      5 => 'littler',
-      6 => 'littles',
+      1 => 'littlest',
+      2 => 'littler',
+      3 => 'littles',
     ),
     'please' => 
     array (
@@ -58054,6 +58048,11 @@ return array (
       3 => 'quietest',
       4 => 'quieted',
       5 => 'quieting',
+    ),
+    'less' => 
+    array (
+      0 => 'less',
+      1 => 'lesser',
     ),
     'pull' => 
     array (
@@ -190124,7 +190123,7 @@ return array (
     'leaner' => 'lean',
     'leanest' => 'lean',
     'lengthier' => 'lengthy',
-    'lesser' => 'little',
+    'lesser' => 'less',
     'lightest' => 'light',
     'limper' => 'limp',
     'littler' => 'little',
@@ -190697,10 +190696,6 @@ return array (
     'farthest' => 'far',
     'further' => 'far',
     'furthest' => 'far',
-    'more' => 'many',
-    'most' => 'many',
-    'less' => 'little',
-    'least' => 'little',
   ),
   'addedForms' => 
   array (

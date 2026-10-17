@@ -1029,7 +1029,6 @@ test("comparatives and superlatives are one answer with their adjective, and let
     same(['number', 'broker', 'stranger'], array_map([$d, 'verbRoot'], ['number', 'broker', 'stranger']), "A number isn't more numb; a stranger has a meaning of its own");
     check(!in_array('broker', $d->family('broke'), true) && in_array('strange', $d->family('stranger'), true), 'broker stands alone; stranger still uses up strange');
     check(!in_array('worsted', $d->family('bad'), true), "Saying bad doesn't use up worsted, the cloth");
-    check(in_array('most', $d->family('much'), true) && in_array('least', $d->family('little'), true), 'much uses up more and most; little uses up less and least');
 });
 
 test("a word refused only by the verb rule is free; a meaning prompt judges words as written", function () {
