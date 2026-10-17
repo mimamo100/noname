@@ -9,7 +9,10 @@ are at the top of each report in `playtests/`.
 **Verb forms that are words in their own right count as written**: the verb rule stays (*tempted*
 counts as *tempt*, so it fits "6 letters or fewer"), but a hand-kept list of -ing and -ed forms
 that have become words of their own (*building*, *wedding*, *crooked*) count as themselves on
-letter prompts. They still use up their verb and its forms. This takes up the list set aside on
+letter prompts. They still use up their verb and its forms. The test: the word means
+something other than doing the verb or having done it (*a building*, *icing*, *crooked*), so
+activities (*swimming*, *walking*) and states (*married*, *bored*) stay the verb; a line between
+*swimming* and *walking* had no logic. This takes up the list set aside on
 15 October; the draft, in groups for the owner to mark, is `chat/standalone-forms-draft.md`.
 *Owner.*
 
