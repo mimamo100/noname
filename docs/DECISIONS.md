@@ -12,7 +12,9 @@ that have become words of their own (*building*, *wedding*, *crooked*) count as 
 letter prompts. They still use up their verb and its forms. The test: the word means
 something other than doing the verb or having done it (*a building*, *icing*, *crooked*), so
 activities (*swimming*, *walking*) and states (*married*, *bored*) stay the verb; a line between
-*swimming* and *walking* had no logic. This takes up the list set aside on
+*swimming* and *walking* had no logic. The list is `data/own-meaning.txt` (134 words, with
+*given*, *mistaken*, *stricken*, *drunk*). -en forms are their verb too (*shown*, *swollen*,
+*molten*), except *torn* (tear, the teardrop, would join it), *drunken* and *laden*. This takes up the list set aside on
 15 October; the draft, in groups for the owner to mark, is `chat/standalone-forms-draft.md`.
 *Owner.*
 

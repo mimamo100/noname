@@ -184,9 +184,9 @@ sell, sold
 send, sent
 shake, shook, shaken
 shine, shone
-shrink, shrank, shrunk
+shrink, shrank, shrunk, shrunken
 sing, sang, sung
-sink, sank, sunk
+sink, sank, sunk, sunken
 sit, sat
 sleep, slept
 slide, slid
@@ -238,3 +238,11 @@ overwrite, overwrote, overwritten
 tarmac, tarmacked, tarmacking
 dib, dibbed, dibbing
 spruceup, sprucedup, sprucingup, sprucesup
+show, shown
+sew, sewn
+mow, mown
+prove, proven
+outgrow, outgrew, outgrown
+beget, begat, begotten
+swell, swollen
+melt, molten

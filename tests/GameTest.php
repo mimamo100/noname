@@ -210,12 +210,14 @@ test('prompt picker respects the range and skips used prompts', function () {
 test('the real dictionary yields a varied mix of prompts', function () {
     $d = Dictionary::load();
     $kinds = [];
-    for ($i = 0; $i < 30; $i++) {
+    // Picks are random, so 30 could miss a kind now and then: keep picking (up to 300) until all
+    // three have come up.
+    for ($i = 0; $i < 300 && ($i < 30 || count($kinds) < 3); $i++) {
         $picked = Prompts::pick($d, []);
         check($picked['available'] >= 10 && $picked['available'] <= 80, 'Out of range: ' . Prompts::describe($picked['spec'], $d));
         $kinds[$picked['spec']['cat'] ? ($picked['spec']['rules'] ? 'both' : 'meaning') : 'letters'] = true;
     }
-    same(3, count($kinds), 'All three kinds should appear in 30 picks.');
+    same(3, count($kinds), 'All three kinds should appear in 300 picks.');
 });
 
 test('scoring rises with length, rarity and scarcity', function () {
@@ -1007,6 +1009,16 @@ test("a verb's -ing and -ed forms are one answer with it, and letter prompts jud
     check(!in_array('earring', $d->family('ear'), true), "earring isn't ear's");
     same([true, 'blurb'], [$d->has('blurbs'), $d->singular('blurbs')], 'A plural the word lists lacked (data/plural-forms.txt)');
     same([false, false], [$d->has('plained'), $d->has('heliums')], 'Forms the subtitles hardly use are left out');
+});
+
+test('a verb form with a meaning of its own counts as written, but still uses up its verb (data/own-meaning.txt)', function () {
+    $d = Dictionary::load();
+    $endsG = ['cat' => null, 'rules' => [['ends', 'g']]];
+    same([true, 'building'], [Prompts::matches($endsG, $d, 'building'), $d->verbRoot('building')]);
+    check(in_array('build', $d->family('building'), true), 'Saying building uses up build');
+    same(['savings', 'crooked', 'drunk'], [$d->verbRoot('savings'), $d->verbRoot('crooked'), $d->verbRoot('drunk')]);
+    same(['swim', 'marry'], [$d->verbRoot('swimming'), $d->verbRoot('married')], 'Doing the verb, or having done it, is still the verb');
+    same(['show', 'swell', 'melt'], [$d->verbRoot('shown'), $d->verbRoot('swollen'), $d->verbRoot('molten')], '-en forms are their verb');
 });
 
 test("a word refused only by the verb rule is free; a meaning prompt judges words as written", function () {
