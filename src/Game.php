@@ -738,7 +738,7 @@ final class Game
             if (!$counted) $mult['prompt'] = 1.0;
             // A plural scores as its singular, so adding an S earns nothing extra; on a letter prompt,
             // a verb's -ing or -ed form scores as the verb, so adding -ing earns nothing either.
-            $singular = $this->dictionary->singular(Prompts::judged($prompt['spec'], $this->dictionary, $word));
+            $singular = $this->dictionary->singular(Prompts::judged($prompt['spec'], $this->dictionary, $word), false);
             // A phrase scores by its words as written ("paddle steamer"), not its joined length.
             $written = $this->dictionary->display($singular);
             $points = Scoring::scoreWord($written, $this->rarityOf($singular, $written), $mult['world'] ?? 1.0, $mult['prompt']);

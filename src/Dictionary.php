@@ -315,10 +315,11 @@ final class Dictionary
      * "cities" -> "city"), or the word itself. Only plurals: "-ing" and "-ed" words are often
      * words in their own right ("building", "evening").
      */
-    public function singular(string $word): string
+    public function singular(string $word, bool $irregular = true): string
     {
-        // Irregular plurals (data/irregular-forms.txt): "mice" is "mouse".
-        if (isset($this->irregular[$word]) && $this->has($this->irregular[$word])) return $this->irregular[$word];
+        // Irregular plurals (data/irregular-forms.txt): "mice" is "mouse" for a meaning list, but
+        // length rules and points take it as written ($irregular false): it doesn't stretch a word.
+        if (isset($this->irregular[$word]) && $this->has($this->irregular[$word])) return $irregular ? $this->irregular[$word] : $word;
         if (!str_ends_with($word, 's') || str_ends_with($word, 'ss') || isset($this->pluralWords[$word])) return $word;
         $candidates = [substr($word, 0, -1)];
         if (str_ends_with($word, 'es')) $candidates[] = substr($word, 0, -2);

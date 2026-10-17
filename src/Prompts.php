@@ -28,7 +28,7 @@ final class Prompts
      */
     public static function compile(array $spec, Dictionary $dictionary, ?bool $verbForms = null): callable
     {
-        $length = fn (string $w) => strlen($dictionary->singular($w));
+        $length = fn (string $w) => strlen($dictionary->singular($w, false));
         $tests = array_map(fn (array $rule) => self::ruleTest($rule, $length), $spec['rules'] ?? []);
         $cat = $spec['cat'] ?? null;
         $verbForms ??= $cat === null;
@@ -59,9 +59,9 @@ final class Prompts
             return trim(($note ?? '') . ' Plurals count as their singular for length.');
         }
         return match (true) {
-            $length && $letters => "A verb's other forms count as the verb here, -er and -est forms as their adjective, and plurals as their singular.",
-            $length => "Plurals count as their singular here, a verb's other forms as the verb, and -er and -est forms as their adjective.",
-            $letters => "A verb's other forms count as the verb here, and -er and -est forms as their adjective.",
+            $length && $letters => "A verb's -ing and -ed forms count as the verb here, -er and -est forms as their adjective, and plurals as their singular.",
+            $length => "Plurals count as their singular here, a verb's -ing and -ed forms as the verb, and -er and -est forms as their adjective.",
+            $letters => "A verb's -ing and -ed forms count as the verb here, and -er and -est forms as their adjective.",
             default => null,
         };
     }
@@ -109,8 +109,8 @@ final class Prompts
     {
         $typed = $word;
         $word = self::judged($spec, $dictionary, $word, $verbForms);
-        $singular = $dictionary->singular($word);
-        $length = fn (string $w) => strlen($dictionary->singular($w));
+        $singular = $dictionary->singular($word, false);
+        $length = fn (string $w) => strlen($dictionary->singular($w, false));
         // Length rules judge a plural as its singular, and letter prompts a verb's form as the verb:
         // say so, or "flasks" being 5 letters, or "running" not ending in G, is a mystery.
         $asSingular = $singular !== $typed ? " (“{$typed}” counts as “{$singular}”)" : '';

@@ -262,8 +262,13 @@ foreach (readList("$dataDir/irregular-forms.txt") as $line) {
     }
     $irregularClusters[] = $present;
     if (!$verbs) foreach (array_slice($present, 1) as $form) $irregular[$form] = $present[0];
-    // A verb's irregular forms are judged as it too (wrote, written as write), when it's here.
-    elseif ($present[0] === $forms[0]) foreach (array_slice($present, 1) as $form) $verbForms[$form] = $present[0];
+    // Irregular forms are one answer with their word but count as written (the owner, 17 October:
+    // they don't stretch a word as -ing and -ed do). Only regular forms listed here by hand
+    // (dibbed, tarmacked) are judged as the verb, like those in verb-forms.txt.
+    elseif ($present[0] === $forms[0]) foreach (array_slice($present, 1) as $form) {
+        $verb = $present[0];
+        if (in_array($verb, WordFamilies::rootCandidates($form), true) || in_array($form, ["{$verb}ked", "{$verb}king"], true)) $verbForms[$form] = $verb;
+    }
 }
 foreach ([...$verbForms, ...$pluralForms] as $form => $root) $irregularClusters[] = [$root, $form];
 // Forms with a meaning of their own (data/own-meaning.txt) stay in their verb's family, but are

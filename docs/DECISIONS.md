@@ -8,8 +8,11 @@ are at the top of each report in `playtests/`.
 
 **Comparatives and superlatives are forms of their adjective**, as -ing and -ed forms are of their
 verb: *bigger* and *biggest* are one answer with *big*, and count as *big* on letter prompts.
-Irregular ones join too (*good, better, best*; *bad, worse, worst*; *far, further, farther*).
-*more*, *most*, *less* and *least* stay words of their own. Words that only look like
+Irregular ones (*better*, *best*, *worse*, *more*, *least*, *further*) stay words of their own:
+the rule is there to stop cheap stretching (*big* to *biggest*), and they don't stretch anything.
+The same goes for anything irregular: *wrote*, *written*, *ran*, *mice*, *children* are one answer
+with their word but count as written for letter rules and points (*mice* still counts as *mouse*
+for "A small animal"). Words that only look like
 comparatives stand alone (*broker*, *butcher*, *number*, *outer*, *gamer*); ones that are both
 (*stranger*, *cleaner*, *lighter*, *the latest*) are on the own-meaning list. *Owner.*
 
@@ -19,9 +22,10 @@ that have become words of their own (*building*, *wedding*, *crooked*) count as 
 letter prompts. They still use up their verb and its forms. The test: the word means
 something other than doing the verb or having done it (*a building*, *icing*, *crooked*), so
 activities (*swimming*, *walking*) and states (*married*, *bored*) stay the verb; a line between
-*swimming* and *walking* had no logic. The list is `data/own-meaning.txt` (134 words, with
-*given*, *mistaken*, *stricken*, *drunk*). -en forms are their verb too (*shown*, *swollen*,
-*molten*), except *torn* (tear, the teardrop, would join it), *drunken* and *laden*. This takes up the list set aside on
+*swimming* and *walking* had no logic. The list is `data/own-meaning.txt` (130 words;
+*given*, *mistaken*, *stricken* and *drunk* came off, as irregular forms count as written anyway).
+-en forms are one answer with their verb (*shown*, *swollen*, *molten*), except *torn* (tear, the
+teardrop, would join it), *drunken* and *laden*. This takes up the list set aside on
 15 October; the draft, in groups for the owner to mark, is `chat/standalone-forms-draft.md`.
 *Owner.*
 

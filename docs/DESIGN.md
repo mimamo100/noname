@@ -177,16 +177,19 @@ word-finder site. There are three kinds:
   points. Spelling rules (*starts with*, *contains*) check the word as typed,
   and the game never sets letter rules an S would satisfy for free ("contains
   S", "two Ss").
-- **A verb's other forms count as the verb on a letter prompt** (`data/verb-forms.txt`, from
-  WordNet, and the verbs in `irregular-forms.txt`): *running*, *ran* and *runs* are *run* for
+- **A verb's -ing and -ed forms count as the verb on a letter prompt** (`data/verb-forms.txt`, from
+  WordNet): *running* and *runs* are *run* for
   every letter rule and for points, so *running* doesn't end in G, and adding -ing earns
   nothing. A meaning prompt judges a word as written, as its list names it (*swimming* for "A
   sport"). The forms are one answer with the verb either way. A word refused only because of
   this rule (it would fit as typed) costs nothing; other words that don't fit cost 2. Nouns that only look like forms
   (*evening*, *morning*, *earring*) aren't in the file, and `family-breaks.txt` keeps them out
   of the verb's family. Comparatives and superlatives are treated the same way, as forms of
-  their adjective (`data/comparative-forms.txt`, from WordNet; irregular ones such as *good,
-  better, best* in `irregular-forms.txt`): *biggest* is *big*. Forms with a meaning of their
+  their adjective (`data/comparative-forms.txt`, from WordNet): *biggest* is *big*. Irregular
+  forms don't stretch a word, so they count as written: comparatives (*better*, *worst*, *more*)
+  are words of their own, and the verbs and plurals in `irregular-forms.txt` (*wrote*, *written*,
+  *mice*) are one answer with their word but judged and scored as written, though *mice* still
+  counts as *mouse* for a meaning list. Forms with a meaning of their
   own (`data/own-meaning.txt`: *a building*, *crooked*, *a stranger*) count as written
   everywhere but still use up their verb or adjective. Plurals the word lists lack are added from ENABLE (`plural-forms.txt`),
   and added forms of either kind must appear at least 10 times in film subtitles

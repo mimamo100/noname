@@ -56,7 +56,6 @@ distinguished
 doomed
 drawing
 dressing
-drunk
 dryer
 dwelling
 earning
@@ -76,7 +75,6 @@ frosting
 funding
 gathering
 gifted
-given
 greeting
 hallowed
 happening
@@ -99,7 +97,6 @@ living
 meaning
 meeting
 missing
-mistaken
 misunderstanding
 offering
 opening
@@ -136,7 +133,6 @@ sporting
 standing
 stoned
 stranger
-stricken
 striking
 stuffing
 stunning
